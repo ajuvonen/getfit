@@ -1,0 +1,10 @@
+{
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "include": ["vite.config.*", "vitest.config.*", "cypress.config.*"],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "ES2020",
+    "composite": true,
+    "types": ["node"]
+  }
+}
