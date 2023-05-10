@@ -1,0 +1,83 @@
+{
+  "activities": {
+    "badminton": "Badminton",
+    "basketball": "Basketball",
+    "boxing": "Boxing",
+    "downhill": "Downhill",
+    "gym": "Gym",
+    "hockey": "Hockey",
+    "maintenance": "Body Maintenance",
+    "martialarts": "Martial Arts",
+    "meditation": "Meditation",
+    "running": "Running",
+    "skiing": "Skiing",
+    "soccer": "Soccer",
+    "sprint": "Sprint",
+    "swimming": "Swimming",
+    "tennis": "Tennis",
+    "walking": "Walking"
+  },
+  "editTraining": {
+    "activity": "Activity",
+    "intensity": "Overall Intensity",
+    "closeDialog": "Close Dialog",
+    "description": "Description",
+    "duration": "Duration",
+    "location": "Location",
+    "save": "Save",
+    "title": "Edit Training",
+    "trainingTitle": "Title"
+  },
+  "errors": {
+    "invalidPrecision": "Use 0.25 hour precision"
+  },
+  "general": {
+    "weekdays": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    }
+  },
+  "intensities": {
+    "TRIVIAL": "Trivial", 
+    "LIGHT": "Light", 
+    "MEDIUM": "Medium", 
+    "HEAVY": "Heavy",
+    "0": "Trivial", 
+    "1": "Light", 
+    "2": "Medium", 
+    "3": "Heavy"
+  },
+  "settings": {
+    "addWeek": "Add Week",
+    "availableActivities": "Available Activities",
+    "hours": "Hours",
+    "lockSchedule": "Lock Schedule",
+    "minutes": "Minutes",
+    "programName": "Program Name",
+    "startOfWeek": "Start of Week",
+    "title": "Schedule Settings",
+    "unitOfTime": "Unit of Time"
+  },
+  "trainingCard": {
+    "completionSummary": "Completion Summary",
+    "copy": "Copy",
+    "deleteTraining": "Delete",
+    "editTraining": "Edit",
+    "intensity": "Intensity: {0}",
+    "move": "Move",
+    "moveOrCopy": "Move/Copy"
+  },
+  "weekCalendar": {
+    "addTraining": "Add training",
+    "copyWeek": "Copy Week {0}",
+    "dayChipTitle": "Total trainings: {0}. Maximum intensity: {1}.",
+    "deleteWeek": "Delete Week {0}",
+    "weekChipTitle": "{0} trainings: {1}",
+    "weekTitle": "Week {0}"
+  }
+}
