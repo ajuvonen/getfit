@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import {RouterView} from 'vue-router';
+import useScreenSize from './hooks/screenSize';
+const {isSmallScreen} = useScreenSize();
 </script>
 
 <template>
   <v-app :full-height="true">
-    <v-container>
+    <v-container :class="{'px-0': isSmallScreen, 'py-0': isSmallScreen}">
       <v-main>
         <RouterView />
       </v-main>
@@ -26,4 +28,10 @@ import {RouterView} from 'vue-router';
   </v-app>
 </template>
 
-<style scoped></style>
+<style scoped>
+/** Fix Vuetify 3.2.3 issue */
+:deep(.v-chip) {
+  flex-basis: initial;
+  flex-grow: 0;
+}
+</style>
