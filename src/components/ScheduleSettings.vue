@@ -10,7 +10,7 @@ import {getValidationErrors} from '@/utils';
 
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
-const {addWeek, changeUnitOfTime} = scheduleStore;
+const {addWeek, changeUnitOfTime, toggleLockSchedule} = scheduleStore;
 const {t} = useI18n();
 const settingsOpen = ref(0);
 const {localizedActivities} = useLocalizedActivities();
@@ -115,10 +115,11 @@ const v$ = useVuelidate(
             <v-label for="settings-lock-schedule">{{ t('settings.lockSchedule') }}</v-label>
             <v-switch
               id="settings-lock-schedule"
-              v-model="schedule.lockSchedule"
+              :model-value="schedule.lockSchedule"
               :value="true"
               color="secondary"
               hide-details="auto"
+              @update:model-value="toggleLockSchedule"
             />
           </v-expansion-panel-text>
         </v-expansion-panel>

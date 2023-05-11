@@ -99,46 +99,46 @@ const groupedTrainings = computed(() => {
           :transition="false"
           :reverse-transition="false"
         >
-          <v-card flat>
-            <v-card-text>
-              <draggable-list
-                :model-value="trainings"
-                :componentData="{multiple: true, variant: 'accordion'}"
-                tag="ul"
-                item-key="id"
-                handle=".v-card-item"
-                @update:model-value="(reorderedTrainings: Training[]) => reorderTrainings(week, reorderedTrainings)"
-              >
-                <template #item="{element}">
-                  <li>
-                    <training-card :training="element" />
-                  </li>
-                </template>
-              </draggable-list>
-            </v-card-text>
-            <v-card-actions v-if="!schedule.lockSchedule" :class="{'flex-column': isSmallScreen}">
-              <v-btn
-                prepend-icon="mdi-plus"
-                :data-test-id="`week-${weekNumber}-add-training-button`"
-                @click="openNewTrainingDialog(week.id, dayIndex)"
-                >{{ t('weekCalendar.addTraining') }}</v-btn
-              >
-              <v-btn
-                :aria-label="t('weekCalendar.copyWeek', [weekNumber])"
-                prepend-icon="mdi-content-copy"
-                @click="copyWeek(week.id)"
-                >{{ t('weekCalendar.copyWeek') }}</v-btn
-              >
-              <v-btn
-                :aria-label="t('weekCalendar.deleteWeek', [weekNumber])"
-                color="error"
-                variant="outlined"
-                prepend-icon="mdi-delete"
-                @click="deleteWeek(week.id)"
-                >{{ t('weekCalendar.deleteWeek') }}</v-btn
-              >
-            </v-card-actions>
-          </v-card>
+          <draggable-list
+            :model-value="trainings"
+            :componentData="{multiple: true, variant: 'accordion'}"
+            :class="{'flex-column': isSmallScreen}"
+            tag="ul"
+            item-key="id"
+            handle=".v-card-item"
+            class="d-flex flex-wrap"
+            @update:model-value="(reorderedTrainings: Training[]) => reorderTrainings(week, reorderedTrainings)"
+          >
+            <template #item="{element}">
+              <li>
+                <training-card :training="element" />
+              </li>
+            </template>
+          </draggable-list>
+          <div v-if="!schedule.lockSchedule" class="week-calendar__actions d-flex mt-4" :class="{'flex-column': isSmallScreen}">
+            <v-btn
+              :data-test-id="`week-${weekNumber}-add-training-button`"
+              prepend-icon="mdi-plus"
+              variant="flat"
+              @click="openNewTrainingDialog(week.id, dayIndex)"
+              >{{ t('weekCalendar.addTraining') }}</v-btn
+            >
+            <v-btn
+              :aria-label="t('weekCalendar.copyWeek', [weekNumber])"
+              prepend-icon="mdi-content-copy"
+              variant="flat"
+              @click="copyWeek(week.id)"
+              >{{ t('weekCalendar.copyWeek') }}</v-btn
+            >
+            <v-btn
+              :aria-label="t('weekCalendar.deleteWeek', [weekNumber])"
+              color="error"
+              variant="outlined"
+              prepend-icon="mdi-delete"
+              @click="deleteWeek(week.id)"
+              >{{ t('weekCalendar.deleteWeek') }}</v-btn
+            >
+          </div>
         </v-window-item>
       </v-window>
     </v-expansion-panel-text>
@@ -148,4 +148,12 @@ const groupedTrainings = computed(() => {
 ul {
   list-style-type: none;
 }
+
+.week-calendar__actions {
+  gap: 0.5rem;
+  &.flex-column {
+    align-items: stretch;
+  }
+}
+
 </style>

@@ -43,14 +43,19 @@
     }
   },
   "intensities": {
-    "TRIVIAL": "Trivial", 
-    "LIGHT": "Light", 
-    "MEDIUM": "Medium", 
+    "TRIVIAL": "Trivial",
+    "LIGHT": "Light",
+    "MEDIUM": "Medium",
     "HEAVY": "Heavy",
-    "0": "Trivial", 
-    "1": "Light", 
-    "2": "Medium", 
+    "0": "Trivial",
+    "1": "Light",
+    "2": "Medium",
     "3": "Heavy"
+  },
+  "routes": {
+    "home": "Home",
+    "print": "Print",
+    "schedule": "Schedule"
   },
   "settings": {
     "addWeek": "Add Week",
@@ -68,9 +73,10 @@
     "copy": "Copy",
     "deleteTraining": "Delete",
     "editTraining": "Edit",
-    "intensity": "Intensity: {0}",
+    "hideSummary": "Hide Completion Summary",
     "move": "Move",
-    "moveOrCopy": "Move/Copy"
+    "moveOrCopy": "Move/Copy",
+    "showSummary": "Show Completion Summary"
   },
   "weekCalendar": {
     "addTraining": "Add training",
