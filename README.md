@@ -1,5 +1,5 @@
 # getfit
-Getfit is a simple frontend-only exercise planner created with Vue3 and Vite. Used libraries include Pinia, Vuetify, Cypress and Vitest. 
+Getfit is a simple frontend-only exercise planner created with Vue3, TypeScript, and Vite. Used libraries include Pinia, Vuetify, Cypress and Vitest. You can decide which activities are available in the schedule, then add weeks and activities for each weekday. The app features simple drag & drop and copy functionalities. 
 
 ## Requirements
 
