@@ -6,9 +6,13 @@ import {useScheduleStore} from './schedule';
 
 export const useAppStateStore = defineStore('appState', {
   state: () => ({
+    summaryShown: [] as string[],
     trainingDialogOpen: false,
     trainingData: {} as Training,
   }),
+  getters: {
+    isSummaryShown: (state) => (trainingId: string) => state.summaryShown.includes(trainingId),
+  },
   actions: {
     openNewTrainingDialog(weekId: string, dayIndex: number) {
       this.trainingData = {
@@ -39,6 +43,13 @@ export const useAppStateStore = defineStore('appState', {
     },
     closeEditTrainingDialog() {
       this.trainingDialogOpen = false;
+    },
+    toggleSummaryShown(trainingId: string) {
+      if (this.isSummaryShown(trainingId)) {
+        this.summaryShown = this.summaryShown.filter((id) => id !== trainingId);
+      } else {
+        this.summaryShown.push(trainingId);
+      }
     },
   },
 });

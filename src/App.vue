@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import {RouterView} from 'vue-router';
-import useScreenSize from './hooks/screenSize';
+import {useI18n} from 'vue-i18n';
+import useScreenSize from '@/hooks/screenSize';
+
 const {isSmallScreen} = useScreenSize();
+const {t} = useI18n();
 </script>
 
 <template>
@@ -14,15 +17,15 @@ const {isSmallScreen} = useScreenSize();
     <v-bottom-navigation grow>
       <v-btn to="/" value="home" data-test-id="navbar-home-link">
         <v-icon icon="mdi-home" />
-        Home
+        {{ t('routes.home') }}
       </v-btn>
       <v-btn to="schedule" value="schedule" data-test-id="navbar-schedule-link">
         <v-icon icon="mdi-calendar" />
-        Schedule
+        {{ t('routes.schedule') }}
       </v-btn>
       <v-btn to="print" value="print" data-test-id="navbar-print-link">
         <v-icon icon="mdi-printer" />
-        Print
+        {{ t('routes.print') }}
       </v-btn>
     </v-bottom-navigation>
   </v-app>

@@ -1,9 +1,10 @@
 import {defineStore} from 'pinia';
 import {v4 as uuidv4} from 'uuid';
+import {clone, lensProp, over} from 'ramda';
 import type {Schedule, Training, Week} from '@/types';
 import {ACTIVITIES} from '@/constants';
-import {clone, lensProp, over} from 'ramda';
 import {roundNearestQuarter} from '@/utils';
+import {useAppStateStore} from '@/stores/appState';
 
 export const useScheduleStore = defineStore('schedule', {
   state: () => ({
@@ -111,6 +112,11 @@ export const useScheduleStore = defineStore('schedule', {
         }));
         this.schedule.unitOfTime = newValue;
       }
+    },
+    toggleLockSchedule() {
+      const appStateStore = useAppStateStore();
+      appStateStore.summaryShown = [];
+      this.schedule.lockSchedule = !this.schedule.lockSchedule;
     },
   },
 });

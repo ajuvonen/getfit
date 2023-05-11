@@ -42,7 +42,7 @@ const decimalRegex = helpers.regex(/^\d+(.(00?|25|50?|75))?$/);
 
 const rules = computed(() => ({
   title: {maxLength: maxLength(30)},
-  location: {maxLength: maxLength(50)},
+  location: {maxLength: maxLength(30)},
   description: {maxLength: maxLength(2000)},
   duration: {
     required,
