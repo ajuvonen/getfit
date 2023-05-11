@@ -11,11 +11,11 @@ export const getIcon = (activities: BaseActivity[], activityName: string) =>
 export const getIntensityColor = (intensity: Intensity) => {
   switch (intensity) {
     case Intensity.LIGHT:
-      return 'green';
+      return '#00cd00';
     case Intensity.MEDIUM:
-      return 'orange';
+      return '#ffa500';
     case Intensity.HEAVY:
-      return 'red';
+      return '#cd0000';
     default:
       return '#03DAC6';
   }
