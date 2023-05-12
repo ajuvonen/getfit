@@ -75,6 +75,7 @@ const {weekdays} = useWeekDays();
     prepend-icon="mdi-delete"
     variant="outlined"
     color="error"
+    class="training-card__delete-button"
     @click="removeTraining(training)"
     >{{ t('trainingCard.deleteTraining') }}</v-btn
   >
