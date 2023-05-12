@@ -98,6 +98,7 @@ const groupedTrainings = computed(() => {
           :value="dayIndex"
           :transition="false"
           :reverse-transition="false"
+          :data-test-id="`week-${weekNumber}-day-${dayIndex}`"
         >
           <draggable-list
             :model-value="trainings"
@@ -117,7 +118,7 @@ const groupedTrainings = computed(() => {
           </draggable-list>
           <div v-if="!schedule.lockSchedule" class="week-calendar__actions d-flex mt-4" :class="{'flex-column': isSmallScreen}">
             <v-btn
-              :data-test-id="`week-${weekNumber}-add-training-button`"
+              :data-test-id="`week-${weekNumber}-day-${dayIndex}-add-training-button`"
               prepend-icon="mdi-plus"
               variant="flat"
               @click="openNewTrainingDialog(week.id, dayIndex)"
@@ -125,6 +126,7 @@ const groupedTrainings = computed(() => {
             >
             <v-btn
               :aria-label="t('weekCalendar.copyWeek', [weekNumber])"
+              :data-test-id="`week-${weekNumber}-day-${dayIndex}-copy-button`"
               prepend-icon="mdi-content-copy"
               variant="flat"
               @click="copyWeek(week.id)"
@@ -132,6 +134,7 @@ const groupedTrainings = computed(() => {
             >
             <v-btn
               :aria-label="t('weekCalendar.deleteWeek', [weekNumber])"
+              :data-test-id="`week-${weekNumber}-day-${dayIndex}-delete-button`"
               color="error"
               variant="outlined"
               prepend-icon="mdi-delete"

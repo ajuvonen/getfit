@@ -17,6 +17,7 @@ const {schedule} = storeToRefs(useScheduleStore());
     tag="v-expansion-panels"
     item-key="id"
     handle=".v-expansion-panel-title"
+    data-test-id="schedule"
   >
     <template #item="{element, index}">
       <week-calendar :week="element" :weekNumber="index + 1" :data-test-id="`week-${index + 1}`" />
