@@ -30,11 +30,3 @@ const {t} = useI18n();
     </v-bottom-navigation>
   </v-app>
 </template>
-
-<style scoped>
-/** Fix Vuetify 3.2.3 issue */
-:deep(.v-chip) {
-  flex-basis: initial;
-  flex-grow: 0;
-}
-</style>
