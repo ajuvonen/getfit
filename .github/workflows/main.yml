@@ -1,6 +1,6 @@
-name: Cypress Tests
+name: Lint and test
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   lint:
@@ -11,7 +11,7 @@ jobs:
       - name: Lint
         uses: actions/setup-node@v3
         with:
-          node-version: 18.04
+          node-version: 18.16
       - run: npm ci
       - run: npm run lint
 
@@ -23,7 +23,7 @@ jobs:
       - name: Run tests
         uses: actions/setup-node@v3
         with:
-          node-version: 18.04
+          node-version: 18.16
       - run: npm ci
       - run: npm run test:unit
       
