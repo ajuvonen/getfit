@@ -1,5 +1,5 @@
 describe('Schedule tests', () => {
-  xit('changes schedule settings', () => {
+  it('changes schedule settings', () => {
     cy.visit('/').getByTestId('navbar-schedule-link').click();
     cy.get('.settings__icon-container input:checked')
       .should('exist')
