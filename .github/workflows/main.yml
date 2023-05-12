@@ -13,7 +13,6 @@ jobs:
         with:
           node-version: 18.16
       - run: npm ci
-      - name: Run Eslint
       - run: npm run lint
 
   unit-tests:
@@ -26,7 +25,6 @@ jobs:
         with:
           node-version: 18.16
       - run: npm ci
-      - name: Run Vitest
       - run: npm run test:unit
       
   cypress-run:
@@ -43,5 +41,4 @@ jobs:
         with:
           node-version: 18.16
       - run: npm ci
-      - name: Run Cypress
       - run: npm run dev & npx cypress run --e2e
