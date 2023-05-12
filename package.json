@@ -10,7 +10,7 @@
     "test:e2e": "cypress run --e2e",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.ts,.tsx --fix --ignore-path .gitignore",
+    "lint": "eslint . --ext .vue,.ts --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
   "dependencies": {
