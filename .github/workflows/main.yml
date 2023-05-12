@@ -32,9 +32,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Cypress run
+      - name: Cypress install
         uses: cypress-io/github-action@v5
         with:
-          build: npm run build
-          start: npm start
-          browser: firefox
+          runTets: false
+      - name: Run tests
+        uses: actions/setup-node@v3
+          with:
+            node-version: 18.16
+        - run: npm ci
+        - run: npm run dev & npx cypress run --e2e
