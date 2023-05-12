@@ -35,10 +35,10 @@ jobs:
       - name: Cypress install
         uses: cypress-io/github-action@v5
         with:
-          runTets: false
+          runTests: false
       - name: Run tests
         uses: actions/setup-node@v3
           with:
             node-version: 18.16
-        - run: npm ci
-        - run: npm run dev & npx cypress run --e2e
+      - run: npm ci
+      - run: npm run dev & npx cypress run --e2e
