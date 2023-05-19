@@ -9,4 +9,16 @@ describe('Navigation tests', () => {
       .click();
     cy.contains('h1', 'Home').location('pathname').should('eql', '/');
   });
+
+  it('changes language', () => {
+    cy.visit('/');
+    cy.getByTestId('navbar-schedule-link')
+      .should('contain.text', 'Schedule')
+      .getByTestId('app-bar-locale-fi-button')
+      .click();
+    cy.getByTestId('navbar-schedule-link').should('contain.text', 'Ohjelma')
+      .getByTestId('app-bar-locale-en-button')
+      .click();
+    cy.getByTestId('navbar-schedule-link').should('contain.text', 'Schedule');
+  });
 });
