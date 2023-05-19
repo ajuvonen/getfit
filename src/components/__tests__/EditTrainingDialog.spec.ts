@@ -31,7 +31,7 @@ describe('EditTrainingDialog', () => {
       activity: 'boxing',
       description: 'Light training at the gym',
       title: 'Sparring',
-      intensity: Intensity.LIGHT,
+      intensity: Intensity.NORMAL,
       completionSummary: '',
       location: 'Unisport Gym',
     };
@@ -42,7 +42,7 @@ describe('EditTrainingDialog', () => {
     expect(card.findByTestId('edit-training-duration').find<HTMLInputElement>('input').element.value).toBe('1');
     expect(card.findByTestId('edit-training-description').find<HTMLTextAreaElement>('textarea').element.value).toBe('Light training at the gym');
     expect(card.findByTestId('edit-training-title').find<HTMLInputElement>('input').element.value).toBe('Sparring');
-    expect(card.findByTestId('edit-training-intensity').find<HTMLInputElement>('input').element.value).toBe(Intensity.LIGHT.toString());
+    expect(card.findByTestId('edit-training-intensity').find<HTMLInputElement>('input').element.value).toBe(Intensity.NORMAL.toString());
     expect(card.findByTestId('edit-training-location').find<HTMLInputElement>('input').element.value).toBe('Unisport Gym');
   });
 });

@@ -43,12 +43,12 @@
     }
   },
   "intensities": {
-    "TRIVIAL": "Trivial",
     "LIGHT": "Light",
+    "NORMAL": "Normal",
     "MEDIUM": "Medium",
     "HEAVY": "Heavy",
-    "0": "Trivial",
-    "1": "Light",
+    "0": "Light",
+    "1": "Normal",
     "2": "Medium",
     "3": "Heavy"
   },
