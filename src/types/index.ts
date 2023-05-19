@@ -26,8 +26,8 @@ export type Schedule = {
 };
 
 export enum Intensity {
-  'TRIVIAL',
   'LIGHT',
+  'NORMAL',
   'MEDIUM',
   'HEAVY',
 }

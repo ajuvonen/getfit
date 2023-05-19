@@ -23,8 +23,8 @@ const {t} = useI18n();
 const {isSmallScreen} = useScreenSize();
 
 const tickLabels = computed(() => ({
-  [Intensity.TRIVIAL]: t('intensities.TRIVIAL'),
   [Intensity.LIGHT]: t('intensities.LIGHT'),
+  [Intensity.NORMAL]: t('intensities.NORMAL'),
   [Intensity.MEDIUM]: t('intensities.MEDIUM'),
   [Intensity.HEAVY]: t('intensities.HEAVY'),
 }));
