@@ -9,6 +9,19 @@ const {t} = useI18n();
 
 <template>
   <v-app :full-height="true">
+    <v-app-bar>
+      <template #append>
+        <v-icon icon="mdi-earth" />
+        <v-btn
+          v-for="locale in $i18n.availableLocales"
+          :key="locale"
+          :data-test-id="`app-bar-locale-${locale}-button`"
+          variant="text"
+          @click="$i18n.locale = locale"
+          >{{ locale.toUpperCase() }}</v-btn
+        >
+      </template>
+    </v-app-bar>
     <v-container :class="{'px-0': isSmallScreen, 'py-0': isSmallScreen}">
       <v-main>
         <RouterView />

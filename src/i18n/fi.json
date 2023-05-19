@@ -1,0 +1,89 @@
+{
+  "activities": {
+    "badminton": "Sulkapallo",
+    "basketball": "Koripallo",
+    "boxing": "Nyrkkeily",
+    "downhill": "Laskettelu",
+    "gym": "Kuntosali",
+    "hockey": "Jääkiekko",
+    "maintenance": "Kehonhuolto",
+    "martialarts": "Kamppailulajit",
+    "meditation": "Meditaatio",
+    "running": "Juoksu",
+    "skiing": "Hiihto",
+    "soccer": "Jalkapallo",
+    "sprint": "Pikajuoksu",
+    "swimming": "Uinti",
+    "tennis": "Tennis",
+    "walking": "Kävely"
+  },
+  "editTraining": {
+    "activity": "Laji",
+    "intensity": "Vaativuus",
+    "closeDialog": "Sulje",
+    "description": "Kuvaus",
+    "duration": "Kesto",
+    "location": "Sijainti",
+    "save": "Tallenna",
+    "title": "Muokkaa harjoitusta",
+    "trainingTitle": "Otsikko"
+  },
+  "errors": {
+    "invalidPrecision": "Käytä 15 minuutin tarkkuutta"
+  },
+  "general": {
+    "weekdays": {
+      "monday": "Maanantai",
+      "tuesday": "Tiistai",
+      "wednesday": "Keskiviikko",
+      "thursday": "Torstai",
+      "friday": "Perjantai",
+      "saturday": "Lauantai",
+      "sunday": "Sunnuntai"
+    }
+  },
+  "intensities": {
+    "LIGHT": "Kevyt",
+    "NORMAL": "Normaali",
+    "MEDIUM": "Keskitaso",
+    "HEAVY": "Raskas",
+    "0": "Kevyt",
+    "1": "Normaali",
+    "2": "Keskitaso",
+    "3": "Raskas"
+  },
+  "routes": {
+    "home": "Etusivu",
+    "print": "Tulosta",
+    "schedule": "Ohjelma"
+  },
+  "settings": {
+    "addWeek": "Lisää viikko",
+    "availableActivities": "Mahdolliset lajit",
+    "hours": "Tunnit",
+    "lockSchedule": "Lukitse ohjelma",
+    "minutes": "Minuutit",
+    "programName": "Ohjelman nimi",
+    "startOfWeek": "Viikon aloitus",
+    "title": "Ohjelman asetukset",
+    "unitOfTime": "Ajan yksikkö"
+  },
+  "trainingCard": {
+    "completionSummary": "Päiväkirja",
+    "copy": "Kopioi",
+    "deleteTraining": "Poista",
+    "editTraining": "Muokkaa",
+    "hideSummary": "Piilota päiväkirja",
+    "move": "Siirrä",
+    "moveOrCopy": "Siirrä/Kopioi'",
+    "showSummary": "Näytä päiväkirja"
+  },
+  "weekCalendar": {
+    "addTraining": "Lisää harjoitus",
+    "copyWeek": "Kopioi viikko {0}",
+    "dayChipTitle": "Harjoituksia: {0}. Enimmäisvaativuus: {1}.",
+    "deleteWeek": "Poista viikko {0}",
+    "weekChipTitle": "{0} harjoitus: {1}",
+    "weekTitle": "Viikko {0}"
+  }
+}
