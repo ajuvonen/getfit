@@ -72,8 +72,11 @@
     "completionSummary": "Completion Summary",
     "copy": "Copy",
     "deleteTraining": "Delete",
+    "duration": "Training Duration",
     "editTraining": "Edit",
     "hideSummary": "Hide Completion Summary",
+    "intensity": "Training Intensity",
+    "location": "Training Location",
     "move": "Move",
     "moveOrCopy": "Move/Copy",
     "showSummary": "Show Completion Summary"

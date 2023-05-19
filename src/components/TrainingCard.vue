@@ -35,17 +35,19 @@ const {t} = useI18n();
         size="x-large"
       />
       <v-card-title class="d-flex ml-15 flex-column justify-top">
-        <div>{{ training.title || t(`activities.${training.activity}`) }}</div>
-        <div v-if="training.duration" class="text-subtitle-2">
-          <v-icon icon="mdi-timer" />
+        <div class="training-card__title">
+          {{ training.title || t(`activities.${training.activity}`) }}
+        </div>
+        <div v-if="training.duration" class="training-card__duration text-subtitle-2">
+          <v-icon icon="mdi-timer" :aria-label="t('trainingCard.duration')" />
           {{ training.duration }} {{ schedule.unitOfTime }}
         </div>
-        <div v-if="training.location" class="text-subtitle-2">
-          <v-icon icon="mdi-map-marker" />
+        <div v-if="training.location" class="training-card__location text-subtitle-2">
+          <v-icon icon="mdi-map-marker" :aria-label="t('trainingCard.location')" />
           {{ training.location }}
         </div>
-        <div class="text-subtitle-2">
-          <v-icon icon="mdi-speedometer" />
+        <div class="training-card__intensity text-subtitle-2">
+          <v-icon icon="mdi-speedometer" :aria-label="t('trainingCard.intensity')" />
           {{ t(`intensities.${Intensity[training.intensity]}`) }}
         </div>
       </v-card-title>
@@ -55,9 +57,14 @@ const {t} = useI18n();
     </v-card-text>
     <v-card-actions class="justify-center">
       <training-card-actions v-if="!schedule.lockSchedule" :training="training" />
-      <v-btn v-else @click="toggleSummaryShown(training.id)">{{
-        t(isSummaryShown(training.id) ? 'trainingCard.hideSummary' : 'trainingCard.showSummary')
-      }}</v-btn>
+      <v-btn
+        v-else
+        class="training-card__show-summary-button"
+        @click="toggleSummaryShown(training.id)"
+        >{{
+          t(isSummaryShown(training.id) ? 'trainingCard.hideSummary' : 'trainingCard.showSummary')
+        }}</v-btn
+      >
     </v-card-actions>
   </v-card>
 </template>
