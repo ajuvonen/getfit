@@ -19,7 +19,7 @@ describe('EditTrainingDialog', () => {
 
   it('mounts', () => {
     const wrapper = mount(EditTrainingDialog);
-    expect(wrapper.exists()).toBe(true);
+    expect(wrapper.html()).toMatchSnapshot();
   });
 
   it('displays correct data', () => {

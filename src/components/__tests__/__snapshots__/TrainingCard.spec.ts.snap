@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TrainingCard > mounts 1`] = `
+"<div data-v-24c3dbf4=\\"\\" class=\\"v-card v-theme--light v-card--density-default v-card--variant-elevated training-card mx-2 mt-4 mb-2\\" style=\\"min-width: 400px;\\">
+  <!---->
+  <div class=\\"v-card__loader\\">
+    <div class=\\"v-progress-linear v-theme--light v-locale--is-ltr\\" style=\\"top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);\\" role=\\"progressbar\\" aria-hidden=\\"true\\" aria-valuemin=\\"0\\" aria-valuemax=\\"100\\">
+      <!---->
+      <div class=\\"v-progress-linear__background\\" style=\\"width: 100%;\\"></div>
+      <transition-stub name=\\"fade-transition\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+        <div class=\\"v-progress-linear__indeterminate\\">
+          <div class=\\"v-progress-linear__indeterminate long\\"></div>
+          <div class=\\"v-progress-linear__indeterminate short\\"></div>
+        </div>
+      </transition-stub>
+      <!---->
+    </div>
+  </div>
+  <!---->
+  <!---->
+  <div data-v-24c3dbf4=\\"\\" class=\\"v-card-item training-card__title-wrapper text-white\\" style=\\"background-color: rgb(255, 165, 0);\\">
+    <!---->
+    <div class=\\"v-card-item__content\\">
+      <!---->
+      <!----><i data-v-24c3dbf4=\\"\\" class=\\"mdi-boxing-glove mdi v-icon notranslate v-theme--light v-icon--size-x-large training-card__activity-icon\\" style=\\"color: rgb(255, 165, 0); caret-color: #ffa500;\\" aria-hidden=\\"true\\" title=\\"Boxing\\" aria-label=\\"Boxing\\"></i>
+      <div data-v-24c3dbf4=\\"\\" class=\\"v-card-title d-flex ml-15 flex-column justify-top\\">
+        <div data-v-24c3dbf4=\\"\\" class=\\"training-card__title\\">Boxing</div>
+        <div data-v-24c3dbf4=\\"\\" class=\\"training-card__duration text-subtitle-2\\"><i data-v-24c3dbf4=\\"\\" class=\\"mdi-timer mdi v-icon notranslate v-theme--light v-icon--size-default\\" aria-hidden=\\"true\\" aria-label=\\"Training Duration\\"></i> 1 h</div>
+        <div data-v-24c3dbf4=\\"\\" class=\\"training-card__location text-subtitle-2\\"><i data-v-24c3dbf4=\\"\\" class=\\"mdi-map-marker mdi v-icon notranslate v-theme--light v-icon--size-default\\" aria-hidden=\\"true\\" aria-label=\\"Training Location\\"></i> Total wreck gym</div>
+        <div data-v-24c3dbf4=\\"\\" class=\\"training-card__intensity text-subtitle-2\\"><i data-v-24c3dbf4=\\"\\" class=\\"mdi-speedometer mdi v-icon notranslate v-theme--light v-icon--size-default\\" aria-hidden=\\"true\\" aria-label=\\"Training Intensity\\"></i> Medium</div>
+      </div>
+    </div>
+    <!---->
+  </div>
+  <div data-v-24c3dbf4=\\"\\" class=\\"v-card-text training-card__text\\">
+    <div data-v-cdff331d=\\"\\" class=\\"training-card-summary__description text-body-1\\">Sparring at the gym</div>
+    <transition-stub data-v-cdff331d=\\"\\" name=\\"expand-transition\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+      <!--v-if-->
+    </transition-stub>
+  </div>
+  <div data-v-24c3dbf4=\\"\\" class=\\"v-card-actions justify-center\\"><button type=\\"button\\" class=\\"v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat\\"><span class=\\"v-btn__overlay\\"></span><span class=\\"v-btn__underlay\\"></span><span class=\\"v-btn__prepend\\"><i class=\\"mdi-pen mdi v-icon notranslate v-theme--light v-icon--size-default\\" aria-hidden=\\"true\\"></i></span><span class=\\"v-btn__content\\" data-no-activator=\\"\\">Edit</span>
+      <!---->
+      <!---->
+    </button><button type=\\"button\\" class=\\"v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat\\" aria-haspopup=\\"menu\\" aria-expanded=\\"false\\" aria-owns=\\"v-menu-1\\"><span class=\\"v-btn__overlay\\"></span><span class=\\"v-btn__underlay\\"></span>
+      <!----><span class=\\"v-btn__content\\" data-no-activator=\\"\\">Actions</span><span class=\\"v-btn__append\\"><i class=\\"mdi-chevron-right mdi v-icon notranslate v-theme--light v-icon--size-default\\" aria-hidden=\\"true\\"></i></span>
+      <!---->
+    </button>
+    <!--teleport start-->
+    <!--teleport end--><button type=\\"button\\" class=\\"v-btn v-theme--light text-error v-btn--density-default v-btn--size-default v-btn--variant-outlined training-card__delete-button\\"><span class=\\"v-btn__overlay\\"></span><span class=\\"v-btn__underlay\\"></span><span class=\\"v-btn__prepend\\"><i class=\\"mdi-delete mdi v-icon notranslate v-theme--light v-icon--size-default\\" aria-hidden=\\"true\\"></i></span><span class=\\"v-btn__content\\" data-no-activator=\\"\\">Delete</span>
+      <!---->
+      <!---->
+    </button>
+  </div>
+  <!---->
+  <!----><span class=\\"v-card__underlay\\"></span>
+</div>"
+`;

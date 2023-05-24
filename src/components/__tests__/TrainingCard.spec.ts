@@ -4,6 +4,7 @@ import {describe, it, expect, beforeEach} from 'vitest';
 import {v4 as uuidv4} from 'uuid';
 import TrainingCard from '@/components/TrainingCard.vue';
 import {useScheduleStore} from '@/stores/schedule';
+import {useAppStateStore} from '@/stores/appState';
 import {Intensity, type Training} from '@/types';
 
 const basicTraining = {
@@ -21,8 +22,10 @@ const basicTraining = {
 
 describe('TrainingCard', () => {
   const scheduleStore = useScheduleStore();
+  const appStateStore = useAppStateStore();
 
   beforeEach(() => {
+    appStateStore.$reset();
     scheduleStore.$reset();
   });
 
@@ -32,7 +35,7 @@ describe('TrainingCard', () => {
         training: basicTraining,
       },
     });
-    expect(wrapper.exists()).toBe(true);
+    expect(wrapper.html()).toMatchSnapshot();
   });
 
   it('shows basic data', () => {
