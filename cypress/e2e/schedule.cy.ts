@@ -1,20 +1,20 @@
 describe('Schedule tests', () => {
   it('changes schedule settings', () => {
     cy.visit('/').getByTestId('navbar-schedule-link').click();
-    cy.get('.settings__icon-container input:checked')
+    cy.get('.schedule-settings__icon-container input:checked')
       .should('exist')
-      .getByTestId('settings-toggle-all-activities')
+      .getByTestId('schedule-settings-toggle-all-activities')
       .click();
-    cy.get('.settings__icon-container input:checked')
+    cy.get('.schedule-settings__icon-container input:checked')
       .should('not.exist')
-      .getByTestId('settings-activity-badminton')
+      .get('#schedule-settings-activity-badminton')
       .click();
-    cy.getByTestId('settings-activity-walking').click();
-    cy.getByTestId('settings-add-week').click();
+    cy.get('#schedule-settings-activity-walking').click();
+    cy.getByTestId('schedule-settings-add-week-button').click();
     cy.getByTestId('week-1').click();
     cy.getByTestId('week-1-calendar-tab-0')
       .should('contain.text', 'Monday')
-      .getByTestId('settings-start-of-week-sunday')
+      .getByTestId('schedule-settings-start-of-week-sunday')
       .click();
     cy.getByTestId('week-1-calendar-tab-0')
       .should('contain.text', 'Sunday')
@@ -33,7 +33,7 @@ describe('Schedule tests', () => {
       .find('.v-text-field__suffix')
       .should('contain.text', 'h');
     cy.getByTestId('edit-training-close-button').click();
-    cy.getByTestId('settings-unit-of-time-m').click();
+    cy.getByTestId('schedule-settings-unit-of-time-m').click();
     cy.getByTestId('week-1-day-0-add-training-button').click();
     cy.getByTestId('edit-training-duration')
       .children()
@@ -43,7 +43,7 @@ describe('Schedule tests', () => {
 
   it('adds new trainings', () => {
     cy.visit('/').getByTestId('navbar-schedule-link').click();
-    cy.getByTestId('settings-add-week').click();
+    cy.getByTestId('schedule-settings-add-week-button').click();
     cy.getByTestId('week-1').click();
     cy.getByTestId('week-1-calendar-tab-1').click();
     cy.getByTestId('week-1-day-1-add-training-button')
