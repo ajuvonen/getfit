@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Run tests
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18.16
@@ -36,7 +36,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           runTests: false
-      - name: Run tests
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18.16
