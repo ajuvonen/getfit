@@ -42,6 +42,9 @@
       "sunday": "Sunday"
     }
   },
+  "home": {
+    "title": "Welcome to GetFit"
+  },
   "intensities": {
     "LIGHT": "Light",
     "NORMAL": "Normal",
@@ -51,6 +54,9 @@
     "1": "Normal",
     "2": "Medium",
     "3": "Heavy"
+  },
+  "print": {
+    "title": "Print Schedule"
   },
   "routes": {
     "home": "Home",
@@ -69,6 +75,7 @@
     "unitOfTime": "Unit of Time"
   },
   "trainingCard": {
+    "actions": "Actions",
     "completionSummary": "Completion Summary",
     "copy": "Copy",
     "deleteTraining": "Delete",
@@ -78,7 +85,6 @@
     "intensity": "Training Intensity",
     "location": "Training Location",
     "move": "Move",
-    "moveOrCopy": "Move/Copy",
     "showSummary": "Show Completion Summary"
   },
   "weekCalendar": {

@@ -24,7 +24,7 @@ const {weekdays} = useWeekDays();
   <v-menu location="end" :close-on-content-click="false">
     <template v-slot:activator="{props}">
       <v-btn append-icon="mdi-chevron-right" variant="flat" v-bind="props">
-        {{ t('trainingCard.moveOrCopy') }}
+        {{ t('trainingCard.actions') }}
       </v-btn>
     </template>
     <v-list open-strategy="single">
