@@ -94,4 +94,16 @@ describe('TrainingCard', () => {
     expect(wrapper.find('.training-card__delete-button').exists()).toBe(false);
     expect(wrapper.find('.training-card__show-summary-button').exists()).toBe(true);
   });
+
+  it('actions work', () => {
+    const wrapper = mount(TrainingCard, {
+      props: {
+        training: basicTraining,
+      },
+    });
+    wrapper.find('.training-card__delete-button').trigger('click');
+    wrapper.find('.training-card__edit-button').trigger('click');
+    expect(scheduleStore.removeTraining).toHaveBeenCalledOnce();
+    expect(appStateStore.openEditTrainingDialog).toHaveBeenCalledOnce();
+  })
 });
