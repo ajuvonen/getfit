@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TrainingCard > mounts 1`] = `
+"<div data-v-d91f3409=\\"\\" class=\\"simple-training-card\\">
+  <div data-v-d91f3409=\\"\\" class=\\"simple-training-card__title\\"><i data-v-d91f3409=\\"\\" class=\\"mdi-boxing-glove mdi v-icon notranslate v-theme--light v-icon--size-default simple-training-card__activity-icon\\" aria-hidden=\\"true\\" title=\\"Boxing\\" aria-label=\\"Boxing\\"></i> Boxing</div>
+  <div data-v-d91f3409=\\"\\" class=\\"simple-training-card__duration\\"><i data-v-d91f3409=\\"\\" class=\\"mdi-timer mdi v-icon notranslate v-theme--light v-icon--size-default\\" aria-hidden=\\"true\\" aria-label=\\"Training Duration\\"></i> 1 h</div>
+  <div data-v-d91f3409=\\"\\" class=\\"simple-training-card__location\\"><i data-v-d91f3409=\\"\\" class=\\"mdi-map-marker mdi v-icon notranslate v-theme--light v-icon--size-default\\" aria-hidden=\\"true\\" aria-label=\\"Training Location\\"></i> Total wreck gym</div>
+  <div data-v-d91f3409=\\"\\" class=\\"simple-training-card__intensity\\"><i data-v-d91f3409=\\"\\" class=\\"mdi-speedometer mdi v-icon notranslate v-theme--light v-icon--size-default\\" aria-hidden=\\"true\\" aria-label=\\"Training Intensity\\"></i> Medium</div>
+</div>"
+`;
