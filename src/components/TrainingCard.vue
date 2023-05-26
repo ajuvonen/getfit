@@ -5,8 +5,8 @@ import {Intensity, type Training} from '@/types';
 import {getIcon, getIntensityColor} from '@/utils';
 import {ACTIVITIES} from '@/constants';
 import {useI18n} from 'vue-i18n';
-import TrainingCardSummary from './TrainingCardSummary.vue';
-import TrainingCardActions from './TrainingCardActions.vue';
+import TrainingCardSummary from '@/components/TrainingCardSummary.vue';
+import TrainingCardActions from '@/components/TrainingCardActions.vue';
 import {useAppStateStore} from '@/stores/appState';
 
 defineProps<{

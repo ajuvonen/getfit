@@ -18,7 +18,7 @@ const {t} = useI18n();
 const {weekdays} = useWeekDays();
 </script>
 <template>
-  <v-btn prepend-icon="mdi-pen" variant="flat" @click="openEditTrainingDialog(training)">{{
+  <v-btn prepend-icon="mdi-pen" variant="flat" class="training-card__edit-button" @click="openEditTrainingDialog(training)">{{
     t('trainingCard.editTraining')
   }}</v-btn>
   <v-menu location="end" :close-on-content-click="false">
