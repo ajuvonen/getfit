@@ -19,7 +19,7 @@ const basicTraining = {
   location: 'Total wreck gym',
 } as Training;
 
-describe('TrainingCard', () => {
+describe('SimpleTrainingCard', () => {
   const scheduleStore = useScheduleStore();
   const appStateStore = useAppStateStore();
 

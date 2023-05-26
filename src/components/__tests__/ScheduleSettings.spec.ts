@@ -6,7 +6,7 @@ import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
 import {VSwitch} from 'vuetify/components/VSwitch';
 
-describe('EditTrainingDialog', () => {
+describe('ScheduleSettings', () => {
   const scheduleStore = useScheduleStore();
   const appStateStore = useAppStateStore();
 
