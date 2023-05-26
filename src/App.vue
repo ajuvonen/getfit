@@ -43,3 +43,10 @@ const {t} = useI18n();
     </v-bottom-navigation>
   </v-app>
 </template>
+<style lang="scss" scoped>
+@media print {
+  header {
+    display: none;
+  }
+}
+</style>
