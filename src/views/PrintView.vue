@@ -20,6 +20,7 @@ const trainingsByDay = computed(() => (week: Week) =>
 
 <template>
   <h1 class="text-h3 text-center">{{ schedule.name || t('print.title') }}</h1>
+  <p class="text-center mt-10 mb-10">{{ t('print.guide') }}</p>
   <v-table v-for="(week, index) in schedule.weeks" :key="week.id" class="print-view__table">
     <template #top>
       <h3>{{ t('weekCalendar.weekTitle', [index + 1]) }}</h3>
@@ -50,8 +51,8 @@ const trainingsByDay = computed(() => (week: Week) =>
   }
 }
 
-.print-view__table {
-  margin-top: 1rem;
+th {
+  vertical-align: top;
 }
 
 @media print {

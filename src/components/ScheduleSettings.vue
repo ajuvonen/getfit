@@ -38,7 +38,7 @@ const v$ = useVuelidate(
 );
 </script>
 <template>
-  <v-card class="mx-auto mt-10 mb-10">
+  <v-card class="mx-auto mb-10">
     <v-card-text>
       <v-expansion-panels v-model="settingsOpen">
         <v-expansion-panel elevation="0">
