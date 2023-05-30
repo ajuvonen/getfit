@@ -41,4 +41,5 @@ jobs:
         with:
           node-version: 18.16
       - run: npm ci
-      - run: npm run dev & npx cypress run --e2e
+      - run: npm run build
+      - run: npm run preview & npm run test:e2e
