@@ -51,6 +51,10 @@ const trainingsByDay = computed(() => (week: Week) =>
   }
 }
 
+thead th {
+  text-transform: uppercase;
+}
+
 th {
   vertical-align: top;
 }
