@@ -41,13 +41,32 @@ describe('Schedule tests', () => {
       .should('contain.text', 'm');
   });
 
+  it('settings work in print view', () => {
+    cy.visit('/').getByTestId('navbar-schedule-link').click();
+    cy.getByTestId('schedule-settings-add-week-button').click();
+    cy.getByTestId('navbar-print-link').click();
+    cy.get('thead th:first-child').should('contain.text', 'Monday');
+    cy.getByTestId('navbar-schedule-link').click();
+    cy.getByTestId('schedule-settings-start-of-week-sunday').click();
+    cy.getByTestId('week-1').click();
+    cy.getByTestId('week-1-calendar-tab-1').click();
+    cy.getByTestId('week-1-day-1-add-training-button').click();
+    cy.getByTestId('edit-training-activity').click();
+    cy.get('.v-list-item:first-child').click();
+    cy.getByTestId('edit-training-duration').find('input').type('1.5');
+    cy.getByTestId('edit-training-save-button').click();
+    cy.getByTestId('schedule-settings-unit-of-time-m').click();
+    cy.getByTestId('navbar-print-link').click();
+    cy.get('thead th:first-child').should('contain.text', 'Sunday');
+    cy.get('.simple-training-card__duration').should('contain.text', '90 m');
+  });
+
   it('adds new trainings', () => {
     cy.visit('/').getByTestId('navbar-schedule-link').click();
     cy.getByTestId('schedule-settings-add-week-button').click();
     cy.getByTestId('week-1').click();
     cy.getByTestId('week-1-calendar-tab-1').click();
-    cy.getByTestId('week-1-day-1-add-training-button')
-      .click();
+    cy.getByTestId('week-1-day-1-add-training-button').click();
     cy.getByTestId('edit-training-activity').click();
     cy.get('.v-list-item:first-child').click();
     cy.getByTestId('edit-training-title').type('My training');
