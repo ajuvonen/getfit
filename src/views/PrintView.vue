@@ -5,6 +5,7 @@ import {storeToRefs} from 'pinia';
 import useWeekDays from '@/hooks/weekdays';
 import {useScheduleStore} from '@/stores/schedule';
 import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
+import WeekSupplement from '@/components/WeekSupplement.vue';
 import type {Week} from '@/types';
 
 const scheduleStore = useScheduleStore();
@@ -19,25 +20,50 @@ const trainingsByDay = computed(() => (week: Week) =>
 </script>
 
 <template>
-  <h1 class="text-h3 text-center">{{ schedule.name || t('print.title') }}</h1>
-  <p class="text-center mt-10 mb-10">{{ t('print.guide') }}</p>
-  <v-table v-for="(week, index) in schedule.weeks" :key="week.id" class="print-view__table">
-    <template #top>
-      <h3>{{ t('weekCalendar.weekTitle', [index + 1]) }}</h3>
-    </template>
-    <thead>
-      <tr>
-        <th v-for="day in weekdays" :key="day">{{ day }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th v-for="(trainings, index) in trainingsByDay(week)" :key="index">
-          <simple-training-card v-for="training in trainings" :key="training.id" :training="training" />
-        </th>
-      </tr>
-    </tbody>
-  </v-table>
+  <h1 class="text-h3 text-center d-print-none">{{ schedule.name || t('print.title') }}</h1>
+  <p class="text-center text-subtitle-1 mt-10 mb-10 d-print-none">{{ t('print.guide') }}</p>
+  <div v-for="(week, weekIndex) in schedule.weeks" :key="week.id" class="print-view__table-container">
+    <v-table class="print-view__table">
+      <template #top>
+        <h2 class="text-h5 pl-4">{{ t('weekCalendar.weekTitle', [weekIndex + 1]) }}</h2>
+      </template>
+      <thead>
+        <tr>
+          <th v-for="day in weekdays" :key="day">{{ day }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td v-for="(trainings, dayIndex) in trainingsByDay(week)" :key="dayIndex">
+            <simple-training-card
+              v-for="training in trainings"
+              :key="training.id"
+              :training="training"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </v-table>
+    <v-table class="print-view__table">
+      <template #top>
+        <h3 class="text-h5 pl-4">{{ t('print.supplement', [weekIndex + 1]) }}</h3>
+      </template>
+      <thead>
+        <tr>
+          <th width="60%">{{ t('print.instructions')}}</th>
+          <th>{{ t('print.notes') }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <week-supplement v-for="(trainings, dayIndex) in trainingsByDay(week)" :key="dayIndex" :trainings="trainings" :dayIndex="dayIndex" />
+          </td>
+          <td class="print-view__notes"></td>
+        </tr>
+      </tbody>
+    </v-table>
+  </div>
 </template>
 <style lang="scss" scoped>
 .simple-training-card + .simple-training-card {
@@ -51,12 +77,23 @@ const trainingsByDay = computed(() => (week: Week) =>
   }
 }
 
-thead th {
+th {
   text-transform: uppercase;
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
 }
 
-th {
+td {
   vertical-align: top;
+}
+
+@media screen {
+  .print-view__table-container {
+    margin-top: 4rem;
+  }
+
+  .print-view__table + .print-view__table {
+    margin-top: 2rem;
+  }
 }
 
 @media print {
