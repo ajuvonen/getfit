@@ -21,7 +21,7 @@ const {toggleSummaryShown} = appStateStore;
 const {t} = useI18n();
 </script>
 <template>
-  <v-card class="training-card mx-2 mt-4 mb-2" min-width="400">
+  <v-card class="training-card mx-2 mt-4 mb-2" min-width="400" max-width="400">
     <v-card-item
       class="training-card__title-wrapper text-white"
       :style="{'background-color': getIntensityColor(training.intensity)}"

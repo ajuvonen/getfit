@@ -105,7 +105,7 @@ const v$ = useVuelidate(
               <div
                 v-for="activity in localizedActivities"
                 :key="activity.value"
-                class="schedule-settings__icon-container"
+                class="schedule-settings__icon-container d-inline-flex"
               >
                 <v-checkbox-btn
                   :id="`schedule-settings-activity-${activity.value}`"
@@ -155,7 +155,6 @@ const v$ = useVuelidate(
 }
 
 .schedule-settings__icon-container {
-  display: inline-flex;
   align-items: center;
   width: 12rem;
 }

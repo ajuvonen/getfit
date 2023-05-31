@@ -9,7 +9,7 @@ const {t} = useI18n();
 
 <template>
   <v-app :full-height="true">
-    <v-app-bar>
+    <v-app-bar class="d-print-none">
       <template #append>
         <v-icon icon="mdi-earth" />
         <v-btn
@@ -27,7 +27,7 @@ const {t} = useI18n();
         <RouterView />
       </v-main>
     </v-container>
-    <v-bottom-navigation grow>
+    <v-bottom-navigation grow class="d-print-none">
       <v-btn to="/" value="home" data-test-id="navbar-home-link">
         <v-icon icon="mdi-home" />
         {{ t('routes.home') }}
@@ -45,8 +45,8 @@ const {t} = useI18n();
 </template>
 <style lang="scss" scoped>
 @media print {
-  header {
-    display: none;
+  .v-main {
+    padding: 0;
   }
 }
 </style>
