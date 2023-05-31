@@ -56,8 +56,11 @@
     "3": "Heavy"
   },
   "print": {
-    "title": "Print Schedule",
-    "guide": "For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows."
+    "guide": "For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows.",
+    "instructions": "Instructions",
+    "notes": "Notes",
+    "supplement": "Supplement for Week {0}",
+    "title": "Print Schedule"
   },
   "routes": {
     "home": "Home",
@@ -95,5 +98,8 @@
     "deleteWeek": "Delete Week {0}",
     "weekChipTitle": "{0} trainings: {1}",
     "weekTitle": "Week {0}"
+  },
+  "weekSupplement": {
+    "noInstruction": "No instructions"
   }
 }

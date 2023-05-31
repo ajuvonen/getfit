@@ -56,6 +56,10 @@
     "3": "Raskas"
   },
   "print": {
+    "guide": "Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista.",
+    "instructions": "Ohjeet",
+    "notes": "Muistiinpanot",
+    "supplement": "Lisämateriaali viikolle {0}",
     "title": "Tulosta ohjelma"
   },
   "routes": {
@@ -94,5 +98,8 @@
     "deleteWeek": "Poista viikko {0}",
     "weekChipTitle": "{0} harjoitus: {1}",
     "weekTitle": "Viikko {0}"
+  },
+  "weekSupplement": {
+    "noInstruction": "Ei ohjeita"
   }
 }
