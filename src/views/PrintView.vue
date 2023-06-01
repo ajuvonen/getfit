@@ -11,9 +11,9 @@ import type {Week} from '@/types';
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
 const {t} = useI18n();
-const {weekdays} = useWeekDays();
+const {shortWeekdays} = useWeekDays();
 const trainingsByDay = computed(() => (week: Week) =>
-  weekdays.value.map((weekDay, weekdayIndex) =>
+  shortWeekdays.value.map((weekDay, weekdayIndex) =>
     week.trainings.filter(({dayIndex}) => dayIndex === weekdayIndex)
   )
 );
@@ -22,14 +22,18 @@ const trainingsByDay = computed(() => (week: Week) =>
 <template>
   <h1 class="text-h3 text-center d-print-none">{{ schedule.name || t('print.title') }}</h1>
   <p class="text-center text-subtitle-1 mt-10 mb-10 d-print-none">{{ t('print.guide') }}</p>
-  <div v-for="(week, weekIndex) in schedule.weeks" :key="week.id" class="print-view__table-container">
+  <div
+    v-for="(week, weekIndex) in schedule.weeks"
+    :key="week.id"
+    class="print-view__table-container"
+  >
     <v-table class="print-view__table">
       <template #top>
         <h2 class="text-h5 pl-4">{{ t('weekCalendar.weekTitle', [weekIndex + 1]) }}</h2>
       </template>
       <thead>
         <tr>
-          <th v-for="day in weekdays" :key="day">{{ day }}</th>
+          <th v-for="day in shortWeekdays" :key="day">{{ day }}</th>
         </tr>
       </thead>
       <tbody>
@@ -50,16 +54,21 @@ const trainingsByDay = computed(() => (week: Week) =>
       </template>
       <thead>
         <tr>
-          <th width="60%">{{ t('print.instructions')}}</th>
+          <th width="60%">{{ t('print.instructions') }}</th>
           <th>{{ t('print.notes') }}</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
-            <week-supplement v-for="(trainings, dayIndex) in trainingsByDay(week)" :key="dayIndex" :trainings="trainings" :dayIndex="dayIndex" />
+            <week-supplement
+              v-for="(trainings, dayIndex) in trainingsByDay(week)"
+              :key="dayIndex"
+              :trainings="trainings"
+              :dayIndex="dayIndex"
+            />
           </td>
-          <td class="print-view__notes"></td>
+          <td></td>
         </tr>
       </tbody>
     </v-table>
@@ -100,6 +109,7 @@ td {
   .print-view__table {
     page-break-after: always;
     break-after: page;
+    height: 100vh;
   }
 }
 </style>

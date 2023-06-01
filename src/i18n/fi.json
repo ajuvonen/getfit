@@ -40,6 +40,15 @@
       "friday": "Perjantai",
       "saturday": "Lauantai",
       "sunday": "Sunnuntai"
+    },
+    "shortWeekdays": {
+      "monday": "Ma",
+      "tuesday": "Ti",
+      "wednesday": "Ke",
+      "thursday": "To",
+      "friday": "Pe",
+      "saturday": "La",
+      "sunday": "Su"
     }
   },
   "home": {
