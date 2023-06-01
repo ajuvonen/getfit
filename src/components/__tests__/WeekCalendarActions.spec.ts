@@ -34,9 +34,9 @@ describe('WeekCalendarActions', () => {
         weekId: weekId,
       },
     });
-    wrapper.findByTestId('week-1-day-0-add-training-button').trigger('click');
-    wrapper.findByTestId('week-1-day-0-copy-button').trigger('click');
-    wrapper.findByTestId('week-1-day-0-delete-button').trigger('click');
+    wrapper.findByTestId('week-1-add-training-button').trigger('click');
+    wrapper.findByTestId('week-1-copy-button').trigger('click');
+    wrapper.findByTestId('week-1-delete-button').trigger('click');
     expect(appStateStore.openNewTrainingDialog).toHaveBeenCalledWith(weekId, 0);
     expect(scheduleStore.copyWeek).toHaveBeenCalledWith(weekId);
     expect(scheduleStore.deleteWeek).toHaveBeenCalledWith(weekId);

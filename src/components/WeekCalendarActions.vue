@@ -19,7 +19,7 @@ const {t} = useI18n();
 <template>
   <div class="week-calendar__actions d-flex mt-4" :class="{'flex-column': isSmallScreen}">
     <v-btn
-      :data-test-id="`week-${weekNumber}-day-${dayIndex}-add-training-button`"
+      :data-test-id="`week-${weekNumber}-add-training-button`"
       prepend-icon="mdi-plus"
       variant="flat"
       @click="openNewTrainingDialog(weekId, dayIndex)"
@@ -27,7 +27,7 @@ const {t} = useI18n();
     >
     <v-btn
       :aria-label="t('weekCalendar.copyWeek', [weekNumber])"
-      :data-test-id="`week-${weekNumber}-day-${dayIndex}-copy-button`"
+      :data-test-id="`week-${weekNumber}-copy-button`"
       prepend-icon="mdi-content-copy"
       variant="flat"
       @click="copyWeek(weekId)"
@@ -35,7 +35,7 @@ const {t} = useI18n();
     >
     <v-btn
       :aria-label="t('weekCalendar.deleteWeek', [weekNumber])"
-      :data-test-id="`week-${weekNumber}-day-${dayIndex}-delete-button`"
+      :data-test-id="`week-${weekNumber}-delete-button`"
       color="error"
       variant="outlined"
       prepend-icon="mdi-delete"
