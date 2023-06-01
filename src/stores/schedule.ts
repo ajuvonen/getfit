@@ -59,7 +59,7 @@ export const useScheduleStore = defineStore('schedule', {
         targetWeek.trainings.push(training);
       }
     },
-    removeTraining(training: Training) {
+    deleteTraining(training: Training) {
       const [targetWeek] = this.getTargetWeekAndTraining(training.weekId);
       targetWeek.trainings = targetWeek.trainings.filter(({id}) => id !== training.id);
     },

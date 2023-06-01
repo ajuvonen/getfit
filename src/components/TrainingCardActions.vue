@@ -11,7 +11,7 @@ defineProps<{
 }>();
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
-const {removeTraining, moveTraining, copyTraining} = scheduleStore;
+const {deleteTraining, moveTraining, copyTraining} = scheduleStore;
 const appStateStore = useAppStateStore();
 const {openEditTrainingDialog} = appStateStore;
 const {t} = useI18n();
@@ -76,7 +76,7 @@ const {weekdays} = useWeekDays();
     variant="outlined"
     color="error"
     class="training-card__delete-button"
-    @click="removeTraining(training)"
+    @click="deleteTraining(training)"
     >{{ t('trainingCard.deleteTraining') }}</v-btn
   >
 </template>

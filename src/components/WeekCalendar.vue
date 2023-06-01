@@ -5,8 +5,8 @@ import {useI18n} from 'vue-i18n';
 import {groupBy, pluck} from 'ramda';
 import DraggableList from 'vuedraggable';
 import {useScheduleStore} from '@/stores/schedule';
-import {useAppStateStore} from '@/stores/appState';
 import TrainingCard from '@/components/TrainingCard.vue';
+import WeekCalendarActions from '@/components/WeekCalendarActions.vue';
 import {type Week, Intensity, type Training} from '@/types';
 import {getIntensityColor} from '@/utils';
 import useScreenSize from '@/hooks/screenSize';
@@ -19,8 +19,7 @@ const props = defineProps<{
 
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
-const {openNewTrainingDialog} = useAppStateStore();
-const {deleteWeek, copyWeek, reorderTrainings} = scheduleStore;
+const {reorderTrainings} = scheduleStore;
 const {t} = useI18n();
 const {isSmallScreen} = useScreenSize();
 const {weekdays} = useWeekDays();
@@ -116,32 +115,12 @@ const groupedTrainings = computed(() => {
               </li>
             </template>
           </draggable-list>
-          <div v-if="!schedule.lockSchedule" class="week-calendar__actions d-flex mt-4" :class="{'flex-column': isSmallScreen}">
-            <v-btn
-              :data-test-id="`week-${weekNumber}-day-${dayIndex}-add-training-button`"
-              prepend-icon="mdi-plus"
-              variant="flat"
-              @click="openNewTrainingDialog(week.id, dayIndex)"
-              >{{ t('weekCalendar.addTraining') }}</v-btn
-            >
-            <v-btn
-              :aria-label="t('weekCalendar.copyWeek', [weekNumber])"
-              :data-test-id="`week-${weekNumber}-day-${dayIndex}-copy-button`"
-              prepend-icon="mdi-content-copy"
-              variant="flat"
-              @click="copyWeek(week.id)"
-              >{{ t('weekCalendar.copyWeek') }}</v-btn
-            >
-            <v-btn
-              :aria-label="t('weekCalendar.deleteWeek', [weekNumber])"
-              :data-test-id="`week-${weekNumber}-day-${dayIndex}-delete-button`"
-              color="error"
-              variant="outlined"
-              prepend-icon="mdi-delete"
-              @click="deleteWeek(week.id)"
-              >{{ t('weekCalendar.deleteWeek') }}</v-btn
-            >
-          </div>
+          <week-calendar-actions
+            v-if="!schedule.lockSchedule"
+            :weekId="week.id"
+            :weekNumber="weekNumber"
+            :dayIndex="dayIndex"
+          ></week-calendar-actions>
         </v-window-item>
       </v-window>
     </v-expansion-panel-text>
@@ -158,5 +137,4 @@ ul {
     align-items: stretch;
   }
 }
-
 </style>
