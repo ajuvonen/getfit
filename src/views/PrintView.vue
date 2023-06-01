@@ -6,6 +6,7 @@ import useWeekDays from '@/hooks/weekdays';
 import {useScheduleStore} from '@/stores/schedule';
 import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
 import WeekSupplement from '@/components/WeekSupplement.vue';
+import PrintViewTable from '@/components/PrintViewTable.vue';
 import type {Week} from '@/types';
 
 const scheduleStore = useScheduleStore();
@@ -27,16 +28,13 @@ const trainingsByDay = computed(() => (week: Week) =>
     :key="week.id"
     class="print-view__table-container"
   >
-    <v-table class="print-view__table">
-      <template #top>
-        <h2 class="text-h5 pl-4">{{ t('weekCalendar.weekTitle', [weekIndex + 1]) }}</h2>
-      </template>
-      <thead>
+    <print-view-table :tableTitle="t('weekCalendar.weekTitle', [weekIndex + 1])">
+      <template #header>
         <tr>
           <th v-for="day in shortWeekdays" :key="day">{{ day }}</th>
         </tr>
-      </thead>
-      <tbody>
+      </template>
+      <template #body>
         <tr>
           <td v-for="(trainings, dayIndex) in trainingsByDay(week)" :key="dayIndex">
             <simple-training-card
@@ -46,19 +44,16 @@ const trainingsByDay = computed(() => (week: Week) =>
             />
           </td>
         </tr>
-      </tbody>
-    </v-table>
-    <v-table class="print-view__table">
-      <template #top>
-        <h3 class="text-h5 pl-4">{{ t('print.supplement', [weekIndex + 1]) }}</h3>
       </template>
-      <thead>
+    </print-view-table>
+    <print-view-table :tableTitle="t('print.supplement', [weekIndex + 1])">
+      <template #header>
         <tr>
           <th width="60%">{{ t('print.instructions') }}</th>
           <th>{{ t('print.notes') }}</th>
         </tr>
-      </thead>
-      <tbody>
+      </template>
+      <template #body>
         <tr>
           <td>
             <week-supplement
@@ -70,8 +65,8 @@ const trainingsByDay = computed(() => (week: Week) =>
           </td>
           <td></td>
         </tr>
-      </tbody>
-    </v-table>
+      </template>
+    </print-view-table>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -102,14 +97,6 @@ td {
 
   .print-view__table + .print-view__table {
     margin-top: 2rem;
-  }
-}
-
-@media print {
-  .print-view__table {
-    page-break-after: always;
-    break-after: page;
-    height: 100vh;
   }
 }
 </style>
