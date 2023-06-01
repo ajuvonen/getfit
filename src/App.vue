@@ -48,5 +48,9 @@ const {t} = useI18n();
   .v-main {
     padding: 0;
   }
+  .v-container {
+    margin: 0;
+    padding: 0;
+  }
 }
 </style>
