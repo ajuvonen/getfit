@@ -4,7 +4,7 @@ it('shows content in print view', () => {
   cy.getByTestId('schedule-settings-add-week-button').click();
   cy.getByTestId('week-1').click();
   cy.getByTestId('week-1-calendar-tab-1').click();
-  cy.getByTestId('week-1-day-1-add-training-button')
+  cy.getByTestId('week-1-add-training-button')
     .click();
   cy.getByTestId('edit-training-activity').click();
   cy.get('.v-list-item:first-child').click();

@@ -22,11 +22,12 @@ const {schedule} = storeToRefs(scheduleStore);
 const {reorderTrainings} = scheduleStore;
 const {t} = useI18n();
 const {isSmallScreen} = useScreenSize();
-const {weekdays} = useWeekDays();
-const tab = ref(0);
+const {weekdays, shortWeekdays} = useWeekDays();
+const activeDay = ref(0);
 
 const tabContent = computed(() => {
-  return weekdays.value.map((weekDay, weekdayIndex) => {
+  const days = isSmallScreen.value ? shortWeekdays : weekdays;
+  return days.value.map((weekDay, weekdayIndex) => {
     const trainings = props.week.trainings.filter(({dayIndex}) => dayIndex === weekdayIndex);
     const maxIntensity = Math.max(...pluck('intensity', trainings));
 
@@ -62,7 +63,7 @@ const groupedTrainings = computed(() => {
       >
     </v-expansion-panel-title>
     <v-expansion-panel-text>
-      <v-tabs v-model="tab" grow show-arrows>
+      <v-tabs v-model="activeDay" grow show-arrows>
         <v-tab
           v-for="({weekDay, trainings, maxIntensity}, dayIndex) in tabContent"
           :key="weekDay"
@@ -90,13 +91,11 @@ const groupedTrainings = computed(() => {
           >
         </v-tab>
       </v-tabs>
-      <v-window v-model="tab">
+      <v-window v-model="activeDay">
         <v-window-item
           v-for="({trainings}, dayIndex) in tabContent"
           :key="dayIndex"
           :value="dayIndex"
-          :transition="false"
-          :reverse-transition="false"
           :data-test-id="`week-${weekNumber}-day-${dayIndex}`"
         >
           <draggable-list
@@ -115,14 +114,14 @@ const groupedTrainings = computed(() => {
               </li>
             </template>
           </draggable-list>
-          <week-calendar-actions
-            v-if="!schedule.lockSchedule"
-            :weekId="week.id"
-            :weekNumber="weekNumber"
-            :dayIndex="dayIndex"
-          ></week-calendar-actions>
         </v-window-item>
       </v-window>
+      <week-calendar-actions
+        v-if="!schedule.lockSchedule"
+        :weekId="week.id"
+        :weekNumber="weekNumber"
+        :dayIndex="activeDay"
+      ></week-calendar-actions>
     </v-expansion-panel-text>
   </v-expansion-panel>
 </template>
