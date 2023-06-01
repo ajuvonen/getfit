@@ -42,7 +42,7 @@ const decimalRegex = helpers.regex(/^\d+(.(00?|25|50?|75))?$/);
 
 const rules = computed(() => ({
   title: {maxLength: maxLength(30)},
-  location: {maxLength: maxLength(30)},
+  location: {maxLength: maxLength(40)},
   description: {maxLength: maxLength(2000)},
   duration: {
     required,
@@ -115,7 +115,7 @@ const resetAndClose = () => {
             v-model="trainingData.location"
             :label="t('editTraining.location')"
             :error-messages="getValidationErrors(v$.location)"
-            maxlength="50"
+            maxlength="40"
             counter
             data-test-id="edit-training-location"
             @input="v$.location.$touch"
