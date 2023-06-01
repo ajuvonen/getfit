@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PrintViewTable > mounts 1`] = `
+"<div class=\\"v-table v-table--has-top v-theme--light v-table--density-default print-view__table\\">
+  <h2 class=\\"text-h5 pl-4\\">My table</h2>
+  <div class=\\"v-table__wrapper\\">
+    <table>
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <!---->
+</div>"
+`;
