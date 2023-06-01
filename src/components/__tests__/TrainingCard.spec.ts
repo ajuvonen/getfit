@@ -103,7 +103,7 @@ describe('TrainingCard', () => {
     });
     wrapper.find('.training-card__delete-button').trigger('click');
     wrapper.find('.training-card__edit-button').trigger('click');
-    expect(scheduleStore.removeTraining).toHaveBeenCalledOnce();
+    expect(scheduleStore.deleteTraining).toHaveBeenCalledOnce();
     expect(appStateStore.openEditTrainingDialog).toHaveBeenCalledOnce();
-  })
+  });
 });
