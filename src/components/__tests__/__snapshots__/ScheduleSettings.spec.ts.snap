@@ -52,7 +52,8 @@ exports[`ScheduleSettings > mounts 1`] = `
                       <!----><label class=\\"v-label v-field-label\\" for=\\"schedule-settings-program-name\\">
                         <!---->Program Name
                       </label>
-                      <!----><input size=\\"1\\" type=\\"text\\" id=\\"schedule-settings-program-name\\" aria-describedby=\\"schedule-settings-program-name-messages\\" maxlength=\\"30\\" class=\\"v-field__input\\">
+                      <!---->
+                      <div class=\\"v-field__input\\" data-no-activator=\\"\\"><input size=\\"1\\" type=\\"text\\" id=\\"schedule-settings-program-name\\" aria-describedby=\\"schedule-settings-program-name-messages\\" maxlength=\\"30\\"></div>
                       <!---->
                     </div>
                     <!---->
