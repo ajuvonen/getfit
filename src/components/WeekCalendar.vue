@@ -41,7 +41,7 @@ const tabContent = computed(() => {
 
 const groupedTrainings = computed(() => {
   const trainings = groupBy(({intensity}) => intensity.toString(), props.week.trainings);
-  return trainings;
+  return trainings as Record<string, Training[]>;
 });
 </script>
 <template>
