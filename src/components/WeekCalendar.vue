@@ -12,7 +12,7 @@ import {getIntensityColor} from '@/utils';
 import useScreenSize from '@/hooks/screenSize';
 import useWeekDays from '@/hooks/weekdays';
 
-const props = defineProps<{
+const {week} = defineProps<{
   week: Week;
   weekNumber: number;
 }>();
@@ -28,7 +28,7 @@ const activeDay = ref(0);
 const tabContent = computed(() => {
   const days = isSmallScreen.value ? shortWeekdays : weekdays;
   return days.value.map((weekDay, weekdayIndex) => {
-    const trainings = props.week.trainings.filter(({dayIndex}) => dayIndex === weekdayIndex);
+    const trainings = week.trainings.filter(({dayIndex}) => dayIndex === weekdayIndex);
     const maxIntensity = Math.max(...pluck('intensity', trainings));
 
     return {
@@ -40,7 +40,7 @@ const tabContent = computed(() => {
 });
 
 const groupedTrainings = computed(() => {
-  const trainings = groupBy(({intensity}) => intensity.toString(), props.week.trainings);
+  const trainings = groupBy(({intensity}) => intensity.toString(), week.trainings);
   return trainings as Record<string, Training[]>;
 });
 </script>

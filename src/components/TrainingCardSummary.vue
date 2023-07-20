@@ -9,11 +9,11 @@ import useVuelidate from '@vuelidate/core';
 import {maxLength} from '@vuelidate/validators';
 import {getValidationErrors} from '@/utils';
 
-const props = defineProps<{
+const {training} = defineProps<{
   training: Training;
 }>();
 
-const completionSummary = ref(props.training.completionSummary);
+const completionSummary = ref(training.completionSummary);
 const scheduleStore = useScheduleStore();
 const {saveCompletionSummary} = scheduleStore;
 const appStateStore = useAppStateStore();
@@ -28,7 +28,7 @@ const v$ = useVuelidate(
 
 const handleSave = async () => {
   if (await v$.value.$validate()) {
-    saveCompletionSummary(props.training, completionSummary.value);
+    saveCompletionSummary(training, completionSummary.value);
   }
 };
 </script>

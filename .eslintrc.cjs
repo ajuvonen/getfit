@@ -15,6 +15,9 @@ module.exports = {
       extends: ['plugin:cypress/recommended'],
     },
   ],
+  rules: {
+    'vue/no-setup-props-destructure': 0,
+  },
   parserOptions: {
     ecmaVersion: 'latest',
   },
