@@ -13,10 +13,11 @@ const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
 const {t} = useI18n();
 const {shortWeekdays} = useWeekDays();
-const trainingsByDay = computed(() => (week: Week) =>
-  shortWeekdays.value.map((weekDay, weekdayIndex) =>
-    week.trainings.filter(({dayIndex}) => dayIndex === weekdayIndex)
-  )
+const trainingsByDay = computed(
+  () => (week: Week) =>
+    shortWeekdays.value.map((weekDay, weekdayIndex) =>
+      week.trainings.filter(({dayIndex}) => dayIndex === weekdayIndex),
+    ),
 );
 </script>
 
@@ -28,7 +29,10 @@ const trainingsByDay = computed(() => (week: Week) =>
     :key="week.id"
     class="print-view__table-container"
   >
-    <print-view-table :tableTitle="t('weekCalendar.weekTitle', [weekIndex + 1])" :data-test-id="`week-${weekIndex + 1}-table`">
+    <print-view-table
+      :tableTitle="t('weekCalendar.weekTitle', [weekIndex + 1])"
+      :data-test-id="`week-${weekIndex + 1}-table`"
+    >
       <template #header>
         <tr>
           <th v-for="day in shortWeekdays" :key="day">{{ day }}</th>
@@ -46,7 +50,10 @@ const trainingsByDay = computed(() => (week: Week) =>
         </tr>
       </template>
     </print-view-table>
-    <print-view-table :tableTitle="t('print.supplement', [weekIndex + 1])" :data-test-id="`week-${weekIndex + 1}-supplement`">
+    <print-view-table
+      :tableTitle="t('print.supplement', [weekIndex + 1])"
+      :data-test-id="`week-${weekIndex + 1}-supplement`"
+    >
       <template #header>
         <tr>
           <th width="60%">{{ t('print.instructions') }}</th>

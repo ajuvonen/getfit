@@ -23,7 +23,7 @@ const v$ = useVuelidate(
   {
     completionSummary: {maxLength: maxLength(2000)},
   },
-  {completionSummary}
+  {completionSummary},
 );
 
 const handleSave = async () => {

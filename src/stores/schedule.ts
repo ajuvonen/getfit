@@ -66,7 +66,7 @@ export const useScheduleStore = defineStore('schedule', {
     moveTraining(training: Training, newWeekId: string, dayIndex: number) {
       const [originalWeek, targetTraining] = this.getTargetWeekAndTraining(
         training.weekId,
-        training.id
+        training.id,
       ) as [Week, Training];
       const [targetWeek] = this.getTargetWeekAndTraining(newWeekId);
       originalWeek.trainings = originalWeek.trainings.filter(({id}) => id !== targetTraining.id);
@@ -94,7 +94,7 @@ export const useScheduleStore = defineStore('schedule', {
     saveCompletionSummary(training: Training, completionSummary: string) {
       const [, targetTraining] = this.getTargetWeekAndTraining(training.weekId, training.id) as [
         Week,
-        Training
+        Training,
       ];
       targetTraining.completionSummary = completionSummary;
     },
@@ -106,8 +106,8 @@ export const useScheduleStore = defineStore('schedule', {
           ...week,
           trainings: week.trainings.map(
             over(lensProp('duration'), (duration) =>
-              roundNearestQuarter(duration * multiplier, precision)
-            )
+              roundNearestQuarter(duration * multiplier, precision),
+            ),
           ),
         }));
         this.schedule.unitOfTime = newValue;

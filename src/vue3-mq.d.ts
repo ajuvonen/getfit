@@ -66,7 +66,7 @@ declare module 'vue3-mq' {
         defaultOrientation?: MqState['orientation'];
         defaultMotion?: string;
         defaultTheme?: MqState['theme'];
-      }
+      },
     ) => void;
   };
   type Target =

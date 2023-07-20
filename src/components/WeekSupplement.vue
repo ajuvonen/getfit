@@ -19,7 +19,11 @@ const {weekdays} = useWeekDays();
       {{ weekdays[dayIndex] }}
     </div>
     <ul>
-      <li v-for="training in trainings" :key="training.id" class="mt-1 week-supplement__instruction text-body-1">
+      <li
+        v-for="training in trainings"
+        :key="training.id"
+        class="mt-1 week-supplement__instruction text-body-1"
+      >
         <span>
           <v-icon
             :icon="getIcon(ACTIVITIES, training.activity)"

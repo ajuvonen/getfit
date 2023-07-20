@@ -24,7 +24,7 @@ const selectAll = computed({
       schedule.value.availableActivities = [];
     } else {
       schedule.value.availableActivities = localizedActivities.value.map(
-        (activity) => activity.value
+        (activity) => activity.value,
       );
     }
   },
@@ -34,7 +34,7 @@ const v$ = useVuelidate(
   {
     name: {maxLength: maxLength(30)},
   },
-  schedule
+  schedule,
 );
 </script>
 <template>
