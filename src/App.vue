@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import {storeToRefs} from 'pinia';
 import {RouterView} from 'vue-router';
 import {useI18n} from 'vue-i18n';
 import useScreenSize from '@/hooks/screenSize';
+import {useScheduleStore} from '@/stores/schedule';
 
+const {schedule} = storeToRefs(useScheduleStore());
 const {isSmallScreen} = useScreenSize();
 const {t} = useI18n();
 </script>
@@ -36,7 +39,12 @@ const {t} = useI18n();
         <v-icon icon="mdi-calendar" />
         {{ t('routes.schedule') }}
       </v-btn>
-      <v-btn to="print" value="print" data-test-id="navbar-print-link">
+      <v-btn
+        :disabled="!schedule.weeks.length"
+        to="print"
+        value="print"
+        data-test-id="navbar-print-link"
+      >
         <v-icon icon="mdi-printer" />
         {{ t('routes.print') }}
       </v-btn>
