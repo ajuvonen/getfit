@@ -14,14 +14,14 @@ export default function useLocalizedActivities() {
       activities.map((activity) => ({
         ...activity,
         title: t(`activities.${activity.value}`),
-      }))
+      })),
     ) as LocalizedActivity[];
 
   const localizedActivities = computed(() => localizeAndSort(ACTIVITIES));
   const localizedAvailableActivities = computed(() =>
     localizeAndSort(
-      ACTIVITIES.filter(({value}) => scheduleStore.schedule.availableActivities.includes(value))
-    )
+      ACTIVITIES.filter(({value}) => scheduleStore.schedule.availableActivities.includes(value)),
+    ),
   );
   return {localizedActivities, localizedAvailableActivities};
 }

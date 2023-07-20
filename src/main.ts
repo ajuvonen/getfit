@@ -28,7 +28,7 @@ app.use(
         mdi,
       },
     },
-  })
+  }),
 );
 
 app.mount('#app');
