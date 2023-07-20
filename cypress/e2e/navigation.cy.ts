@@ -1,7 +1,12 @@
 describe('Navigation tests', () => {
   it('navbar navigates to correct routes', () => {
-    cy.visit('/').getByTestId('navbar-schedule-link').click();
-    cy.location('pathname').should('contain', '/schedule').getByTestId('navbar-print-link').click();
+    cy.visit('/')
+      .getByTestId('navbar-schedule-link').click();
+    cy.location('pathname').should('contain', '/schedule')
+      .getByTestId('navbar-print-link').should('have.class', 'v-btn--disabled');
+    cy.getByTestId('navbar-schedule-link').click();
+    cy.getByTestId('schedule-settings-add-week-button').click();
+    cy.getByTestId('navbar-print-link').should('not.have.class', 'v-btn--disabled').click();
     cy.contains('h1', 'Print Schedule')
       .location('pathname')
       .should('contain', '/print')
