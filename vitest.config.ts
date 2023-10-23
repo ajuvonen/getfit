@@ -12,9 +12,11 @@ export default mergeConfig(
       exclude: [...configDefaults.exclude, 'e2e/*'],
       setupFiles: ['./vitest.setup.ts'],
       root: fileURLToPath(new URL('./', import.meta.url)),
-      deps: {
-        inline: ['vuetify'],
-      },
+      server: {
+        deps: {
+          inline: ['vuetify'],
+        },
+      }
     },
   })
 );
