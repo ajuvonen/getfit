@@ -1,8 +1,8 @@
 import {computed} from 'vue';
-import {useMq} from 'vue3-mq';
+import {useWindowSize} from '@vueuse/core';
 
 export default function useScreenSize() {
-  const mq = useMq();
-  const isSmallScreen = computed(() => mq.current === 'xs');
+  const {width} = useWindowSize();
+  const isSmallScreen = computed(() => width.value < 600);
   return {isSmallScreen};
 }

@@ -14,9 +14,3 @@ const dataTestIdPlugin = (wrapper: VueWrapper) => ({
 });
 
 config.plugins.VueWrapper.install(dataTestIdPlugin);
-
-vi.mock('vue3-mq', () => ({
-  useMq: () => ({
-    current: 'lg',
-  }),
-}));
