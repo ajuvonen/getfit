@@ -3,7 +3,7 @@ GetFit is a simple frontend-only exercise planner created with Vue3, TypeScript,
 
 The schedules are created by first deciding which activities are available and adjusting other settings. Then, add weeks and activities for each weekday. The app features simple drag & drop and copy functionalities.
 
-To test this app in production, visit <https://github.io/ajuvonen/getfit>
+To test this app in production, visit <https://ajuvonen.github.io/getfit>
 
 ## Requirements
 
