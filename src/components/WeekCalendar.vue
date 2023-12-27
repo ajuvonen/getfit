@@ -47,7 +47,10 @@ const groupedTrainings = computed(() => {
 <template>
   <v-expansion-panel>
     <v-expansion-panel-title>
-      <h2 class="text-h5">{{ t('weekCalendar.weekTitle', [weekNumber]) }}</h2>
+      <div class="week-calendar__drag-handle">
+        <v-icon icon="mdi-drag-vertical-variant" />
+        <h2 class="text-h5">{{ t('weekCalendar.weekTitle', [weekNumber]) }}</h2>
+      </div>
       <v-chip
         v-for="[intensity, group] in Object.entries(groupedTrainings)"
         :key="intensity"
@@ -135,5 +138,15 @@ ul {
   &.flex-column {
     align-items: stretch;
   }
+}
+
+.week-calendar__drag-handle {
+  display: flex;
+  align-items: center;
+  cursor: move;
+}
+
+:deep(.v-expansion-panel-title__overlay) {
+  pointer-events: none;
 }
 </style>

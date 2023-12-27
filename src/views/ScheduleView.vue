@@ -16,7 +16,7 @@ const {schedule} = storeToRefs(useScheduleStore());
     :componentData="{multiple: true, variant: 'accordion'}"
     tag="v-expansion-panels"
     item-key="id"
-    handle=".v-expansion-panel-title"
+    handle=".week-calendar__drag-handle"
     data-test-id="schedule"
   >
     <template #item="{element, index}">
