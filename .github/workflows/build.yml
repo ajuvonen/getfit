@@ -1,23 +1,11 @@
 name: Publish to pages
 
 on:
-  push:
-    branches: ['main']
   workflow_dispatch:
 
 jobs:
   build:
       runs-on: ubuntu-latest
-      environment:
-        name: github-pages
-        url: ${{ steps.deployment.outputs.page_url }}
-      permissions:
-        contents: 'read'
-        id-token: 'write'
-        pages: 'write'
-        actions: 'write'
-        checks: 'write'
-        deployments: 'write'
       steps:
         - name: Checkout
           uses: actions/checkout@v3
@@ -31,7 +19,7 @@ jobs:
         - name: Upload Pages artifact
           uses: actions/upload-pages-artifact@v3
           with:
-            path: './dist'
+            path: './dist/'
   deploy:
     needs: build
 
