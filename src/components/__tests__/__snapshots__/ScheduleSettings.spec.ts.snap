@@ -371,28 +371,18 @@ exports[`ScheduleSettings > mounts 1`] = `
                     <!----><i data-v-76426b41=\\"\\" class=\\"mdi-walk mdi v-icon notranslate v-theme--light v-icon--size-large\\" aria-hidden=\\"true\\"></i> Walking
                   </label>
                 </div>
-              </div><label data-v-76426b41=\\"\\" class=\\"v-label\\" for=\\"schedule-settings-lock-schedule-button\\">
-                <!---->Lock Schedule
-              </label>
-              <div data-v-76426b41=\\"\\" class=\\"v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-switch\\">
-                <!---->
-                <div class=\\"v-input__control\\">
-                  <div class=\\"v-selection-control v-selection-control--density-default\\">
-                    <div class=\\"v-selection-control__wrapper\\">
-                      <div class=\\"v-switch__track\\"></div>
-                      <div class=\\"v-selection-control__input\\">
-                        <!----><input id=\\"schedule-settings-lock-schedule-button\\" aria-disabled=\\"false\\" type=\\"checkbox\\" aria-describedby=\\"schedule-settings-lock-schedule-button-messages\\" value=\\"true\\">
-                        <div class=\\"v-switch__thumb\\">
-                          <!---->
-                        </div>
-                      </div>
-                    </div>
-                    <!---->
-                  </div>
-                </div>
-                <!---->
-                <!---->
               </div>
+              <!-- <v-label for=\\"schedule-settings-lock-schedule-button\\">{{
+              t('settings.lockSchedule')
+            }}</v-label>
+            <v-switch
+              id=\\"schedule-settings-lock-schedule-button\\"
+              :model-value=\\"schedule.lockSchedule\\"
+              :value=\\"true\\"
+              color=\\"secondary\\"
+              hide-details=\\"auto\\"
+              @update:model-value=\\"toggleLockSchedule\\"
+            /> -->
             </div>
           </div>
         </transition-stub>
