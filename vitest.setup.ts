@@ -1,4 +1,3 @@
-import {vi} from 'vitest';
 import {DOMWrapper, VueWrapper, config} from '@vue/test-utils';
 import {createVuetify} from 'vuetify';
 import i18n from '@/i18n';
