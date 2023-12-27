@@ -119,7 +119,7 @@ const v$ = useVuelidate(
                 </v-label>
               </div>
             </div>
-            <v-label for="schedule-settings-lock-schedule-button">{{
+            <!-- <v-label for="schedule-settings-lock-schedule-button">{{
               t('settings.lockSchedule')
             }}</v-label>
             <v-switch
@@ -129,7 +129,7 @@ const v$ = useVuelidate(
               color="secondary"
               hide-details="auto"
               @update:model-value="toggleLockSchedule"
-            />
+            /> -->
           </v-expansion-panel-text>
         </v-expansion-panel>
       </v-expansion-panels>
