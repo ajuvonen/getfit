@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import {storeToRefs} from 'pinia';
-import {useScheduleStore} from '@/stores/schedule';
+import {useI18n} from 'vue-i18n';
 import {Intensity, type Training} from '@/types';
 import {getIcon, getIntensityColor} from '@/utils';
 import {ACTIVITIES} from '@/constants';
-import {useI18n} from 'vue-i18n';
+import {useScheduleStore} from '@/stores/schedule';
+import {useAppStateStore} from '@/stores/appState';
+import useScreenSize from '@/hooks/screenSize';
 import TrainingCardSummary from '@/components/TrainingCardSummary.vue';
 import TrainingCardActions from '@/components/TrainingCardActions.vue';
-import {useAppStateStore} from '@/stores/appState';
 
 defineProps<{
   training: Training;
@@ -18,10 +19,13 @@ const {schedule} = storeToRefs(scheduleStore);
 const appStateStore = useAppStateStore();
 const {isSummaryShown} = storeToRefs(appStateStore);
 const {toggleSummaryShown} = appStateStore;
+
+const {isSmallScreen} = useScreenSize();
+
 const {t} = useI18n();
 </script>
 <template>
-  <v-card class="training-card mx-2 mt-4 mb-2" min-width="400" max-width="400">
+  <v-card class="training-card mx-2 mt-4 mb-2">
     <v-card-item
       class="training-card__title-wrapper text-white"
       :style="{'background-color': getIntensityColor(training.intensity)}"
@@ -55,7 +59,7 @@ const {t} = useI18n();
     <v-card-text class="training-card__text">
       <training-card-summary :training="training" />
     </v-card-text>
-    <v-card-actions class="justify-center">
+    <v-card-actions class="justify-center" :class="{'flex-column': isSmallScreen}">
       <training-card-actions v-if="!schedule.lockSchedule" :training="training" />
       <v-btn
         v-else
