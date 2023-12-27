@@ -12,7 +12,7 @@ describe('Navigation tests', () => {
       .should('contain', '/print')
       .getByTestId('navbar-home-link')
       .click();
-    cy.contains('h1', 'Welcome to GetFit').location('pathname').should('eql', '/');
+    cy.contains('h1', 'Welcome to GetFit').location('pathname').should('eql', '/getfit/');
   });
 
   it('changes language', () => {
