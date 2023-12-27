@@ -68,8 +68,8 @@ const resetAndClose = () => {
     :width="!isSmallScreen ? 'auto' : undefined"
     :fullscreen="isSmallScreen"
     :transition="isSmallScreen ? 'dialog-bottom-transition' : false"
+    :min-width="!isSmallScreen ? 500: undefined"
     persistent
-    min-width="500"
   >
     <v-card>
       <v-card-title>{{ t('editTraining.title') }}</v-card-title>
