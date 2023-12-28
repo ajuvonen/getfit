@@ -21,7 +21,7 @@ const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
 const {reorderTrainings} = scheduleStore;
 const {t} = useI18n();
-const {isSmallScreen} = useScreenSize();
+const {isSmallScreen, isMediumScreen} = useScreenSize();
 const {weekdays, shortWeekdays} = useWeekDays();
 const activeDay = ref(0);
 
@@ -45,7 +45,7 @@ const groupedTrainings = computed(() => {
 });
 </script>
 <template>
-  <v-expansion-panel>
+  <v-expansion-panel style="background: rgba(255,255,255,0.9)" :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'">
     <v-expansion-panel-title>
       <div class="week-calendar__drag-handle">
         <v-icon icon="mdi-drag-vertical-variant" />

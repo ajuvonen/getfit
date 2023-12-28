@@ -2,16 +2,20 @@
 import {computed, ref} from 'vue';
 import {storeToRefs} from 'pinia';
 import {useI18n} from 'vue-i18n';
-import useVuelidate from '@vuelidate/core';
-import {maxLength} from '@vuelidate/validators';
+// import useVuelidate from '@vuelidate/core';
+// import {maxLength} from '@vuelidate/validators';
 import {useScheduleStore} from '@/stores/schedule';
 import useLocalizedActivities from '@/hooks/localizedActivities';
-import {getValidationErrors} from '@/utils';
+import useScreenSize from '@/hooks/screenSize';
+// import {getValidationErrors} from '@/utils';
 
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
 const {addWeek, changeUnitOfTime, toggleLockSchedule} = scheduleStore;
 const {t} = useI18n();
+
+const {isSmallScreen, isMediumScreen} = useScreenSize();
+
 const settingsOpen = ref<number | null>(0);
 const {localizedActivities} = useLocalizedActivities();
 
@@ -30,23 +34,23 @@ const selectAll = computed({
   },
 });
 
-const v$ = useVuelidate(
-  {
-    name: {maxLength: maxLength(30)},
-  },
-  schedule,
-);
+// const v$ = useVuelidate(
+//   {
+//     name: {maxLength: maxLength(30)},
+//   },
+//   schedule,
+// );
 </script>
 <template>
-  <v-card class="schedule-settings__card">
+  <v-card color="rgba(255,255,255,0.9)" :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'">
     <v-card-text>
       <v-expansion-panels v-model="settingsOpen">
-        <v-expansion-panel elevation="0">
+        <v-expansion-panel elevation="0" class="bg-transparent">
           <v-expansion-panel-title>
             <h2 class="text-h5">{{ t('settings.title') }}</h2>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
-            <v-text-field
+            <!-- <v-text-field
               id="schedule-settings-program-name"
               v-model="schedule.name"
               :label="t('settings.programName')"
@@ -56,7 +60,7 @@ const v$ = useVuelidate(
               variant="underlined"
               @input="v$.name.$touch"
               @blur="v$.name.$touch"
-            />
+            /> -->
             <v-label for="schedule-settings-start-of-week">{{ t('settings.startOfWeek') }}</v-label>
             <v-radio-group
               id="schedule-settings-start-of-week"
@@ -146,11 +150,6 @@ const v$ = useVuelidate(
 </template>
 
 <style lang="scss" scoped>
-.schedule-settings__card {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
 .v-input {
   max-width: 500px;
 }
