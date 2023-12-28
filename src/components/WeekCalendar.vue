@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import {computed, ref} from 'vue';
 import {storeToRefs} from 'pinia';
-import {useI18n} from 'vue-i18n';
 import {groupBy, pluck} from 'ramda';
 import DraggableList from 'vuedraggable';
 import {useScheduleStore} from '@/stores/schedule';
-import TrainingCard from '@/components/TrainingCard.vue';
-import WeekCalendarActions from '@/components/WeekCalendarActions.vue';
 import {type Week, Intensity, type Training} from '@/types';
 import {getIntensityColor} from '@/utils';
 import useScreenSize from '@/hooks/screenSize';
 import useWeekDays from '@/hooks/weekdays';
+import TrainingCard from '@/components/TrainingCard.vue';
+import WeekCalendarActions from '@/components/WeekCalendarActions.vue';
 
 const props = defineProps<{
   week: Week;
@@ -20,9 +19,11 @@ const props = defineProps<{
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
 const {reorderTrainings} = scheduleStore;
-const {t} = useI18n();
+
 const {isSmallScreen, isMediumScreen} = useScreenSize();
+
 const {weekdays, shortWeekdays} = useWeekDays();
+
 const activeDay = ref(0);
 
 const tabContent = computed(() => {
@@ -49,17 +50,17 @@ const groupedTrainings = computed(() => {
     <v-expansion-panel-title>
       <div class="week-calendar__drag-handle">
         <v-icon icon="mdi-drag-vertical-variant" />
-        <h2 class="text-h5">{{ t('weekCalendar.weekTitle', [weekNumber]) }}</h2>
+        <h2 class="text-h5">{{ $t('weekCalendar.weekTitle', [weekNumber]) }}</h2>
       </div>
       <v-chip
         v-for="[intensity, group] in Object.entries(groupedTrainings)"
         :key="intensity"
         :color="getIntensityColor(+intensity)"
         :title="
-          t('weekCalendar.weekChipTitle', [t(`intensities.${Intensity[+intensity]}`), group.length])
+          $t('weekCalendar.weekChipTitle', [$t(`intensities.${Intensity[+intensity]}`), group.length])
         "
         :aria-label="
-          t('weekCalendar.weekChipTitle', [t(`intensities.${Intensity[+intensity]}`), group.length])
+          $t('weekCalendar.weekChipTitle', [$t(`intensities.${Intensity[+intensity]}`), group.length])
         "
         class="ml-3"
         >{{ group.length }}</v-chip
@@ -78,15 +79,15 @@ const groupedTrainings = computed(() => {
             v-if="trainings.length"
             :color="getIntensityColor(maxIntensity)"
             :title="
-              t('weekCalendar.dayChipTitle', [
+              $t('weekCalendar.dayChipTitle', [
                 trainings.length,
-                t(`intensities.${Intensity[maxIntensity]}`),
+                $t(`intensities.${Intensity[maxIntensity]}`),
               ])
             "
             :aria-label="
-              t('weekCalendar.dayChipTitle', [
+              $t('weekCalendar.dayChipTitle', [
                 trainings.length,
-                t(`intensities.${Intensity[maxIntensity]}`),
+                $t(`intensities.${Intensity[maxIntensity]}`),
               ])
             "
             class="ml-3"

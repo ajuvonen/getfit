@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {computed, ref} from 'vue';
 import {storeToRefs} from 'pinia';
-import {useI18n} from 'vue-i18n';
 // import useVuelidate from '@vuelidate/core';
 // import {maxLength} from '@vuelidate/validators';
 import {useScheduleStore} from '@/stores/schedule';
@@ -12,11 +11,11 @@ import useScreenSize from '@/hooks/screenSize';
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
 const {addWeek, changeUnitOfTime, toggleLockSchedule} = scheduleStore;
-const {t} = useI18n();
 
 const {isSmallScreen, isMediumScreen} = useScreenSize();
 
 const settingsOpen = ref<number | null>(0);
+
 const {localizedActivities} = useLocalizedActivities();
 
 const selectAll = computed({
@@ -47,7 +46,7 @@ const selectAll = computed({
       <v-expansion-panels v-model="settingsOpen">
         <v-expansion-panel elevation="0" class="bg-transparent">
           <v-expansion-panel-title data-test-id="schedule-settings__heading">
-            <h2 class="text-h5">{{ t('settings.title') }}</h2>
+            <h2 class="text-h5">{{ $t('settings.title') }}</h2>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
             <!-- <v-text-field
@@ -61,24 +60,24 @@ const selectAll = computed({
               @input="v$.name.$touch"
               @blur="v$.name.$touch"
             /> -->
-            <v-label for="schedule-settings-start-of-week">{{ t('settings.startOfWeek') }}</v-label>
+            <v-label for="schedule-settings-start-of-week">{{ $t('settings.startOfWeek') }}</v-label>
             <v-radio-group
               id="schedule-settings-start-of-week"
               v-model="schedule.startsOnSunday"
               inline
             >
               <v-radio
-                :label="t('general.weekdays.monday')"
+                :label="$t('general.weekdays.monday')"
                 :value="false"
                 data-test-id="schedule-settings-start-of-week-monday"
               ></v-radio>
               <v-radio
-                :label="t('general.weekdays.sunday')"
+                :label="$t('general.weekdays.sunday')"
                 :value="true"
                 data-test-id="schedule-settings-start-of-week-sunday"
               ></v-radio>
             </v-radio-group>
-            <v-label for="schedule-settings-unit-of-time">{{ t('settings.unitOfTime') }}</v-label>
+            <v-label for="schedule-settings-unit-of-time">{{ $t('settings.unitOfTime') }}</v-label>
             <v-radio-group
               id="schedule-settings-unit-of-time"
               :model-value="schedule.unitOfTime"
@@ -86,17 +85,17 @@ const selectAll = computed({
               inline
             >
               <v-radio
-                :label="t('settings.hours')"
+                :label="$t('settings.hours')"
                 value="h"
                 data-test-id="schedule-settings-unit-of-time-h"
               ></v-radio>
               <v-radio
-                :label="t('settings.minutes')"
+                :label="$t('settings.minutes')"
                 value="m"
                 data-test-id="schedule-settings-unit-of-time-m"
               ></v-radio>
             </v-radio-group>
-            <v-label>{{ t('settings.availableActivities') }}</v-label>
+            <v-label>{{ $t('settings.availableActivities') }}</v-label>
             <v-checkbox-btn
               v-model="selectAll"
               :value="true"
@@ -124,7 +123,7 @@ const selectAll = computed({
               </div>
             </div>
             <!-- <v-label for="schedule-settings-lock-schedule-button">{{
-              t('settings.lockSchedule')
+              $t('settings.lockSchedule')
             }}</v-label>
             <v-switch
               id="schedule-settings-lock-schedule-button"
@@ -143,7 +142,7 @@ const selectAll = computed({
         prepend-icon="mdi-plus"
         data-test-id="schedule-settings-add-week-button"
         @click="addWeek(), settingsOpen = null"
-        >{{ t('settings.addWeek') }}</v-btn
+        >{{ $t('settings.addWeek') }}</v-btn
       >
     </v-card-actions>
   </v-card>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {storeToRefs} from 'pinia';
-import {useI18n} from 'vue-i18n';
 import {Intensity, type Training} from '@/types';
 import {getIcon, getIntensityColor} from '@/utils';
 import {ACTIVITIES} from '@/constants';
@@ -16,13 +15,12 @@ defineProps<{
 
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
+
 const appStateStore = useAppStateStore();
 const {isSummaryShown} = storeToRefs(appStateStore);
 const {toggleSummaryShown} = appStateStore;
 
 const {isSmallScreen} = useScreenSize();
-
-const {t} = useI18n();
 </script>
 <template>
   <v-card class="training-card mx-2 mt-4 mb-2">
@@ -32,27 +30,27 @@ const {t} = useI18n();
     >
       <v-icon
         :icon="getIcon(ACTIVITIES, training.activity)"
-        :title="t(`activities.${training.activity}`)"
-        :aria-label="t(`activities.${training.activity}`)"
+        :title="$t(`activities.${training.activity}`)"
+        :aria-label="$t(`activities.${training.activity}`)"
         :color="getIntensityColor(training.intensity)"
         class="training-card__activity-icon"
         size="x-large"
       />
       <v-card-title class="d-flex ml-15 flex-column justify-top">
         <div class="training-card__title">
-          {{ training.title || t(`activities.${training.activity}`) }}
+          {{ training.title || $t(`activities.${training.activity}`) }}
         </div>
         <div v-if="training.duration" class="training-card__duration text-subtitle-2">
-          <v-icon icon="mdi-timer" :aria-label="t('trainingCard.duration')" />
+          <v-icon icon="mdi-timer" :aria-label="$t('trainingCard.duration')" />
           {{ training.duration }} {{ schedule.unitOfTime }}
         </div>
         <div v-if="training.location" class="training-card__location text-subtitle-2">
-          <v-icon icon="mdi-map-marker" :aria-label="t('trainingCard.location')" />
+          <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />
           {{ training.location }}
         </div>
         <div class="training-card__intensity text-subtitle-2">
-          <v-icon icon="mdi-speedometer" :aria-label="t('trainingCard.intensity')" />
-          {{ t(`intensities.${Intensity[training.intensity]}`) }}
+          <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />
+          {{ $t(`intensities.${Intensity[training.intensity]}`) }}
         </div>
       </v-card-title>
     </v-card-item>
@@ -65,9 +63,7 @@ const {t} = useI18n();
         v-else
         class="training-card__show-summary-button"
         @click="toggleSummaryShown(training.id)"
-        >{{
-          t(isSummaryShown(training.id) ? 'trainingCard.hideSummary' : 'trainingCard.showSummary')
-        }}</v-btn
+        >{{ $t(isSummaryShown(training.id) ? 'trainingCard.hideSummary' : 'trainingCard.showSummary') }}</v-btn
       >
     </v-card-actions>
   </v-card>

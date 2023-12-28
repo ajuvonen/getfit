@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import {ref} from 'vue';
-import {useI18n} from 'vue-i18n';
 import {storeToRefs} from 'pinia';
+import useVuelidate from '@vuelidate/core';
+import {maxLength} from '@vuelidate/validators';
 import type {Training} from '@/types';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
-import useVuelidate from '@vuelidate/core';
-import {maxLength} from '@vuelidate/validators';
 import {getValidationErrors} from '@/utils';
 
 const props = defineProps<{
@@ -16,9 +15,10 @@ const props = defineProps<{
 const completionSummary = ref(props.training.completionSummary);
 const scheduleStore = useScheduleStore();
 const {saveCompletionSummary} = scheduleStore;
+
 const appStateStore = useAppStateStore();
 const {isSummaryShown} = storeToRefs(appStateStore);
-const {t} = useI18n();
+
 const v$ = useVuelidate(
   {
     completionSummary: {maxLength: maxLength(2000)},
@@ -41,7 +41,7 @@ const handleSave = async () => {
       v-if="isSummaryShown(training.id)"
       v-model="completionSummary"
       :error-messages="getValidationErrors(v$.completionSummary)"
-      :label="t('trainingCard.completionSummary')"
+      :label="$t('trainingCard.completionSummary')"
       maxlength="2000"
       no-resize
       counter

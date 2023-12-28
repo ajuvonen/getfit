@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {useI18n} from 'vue-i18n';
 import {storeToRefs} from 'pinia';
 import {useAppStateStore} from '@/stores/appState';
 import {useScheduleStore} from '@/stores/schedule';
@@ -9,12 +8,14 @@ import useWeekDays from '@/hooks/weekdays';
 defineProps<{
   training: Training;
 }>();
+
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
 const {deleteTraining, moveTraining, copyTraining} = scheduleStore;
+
 const appStateStore = useAppStateStore();
 const {openEditTrainingDialog} = appStateStore;
-const {t} = useI18n();
+
 const {weekdays} = useWeekDays();
 </script>
 <template>
@@ -23,12 +24,12 @@ const {weekdays} = useWeekDays();
     variant="flat"
     class="training-card__edit-button"
     @click="openEditTrainingDialog(training)"
-    >{{ t('trainingCard.editTraining') }}</v-btn
+    >{{ $t('trainingCard.editTraining') }}</v-btn
   >
   <v-menu location="end" :close-on-content-click="false">
     <template v-slot:activator="{props}">
       <v-btn append-icon="mdi-chevron-right" variant="flat" v-bind="props">
-        {{ t('trainingCard.actions') }}
+        {{ $t('trainingCard.actions') }}
       </v-btn>
     </template>
     <v-list open-strategy="single">
@@ -36,13 +37,13 @@ const {weekdays} = useWeekDays();
         <template v-slot:activator="{props}">
           <v-list-item
             v-bind="props"
-            :title="t('trainingCard.move')"
+            :title="$t('trainingCard.move')"
             prepend-icon="mdi-arrow-all"
           />
         </template>
         <v-list-group v-for="(week, index) in schedule.weeks" :key="week.id">
           <template v-slot:activator="{props}">
-            <v-list-item v-bind="props" :title="t('weekCalendar.weekTitle', [index + 1])" />
+            <v-list-item v-bind="props" :title="$t('weekCalendar.weekTitle', [index + 1])" />
           </template>
           <v-list-item
             v-for="(day, dayIndex) in weekdays"
@@ -57,13 +58,13 @@ const {weekdays} = useWeekDays();
         <template v-slot:activator="{props}">
           <v-list-item
             v-bind="props"
-            :title="t('trainingCard.copy')"
+            :title="$t('trainingCard.copy')"
             prepend-icon="mdi-content-copy"
           />
         </template>
         <v-list-group v-for="(week, index) in schedule.weeks" :key="week.id">
           <template v-slot:activator="{props}">
-            <v-list-item v-bind="props" :title="t('weekCalendar.weekTitle', [index + 1])" />
+            <v-list-item v-bind="props" :title="$t('weekCalendar.weekTitle', [index + 1])" />
           </template>
           <v-list-item
             v-for="(day, dayIndex) in weekdays"
@@ -81,6 +82,6 @@ const {weekdays} = useWeekDays();
     color="error"
     class="training-card__delete-button"
     @click="deleteTraining(training)"
-    >{{ t('trainingCard.deleteTraining') }}</v-btn
+    >{{ $t('trainingCard.deleteTraining') }}</v-btn
   >
 </template>

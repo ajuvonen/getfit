@@ -23,7 +23,7 @@ exports[`ScheduleSettings > mounts 1`] = `
       <div data-v-76426b41=\\"\\" class=\\"v-expansion-panel v-expansion-panel--active bg-transparent\\">
         <div class=\\"v-expansion-panel__shadow elevation-0\\"></div>
         <!---->
-        <!----><button data-v-76426b41=\\"\\" class=\\"v-expansion-panel-title v-expansion-panel-title--active\\" type=\\"button\\" aria-expanded=\\"true\\"><span class=\\"v-expansion-panel-title__overlay\\"></span>
+        <!----><button data-v-76426b41=\\"\\" class=\\"v-expansion-panel-title v-expansion-panel-title--active\\" type=\\"button\\" aria-expanded=\\"true\\" data-test-id=\\"schedule-settings__heading\\"><span class=\\"v-expansion-panel-title__overlay\\"></span>
           <h2 data-v-76426b41=\\"\\" class=\\"text-h5\\">Schedule Settings</h2><span class=\\"v-expansion-panel-title__icon\\"><i class=\\"mdi-chevron-up mdi v-icon notranslate v-theme--light v-icon--size-default\\" aria-hidden=\\"true\\"></i></span>
         </button>
         <transition-stub data-v-76426b41=\\"\\" name=\\"expand-transition\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
@@ -337,7 +337,7 @@ exports[`ScheduleSettings > mounts 1`] = `
                 </div>
               </div>
               <!-- <v-label for=\\"schedule-settings-lock-schedule-button\\">{{
-              t('settings.lockSchedule')
+              $t('settings.lockSchedule')
             }}</v-label>
             <v-switch
               id=\\"schedule-settings-lock-schedule-button\\"
