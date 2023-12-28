@@ -12,7 +12,7 @@ const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
 const {addWeek, changeUnitOfTime, toggleLockSchedule} = scheduleStore;
 const {t} = useI18n();
-const settingsOpen = ref(0);
+const settingsOpen = ref<number | null>(0);
 const {localizedActivities} = useLocalizedActivities();
 
 const selectAll = computed({
@@ -138,7 +138,7 @@ const v$ = useVuelidate(
       <v-btn
         prepend-icon="mdi-plus"
         data-test-id="schedule-settings-add-week-button"
-        @click="addWeek()"
+        @click="addWeek(), settingsOpen = null"
         >{{ t('settings.addWeek') }}</v-btn
       >
     </v-card-actions>
