@@ -33,6 +33,8 @@ const selectAll = computed({
   },
 });
 
+const onUnitOfTimeChange = (value: 'h' | 'm' | null) => changeUnitOfTime(value || 'h');
+
 // const v$ = useVuelidate(
 //   {
 //     name: {maxLength: maxLength(30)},
@@ -81,7 +83,7 @@ const selectAll = computed({
             <v-radio-group
               id="schedule-settings-unit-of-time"
               :model-value="schedule.unitOfTime"
-              @update:model-value="changeUnitOfTime"
+              @update:model-value="onUnitOfTimeChange"
               inline
             >
               <v-radio
