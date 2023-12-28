@@ -11,6 +11,7 @@ describe('Schedule tests', () => {
       .click();
     cy.get('#schedule-settings-activity-walking').click();
     cy.getByTestId('schedule-settings-add-week-button').click();
+    cy.getByTestId('schedule-settings__heading').click();
     cy.getByTestId('week-1').click();
     cy.getByTestId('week-1-calendar-tab-0')
       .should('contain.text', 'Monday')
@@ -75,6 +76,7 @@ describe('Schedule tests', () => {
     cy.getByTestId('edit-training-save-button').click();
     cy.getByTestId('week-1-day-1').find('.training-card').should('exist');
     cy.getByTestId('week-1-copy-button').click();
+    cy.getByTestId('schedule').find('.v-expansion-panel').should('have.length', 2);
     cy.getByTestId('week-1-day-1').find('.training-card__delete-button').click();
     cy.getByTestId('week-1-day-1').find('.training-card').should('not.exist');
     cy.getByTestId('week-2').click();
@@ -82,6 +84,6 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-2-day-1').find('.training-card').should('exist');
     cy.getByTestId('week-1-delete-button').click();
     cy.getByTestId('week-1-delete-button').click();
-    cy.getByTestId('schedule').find('.v-expansion-panel').should('have.length', 0);
+    cy.getByTestId('schedule').should('not.exist');
   });
 });

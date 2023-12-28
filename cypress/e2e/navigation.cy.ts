@@ -7,7 +7,7 @@ describe('Navigation tests', () => {
     cy.getByTestId('navbar-schedule-link').click();
     cy.getByTestId('schedule-settings-add-week-button').click();
     cy.getByTestId('navbar-print-link').should('not.have.class', 'v-btn--disabled').click();
-    cy.contains('h1', 'Print Schedule')
+    cy.contains('h1', 'For best results in printed form')
       .location('pathname')
       .should('contain', '/print')
       .getByTestId('navbar-home-link')

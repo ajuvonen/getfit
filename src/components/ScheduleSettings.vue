@@ -46,7 +46,7 @@ const selectAll = computed({
     <v-card-text>
       <v-expansion-panels v-model="settingsOpen">
         <v-expansion-panel elevation="0" class="bg-transparent">
-          <v-expansion-panel-title>
+          <v-expansion-panel-title data-test-id="schedule-settings__heading">
             <h2 class="text-h5">{{ t('settings.title') }}</h2>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
