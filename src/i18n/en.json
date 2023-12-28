@@ -52,7 +52,11 @@
     }
   },
   "home": {
-    "title": "Welcome to GetFit"
+    "title": "Welcome to GetFit",
+    "p1": "GetFit is a free, easy-to-use exercise planner that allows you to plan and print a training schedule spanning multiple weeks.",
+    "p2": "To get started, navigate to the schedule view and choose the activities you wish to track. Then add a new week to your schedule and start planning activities.",
+    "p3": "For more efficient use of the app, you can copy activities and entire weeks in the schedule view, and reorder them by dragging and dropping.",
+    "credit": "Photo credit: {image}"
   },
   "intensities": {
     "LIGHT": "Light",
@@ -65,7 +69,7 @@
     "3": "Heavy"
   },
   "print": {
-    "guide": "For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows.",
+    "guide": "For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows. Then uncheck printing of background images and -colors.",
     "instructions": "Instructions",
     "notes": "Notes",
     "supplement": "Supplement for Week {0}",

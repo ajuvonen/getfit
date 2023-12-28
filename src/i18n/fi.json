@@ -52,7 +52,11 @@
     }
   },
   "home": {
-    "title": "Tervetuloa GetFitin käyttäjäksi"
+    "title": "Tervetuloa GetFitin käyttäjäksi",
+    "p1": "GetFit on ilmainen, helppokäyttöinen sovellus, jonka avulla voit suunnitella ja tulostaa usean viikon harjoitusohjelman.",
+    "p2": "Aloittaaksesi, siirry ohjelma-näkymään ja valitse käytössä olevat lajit. Lisää sen jälkeen uusi viikko ohjelmaasi ja aloita harjoitusten suunnittelu.",
+    "p3": "Sovelluksen tehokkaampaa käyttöä varten voit kopioida harjoituksia ja kokonaisia viikkoja ohjelma-näkymässä, sekä järjestellä niitä raahaamalla ja pudottamalla.",
+    "credit": "Valokuva: {image}"
   },
   "intensities": {
     "LIGHT": "Kevyt",
@@ -65,7 +69,7 @@
     "3": "Raskas"
   },
   "print": {
-    "guide": "Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista.",
+    "guide": "Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista. Poista sen jälkeen taustakuvien ja -värien tulostus käytöstä.",
     "instructions": "Ohjeet",
     "notes": "Muistiinpanot",
     "supplement": "Lisämateriaali viikolle {0}",
