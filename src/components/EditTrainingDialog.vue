@@ -16,10 +16,13 @@ import useLocalizedActivities from '@/hooks/localizedActivities';
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
 const {addOrEditTraining} = scheduleStore;
+
 const appStateStore = useAppStateStore();
 const {closeEditTrainingDialog} = appStateStore;
 const {trainingDialogOpen, trainingData} = storeToRefs(appStateStore);
+
 const {t} = useI18n();
+
 const {isSmallScreen} = useScreenSize();
 
 const tickLabels = computed(() => ({
@@ -72,10 +75,10 @@ const resetAndClose = () => {
     persistent
   >
     <v-card>
-      <v-card-title>{{ t('editTraining.title') }}</v-card-title>
+      <v-card-title>{{ $t('editTraining.title') }}</v-card-title>
       <v-card-text>
         <v-form>
-          <v-label for="edit-training-activity">{{ t('editTraining.activity') }}</v-label>
+          <v-label for="edit-training-activity">{{ $t('editTraining.activity') }}</v-label>
           <v-select
             id="edit-training-activity"
             v-model="trainingData.activity"
@@ -144,7 +147,7 @@ const resetAndClose = () => {
             @input="v$.description.$touch"
             @blur="v$.description.$touch"
           />
-          <v-label for="edit-training-intensity">{{ t('editTraining.intensity') }}</v-label>
+          <v-label for="edit-training-intensity">{{ $t('editTraining.intensity') }}</v-label>
           <v-slider
             id="edit-training-intensity"
             v-model="trainingData.intensity"
@@ -165,13 +168,13 @@ const resetAndClose = () => {
           color="primary"
           data-test-id="edit-training-save-button"
           @click="handleSave()"
-          >{{ t('editTraining.save') }}</v-btn
+          >{{ $t('editTraining.save') }}</v-btn
         >
         <v-btn
           prepend-icon="mdi-close"
           data-test-id="edit-training-close-button"
           @click="resetAndClose"
-          >{{ t('editTraining.closeDialog') }}</v-btn
+          >{{ $t('editTraining.closeDialog') }}</v-btn
         >
       </v-card-actions>
     </v-card>
