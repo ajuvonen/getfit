@@ -14,7 +14,7 @@ const {schedule} = storeToRefs(useScheduleStore());
   <draggable-list
     v-if="schedule.weeks.length"
     v-model="schedule.weeks"
-    :componentData="{multiple: true, variant: 'accordion', color: 'transparent'}"
+    :componentData="{variant: 'accordion', color: 'transparent'}"
     tag="v-expansion-panels"
     item-key="id"
     handle=".week-calendar__drag-handle"
