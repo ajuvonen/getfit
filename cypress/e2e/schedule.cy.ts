@@ -3,7 +3,7 @@ describe('Schedule tests', () => {
     cy.visit('/').getByTestId('navbar-schedule-link').click();
     cy.get('.schedule-settings__icon-container input:checked')
       .should('exist')
-      .getByTestId('schedule-settings-toggle-all-activities')
+      .getByTestId('schedule-settings-toggle-all-activities').find('input')
       .click();
     cy.get('.schedule-settings__icon-container input:checked')
       .should('not.exist')
@@ -25,9 +25,9 @@ describe('Schedule tests', () => {
       .click();
     cy.getByTestId('edit-training-activity').click();
     cy.get('.v-list-item').should('have.length', 2);
-    cy.get('.v-list-item:first-child')
+    cy.get('.v-list-item').first()
       .should('contain.text', 'Badminton')
-      .get('.v-list-item:last-child')
+      .get('.v-list-item').last()
       .should('contain.text', 'Walking')
       .getByTestId('edit-training-duration')
       .find('.v-text-field__suffix')
@@ -51,7 +51,7 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-1-calendar-tab-1').click();
     cy.getByTestId('week-1-add-training-button').click();
     cy.getByTestId('edit-training-activity').click();
-    cy.get('.v-list-item:first-child').click();
+    cy.get('.v-list-item').first().click();
     cy.getByTestId('edit-training-duration').find('input').type('1.5');
     cy.getByTestId('edit-training-save-button').click();
     cy.getByTestId('schedule-settings-unit-of-time-m').click();
@@ -67,7 +67,7 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-1-calendar-tab-1').click();
     cy.getByTestId('week-1-add-training-button').click();
     cy.getByTestId('edit-training-activity').click();
-    cy.get('.v-list-item:first-child').click();
+    cy.get('.v-list-item').first().click();
     cy.getByTestId('edit-training-title').type('My training');
     cy.getByTestId('edit-training-location').type('Gym');
     cy.getByTestId('edit-training-duration').find('input').type('1.5');
@@ -82,6 +82,7 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-2').click();
     cy.getByTestId('week-2-calendar-tab-1').click();
     cy.getByTestId('week-2-day-1').find('.training-card').should('exist');
+    cy.getByTestId('week-1').click();
     cy.getByTestId('week-1-delete-button').click();
     cy.getByTestId('week-1-delete-button').click();
     cy.getByTestId('schedule').should('not.exist');
