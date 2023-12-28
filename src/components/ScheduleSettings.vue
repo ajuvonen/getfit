@@ -38,7 +38,7 @@ const v$ = useVuelidate(
 );
 </script>
 <template>
-  <v-card class="mx-auto mb-10">
+  <v-card class="schedule-settings__card">
     <v-card-text>
       <v-expansion-panels v-model="settingsOpen">
         <v-expansion-panel elevation="0">
@@ -146,6 +146,11 @@ const v$ = useVuelidate(
 </template>
 
 <style lang="scss" scoped>
+.schedule-settings__card {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 .v-input {
   max-width: 500px;
 }
