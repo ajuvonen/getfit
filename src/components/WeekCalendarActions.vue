@@ -21,7 +21,7 @@ const {t} = useI18n();
     <v-btn
       :data-test-id="`week-${weekNumber}-add-training-button`"
       prepend-icon="mdi-plus"
-      variant="flat"
+      variant="tonal"
       @click="openNewTrainingDialog(weekId, dayIndex)"
       >{{ t('weekCalendar.addTraining') }}</v-btn
     >
@@ -29,7 +29,7 @@ const {t} = useI18n();
       :aria-label="t('weekCalendar.copyWeek', [weekNumber])"
       :data-test-id="`week-${weekNumber}-copy-button`"
       prepend-icon="mdi-content-copy"
-      variant="flat"
+      variant="tonal"
       @click="copyWeek(weekId)"
       >{{ t('weekCalendar.copyWeek') }}</v-btn
     >
