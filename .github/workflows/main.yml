@@ -42,5 +42,4 @@ jobs:
         with:
           install: false
           build: npm run build
-          start: npm run preview
-          wait-on: 'http://localhost:5173/getfit/'
+          command: npm run test:e2e
