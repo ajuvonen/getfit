@@ -62,6 +62,8 @@ const groupedTrainings = computed(() => {
         :aria-label="
           $t('weekCalendar.weekChipTitle', [$t(`intensities.${Intensity[+intensity]}`), group.length])
         "
+        variant="flat"
+        label
         class="ml-3"
         >{{ group.length }}</v-chip
       >
@@ -90,6 +92,8 @@ const groupedTrainings = computed(() => {
                 $t(`intensities.${Intensity[maxIntensity]}`),
               ])
             "
+            variant="flat"
+            label
             class="ml-3"
             >{{ trainings.length }}</v-chip
           >
