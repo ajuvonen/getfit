@@ -77,7 +77,8 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-1-day-1').find('.training-card').should('exist');
     cy.getByTestId('week-1-copy-button').click();
     cy.getByTestId('schedule').find('.v-expansion-panel').should('have.length', 2);
-    cy.getByTestId('week-1-day-1').find('.training-card__delete-button').click();
+    cy.getByTestId('week-1-day-1').find('.training-card__action-button').click();
+    cy.get('.training-card__delete-button').click();
     cy.getByTestId('week-1-day-1').find('.training-card').should('not.exist');
     cy.getByTestId('week-2').click();
     cy.getByTestId('week-2-calendar-tab-1').click();
