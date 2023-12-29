@@ -93,6 +93,7 @@
   },
   "trainingCard": {
     "actions": "Actions",
+    "actionsLabel": "Actions for training {0}",
     "completionSummary": "Completion Summary",
     "copy": "Copy",
     "deleteTraining": "Delete",

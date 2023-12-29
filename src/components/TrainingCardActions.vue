@@ -19,20 +19,25 @@ const {openEditTrainingDialog} = appStateStore;
 const {weekdays} = useWeekDays();
 </script>
 <template>
-  <v-btn
-    prepend-icon="mdi-pen"
-    variant="flat"
-    class="training-card__edit-button"
-    @click="openEditTrainingDialog(training)"
-    >{{ $t('trainingCard.editTraining') }}</v-btn
-  >
   <v-menu location="end" :close-on-content-click="false">
     <template v-slot:activator="{props}">
-      <v-btn append-icon="mdi-chevron-right" variant="flat" v-bind="props">
+      <v-btn
+        :aria-label="$t('trainingCard.actionsLabel', training.activity)"
+        prepend-icon="mdi-menu"
+        variant="flat"
+        v-bind="props"
+        class="training-card__action-button"
+      >
         {{ $t('trainingCard.actions') }}
       </v-btn>
     </template>
     <v-list open-strategy="single">
+      <v-list-item
+        :title="$t('trainingCard.editTraining')"
+        prepend-icon="mdi-pen"
+        class="training-card__edit-button"
+        @click="openEditTrainingDialog(training)"
+      />
       <v-list-group>
         <template v-slot:activator="{props}">
           <v-list-item
@@ -74,14 +79,12 @@ const {weekdays} = useWeekDays();
           />
         </v-list-group>
       </v-list-group>
+      <v-list-item
+        :title="$t('trainingCard.deleteTraining')"
+        prepend-icon="mdi-delete"
+        class="text-error training-card__delete-button"
+        @click="deleteTraining(training)"
+      />
     </v-list>
   </v-menu>
-  <v-btn
-    prepend-icon="mdi-delete"
-    variant="outlined"
-    color="error"
-    class="training-card__delete-button"
-    @click="deleteTraining(training)"
-    >{{ $t('trainingCard.deleteTraining') }}</v-btn
-  >
 </template>
