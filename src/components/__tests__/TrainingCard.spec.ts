@@ -2,10 +2,11 @@ import {nextTick} from 'vue';
 import {mount} from '@vue/test-utils';
 import {describe, it, expect, beforeEach} from 'vitest';
 import {v4 as uuidv4} from 'uuid';
-import TrainingCard from '@/components/TrainingCard.vue';
+import {VList} from 'vuetify/components';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
 import {Intensity, type Training} from '@/types';
+import TrainingCard from '@/components/TrainingCard.vue';
 
 const basicTraining = {
   id: uuidv4(),
@@ -85,24 +86,26 @@ describe('TrainingCard', () => {
         training: basicTraining,
       },
     });
-    expect(wrapper.find('.training-card__delete-button').exists()).toBe(true);
+    expect(wrapper.find('.training-card__action-button').exists()).toBe(true);
     expect(wrapper.find('.training-card__show-summary-button').exists()).toBe(false);
 
     scheduleStore.schedule.lockSchedule = true;
     await nextTick();
 
-    expect(wrapper.find('.training-card__delete-button').exists()).toBe(false);
+    expect(wrapper.find('.training-card__action-button').exists()).toBe(false);
     expect(wrapper.find('.training-card__show-summary-button').exists()).toBe(true);
   });
 
-  it('actions work', () => {
+  it('actions work', async () => {
     const wrapper = mount(TrainingCard, {
       props: {
         training: basicTraining,
       },
     });
-    wrapper.find('.training-card__delete-button').trigger('click');
-    wrapper.find('.training-card__edit-button').trigger('click');
+    await wrapper.find('.training-card__action-button').trigger('click');
+    const actions = wrapper.findComponent(VList);
+    await actions.find('.training-card__delete-button').trigger('click');
+    await actions.find('.training-card__edit-button').trigger('click');
     expect(scheduleStore.deleteTraining).toHaveBeenCalledOnce();
     expect(appStateStore.openEditTrainingDialog).toHaveBeenCalledOnce();
   });

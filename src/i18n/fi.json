@@ -93,6 +93,7 @@
   },
   "trainingCard": {
     "actions": "Toiminnot",
+    "actionsLabel": "Toiminnot harjoitukselle {0}",
     "completionSummary": "Päiväkirja",
     "copy": "Kopioi",
     "deleteTraining": "Poista",
