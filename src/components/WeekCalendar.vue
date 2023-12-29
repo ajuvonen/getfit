@@ -24,7 +24,7 @@ const {isSmallScreen, isMediumScreen} = useScreenSize();
 
 const {weekdays, shortWeekdays} = useWeekDays();
 
-const activeDay = ref(0);
+const activeDay = ref<number | null>(null);
 
 const tabContent = computed(() => {
   const days = isSmallScreen.value ? shortWeekdays : weekdays;
@@ -67,7 +67,7 @@ const groupedTrainings = computed(() => {
       >
     </v-expansion-panel-title>
     <v-expansion-panel-text>
-      <v-tabs v-model="activeDay" grow show-arrows>
+      <v-tabs v-model="activeDay" grow show-arrows center-active>
         <v-tab
           v-for="({weekDay, trainings, maxIntensity}, dayIndex) in tabContent"
           :key="weekDay"
@@ -124,7 +124,7 @@ const groupedTrainings = computed(() => {
         v-if="!schedule.lockSchedule"
         :weekId="week.id"
         :weekNumber="weekNumber"
-        :dayIndex="activeDay"
+        :dayIndex="activeDay || 0"
       ></week-calendar-actions>
     </v-expansion-panel-text>
   </v-expansion-panel>
