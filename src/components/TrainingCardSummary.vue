@@ -13,6 +13,7 @@ const props = defineProps<{
 }>();
 
 const completionSummary = ref(props.training.completionSummary);
+
 const scheduleStore = useScheduleStore();
 const {saveCompletionSummary} = scheduleStore;
 
@@ -33,10 +34,12 @@ const handleSave = async () => {
 };
 </script>
 <template>
-  <div class="training-card-summary__description text-body-1">
-    {{ training.description }}
-  </div>
   <v-expand-transition>
+    <div
+      v-if="training.description"
+      class="training-card-summary__description text-body-1 pt-2 px-4">
+      {{ training.description }}
+    </div>
     <v-textarea
       v-if="isSummaryShown(training.id)"
       v-model="completionSummary"
