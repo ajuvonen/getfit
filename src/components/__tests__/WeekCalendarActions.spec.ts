@@ -1,9 +1,9 @@
 import {mount} from '@vue/test-utils';
 import {v4 as uuidv4} from 'uuid';
 import {describe, it, expect, beforeEach} from 'vitest';
-import WeekCalendarActions from '@/components/WeekCalendarActions.vue';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
+import WeekCalendarActions from '@/components/WeekCalendarActions.vue';
 
 describe('WeekCalendarActions', () => {
   const scheduleStore = useScheduleStore();
@@ -25,7 +25,7 @@ describe('WeekCalendarActions', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('actions work', () => {
+  it('actions work', async () => {
     const weekId = uuidv4();
     const wrapper = mount(WeekCalendarActions, {
       props: {
@@ -34,9 +34,9 @@ describe('WeekCalendarActions', () => {
         weekId: weekId,
       },
     });
-    wrapper.findByTestId('week-1-add-training-button').trigger('click');
-    wrapper.findByTestId('week-1-copy-button').trigger('click');
-    wrapper.findByTestId('week-1-delete-button').trigger('click');
+    await wrapper.findByTestId('week-1-add-training-button').trigger('click');
+    await wrapper.findByTestId('week-1-copy-button').trigger('click');
+    await wrapper.findByTestId('week-1-delete-button').trigger('click');
     expect(appStateStore.openNewTrainingDialog).toHaveBeenCalledWith(weekId, 0);
     expect(scheduleStore.copyWeek).toHaveBeenCalledWith(weekId);
     expect(scheduleStore.deleteWeek).toHaveBeenCalledWith(weekId);

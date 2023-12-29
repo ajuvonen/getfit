@@ -1,10 +1,10 @@
 import {mount} from '@vue/test-utils';
 import {describe, it, expect, beforeEach} from 'vitest';
 import {v4 as uuidv4} from 'uuid';
-import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
 import {Intensity, type Training} from '@/types';
+import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
 
 const basicTraining = {
   id: uuidv4(),

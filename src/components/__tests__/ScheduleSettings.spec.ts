@@ -1,10 +1,10 @@
-import {nextTick} from 'vue';
+// import {nextTick} from 'vue';
 import {mount} from '@vue/test-utils';
 import {describe, it, expect, beforeEach} from 'vitest';
-import ScheduleSettings from '@/components/ScheduleSettings.vue';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
-import {VSwitch} from 'vuetify/components/VSwitch';
+import ScheduleSettings from '@/components/ScheduleSettings.vue';
+// import {VSwitch} from 'vuetify/components/VSwitch';
 
 describe('ScheduleSettings', () => {
   const scheduleStore = useScheduleStore();

@@ -1,10 +1,10 @@
 import {mount} from '@vue/test-utils';
 import {describe, it, expect, beforeEach} from 'vitest';
-import EditTrainingDialog from '@/components/EditTrainingDialog.vue';
+import {VCard} from 'vuetify/components';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
 import {Intensity} from '@/types';
-import {VCard} from 'vuetify/components';
+import EditTrainingDialog from '@/components/EditTrainingDialog.vue';
 
 describe('EditTrainingDialog', () => {
   const scheduleStore = useScheduleStore();
