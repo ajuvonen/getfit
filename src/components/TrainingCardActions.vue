@@ -19,7 +19,7 @@ const {openEditTrainingDialog} = appStateStore;
 const {weekdays} = useWeekDays();
 </script>
 <template>
-  <v-menu location="end" :close-on-content-click="false">
+  <v-menu location="top center" :close-on-content-click="false">
     <template v-slot:activator="{props}">
       <v-btn
         :aria-label="$t('trainingCard.actionsLabel', training.activity)"
