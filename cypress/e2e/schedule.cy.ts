@@ -43,6 +43,10 @@ describe('Schedule tests', () => {
   it('settings work in print view', () => {
     cy.visit('/').getByTestId('navbar-schedule-link').click();
     cy.getByTestId('schedule-settings-add-week-button').click();
+    cy.getByTestId('week-1-add-training-button').click();
+    cy.getByTestId('edit-training-activity').click();
+    cy.get('.v-list-item').first().click();
+    cy.getByTestId('edit-training-save-button').click();
     cy.getByTestId('navbar-print-link').click();
     cy.getByTestId('week-1-table').find('thead th:first-child').should('have.text', 'Mon');
     cy.getByTestId('navbar-schedule-link').click();
