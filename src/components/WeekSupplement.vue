@@ -15,7 +15,7 @@ const {weekdays} = useWeekDays();
 </script>
 <template>
   <div v-if="trainings.length">
-    <div class="mt-4 text-subtitle-1">
+    <div class="mt-4 text-subtitle-2 text-uppercase">
       {{ weekdays[dayIndex] }}
     </div>
     <ul>

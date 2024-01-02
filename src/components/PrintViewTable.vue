@@ -25,6 +25,7 @@ defineProps<{
 
 @media print {
   .print-view__table {
+    min-height: 97vh;
     page-break-after: always;
     break-after: page;
   }

@@ -110,6 +110,7 @@
     "copyWeek": "Kopioi viikko {0}",
     "dayChipTitle": "Harjoituksia: {0}. Enimmäisvaativuus: {1}.",
     "deleteWeek": "Poista viikko {0}",
+    "noTrainings": "Ei harjoituksia",
     "weekChipTitle": "{0} harjoitus: {1}",
     "weekTitle": "Viikko {0}"
   },
