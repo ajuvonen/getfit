@@ -1,6 +1,14 @@
-it('shows content in print view', () => {
+it('shows no content in print view', () => {
   cy.visit('/').getByTestId('navbar-schedule-link').click();
   cy.getByTestId('schedule-settings-add-week-button').click();
+  cy.getByTestId('navbar-print-link').click();
+  cy.get('.simple-training-card').should('have.length', 0);
+  cy.getByTestId('week-1-table').find('tbody').should('have.text', 'No trainings');
+  cy.getByTestId('week-1-supplement').should('not.exist');
+});
+
+it('shows content in print view', () => {
+  cy.visit('/').getByTestId('navbar-schedule-link').click();
   cy.getByTestId('schedule-settings-add-week-button').click();
   cy.getByTestId('week-1').click();
   cy.getByTestId('week-1-add-training-button')
