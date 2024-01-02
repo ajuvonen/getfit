@@ -32,7 +32,7 @@ const trainingsByDay = computed(
     :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'"
   >
     <v-card-text>
-      <p class="text-center text-subtitle-1 mt-10 d-print-none">{{ t('print.guide') }}</p>
+      <p class="text-center text-subtitle-1 mb-10 d-print-none">{{ t('print.guide') }}</p>
       <div
         v-for="(week, weekIndex) in schedule.weeks"
         :key="week.id"
@@ -42,13 +42,13 @@ const trainingsByDay = computed(
           :tableTitle="t('weekCalendar.weekTitle', [weekIndex + 1])"
           :data-test-id="`week-${weekIndex + 1}-table`"
         >
-          <template #header>
+          <template v-if="week.trainings.length" #header>
             <tr>
               <th v-for="day in shortWeekdays" :key="day">{{ day }}</th>
             </tr>
           </template>
           <template #body>
-            <tr>
+            <tr v-if="week.trainings.length">
               <td v-for="(trainings, dayIndex) in trainingsByDay(week)" :key="dayIndex">
                 <simple-training-card
                   v-for="training in trainings"
@@ -57,9 +57,15 @@ const trainingsByDay = computed(
                 />
               </td>
             </tr>
+            <tr v-else>
+              <td :colspan="shortWeekdays.length" class="text-uppercase text-subtitle-2">
+                {{ t('weekCalendar.noTrainings') }}
+              </td>
+            </tr>
           </template>
         </print-view-table>
         <print-view-table
+          v-if="week.trainings.length"
           :tableTitle="t('print.supplement', [weekIndex + 1])"
           :data-test-id="`week-${weekIndex + 1}-supplement`"
         >
@@ -104,13 +110,9 @@ th {
   color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
 }
 
-td {
-  vertical-align: top;
-}
-
 @media screen {
-  .print-view__table-container {
-    margin-top: 4rem;
+  .print-view__table-container + .print-view__table-container {
+    margin-top: 40px;
   }
 }
 
