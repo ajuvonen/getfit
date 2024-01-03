@@ -8,6 +8,7 @@ import VueDatePicker from '@vuepic/vue-datepicker';
 import {useScheduleStore} from '@/stores/schedule';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import useScreenSize from '@/hooks/screenSize';
+import {DATE_FORMATS} from '@/constants';
 // import {getValidationErrors} from '@/utils';
 
 const scheduleStore = useScheduleStore();
@@ -58,7 +59,7 @@ const getDisabledDays = computed(() =>
             <!-- <v-text-field
               id="schedule-settings-program-name"
               v-model="schedule.name"
-              :label="t('settings.programName')"
+              :label="$t('settings.programName')"
               :error-messages="getValidationErrors(v$.name)"
               maxlength="30"
               counter
@@ -97,13 +98,14 @@ const getDisabledDays = computed(() =>
               :min-date="DateTime.now().startOf('week').toJSDate()"
               :locale="$i18n.locale"
               :clearable="false"
-              :format="$i18n.locale === 'en' ? 'MM/dd/yyyy' : 'dd.MM.yyyy'"
+              :format="DATE_FORMATS[$i18n.locale]"
               teleport-center
             >
               <template #dp-input="{value, onClear}">
                 <v-text-field
                   id="schedule-settings-start-date"
                   :model-value="value"
+                  :placeholder="$t('settings.startDateHint')"
                   clearable
                   append-icon="mdi-calendar"
                   variant="underlined"
@@ -113,6 +115,29 @@ const getDisabledDays = computed(() =>
                 ></v-text-field>
               </template>
             </VueDatePicker>
+            <v-expand-transition>
+              <div v-if="schedule.startDate">
+                <v-label for="schedule-settings-week-numbering">
+                  {{ $t('settings.weekNumbering') }}
+                </v-label>
+                <v-radio-group
+                  id="schedule-settings-week-number"
+                  v-model="schedule.actualWeekNumbering"
+                  inline
+                >
+                  <v-radio
+                    :label="$t('settings.assignedWeekNumbers')"
+                    :value="false"
+                    data-test-id="schedule-settings-week-numbering-assigned"
+                  ></v-radio>
+                  <v-radio
+                    :label="$t('settings.actualWeekNumbers')"
+                    :value="true"
+                    data-test-id="schedule-settings-week-numbering-actual"
+                  ></v-radio>
+                </v-radio-group>
+              </div>
+            </v-expand-transition>
             <v-label for="schedule-settings-unit-of-time">{{ $t('settings.unitOfTime') }}</v-label>
             <v-radio-group
               id="schedule-settings-unit-of-time"

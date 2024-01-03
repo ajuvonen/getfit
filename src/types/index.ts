@@ -20,6 +20,7 @@ export type Schedule = {
   name: string;
   startsOnSunday: boolean;
   startDate: Date | null;
+  actualWeekNumbering: boolean;
   availableActivities: string[];
   weeks: Week[];
   unitOfTime: 'm' | 'h';

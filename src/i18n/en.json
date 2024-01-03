@@ -81,17 +81,21 @@
     "schedule": "Schedule"
   },
   "settings": {
+    "actualWeekNumbers": "Calendar Week Numbers",
     "addWeek": "Add Week",
+    "assignedWeekNumbers": "Assigned Week Numbers (starting from 1)",
     "availableActivities": "Available Activities",
     "hours": "Hours",
     "lockSchedule": "Lock Schedule",
     "minutes": "Minutes",
     "programName": "Program Name",
     "startDate": "Program Start Date",
+    "startDateHint": "Required for ICS export",
     "startOfWeek": "Start of Week",
     "title": "Schedule Settings",
     "toggleAllActivities": "Toggle All",
-    "unitOfTime": "Unit of Time"
+    "unitOfTime": "Unit of Time",
+    "weekNumbering": "Week numbering"
   },
   "trainingCard": {
     "actions": "Actions",
