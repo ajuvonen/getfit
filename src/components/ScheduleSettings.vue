@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import {computed, ref} from 'vue';
 import {storeToRefs} from 'pinia';
+import {DateTime} from 'luxon';
 // import useVuelidate from '@vuelidate/core';
 // import {maxLength} from '@vuelidate/validators';
+import VueDatePicker from '@vuepic/vue-datepicker';
 import {useScheduleStore} from '@/stores/schedule';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import useScreenSize from '@/hooks/screenSize';
@@ -10,7 +12,7 @@ import useScreenSize from '@/hooks/screenSize';
 
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
-const {addWeek, changeUnitOfTime, toggleLockSchedule} = scheduleStore;
+const {addWeek, changeUnitOfTime, changeStartOfWeek, toggleLockSchedule} = scheduleStore;
 
 const {isSmallScreen, isMediumScreen} = useScreenSize();
 
@@ -33,7 +35,9 @@ const selectAll = computed({
   },
 });
 
-const onUnitOfTimeChange = (value: 'h' | 'm' | null) => changeUnitOfTime(value || 'h');
+const getDisabledDays = computed(() =>
+  schedule.value.startsOnSunday ? [1, 2, 3, 4, 5, 6] : [0, 2, 3, 4, 5, 6],
+);
 
 // const v$ = useVuelidate(
 //   {
@@ -62,11 +66,14 @@ const onUnitOfTimeChange = (value: 'h' | 'm' | null) => changeUnitOfTime(value |
               @input="v$.name.$touch"
               @blur="v$.name.$touch"
             /> -->
-            <v-label for="schedule-settings-start-of-week">{{ $t('settings.startOfWeek') }}</v-label>
+            <v-label for="schedule-settings-start-of-week">{{
+              $t('settings.startOfWeek')
+            }}</v-label>
             <v-radio-group
               id="schedule-settings-start-of-week"
-              v-model="schedule.startsOnSunday"
+              :model-value="schedule.startsOnSunday"
               inline
+              @update:model-value="changeStartOfWeek"
             >
               <v-radio
                 :label="$t('general.weekdays.monday')"
@@ -79,11 +86,38 @@ const onUnitOfTimeChange = (value: 'h' | 'm' | null) => changeUnitOfTime(value |
                 data-test-id="schedule-settings-start-of-week-sunday"
               ></v-radio>
             </v-radio-group>
+            <v-label for="schedule-settings-start-date">{{ $t('settings.startDate') }}</v-label>
+            <VueDatePicker
+              v-model="schedule.startDate"
+              :auto-apply="true"
+              :disabled-week-days="getDisabledDays"
+              :start-time="{hours: 0, minutes: 0}"
+              :enable-time-picker="false"
+              :week-start="schedule.startsOnSunday ? 0 : 1"
+              :min-date="DateTime.now().startOf('week').toJSDate()"
+              :locale="$i18n.locale"
+              :clearable="false"
+              :format="$i18n.locale === 'en' ? 'MM/dd/yyyy' : 'dd.MM.yyyy'"
+              teleport-center
+            >
+              <template #dp-input="{value, onClear}">
+                <v-text-field
+                  id="schedule-settings-start-date"
+                  :model-value="value"
+                  clearable
+                  append-icon="mdi-calendar"
+                  variant="underlined"
+                  density="compact"
+                  readonly
+                  @click:clear="onClear"
+                ></v-text-field>
+              </template>
+            </VueDatePicker>
             <v-label for="schedule-settings-unit-of-time">{{ $t('settings.unitOfTime') }}</v-label>
             <v-radio-group
               id="schedule-settings-unit-of-time"
               :model-value="schedule.unitOfTime"
-              @update:model-value="onUnitOfTimeChange"
+              @update:model-value="changeUnitOfTime"
               inline
             >
               <v-radio
@@ -101,7 +135,7 @@ const onUnitOfTimeChange = (value: 'h' | 'm' | null) => changeUnitOfTime(value |
             <v-checkbox-btn
               v-model="selectAll"
               :value="true"
-              label="Toggle All"
+              :label="$t('settings.toggleAllActivities')"
               color="secondary"
               hide-details="auto"
               data-test-id="schedule-settings-toggle-all-activities"
@@ -143,7 +177,7 @@ const onUnitOfTimeChange = (value: 'h' | 'm' | null) => changeUnitOfTime(value |
       <v-btn
         prepend-icon="mdi-plus"
         data-test-id="schedule-settings-add-week-button"
-        @click="addWeek(), settingsOpen = null"
+        @click="addWeek(), (settingsOpen = null)"
         >{{ $t('settings.addWeek') }}</v-btn
       >
     </v-card-actions>
@@ -151,6 +185,15 @@ const onUnitOfTimeChange = (value: 'h' | 'm' | null) => changeUnitOfTime(value |
 </template>
 
 <style lang="scss" scoped>
+:deep(#schedule-settings-start-date) {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.dp__main {
+  max-width: 250px;
+}
+
 .v-input {
   max-width: 500px;
 }

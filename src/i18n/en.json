@@ -87,8 +87,10 @@
     "lockSchedule": "Lock Schedule",
     "minutes": "Minutes",
     "programName": "Program Name",
+    "startDate": "Program Start Date",
     "startOfWeek": "Start of Week",
     "title": "Schedule Settings",
+    "toggleAllActivities": "Toggle All",
     "unitOfTime": "Unit of Time"
   },
   "trainingCard": {

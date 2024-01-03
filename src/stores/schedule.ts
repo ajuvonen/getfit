@@ -1,6 +1,7 @@
 import {defineStore} from 'pinia';
 import {v4 as uuidv4} from 'uuid';
 import {clone, lensProp, over} from 'ramda';
+import {DateTime} from 'luxon';
 import type {Schedule, Training, Week} from '@/types';
 import {ACTIVITIES} from '@/constants';
 import {roundNearestQuarter} from '@/utils';
@@ -11,6 +12,7 @@ export const useScheduleStore = defineStore('schedule', {
     schedule: {
       name: '',
       startsOnSunday: false,
+      startDate: null,
       availableActivities: ACTIVITIES.map(({value}) => value),
       weeks: [],
       unitOfTime: 'h',
@@ -98,7 +100,18 @@ export const useScheduleStore = defineStore('schedule', {
       ];
       targetTraining.completionSummary = completionSummary;
     },
-    changeUnitOfTime(newValue: 'h' | 'm') {
+    changeStartOfWeek(value: boolean | null) {
+      if (this.schedule.startDate) {
+        const date = DateTime.fromJSDate(this.schedule.startDate);
+        if (value) {
+          this.schedule.startDate = date.minus({days: 1}).toJSDate();
+        } else {
+          this.schedule.startDate = date.plus({days: 1}).toJSDate();
+        }
+      }
+      this.schedule.startsOnSunday = value || false;
+    },
+    changeUnitOfTime(newValue: 'h' | 'm' | null) {
       if (this.schedule.unitOfTime !== newValue) {
         const multiplier = newValue === 'h' ? 1 / 60 : 60;
         const precision = newValue === 'h' ? 2 : 0;
@@ -110,7 +123,7 @@ export const useScheduleStore = defineStore('schedule', {
             ),
           ),
         }));
-        this.schedule.unitOfTime = newValue;
+        this.schedule.unitOfTime = newValue || 'h';
       }
     },
     toggleLockSchedule() {
