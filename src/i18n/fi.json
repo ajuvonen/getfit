@@ -87,8 +87,10 @@
     "lockSchedule": "Lukitse ohjelma",
     "minutes": "Minuutit",
     "programName": "Ohjelman nimi",
+    "startDate": "Aloituspäivä",
     "startOfWeek": "Viikon aloitus",
     "title": "Ohjelman asetukset",
+    "toggleAllActivities": "Valitse kaikki",
     "unitOfTime": "Ajan yksikkö"
   },
   "trainingCard": {
