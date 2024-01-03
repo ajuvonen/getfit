@@ -71,3 +71,8 @@ export const DATE_FORMATS: {[key: string]: string} = {
   en: 'MM/dd/y',
   fi: 'd.M.y',
 };
+
+export const SHORT_DATE_FORMATS: {[key: string]: string} = {
+  en: 'MM/dd',
+  fi: 'd.M',
+};

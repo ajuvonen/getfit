@@ -83,7 +83,7 @@
   "settings": {
     "actualWeekNumbers": "Calendar Week Numbers",
     "addWeek": "Add Week",
-    "assignedWeekNumbers": "Assigned Week Numbers (starting from 1)",
+    "assignedWeekNumbers": "Assigned Numbers (1, 2, 3...)",
     "availableActivities": "Available Activities",
     "hours": "Hours",
     "lockSchedule": "Lock Schedule",

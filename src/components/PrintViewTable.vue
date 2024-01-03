@@ -1,12 +1,13 @@
 <script setup lang="ts">
 defineProps<{
-  tableTitle: string;
+  tableTitle?: string;
 }>();
 </script>
 <template>
   <v-table class="print-view__table bg-transparent">
     <template #top>
-      <h2 class="text-h5 pl-4">{{ tableTitle }}</h2>
+      <slot name="title"></slot>
+      <h2 v-if="!$slots.title" class="text-h5 ml-4">{{ tableTitle }}</h2>
     </template>
     <thead>
       <slot name="header"></slot>

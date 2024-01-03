@@ -83,7 +83,7 @@
   "settings": {
     "actualWeekNumbers": "Kalenterin viikkonumerot",
     "addWeek": "Lisää viikko",
-    "assignedWeekNumbers": "Asetetut viikkonumerot (alkaen viikosta 1)",
+    "assignedWeekNumbers": "Asetetut viikkonumerot (1, 2, 3...)",
     "availableActivities": "Mahdolliset lajit",
     "hours": "Tunnit",
     "lockSchedule": "Lukitse ohjelma",
