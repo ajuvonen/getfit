@@ -50,6 +50,9 @@ const groupedTrainings = computed(() => {
 
 const getWeekChipTitle = (intensity: Intensity, count: number) =>
   t('weekCalendar.weekChipTitle', [t(`intensities.${Intensity[intensity]}`), count]);
+
+const getDayChipTitle = (intensity: Intensity, count: number) =>
+  t('weekCalendar.dayChipTitle', [count, t(`intensities.${Intensity[intensity]}`)]);
 </script>
 <template>
   <v-expansion-panel
@@ -63,7 +66,7 @@ const getWeekChipTitle = (intensity: Intensity, count: number) =>
           {{ $t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekNumber)]) }}
         </h2>
       </div>
-      <div v-if="schedule.startDate" class="ml-3 text-sm">
+      <div v-if="!isSmallScreen && schedule.startDate" class="ml-4">
         {{ getDateInterval(weekNumber) }}
       </div>
       <v-chip
@@ -74,7 +77,7 @@ const getWeekChipTitle = (intensity: Intensity, count: number) =>
         :aria-label="getWeekChipTitle(+intensity, group.length)"
         variant="flat"
         label
-        class="ml-3"
+        class="ml-4"
         >{{ group.length }}</v-chip
       >
     </v-expansion-panel-title>
@@ -90,21 +93,11 @@ const getWeekChipTitle = (intensity: Intensity, count: number) =>
           <v-chip
             v-if="trainings.length"
             :color="getIntensityColor(maxIntensity)"
-            :title="
-              $t('weekCalendar.dayChipTitle', [
-                trainings.length,
-                $t(`intensities.${Intensity[maxIntensity]}`),
-              ])
-            "
-            :aria-label="
-              $t('weekCalendar.dayChipTitle', [
-                trainings.length,
-                $t(`intensities.${Intensity[maxIntensity]}`),
-              ])
-            "
+            :title="getDayChipTitle(maxIntensity, trainings.length)"
+            :aria-label="getDayChipTitle(maxIntensity, trainings.length)"
             variant="flat"
             label
-            class="ml-3"
+            class="ml-4"
             >{{ trainings.length }}</v-chip
           >
         </v-tab>
@@ -161,6 +154,10 @@ ul {
   display: flex;
   align-items: center;
   cursor: move;
+}
+
+.v-chip {
+  cursor: pointer;
 }
 
 :deep(.v-expansion-panel-title__overlay) {

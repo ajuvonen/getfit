@@ -23,7 +23,7 @@ export default function useWeekDays() {
     return dayArray.map((day) => t(`general.shortWeekdays.${day}`));
   });
 
-  const weekStart = computed(() => (weekNumber: number) => {
+  const getWeekStart = computed(() => (weekNumber: number) => {
     const startDate = schedule.value.startDate
       ? DateTime.fromJSDate(schedule.value.startDate)
       : DateTime.local().startOf('week');
@@ -33,8 +33,8 @@ export default function useWeekDays() {
   });
 
   const getDateInterval = computed(() => (weekNumber: number) => {
-    const formattedStart = weekStart.value(weekNumber)?.toFormat(DATE_FORMATS[locale.value]);
-    const formattedEnd = weekStart
+    const formattedStart = getWeekStart.value(weekNumber)?.toFormat(DATE_FORMATS[locale.value]);
+    const formattedEnd = getWeekStart
       .value(weekNumber)
       .plus({days: 6})
       .toFormat(DATE_FORMATS[locale.value]);
@@ -44,9 +44,9 @@ export default function useWeekDays() {
   const getDisplayWeekNumber = computed(
     () => (weekNumber: number) =>
       schedule.value.startDate && schedule.value.actualWeekNumbering
-        ? weekStart.value(weekNumber).weekNumber
+        ? getWeekStart.value(weekNumber).weekNumber
         : weekNumber,
   );
 
-  return {weekdays, shortWeekdays, getDateInterval, getDisplayWeekNumber};
+  return {weekdays, shortWeekdays, getWeekStart, getDateInterval, getDisplayWeekNumber};
 }
