@@ -13,6 +13,7 @@ export const useScheduleStore = defineStore('schedule', {
       name: '',
       startsOnSunday: false,
       startDate: null,
+      actualWeekNumbering: false,
       availableActivities: ACTIVITIES.map(({value}) => value),
       weeks: [],
       unitOfTime: 'h',

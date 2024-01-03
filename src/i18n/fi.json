@@ -81,17 +81,21 @@
     "schedule": "Ohjelma"
   },
   "settings": {
+    "actualWeekNumbers": "Kalenterin viikkonumerot",
     "addWeek": "Lisää viikko",
+    "assignedWeekNumbers": "Asetetut viikkonumerot (alkaen viikosta 1)",
     "availableActivities": "Mahdolliset lajit",
     "hours": "Tunnit",
     "lockSchedule": "Lukitse ohjelma",
     "minutes": "Minuutit",
     "programName": "Ohjelman nimi",
     "startDate": "Aloituspäivä",
+    "startDateHint": "Vaaditaan ICS-exportiin",
     "startOfWeek": "Viikon aloitus",
     "title": "Ohjelman asetukset",
     "toggleAllActivities": "Valitse kaikki",
-    "unitOfTime": "Ajan yksikkö"
+    "unitOfTime": "Ajan yksikkö",
+    "weekNumbering": "Viikkojen numerointi"
   },
   "trainingCard": {
     "actions": "Toiminnot",

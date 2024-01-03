@@ -10,6 +10,7 @@ import useScreenSize from '@/hooks/screenSize';
 import useWeekDays from '@/hooks/weekdays';
 import TrainingCard from '@/components/TrainingCard.vue';
 import WeekCalendarActions from '@/components/WeekCalendarActions.vue';
+import {useI18n} from 'vue-i18n';
 
 const props = defineProps<{
   week: Week;
@@ -20,9 +21,11 @@ const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
 const {reorderTrainings} = scheduleStore;
 
+const {t} = useI18n();
+
 const {isSmallScreen, isMediumScreen} = useScreenSize();
 
-const {weekdays, shortWeekdays} = useWeekDays();
+const {weekdays, shortWeekdays, getDateInterval, getDisplayWeekNumber} = useWeekDays();
 
 const activeDay = ref<number | null>(null);
 
@@ -44,24 +47,31 @@ const groupedTrainings = computed(() => {
   const trainings = groupBy(({intensity}) => intensity.toString(), props.week.trainings);
   return trainings as Record<string, Training[]>;
 });
+
+const getWeekChipTitle = (intensity: Intensity, count: number) =>
+  t('weekCalendar.weekChipTitle', [t(`intensities.${Intensity[intensity]}`), count]);
 </script>
 <template>
-  <v-expansion-panel style="background: rgba(255,255,255,0.9)" :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'">
+  <v-expansion-panel
+    style="background: rgba(255, 255, 255, 0.9)"
+    :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'"
+  >
     <v-expansion-panel-title>
       <div class="week-calendar__drag-handle">
         <v-icon icon="mdi-drag-vertical-variant" />
-        <h2 class="text-h5">{{ $t('weekCalendar.weekTitle', [weekNumber]) }}</h2>
+        <h2 class="text-h5">
+          {{ $t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekNumber)]) }}
+        </h2>
+      </div>
+      <div v-if="schedule.startDate" class="ml-3 text-sm">
+        {{ getDateInterval(weekNumber) }}
       </div>
       <v-chip
         v-for="[intensity, group] in Object.entries(groupedTrainings)"
         :key="intensity"
         :color="getIntensityColor(+intensity)"
-        :title="
-          $t('weekCalendar.weekChipTitle', [$t(`intensities.${Intensity[+intensity]}`), group.length])
-        "
-        :aria-label="
-          $t('weekCalendar.weekChipTitle', [$t(`intensities.${Intensity[+intensity]}`), group.length])
-        "
+        :title="getWeekChipTitle(+intensity, group.length)"
+        :aria-label="getWeekChipTitle(+intensity, group.length)"
         variant="flat"
         label
         class="ml-3"
@@ -114,7 +124,9 @@ const groupedTrainings = computed(() => {
             item-key="id"
             handle=".v-card-item"
             class="d-flex flex-wrap"
-            @update:model-value="(reorderedTrainings: Training[]) => reorderTrainings(week, reorderedTrainings)"
+            @update:model-value="
+              (reorderedTrainings: Training[]) => reorderTrainings(week, reorderedTrainings)
+            "
           >
             <template #item="{element}">
               <li>

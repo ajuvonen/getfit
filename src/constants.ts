@@ -66,3 +66,8 @@ export const ACTIVITIES: BaseActivity[] = [
     icon: 'mdi-walk',
   },
 ];
+
+export const DATE_FORMATS: {[key: string]: string} = {
+  en: 'MM/dd/y',
+  fi: 'd.M.y',
+};
