@@ -9,7 +9,7 @@ import {Intensity} from '@/types';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
 import {ACTIVITIES} from '@/constants';
-import {getIntensityColor, getIcon, getValidationErrors} from '@/utils';
+import {getIntensityColor, getIcon, getValidationErrors, decimalRegex} from '@/utils';
 import useScreenSize from '@/hooks/screenSize';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 
@@ -40,8 +40,6 @@ const handleSave = async () => {
     resetAndClose();
   }
 };
-
-const decimalRegex = helpers.regex(/^\d+(.(00?|25|50?|75))?$/);
 
 const rules = computed(() => ({
   title: {maxLength: maxLength(30)},

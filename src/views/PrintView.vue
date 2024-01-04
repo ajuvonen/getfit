@@ -74,7 +74,7 @@ const trainingsByDay = computed(
               </td>
             </tr>
             <tr v-else>
-              <td :colspan="shortWeekdays.length" class="text-uppercase text-subtitle-2">
+              <td colspan="7" class="text-uppercase text-subtitle-2">
                 {{ $t('weekCalendar.noTrainings') }}
               </td>
             </tr>

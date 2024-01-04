@@ -15,6 +15,7 @@ export const useScheduleStore = defineStore('schedule', {
       startDate: null,
       actualWeekNumbering: false,
       availableActivities: ACTIVITIES.map(({value}) => value),
+      defaultDuration: 1,
       weeks: [],
       unitOfTime: 'h',
       lockSchedule: false,
@@ -101,31 +102,32 @@ export const useScheduleStore = defineStore('schedule', {
       ];
       targetTraining.completionSummary = completionSummary;
     },
-    changeStartOfWeek(value: boolean | null) {
+    changeStartOfWeek(newValue: boolean | null) {
+      const parsedValue = newValue || false;
       if (this.schedule.startDate) {
         const date = DateTime.fromJSDate(this.schedule.startDate);
-        if (value) {
+        if (parsedValue) {
           this.schedule.startDate = date.minus({days: 1}).toJSDate();
         } else {
           this.schedule.startDate = date.plus({days: 1}).toJSDate();
         }
       }
-      this.schedule.startsOnSunday = value || false;
+      this.schedule.startsOnSunday = parsedValue;
     },
     changeUnitOfTime(newValue: 'h' | 'm' | null) {
-      if (this.schedule.unitOfTime !== newValue) {
-        const multiplier = newValue === 'h' ? 1 / 60 : 60;
-        const precision = newValue === 'h' ? 2 : 0;
-        this.schedule.weeks = this.schedule.weeks.map((week) => ({
-          ...week,
-          trainings: week.trainings.map(
-            over(lensProp('duration'), (duration) =>
-              roundNearestQuarter(duration * multiplier, precision),
-            ),
+      const parsedValue = newValue || 'h';
+      const multiplier = parsedValue === 'h' ? 1 / 60 : 60;
+      const precision = parsedValue === 'h' ? 2 : 0;
+      this.schedule.defaultDuration = roundNearestQuarter(this.schedule.defaultDuration * multiplier, precision);
+      this.schedule.weeks = this.schedule.weeks.map((week) => ({
+        ...week,
+        trainings: week.trainings.map(
+          over(lensProp('duration'), (duration) =>
+            roundNearestQuarter(duration * multiplier, precision),
           ),
-        }));
-        this.schedule.unitOfTime = newValue || 'h';
-      }
+        ),
+      }));
+      this.schedule.unitOfTime = parsedValue;
     },
     toggleLockSchedule() {
       const appStateStore = useAppStateStore();
