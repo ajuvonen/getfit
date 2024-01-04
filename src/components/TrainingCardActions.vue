@@ -16,7 +16,7 @@ const {deleteTraining, moveTraining, copyTraining} = scheduleStore;
 const appStateStore = useAppStateStore();
 const {openEditTrainingDialog} = appStateStore;
 
-const {weekdays} = useWeekDays();
+const {weekdays, getDisplayWeekNumber} = useWeekDays();
 </script>
 <template>
   <v-menu location="top center" :close-on-content-click="false">
@@ -46,9 +46,9 @@ const {weekdays} = useWeekDays();
             prepend-icon="mdi-arrow-all"
           />
         </template>
-        <v-list-group v-for="(week, index) in weeks" :key="week.id">
+        <v-list-group v-for="(week, weekIndex) in weeks" :key="week.id">
           <template v-slot:activator="{props}">
-            <v-list-item v-bind="props" :title="$t('weekCalendar.weekTitle', [index + 1])" />
+            <v-list-item v-bind="props" :title="$t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)])" />
           </template>
           <v-list-item
             v-for="(day, dayIndex) in weekdays"
@@ -67,9 +67,9 @@ const {weekdays} = useWeekDays();
             prepend-icon="mdi-content-copy"
           />
         </template>
-        <v-list-group v-for="(week, index) in weeks" :key="week.id">
+        <v-list-group v-for="(week, weekIndex) in weeks" :key="week.id">
           <template v-slot:activator="{props}">
-            <v-list-item v-bind="props" :title="$t('weekCalendar.weekTitle', [index + 1])" />
+            <v-list-item v-bind="props" :title="$t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)])" />
           </template>
           <v-list-item
             v-for="(day, dayIndex) in weekdays"

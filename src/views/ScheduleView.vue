@@ -22,7 +22,7 @@ const {weeks} = storeToRefs(useScheduleStore());
     class="mb-10"
   >
     <template #item="{element, index}">
-      <week-calendar :week="element" :weekNumber="index + 1" :data-test-id="`week-${index + 1}`" />
+      <week-calendar :week="element" :weekIndex="index" :data-test-id="`week-${index}`" />
     </template>
   </draggable-list>
   <edit-training-dialog />

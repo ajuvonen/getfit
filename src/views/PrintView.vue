@@ -5,7 +5,6 @@ import useWeekDays from '@/hooks/weekdays';
 import useScreenSize from '@/hooks/screenSize';
 import {useScheduleStore} from '@/stores/schedule';
 import type {Week} from '@/types';
-import {SHORT_DATE_FORMATS} from '@/constants';
 import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
 import WeekSupplement from '@/components/WeekSupplement.vue';
 import PrintViewTable from '@/components/PrintViewTable.vue';
@@ -15,7 +14,7 @@ const {settings, weeks} = storeToRefs(scheduleStore);
 
 const {isSmallScreen, isMediumScreen} = useScreenSize();
 
-const {shortWeekdays, getWeekStart, getDisplayWeekNumber, getDateInterval} = useWeekDays();
+const {shortWeekdays, getShortDate, getDisplayWeekNumber, getDateInterval} = useWeekDays();
 
 const trainingsByDay = computed(
   () => (week: Week) =>
@@ -38,14 +37,14 @@ const trainingsByDay = computed(
         :key="week.id"
         class="print-view__table-container"
       >
-        <print-view-table :data-test-id="`week-${weekIndex + 1}-table`">
+        <print-view-table :data-test-id="`week-${weekIndex}-table`">
           <template #title>
             <div class="d-flex align-center">
               <h2 class="text-h5 ml-4">
-                {{ $t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex + 1)]) }}
+                {{ $t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)]) }}
               </h2>
               <div v-if="settings.startDate" class="ml-4">
-                {{ getDateInterval(weekIndex + 1) }}
+                {{ getDateInterval(weekIndex) }}
               </div>
             </div>
           </template>
@@ -54,11 +53,7 @@ const trainingsByDay = computed(
               <th v-for="(day, dayIndex) in shortWeekdays" :key="day">
                 <div>{{ day }}</div>
                 <div v-if="settings.startDate">
-                  {{
-                    getWeekStart(weekIndex + 1)
-                      .plus({days: dayIndex})
-                      .toFormat(SHORT_DATE_FORMATS[$i18n.locale])
-                  }}
+                  {{ getShortDate(weekIndex, dayIndex) }}
                 </div>
               </th>
             </tr>
@@ -82,8 +77,8 @@ const trainingsByDay = computed(
         </print-view-table>
         <print-view-table
           v-if="week.trainings.length"
-          :tableTitle="$t('print.supplement', [getDisplayWeekNumber(weekIndex + 1)])"
-          :data-test-id="`week-${weekIndex + 1}-supplement`"
+          :tableTitle="$t('print.supplement', [getDisplayWeekNumber(weekIndex)])"
+          :data-test-id="`week-${weekIndex}-supplement`"
         >
           <template #header>
             <tr>
