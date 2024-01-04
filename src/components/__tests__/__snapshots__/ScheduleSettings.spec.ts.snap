@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ScheduleSettings > mounts 1`] = `
-"<div data-v-76426b41="" class="v-card v-theme--light v-card--density-default v-card--rounded v-card--variant-elevated" style="background-color: rgba(255, 255, 255, 0.9);">
+"<div data-v-76426b41="" class="v-card v-theme--light v-card--density-default v-card--rounded v-card--variant-elevated mb-10" style="background-color: rgba(255, 255, 255, 0.9);">
   <!---->
   <div class="v-card__loader">
     <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -31,7 +31,8 @@ exports[`ScheduleSettings > mounts 1`] = `
             <div class="v-expansion-panel-text__wrapper">
               <!-- <v-text-field
               id="schedule-settings-program-name"
-              v-model="schedule.name"
+              class="schedule-settings-input--wide"
+              v-model="settings.name"
               :label="$t('settings.programName')"
               :error-messages="getValidationErrors(v$.name)"
               maxlength="30"
@@ -79,7 +80,7 @@ exports[`ScheduleSettings > mounts 1`] = `
                 <div>
                   <!---->
                   <div class="dp__input_wrap">
-                    <div data-v-76426b41="" class="v-input v-input--horizontal v-input--density-compact v-locale--is-ltr v-input--readonly v-text-field v-input--plain-underlined">
+                    <div data-v-76426b41="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-input--readonly v-text-field v-input--plain-underlined">
                       <!---->
                       <div class="v-input__control">
                         <div class="v-field v-field--appended v-field--no-label v-field--variant-underlined v-theme--light v-locale--is-ltr">
@@ -119,9 +120,7 @@ exports[`ScheduleSettings > mounts 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="v-input__append"><i class="mdi-calendar mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i>
-                        <!---->
-                      </div>
+                      <!---->
                       <div class="v-input__details">
                         <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="schedule-settings-start-date-messages">
                           <!---->
@@ -177,14 +176,58 @@ exports[`ScheduleSettings > mounts 1`] = `
                   </transition-group-stub>
                   <!---->
                 </div>
+              </div><label data-v-76426b41="" class="v-label" for="schedule-settings-default-duration">
+                <!---->Default Activity Duration
+              </label>
+              <div data-v-76426b41="" class="v-input v-input--horizontal v-input--hide-spin-buttons v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-text-field--suffixed v-input--plain-underlined schedule-settings-input">
+                <!---->
+                <div class="v-input__control">
+                  <div class="v-field v-field--active v-field--dirty v-field--no-label v-field--variant-underlined v-theme--light v-locale--is-ltr">
+                    <div class="v-field__overlay"></div>
+                    <div class="v-field__loader">
+                      <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                        <!---->
+                        <div class="v-progress-linear__background" style="width: 100%;"></div>
+                        <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                          <div class="v-progress-linear__indeterminate">
+                            <div class="v-progress-linear__indeterminate long"></div>
+                            <div class="v-progress-linear__indeterminate short"></div>
+                          </div>
+                        </transition-stub>
+                        <!---->
+                      </div>
+                    </div>
+                    <!---->
+                    <div class="v-field__field" data-no-activator="">
+                      <!----><label class="v-label v-field-label" for="schedule-settings-default-duration">
+                        <!---->
+                        <!---->
+                      </label>
+                      <!----><input size="1" type="number" id="schedule-settings-default-duration" aria-describedby="schedule-settings-default-duration-messages" class="v-field__input"><span class="v-text-field__suffix"><span class="v-text-field__suffix__text">h</span></span>
+                    </div>
+                    <!---->
+                    <!---->
+                    <div class="v-field__outline">
+                      <!---->
+                      <!---->
+                    </div>
+                  </div>
+                </div>
+                <!---->
+                <div class="v-input__details">
+                  <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="schedule-settings-default-duration-messages">
+                    <!---->
+                  </transition-group-stub>
+                  <!---->
+                </div>
               </div><label data-v-76426b41="" class="v-label">
                 <!---->Available Activities
               </label>
               <div data-v-76426b41="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn" data-test-id="schedule-settings-toggle-all-activities">
                 <div class="v-selection-control__wrapper text-secondary">
                   <!---->
-                  <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-13" aria-disabled="false" type="checkbox" hide-details="auto" value="true"></div>
-                </div><label class="v-label v-label--clickable" for="input-13">
+                  <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-15" aria-disabled="false" type="checkbox" value="true"></div>
+                </div><label class="v-label v-label--clickable" for="input-15">
                   <!---->Toggle All
                 </label>
               </div>
@@ -371,7 +414,7 @@ exports[`ScheduleSettings > mounts 1`] = `
             }}</v-label>
             <v-switch
               id="schedule-settings-lock-schedule-button"
-              :model-value="schedule.lockSchedule"
+              :model-value="settings.lockSchedule"
               :value="true"
               color="secondary"
               hide-details="auto"

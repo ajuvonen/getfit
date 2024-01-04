@@ -3,7 +3,7 @@ import {storeToRefs} from 'pinia';
 import {useScheduleStore} from '@/stores/schedule';
 import {useI18n} from 'vue-i18n';
 import {DateTime} from 'luxon';
-import {DATE_FORMATS} from '@/constants';
+import {DATE_FORMATS, SHORT_DATE_FORMATS} from '@/constants';
 
 const sundayFirst = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 const mondayFirst = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
@@ -23,30 +23,38 @@ export default function useWeekDays() {
     return dayArray.map((day) => t(`general.shortWeekdays.${day}`));
   });
 
-  const getWeekStart = computed(() => (weekNumber: number) => {
+  const getWeekStart = computed(() => (weekIndex: number) => {
     const startDate = settings.value.startDate
       ? DateTime.fromJSDate(settings.value.startDate)
       : DateTime.local().startOf('week');
     return startDate.plus({
-      weeks: weekNumber - 1,
+      weeks: weekIndex,
     });
   });
 
-  const getDateInterval = computed(() => (weekNumber: number) => {
-    const formattedStart = getWeekStart.value(weekNumber)?.toFormat(DATE_FORMATS[locale.value]);
+  const getDateInterval = computed(() => (weekIndex: number) => {
+    const formattedStart = getWeekStart.value(weekIndex).toFormat(DATE_FORMATS[locale.value]);
     const formattedEnd = getWeekStart
-      .value(weekNumber)
+      .value(weekIndex)
       .plus({days: 6})
+      .endOf('day')
       .toFormat(DATE_FORMATS[locale.value]);
     return `${formattedStart} - ${formattedEnd}`;
   });
 
   const getDisplayWeekNumber = computed(
-    () => (weekNumber: number) =>
+    () => (weekIndex: number) =>
       settings.value.startDate && settings.value.actualWeekNumbering
-        ? getWeekStart.value(weekNumber).weekNumber
-        : weekNumber,
+        ? getWeekStart.value(weekIndex).weekNumber
+        : weekIndex + 1,
   );
 
-  return {weekdays, shortWeekdays, getWeekStart, getDateInterval, getDisplayWeekNumber};
+  const getShortDate = computed(() => (weekIndex: number, dayIndex: number) => {
+    const {locale} = useI18n();
+    return getWeekStart.value(weekIndex)
+      .plus({days: dayIndex})
+      .toFormat(SHORT_DATE_FORMATS[locale.value])
+  });
+
+  return {weekdays, shortWeekdays, getDateInterval, getDisplayWeekNumber, getShortDate};
 }

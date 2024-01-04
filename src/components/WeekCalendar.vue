@@ -14,7 +14,7 @@ import {useI18n} from 'vue-i18n';
 
 const props = defineProps<{
   week: Week;
-  weekNumber: number;
+  weekIndex: number;
 }>();
 
 const scheduleStore = useScheduleStore();
@@ -63,11 +63,11 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
       <div class="week-calendar__drag-handle">
         <v-icon icon="mdi-drag-vertical-variant" />
         <h2 class="text-h5">
-          {{ $t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekNumber)]) }}
+          {{ $t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)]) }}
         </h2>
       </div>
       <div v-if="!isSmallScreen && settings.startDate" class="ml-4">
-        {{ getDateInterval(weekNumber) }}
+        {{ getDateInterval(weekIndex) }}
       </div>
       <v-chip
         v-for="[intensity, group] in Object.entries(groupedTrainings)"
@@ -87,7 +87,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
           v-for="({weekDay, trainings, maxIntensity}, dayIndex) in tabContent"
           :key="weekDay"
           :value="dayIndex"
-          :data-test-id="`week-${weekNumber}-calendar-tab-${dayIndex}`"
+          :data-test-id="`week-${weekIndex}-calendar-tab-${dayIndex}`"
         >
           {{ weekDay }}
           <v-chip
@@ -107,7 +107,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
           v-for="({trainings}, dayIndex) in tabContent"
           :key="dayIndex"
           :value="dayIndex"
-          :data-test-id="`week-${weekNumber}-day-${dayIndex}`"
+          :data-test-id="`week-${weekIndex}-day-${dayIndex}`"
         >
           <draggable-list
             :model-value="trainings"
@@ -132,7 +132,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
       <week-calendar-actions
         v-if="!settings.lockSchedule"
         :weekId="week.id"
-        :weekNumber="weekNumber"
+        :weekIndex="weekIndex"
         :dayIndex="activeDay || 0"
       ></week-calendar-actions>
     </v-expansion-panel-text>
