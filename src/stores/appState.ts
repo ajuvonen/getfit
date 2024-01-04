@@ -15,11 +15,12 @@ export const useAppStateStore = defineStore('appState', {
   },
   actions: {
     openNewTrainingDialog(weekId: string, dayIndex: number) {
+      const scheduleStore = useScheduleStore();
       this.trainingData = {
         id: uuidv4(),
         weekId,
         dayIndex,
-        duration: 0,
+        duration: scheduleStore.schedule.defaultDuration,
         activity: '',
         description: '',
         title: '',

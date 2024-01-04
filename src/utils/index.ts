@@ -1,4 +1,5 @@
 import {Intensity, type BaseActivity} from '@/types';
+import {helpers} from '@vuelidate/validators';
 import type {ErrorObject} from '@vuelidate/core';
 
 export const roundNearestQuarter = function (number: number, precision: number) {
@@ -20,6 +21,8 @@ export const getIntensityColor = (intensity: Intensity) => {
       return '#6DBF79';
   }
 };
+
+export const decimalRegex = helpers.regex(/^\d+(.(00?|25|50?|75))?$/);
 
 export const getValidationErrors = (vuelidateField: {$errors: ErrorObject[]}) =>
   vuelidateField.$errors.map((error) => error.$message as string);

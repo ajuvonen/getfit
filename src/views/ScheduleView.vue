@@ -19,7 +19,7 @@ const {schedule} = storeToRefs(useScheduleStore());
     item-key="id"
     handle=".week-calendar__drag-handle"
     data-test-id="schedule"
-    class="my-10"
+    class="mb-10"
   >
     <template #item="{element, index}">
       <week-calendar :week="element" :weekNumber="index + 1" :data-test-id="`week-${index + 1}`" />

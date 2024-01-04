@@ -1,19 +1,22 @@
 <script setup lang="ts">
 import {computed, ref} from 'vue';
 import {storeToRefs} from 'pinia';
+import {useI18n} from 'vue-i18n';
 import {DateTime} from 'luxon';
-// import useVuelidate from '@vuelidate/core';
-// import {maxLength} from '@vuelidate/validators';
+import useVuelidate from '@vuelidate/core';
+import {required, between, maxLength, integer, helpers} from '@vuelidate/validators';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import {useScheduleStore} from '@/stores/schedule';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import useScreenSize from '@/hooks/screenSize';
 import {DATE_FORMATS} from '@/constants';
-// import {getValidationErrors} from '@/utils';
+import {getValidationErrors, decimalRegex} from '@/utils';
 
 const scheduleStore = useScheduleStore();
 const {schedule} = storeToRefs(scheduleStore);
 const {addWeek, changeUnitOfTime, changeStartOfWeek, toggleLockSchedule} = scheduleStore;
+
+const {t} = useI18n();
 
 const {isSmallScreen, isMediumScreen} = useScreenSize();
 
@@ -40,15 +43,22 @@ const getDisabledDays = computed(() =>
   schedule.value.startsOnSunday ? [1, 2, 3, 4, 5, 6] : [0, 2, 3, 4, 5, 6],
 );
 
-// const v$ = useVuelidate(
-//   {
-//     name: {maxLength: maxLength(30)},
-//   },
-//   schedule,
-// );
+const rules = computed(() => ({
+  // name: {maxLength: maxLength(30)},
+  defaultDuration: {
+    required,
+    between: between(0, schedule.value.unitOfTime === 'm' ? 300 : 6),
+    precision:
+      schedule.value.unitOfTime === 'm'
+        ? integer
+        : helpers.withMessage(t('errors.invalidPrecision'), decimalRegex),
+  },
+}));
+
+const v$ = useVuelidate(rules, schedule);
 </script>
 <template>
-  <v-card color="rgba(255,255,255,0.9)" :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'">
+  <v-card color="rgba(255,255,255,0.9)" class="mb-10" :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'">
     <v-card-text>
       <v-expansion-panels v-model="settingsOpen">
         <v-expansion-panel elevation="0" class="bg-transparent">
@@ -58,6 +68,7 @@ const getDisabledDays = computed(() =>
           <v-expansion-panel-text>
             <!-- <v-text-field
               id="schedule-settings-program-name"
+              class="schedule-settings-input--wide"
               v-model="schedule.name"
               :label="$t('settings.programName')"
               :error-messages="getValidationErrors(v$.name)"
@@ -101,16 +112,15 @@ const getDisabledDays = computed(() =>
               :format="DATE_FORMATS[$i18n.locale]"
               teleport-center
             >
-              <template #dp-input="{value, onClear}">
+              <template #dp-input="{value, onClear, openMenu}">
                 <v-text-field
                   id="schedule-settings-start-date"
                   :model-value="value"
                   :placeholder="$t('settings.startDateHint')"
                   clearable
-                  append-icon="mdi-calendar"
                   variant="underlined"
-                  density="compact"
                   readonly
+                  @keyup.enter="openMenu"
                   @click:clear="onClear"
                 ></v-text-field>
               </template>
@@ -156,13 +166,25 @@ const getDisabledDays = computed(() =>
                 data-test-id="schedule-settings-unit-of-time-m"
               ></v-radio>
             </v-radio-group>
+            <v-label for="schedule-settings-default-duration">Default Activity Duration</v-label>
+            <v-text-field
+              id="schedule-settings-default-duration"
+              class="schedule-settings-input"
+              v-model="schedule.defaultDuration"
+              :error-messages="getValidationErrors(v$.defaultDuration)"
+              :suffix="schedule.unitOfTime"
+              type="number"
+              variant="underlined"
+              hide-spin-buttons
+              @input="v$.defaultDuration.$touch"
+              @blur="v$.defaultDuration.$touch"
+            ></v-text-field>
             <v-label>{{ $t('settings.availableActivities') }}</v-label>
             <v-checkbox-btn
               v-model="selectAll"
               :value="true"
               :label="$t('settings.toggleAllActivities')"
               color="secondary"
-              hide-details="auto"
               data-test-id="schedule-settings-toggle-all-activities"
             />
             <div role="group">
@@ -215,11 +237,11 @@ const getDisabledDays = computed(() =>
   padding-bottom: 0;
 }
 
-.dp__main {
-  max-width: 250px;
+.dp__main, .schedule-settings-input {
+  max-width: 150px;
 }
 
-.v-input {
+.schedule-settings-input--wide {
   max-width: 500px;
 }
 

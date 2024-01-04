@@ -22,6 +22,7 @@ export type Schedule = {
   startDate: Date | null;
   actualWeekNumbering: boolean;
   availableActivities: string[];
+  defaultDuration: number;
   weeks: Week[];
   unitOfTime: 'm' | 'h';
   lockSchedule: boolean;
