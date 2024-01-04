@@ -10,13 +10,13 @@ defineProps<{
 }>();
 
 const scheduleStore = useScheduleStore();
-const {weeks} = storeToRefs(scheduleStore);
+const {settings, weeks} = storeToRefs(scheduleStore);
 const {deleteTraining, moveTraining, copyTraining} = scheduleStore;
 
 const appStateStore = useAppStateStore();
 const {openEditTrainingDialog} = appStateStore;
 
-const {weekdays, getDisplayWeekNumber} = useWeekDays();
+const {weekdays, getDisplayWeekNumber, getShortDate} = useWeekDays();
 </script>
 <template>
   <v-menu location="top center" :close-on-content-click="false">
@@ -48,7 +48,10 @@ const {weekdays, getDisplayWeekNumber} = useWeekDays();
         </template>
         <v-list-group v-for="(week, weekIndex) in weeks" :key="week.id">
           <template v-slot:activator="{props}">
-            <v-list-item v-bind="props" :title="$t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)])" />
+            <v-list-item
+              v-bind="props"
+              :title="$t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)])"
+            />
           </template>
           <v-list-item
             v-for="(day, dayIndex) in weekdays"
@@ -56,7 +59,11 @@ const {weekdays, getDisplayWeekNumber} = useWeekDays();
             :key="day"
             :title="day"
             @click="moveTraining(training, week.id, dayIndex)"
-          />
+          >
+            <template v-if="settings.startDate" #append>
+              <span class="ml-4">{{ getShortDate(dayIndex, weekIndex) }}</span>
+            </template>
+          </v-list-item>
         </v-list-group>
       </v-list-group>
       <v-list-group>
@@ -69,14 +76,22 @@ const {weekdays, getDisplayWeekNumber} = useWeekDays();
         </template>
         <v-list-group v-for="(week, weekIndex) in weeks" :key="week.id">
           <template v-slot:activator="{props}">
-            <v-list-item v-bind="props" :title="$t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)])" />
+            <v-list-item
+              v-bind="props"
+              :title="$t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)])"
+            />
           </template>
           <v-list-item
             v-for="(day, dayIndex) in weekdays"
             :key="day"
+            :v-slot:append="'foo'"
             :title="day"
             @click="copyTraining(training, week.id, dayIndex)"
-          />
+          >
+            <template v-if="settings.startDate" #append>
+              <span class="ml-4">{{ getShortDate(dayIndex, weekIndex) }}</span>
+            </template>
+          </v-list-item>
         </v-list-group>
       </v-list-group>
       <v-list-item
