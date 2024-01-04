@@ -11,7 +11,7 @@ import WeekSupplement from '@/components/WeekSupplement.vue';
 import PrintViewTable from '@/components/PrintViewTable.vue';
 
 const scheduleStore = useScheduleStore();
-const {schedule} = storeToRefs(scheduleStore);
+const {settings, weeks} = storeToRefs(scheduleStore);
 
 const {isSmallScreen, isMediumScreen} = useScreenSize();
 
@@ -34,7 +34,7 @@ const trainingsByDay = computed(
     <v-card-text>
       <p class="text-center text-subtitle-1 mb-10 d-print-none">{{ $t('print.guide') }}</p>
       <div
-        v-for="(week, weekIndex) in schedule.weeks"
+        v-for="(week, weekIndex) in weeks"
         :key="week.id"
         class="print-view__table-container"
       >
@@ -44,7 +44,7 @@ const trainingsByDay = computed(
               <h2 class="text-h5 ml-4">
                 {{ $t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex + 1)]) }}
               </h2>
-              <div v-if="schedule.startDate" class="ml-4">
+              <div v-if="settings.startDate" class="ml-4">
                 {{ getDateInterval(weekIndex + 1) }}
               </div>
             </div>
@@ -53,7 +53,7 @@ const trainingsByDay = computed(
             <tr>
               <th v-for="(day, dayIndex) in shortWeekdays" :key="day">
                 <div>{{ day }}</div>
-                <div v-if="schedule.startDate">
+                <div v-if="settings.startDate">
                   {{
                     getWeekStart(weekIndex + 1)
                       .plus({days: dayIndex})

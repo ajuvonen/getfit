@@ -14,7 +14,7 @@ import useScreenSize from '@/hooks/screenSize';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 
 const scheduleStore = useScheduleStore();
-const {schedule} = storeToRefs(scheduleStore);
+const {settings} = storeToRefs(scheduleStore);
 const {addOrEditTraining} = scheduleStore;
 
 const appStateStore = useAppStateStore();
@@ -47,9 +47,9 @@ const rules = computed(() => ({
   description: {maxLength: maxLength(2000)},
   duration: {
     required,
-    between: between(0, schedule.value.unitOfTime === 'm' ? 300 : 6),
+    between: between(0, settings.value.unitOfTime === 'm' ? 300 : 6),
     precision:
-      schedule.value.unitOfTime === 'm'
+      settings.value.unitOfTime === 'm'
         ? integer
         : helpers.withMessage(t('errors.invalidPrecision'), decimalRegex),
   },
@@ -125,7 +125,7 @@ const resetAndClose = () => {
           <v-text-field
             v-model.number="trainingData.duration"
             :error-messages="getValidationErrors(v$.duration)"
-            :suffix="schedule.unitOfTime"
+            :suffix="settings.unitOfTime"
             :label="t('editTraining.duration')"
             class="edit-training-duration"
             type="number"
@@ -171,6 +171,7 @@ const resetAndClose = () => {
         <v-btn
           prepend-icon="mdi-close"
           data-test-id="edit-training-close-button"
+          variant="tonal"
           @click="resetAndClose"
           >{{ $t('editTraining.closeDialog') }}</v-btn
         >

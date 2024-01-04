@@ -10,22 +10,22 @@ const mondayFirst = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'sa
 
 export default function useWeekDays() {
   const scheduleStore = useScheduleStore();
-  const {schedule} = storeToRefs(scheduleStore);
+  const {settings} = storeToRefs(scheduleStore);
   const {t, locale} = useI18n();
 
   const weekdays = computed(() => {
-    const dayArray = schedule.value.startsOnSunday ? sundayFirst : mondayFirst;
+    const dayArray = settings.value.startsOnSunday ? sundayFirst : mondayFirst;
     return dayArray.map((day) => t(`general.weekdays.${day}`));
   });
 
   const shortWeekdays = computed(() => {
-    const dayArray = schedule.value.startsOnSunday ? sundayFirst : mondayFirst;
+    const dayArray = settings.value.startsOnSunday ? sundayFirst : mondayFirst;
     return dayArray.map((day) => t(`general.shortWeekdays.${day}`));
   });
 
   const getWeekStart = computed(() => (weekNumber: number) => {
-    const startDate = schedule.value.startDate
-      ? DateTime.fromJSDate(schedule.value.startDate)
+    const startDate = settings.value.startDate
+      ? DateTime.fromJSDate(settings.value.startDate)
       : DateTime.local().startOf('week');
     return startDate.plus({
       weeks: weekNumber - 1,
@@ -43,7 +43,7 @@ export default function useWeekDays() {
 
   const getDisplayWeekNumber = computed(
     () => (weekNumber: number) =>
-      schedule.value.startDate && schedule.value.actualWeekNumbering
+      settings.value.startDate && settings.value.actualWeekNumbering
         ? getWeekStart.value(weekNumber).weekNumber
         : weekNumber,
   );

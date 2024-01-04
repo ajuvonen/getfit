@@ -52,7 +52,7 @@ describe('SimpleTrainingCard', () => {
   });
 
   it('shows custom data', async () => {
-    scheduleStore.schedule.unitOfTime = 'm';
+    scheduleStore.settings.unitOfTime = 'm';
     const wrapper = mount(SimpleTrainingCard, {
       props: {
         training: {

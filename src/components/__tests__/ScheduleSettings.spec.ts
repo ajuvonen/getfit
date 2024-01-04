@@ -26,7 +26,7 @@ describe('ScheduleSettings', () => {
 
   //   wrapper.findComponent(VSwitch).vm.$emit('update:modelValue');
   //   expect(scheduleStore.toggleLockSchedule).toHaveBeenCalled();
-  //   scheduleStore.schedule.lockSchedule = true;
+  //   scheduleStore.settings.lockSchedule = true;
   //   await nextTick();
   //   expect(wrapper.findByTestId('schedule-settings-add-week-button').exists()).toBe(false);
   // });
