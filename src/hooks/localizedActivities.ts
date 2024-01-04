@@ -20,7 +20,7 @@ export default function useLocalizedActivities() {
   const localizedActivities = computed(() => localizeAndSort(ACTIVITIES));
   const localizedAvailableActivities = computed(() =>
     localizeAndSort(
-      ACTIVITIES.filter(({value}) => scheduleStore.schedule.availableActivities.includes(value)),
+      ACTIVITIES.filter(({value}) => scheduleStore.settings.availableActivities.includes(value)),
     ),
   );
   return {localizedActivities, localizedAvailableActivities};

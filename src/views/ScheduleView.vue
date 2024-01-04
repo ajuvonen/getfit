@@ -6,14 +6,14 @@ import WeekCalendar from '@/components/WeekCalendar.vue';
 import ScheduleSettings from '@/components/ScheduleSettings.vue';
 import EditTrainingDialog from '@/components/EditTrainingDialog.vue';
 
-const {schedule} = storeToRefs(useScheduleStore());
+const {weeks} = storeToRefs(useScheduleStore());
 </script>
 
 <template>
   <schedule-settings />
   <draggable-list
-    v-if="schedule.weeks.length"
-    v-model="schedule.weeks"
+    v-if="weeks.length"
+    v-model="weeks"
     :componentData="{variant: 'accordion', color: 'transparent'}"
     tag="v-expansion-panels"
     item-key="id"

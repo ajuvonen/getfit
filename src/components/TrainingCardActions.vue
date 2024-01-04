@@ -10,7 +10,7 @@ defineProps<{
 }>();
 
 const scheduleStore = useScheduleStore();
-const {schedule} = storeToRefs(scheduleStore);
+const {weeks} = storeToRefs(scheduleStore);
 const {deleteTraining, moveTraining, copyTraining} = scheduleStore;
 
 const appStateStore = useAppStateStore();
@@ -46,7 +46,7 @@ const {weekdays} = useWeekDays();
             prepend-icon="mdi-arrow-all"
           />
         </template>
-        <v-list-group v-for="(week, index) in schedule.weeks" :key="week.id">
+        <v-list-group v-for="(week, index) in weeks" :key="week.id">
           <template v-slot:activator="{props}">
             <v-list-item v-bind="props" :title="$t('weekCalendar.weekTitle', [index + 1])" />
           </template>
@@ -67,7 +67,7 @@ const {weekdays} = useWeekDays();
             prepend-icon="mdi-content-copy"
           />
         </template>
-        <v-list-group v-for="(week, index) in schedule.weeks" :key="week.id">
+        <v-list-group v-for="(week, index) in weeks" :key="week.id">
           <template v-slot:activator="{props}">
             <v-list-item v-bind="props" :title="$t('weekCalendar.weekTitle', [index + 1])" />
           </template>

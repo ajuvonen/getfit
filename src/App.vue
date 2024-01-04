@@ -5,7 +5,7 @@ import {useI18n} from 'vue-i18n';
 import useScreenSize from '@/hooks/screenSize';
 import {useScheduleStore} from '@/stores/schedule';
 
-const {schedule} = storeToRefs(useScheduleStore());
+const {weeks} = storeToRefs(useScheduleStore());
 const {isSmallScreen} = useScreenSize();
 const {t} = useI18n();
 </script>
@@ -47,7 +47,7 @@ const {t} = useI18n();
           {{ t('routes.schedule') }}
         </v-btn>
         <v-btn
-          :disabled="!schedule.weeks.length"
+          :disabled="!weeks.length"
           to="print"
           value="print"
           data-test-id="navbar-print-link"

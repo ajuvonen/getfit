@@ -2,28 +2,28 @@ import {defineStore} from 'pinia';
 import {v4 as uuidv4} from 'uuid';
 import {clone, lensProp, over} from 'ramda';
 import {DateTime} from 'luxon';
-import type {Schedule, Training, Week} from '@/types';
+import type {ScheduleSettings, Training, Week} from '@/types';
 import {ACTIVITIES} from '@/constants';
 import {roundNearestQuarter} from '@/utils';
 import {useAppStateStore} from '@/stores/appState';
 
 export const useScheduleStore = defineStore('schedule', {
   state: () => ({
-    schedule: {
+    settings: {
       name: '',
       startsOnSunday: false,
       startDate: null,
       actualWeekNumbering: false,
       availableActivities: ACTIVITIES.map(({value}) => value),
       defaultDuration: 1,
-      weeks: [],
       unitOfTime: 'h',
       lockSchedule: false,
-    } as Schedule,
+    } as ScheduleSettings,
+    weeks: [] as Week[],
   }),
   getters: {
     getTargetWeekAndTraining: (state) => (weekId: string, trainingId?: string) => {
-      const targetWeek = state.schedule.weeks.find(({id}) => id === weekId) as Week;
+      const targetWeek = state.weeks.find(({id}) => id === weekId) as Week;
       const targetTraining = trainingId
         ? targetWeek.trainings.find(({id}) => id === trainingId)
         : undefined;
@@ -32,13 +32,13 @@ export const useScheduleStore = defineStore('schedule', {
   },
   actions: {
     addWeek() {
-      this.schedule.weeks.push({
+      this.weeks.push({
         id: uuidv4(),
         trainings: [],
       });
     },
     deleteWeek(weekId: string) {
-      this.schedule.weeks = this.schedule.weeks.filter(({id}) => id !== weekId);
+      this.weeks = this.weeks.filter(({id}) => id !== weekId);
     },
     copyWeek(weekId: string) {
       const [targetWeek] = this.getTargetWeekAndTraining(weekId);
@@ -52,7 +52,7 @@ export const useScheduleStore = defineStore('schedule', {
           weekId: newWeekId,
         })),
       } as Week;
-      this.schedule.weeks.push(cloneWeek);
+      this.weeks.push(cloneWeek);
     },
     addOrEditTraining(training: Training) {
       const [targetWeek] = this.getTargetWeekAndTraining(training.weekId);
@@ -104,22 +104,22 @@ export const useScheduleStore = defineStore('schedule', {
     },
     changeStartOfWeek(newValue: boolean | null) {
       const parsedValue = newValue || false;
-      if (this.schedule.startDate) {
-        const date = DateTime.fromJSDate(this.schedule.startDate);
+      if (this.settings.startDate) {
+        const date = DateTime.fromJSDate(this.settings.startDate);
         if (parsedValue) {
-          this.schedule.startDate = date.minus({days: 1}).toJSDate();
+          this.settings.startDate = date.minus({days: 1}).toJSDate();
         } else {
-          this.schedule.startDate = date.plus({days: 1}).toJSDate();
+          this.settings.startDate = date.plus({days: 1}).toJSDate();
         }
       }
-      this.schedule.startsOnSunday = parsedValue;
+      this.settings.startsOnSunday = parsedValue;
     },
     changeUnitOfTime(newValue: 'h' | 'm' | null) {
       const parsedValue = newValue || 'h';
       const multiplier = parsedValue === 'h' ? 1 / 60 : 60;
       const precision = parsedValue === 'h' ? 2 : 0;
-      this.schedule.defaultDuration = roundNearestQuarter(this.schedule.defaultDuration * multiplier, precision);
-      this.schedule.weeks = this.schedule.weeks.map((week) => ({
+      this.settings.defaultDuration = roundNearestQuarter(this.settings.defaultDuration * multiplier, precision);
+      this.weeks = this.weeks.map((week) => ({
         ...week,
         trainings: week.trainings.map(
           over(lensProp('duration'), (duration) =>
@@ -127,12 +127,12 @@ export const useScheduleStore = defineStore('schedule', {
           ),
         ),
       }));
-      this.schedule.unitOfTime = parsedValue;
+      this.settings.unitOfTime = parsedValue;
     },
     toggleLockSchedule() {
       const appStateStore = useAppStateStore();
       appStateStore.summaryShown = [];
-      this.schedule.lockSchedule = !this.schedule.lockSchedule;
+      this.settings.lockSchedule = !this.settings.lockSchedule;
     },
   },
 });

@@ -20,7 +20,7 @@ export const useAppStateStore = defineStore('appState', {
         id: uuidv4(),
         weekId,
         dayIndex,
-        duration: scheduleStore.schedule.defaultDuration,
+        duration: scheduleStore.settings.defaultDuration,
         activity: '',
         description: '',
         title: '',
@@ -35,7 +35,7 @@ export const useAppStateStore = defineStore('appState', {
       const clonedTraining = clone(training);
       if (
         clonedTraining.activity &&
-        !scheduleStore.schedule.availableActivities.includes(clonedTraining.activity)
+        !scheduleStore.settings.availableActivities.includes(clonedTraining.activity)
       ) {
         clonedTraining.activity = '';
       }

@@ -13,7 +13,7 @@ import {DATE_FORMATS} from '@/constants';
 import {getValidationErrors, decimalRegex} from '@/utils';
 
 const scheduleStore = useScheduleStore();
-const {schedule} = storeToRefs(scheduleStore);
+const {settings} = storeToRefs(scheduleStore);
 const {addWeek, changeUnitOfTime, changeStartOfWeek, toggleLockSchedule} = scheduleStore;
 
 const {t} = useI18n();
@@ -26,13 +26,13 @@ const {localizedActivities} = useLocalizedActivities();
 
 const selectAll = computed({
   get() {
-    return schedule.value.availableActivities.length === localizedActivities.value.length;
+    return settings.value.availableActivities.length === localizedActivities.value.length;
   },
   set() {
-    if (schedule.value.availableActivities.length === localizedActivities.value.length) {
-      schedule.value.availableActivities = [];
+    if (settings.value.availableActivities.length === localizedActivities.value.length) {
+      settings.value.availableActivities = [];
     } else {
-      schedule.value.availableActivities = localizedActivities.value.map(
+      settings.value.availableActivities = localizedActivities.value.map(
         (activity) => activity.value,
       );
     }
@@ -40,22 +40,22 @@ const selectAll = computed({
 });
 
 const getDisabledDays = computed(() =>
-  schedule.value.startsOnSunday ? [1, 2, 3, 4, 5, 6] : [0, 2, 3, 4, 5, 6],
+  settings.value.startsOnSunday ? [1, 2, 3, 4, 5, 6] : [0, 2, 3, 4, 5, 6],
 );
 
 const rules = computed(() => ({
   // name: {maxLength: maxLength(30)},
   defaultDuration: {
     required,
-    between: between(0, schedule.value.unitOfTime === 'm' ? 300 : 6),
+    between: between(0, settings.value.unitOfTime === 'm' ? 300 : 6),
     precision:
-      schedule.value.unitOfTime === 'm'
+      settings.value.unitOfTime === 'm'
         ? integer
         : helpers.withMessage(t('errors.invalidPrecision'), decimalRegex),
   },
 }));
 
-const v$ = useVuelidate(rules, schedule);
+const v$ = useVuelidate(rules, settings);
 </script>
 <template>
   <v-card color="rgba(255,255,255,0.9)" class="mb-10" :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'">
@@ -69,7 +69,7 @@ const v$ = useVuelidate(rules, schedule);
             <!-- <v-text-field
               id="schedule-settings-program-name"
               class="schedule-settings-input--wide"
-              v-model="schedule.name"
+              v-model="settings.name"
               :label="$t('settings.programName')"
               :error-messages="getValidationErrors(v$.name)"
               maxlength="30"
@@ -83,7 +83,7 @@ const v$ = useVuelidate(rules, schedule);
             }}</v-label>
             <v-radio-group
               id="schedule-settings-start-of-week"
-              :model-value="schedule.startsOnSunday"
+              :model-value="settings.startsOnSunday"
               inline
               @update:model-value="changeStartOfWeek"
             >
@@ -100,12 +100,12 @@ const v$ = useVuelidate(rules, schedule);
             </v-radio-group>
             <v-label for="schedule-settings-start-date">{{ $t('settings.startDate') }}</v-label>
             <VueDatePicker
-              v-model="schedule.startDate"
+              v-model="settings.startDate"
               :auto-apply="true"
               :disabled-week-days="getDisabledDays"
               :start-time="{hours: 0, minutes: 0}"
               :enable-time-picker="false"
-              :week-start="schedule.startsOnSunday ? 0 : 1"
+              :week-start="settings.startsOnSunday ? 0 : 1"
               :min-date="DateTime.now().startOf('week').toJSDate()"
               :locale="$i18n.locale"
               :clearable="false"
@@ -126,13 +126,13 @@ const v$ = useVuelidate(rules, schedule);
               </template>
             </VueDatePicker>
             <v-expand-transition>
-              <div v-if="schedule.startDate">
+              <div v-if="settings.startDate">
                 <v-label for="schedule-settings-week-numbering">
                   {{ $t('settings.weekNumbering') }}
                 </v-label>
                 <v-radio-group
                   id="schedule-settings-week-number"
-                  v-model="schedule.actualWeekNumbering"
+                  v-model="settings.actualWeekNumbering"
                   inline
                 >
                   <v-radio
@@ -151,7 +151,7 @@ const v$ = useVuelidate(rules, schedule);
             <v-label for="schedule-settings-unit-of-time">{{ $t('settings.unitOfTime') }}</v-label>
             <v-radio-group
               id="schedule-settings-unit-of-time"
-              :model-value="schedule.unitOfTime"
+              :model-value="settings.unitOfTime"
               @update:model-value="changeUnitOfTime"
               inline
             >
@@ -170,9 +170,9 @@ const v$ = useVuelidate(rules, schedule);
             <v-text-field
               id="schedule-settings-default-duration"
               class="schedule-settings-input"
-              v-model="schedule.defaultDuration"
+              v-model="settings.defaultDuration"
               :error-messages="getValidationErrors(v$.defaultDuration)"
-              :suffix="schedule.unitOfTime"
+              :suffix="settings.unitOfTime"
               type="number"
               variant="underlined"
               hide-spin-buttons
@@ -195,7 +195,7 @@ const v$ = useVuelidate(rules, schedule);
               >
                 <v-checkbox-btn
                   :id="`schedule-settings-activity-${activity.value}`"
-                  v-model="schedule.availableActivities"
+                  v-model="settings.availableActivities"
                   :value="activity.value"
                   class="flex-grow-0"
                 />
@@ -210,7 +210,7 @@ const v$ = useVuelidate(rules, schedule);
             }}</v-label>
             <v-switch
               id="schedule-settings-lock-schedule-button"
-              :model-value="schedule.lockSchedule"
+              :model-value="settings.lockSchedule"
               :value="true"
               color="secondary"
               hide-details="auto"
@@ -220,7 +220,7 @@ const v$ = useVuelidate(rules, schedule);
         </v-expansion-panel>
       </v-expansion-panels>
     </v-card-text>
-    <v-card-actions v-if="!schedule.lockSchedule">
+    <v-card-actions v-if="!settings.lockSchedule">
       <v-btn
         prepend-icon="mdi-plus"
         data-test-id="schedule-settings-add-week-button"
@@ -238,7 +238,7 @@ const v$ = useVuelidate(rules, schedule);
 }
 
 .dp__main, .schedule-settings-input {
-  max-width: 150px;
+  max-width: 200px;
 }
 
 .schedule-settings-input--wide {

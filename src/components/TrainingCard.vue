@@ -13,7 +13,7 @@ defineProps<{
 }>();
 
 const scheduleStore = useScheduleStore();
-const {schedule} = storeToRefs(scheduleStore);
+const {settings} = storeToRefs(scheduleStore);
 
 const appStateStore = useAppStateStore();
 const {isSummaryShown} = storeToRefs(appStateStore);
@@ -39,7 +39,7 @@ const {toggleSummaryShown} = appStateStore;
         </div>
         <div v-if="training.duration" class="training-card__duration text-subtitle-2">
           <v-icon icon="mdi-timer" :aria-label="$t('trainingCard.duration')" />
-          {{ training.duration }} {{ schedule.unitOfTime }}
+          {{ training.duration }} {{ settings.unitOfTime }}
         </div>
         <div v-if="training.location" class="training-card__location text-subtitle-2">
           <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />
@@ -55,7 +55,7 @@ const {toggleSummaryShown} = appStateStore;
       <training-card-summary :training="training" />
     </v-card-text>
     <v-card-actions class="flex-column align-stretch">
-      <training-card-actions v-if="!schedule.lockSchedule" :training="training" />
+      <training-card-actions v-if="!settings.lockSchedule" :training="training" />
       <v-btn
         v-else
         class="training-card__show-summary-button"

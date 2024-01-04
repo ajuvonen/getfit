@@ -18,7 +18,7 @@ const props = defineProps<{
 }>();
 
 const scheduleStore = useScheduleStore();
-const {schedule} = storeToRefs(scheduleStore);
+const {settings} = storeToRefs(scheduleStore);
 const {reorderTrainings} = scheduleStore;
 
 const {t} = useI18n();
@@ -66,7 +66,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
           {{ $t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekNumber)]) }}
         </h2>
       </div>
-      <div v-if="!isSmallScreen && schedule.startDate" class="ml-4">
+      <div v-if="!isSmallScreen && settings.startDate" class="ml-4">
         {{ getDateInterval(weekNumber) }}
       </div>
       <v-chip
@@ -130,7 +130,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
         </v-window-item>
       </v-window>
       <week-calendar-actions
-        v-if="!schedule.lockSchedule"
+        v-if="!settings.lockSchedule"
         :weekId="week.id"
         :weekNumber="weekNumber"
         :dayIndex="activeDay || 0"

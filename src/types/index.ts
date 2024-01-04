@@ -16,14 +16,13 @@ export type Week = {
   trainings: Training[];
 };
 
-export type Schedule = {
+export type ScheduleSettings = {
   name: string;
   startsOnSunday: boolean;
   startDate: Date | null;
   actualWeekNumbering: boolean;
   availableActivities: string[];
   defaultDuration: number;
-  weeks: Week[];
   unitOfTime: 'm' | 'h';
   lockSchedule: boolean;
 };

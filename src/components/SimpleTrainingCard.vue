@@ -10,7 +10,7 @@ defineProps<{
 }>();
 
 const scheduleStore = useScheduleStore();
-const {schedule} = storeToRefs(scheduleStore);
+const {settings} = storeToRefs(scheduleStore);
 </script>
 <template>
   <div class="simple-training-card mt-4">
@@ -25,7 +25,7 @@ const {schedule} = storeToRefs(scheduleStore);
     </div>
     <div v-if="training.duration" class="simple-training-card__duration text-body-1">
       <v-icon icon="mdi-timer" :aria-label="$t('trainingCard.duration')" />
-      {{ training.duration }} {{ schedule.unitOfTime }}
+      {{ training.duration }} {{ settings.unitOfTime }}
     </div>
     <div v-if="training.location" class="simple-training-card__location text-body-1">
       <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />

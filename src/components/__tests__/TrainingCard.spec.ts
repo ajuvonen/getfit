@@ -54,7 +54,7 @@ describe('TrainingCard', () => {
   });
 
   it('shows custom data', async () => {
-    scheduleStore.schedule.unitOfTime = 'm';
+    scheduleStore.settings.unitOfTime = 'm';
     const wrapper = mount(TrainingCard, {
       props: {
         training: {
@@ -89,7 +89,7 @@ describe('TrainingCard', () => {
     expect(wrapper.find('.training-card__action-button').exists()).toBe(true);
     expect(wrapper.find('.training-card__show-summary-button').exists()).toBe(false);
 
-    scheduleStore.schedule.lockSchedule = true;
+    scheduleStore.settings.lockSchedule = true;
     await nextTick();
 
     expect(wrapper.find('.training-card__action-button').exists()).toBe(false);
