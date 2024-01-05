@@ -414,11 +414,10 @@ exports[`ScheduleSettings > mounts 1`] = `
             }}</v-label>
             <v-switch
               id="schedule-settings-lock-schedule-button"
-              :model-value="settings.lockSchedule"
+              v-model="settings.lockSchedule"
               :value="true"
               color="secondary"
               hide-details="auto"
-              @update:model-value="toggleLockSchedule"
             /> -->
             </div>
           </div>
