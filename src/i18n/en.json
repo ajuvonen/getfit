@@ -85,6 +85,7 @@
     "addWeek": "Add Week",
     "assignedWeekNumbers": "Assigned Numbers (1, 2, 3...)",
     "availableActivities": "Available Activities",
+    "defaultStart": "Default Activity Start And Duration",
     "hours": "Hours",
     "lockSchedule": "Lock Schedule",
     "minutes": "Minutes",

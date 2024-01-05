@@ -22,6 +22,7 @@ export type ScheduleSettings = {
   startDate: Date | null;
   actualWeekNumbering: boolean;
   availableActivities: string[];
+  defaultStartTime: {hours: number; minutes: number};
   defaultDuration: number;
   unitOfTime: 'm' | 'h';
   lockSchedule: boolean;

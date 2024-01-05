@@ -176,58 +176,17 @@ exports[`ScheduleSettings > mounts 1`] = `
                   </transition-group-stub>
                   <!---->
                 </div>
-              </div><label data-v-76426b41="" class="v-label" for="schedule-settings-default-duration">
-                <!---->Default Activity Duration
-              </label>
-              <div data-v-76426b41="" class="v-input v-input--horizontal v-input--hide-spin-buttons v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-text-field--suffixed v-input--plain-underlined schedule-settings-input">
-                <!---->
-                <div class="v-input__control">
-                  <div class="v-field v-field--active v-field--dirty v-field--no-label v-field--variant-underlined v-theme--light v-locale--is-ltr">
-                    <div class="v-field__overlay"></div>
-                    <div class="v-field__loader">
-                      <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
-                        <!---->
-                        <div class="v-progress-linear__background" style="width: 100%;"></div>
-                        <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
-                          <div class="v-progress-linear__indeterminate">
-                            <div class="v-progress-linear__indeterminate long"></div>
-                            <div class="v-progress-linear__indeterminate short"></div>
-                          </div>
-                        </transition-stub>
-                        <!---->
-                      </div>
-                    </div>
-                    <!---->
-                    <div class="v-field__field" data-no-activator="">
-                      <!----><label class="v-label v-field-label" for="schedule-settings-default-duration">
-                        <!---->
-                        <!---->
-                      </label>
-                      <!----><input size="1" type="number" id="schedule-settings-default-duration" aria-describedby="schedule-settings-default-duration-messages" class="v-field__input"><span class="v-text-field__suffix"><span class="v-text-field__suffix__text">h</span></span>
-                    </div>
-                    <!---->
-                    <!---->
-                    <div class="v-field__outline">
-                      <!---->
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-                <!---->
-                <div class="v-input__details">
-                  <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="schedule-settings-default-duration-messages">
-                    <!---->
-                  </transition-group-stub>
-                  <!---->
-                </div>
-              </div><label data-v-76426b41="" class="v-label">
+              </div>
+              <transition-stub data-v-76426b41="" name="expand-transition" appear="false" persisted="false" css="true">
+                <!--v-if-->
+              </transition-stub><label data-v-76426b41="" class="v-label">
                 <!---->Available Activities
               </label>
               <div data-v-76426b41="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn" data-test-id="schedule-settings-toggle-all-activities">
                 <div class="v-selection-control__wrapper text-secondary">
                   <!---->
-                  <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-15" aria-disabled="false" type="checkbox" value="true"></div>
-                </div><label class="v-label v-label--clickable" for="input-15">
+                  <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-13" aria-disabled="false" type="checkbox" value="true"></div>
+                </div><label class="v-label v-label--clickable" for="input-13">
                   <!---->Toggle All
                 </label>
               </div>

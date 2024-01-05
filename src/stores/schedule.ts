@@ -14,6 +14,10 @@ const getEmptySchedule = () : ScheduleSettings => ({
   startDate: null,
   actualWeekNumbering: false,
   availableActivities: ACTIVITIES.map(({value}) => value),
+  defaultStartTime: {
+    hours: 12,
+    minutes: 0,
+  },
   defaultDuration: 1,
   unitOfTime: 'h',
   lockSchedule: false,
