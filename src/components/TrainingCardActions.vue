@@ -1,22 +1,18 @@
 <script setup lang="ts">
-import {storeToRefs} from 'pinia';
 import {useAppStateStore} from '@/stores/appState';
 import {useScheduleStore} from '@/stores/schedule';
 import type {Training} from '@/types';
-import useWeekDays from '@/hooks/weekdays';
+import ActionMenuWeekGroup from '@/components/ActionMenuWeekGroup.vue';
 
 defineProps<{
   training: Training;
 }>();
 
 const scheduleStore = useScheduleStore();
-const {settings, weeks} = storeToRefs(scheduleStore);
-const {deleteTraining, moveTraining, copyTraining} = scheduleStore;
+const {deleteTraining} = scheduleStore;
 
 const appStateStore = useAppStateStore();
 const {openEditTrainingDialog} = appStateStore;
-
-const {weekdays, getDisplayWeekNumber, getShortDate} = useWeekDays();
 </script>
 <template>
   <v-menu location="top center" :close-on-content-click="false">
@@ -38,62 +34,8 @@ const {weekdays, getDisplayWeekNumber, getShortDate} = useWeekDays();
         class="training-card__edit-button"
         @click="openEditTrainingDialog(training)"
       />
-      <v-list-group>
-        <template v-slot:activator="{props}">
-          <v-list-item
-            v-bind="props"
-            :title="$t('trainingCard.move')"
-            prepend-icon="mdi-arrow-all"
-          />
-        </template>
-        <v-list-group v-for="(week, weekIndex) in weeks" :key="week.id">
-          <template v-slot:activator="{props}">
-            <v-list-item
-              v-bind="props"
-              :title="$t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)])"
-            />
-          </template>
-          <v-list-item
-            v-for="(day, dayIndex) in weekdays"
-            :disabled="week.id === training.weekId && dayIndex === training.dayIndex"
-            :key="day"
-            :title="day"
-            @click="moveTraining(training, week.id, dayIndex)"
-          >
-            <template v-if="settings.startDate" #append>
-              <span class="ml-4">{{ getShortDate(dayIndex, weekIndex) }}</span>
-            </template>
-          </v-list-item>
-        </v-list-group>
-      </v-list-group>
-      <v-list-group>
-        <template v-slot:activator="{props}">
-          <v-list-item
-            v-bind="props"
-            :title="$t('trainingCard.copy')"
-            prepend-icon="mdi-content-copy"
-          />
-        </template>
-        <v-list-group v-for="(week, weekIndex) in weeks" :key="week.id">
-          <template v-slot:activator="{props}">
-            <v-list-item
-              v-bind="props"
-              :title="$t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)])"
-            />
-          </template>
-          <v-list-item
-            v-for="(day, dayIndex) in weekdays"
-            :key="day"
-            :v-slot:append="'foo'"
-            :title="day"
-            @click="copyTraining(training, week.id, dayIndex)"
-          >
-            <template v-if="settings.startDate" #append>
-              <span class="ml-4">{{ getShortDate(dayIndex, weekIndex) }}</span>
-            </template>
-          </v-list-item>
-        </v-list-group>
-      </v-list-group>
+      <ActionMenuWeekGroup action="move" :training="training" />
+      <ActionMenuWeekGroup action="copy" :training="training" />
       <v-list-item
         :title="$t('trainingCard.deleteTraining')"
         prepend-icon="mdi-delete"
