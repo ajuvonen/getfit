@@ -14,7 +14,7 @@ import {getValidationErrors, decimalRegex} from '@/utils';
 
 const scheduleStore = useScheduleStore();
 const {settings} = storeToRefs(scheduleStore);
-const {addWeek, changeUnitOfTime, changeStartOfWeek, toggleLockSchedule} = scheduleStore;
+const {addWeek} = scheduleStore;
 
 const {t} = useI18n();
 
@@ -83,9 +83,8 @@ const v$ = useVuelidate(rules, settings);
             }}</v-label>
             <v-radio-group
               id="schedule-settings-start-of-week"
-              :model-value="settings.startsOnSunday"
+              v-model="settings.startsOnSunday"
               inline
-              @update:model-value="changeStartOfWeek"
             >
               <v-radio
                 :label="$t('general.weekdays.monday')"
@@ -151,8 +150,7 @@ const v$ = useVuelidate(rules, settings);
             <v-label for="schedule-settings-unit-of-time">{{ $t('settings.unitOfTime') }}</v-label>
             <v-radio-group
               id="schedule-settings-unit-of-time"
-              :model-value="settings.unitOfTime"
-              @update:model-value="changeUnitOfTime"
+              v-model="settings.unitOfTime"
               inline
             >
               <v-radio
@@ -210,11 +208,10 @@ const v$ = useVuelidate(rules, settings);
             }}</v-label>
             <v-switch
               id="schedule-settings-lock-schedule-button"
-              :model-value="settings.lockSchedule"
+              v-model="settings.lockSchedule"
               :value="true"
               color="secondary"
               hide-details="auto"
-              @update:model-value="toggleLockSchedule"
             /> -->
           </v-expansion-panel-text>
         </v-expansion-panel>
