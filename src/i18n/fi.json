@@ -85,6 +85,7 @@
     "addWeek": "Lisää viikko",
     "assignedWeekNumbers": "Asetetut viikkonumerot (1, 2, 3...)",
     "availableActivities": "Mahdolliset lajit",
+    "defaultStart": "Oletusarvoinen aloitus ja kesto",
     "hours": "Tunnit",
     "lockSchedule": "Lukitse ohjelma",
     "minutes": "Minuutit",

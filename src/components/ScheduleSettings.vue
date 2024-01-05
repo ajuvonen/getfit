@@ -47,7 +47,7 @@ const rules = computed(() => ({
   // name: {maxLength: maxLength(30)},
   defaultDuration: {
     required,
-    between: between(0, settings.value.unitOfTime === 'm' ? 300 : 6),
+    between: between(0, settings.value.unitOfTime === 'm' ? 360 : 6),
     precision:
       settings.value.unitOfTime === 'm'
         ? integer
@@ -58,7 +58,11 @@ const rules = computed(() => ({
 const v$ = useVuelidate(rules, settings);
 </script>
 <template>
-  <v-card color="rgba(255,255,255,0.9)" class="mb-10" :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'">
+  <v-card
+    color="rgba(255,255,255,0.9)"
+    class="mb-10"
+    :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'"
+  >
     <v-card-text>
       <v-expansion-panels v-model="settingsOpen">
         <v-expansion-panel elevation="0" class="bg-transparent">
@@ -148,11 +152,7 @@ const v$ = useVuelidate(rules, settings);
               </div>
             </v-expand-transition>
             <v-label for="schedule-settings-unit-of-time">{{ $t('settings.unitOfTime') }}</v-label>
-            <v-radio-group
-              id="schedule-settings-unit-of-time"
-              v-model="settings.unitOfTime"
-              inline
-            >
+            <v-radio-group id="schedule-settings-unit-of-time" v-model="settings.unitOfTime" inline>
               <v-radio
                 :label="$t('settings.hours')"
                 value="h"
@@ -164,19 +164,54 @@ const v$ = useVuelidate(rules, settings);
                 data-test-id="schedule-settings-unit-of-time-m"
               ></v-radio>
             </v-radio-group>
-            <v-label for="schedule-settings-default-duration">Default Activity Duration</v-label>
-            <v-text-field
-              id="schedule-settings-default-duration"
-              class="schedule-settings-input"
-              v-model="settings.defaultDuration"
-              :error-messages="getValidationErrors(v$.defaultDuration)"
-              :suffix="settings.unitOfTime"
-              type="number"
-              variant="underlined"
-              hide-spin-buttons
-              @input="v$.defaultDuration.$touch"
-              @blur="v$.defaultDuration.$touch"
-            ></v-text-field>
+            <v-expand-transition>
+              <div v-if="settings.startDate">
+                <v-label>{{ $t('settings.defaultStart') }}</v-label>
+                <div class="d-flex">
+                  <v-select
+                    v-model="settings.defaultStartTime.hours"
+                    :items="[...Array(24).keys()]"
+                    variant="underlined"
+                    class="schedule-settings__time-input"
+                    hide-details
+                  ></v-select>
+                  <v-select
+                    v-model="settings.defaultStartTime.minutes"
+                    :items="[
+                      {title: '00', value: 0},
+                      {title: '15', value: 15},
+                      {title: '30', value: 30},
+                      {title: '45', value: 45},
+                    ]"
+                    variant="underlined"
+                    class="schedule-settings__time-input"
+                    hide-details
+                  ></v-select>
+                  <v-text-field
+                    id="schedule-settings-default-duration"
+                    v-model="settings.defaultDuration"
+                    :suffix="settings.unitOfTime"
+                    class="schedule-settings__time-input ml-4"
+                    type="number"
+                    variant="underlined"
+                    hide-spin-buttons
+                    hide-details
+                    @input="v$.defaultDuration.$touch"
+                    @blur="v$.defaultDuration.$touch"
+                  ></v-text-field>
+                </div>
+                <div class="v-input__details">
+                  <div
+                    class="v-messages text-error"
+                    role="alert"
+                    aria-live="polite"
+                    id="schedule-settings-default-duration-messages"
+                  >
+                    {{ getValidationErrors(v$.defaultDuration)[0] }}
+                  </div>
+                </div>
+              </div>
+            </v-expand-transition>
             <v-label>{{ $t('settings.availableActivities') }}</v-label>
             <v-checkbox-btn
               v-model="selectAll"
@@ -234,7 +269,13 @@ const v$ = useVuelidate(rules, settings);
   padding-bottom: 0;
 }
 
-.dp__main, .schedule-settings-input {
+.schedule-settings__time-input {
+  width: 4rem;
+  flex-grow: 0;
+}
+
+.dp__main,
+.schedule-settings-input {
   max-width: 200px;
 }
 
