@@ -8,7 +8,7 @@ import {roundNearestQuarter} from '@/utils';
 import {useAppStateStore} from '@/stores/appState';
 import {computed, ref, watch} from 'vue';
 
-const getEmptySchedule = () : ScheduleSettings => ({
+const getEmptySchedule = (): ScheduleSettings => ({
   name: '',
   startsOnSunday: false,
   startDate: null,
@@ -17,6 +17,7 @@ const getEmptySchedule = () : ScheduleSettings => ({
   defaultStartTime: {
     hours: 12,
     minutes: 0,
+    seconds: 0,
   },
   defaultDuration: 1,
   unitOfTime: 'h',
@@ -120,40 +121,49 @@ export const useScheduleStore = defineStore('schedule', () => {
   };
 
   // Watchers
-  watch(() => settings.value.unitOfTime, (newValue) => {
-    const parsedValue = newValue || 'h';
-    const multiplier = parsedValue === 'h' ? 1 / 60 : 60;
-    const precision = parsedValue === 'h' ? 2 : 0;
-    settings.value.defaultDuration = roundNearestQuarter(
-      settings.value.defaultDuration * multiplier,
-      precision,
-    );
-    weeks.value = weeks.value.map((week) => ({
-      ...week,
-      trainings: week.trainings.map(
-        over(lensProp('duration'), (duration) =>
-          roundNearestQuarter(duration * multiplier, precision),
+  watch(
+    () => settings.value.unitOfTime,
+    (newValue) => {
+      const parsedValue = newValue || 'h';
+      const multiplier = parsedValue === 'h' ? 1 / 60 : 60;
+      const precision = parsedValue === 'h' ? 2 : 0;
+      settings.value.defaultDuration = roundNearestQuarter(
+        +settings.value.defaultDuration * multiplier,
+        precision,
+      );
+      weeks.value = weeks.value.map((week) => ({
+        ...week,
+        trainings: week.trainings.map(
+          over(lensProp('duration'), (duration) =>
+            roundNearestQuarter(duration * multiplier, precision),
+          ),
         ),
-      ),
-    }));
-  });
+      }));
+    },
+  );
 
-  watch(() => settings.value.startsOnSunday, (newValue) => {
-    const parsedValue = newValue || false;
-    if (settings.value.startDate) {
-      const date = DateTime.fromJSDate(settings.value.startDate);
-      if (parsedValue) {
-        settings.value.startDate = date.minus({days: 1}).toJSDate();
-      } else {
-        settings.value.startDate = date.plus({days: 1}).toJSDate();
+  watch(
+    () => settings.value.startsOnSunday,
+    (newValue) => {
+      const parsedValue = newValue || false;
+      if (settings.value.startDate) {
+        const date = DateTime.fromJSDate(settings.value.startDate);
+        if (parsedValue) {
+          settings.value.startDate = date.minus({days: 1}).toJSDate();
+        } else {
+          settings.value.startDate = date.plus({days: 1}).toJSDate();
+        }
       }
-    }
-  });
+    },
+  );
 
-  watch(() => settings.value.lockSchedule, () => {
-    const appStateStore = useAppStateStore();
-    appStateStore.summaryShown = [];
-  });
+  watch(
+    () => settings.value.lockSchedule,
+    () => {
+      const appStateStore = useAppStateStore();
+      appStateStore.summaryShown = [];
+    },
+  );
 
   // Reset
   const $reset = () => {
