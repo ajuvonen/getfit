@@ -3,14 +3,14 @@ import {computed, ref} from 'vue';
 import {storeToRefs} from 'pinia';
 import {useI18n} from 'vue-i18n';
 import {DateTime} from 'luxon';
-import useVuelidate from '@vuelidate/core';
 import {required, between, maxLength, integer, helpers} from '@vuelidate/validators';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import {useScheduleStore} from '@/stores/schedule';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import useScreenSize from '@/hooks/screenSize';
+import useValidatedRef from '@/hooks/validatedRef';
 import {DATE_FORMATS} from '@/constants';
-import {getValidationErrors, decimalRegex} from '@/utils';
+import {decimalRegex} from '@/utils';
 
 const scheduleStore = useScheduleStore();
 const {settings} = storeToRefs(scheduleStore);
@@ -55,7 +55,8 @@ const rules = computed(() => ({
   },
 }));
 
-const v$ = useVuelidate(rules, settings);
+// const [name, nameErrors] = useValidatedRef(settings, 'name', rules);
+const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', rules);
 </script>
 <template>
   <v-card
@@ -73,14 +74,12 @@ const v$ = useVuelidate(rules, settings);
             <!-- <v-text-field
               id="schedule-settings-program-name"
               class="schedule-settings-input--wide"
-              v-model="settings.name"
+              v-model="name"
               :label="$t('settings.programName')"
-              :error-messages="getValidationErrors(v$.name)"
+              :error-messages="nameErrors"
               maxlength="30"
               counter
               variant="underlined"
-              @input="v$.name.$touch"
-              @blur="v$.name.$touch"
             /> -->
             <v-label for="schedule-settings-start-of-week">{{
               $t('settings.startOfWeek')
@@ -164,54 +163,41 @@ const v$ = useVuelidate(rules, settings);
                 data-test-id="schedule-settings-unit-of-time-m"
               ></v-radio>
             </v-radio-group>
+            <v-label>{{ $t('settings.defaultStart') }}</v-label>
             <v-expand-transition>
-              <div v-if="settings.startDate">
-                <v-label>{{ $t('settings.defaultStart') }}</v-label>
-                <div class="d-flex">
-                  <v-select
-                    v-model="settings.defaultStartTime.hours"
-                    :items="[...Array(24).keys()]"
-                    variant="underlined"
-                    class="schedule-settings__time-input"
-                    hide-details
-                  ></v-select>
-                  <v-select
-                    v-model="settings.defaultStartTime.minutes"
-                    :items="[
-                      {title: '00', value: 0},
-                      {title: '15', value: 15},
-                      {title: '30', value: 30},
-                      {title: '45', value: 45},
-                    ]"
-                    variant="underlined"
-                    class="schedule-settings__time-input"
-                    hide-details
-                  ></v-select>
+              <VueDatePicker
+                v-if="settings.startDate"
+                v-model="settings.defaultStartTime"
+                :auto-apply="true"
+                :locale="$i18n.locale"
+                :clearable="false"
+                minutes-increment="5"
+                teleport-center
+                time-picker
+              >
+                <template #dp-input="{value, openMenu}">
                   <v-text-field
-                    id="schedule-settings-default-duration"
-                    v-model="settings.defaultDuration"
-                    :suffix="settings.unitOfTime"
-                    class="schedule-settings__time-input ml-4"
-                    type="number"
+                    :model-value="value"
+                    :aria-label="$t('settings.defaultStartTime')"
                     variant="underlined"
-                    hide-spin-buttons
+                    readonly
                     hide-details
-                    @input="v$.defaultDuration.$touch"
-                    @blur="v$.defaultDuration.$touch"
+                    @keyup.enter="openMenu"
                   ></v-text-field>
-                </div>
-                <div class="v-input__details">
-                  <div
-                    class="v-messages text-error"
-                    role="alert"
-                    aria-live="polite"
-                    id="schedule-settings-default-duration-messages"
-                  >
-                    {{ getValidationErrors(v$.defaultDuration)[0] }}
-                  </div>
-                </div>
-              </div>
+                </template>
+              </VueDatePicker>
             </v-expand-transition>
+            <v-text-field
+              v-model="duration"
+              :error-messages="durationErrors"
+              id="schedule-settings-default-duration"
+              :suffix="settings.unitOfTime"
+              :aria-label="$t('settings.defaultDuration')"
+              class="schedule-settings-input"
+              type="number"
+              variant="underlined"
+              hide-spin-buttons
+            ></v-text-field>
             <v-label>{{ $t('settings.availableActivities') }}</v-label>
             <v-checkbox-btn
               v-model="selectAll"
@@ -264,19 +250,17 @@ const v$ = useVuelidate(rules, settings);
 </template>
 
 <style lang="scss" scoped>
-:deep(#schedule-settings-start-date) {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.schedule-settings__time-input {
-  width: 4rem;
-  flex-grow: 0;
+:deep(.v-field__clearable) {
+  align-items: center !important;
 }
 
 .dp__main,
 .schedule-settings-input {
-  max-width: 200px;
+  max-width: 175px;
+}
+
+:deep(.dp__input_wrap) {
+  box-sizing: border-box;
 }
 
 .schedule-settings-input--wide {
