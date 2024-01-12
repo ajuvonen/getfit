@@ -47,7 +47,7 @@ const rules = computed(() => ({
   description: {maxLength: maxLength(2000)},
   duration: {
     required,
-    between: between(0, settings.value.unitOfTime === 'm' ? 300 : 6),
+    between: between(0, settings.value.unitOfTime === 'm' ? 360 : 6),
     precision:
       settings.value.unitOfTime === 'm'
         ? integer
