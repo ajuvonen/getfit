@@ -29,16 +29,52 @@ exports[`ScheduleSettings > mounts 1`] = `
         <transition-stub data-v-76426b41="" name="expand-transition" appear="false" persisted="false" css="true">
           <div class="v-expansion-panel-text">
             <div class="v-expansion-panel-text__wrapper">
-              <!-- <v-text-field
-              id="schedule-settings-program-name"
-              class="schedule-settings-input--wide"
-              v-model="name"
-              :label="$t('settings.programName')"
-              :error-messages="nameErrors"
-              maxlength="30"
-              counter
-              variant="underlined"
-            /> --><label data-v-76426b41="" class="v-label" for="schedule-settings-start-of-week">
+              <div data-v-76426b41="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined schedule-settings-input--wide">
+                <!---->
+                <div class="v-input__control">
+                  <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+                    <div class="v-field__overlay"></div>
+                    <div class="v-field__loader">
+                      <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                        <!---->
+                        <div class="v-progress-linear__background" style="width: 100%;"></div>
+                        <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                          <div class="v-progress-linear__indeterminate">
+                            <div class="v-progress-linear__indeterminate long"></div>
+                            <div class="v-progress-linear__indeterminate short"></div>
+                          </div>
+                        </transition-stub>
+                        <!---->
+                      </div>
+                    </div>
+                    <!---->
+                    <div class="v-field__field" data-no-activator="">
+                      <!----><label class="v-label v-field-label" for="schedule-settings-program-name">
+                        <!---->Program Name
+                      </label>
+                      <!----><input size="1" type="text" id="schedule-settings-program-name" aria-describedby="schedule-settings-program-name-messages" maxlength="30" class="v-field__input">
+                      <!---->
+                    </div>
+                    <!---->
+                    <!---->
+                    <div class="v-field__outline">
+                      <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="schedule-settings-program-name">
+                        <!---->Program Name
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!---->
+                <div class="v-input__details">
+                  <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="schedule-settings-program-name-messages">
+                    <!---->
+                  </transition-group-stub>
+                  <!----><span></span>
+                  <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
+                    <div class="v-counter" style="display: none;">0 / 30</div>
+                  </transition-stub>
+                </div>
+              </div><label data-v-76426b41="" class="v-label" for="schedule-settings-start-of-week">
                 <!---->Start of Week
               </label>
               <div data-v-76426b41="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-radio-group">
@@ -49,16 +85,16 @@ exports[`ScheduleSettings > mounts 1`] = `
                     <div data-v-76426b41="" class="v-selection-control v-selection-control--dirty v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="schedule-settings-start-of-week-monday">
                       <div class="v-selection-control__wrapper">
                         <!---->
-                        <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-4" aria-disabled="false" type="radio" name="schedule-settings-start-of-week" value="false"></div>
-                      </div><label class="v-label v-label--clickable" for="input-4">
+                        <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-6" aria-disabled="false" type="radio" name="schedule-settings-start-of-week" value="false"></div>
+                      </div><label class="v-label v-label--clickable" for="input-6">
                         <!---->Monday
                       </label>
                     </div>
                     <div data-v-76426b41="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="schedule-settings-start-of-week-sunday">
                       <div class="v-selection-control__wrapper">
                         <!---->
-                        <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-5" aria-disabled="false" type="radio" name="schedule-settings-start-of-week" value="true"></div>
-                      </div><label class="v-label v-label--clickable" for="input-5">
+                        <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-7" aria-disabled="false" type="radio" name="schedule-settings-start-of-week" value="true"></div>
+                      </div><label class="v-label v-label--clickable" for="input-7">
                         <!---->Sunday
                       </label>
                     </div>
@@ -152,16 +188,16 @@ exports[`ScheduleSettings > mounts 1`] = `
                     <div data-v-76426b41="" class="v-selection-control v-selection-control--dirty v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="schedule-settings-unit-of-time-h">
                       <div class="v-selection-control__wrapper">
                         <!---->
-                        <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-11" aria-disabled="false" type="radio" name="schedule-settings-unit-of-time" value="h"></div>
-                      </div><label class="v-label v-label--clickable" for="input-11">
+                        <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-13" aria-disabled="false" type="radio" name="schedule-settings-unit-of-time" value="h"></div>
+                      </div><label class="v-label v-label--clickable" for="input-13">
                         <!---->Hours
                       </label>
                     </div>
                     <div data-v-76426b41="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="schedule-settings-unit-of-time-m">
                       <div class="v-selection-control__wrapper">
                         <!---->
-                        <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-12" aria-disabled="false" type="radio" name="schedule-settings-unit-of-time" value="m"></div>
-                      </div><label class="v-label v-label--clickable" for="input-12">
+                        <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-14" aria-disabled="false" type="radio" name="schedule-settings-unit-of-time" value="m"></div>
+                      </div><label class="v-label v-label--clickable" for="input-14">
                         <!---->Minutes
                       </label>
                     </div>
@@ -227,8 +263,8 @@ exports[`ScheduleSettings > mounts 1`] = `
               <div data-v-76426b41="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn" data-test-id="schedule-settings-toggle-all-activities">
                 <div class="v-selection-control__wrapper text-secondary">
                   <!---->
-                  <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-15" aria-disabled="false" type="checkbox" value="true"></div>
-                </div><label class="v-label v-label--clickable" for="input-15">
+                  <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-17" aria-disabled="false" type="checkbox" value="true"></div>
+                </div><label class="v-label v-label--clickable" for="input-17">
                   <!---->Toggle All
                 </label>
               </div>
