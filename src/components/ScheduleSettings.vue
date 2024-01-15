@@ -67,7 +67,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
     <v-card-text>
       <v-expansion-panels v-model="settingsOpen">
         <v-expansion-panel elevation="0" class="bg-transparent">
-          <v-expansion-panel-title data-test-id="schedule-settings__heading">
+          <v-expansion-panel-title data-test-id="schedule-settings-heading">
             <h2 class="text-h5">{{ $t('settings.title') }}</h2>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
@@ -122,6 +122,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
                   clearable
                   variant="underlined"
                   readonly
+                  data-test-id="schedule-settings-start-date-input"
                   @keyup.enter="openMenu"
                   @click:clear="onClear"
                 ></v-text-field>

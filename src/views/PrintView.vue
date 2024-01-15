@@ -10,7 +10,7 @@ import useCalendarExport from '@/hooks/calendarExport';
 import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
 import WeekSupplement from '@/components/WeekSupplement.vue';
 import PrintViewTable from '@/components/PrintViewTable.vue';
-import { useI18n } from 'vue-i18n';
+import {useI18n} from 'vue-i18n';
 
 const scheduleStore = useScheduleStore();
 const {settings, weeks} = storeToRefs(scheduleStore);
@@ -64,8 +64,12 @@ const print = () => {
     <v-card-text>
       <p class="text-center text-subtitle-1 d-print-none">{{ $t('print.guide') }}</p>
       <div class="d-print-none d-flex justify-center my-4">
-        <v-btn v-if="settings.startDate" prepend-icon="mdi-calendar" @click="downloadICS">{{ $t('print.download') }}</v-btn>
-        <v-btn prepend-icon="mdi-printer" @click="print" class="ml-4">{{ $t('print.print') }}</v-btn>
+        <v-btn v-if="settings.startDate" prepend-icon="mdi-calendar" data-test-id="print-view-download-button" @click="downloadICS">{{
+          $t('print.download')
+        }}</v-btn>
+        <v-btn prepend-icon="mdi-printer" class="ml-4" data-test-id="print-view-print-button" @click="print">{{
+          $t('print.print')
+        }}</v-btn>
       </div>
       <div v-for="(week, weekIndex) in weeks" :key="week.id" class="print-view__table-container">
         <print-view-table :data-test-id="`week-${weekIndex}-table`">
