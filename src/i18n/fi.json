@@ -69,11 +69,13 @@
     "3": "Raskas"
   },
   "print": {
+    "download": "Lataa kalenteritiedosto",
+    "filename": "Harjoitusohjelma",
     "guide": "Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista. Poista sen jälkeen taustakuvien ja -värien tulostus käytöstä.",
     "instructions": "Ohjeet",
     "notes": "Muistiinpanot",
-    "supplement": "Lisämateriaali viikolle {0}",
-    "title": "Tulosta ohjelma"
+    "print": "Tulosta",
+    "supplement": "Lisämateriaali viikolle {0}"
   },
   "routes": {
     "home": "Etusivu",

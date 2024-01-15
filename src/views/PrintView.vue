@@ -1,18 +1,25 @@
 <script setup lang="ts">
 import {computed} from 'vue';
 import {storeToRefs} from 'pinia';
+import {createEvents} from 'ics';
 import useWeekDays from '@/hooks/weekdays';
 import useScreenSize from '@/hooks/screenSize';
 import {useScheduleStore} from '@/stores/schedule';
 import type {Week} from '@/types';
+import useCalendarExport from '@/hooks/calendarExport';
 import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
 import WeekSupplement from '@/components/WeekSupplement.vue';
 import PrintViewTable from '@/components/PrintViewTable.vue';
+import { useI18n } from 'vue-i18n';
 
 const scheduleStore = useScheduleStore();
 const {settings, weeks} = storeToRefs(scheduleStore);
 
 const {isSmallScreen, isMediumScreen} = useScreenSize();
+
+const {t} = useI18n();
+
+const {createCalendarEvents} = useCalendarExport();
 
 const {shortWeekdays, getShortDate, getDisplayWeekNumber, getDateInterval} = useWeekDays();
 
@@ -22,6 +29,30 @@ const trainingsByDay = computed(
       week.trainings.filter(({dayIndex}) => dayIndex === weekdayIndex),
     ),
 );
+
+const downloadICS = async () => {
+  const events = createCalendarEvents(weeks.value, settings.value);
+  const {value, error} = createEvents(events);
+  if (error) {
+    console.error(error);
+  } else if (value) {
+    const file = new File([value], t('print.filename'), {type: 'text/calendar'});
+    const url = URL.createObjectURL(file);
+
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = t('print.filename');
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+
+    URL.revokeObjectURL(url);
+  }
+};
+
+const print = () => {
+  window.print();
+};
 </script>
 
 <template>
@@ -31,12 +62,12 @@ const trainingsByDay = computed(
     :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'"
   >
     <v-card-text>
-      <p class="text-center text-subtitle-1 mb-10 d-print-none">{{ $t('print.guide') }}</p>
-      <div
-        v-for="(week, weekIndex) in weeks"
-        :key="week.id"
-        class="print-view__table-container"
-      >
+      <p class="text-center text-subtitle-1 d-print-none">{{ $t('print.guide') }}</p>
+      <div class="d-print-none d-flex justify-center my-4">
+        <v-btn v-if="settings.startDate" prepend-icon="mdi-calendar" @click="downloadICS">{{ $t('print.download') }}</v-btn>
+        <v-btn prepend-icon="mdi-printer" @click="print" class="ml-4">{{ $t('print.print') }}</v-btn>
+      </div>
+      <div v-for="(week, weekIndex) in weeks" :key="week.id" class="print-view__table-container">
         <print-view-table :data-test-id="`week-${weekIndex}-table`">
           <template #title>
             <div class="d-flex align-center">
