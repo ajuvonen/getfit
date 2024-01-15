@@ -7,6 +7,7 @@ import {
   type ComputedRef,
 } from 'vue';
 import {useVuelidate, type ValidationRule} from '@vuelidate/core';
+import {clone} from 'ramda';
 import {getValidationErrors} from '@/utils';
 
 export default function useValidatedRef<T>(
@@ -18,7 +19,7 @@ export default function useValidatedRef<T>(
     } | undefined;
   }>,
 ): [WritableComputedRef<T[keyof T]>, ComputedRef<string[]>] {
-  const internal = ref({...original.value}) as Ref<T>;
+  const internal = ref(clone(original.value)) as Ref<T>;
   const $v = useVuelidate(rules, internal);
   watch(
     () => original.value[key],
@@ -41,6 +42,6 @@ export default function useValidatedRef<T>(
         }
       },
     }),
-    computed(() => getValidationErrors($v.value)),
+    computed(() => getValidationErrors($v.value[key])),
   ];
 }
