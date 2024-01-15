@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {storeToRefs} from 'pinia';
 import {useScheduleStore} from '@/stores/schedule';
-import {Intensity, type Training} from '@/types';
+import type {Training} from '@/types';
 import {getIcon} from '@/utils';
 import {ACTIVITIES} from '@/constants';
 
@@ -33,7 +33,7 @@ const {settings} = storeToRefs(scheduleStore);
     </div>
     <div class="simple-training-card__intensity text-body-1">
       <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />
-      {{ $t(`intensities.${Intensity[training.intensity]}`) }}
+      {{ $t(`intensities.${training.intensity}`) }}
     </div>
   </div>
 </template>

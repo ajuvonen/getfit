@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {storeToRefs} from 'pinia';
-import {Intensity, type Training} from '@/types';
+import type {Training} from '@/types';
 import {getIcon, getIntensityColor} from '@/utils';
 import {ACTIVITIES} from '@/constants';
 import {useScheduleStore} from '@/stores/schedule';
@@ -47,7 +47,7 @@ const {toggleSummaryShown} = appStateStore;
         </div>
         <div class="training-card__intensity text-subtitle-2">
           <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />
-          {{ $t(`intensities.${Intensity[training.intensity]}`) }}
+          {{ $t(`intensities.${training.intensity}`) }}
         </div>
       </v-card-title>
     </v-card-item>
