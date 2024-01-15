@@ -9,17 +9,22 @@ it('shows no content in print view', () => {
 
 it('shows content in print view', () => {
   cy.visit('/').getByTestId('navbar-schedule-link').click();
-  cy.getByTestId('schedule-settings-add-week-button').click();
-  cy.getByTestId('week-0').click();
-  cy.getByTestId('week-0-add-training-button')
-    .click();
-  cy.getByTestId('edit-training-activity').click();
-  cy.get('.v-list-item').first().click();
-  cy.getByTestId('edit-training-title').type('My training');
-  cy.getByTestId('edit-training-location').type('Gym');
-  cy.getByTestId('edit-training-duration').find('input').type('.5');
-  cy.getByTestId('edit-training-description').type('Take it easy');
-  cy.getByTestId('edit-training-save-button').click();
+  cy.addTraining();
   cy.getByTestId('navbar-print-link').click();
   cy.get('.simple-training-card').should('have.length', 1);
+  cy.getByTestId('print-view-download-button').should('not.exist');
+});
+
+it('shows print and calendar download buttons', () => {
+  cy.visit('/').getByTestId('navbar-schedule-link').click();
+  cy.addTraining();
+  cy.getByTestId('navbar-print-link').click();
+  cy.getByTestId('print-view-print-button').should('exist');
+  cy.getByTestId('print-view-download-button').should('not.exist');
+  cy.getByTestId('navbar-schedule-link').click();
+  cy.getByTestId('schedule-settings-start-date-input').click();
+  cy.get('.dp__calendar_item:not([aria-disabled])').first().click();
+  cy.getByTestId('navbar-print-link').click();
+  cy.getByTestId('print-view-print-button').should('exist');
+  cy.getByTestId('print-view-download-button').should('exist');
 });
