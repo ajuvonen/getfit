@@ -49,10 +49,10 @@ const groupedTrainings = computed(() => {
 });
 
 const getWeekChipTitle = (intensity: Intensity, count: number) =>
-  t('weekCalendar.weekChipTitle', [t(`intensities.${Intensity[intensity]}`), count]);
+  t('weekCalendar.weekChipTitle', [t(`intensities.${intensity}`), count]);
 
 const getDayChipTitle = (intensity: Intensity, count: number) =>
-  t('weekCalendar.dayChipTitle', [count, t(`intensities.${Intensity[intensity]}`)]);
+  t('weekCalendar.dayChipTitle', [count, t(`intensities.${intensity}`)]);
 </script>
 <template>
   <v-expansion-panel
