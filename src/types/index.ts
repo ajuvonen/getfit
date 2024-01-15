@@ -43,3 +43,15 @@ export type BaseActivity = {
 export type LocalizedActivity = BaseActivity & {
   title: string;
 };
+
+export type CalendarEvent = {
+  title: string;
+  description: string;
+  start: [number, number, number, number, number];
+  duration: {minutes: number};
+  location: string;
+  categories: string[];
+  status: 'CONFIRMED';
+  busyStatus: 'BUSY';
+  productId: 'ajuvonen/getfit';
+};
