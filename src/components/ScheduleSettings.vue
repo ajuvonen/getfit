@@ -44,7 +44,7 @@ const getDisabledDays = computed(() =>
 );
 
 const rules = computed(() => ({
-  // name: {maxLength: maxLength(30)},
+  name: {maxLength: maxLength(30)},
   defaultDuration: {
     required,
     between: between(0, settings.value.unitOfTime === 'm' ? 360 : 6),
@@ -55,7 +55,7 @@ const rules = computed(() => ({
   },
 }));
 
-// const [name, nameErrors] = useValidatedRef(settings, 'name', rules);
+const [name, nameErrors] = useValidatedRef(settings, 'name', rules);
 const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', rules);
 </script>
 <template>
@@ -71,7 +71,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
             <h2 class="text-h5">{{ $t('settings.title') }}</h2>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
-            <!-- <v-text-field
+            <v-text-field
               id="schedule-settings-program-name"
               class="schedule-settings-input--wide"
               v-model="name"
@@ -80,7 +80,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
               maxlength="30"
               counter
               variant="underlined"
-            /> -->
+            />
             <v-label for="schedule-settings-start-of-week">{{
               $t('settings.startOfWeek')
             }}</v-label>

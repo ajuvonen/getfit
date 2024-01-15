@@ -69,11 +69,13 @@
     "3": "Heavy"
   },
   "print": {
+    "download": "Download Calendar File",
+    "filename": "TraningSchedule",
     "guide": "For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows. Then uncheck printing of background images and -colors.",
     "instructions": "Instructions",
     "notes": "Notes",
-    "supplement": "Supplement for Week {0}",
-    "title": "Print Schedule"
+    "print": "Print",
+    "supplement": "Supplement for Week {0}"
   },
   "routes": {
     "home": "Home",
