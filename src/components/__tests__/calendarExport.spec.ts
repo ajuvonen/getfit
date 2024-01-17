@@ -3,6 +3,22 @@ import {mount} from '@vue/test-utils';
 import {v4 as uuidv4} from 'uuid';
 import useCalendarExport from '@/hooks/calendarExport';
 import {Intensity, type Week, type ScheduleSettings, type CalendarEvent} from '@/types';
+import {onMounted} from 'vue';
+
+const createTestComponent = (settings: ScheduleSettings, weeks: Week[]) => {
+  const promise: Promise<CalendarEvent[]> = new Promise((resolve) => {
+    mount({
+      template: '<div></div>',
+      setup() {
+        const {createCalendarEvents} = useCalendarExport();
+        onMounted(() => {
+          resolve(createCalendarEvents(weeks, settings));
+        });
+      },
+    });
+  });
+  return promise;
+};
 
 describe('useCalendarExport', () => {
   it('createCalendarEvents creates correct calendar events', async () => {
@@ -93,19 +109,7 @@ describe('useCalendarExport', () => {
       startsOnSunday: false,
     };
 
-    let events = [] as CalendarEvent[];
-    const {createCalendarEvents} = useCalendarExport();
-    const wrapper = mount({
-      template: '<div></div>',
-      setup() {
-        return {createCalendarEvents};
-      },
-      mounted() {
-        events = createCalendarEvents(mockWeeks, mockSettings);
-      },
-    });
-
-    await wrapper.vm.$nextTick();
+    const events = await createTestComponent(mockSettings, mockWeeks);
 
     expect(events).toHaveLength(5);
 
@@ -211,19 +215,7 @@ describe('useCalendarExport', () => {
       startsOnSunday: false,
     };
 
-    let events = [] as CalendarEvent[];
-    const {createCalendarEvents} = useCalendarExport();
-    const wrapper = mount({
-      template: '<div></div>',
-      setup() {
-        return {createCalendarEvents};
-      },
-      mounted() {
-        events = createCalendarEvents(mockWeeks, mockSettings);
-      },
-    });
-
-    await wrapper.vm.$nextTick();
+    const events = await createTestComponent(mockSettings, mockWeeks);
 
     expect(events).toHaveLength(2);
 
