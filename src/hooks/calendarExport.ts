@@ -3,10 +3,10 @@ import {useI18n} from 'vue-i18n';
 import type {CalendarEvent, ScheduleSettings, Week} from '@/types';
 
 export default function useCalendarExport() {
-  const createCalendarEvents = (weeks: Week[], settings: ScheduleSettings) => {
-    const events = [] as CalendarEvent[];
+  const {t} = useI18n();
 
-    const {t} = useI18n();
+  const createCalendarEvents = (weeks: Week[], settings: ScheduleSettings) => {
+    const events: CalendarEvent[] = [];
 
     weeks.forEach(({trainings}, weekIndex) => {
       const startDate = DateTime.fromJSDate(settings.startDate!).plus({weeks: weekIndex}).set({
@@ -14,7 +14,7 @@ export default function useCalendarExport() {
         minute: settings.defaultStartTime.minutes,
       });
       let accumulatedDuration = 0;
-      let currentDayIndex = -1;
+      let currentDayIndex = 0;
       trainings.forEach(
         ({activity, dayIndex, title, description, duration, intensity, location}) => {
           if (dayIndex !== currentDayIndex) {
