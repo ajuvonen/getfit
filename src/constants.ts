@@ -26,10 +26,6 @@ export const ACTIVITIES: BaseActivity[] = [
     icon: 'mdi-yoga',
   },
   {
-    value: 'meditation',
-    icon: 'mdi-meditation',
-  },
-  {
     value: 'downhill',
     icon: 'mdi-ski',
   },
@@ -64,6 +60,22 @@ export const ACTIVITIES: BaseActivity[] = [
   {
     value: 'walking',
     icon: 'mdi-walk',
+  },
+  {
+    value: 'cycling',
+    icon: 'mdi-bike-fast',
+  },
+  {
+    value: 'shooting',
+    icon: 'mdi-bullseye-arrow',
+  },
+  {
+    value: 'gymnastics',
+    icon: 'mdi-gymnastics',
+  },
+  {
+    value: 'skating',
+    icon: 'mdi-skate',
   },
 ];
 
