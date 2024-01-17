@@ -317,6 +317,17 @@ exports[`ScheduleSettings > mounts 1`] = `
                   <div data-v-76426b41="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
                     <div class="v-selection-control__wrapper">
                       <!---->
+                      <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="schedule-settings-activity-cycling" aria-disabled="false" type="checkbox" value="cycling"></div>
+                    </div>
+                    <!---->
+                  </div><label data-v-76426b41="" class="v-label flex-grow-1" for="schedule-settings-activity-cycling">
+                    <!----><i data-v-76426b41="" class="mdi-bike-fast mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Cycling
+                  </label>
+                </div>
+                <div data-v-76426b41="" class="schedule-settings__icon-container d-inline-flex">
+                  <div data-v-76426b41="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+                    <div class="v-selection-control__wrapper">
+                      <!---->
                       <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="schedule-settings-activity-downhill" aria-disabled="false" type="checkbox" value="downhill"></div>
                     </div>
                     <!---->
@@ -333,6 +344,17 @@ exports[`ScheduleSettings > mounts 1`] = `
                     <!---->
                   </div><label data-v-76426b41="" class="v-label flex-grow-1" for="schedule-settings-activity-gym">
                     <!----><i data-v-76426b41="" class="mdi-dumbbell mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Gym
+                  </label>
+                </div>
+                <div data-v-76426b41="" class="schedule-settings__icon-container d-inline-flex">
+                  <div data-v-76426b41="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+                    <div class="v-selection-control__wrapper">
+                      <!---->
+                      <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="schedule-settings-activity-gymnastics" aria-disabled="false" type="checkbox" value="gymnastics"></div>
+                    </div>
+                    <!---->
+                  </div><label data-v-76426b41="" class="v-label flex-grow-1" for="schedule-settings-activity-gymnastics">
+                    <!----><i data-v-76426b41="" class="mdi-gymnastics mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Gymnastics
                   </label>
                 </div>
                 <div data-v-76426b41="" class="schedule-settings__icon-container d-inline-flex">
@@ -361,22 +383,33 @@ exports[`ScheduleSettings > mounts 1`] = `
                   <div data-v-76426b41="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
                     <div class="v-selection-control__wrapper">
                       <!---->
-                      <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="schedule-settings-activity-meditation" aria-disabled="false" type="checkbox" value="meditation"></div>
+                      <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="schedule-settings-activity-running" aria-disabled="false" type="checkbox" value="running"></div>
                     </div>
                     <!---->
-                  </div><label data-v-76426b41="" class="v-label flex-grow-1" for="schedule-settings-activity-meditation">
-                    <!----><i data-v-76426b41="" class="mdi-meditation mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Meditation
+                  </div><label data-v-76426b41="" class="v-label flex-grow-1" for="schedule-settings-activity-running">
+                    <!----><i data-v-76426b41="" class="mdi-run mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Running
                   </label>
                 </div>
                 <div data-v-76426b41="" class="schedule-settings__icon-container d-inline-flex">
                   <div data-v-76426b41="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
                     <div class="v-selection-control__wrapper">
                       <!---->
-                      <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="schedule-settings-activity-running" aria-disabled="false" type="checkbox" value="running"></div>
+                      <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="schedule-settings-activity-shooting" aria-disabled="false" type="checkbox" value="shooting"></div>
                     </div>
                     <!---->
-                  </div><label data-v-76426b41="" class="v-label flex-grow-1" for="schedule-settings-activity-running">
-                    <!----><i data-v-76426b41="" class="mdi-run mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Running
+                  </div><label data-v-76426b41="" class="v-label flex-grow-1" for="schedule-settings-activity-shooting">
+                    <!----><i data-v-76426b41="" class="mdi-bullseye-arrow mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Shooting
+                  </label>
+                </div>
+                <div data-v-76426b41="" class="schedule-settings__icon-container d-inline-flex">
+                  <div data-v-76426b41="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+                    <div class="v-selection-control__wrapper">
+                      <!---->
+                      <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="schedule-settings-activity-skating" aria-disabled="false" type="checkbox" value="skating"></div>
+                    </div>
+                    <!---->
+                  </div><label data-v-76426b41="" class="v-label flex-grow-1" for="schedule-settings-activity-skating">
+                    <!----><i data-v-76426b41="" class="mdi-skate mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Skating
                   </label>
                 </div>
                 <div data-v-76426b41="" class="schedule-settings__icon-container d-inline-flex">

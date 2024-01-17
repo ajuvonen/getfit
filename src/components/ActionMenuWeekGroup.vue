@@ -25,6 +25,7 @@ const menuIcon = props.action === 'move' ? 'mdi-arrow-all' : 'mdi-content-copy';
         v-bind="props"
         :title="$t(`trainingCard.${action}`)"
         :prepend-icon="menuIcon"
+        :class="`training-card__${action}-button`"
       />
     </template>
     <v-list-group v-for="(week, weekIndex) in weeks" :key="week.id">
