@@ -4,7 +4,7 @@ import {v4 as uuidv4} from 'uuid';
 import {Intensity, type Training} from '@/types';
 import WeekSupplement from '@/components/WeekSupplement.vue';
 
-const trainings = [
+const trainings: Training[] = [
   {
     id: uuidv4(),
     weekId: uuidv4(),
@@ -17,7 +17,7 @@ const trainings = [
     completionSummary: '',
     location: 'Total wreck gym',
   },
-] as Training[];
+];
 
 describe('WeekSupplement', () => {
   it('mounts', () => {

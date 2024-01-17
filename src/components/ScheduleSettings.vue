@@ -183,6 +183,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
                     variant="underlined"
                     readonly
                     hide-details
+                    data-test-id="schedule-settings-default-start-time-input"
                     @keyup.enter="openMenu"
                   ></v-text-field>
                 </template>
