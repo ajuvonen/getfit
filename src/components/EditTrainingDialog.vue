@@ -25,10 +25,10 @@ const {t} = useI18n();
 const {isSmallScreen} = useScreenSize();
 
 const tickLabels = computed(() => ({
-  [Intensity.LIGHT]: t('intensities.LIGHT'),
-  [Intensity.NORMAL]: t('intensities.NORMAL'),
-  [Intensity.MEDIUM]: t('intensities.MEDIUM'),
-  [Intensity.HEAVY]: t('intensities.HEAVY'),
+  [Intensity.LIGHT]: t('intensities.0'),
+  [Intensity.NORMAL]: t('intensities.1'),
+  [Intensity.MEDIUM]: t('intensities.2'),
+  [Intensity.HEAVY]: t('intensities.3'),
 }));
 
 const {localizedAvailableActivities} = useLocalizedActivities();
