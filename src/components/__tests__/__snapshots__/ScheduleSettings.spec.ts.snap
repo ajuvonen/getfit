@@ -490,6 +490,9 @@ exports[`ScheduleSettings > mounts 1`] = `
   <div data-v-76426b41="" class="v-card-actions"><button data-v-76426b41="" type="button" class="v-btn v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" data-test-id="schedule-settings-add-week-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-plus mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Add Week</span>
       <!---->
       <!---->
+    </button><button data-v-76426b41="" type="button" class="v-btn v-btn--slim v-theme--light text-error v-btn--density-default v-btn--size-default v-btn--variant-outlined" data-test-id="schedule-settings-reset-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-trash-can-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Reset</span>
+      <!---->
+      <!---->
     </button></div>
   <!---->
   <!----><span class="v-card__underlay"></span>

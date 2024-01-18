@@ -6,6 +6,7 @@ import {DateTime} from 'luxon';
 import {required, between, maxLength, integer, helpers} from '@vuelidate/validators';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import {useScheduleStore} from '@/stores/schedule';
+import {useAppStateStore} from '@/stores/appState';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import useScreenSize from '@/hooks/screenSize';
 import useValidatedRef from '@/hooks/validatedRef';
@@ -14,7 +15,10 @@ import {decimalRegex} from '@/utils';
 
 const scheduleStore = useScheduleStore();
 const {settings} = storeToRefs(scheduleStore);
-const {addWeek} = scheduleStore;
+const {addWeek, $reset: resetSchedule} = scheduleStore;
+
+const appStateStore = useAppStateStore();
+const {$reset: resetAppState} = appStateStore;
 
 const {t} = useI18n();
 
@@ -57,6 +61,11 @@ const rules = computed(() => ({
 
 const [name, nameErrors] = useValidatedRef(settings, 'name', rules);
 const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', rules);
+
+const reset = () => {
+  resetSchedule();
+  resetAppState();
+};
 </script>
 <template>
   <v-card
@@ -236,6 +245,14 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
         data-test-id="schedule-settings-add-week-button"
         @click="addWeek(), (settingsOpen = null)"
         >{{ $t('settings.addWeek') }}</v-btn
+      >
+      <v-btn
+        prepend-icon="mdi-trash-can-outline"
+        color="error"
+        variant="outlined"
+        data-test-id="schedule-settings-reset-button"
+        @click="reset"
+        >{{ $t('settings.reset') }}</v-btn
       >
     </v-card-actions>
   </v-card>

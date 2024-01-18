@@ -68,7 +68,7 @@
     "3": "Raskas"
   },
   "print": {
-    "download": "Lataa kalenteri",
+    "download": "Vie kalenteri",
     "filename": "Harjoitusohjelma",
     "guide": "Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista. Poista sen jälkeen taustakuvien ja -värien tulostus käytöstä.",
     "instructions": "Ohjeet",
@@ -92,6 +92,7 @@
     "hours": "Tunnit",
     "minutes": "Minuutit",
     "programName": "Ohjelman nimi",
+    "reset": "Tyhjennä",
     "startDate": "Aloituspäivä",
     "startDateHint": "Vaaditaan ICS-exportiin",
     "startOfWeek": "Viikon aloitus",
