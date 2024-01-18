@@ -45,10 +45,8 @@ const {settings} = storeToRefs(scheduleStore);
         </div>
       </v-card-title>
     </v-card-item>
-    <v-card-text class="training-card__text">
-      <div v-if="training.description" class="text-body-1 pt-2 px-4">
-        {{ training.description }}
-      </div>
+    <v-card-text class="training-card__text" :class="training.description ? 'pt-2 px-4' : ''">
+      {{ training.description }}
     </v-card-text>
     <training-card-actions :training="training" />
   </v-card>
@@ -79,6 +77,7 @@ const {settings} = storeToRefs(scheduleStore);
 .training-card__text {
   margin-top: 7rem;
   padding: 0;
+  white-space: pre-wrap;
 }
 
 .training-card__activity-icon {

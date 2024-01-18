@@ -24,7 +24,7 @@ const {isSmallScreen} = useScreenSize();
     <v-btn
       :data-test-id="`week-${weekIndex}-add-training-button`"
       prepend-icon="mdi-plus"
-      variant="tonal"
+      variant="text"
       @click="openNewTrainingDialog(weekId, dayIndex)"
       >{{ $t('weekCalendar.addTraining') }}</v-btn
     >
@@ -32,7 +32,7 @@ const {isSmallScreen} = useScreenSize();
       :aria-label="$t('weekCalendar.copyWeek', [getDisplayWeekNumber(weekIndex)])"
       :data-test-id="`week-${weekIndex}-copy-button`"
       prepend-icon="mdi-content-copy"
-      variant="tonal"
+      variant="text"
       @click="copyWeek(weekId)"
       >{{ $t('weekCalendar.copyWeek') }}</v-btn
     >
