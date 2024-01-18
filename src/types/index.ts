@@ -7,7 +7,6 @@ export type Training = {
   description: string;
   duration: number;
   intensity: Intensity;
-  completionSummary: string;
   location: string;
 };
 
@@ -25,7 +24,6 @@ export type ScheduleSettings = {
   defaultStartTime: {hours: number; minutes: number; seconds: number};
   defaultDuration: number;
   unitOfTime: 'm' | 'h';
-  lockSchedule: boolean;
 };
 
 export enum Intensity {

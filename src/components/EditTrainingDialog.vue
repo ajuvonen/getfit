@@ -18,7 +18,6 @@ const {settings} = storeToRefs(scheduleStore);
 const {addOrEditTraining} = scheduleStore;
 
 const appStateStore = useAppStateStore();
-const {closeEditTrainingDialog} = appStateStore;
 const {trainingDialogOpen, trainingData} = storeToRefs(appStateStore);
 
 const {t} = useI18n();
@@ -60,7 +59,7 @@ const v$ = useVuelidate(rules, trainingData);
 
 const resetAndClose = () => {
   v$.value.$reset();
-  closeEditTrainingDialog();
+  trainingDialogOpen.value = false;
 };
 </script>
 <template>

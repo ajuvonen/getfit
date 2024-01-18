@@ -32,7 +32,6 @@ describe('EditTrainingDialog', () => {
       description: 'Light training at the gym',
       title: 'Sparring',
       intensity: Intensity.NORMAL,
-      completionSummary: '',
       location: 'Unisport Gym',
     };
 

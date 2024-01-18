@@ -1,4 +1,3 @@
-import {nextTick} from 'vue';
 import {mount} from '@vue/test-utils';
 import {describe, it, expect, beforeEach} from 'vitest';
 import {v4 as uuidv4} from 'uuid';
@@ -17,7 +16,6 @@ const basicTraining = {
   description: 'Sparring at the gym',
   duration: 1,
   intensity: Intensity.MEDIUM,
-  completionSummary: '',
   location: 'Total wreck gym',
 } as Training;
 
@@ -78,22 +76,6 @@ describe('TrainingCard', () => {
     });
 
     expect(wrapper.find('.training-card__duration').exists()).toBe(false);
-  });
-
-  it('hides actions when schedule is locked', async () => {
-    const wrapper = mount(TrainingCard, {
-      props: {
-        training: basicTraining,
-      },
-    });
-    expect(wrapper.find('.training-card__action-button').exists()).toBe(true);
-    expect(wrapper.find('.training-card__show-summary-button').exists()).toBe(false);
-
-    scheduleStore.settings.lockSchedule = true;
-    await nextTick();
-
-    expect(wrapper.find('.training-card__action-button').exists()).toBe(false);
-    expect(wrapper.find('.training-card__show-summary-button').exists()).toBe(true);
   });
 
   it('actions work', async () => {

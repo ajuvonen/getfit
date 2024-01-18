@@ -19,15 +19,4 @@ describe('ScheduleSettings', () => {
     const wrapper = mount(ScheduleSettings);
     expect(wrapper.html()).toMatchSnapshot();
   });
-
-  // it('hides actions when schedule is locked', async () => {
-  //   const wrapper = mount(ScheduleSettings);
-  //   expect(wrapper.findByTestId('schedule-settings-add-week-button').exists()).toBe(true);
-
-  //   wrapper.findComponent(VSwitch).vm.$emit('update:modelValue');
-  //   expect(scheduleStore.toggleLockSchedule).toHaveBeenCalled();
-  //   scheduleStore.settings.lockSchedule = true;
-  //   await nextTick();
-  //   expect(wrapper.findByTestId('schedule-settings-add-week-button').exists()).toBe(false);
-  // });
 });

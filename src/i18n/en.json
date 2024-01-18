@@ -72,7 +72,7 @@
     "3": "Heavy"
   },
   "print": {
-    "download": "Download Calendar File",
+    "download": "Download Calendar",
     "filename": "TraningSchedule",
     "guide": "For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows. Then uncheck printing of background images and -colors.",
     "instructions": "Instructions",
@@ -94,7 +94,6 @@
     "defaultStart": "Default Activity Start And Duration",
     "defaultStartTime": "Default Start TIme",
     "hours": "Hours",
-    "lockSchedule": "Lock Schedule",
     "minutes": "Minutes",
     "programName": "Program Name",
     "startDate": "Program Start Date",
@@ -108,7 +107,6 @@
   "trainingCard": {
     "actions": "Actions",
     "actionsLabel": "Actions for training {0}",
-    "completionSummary": "Completion Summary",
     "copy": "Copy",
     "deleteTraining": "Delete",
     "duration": "Training Duration",
@@ -116,8 +114,7 @@
     "hideSummary": "Hide Completion Summary",
     "intensity": "Training Intensity",
     "location": "Training Location",
-    "move": "Move",
-    "showSummary": "Show Completion Summary"
+    "move": "Move"
   },
   "weekCalendar": {
     "addTraining": "Add training",

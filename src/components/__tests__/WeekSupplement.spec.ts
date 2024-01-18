@@ -14,7 +14,6 @@ const trainings: Training[] = [
     description: 'Sparring at the gym',
     duration: 1,
     intensity: Intensity.MEDIUM,
-    completionSummary: '',
     location: 'Total wreck gym',
   },
 ];

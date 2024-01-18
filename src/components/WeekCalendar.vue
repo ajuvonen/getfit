@@ -130,7 +130,6 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
         </v-window-item>
       </v-window>
       <week-calendar-actions
-        v-if="!settings.lockSchedule"
         :weekId="week.id"
         :weekIndex="weekIndex"
         :dayIndex="activeDay || 0"

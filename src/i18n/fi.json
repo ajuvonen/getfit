@@ -72,7 +72,7 @@
     "3": "Raskas"
   },
   "print": {
-    "download": "Lataa kalenteritiedosto",
+    "download": "Lataa kalenteri",
     "filename": "Harjoitusohjelma",
     "guide": "Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista. Poista sen jälkeen taustakuvien ja -värien tulostus käytöstä.",
     "instructions": "Ohjeet",
@@ -94,7 +94,6 @@
     "defaultStart": "Oletusarvoinen aloitus ja kesto",
     "defaultStartTime": "Oletusarvoinen aloitusaika",
     "hours": "Tunnit",
-    "lockSchedule": "Lukitse ohjelma",
     "minutes": "Minuutit",
     "programName": "Ohjelman nimi",
     "startDate": "Aloituspäivä",
@@ -108,7 +107,6 @@
   "trainingCard": {
     "actions": "Toiminnot",
     "actionsLabel": "Toiminnot harjoitukselle {0}",
-    "completionSummary": "Päiväkirja",
     "copy": "Kopioi",
     "deleteTraining": "Poista",
     "duration": "Harjoituksen kesto",
@@ -116,8 +114,7 @@
     "hideSummary": "Piilota päiväkirja",
     "intensity": "Harjoituksen intensiteetti",
     "location": "Harjoituksen sijainti",
-    "move": "Siirrä",
-    "showSummary": "Näytä päiväkirjamerkintä"
+    "move": "Siirrä"
   },
   "weekCalendar": {
     "addTraining": "Lisää harjoitus",

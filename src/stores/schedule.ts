@@ -5,7 +5,6 @@ import {DateTime} from 'luxon';
 import type {ScheduleSettings, Training, Week} from '@/types';
 import {ACTIVITIES} from '@/constants';
 import {roundNearestQuarter} from '@/utils';
-import {useAppStateStore} from '@/stores/appState';
 import {computed, ref, watch} from 'vue';
 
 const getEmptySchedule = (): ScheduleSettings => ({
@@ -21,7 +20,6 @@ const getEmptySchedule = (): ScheduleSettings => ({
   },
   defaultDuration: 1,
   unitOfTime: 'h',
-  lockSchedule: false,
 });
 
 export const useScheduleStore = defineStore('schedule', () => {
@@ -58,7 +56,6 @@ export const useScheduleStore = defineStore('schedule', () => {
       id: newWeekId,
       trainings: targetWeek.trainings.map((training) => ({
         ...training,
-        completionSummary: '',
         id: uuidv4(),
         weekId: newWeekId,
       })),
@@ -107,17 +104,8 @@ export const useScheduleStore = defineStore('schedule', () => {
       id: uuidv4(),
       weekId,
       dayIndex,
-      completionSummary: '',
     };
     targetWeek.trainings.push(clonedTraining);
-  };
-
-  const saveCompletionSummary = (training: Training, completionSummary: string) => {
-    const [, targetTraining] = getTargetWeekAndTraining.value(training.weekId, training.id) as [
-      Week,
-      Training,
-    ];
-    targetTraining.completionSummary = completionSummary;
   };
 
   // Watchers
@@ -157,14 +145,6 @@ export const useScheduleStore = defineStore('schedule', () => {
     },
   );
 
-  watch(
-    () => settings.value.lockSchedule,
-    () => {
-      const appStateStore = useAppStateStore();
-      appStateStore.summaryShown = [];
-    },
-  );
-
   // Reset
   const $reset = () => {
     settings.value = getEmptySchedule();
@@ -183,7 +163,6 @@ export const useScheduleStore = defineStore('schedule', () => {
     moveTraining,
     reorderTrainings,
     copyTraining,
-    saveCompletionSummary,
     $reset,
   };
 });
