@@ -62,10 +62,6 @@
     "credit": "Photo credit: {image}"
   },
   "intensities": {
-    "LIGHT": "Light",
-    "NORMAL": "Normal",
-    "MEDIUM": "Medium",
-    "HEAVY": "Heavy",
     "0": "Light",
     "1": "Normal",
     "2": "Medium",
