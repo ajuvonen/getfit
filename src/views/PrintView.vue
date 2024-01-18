@@ -63,11 +63,11 @@ const print = () => {
   >
     <v-card-text>
       <p class="text-center text-subtitle-1 d-print-none">{{ $t('print.guide') }}</p>
-      <div class="d-print-none d-flex justify-center my-4">
-        <v-btn v-if="settings.startDate" prepend-icon="mdi-calendar" data-test-id="print-view-download-button" @click="downloadICS">{{
+      <div class="print-view__button-container d-print-none d-flex flex-wrap justify-center mt-2 mb-4">
+        <v-btn v-if="settings.startDate" prepend-icon="mdi-calendar" class="mt-2" data-test-id="print-view-download-button" @click="downloadICS">{{
           $t('print.download')
         }}</v-btn>
-        <v-btn prepend-icon="mdi-printer" class="ml-4" data-test-id="print-view-print-button" @click="print">{{
+        <v-btn prepend-icon="mdi-printer" class="mt-2" data-test-id="print-view-print-button" @click="print">{{
           $t('print.print')
         }}</v-btn>
       </div>
@@ -118,7 +118,7 @@ const print = () => {
           <template #header>
             <tr>
               <th width="60%">{{ $t('print.instructions') }}</th>
-              <th>{{ $t('print.notes') }}</th>
+              <th class="hidden-screen-only">{{ $t('print.notes') }}</th>
             </tr>
           </template>
           <template #body>
@@ -131,7 +131,7 @@ const print = () => {
                   :dayIndex="dayIndex"
                 />
               </td>
-              <td></td>
+              <td class="hidden-screen-only"></td>
             </tr>
           </template>
         </print-view-table>
@@ -140,6 +140,10 @@ const print = () => {
   </v-card>
 </template>
 <style lang="scss" scoped>
+.print-view__button-container {
+  gap: 0.5rem;
+}
+
 .simple-training-card + .simple-training-card {
   margin-top: 1rem;
   &:before {
@@ -164,6 +168,7 @@ th {
 
 @media print {
   .v-card {
+    width: 100vw;
     box-shadow: none;
     padding: 0 !important;
     margin: 0 !important;
