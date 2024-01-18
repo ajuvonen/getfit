@@ -5,6 +5,7 @@ import {createEvents} from 'ics';
 import useWeekDays from '@/hooks/weekdays';
 import useScreenSize from '@/hooks/screenSize';
 import {useScheduleStore} from '@/stores/schedule';
+import {useAppStateStore} from '@/stores/appState';
 import type {Week} from '@/types';
 import useCalendarExport from '@/hooks/calendarExport';
 import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
@@ -13,8 +14,11 @@ import PrintViewTable from '@/components/PrintViewTable.vue';
 import {useI18n} from 'vue-i18n';
 
 const scheduleStore = useScheduleStore();
+const {$reset: resetSchedule} = scheduleStore;
 const {settings, weeks} = storeToRefs(scheduleStore);
 
+const appStateStore = useAppStateStore();
+const {$reset: resetAppState} = appStateStore;
 const {isSmallScreen, isMediumScreen} = useScreenSize();
 
 const {t} = useI18n();
@@ -53,6 +57,11 @@ const downloadICS = async () => {
 const print = () => {
   window.print();
 };
+
+const reset = () => {
+  resetSchedule();
+  resetAppState();
+};
 </script>
 
 <template>
@@ -63,13 +72,35 @@ const print = () => {
   >
     <v-card-text>
       <p class="text-center text-subtitle-1 d-print-none">{{ $t('print.guide') }}</p>
-      <div class="print-view__button-container d-print-none d-flex flex-wrap justify-center mt-2 mb-4">
-        <v-btn v-if="settings.startDate" prepend-icon="mdi-calendar" class="mt-2" data-test-id="print-view-download-button" @click="downloadICS">{{
-          $t('print.download')
-        }}</v-btn>
-        <v-btn prepend-icon="mdi-printer" class="mt-2" data-test-id="print-view-print-button" @click="print">{{
-          $t('print.print')
-        }}</v-btn>
+      <div
+        class="print-view__button-container d-print-none d-flex flex-wrap justify-center mt-2 mb-4"
+      >
+        <v-btn
+          v-if="settings.startDate"
+          prepend-icon="mdi-calendar"
+          class="mt-2"
+          variant="text"
+          data-test-id="print-view-download-button"
+          @click="downloadICS"
+          >{{ $t('print.download') }}</v-btn
+        >
+        <v-btn
+          prepend-icon="mdi-printer"
+          class="mt-2"
+          variant="text"
+          data-test-id="print-view-print-button"
+          @click="print"
+          >{{ $t('print.print') }}</v-btn
+        >
+        <v-btn
+          prepend-icon="mdi-trash-can-outline"
+          class="mt-2"
+          color="error"
+          variant="outlined"
+          data-test-id="print-view-reset-button"
+          @click="reset"
+          >{{ $t('settings.reset') }}</v-btn
+        >
       </div>
       <div v-for="(week, weekIndex) in weeks" :key="week.id" class="print-view__table-container">
         <print-view-table :data-test-id="`week-${weekIndex}-table`">

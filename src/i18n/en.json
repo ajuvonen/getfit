@@ -68,7 +68,7 @@
     "3": "Heavy"
   },
   "print": {
-    "download": "Download Calendar",
+    "download": "Export Calendar",
     "filename": "TraningSchedule",
     "guide": "For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows. Then uncheck printing of background images and -colors.",
     "instructions": "Instructions",
@@ -92,6 +92,7 @@
     "hours": "Hours",
     "minutes": "Minutes",
     "programName": "Program Name",
+    "reset": "Reset",
     "startDate": "Program Start Date",
     "startDateHint": "Required for ICS export",
     "startOfWeek": "Start of Week",
