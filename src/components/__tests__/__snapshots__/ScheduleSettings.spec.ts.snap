@@ -171,9 +171,11 @@ exports[`ScheduleSettings > mounts 1`] = `
                     <!---->
                   </div>
                 </div>
+                <!--teleport start-->
                 <transition-stub name="dp-menu-appear-bottom" appear="false" persisted="false" css="true">
                   <!---->
                 </transition-stub>
+                <!--teleport end-->
               </div>
               <transition-stub data-v-76426b41="" name="expand-transition" appear="false" persisted="false" css="true">
                 <!--v-if-->

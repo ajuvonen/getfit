@@ -50,9 +50,7 @@ const {settings} = storeToRefs(scheduleStore);
         {{ training.description }}
       </div>
     </v-card-text>
-    <v-card-actions class="flex-column align-stretch">
-      <training-card-actions :training="training" />
-    </v-card-actions>
+    <training-card-actions :training="training" />
   </v-card>
 </template>
 <style lang="scss" scoped>
