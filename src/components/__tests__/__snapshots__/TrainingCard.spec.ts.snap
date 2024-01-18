@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`TrainingCard > mounts 1`] = `
-"<div data-v-24c3dbf4="" class="v-card v-theme--light v-card--density-default v-card--variant-elevated training-card mx-2 mt-4 mb-2" style="max-width: 500px; min-width: 250px;">
+"<div data-v-24c3dbf4="" class="v-card v-theme--light v-card--density-default v-card--variant-elevated training-card mx-2 mt-4 mb-2">
   <!---->
   <div class="v-card__loader">
     <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -33,10 +33,7 @@ exports[`TrainingCard > mounts 1`] = `
     <!---->
   </div>
   <div data-v-24c3dbf4="" class="v-card-text training-card__text">
-    <transition-stub data-v-cdff331d="" data-v-24c3dbf4="" name="expand-transition" appear="false" persisted="false" css="true">
-      <div data-v-cdff331d="" class="training-card-summary__description text-body-1 pt-2 px-4">Sparring at the gym</div>
-      <!--v-if-->
-    </transition-stub>
+    <div data-v-24c3dbf4="" class="text-body-1 pt-2 px-4">Sparring at the gym</div>
   </div>
   <div data-v-24c3dbf4="" class="v-card-actions flex-column align-stretch"><button type="button" class="v-btn v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__action-button" aria-label="Actions for training " targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-menu mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Actions</span>
       <!---->

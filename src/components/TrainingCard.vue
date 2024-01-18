@@ -4,8 +4,6 @@ import type {Training} from '@/types';
 import {getIcon, getIntensityColor} from '@/utils';
 import {ACTIVITIES} from '@/constants';
 import {useScheduleStore} from '@/stores/schedule';
-import {useAppStateStore} from '@/stores/appState';
-import TrainingCardSummary from '@/components/TrainingCardSummary.vue';
 import TrainingCardActions from '@/components/TrainingCardActions.vue';
 
 defineProps<{
@@ -14,13 +12,9 @@ defineProps<{
 
 const scheduleStore = useScheduleStore();
 const {settings} = storeToRefs(scheduleStore);
-
-const appStateStore = useAppStateStore();
-const {isSummaryShown} = storeToRefs(appStateStore);
-const {toggleSummaryShown} = appStateStore;
 </script>
 <template>
-  <v-card class="training-card mx-2 mt-4 mb-2" min-width="250" max-width="500">
+  <v-card class="training-card mx-2 mt-4 mb-2">
     <v-card-item
       class="training-card__title-wrapper text-white"
       :style="{'background-color': getIntensityColor(training.intensity)}"
@@ -52,20 +46,21 @@ const {toggleSummaryShown} = appStateStore;
       </v-card-title>
     </v-card-item>
     <v-card-text class="training-card__text">
-      <training-card-summary :training="training" />
+      <div v-if="training.description" class="text-body-1 pt-2 px-4">
+        {{ training.description }}
+      </div>
     </v-card-text>
     <v-card-actions class="flex-column align-stretch">
-      <training-card-actions v-if="!settings.lockSchedule" :training="training" />
-      <v-btn
-        v-else
-        class="training-card__show-summary-button"
-        @click="toggleSummaryShown(training.id)"
-        >{{ $t(isSummaryShown(training.id) ? 'trainingCard.hideSummary' : 'trainingCard.showSummary') }}</v-btn
-      >
+      <training-card-actions :training="training" />
     </v-card-actions>
   </v-card>
 </template>
 <style lang="scss" scoped>
+.training-card {
+  max-width: 500px;
+  min-width: 250px;
+}
+
 .v-card-item {
   cursor: move;
 }

@@ -6,13 +6,9 @@ import {useScheduleStore} from './schedule';
 
 export const useAppStateStore = defineStore('appState', {
   state: () => ({
-    summaryShown: [] as string[],
     trainingDialogOpen: false,
     trainingData: {} as Training,
   }),
-  getters: {
-    isSummaryShown: (state) => (trainingId: string) => state.summaryShown.includes(trainingId),
-  },
   actions: {
     openNewTrainingDialog(weekId: string, dayIndex: number) {
       const scheduleStore = useScheduleStore();
@@ -25,7 +21,6 @@ export const useAppStateStore = defineStore('appState', {
         description: '',
         title: '',
         intensity: 0,
-        completionSummary: '',
         location: '',
       };
       this.trainingDialogOpen = true;
@@ -41,16 +36,6 @@ export const useAppStateStore = defineStore('appState', {
       }
       this.trainingData = clonedTraining;
       this.trainingDialogOpen = true;
-    },
-    closeEditTrainingDialog() {
-      this.trainingDialogOpen = false;
-    },
-    toggleSummaryShown(trainingId: string) {
-      if (this.isSummaryShown(trainingId)) {
-        this.summaryShown = this.summaryShown.filter((id) => id !== trainingId);
-      } else {
-        this.summaryShown.push(trainingId);
-      }
     },
   },
 });

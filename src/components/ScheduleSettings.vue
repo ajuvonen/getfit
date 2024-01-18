@@ -226,21 +226,11 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
                 </v-label>
               </div>
             </div>
-            <!-- <v-label for="schedule-settings-lock-schedule-button">{{
-              $t('settings.lockSchedule')
-            }}</v-label>
-            <v-switch
-              id="schedule-settings-lock-schedule-button"
-              v-model="settings.lockSchedule"
-              :value="true"
-              color="secondary"
-              hide-details="auto"
-            /> -->
           </v-expansion-panel-text>
         </v-expansion-panel>
       </v-expansion-panels>
     </v-card-text>
-    <v-card-actions v-if="!settings.lockSchedule">
+    <v-card-actions>
       <v-btn
         prepend-icon="mdi-plus"
         data-test-id="schedule-settings-add-week-button"

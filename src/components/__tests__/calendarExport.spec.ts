@@ -38,7 +38,6 @@ describe('useCalendarExport', () => {
             duration: 60,
             intensity: Intensity.NORMAL,
             location: 'Test Location',
-            completionSummary: '',
           },
           {
             id: uuidv4(),
@@ -50,7 +49,6 @@ describe('useCalendarExport', () => {
             duration: 30,
             intensity: Intensity.MEDIUM,
             location: 'Test Location 2',
-            completionSummary: '',
           },
           {
             id: uuidv4(),
@@ -62,7 +60,6 @@ describe('useCalendarExport', () => {
             duration: 60,
             intensity: Intensity.HEAVY,
             location: 'Test Location 3',
-            completionSummary: '',
           },
         ],
       },
@@ -79,7 +76,6 @@ describe('useCalendarExport', () => {
             duration: 60,
             intensity: Intensity.NORMAL,
             location: 'Test Location 4',
-            completionSummary: '',
           },
           {
             id: uuidv4(),
@@ -91,7 +87,6 @@ describe('useCalendarExport', () => {
             duration: 60,
             intensity: Intensity.LIGHT,
             location: 'Test Location 5',
-            completionSummary: '',
           },
         ],
       },
@@ -105,7 +100,6 @@ describe('useCalendarExport', () => {
       defaultStartTime: {hours: 9, minutes: 0, seconds: 0},
       defaultDuration: 60,
       unitOfTime: 'm',
-      lockSchedule: false,
       startsOnSunday: false,
     };
 
@@ -185,7 +179,6 @@ describe('useCalendarExport', () => {
             duration: 60,
             intensity: Intensity.NORMAL,
             location: 'Test Location',
-            completionSummary: '',
           },
           {
             id: uuidv4(),
@@ -197,7 +190,6 @@ describe('useCalendarExport', () => {
             duration: 30,
             intensity: Intensity.MEDIUM,
             location: 'Test Location 2',
-            completionSummary: '',
           },
         ],
       },
@@ -211,7 +203,6 @@ describe('useCalendarExport', () => {
       defaultStartTime: {hours: 23, minutes: 30, seconds: 0},
       defaultDuration: 60,
       unitOfTime: 'm',
-      lockSchedule: false,
       startsOnSunday: false,
     };
 
