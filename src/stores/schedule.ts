@@ -1,4 +1,5 @@
 import {defineStore} from 'pinia';
+import {useStorage} from '@vueuse/core';
 import {v4 as uuidv4} from 'uuid';
 import {clone, lensProp, over} from 'ramda';
 import {DateTime} from 'luxon';
@@ -24,7 +25,7 @@ const getEmptySchedule = (): ScheduleSettings => ({
 
 export const useScheduleStore = defineStore('schedule', () => {
   // State refs
-  const settings = ref(getEmptySchedule());
+  const settings = useStorage('getfit-schedule', getEmptySchedule(), localStorage, {mergeDefaults: true});
 
   const weeks = ref([] as Week[]);
 
