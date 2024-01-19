@@ -1,26 +1,36 @@
-import {describe, it, expect} from 'vitest';
+import {onMounted} from 'vue';
+import {describe, it, expect, beforeEach} from 'vitest';
 import {mount} from '@vue/test-utils';
 import {v4 as uuidv4} from 'uuid';
+import {useScheduleStore} from '@/stores/schedule';
 import useCalendarExport from '@/hooks/calendarExport';
 import {Intensity, type Week, type ScheduleSettings, type CalendarEvent} from '@/types';
-import {onMounted} from 'vue';
-
-const createTestComponent = (settings: ScheduleSettings, weeks: Week[]) => {
-  const promise: Promise<CalendarEvent[]> = new Promise((resolve) => {
-    mount({
-      template: '<div></div>',
-      setup() {
-        const {createCalendarEvents} = useCalendarExport();
-        onMounted(() => {
-          resolve(createCalendarEvents(weeks, settings));
-        });
-      },
-    });
-  });
-  return promise;
-};
 
 describe('useCalendarExport', () => {
+  let scheduleStore: ReturnType<typeof useScheduleStore>;
+
+  beforeEach(() => {
+    scheduleStore = useScheduleStore();
+  });
+
+  const createTestComponent = (settings: ScheduleSettings, weeks: Week[]) => {
+    scheduleStore.$patch({
+      settings,
+      weeks,
+    });
+    const promise: Promise<CalendarEvent[]> = new Promise((resolve) => {
+      mount({
+        template: '<div></div>',
+        setup() {
+          const {createCalendarEvents} = useCalendarExport();
+          onMounted(() => {
+            resolve(createCalendarEvents());
+          });
+        },
+      });
+    });
+    return promise;
+  };
   it('createCalendarEvents creates correct calendar events', async () => {
     const weekId1 = uuidv4();
     const weekId2 = uuidv4();
@@ -35,7 +45,7 @@ describe('useCalendarExport', () => {
             dayIndex: 0,
             title: 'Test Training',
             description: 'Test Description',
-            duration: 60,
+            duration: 1,
             intensity: Intensity.NORMAL,
             location: 'Test Location',
           },
@@ -46,7 +56,7 @@ describe('useCalendarExport', () => {
             dayIndex: 1,
             title: 'Test Training 2',
             description: 'Test Description 2',
-            duration: 30,
+            duration: 0.5,
             intensity: Intensity.MEDIUM,
             location: 'Test Location 2',
           },
@@ -57,7 +67,7 @@ describe('useCalendarExport', () => {
             dayIndex: 1,
             title: 'Test Training 3',
             description: 'Test Description 3',
-            duration: 60,
+            duration: 1,
             intensity: Intensity.HEAVY,
             location: 'Test Location 3',
           },
@@ -73,7 +83,7 @@ describe('useCalendarExport', () => {
             dayIndex: 6,
             title: 'Test Training 4',
             description: 'Test Description 4',
-            duration: 60,
+            duration: 1,
             intensity: Intensity.NORMAL,
             location: 'Test Location 4',
           },
@@ -84,7 +94,7 @@ describe('useCalendarExport', () => {
             dayIndex: 6,
             title: 'Test Training 5',
             description: 'Test Description 5',
-            duration: 60,
+            duration: 1,
             intensity: Intensity.LIGHT,
             location: 'Test Location 5',
           },
@@ -98,8 +108,8 @@ describe('useCalendarExport', () => {
       actualWeekNumbering: false,
       availableActivities: ['running', 'swimming', 'sprint'],
       defaultStartTime: {hours: 9, minutes: 0, seconds: 0},
-      defaultDuration: 60,
-      unitOfTime: 'm',
+      defaultDuration: 1,
+      unitOfTime: 'h',
       startsOnSunday: false,
     };
 
@@ -176,7 +186,7 @@ describe('useCalendarExport', () => {
             dayIndex: 0,
             title: 'Test Training',
             description: 'Test Description',
-            duration: 60,
+            duration: 1,
             intensity: Intensity.NORMAL,
             location: 'Test Location',
           },
@@ -187,7 +197,7 @@ describe('useCalendarExport', () => {
             dayIndex: 0,
             title: 'Test Training 2',
             description: 'Test Description 2',
-            duration: 30,
+            duration: 0.5,
             intensity: Intensity.MEDIUM,
             location: 'Test Location 2',
           },
@@ -201,8 +211,8 @@ describe('useCalendarExport', () => {
       actualWeekNumbering: false,
       availableActivities: ['running', 'swimming', 'sprint'],
       defaultStartTime: {hours: 23, minutes: 30, seconds: 0},
-      defaultDuration: 60,
-      unitOfTime: 'm',
+      defaultDuration: 1,
+      unitOfTime: 'h',
       startsOnSunday: false,
     };
 

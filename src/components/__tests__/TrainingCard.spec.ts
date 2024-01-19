@@ -20,12 +20,12 @@ const basicTraining = {
 } as Training;
 
 describe('TrainingCard', () => {
-  const scheduleStore = useScheduleStore();
-  const appStateStore = useAppStateStore();
+  let scheduleStore: ReturnType<typeof useScheduleStore>;
+  let appStateStore: ReturnType<typeof useAppStateStore>;
 
   beforeEach(() => {
-    appStateStore.$reset();
-    scheduleStore.$reset();
+    scheduleStore = useScheduleStore();
+    appStateStore = useAppStateStore();
   });
 
   it('mounts', () => {

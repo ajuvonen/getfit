@@ -6,12 +6,12 @@ import {useAppStateStore} from '@/stores/appState';
 import WeekCalendarActions from '@/components/WeekCalendarActions.vue';
 
 describe('WeekCalendarActions', () => {
-  const scheduleStore = useScheduleStore();
-  const appStateStore = useAppStateStore();
+  let scheduleStore: ReturnType<typeof useScheduleStore>;
+  let appStateStore: ReturnType<typeof useAppStateStore>;
 
   beforeEach(() => {
-    appStateStore.$reset();
-    scheduleStore.$reset();
+    scheduleStore = useScheduleStore();
+    appStateStore = useAppStateStore();
   });
 
   it('mounts', () => {

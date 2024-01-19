@@ -5,21 +5,20 @@ import {createEvents} from 'ics';
 import useWeekDays from '@/hooks/weekdays';
 import useScreenSize from '@/hooks/screenSize';
 import {useScheduleStore} from '@/stores/schedule';
-import {useAppStateStore} from '@/stores/appState';
 import type {Week} from '@/types';
 import useCalendarExport from '@/hooks/calendarExport';
+import useReset from '@/hooks/reset';
 import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
 import WeekSupplement from '@/components/WeekSupplement.vue';
 import PrintViewTable from '@/components/PrintViewTable.vue';
 import {useI18n} from 'vue-i18n';
 
 const scheduleStore = useScheduleStore();
-const {$reset: resetSchedule} = scheduleStore;
 const {settings, weeks} = storeToRefs(scheduleStore);
 
-const appStateStore = useAppStateStore();
-const {$reset: resetAppState} = appStateStore;
 const {isSmallScreen, isMediumScreen} = useScreenSize();
+
+const reset = useReset();
 
 const {t} = useI18n();
 
@@ -35,7 +34,7 @@ const trainingsByDay = computed(
 );
 
 const downloadICS = async () => {
-  const events = createCalendarEvents(weeks.value, settings.value);
+  const events = createCalendarEvents();
   const {value, error} = createEvents(events);
   if (error) {
     console.error(error);
@@ -56,11 +55,6 @@ const downloadICS = async () => {
 
 const print = () => {
   window.print();
-};
-
-const reset = () => {
-  resetSchedule();
-  resetAppState();
 };
 </script>
 

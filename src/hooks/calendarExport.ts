@@ -1,18 +1,24 @@
 import {DateTime} from 'luxon';
 import {useI18n} from 'vue-i18n';
-import type {CalendarEvent, ScheduleSettings, Week} from '@/types';
+import type {CalendarEvent} from '@/types';
+import {useScheduleStore} from '@/stores/schedule';
+import {storeToRefs} from 'pinia';
 
 export default function useCalendarExport() {
   const {t} = useI18n();
+  const scheduleStore = useScheduleStore();
+  const {settings, weeks} = storeToRefs(scheduleStore);
 
-  const createCalendarEvents = (weeks: Week[], settings: ScheduleSettings) => {
+  const createCalendarEvents = () => {
     const events: CalendarEvent[] = [];
 
-    weeks.forEach(({trainings}, weekIndex) => {
-      const startDate = DateTime.fromJSDate(settings.startDate!).plus({weeks: weekIndex}).set({
-        hour: settings.defaultStartTime.hours,
-        minute: settings.defaultStartTime.minutes,
-      });
+    weeks.value.forEach(({trainings}, weekIndex) => {
+      const startDate = DateTime.fromJSDate(settings.value.startDate!)
+        .plus({weeks: weekIndex})
+        .set({
+          hour: settings.value.defaultStartTime.hours,
+          minute: settings.value.defaultStartTime.minutes,
+        });
       let accumulatedDuration = 0;
       let currentDayIndex = 0;
       trainings.forEach(
@@ -21,7 +27,7 @@ export default function useCalendarExport() {
             accumulatedDuration = 0;
             currentDayIndex = dayIndex;
           }
-          const minutes = settings.unitOfTime === 'm' ? duration : duration * 60;
+          const minutes = settings.value.unitOfTime === 'm' ? duration : duration * 60;
           const start = startDate.plus({days: dayIndex}).plus({minutes: accumulatedDuration});
           events.push({
             title: title || t(`activities.${activity}`),

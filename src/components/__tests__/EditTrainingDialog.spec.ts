@@ -7,12 +7,12 @@ import {Intensity} from '@/types';
 import EditTrainingDialog from '@/components/EditTrainingDialog.vue';
 
 describe('EditTrainingDialog', () => {
-  const scheduleStore = useScheduleStore();
-  const appStateStore = useAppStateStore();
+  let scheduleStore: ReturnType<typeof useScheduleStore>;
+  let appStateStore: ReturnType<typeof useAppStateStore>;
 
   beforeEach(() => {
-    appStateStore.$reset();
-    scheduleStore.$reset();
+    scheduleStore = useScheduleStore();
+    appStateStore = useAppStateStore();
     scheduleStore.addWeek();
     appStateStore.trainingDialogOpen = true;
   });

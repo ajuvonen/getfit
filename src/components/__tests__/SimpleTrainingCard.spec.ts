@@ -2,7 +2,6 @@ import {mount} from '@vue/test-utils';
 import {describe, it, expect, beforeEach} from 'vitest';
 import {v4 as uuidv4} from 'uuid';
 import {useScheduleStore} from '@/stores/schedule';
-import {useAppStateStore} from '@/stores/appState';
 import {Intensity, type Training} from '@/types';
 import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
 
@@ -19,12 +18,10 @@ const basicTraining = {
 } as Training;
 
 describe('SimpleTrainingCard', () => {
-  const scheduleStore = useScheduleStore();
-  const appStateStore = useAppStateStore();
+  let scheduleStore: ReturnType<typeof useScheduleStore>;
 
   beforeEach(() => {
-    appStateStore.$reset();
-    scheduleStore.$reset();
+    scheduleStore = useScheduleStore();
   });
 
   it('mounts', () => {
