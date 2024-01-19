@@ -25,9 +25,9 @@ const getEmptySchedule = (): ScheduleSettings => ({
 
 export const useScheduleStore = defineStore('schedule', () => {
   // State refs
-  const settings = useStorage('getfit-schedule', getEmptySchedule(), localStorage, {mergeDefaults: true});
+  const settings = useStorage('getfit-settings', getEmptySchedule(), localStorage, {mergeDefaults: true});
 
-  const weeks = ref([] as Week[]);
+  const weeks = useStorage('getfit-schedule',[] as Week[], localStorage, {mergeDefaults: true});
 
   // Computed getters
   const getTargetWeekAndTraining = computed(() => (weekId: string, trainingId?: string) => {
