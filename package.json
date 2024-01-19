@@ -27,11 +27,11 @@
     "ramda": "^0.29.1",
     "resize-observer-polyfill": "^1.5.1",
     "uuid": "^9.0.1",
-    "vue": "^3.4.14",
+    "vue": "^3.4.15",
     "vue-i18n": "^9.9.0",
     "vue-router": "^4.2.5",
     "vuedraggable": "^4.1.0",
-    "vuetify": "3.4.10"
+    "vuetify": "3.4.11"
   },
   "devDependencies": {
     "@pinia/testing": "^0.1.3",
