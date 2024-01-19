@@ -6,7 +6,7 @@ import {DateTime} from 'luxon';
 import type {ScheduleSettings, Training, Week} from '@/types';
 import {ACTIVITIES} from '@/constants';
 import {roundNearestQuarter} from '@/utils';
-import {computed, ref, watch} from 'vue';
+import {computed, watch} from 'vue';
 
 const getEmptySchedule = (): ScheduleSettings => ({
   name: '',
@@ -25,9 +25,11 @@ const getEmptySchedule = (): ScheduleSettings => ({
 
 export const useScheduleStore = defineStore('schedule', () => {
   // State refs
-  const settings = useStorage('getfit-settings', getEmptySchedule(), localStorage, {mergeDefaults: true});
+  const settings = useStorage('getfit-settings', getEmptySchedule(), localStorage, {
+    mergeDefaults: true,
+  });
 
-  const weeks = useStorage('getfit-schedule',[] as Week[], localStorage, {mergeDefaults: true});
+  const weeks = useStorage('getfit-schedule', [] as Week[], localStorage, {mergeDefaults: true});
 
   // Computed getters
   const getTargetWeekAndTraining = computed(() => (weekId: string, trainingId?: string) => {
@@ -91,11 +93,9 @@ export const useScheduleStore = defineStore('schedule', () => {
     targetWeek.trainings.push(targetTraining);
   };
 
-  const reorderTrainings = (week: Week, trainings: Training[]) => {
-    const [targetWeek] = getTargetWeekAndTraining.value(week.id);
-    targetWeek.trainings = targetWeek.trainings
-      .filter(({id}) => trainings.every(({id: reorderedId}) => reorderedId !== id))
-      .concat(trainings);
+  const reorderTrainings = (weekId: string, trainings: Training[]) => {
+    const [targetWeek] = getTargetWeekAndTraining.value(weekId);
+    targetWeek.trainings = trainings;
   };
 
   const copyTraining = (training: Training, weekId: string, dayIndex: number) => {
@@ -112,22 +112,23 @@ export const useScheduleStore = defineStore('schedule', () => {
   // Watchers
   watch(
     () => settings.value.unitOfTime,
-    (newValue) => {
-      const parsedValue = newValue || 'h';
-      const multiplier = parsedValue === 'h' ? 1 / 60 : 60;
-      const precision = parsedValue === 'h' ? 2 : 0;
-      settings.value.defaultDuration = roundNearestQuarter(
-        +settings.value.defaultDuration * multiplier,
-        precision,
-      );
-      weeks.value = weeks.value.map((week) => ({
-        ...week,
-        trainings: week.trainings.map(
-          over(lensProp('duration'), (duration) =>
-            roundNearestQuarter(duration * multiplier, precision),
+    (newValue, oldValue) => {
+      if (newValue && newValue !== oldValue) {
+        const multiplier = newValue === 'h' ? 1 / 60 : 60;
+        const precision = newValue === 'h' ? 2 : 0;
+        settings.value.defaultDuration = roundNearestQuarter(
+          +settings.value.defaultDuration * multiplier,
+          precision,
+        );
+        weeks.value = weeks.value.map((week) => ({
+          ...week,
+          trainings: week.trainings.map(
+            over(lensProp('duration'), (duration) =>
+              roundNearestQuarter(duration * multiplier, precision),
+            ),
           ),
-        ),
-      }));
+        }));
+      }
     },
   );
 

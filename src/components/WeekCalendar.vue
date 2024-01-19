@@ -118,7 +118,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
             handle=".v-card-item"
             class="d-flex flex-wrap"
             @update:model-value="
-              (reorderedTrainings: Training[]) => reorderTrainings(week, reorderedTrainings)
+              (reorderedTrainings: Training[]) => reorderTrainings(week.id, reorderedTrainings)
             "
           >
             <template #item="{element}">

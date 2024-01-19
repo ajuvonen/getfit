@@ -10,15 +10,17 @@ import {useAppStateStore} from '@/stores/appState';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import useScreenSize from '@/hooks/screenSize';
 import useValidatedRef from '@/hooks/validatedRef';
+import useReset from '@/hooks/reset';
 import {DATE_FORMATS} from '@/constants';
 import {decimalRegex} from '@/utils';
 
 const scheduleStore = useScheduleStore();
 const {settings} = storeToRefs(scheduleStore);
-const {addWeek, $reset: resetSchedule} = scheduleStore;
+const {addWeek} = scheduleStore;
 
 const appStateStore = useAppStateStore();
-const {$reset: resetAppState} = appStateStore;
+
+const reset = useReset();
 
 const {t} = useI18n();
 
@@ -61,11 +63,6 @@ const rules = computed(() => ({
 
 const [name, nameErrors] = useValidatedRef(settings, 'name', rules);
 const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', rules);
-
-const reset = () => {
-  resetSchedule();
-  resetAppState();
-};
 </script>
 <template>
   <v-card
