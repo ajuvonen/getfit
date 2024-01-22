@@ -123,4 +123,29 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-0-calendar-tab-2').click();
     cy.get('.training-card').should('exist');
   });
+
+  it('resets schedule', () => {
+    cy.visit('/').getByTestId('navbar-schedule-link').click();
+    cy.getByTestId('schedule-settings-start-of-week-sunday')
+    cy.addTraining();
+    cy.getByTestId('schedule-settings-reset-button').click();
+    cy.getByTestId('confirm-dialog-confirm-button').click();
+    cy.location('pathname').should('eq', '/getfit/');
+    cy.getByTestId('navbar-schedule-link').click();
+    cy.getByTestId('schedule-settings-start-of-week-sunday').should('not.be.selected');
+    cy.getByTestId('week-0').should('not.exist');
+  });
+
+  it('resets schedule from print view', () => {
+    cy.visit('/').getByTestId('navbar-schedule-link').click();
+    cy.getByTestId('schedule-settings-start-of-week-sunday')
+    cy.addTraining();
+    cy.getByTestId('navbar-print-link').click();
+    cy.getByTestId('print-view-reset-button').click();
+    cy.getByTestId('confirm-dialog-confirm-button').click();
+    cy.location('pathname').should('eq', '/getfit/');
+    cy.getByTestId('navbar-schedule-link').click();
+    cy.getByTestId('schedule-settings-start-of-week-sunday').should('not.be.selected');
+    cy.getByTestId('week-0').should('not.exist');
+  });
 });

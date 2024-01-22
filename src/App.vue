@@ -4,6 +4,7 @@ import {RouterView} from 'vue-router';
 import {useI18n} from 'vue-i18n';
 import useScreenSize from '@/hooks/screenSize';
 import {useScheduleStore} from '@/stores/schedule';
+import ConfirmDialog from '@/components/ConfirmDialog.vue';
 
 const {weeks} = storeToRefs(useScheduleStore());
 const {isSmallScreen} = useScreenSize();
@@ -58,6 +59,7 @@ const {t} = useI18n();
         </v-btn>
       </v-bottom-navigation>
     </div>
+    <ConfirmDialog />
   </v-app>
 </template>
 <style lang="scss" scoped>

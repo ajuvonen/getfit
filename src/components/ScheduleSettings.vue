@@ -6,7 +6,6 @@ import {DateTime} from 'luxon';
 import {required, between, maxLength, integer, helpers} from '@vuelidate/validators';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import {useScheduleStore} from '@/stores/schedule';
-import {useAppStateStore} from '@/stores/appState';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import useScreenSize from '@/hooks/screenSize';
 import useValidatedRef from '@/hooks/validatedRef';
@@ -17,8 +16,6 @@ import {decimalRegex} from '@/utils';
 const scheduleStore = useScheduleStore();
 const {settings} = storeToRefs(scheduleStore);
 const {addWeek} = scheduleStore;
-
-const appStateStore = useAppStateStore();
 
 const reset = useReset();
 

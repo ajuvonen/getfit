@@ -35,6 +35,10 @@
     "invalidPrecision": "Use 0.25 hour precision"
   },
   "general": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "confirmReset": "You are about to reset the schedule, removing all training data. This cannot be undone. Are you sure you want to continue?",
+    "confirmTitle": "Please confirm",
     "weekdays": {
       "monday": "Monday",
       "tuesday": "Tuesday",

@@ -35,6 +35,10 @@
     "invalidPrecision": "Käytä 15 minuutin tarkkuutta"
   },
   "general": {
+    "cancel": "Peruuta",
+    "confirm": "Jatka",
+    "confirmReset": "Olet palauttamassa sovellusta alkutilaan, mikä poistaa kaikki harjoitustiedot. Toimintoa ei voi perua. Haluatko varmasti jatkaa?",
+    "confirmTitle": "Vahvista toiminto",
     "weekdays": {
       "monday": "Maanantai",
       "tuesday": "Tiistai",
