@@ -1,0 +1,32 @@
+<script setup lang="ts">
+import useScreenSize from '@/hooks/screenSize';
+
+withDefaults(defineProps<{
+  open: boolean;
+  title: string;
+  useFullScreen?: boolean;
+}>(), {
+  useFullScreen: true,
+});
+
+const {isSmallScreen} = useScreenSize();
+</script>
+<template>
+  <v-dialog
+    :model-value="open"
+    :width="!isSmallScreen ? 'auto' : undefined"
+    :fullscreen="useFullScreen && isSmallScreen"
+    :transition="isSmallScreen ? 'dialog-bottom-transition' : false"
+    :min-width="!isSmallScreen ? 500 : undefined"
+    persistent
+  >
+    <v-card>
+      <v-card-title>{{ title }}</v-card-title>
+      <v-card-text>
+        <slot name="content" />
+      </v-card-text>
+      <v-card-actions><slot name="actions" /></v-card-actions>
+    </v-card>
+  </v-dialog>
+</template>
+<style lang="scss" scoped></style>

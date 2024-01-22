@@ -9,9 +9,21 @@ export const useAppStateStore = defineStore('appState', () => {
   // State refs
   const trainingDialogOpen = ref(false);
 
+  const confirmDialogOpen = ref(false);
+
+  const confirmText = ref('');
+
+  const confirmAction = ref(() => {});
+
   const trainingData = ref({} as Training);
 
   // Actions
+  const openConfirmDialog = (text: string, action: () => void) => {
+    confirmText.value = text;
+    confirmAction.value = action;
+    confirmDialogOpen.value = true;
+  };
+
   const openNewTrainingDialog = (weekId: string, dayIndex: number) => {
     const scheduleStore = useScheduleStore();
     trainingData.value = {
@@ -47,8 +59,12 @@ export const useAppStateStore = defineStore('appState', () => {
   };
 
   return {
+    confirmDialogOpen,
+    confirmText,
+    confirmAction,
     trainingDialogOpen,
     trainingData,
+    openConfirmDialog,
     openNewTrainingDialog,
     openEditTrainingDialog,
     $reset,
