@@ -15,9 +15,9 @@ const router = createRouter({
       component: () => import('@/views/ScheduleView.vue'),
     },
     {
-      path: '/print',
-      name: 'print',
-      component: () => import('@/views/PrintView.vue'),
+      path: '/export',
+      name: 'export',
+      component: () => import('@/views/ExportView.vue'),
     },
   ],
 });

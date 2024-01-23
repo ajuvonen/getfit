@@ -34,28 +34,22 @@ const {t} = useI18n();
         </v-main>
       </v-container>
       <v-bottom-navigation grow class="d-print-none">
-        <v-btn to="/" value="home" data-test-id="navbar-home-link" class="text-body-1">
+        <v-btn to="/" data-test-id="navbar-home-link" class="text-body-1">
           <v-icon icon="mdi-home" />
           {{ t('routes.home') }}
         </v-btn>
-        <v-btn
-          to="schedule"
-          value="schedule"
-          data-test-id="navbar-schedule-link"
-          class="text-body-1"
-        >
+        <v-btn to="schedule" data-test-id="navbar-schedule-link" class="text-body-1">
           <v-icon icon="mdi-calendar" />
           {{ t('routes.schedule') }}
         </v-btn>
         <v-btn
           :disabled="!weeks.length"
-          to="print"
-          value="print"
-          data-test-id="navbar-print-link"
+          to="export"
+          data-test-id="navbar-export-link"
           class="text-body-1"
         >
-          <v-icon icon="mdi-printer" />
-          {{ t('routes.print') }}
+          <v-icon icon="mdi-export" />
+          {{ t('routes.export') }}
         </v-btn>
       </v-bottom-navigation>
     </div>
