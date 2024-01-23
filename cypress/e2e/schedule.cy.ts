@@ -41,10 +41,10 @@ describe('Schedule tests', () => {
       .should('contain.text', 'm');
   });
 
-  it('settings work in print view', () => {
+  it('settings work in export view', () => {
     cy.visit('/').getByTestId('navbar-schedule-link').click();
     cy.addTraining();
-    cy.getByTestId('navbar-print-link').click();
+    cy.getByTestId('navbar-export-link').click();
     cy.getByTestId('week-0-table').find('thead th:first-child').should('have.text', 'Mon');
     cy.getByTestId('navbar-schedule-link').click();
     cy.getByTestId('schedule-settings-start-of-week-sunday').click();
@@ -56,7 +56,7 @@ describe('Schedule tests', () => {
     cy.getByTestId('edit-training-duration').find('input').type('.5');
     cy.getByTestId('edit-training-save-button').click();
     cy.getByTestId('schedule-settings-unit-of-time-m').click();
-    cy.getByTestId('navbar-print-link').click();
+    cy.getByTestId('navbar-export-link').click();
     cy.getByTestId('week-0-table').find('thead th:first-child').should('have.text', 'Sun');
     cy.get('.simple-training-card__duration').should('contain.text', '90 m');
   });
@@ -136,12 +136,12 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-0').should('not.exist');
   });
 
-  it('resets schedule from print view', () => {
+  it('resets schedule from export view', () => {
     cy.visit('/').getByTestId('navbar-schedule-link').click();
     cy.getByTestId('schedule-settings-start-of-week-sunday')
     cy.addTraining();
-    cy.getByTestId('navbar-print-link').click();
-    cy.getByTestId('print-view-reset-button').click();
+    cy.getByTestId('navbar-export-link').click();
+    cy.getByTestId('export-view-reset-button').click();
     cy.getByTestId('confirm-dialog-confirm-button').click();
     cy.location('pathname').should('eq', '/getfit/');
     cy.getByTestId('navbar-schedule-link').click();

@@ -39,12 +39,12 @@ const downloadICS = async () => {
   if (error) {
     console.error(error);
   } else if (value) {
-    const file = new File([value], t('print.filename'), {type: 'text/calendar'});
+    const file = new File([value], t('export.filename'), {type: 'text/calendar'});
     const url = URL.createObjectURL(file);
 
     const anchor = document.createElement('a');
     anchor.href = url;
-    anchor.download = t('print.filename');
+    anchor.download = t('export.filename');
     document.body.appendChild(anchor);
     anchor.click();
     document.body.removeChild(anchor);
@@ -65,38 +65,38 @@ const print = () => {
     :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'"
   >
     <v-card-text>
-      <p class="text-center text-subtitle-1 d-print-none">{{ $t('print.guide') }}</p>
       <div
-        class="print-view__button-container d-print-none d-flex flex-wrap justify-center mt-2 mb-4"
+        class="export-view__button-container d-print-none d-flex flex-wrap justify-center mt-2 mb-4"
       >
         <v-btn
           v-if="settings.startDate"
           prepend-icon="mdi-calendar"
           class="mt-2"
           variant="text"
-          data-test-id="print-view-download-button"
+          data-test-id="export-view-download-button"
           @click="downloadICS"
-          >{{ $t('print.download') }}</v-btn
+          >{{ $t('export.download') }}</v-btn
         >
         <v-btn
           prepend-icon="mdi-printer"
           class="mt-2"
           variant="text"
-          data-test-id="print-view-print-button"
+          data-test-id="export-view-print-button"
           @click="print"
-          >{{ $t('print.print') }}</v-btn
+          >{{ $t('export.print') }}</v-btn
         >
         <v-btn
           prepend-icon="mdi-trash-can-outline"
           class="mt-2"
           color="error"
           variant="outlined"
-          data-test-id="print-view-reset-button"
+          data-test-id="export-view-reset-button"
           @click="reset"
           >{{ $t('settings.reset') }}</v-btn
         >
       </div>
-      <div v-for="(week, weekIndex) in weeks" :key="week.id" class="print-view__table-container">
+      <p class="text-center text-subtitle-1 d-print-none">{{ $t('export.guide') }}</p>
+      <div v-for="(week, weekIndex) in weeks" :key="week.id" class="export-view__table-container">
         <print-view-table :data-test-id="`week-${weekIndex}-table`">
           <template #title>
             <div class="d-flex align-center">
@@ -137,13 +137,13 @@ const print = () => {
         </print-view-table>
         <print-view-table
           v-if="week.trainings.length"
-          :tableTitle="$t('print.supplement', [getDisplayWeekNumber(weekIndex)])"
+          :tableTitle="$t('export.supplement', [getDisplayWeekNumber(weekIndex)])"
           :data-test-id="`week-${weekIndex}-supplement`"
         >
           <template #header>
             <tr>
-              <th width="60%">{{ $t('print.instructions') }}</th>
-              <th class="hidden-screen-only">{{ $t('print.notes') }}</th>
+              <th width="60%">{{ $t('export.instructions') }}</th>
+              <th class="hidden-screen-only">{{ $t('export.notes') }}</th>
             </tr>
           </template>
           <template #body>
@@ -165,7 +165,7 @@ const print = () => {
   </v-card>
 </template>
 <style lang="scss" scoped>
-.print-view__button-container {
+.export-view__button-container {
   gap: 0.5rem;
 }
 
@@ -186,7 +186,7 @@ th {
 }
 
 @media screen {
-  .print-view__table-container + .print-view__table-container {
+  .export-view__table-container + .export-view__table-container {
     margin-top: 40px;
   }
 }
