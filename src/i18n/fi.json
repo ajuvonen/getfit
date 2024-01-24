@@ -62,7 +62,7 @@
     "title": "Tervetuloa GetFitin käyttäjäksi",
     "p1": "GetFit on ilmainen, helppokäyttöinen sovellus, jonka avulla voit suunnitella usean viikon harjoitusohjelman.",
     "p2": "Aloittaaksesi, siirry asetuksiin ja täytä ohjelman perustiedot. Siirry sen jälkeen ohjelmaasi ja aloita harjoitusten suunnittelu.",
-    "p3": "Sovelluksen tehokkaampaa käyttöä varten voit kopioida harjoituksia ja kokonaisia viikkoja, sekä järjestellä niitä raahaamalla ja pudottamalla.",
+    "p3": "Tietoja säilytetään vain selaimesi paikallisessa tallennustilassa, eikä niitä lähetetä mihinkään.",
     "credit": "Valokuva: {image}"
   },
   "intensities": {
@@ -89,6 +89,7 @@
   },
   "schedule": {
     "addWeek": "Lisää viikko",
+    "guide": "Lisää viikkoja ohjelmaasi klikkaamalla alla olevaa painiketta. Lisää sen jälkeen harjoituksia klikkaamalla 'Lisää harjoitus' -painiketta viikkonäkymässä. Voit siirtää, kopioida ja raahata harjoituksia tai viikkoja järjestääksesi niitä uudelleen.",
     "reset": "Tyhjennä",
     "title": "Muokkaa harjoitusohjelmaa"
   },
@@ -99,6 +100,7 @@
     "defaultDuration": "Oletusarvoinen kesto",
     "defaultStart": "Oletusarvoinen aloitus ja kesto",
     "defaultStartTime": "Oletusarvoinen aloitusaika",
+    "guide": "Asetuksissa voit esimerkiksi rajoittaa saatavilla olevia harjoitustyyppejä sekä asettaa ohjelman aloituspäivämäärän. Asetukset tallennetaan automaattisesti.",
     "hours": "Tunnit",
     "minutes": "Minuutit",
     "programName": "Ohjelman nimi",

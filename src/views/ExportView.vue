@@ -56,11 +56,10 @@ const print = () => {
 </script>
 
 <template>
-  <BaseView :title="$t('export.title')">
+  <BaseView :title="$t('export.title')" :guide="$t('export.guide')">
     <template #content>
-      <p class="text-center text-subtitle-1 d-print-none">{{ $t('export.guide') }}</p>
       <div
-        class="export__button-container d-print-none d-flex flex-wrap justify-center mt-2 mb-4"
+        class="export__button-container d-print-none d-flex flex-wrap justify-center mb-4"
       >
         <v-btn
           v-if="settings.startDate"
