@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ScheduleView > mounts 1`] = `
-"<div class="v-card v-theme--light v-card--density-default v-card--rounded v-card--variant-elevated mb-4" style="background-color: rgba(255, 255, 255, 0.9);">
+"<div data-v-eb553fec="" class="v-card v-theme--light v-card--density-default v-card--rounded v-card--variant-elevated mb-4" style="background-color: rgba(255, 255, 255, 0.9);">
   <!---->
   <div class="v-card__loader">
     <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -21,11 +21,15 @@ exports[`ScheduleView > mounts 1`] = `
   <div class="v-card-title d-print-none">
     <h1 class="text-h4">Edit Schedule</h1>
   </div>
-  <div class="v-card-text"></div>
-  <div class="v-card-actions"><button type="button" class="v-btn v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" data-test-id="schedule-add-week-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-plus mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Add Week</span>
+  <div class="v-card-text">
+    <div data-v-eb553fec="" class="v-expansion-panels v-theme--light v-expansion-panels--variant-accordion">
+      <!--v-if-->
+    </div>
+  </div>
+  <div class="v-card-actions"><button data-v-eb553fec="" type="button" class="v-btn v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" data-test-id="schedule-add-week-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-plus mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Add Week</span>
       <!---->
       <!---->
-    </button><button type="button" class="v-btn v-btn--slim v-theme--light text-error v-btn--density-default v-btn--size-default v-btn--variant-outlined" data-test-id="schedule-reset-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-trash-can-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Reset</span>
+    </button><button data-v-eb553fec="" type="button" class="v-btn v-btn--slim v-theme--light text-error v-btn--density-default v-btn--size-default v-btn--variant-outlined" data-test-id="schedule-reset-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-trash-can-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Reset</span>
       <!---->
       <!---->
     </button></div>
