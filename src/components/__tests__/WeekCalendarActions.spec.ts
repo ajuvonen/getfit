@@ -37,7 +37,17 @@ describe('WeekCalendarActions', () => {
     await wrapper.findByTestId('week-0-add-training-button').trigger('click');
     await wrapper.findByTestId('week-0-copy-button').trigger('click');
     await wrapper.findByTestId('week-0-delete-button').trigger('click');
-    expect(appStateStore.openNewTrainingDialog).toHaveBeenCalledWith(weekId, 0);
+    expect(appStateStore.openNewTrainingDialog).toHaveBeenCalledWith(
+      weekId,
+      0,
+      expect.objectContaining([
+        {
+          icon: 'mdi-badminton',
+          title: 'Badminton',
+          value: 'badminton',
+        },
+      ]),
+    );
     expect(scheduleStore.copyWeek).toHaveBeenCalledWith(weekId);
     expect(scheduleStore.deleteWeek).toHaveBeenCalledWith(weekId);
   });
