@@ -23,7 +23,7 @@ const addAndOpenWeek = () => {
 </script>
 
 <template>
-  <BaseView :title="$t('schedule.title')">
+  <BaseView :title="$t('schedule.title')"  :guide="$t('schedule.guide')">
     <template #content>
       <v-expansion-panels v-model="openWeek" variant="accordion" color="transparent">
         <draggable-list

@@ -3,6 +3,7 @@ import useScreenSize from '@/hooks/screenSize';
 
 defineProps<{
   title: string;
+  guide: string;
 }>();
 
 const {isSmallScreen, isMediumScreen} = useScreenSize();
@@ -17,6 +18,10 @@ const {isSmallScreen, isMediumScreen} = useScreenSize();
       <h1 class="text-h4">{{ title }}</h1>
     </v-card-title>
     <v-card-text>
+      <p class="d-flex align-center d-print-none mb-4">
+        <v-icon icon="mdi-information-box-outline" />
+        <span class="ml-4">{{ guide }}</span>
+      </p>
       <slot name="content" />
     </v-card-text>
     <v-card-actions v-if="$slots.actions">

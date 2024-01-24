@@ -22,6 +22,7 @@ exports[`ScheduleView > mounts 1`] = `
     <h1 class="text-h4">Edit Schedule</h1>
   </div>
   <div class="v-card-text">
+    <p class="d-flex align-center d-print-none mb-4"><i class="mdi-information-box-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><span class="ml-4">Add weeks to your schedule by clicking the button below. Then, add trainings by clicking the appropriate button in the week view. You can move, copy, and drag trainings or weeks to reorder them.</span></p>
     <div data-v-eb553fec="" class="v-expansion-panels v-theme--light v-expansion-panels--variant-accordion">
       <!--v-if-->
     </div>

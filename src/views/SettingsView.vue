@@ -53,7 +53,7 @@ const [name, nameErrors] = useValidatedRef(settings, 'name', rules);
 const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', rules);
 </script>
 <template>
-  <BaseView :title="$t('settings.title')">
+  <BaseView :title="$t('settings.title')" :guide="$t('settings.guide')">
     <template #content>
       <v-text-field
         id="settings-program-name"

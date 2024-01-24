@@ -62,7 +62,7 @@
     "title": "Welcome to GetFit",
     "p1": "GetFit is a free, easy-to-use exercise program planner that allows you to plan a schedule spanning multiple weeks.",
     "p2": "To get started, navigate to settings and fill some basic info about your program. Then, go to your schedule and start planning activities.",
-    "p3": "For more efficient use of the app, you can copy activities and entire weeks, and reorder them by dragging and dropping.",
+    "p3": "All data persists in your browser's local storage only, and is not sent anywhere.",
     "credit": "Photo credit: {image}"
   },
   "intensities": {
@@ -74,7 +74,7 @@
   "export": {
     "download": "Export Calendar",
     "filename": "TrainingSchedule",
-    "guide": "Below you can export your schedule in the .ics calendar format, or print it. Export requires that the schedule has a start date defined in the settings. For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows. Then uncheck printing of background images and -colors.",
+    "guide": "Below you can export your schedule in the .ics calendar format or print it. Export requires that the schedule has a start date defined in the settings. For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows. Then uncheck printing of background images and -colors.",
     "instructions": "Instructions",
     "notes": "Notes",
     "print": "Print",
@@ -89,6 +89,7 @@
   },
   "schedule": {
     "addWeek": "Add Week",
+    "guide": "Add weeks to your schedule by clicking the button below. Then, add trainings by clicking the appropriate button in the week view. You can move, copy, and drag trainings or weeks to reorder them.",
     "reset": "Reset",
     "title": "Edit Schedule"
   },
@@ -99,6 +100,7 @@
     "defaultDuration": "Default Duration",
     "defaultStart": "Default Activity Start And Duration",
     "defaultStartTime": "Default Start TIme",
+    "guide": "The settings allow you to, for example, limit the available activity types and set the starting date of the schedule. The settings are saved automatically.",
     "hours": "Hours",
     "minutes": "Minutes",
     "programName": "Program Name",
