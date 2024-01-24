@@ -1,22 +1,20 @@
 <script setup lang="ts">
 import {computed} from 'vue';
 import {storeToRefs} from 'pinia';
+import {useI18n} from 'vue-i18n';
 import {createEvents} from 'ics';
 import useWeekDays from '@/hooks/weekdays';
-import useScreenSize from '@/hooks/screenSize';
-import {useScheduleStore} from '@/stores/schedule';
-import type {Week} from '@/types';
 import useCalendarExport from '@/hooks/calendarExport';
 import useReset from '@/hooks/reset';
+import {useScheduleStore} from '@/stores/schedule';
+import type {Week} from '@/types';
 import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
 import WeekSupplement from '@/components/WeekSupplement.vue';
 import PrintViewTable from '@/components/PrintViewTable.vue';
-import {useI18n} from 'vue-i18n';
+import BaseView from '@/components/BaseView.vue';
 
 const scheduleStore = useScheduleStore();
 const {settings, weeks} = storeToRefs(scheduleStore);
-
-const {isSmallScreen, isMediumScreen} = useScreenSize();
 
 const reset = useReset();
 
@@ -59,21 +57,18 @@ const print = () => {
 </script>
 
 <template>
-  <v-card
-    color="rgba(255,255,255,0.9)"
-    class="mb-10"
-    :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'"
-  >
-    <v-card-text>
+  <BaseView :title="$t('export.title')">
+    <template #content>
+      <p class="text-center text-subtitle-1 d-print-none">{{ $t('export.guide') }}</p>
       <div
-        class="export-view__button-container d-print-none d-flex flex-wrap justify-center mt-2 mb-4"
+        class="export__button-container d-print-none d-flex flex-wrap justify-center mt-2 mb-4"
       >
         <v-btn
           v-if="settings.startDate"
           prepend-icon="mdi-calendar"
           class="mt-2"
           variant="text"
-          data-test-id="export-view-download-button"
+          data-test-id="export-download-button"
           @click="downloadICS"
           >{{ $t('export.download') }}</v-btn
         >
@@ -81,7 +76,7 @@ const print = () => {
           prepend-icon="mdi-printer"
           class="mt-2"
           variant="text"
-          data-test-id="export-view-print-button"
+          data-test-id="export-print-button"
           @click="print"
           >{{ $t('export.print') }}</v-btn
         >
@@ -90,13 +85,12 @@ const print = () => {
           class="mt-2"
           color="error"
           variant="outlined"
-          data-test-id="export-view-reset-button"
+          data-test-id="export-reset-button"
           @click="reset"
-          >{{ $t('settings.reset') }}</v-btn
+          >{{ $t('schedule.reset') }}</v-btn
         >
       </div>
-      <p class="text-center text-subtitle-1 d-print-none">{{ $t('export.guide') }}</p>
-      <div v-for="(week, weekIndex) in weeks" :key="week.id" class="export-view__table-container">
+      <div v-for="(week, weekIndex) in weeks" :key="week.id" class="export__table-container">
         <print-view-table :data-test-id="`week-${weekIndex}-table`">
           <template #title>
             <div class="d-flex align-center">
@@ -161,11 +155,11 @@ const print = () => {
           </template>
         </print-view-table>
       </div>
-    </v-card-text>
-  </v-card>
+    </template>
+  </BaseView>
 </template>
 <style lang="scss" scoped>
-.export-view__button-container {
+.export__button-container {
   gap: 0.5rem;
 }
 
@@ -186,7 +180,7 @@ th {
 }
 
 @media screen {
-  .export-view__table-container + .export-view__table-container {
+  .export__table-container + .export__table-container {
     margin-top: 40px;
   }
 }

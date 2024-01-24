@@ -5,5 +5,6 @@ export default defineConfig({
     specPattern: 'cypress/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}',
     baseUrl: 'http://localhost:5173/getfit/',
     video: false,
+    trashAssetsBeforeRuns: true,
   },
 });

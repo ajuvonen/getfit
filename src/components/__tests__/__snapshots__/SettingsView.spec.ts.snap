@@ -1,0 +1,482 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SettingsView > mounts 1`] = `
+"<div data-v-5e0b544f="" class="v-card v-theme--light v-card--density-default v-card--rounded v-card--variant-elevated mb-4" style="background-color: rgba(255, 255, 255, 0.9);">
+  <!---->
+  <div class="v-card__loader">
+    <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+      <!---->
+      <div class="v-progress-linear__background" style="width: 100%;"></div>
+      <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+        <div class="v-progress-linear__indeterminate">
+          <div class="v-progress-linear__indeterminate long"></div>
+          <div class="v-progress-linear__indeterminate short"></div>
+        </div>
+      </transition-stub>
+      <!---->
+    </div>
+  </div>
+  <!---->
+  <!---->
+  <div class="v-card-title d-print-none">
+    <h1 class="text-h4">Schedule Settings</h1>
+  </div>
+  <div class="v-card-text">
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined settings-input--wide">
+      <!---->
+      <div class="v-input__control">
+        <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+          <div class="v-field__overlay"></div>
+          <div class="v-field__loader">
+            <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <!---->
+              <div class="v-progress-linear__background" style="width: 100%;"></div>
+              <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                <div class="v-progress-linear__indeterminate">
+                  <div class="v-progress-linear__indeterminate long"></div>
+                  <div class="v-progress-linear__indeterminate short"></div>
+                </div>
+              </transition-stub>
+              <!---->
+            </div>
+          </div>
+          <!---->
+          <div class="v-field__field" data-no-activator="">
+            <!----><label class="v-label v-field-label" for="settings-program-name">
+              <!---->Program Name
+            </label>
+            <!----><input size="1" type="text" id="settings-program-name" aria-describedby="settings-program-name-messages" maxlength="30" class="v-field__input">
+            <!---->
+          </div>
+          <!---->
+          <!---->
+          <div class="v-field__outline">
+            <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="settings-program-name">
+              <!---->Program Name
+            </label>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="v-input__details">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-program-name-messages">
+          <!---->
+        </transition-group-stub>
+        <!----><span></span>
+        <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
+          <div class="v-counter" style="display: none;">0 / 30</div>
+        </transition-stub>
+      </div>
+    </div><label data-v-5e0b544f="" class="v-label" for="settings-start-of-week">
+      <!---->Start of Week
+    </label>
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-radio-group">
+      <!---->
+      <div class="v-input__control">
+        <!---->
+        <div class="v-selection-control-group v-selection-control-group--inline" role="radiogroup" aria-describedby="settings-start-of-week-messages">
+          <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-start-of-week-monday">
+            <div class="v-selection-control__wrapper">
+              <!---->
+              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-5" aria-disabled="false" type="radio" name="settings-start-of-week" value="false"></div>
+            </div><label class="v-label v-label--clickable" for="input-5">
+              <!---->Monday
+            </label>
+          </div>
+          <div data-v-5e0b544f="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-start-of-week-sunday">
+            <div class="v-selection-control__wrapper">
+              <!---->
+              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-6" aria-disabled="false" type="radio" name="settings-start-of-week" value="true"></div>
+            </div><label class="v-label v-label--clickable" for="input-6">
+              <!---->Sunday
+            </label>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="v-input__details">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-start-of-week-messages">
+          <!---->
+        </transition-group-stub>
+        <!---->
+      </div>
+    </div><label data-v-5e0b544f="" class="v-label" for="settings-start-date">
+      <!---->Program Start Date
+    </label>
+    <div data-v-5e0b544f="" class="dp__main dp__theme_light" data-datepicker-instance="">
+      <div>
+        <!---->
+        <div class="dp__input_wrap">
+          <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-input--readonly v-text-field v-input--plain-underlined" data-test-id="settings-start-date-input">
+            <!---->
+            <div class="v-input__control">
+              <div class="v-field v-field--appended v-field--no-label v-field--variant-underlined v-theme--light v-locale--is-ltr">
+                <div class="v-field__overlay"></div>
+                <div class="v-field__loader">
+                  <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                    <!---->
+                    <div class="v-progress-linear__background" style="width: 100%;"></div>
+                    <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                      <div class="v-progress-linear__indeterminate">
+                        <div class="v-progress-linear__indeterminate long"></div>
+                        <div class="v-progress-linear__indeterminate short"></div>
+                      </div>
+                    </transition-stub>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+                <div class="v-field__field" data-no-activator="">
+                  <!----><label class="v-label v-field-label" for="settings-start-date">
+                    <!---->
+                    <!---->
+                  </label>
+                  <!----><input readonly="" placeholder="Required for ICS export" size="1" type="text" id="settings-start-date" aria-describedby="settings-start-date-messages" class="v-field__input">
+                  <!---->
+                </div>
+                <transition-stub name="expand-x-transition" appear="false" persisted="false" css="true">
+                  <div class="v-field__clearable" style="display: none;"><i class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" aria-hidden="false" aria-label="Clear "></i></div>
+                </transition-stub>
+                <div class="v-field__append-inner">
+                  <!---->
+                  <!---->
+                </div>
+                <div class="v-field__outline">
+                  <!---->
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <!---->
+            <div class="v-input__details">
+              <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-start-date-messages">
+                <!---->
+              </transition-group-stub>
+              <!---->
+            </div>
+          </div>
+          <!---->
+          <div>
+            <!---->
+            <!---->
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <!--teleport start-->
+      <transition-stub name="dp-menu-appear-bottom" appear="false" persisted="false" css="true">
+        <!---->
+      </transition-stub>
+      <!--teleport end-->
+    </div>
+    <transition-stub data-v-5e0b544f="" name="expand-transition" appear="false" persisted="false" css="true">
+      <!--v-if-->
+    </transition-stub><label data-v-5e0b544f="" class="v-label" for="settings-unit-of-time">
+      <!---->Unit of Time
+    </label>
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-radio-group">
+      <!---->
+      <div class="v-input__control">
+        <!---->
+        <div class="v-selection-control-group v-selection-control-group--inline" role="radiogroup" aria-describedby="settings-unit-of-time-messages">
+          <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-unit-of-time-h">
+            <div class="v-selection-control__wrapper">
+              <!---->
+              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-12" aria-disabled="false" type="radio" name="settings-unit-of-time" value="h"></div>
+            </div><label class="v-label v-label--clickable" for="input-12">
+              <!---->Hours
+            </label>
+          </div>
+          <div data-v-5e0b544f="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-unit-of-time-m">
+            <div class="v-selection-control__wrapper">
+              <!---->
+              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-13" aria-disabled="false" type="radio" name="settings-unit-of-time" value="m"></div>
+            </div><label class="v-label v-label--clickable" for="input-13">
+              <!---->Minutes
+            </label>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="v-input__details">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-unit-of-time-messages">
+          <!---->
+        </transition-group-stub>
+        <!---->
+      </div>
+    </div><label data-v-5e0b544f="" class="v-label">
+      <!---->Default Activity Start And Duration
+    </label>
+    <transition-stub data-v-5e0b544f="" name="expand-transition" appear="false" persisted="false" css="true">
+      <!--v-if-->
+    </transition-stub>
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--hide-spin-buttons v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-text-field--suffixed v-input--plain-underlined settings-input">
+      <!---->
+      <div class="v-input__control">
+        <div class="v-field v-field--active v-field--dirty v-field--no-label v-field--variant-underlined v-theme--light v-locale--is-ltr">
+          <div class="v-field__overlay"></div>
+          <div class="v-field__loader">
+            <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <!---->
+              <div class="v-progress-linear__background" style="width: 100%;"></div>
+              <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                <div class="v-progress-linear__indeterminate">
+                  <div class="v-progress-linear__indeterminate long"></div>
+                  <div class="v-progress-linear__indeterminate short"></div>
+                </div>
+              </transition-stub>
+              <!---->
+            </div>
+          </div>
+          <!---->
+          <div class="v-field__field" data-no-activator="">
+            <!----><label class="v-label v-field-label" for="settings-default-duration">
+              <!---->
+              <!---->
+            </label>
+            <!----><input size="1" type="number" id="settings-default-duration" aria-describedby="settings-default-duration-messages" aria-label="Default Duration" class="v-field__input"><span class="v-text-field__suffix"><span class="v-text-field__suffix__text">h</span></span>
+          </div>
+          <!---->
+          <!---->
+          <div class="v-field__outline">
+            <!---->
+            <!---->
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="v-input__details">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-default-duration-messages">
+          <!---->
+        </transition-group-stub>
+        <!---->
+      </div>
+    </div><label data-v-5e0b544f="" class="v-label">
+      <!---->Available Activities
+    </label>
+    <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn" data-test-id="settings-toggle-all-activities">
+      <div class="v-selection-control__wrapper text-secondary">
+        <!---->
+        <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-16" aria-disabled="false" type="checkbox" value="true"></div>
+      </div><label class="v-label v-label--clickable" for="input-16">
+        <!---->Toggle All
+      </label>
+    </div>
+    <div data-v-5e0b544f="" role="group">
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-badminton" aria-disabled="false" type="checkbox" value="badminton"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-badminton">
+          <!----><i data-v-5e0b544f="" class="mdi-badminton mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Badminton
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-basketball" aria-disabled="false" type="checkbox" value="basketball"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-basketball">
+          <!----><i data-v-5e0b544f="" class="mdi-basketball mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Basketball
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-maintenance" aria-disabled="false" type="checkbox" value="maintenance"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-maintenance">
+          <!----><i data-v-5e0b544f="" class="mdi-yoga mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Body Maintenance
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-boxing" aria-disabled="false" type="checkbox" value="boxing"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-boxing">
+          <!----><i data-v-5e0b544f="" class="mdi-boxing-glove mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Boxing
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-cycling" aria-disabled="false" type="checkbox" value="cycling"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-cycling">
+          <!----><i data-v-5e0b544f="" class="mdi-bike-fast mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Cycling
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-downhill" aria-disabled="false" type="checkbox" value="downhill"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-downhill">
+          <!----><i data-v-5e0b544f="" class="mdi-ski mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Downhill
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-gym" aria-disabled="false" type="checkbox" value="gym"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-gym">
+          <!----><i data-v-5e0b544f="" class="mdi-dumbbell mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Gym
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-gymnastics" aria-disabled="false" type="checkbox" value="gymnastics"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-gymnastics">
+          <!----><i data-v-5e0b544f="" class="mdi-gymnastics mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Gymnastics
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-hockey" aria-disabled="false" type="checkbox" value="hockey"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-hockey">
+          <!----><i data-v-5e0b544f="" class="mdi-hockey-sticks mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Hockey
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-martialarts" aria-disabled="false" type="checkbox" value="martialarts"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-martialarts">
+          <!----><i data-v-5e0b544f="" class="mdi-karate mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Martial Arts
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-running" aria-disabled="false" type="checkbox" value="running"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-running">
+          <!----><i data-v-5e0b544f="" class="mdi-run mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Running
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-shooting" aria-disabled="false" type="checkbox" value="shooting"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-shooting">
+          <!----><i data-v-5e0b544f="" class="mdi-bullseye-arrow mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Shooting
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-skating" aria-disabled="false" type="checkbox" value="skating"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-skating">
+          <!----><i data-v-5e0b544f="" class="mdi-skate mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Skating
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-skiing" aria-disabled="false" type="checkbox" value="skiing"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-skiing">
+          <!----><i data-v-5e0b544f="" class="mdi-ski-cross-country mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Skiing
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-soccer" aria-disabled="false" type="checkbox" value="soccer"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-soccer">
+          <!----><i data-v-5e0b544f="" class="mdi-soccer mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Soccer
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-sprint" aria-disabled="false" type="checkbox" value="sprint"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-sprint">
+          <!----><i data-v-5e0b544f="" class="mdi-run-fast mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Sprint
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-swimming" aria-disabled="false" type="checkbox" value="swimming"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-swimming">
+          <!----><i data-v-5e0b544f="" class="mdi-swim mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Swimming
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-tennis" aria-disabled="false" type="checkbox" value="tennis"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-tennis">
+          <!----><i data-v-5e0b544f="" class="mdi-tennis mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Tennis
+        </label>
+      </div>
+      <div data-v-5e0b544f="" class="settings__icon-container d-inline-flex">
+        <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn flex-grow-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="settings-activity-walking" aria-disabled="false" type="checkbox" value="walking"></div>
+          </div>
+          <!---->
+        </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-walking">
+          <!----><i data-v-5e0b544f="" class="mdi-walk mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Walking
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--v-if-->
+  <!---->
+  <!----><span class="v-card__underlay"></span>
+</div>"
+`;

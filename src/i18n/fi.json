@@ -61,8 +61,8 @@
   "home": {
     "title": "Tervetuloa GetFitin käyttäjäksi",
     "p1": "GetFit on ilmainen, helppokäyttöinen sovellus, jonka avulla voit suunnitella usean viikon harjoitusohjelman.",
-    "p2": "Aloittaaksesi, siirry ohjelma-näkymään ja valitse käytössä olevat lajit. Lisää sen jälkeen uusi viikko ohjelmaasi ja aloita harjoitusten suunnittelu.",
-    "p3": "Sovelluksen tehokkaampaa käyttöä varten voit kopioida harjoituksia ja kokonaisia viikkoja ohjelma-näkymässä, sekä järjestellä niitä raahaamalla ja pudottamalla.",
+    "p2": "Aloittaaksesi, siirry asetuksiin ja täytä ohjelman perustiedot. Siirry sen jälkeen ohjelmaasi ja aloita harjoitusten suunnittelu.",
+    "p3": "Sovelluksen tehokkaampaa käyttöä varten voit kopioida harjoituksia ja kokonaisia viikkoja, sekä järjestellä niitä raahaamalla ja pudottamalla.",
     "credit": "Valokuva: {image}"
   },
   "intensities": {
@@ -74,20 +74,26 @@
   "export": {
     "download": "Vie kalenteri",
     "filename": "Harjoitusohjelma",
-    "guide": "Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista. Poista sen jälkeen taustakuvien ja -värien tulostus käytöstä.",
+    "guide": "Alta voit viedä harjoitusohjelmasi .ics-kalenteritiedostoksi, tai tulostaa sen. Kalenteritiedoston luonti edellyttää, että ohjelmalla on aloituspäivämäärä määriteltynä asetuksissa. Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista. Poista sen jälkeen taustakuvien ja -värien tulostus käytöstä.",
     "instructions": "Ohjeet",
     "notes": "Muistiinpanot",
     "print": "Tulosta",
-    "supplement": "Lisämateriaali viikolle {0}"
+    "supplement": "Lisämateriaali viikolle {0}",
+    "title": "Vie harjoitusohjelma"
   },
   "routes": {
     "home": "Etusivu",
-    "export": "Viennit",
-    "schedule": "Ohjelma"
+    "export": "Vienti",
+    "schedule": "Ohjelma",
+    "settings": "Asetukset"
+  },
+  "schedule": {
+    "addWeek": "Lisää viikko",
+    "reset": "Tyhjennä",
+    "title": "Muokkaa harjoitusohjelmaa"
   },
   "settings": {
     "actualWeekNumbers": "Kalenterin viikkonumerot",
-    "addWeek": "Lisää viikko",
     "assignedWeekNumbers": "Asetetut viikkonumerot (1, 2, 3...)",
     "availableActivities": "Mahdolliset lajit",
     "defaultDuration": "Oletusarvoinen kesto",
@@ -96,7 +102,6 @@
     "hours": "Tunnit",
     "minutes": "Minuutit",
     "programName": "Ohjelman nimi",
-    "reset": "Tyhjennä",
     "startDate": "Aloituspäivä",
     "startDateHint": "Vaaditaan ICS-exportiin",
     "startOfWeek": "Viikon aloitus",

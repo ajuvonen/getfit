@@ -60,9 +60,9 @@
   },
   "home": {
     "title": "Welcome to GetFit",
-    "p1": "GetFit is a free, easy-to-use exercise program planner that allows you to plan a training schedule spanning multiple weeks.",
-    "p2": "To get started, navigate to the schedule view and choose the activities you wish to track. Then add a new week to your schedule and start planning activities.",
-    "p3": "For more efficient use of the app, you can copy activities and entire weeks in the schedule view, and reorder them by dragging and dropping.",
+    "p1": "GetFit is a free, easy-to-use exercise program planner that allows you to plan a schedule spanning multiple weeks.",
+    "p2": "To get started, navigate to settings and fill some basic info about your program. Then, go to your schedule and start planning activities.",
+    "p3": "For more efficient use of the app, you can copy activities and entire weeks, and reorder them by dragging and dropping.",
     "credit": "Photo credit: {image}"
   },
   "intensities": {
@@ -73,21 +73,27 @@
   },
   "export": {
     "download": "Export Calendar",
-    "filename": "TraningSchedule",
-    "guide": "For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows. Then uncheck printing of background images and -colors.",
+    "filename": "TrainingSchedule",
+    "guide": "Below you can export your schedule in the .ics calendar format, or print it. Export requires that the schedule has a start date defined in the settings. For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows. Then uncheck printing of background images and -colors.",
     "instructions": "Instructions",
     "notes": "Notes",
     "print": "Print",
-    "supplement": "Supplement for Week {0}"
+    "supplement": "Supplement for Week {0}",
+    "title": "Export Schedule"
   },
   "routes": {
     "home": "Home",
     "export": "Export",
-    "schedule": "Schedule"
+    "schedule": "Schedule",
+    "settings": "Settings"
+  },
+  "schedule": {
+    "addWeek": "Add Week",
+    "reset": "Reset",
+    "title": "Edit Schedule"
   },
   "settings": {
     "actualWeekNumbers": "Calendar Week Numbers",
-    "addWeek": "Add Week",
     "assignedWeekNumbers": "Assigned Numbers (1, 2, 3...)",
     "availableActivities": "Available Activities",
     "defaultDuration": "Default Duration",
@@ -96,7 +102,6 @@
     "hours": "Hours",
     "minutes": "Minutes",
     "programName": "Program Name",
-    "reset": "Reset",
     "startDate": "Program Start Date",
     "startDateHint": "Required for ICS export",
     "startOfWeek": "Start of Week",

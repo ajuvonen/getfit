@@ -1,27 +1,29 @@
 describe('Navigation tests', () => {
   it('navbar navigates to correct routes', () => {
-    cy.visit('/')
-      .getByTestId('navbar-schedule-link').click();
-    cy.location('pathname').should('contain', '/schedule')
-      .getByTestId('navbar-print-link').should('have.class', 'v-btn--disabled');
-    cy.getByTestId('navbar-schedule-link').click();
-    cy.getByTestId('schedule-settings-add-week-button').click();
-    cy.getByTestId('navbar-print-link').should('not.have.class', 'v-btn--disabled').click();
-    cy.contains('p', 'For best results in printed form')
-      .location('pathname')
-      .should('contain', '/print')
-      .getByTestId('navbar-home-link')
+    cy.visit('/').getByTestId('navbar-settings-link').click();
+    cy.location('pathname')
+      .should('contain', '/settings')
+      .getByTestId('navbar-schedule-link')
       .click();
-    cy.contains('h1', 'Welcome to GetFit').location('pathname').should('eql', '/getfit/');
+    cy.location('pathname')
+      .should('contain', '/schedule')
+      .getByTestId('navbar-export-link')
+      .should('have.class', 'v-btn--disabled')
+      .getByTestId('schedule-add-week-button')
+      .click();
+    cy.getByTestId('navbar-export-link').should('not.have.class', 'v-btn--disabled').click();
+    cy.location('pathname').should('contain', '/export').getByTestId('app-bar-home-link').click();
+    cy.location('pathname').should('eql', '/getfit/');
   });
 
   it('changes language', () => {
-    cy.visit('/');
-    cy.getByTestId('navbar-schedule-link')
+    cy.visit('/')
+      .getByTestId('navbar-schedule-link')
       .should('contain.text', 'Schedule')
       .getByTestId('app-bar-locale-fi-button')
       .click();
-    cy.getByTestId('navbar-schedule-link').should('contain.text', 'Ohjelma')
+    cy.getByTestId('navbar-schedule-link')
+      .should('contain.text', 'Ohjelma')
       .getByTestId('app-bar-locale-en-button')
       .click();
     cy.getByTestId('navbar-schedule-link').should('contain.text', 'Schedule');

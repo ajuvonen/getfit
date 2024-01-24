@@ -56,7 +56,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
 </script>
 <template>
   <v-expansion-panel
-    style="background: rgba(255, 255, 255, 0.9)"
+  elevation="0"
     :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'"
   >
     <v-expansion-panel-title>
