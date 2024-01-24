@@ -3,6 +3,7 @@ import {useAppStateStore} from '@/stores/appState';
 import {useScheduleStore} from '@/stores/schedule';
 import useScreenSize from '@/hooks/screenSize';
 import useWeekDays from '@/hooks/weekdays';
+import useLocalizedActivities from '@/hooks/localizedActivities';
 
 defineProps<{
   weekId: string;
@@ -15,6 +16,8 @@ const {deleteWeek, copyWeek} = scheduleStore;
 
 const {openNewTrainingDialog} = useAppStateStore();
 
+const {localizedAvailableActivities} = useLocalizedActivities();
+
 const {getDisplayWeekNumber} = useWeekDays();
 
 const {isSmallScreen} = useScreenSize();
@@ -25,7 +28,7 @@ const {isSmallScreen} = useScreenSize();
       :data-test-id="`week-${weekIndex}-add-training-button`"
       prepend-icon="mdi-plus"
       variant="text"
-      @click="openNewTrainingDialog(weekId, dayIndex)"
+      @click="openNewTrainingDialog(weekId, dayIndex, localizedAvailableActivities)"
       >{{ $t('weekCalendar.addTraining') }}</v-btn
     >
     <v-btn
