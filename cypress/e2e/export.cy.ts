@@ -27,5 +27,5 @@ it('downloads calendar file', () => {
   cy.get('.dp__calendar_item:not([aria-disabled])').first().click();
   cy.getByTestId('navbar-export-link').click();
   cy.getByTestId('export-download-button').click();
-  cy.readFile(path.normalize(path.join(Cypress.config('downloadsFolder'), 'TrainingSchedule.ics'))).should('exist');
+  cy.readFile(path.join(Cypress.config('downloadsFolder'), 'TrainingSchedule.ics')).should('exist');
 });

@@ -12,8 +12,7 @@ import {DATE_FORMATS} from '@/constants';
 import {decimalRegex} from '@/utils';
 import BaseView from '@/components/BaseView.vue';
 
-const scheduleStore = useScheduleStore();
-const {settings} = storeToRefs(scheduleStore);
+const {settings} = storeToRefs(useScheduleStore());
 
 const {t} = useI18n();
 
