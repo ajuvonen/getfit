@@ -3,8 +3,7 @@ import {storeToRefs} from 'pinia';
 import {useAppStateStore} from '@/stores/appState';
 import BaseDialog from '@/components/BaseDialog.vue';
 
-const appStateStore = useAppStateStore();
-const {confirmDialogOpen, confirmText, confirmAction} = storeToRefs(appStateStore);
+const {confirmDialogOpen, confirmText, confirmAction} = storeToRefs(useAppStateStore());
 </script>
 <template>
   <BaseDialog

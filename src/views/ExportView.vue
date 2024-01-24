@@ -13,8 +13,7 @@ import WeekSupplement from '@/components/WeekSupplement.vue';
 import PrintViewTable from '@/components/PrintViewTable.vue';
 import BaseView from '@/components/BaseView.vue';
 
-const scheduleStore = useScheduleStore();
-const {settings, weeks} = storeToRefs(scheduleStore);
+const {settings, weeks} = storeToRefs(useScheduleStore());
 
 const reset = useReset();
 

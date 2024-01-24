@@ -10,8 +10,7 @@ defineProps<{
   training: Training;
 }>();
 
-const scheduleStore = useScheduleStore();
-const {settings} = storeToRefs(scheduleStore);
+const {settings} = storeToRefs(useScheduleStore());
 </script>
 <template>
   <v-card class="training-card mx-2 mt-4 mb-2">

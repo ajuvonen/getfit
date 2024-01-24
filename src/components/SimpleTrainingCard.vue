@@ -9,8 +9,7 @@ defineProps<{
   training: Training;
 }>();
 
-const scheduleStore = useScheduleStore();
-const {settings} = storeToRefs(scheduleStore);
+const {settings} = storeToRefs(useScheduleStore());
 </script>
 <template>
   <div class="simple-training-card mt-4">

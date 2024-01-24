@@ -11,8 +11,7 @@ defineProps<{
   dayIndex: number;
 }>();
 
-const scheduleStore = useScheduleStore();
-const {deleteWeek, copyWeek} = scheduleStore;
+const {deleteWeek, copyWeek} = useScheduleStore();
 
 const {openNewTrainingDialog} = useAppStateStore();
 

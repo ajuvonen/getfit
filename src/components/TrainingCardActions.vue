@@ -8,11 +8,9 @@ defineProps<{
   training: Training;
 }>();
 
-const scheduleStore = useScheduleStore();
-const {deleteTraining} = scheduleStore;
+const {deleteTraining} = useScheduleStore();
 
-const appStateStore = useAppStateStore();
-const {openEditTrainingDialog} = appStateStore;
+const {openEditTrainingDialog} = useAppStateStore();
 </script>
 <template>
   <v-card-actions class="flex-column align-stretch">

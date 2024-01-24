@@ -17,8 +17,7 @@ const scheduleStore = useScheduleStore();
 const {settings} = storeToRefs(scheduleStore);
 const {addOrEditTraining} = scheduleStore;
 
-const appStateStore = useAppStateStore();
-const {trainingDialogOpen, trainingData} = storeToRefs(appStateStore);
+const {trainingDialogOpen, trainingData} = storeToRefs(useAppStateStore());
 
 const {t} = useI18n();
 
