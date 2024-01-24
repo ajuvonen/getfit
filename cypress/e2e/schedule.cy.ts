@@ -1,23 +1,24 @@
 describe('Schedule tests', () => {
   it('changes schedule settings', () => {
-    cy.visit('/').getByTestId('navbar-schedule-link').click();
-    cy.get('.schedule-settings__icon-container input:checked')
+    cy.visit('/').getByTestId('navbar-settings-link').click();
+    cy.get('.settings__icon-container input:checked')
       .should('exist')
-      .getByTestId('schedule-settings-toggle-all-activities')
+      .getByTestId('settings-toggle-all-activities')
       .find('input')
       .click();
-    cy.get('.schedule-settings__icon-container input:checked')
+    cy.get('.settings__icon-container input:checked')
       .should('not.exist')
-      .get('#schedule-settings-activity-badminton')
+      .get('#settings-activity-badminton')
       .click();
-    cy.get('#schedule-settings-activity-walking').click();
-    cy.getByTestId('schedule-settings-add-week-button').click();
-    cy.getByTestId('schedule-settings-heading').click();
+    cy.get('#settings-activity-walking').click();
+    cy.getByTestId('navbar-schedule-link').click();
+    cy.getByTestId('schedule-add-week-button').click();
     cy.getByTestId('week-0').click();
-    cy.getByTestId('week-0-calendar-tab-0')
-      .should('contain.text', 'Monday')
-      .getByTestId('schedule-settings-start-of-week-sunday')
-      .click();
+    cy.getByTestId('week-0-calendar-tab-0').should('contain.text', 'Monday');
+    cy.getByTestId('navbar-settings-link').click();
+    cy.getByTestId('settings-start-of-week-sunday').click();
+    cy.getByTestId('navbar-schedule-link').click();
+    cy.getByTestId('week-0').click();
     cy.getByTestId('week-0-calendar-tab-0')
       .should('contain.text', 'Sunday')
       .getByTestId('week-0-add-training-button')
@@ -34,7 +35,10 @@ describe('Schedule tests', () => {
       .find('.v-text-field__suffix')
       .should('contain.text', 'h');
     cy.getByTestId('edit-training-close-button').click();
-    cy.getByTestId('schedule-settings-unit-of-time-m').click();
+    cy.getByTestId('navbar-settings-link').click();
+    cy.getByTestId('settings-unit-of-time-m').click();
+    cy.getByTestId('navbar-schedule-link').click();
+    cy.getByTestId('week-0').click();
     cy.getByTestId('week-0-add-training-button').click();
     cy.getByTestId('edit-training-duration')
       .find('.v-text-field__suffix')
@@ -46,49 +50,38 @@ describe('Schedule tests', () => {
     cy.addTraining();
     cy.getByTestId('navbar-export-link').click();
     cy.getByTestId('week-0-table').find('thead th:first-child').should('have.text', 'Mon');
-    cy.getByTestId('navbar-schedule-link').click();
-    cy.getByTestId('schedule-settings-start-of-week-sunday').click();
-    cy.getByTestId('week-0').click();
-    cy.getByTestId('week-0-calendar-tab-1').click();
-    cy.getByTestId('week-0-add-training-button').click();
-    cy.getByTestId('edit-training-activity').click();
-    cy.get('.v-list-item').first().click();
-    cy.getByTestId('edit-training-duration').find('input').type('.5');
-    cy.getByTestId('edit-training-save-button').click();
-    cy.getByTestId('schedule-settings-unit-of-time-m').click();
+    cy.getByTestId('navbar-settings-link').click();
+    cy.getByTestId('settings-start-of-week-sunday').click();
+    cy.getByTestId('settings-unit-of-time-m').click();
     cy.getByTestId('navbar-export-link').click();
     cy.getByTestId('week-0-table').find('thead th:first-child').should('have.text', 'Sun');
     cy.get('.simple-training-card__duration').should('contain.text', '90 m');
   });
 
   it('date settings work', () => {
-    cy.visit('/').getByTestId('navbar-schedule-link').click();
-    cy.getByTestId('schedule-settings-start-date-input').find('input').should('have.value', '');
-    cy.getByTestId('schedule-settings-week-numbering-assigned').should('not.exist');
-    cy.getByTestId('schedule-settings-week-numbering-actual').should('not.exist');
-    cy.getByTestId('schedule-settings-default-start-time-input').should('not.exist');
-    cy.getByTestId('schedule-settings-start-date-input').click();
+    cy.visit('/').getByTestId('navbar-settings-link').click();
+    cy.getByTestId('settings-start-date-input').find('input').should('have.value', '');
+    cy.getByTestId('settings-week-numbering-assigned').should('not.exist');
+    cy.getByTestId('settings-week-numbering-actual').should('not.exist');
+    cy.getByTestId('settings-default-start-time-input').should('not.exist');
+    cy.getByTestId('settings-start-date-input').click();
     cy.get('.dp__calendar_item:not([aria-disabled])').last().click();
-    cy.getByTestId('schedule-settings-start-date-input').find('input').invoke('val').as('date');
-    cy.getByTestId('schedule-settings-week-numbering-assigned').should('exist');
-    cy.getByTestId('schedule-settings-week-numbering-actual').should('exist');
-    cy.getByTestId('schedule-settings-default-start-time-input').should('exist');
-    cy.getByTestId('schedule-settings-default-start-time-input')
-      .find('input')
-      .should('have.value', '12:00');
+    cy.getByTestId('settings-start-date-input').find('input').invoke('val').as('date');
+    cy.getByTestId('settings-week-numbering-assigned').should('exist');
+    cy.getByTestId('settings-week-numbering-actual').should('exist');
+    cy.getByTestId('settings-default-start-time-input').should('exist');
+    cy.getByTestId('settings-default-start-time-input').find('input').should('have.value', '12:00');
     cy.get('@date').then((date) => {
-      cy.getByTestId('schedule-settings-start-of-week-sunday').click();
-      cy.getByTestId('schedule-settings-start-date-input')
-        .find('input')
-        .should('not.have.value', date);
-      cy.getByTestId('schedule-settings-start-of-week-monday').click();
-      cy.getByTestId('schedule-settings-start-date-input').find('input').should('have.value', date);
+      cy.getByTestId('settings-start-of-week-sunday').click();
+      cy.getByTestId('settings-start-date-input').find('input').should('not.have.value', date);
+      cy.getByTestId('settings-start-of-week-monday').click();
+      cy.getByTestId('settings-start-date-input').find('input').should('have.value', date);
     });
   });
 
   it('adds new trainings', () => {
     cy.visit('/').getByTestId('navbar-schedule-link').click();
-    cy.getByTestId('schedule-settings-add-week-button').click();
+    cy.getByTestId('schedule-add-week-button').click();
     cy.getByTestId('week-0').click();
     cy.getByTestId('week-0-calendar-tab-1').click();
     cy.addTraining(false);
@@ -125,27 +118,31 @@ describe('Schedule tests', () => {
   });
 
   it('resets schedule', () => {
-    cy.visit('/').getByTestId('navbar-schedule-link').click();
-    cy.getByTestId('schedule-settings-start-of-week-sunday')
+    cy.visit('/').getByTestId('navbar-settings-link').click();
+    cy.getByTestId('settings-start-of-week-sunday');
+    cy.getByTestId('navbar-schedule-link').click();
     cy.addTraining();
-    cy.getByTestId('schedule-settings-reset-button').click();
+    cy.getByTestId('schedule-reset-button').click();
     cy.getByTestId('confirm-dialog-confirm-button').click();
     cy.location('pathname').should('eq', '/getfit/');
+    cy.getByTestId('navbar-settings-link').click();
+    cy.getByTestId('settings-start-of-week-sunday').should('not.be.selected');
     cy.getByTestId('navbar-schedule-link').click();
-    cy.getByTestId('schedule-settings-start-of-week-sunday').should('not.be.selected');
     cy.getByTestId('week-0').should('not.exist');
   });
 
   it('resets schedule from export view', () => {
-    cy.visit('/').getByTestId('navbar-schedule-link').click();
-    cy.getByTestId('schedule-settings-start-of-week-sunday')
+    cy.visit('/').getByTestId('navbar-settings-link').click();
+    cy.getByTestId('settings-start-of-week-sunday');
+    cy.getByTestId('navbar-schedule-link').click();
     cy.addTraining();
     cy.getByTestId('navbar-export-link').click();
-    cy.getByTestId('export-view-reset-button').click();
+    cy.getByTestId('export-reset-button').click();
     cy.getByTestId('confirm-dialog-confirm-button').click();
     cy.location('pathname').should('eq', '/getfit/');
+    cy.getByTestId('navbar-settings-link').click();
+    cy.getByTestId('settings-start-of-week-sunday').should('not.be.selected');
     cy.getByTestId('navbar-schedule-link').click();
-    cy.getByTestId('schedule-settings-start-of-week-sunday').should('not.be.selected');
     cy.getByTestId('week-0').should('not.exist');
   });
 });

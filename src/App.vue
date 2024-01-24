@@ -15,6 +15,11 @@ const {t} = useI18n();
   <v-app :full-height="true">
     <div class="app__overlay">
       <v-app-bar class="d-print-none text-white app-bar">
+        <template #prepend>
+          <RouterLink to="/" :aria-label="$t('routes.home')" data-test-id="app-bar-home-link">
+            <v-icon icon="mdi-home" color="white" />
+          </RouterLink>
+        </template>
         <template #append>
           <v-icon icon="mdi-earth" />
           <v-btn
@@ -34,9 +39,9 @@ const {t} = useI18n();
         </v-main>
       </v-container>
       <v-bottom-navigation grow class="d-print-none">
-        <v-btn to="/" data-test-id="navbar-home-link" class="text-body-1">
-          <v-icon icon="mdi-home" />
-          {{ t('routes.home') }}
+        <v-btn to="settings" data-test-id="navbar-settings-link" class="text-body-1">
+          <v-icon icon="mdi-cog" />
+          {{ t('routes.settings') }}
         </v-btn>
         <v-btn to="schedule" data-test-id="navbar-schedule-link" class="text-body-1">
           <v-icon icon="mdi-calendar" />
