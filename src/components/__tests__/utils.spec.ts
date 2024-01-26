@@ -2,7 +2,6 @@ import {describe, it, expect} from 'vitest';
 import type {ErrorObject} from '@vuelidate/core';
 import {roundNearestQuarter, getIcon, getIntensityColor, getValidationErrors} from '@/utils';
 import {Intensity} from '@/types';
-import {ACTIVITIES} from '@/constants';
 
 describe('Utils', () => {
   it('roundNearestQuarter rounds decimals to nearest quarter with no decimals', () => {
@@ -24,8 +23,8 @@ describe('Utils', () => {
   });
 
   it('getIcon gets icons from activities list', () => {
-    expect(getIcon(ACTIVITIES, 'walking')).toBe('mdi-walk');
-    expect(getIcon(ACTIVITIES, 'boxing')).toBe('mdi-boxing-glove');
+    expect(getIcon('walking')).toBe('mdi-walk');
+    expect(getIcon('boxing')).toBe('mdi-boxing-glove');
   });
 
   it('getIntensityColor gets correct intensity colors', () => {
@@ -36,9 +35,7 @@ describe('Utils', () => {
   });
 
   it('getValidationErrors gets a list of errors', () => {
-    const vuelidateField = {
-      $errors: [{$message: 'Error 1'}, {$message: 'Error 2'}] as ErrorObject[],
-    };
-    expect(getValidationErrors(vuelidateField)).toEqual(['Error 1', 'Error 2']);
+    const errors = [{$message: 'Error 1'}, {$message: 'Error 2'}] as ErrorObject[];
+    expect(getValidationErrors(errors)).toEqual(['Error 1', 'Error 2']);
   });
 });

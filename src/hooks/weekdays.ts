@@ -3,10 +3,7 @@ import {storeToRefs} from 'pinia';
 import {useScheduleStore} from '@/stores/schedule';
 import {useI18n} from 'vue-i18n';
 import {DateTime} from 'luxon';
-import {DATE_FORMATS, SHORT_DATE_FORMATS} from '@/constants';
-
-const sundayFirst = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-const mondayFirst = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+import {DATE_FORMATS, SHORT_DATE_FORMATS, WEEKDAYS} from '@/constants';
 
 export default function useWeekDays() {
   const scheduleStore = useScheduleStore();
@@ -14,12 +11,12 @@ export default function useWeekDays() {
   const {t, locale} = useI18n();
 
   const weekdays = computed(() => {
-    const dayArray = settings.value.startsOnSunday ? sundayFirst : mondayFirst;
+    const dayArray = settings.value.startsOnSunday ? WEEKDAYS.sundayFirst : WEEKDAYS.mondayFirst;
     return dayArray.map((day) => t(`general.weekdays.${day}`));
   });
 
   const shortWeekdays = computed(() => {
-    const dayArray = settings.value.startsOnSunday ? sundayFirst : mondayFirst;
+    const dayArray = settings.value.startsOnSunday ? WEEKDAYS.sundayFirst : WEEKDAYS.mondayFirst;
     return dayArray.map((day) => t(`general.shortWeekdays.${day}`));
   });
 
@@ -51,9 +48,10 @@ export default function useWeekDays() {
 
   const getShortDate = computed(() => (weekIndex: number, dayIndex: number) => {
     const {locale} = useI18n();
-    return getWeekStart.value(weekIndex)
+    return getWeekStart
+      .value(weekIndex)
       .plus({days: dayIndex})
-      .toFormat(SHORT_DATE_FORMATS[locale.value])
+      .toFormat(SHORT_DATE_FORMATS[locale.value]);
   });
 
   return {weekdays, shortWeekdays, getDateInterval, getDisplayWeekNumber, getShortDate};

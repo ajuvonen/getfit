@@ -23,7 +23,7 @@ const {reorderTrainings} = scheduleStore;
 
 const {t} = useI18n();
 
-const {isSmallScreen, isMediumScreen} = useScreenSize();
+const {isSmallScreen, isLargeScreen} = useScreenSize();
 
 const {weekdays, shortWeekdays, getDateInterval, getDisplayWeekNumber} = useWeekDays();
 
@@ -55,10 +55,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
   t('weekCalendar.dayChipTitle', [count, t(`intensities.${intensity}`)]);
 </script>
 <template>
-  <v-expansion-panel
-  elevation="0"
-    :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'"
-  >
+  <v-expansion-panel elevation="0" :rounded="!isLargeScreen ? 0 : 'rounded'">
     <v-expansion-panel-title>
       <div class="week-calendar__drag-handle">
         <v-icon icon="mdi-drag-vertical-variant" />

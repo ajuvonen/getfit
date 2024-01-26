@@ -6,14 +6,10 @@ defineProps<{
   guide: string;
 }>();
 
-const {isSmallScreen, isMediumScreen} = useScreenSize();
+const {isLargeScreen} = useScreenSize();
 </script>
 <template>
-  <v-card
-    color="rgba(255,255,255,0.9)"
-    class="mb-4"
-    :rounded="isSmallScreen || isMediumScreen ? 0 : 'rounded'"
-  >
+  <v-card color="rgba(255,255,255,0.9)" class="mb-4" :rounded="!isLargeScreen ? 0 : 'rounded'">
     <v-card-title class="d-print-none">
       <h1 class="text-h4">{{ title }}</h1>
     </v-card-title>

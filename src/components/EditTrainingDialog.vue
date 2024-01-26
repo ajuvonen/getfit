@@ -8,7 +8,6 @@ import type {VForm} from 'vuetify/components';
 import {Intensity} from '@/types';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
-import {ACTIVITIES} from '@/constants';
 import {getIntensityColor, getIcon, getValidationErrors, decimalRegex} from '@/utils';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import BaseDialog from '@/components/BaseDialog.vue';
@@ -66,71 +65,61 @@ const resetAndClose = () => {
         <v-label for="edit-training-activity">{{ $t('editTraining.activity') }}</v-label>
         <v-select
           id="edit-training-activity"
-          v-model="trainingData.activity"
-          :error-messages="getValidationErrors(v$.activity)"
+          v-model="v$.activity.$model"
+          :error-messages="getValidationErrors(v$.activity.$errors)"
           :items="localizedAvailableActivities"
           eager
           data-test-id="edit-training-activity"
-          @input="v$.activity.$touch"
-          @blur="v$.activity.$touch"
         >
           <template #selection="{item: {title, value}}">
             <div v-if="value">
-              <v-icon :icon="getIcon(ACTIVITIES, value)" />
+              <v-icon :icon="getIcon(value)" />
               {{ title }}
             </div>
           </template>
           <template #item="{item: {title, value}, props}">
             <v-list-item v-bind="props" :data-test-id="`edit-training-activity-${value}`">
               <template #title>
-                <v-icon :icon="getIcon(ACTIVITIES, value)" />
+                <v-icon :icon="getIcon(value)" />
                 {{ title }}
               </template>
             </v-list-item>
           </template>
         </v-select>
         <v-text-field
-          v-model="trainingData.title"
+          v-model="v$.title.$model"
           :label="t('editTraining.trainingTitle')"
-          :error-messages="getValidationErrors(v$.title)"
+          :error-messages="getValidationErrors(v$.title.$errors)"
           maxlength="30"
           counter
           data-test-id="edit-training-title"
-          @input="v$.title.$touch"
-          @blur="v$.title.$touch"
         />
         <v-text-field
-          v-model="trainingData.location"
+          v-model="v$.location.$model"
           :label="t('editTraining.location')"
-          :error-messages="getValidationErrors(v$.location)"
+          :error-messages="getValidationErrors(v$.location.$errors)"
           maxlength="40"
           counter
           data-test-id="edit-training-location"
-          @input="v$.location.$touch"
-          @blur="v$.location.$touch"
         />
         <v-text-field
-          v-model.number="trainingData.duration"
-          :error-messages="getValidationErrors(v$.duration)"
+          v-model.number="v$.duration.$model"
+          :error-messages="getValidationErrors(v$.duration.$errors)"
           :suffix="settings.unitOfTime"
           :label="t('editTraining.duration')"
           class="edit-training-duration"
           type="number"
           data-test-id="edit-training-duration"
-          @input="v$.duration.$touch"
-          @blur="v$.duration.$touch"
         />
         <v-textarea
-          v-model="trainingData.description"
+          v-model="v$.description.$model"
           :label="t('editTraining.description')"
-          :error-messages="getValidationErrors(v$.description)"
+          :error-messages="getValidationErrors(v$.description.$errors)"
           clearable
           maxlength="2000"
           no-resize
           counter
           data-test-id="edit-training-description"
-          @input="v$.description.$touch"
-          @blur="v$.description.$touch"
         />
         <v-label for="edit-training-intensity">{{ $t('editTraining.intensity') }}</v-label>
         <v-slider
