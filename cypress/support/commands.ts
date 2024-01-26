@@ -5,6 +5,7 @@ declare global {
     interface Chainable {
       getByTestId(dataTestAttribute: string, args?: any): Chainable<JQuery<HTMLElement>>;
       addTraining(addWeek?: boolean): void;
+      toRoute(route: string): Chainable<JQuery<HTMLElement>>;
     }
   }
 }
@@ -13,8 +14,11 @@ Cypress.Commands.add('getByTestId', (selector, ...args) => {
   return cy.get(`[data-test-id=${selector}]`, ...args);
 });
 
+Cypress.Commands.add('toRoute', (route) => cy.getByTestId(`navbar-${route}-link`).click());
+
 Cypress.Commands.add('addTraining', (addWeek = true) => {
   if (addWeek) {
+    cy.toRoute('schedule');
     cy.getByTestId('schedule-add-week-button').click();
     cy.getByTestId('week-0').click();
   }

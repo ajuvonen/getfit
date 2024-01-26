@@ -88,3 +88,8 @@ export const SHORT_DATE_FORMATS: {[key: string]: string} = {
   en: 'MM/dd',
   fi: 'd.M',
 };
+
+export const WEEKDAYS = {
+  sundayFirst: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
+  mondayFirst: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
+};

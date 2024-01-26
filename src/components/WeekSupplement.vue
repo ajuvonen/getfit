@@ -3,7 +3,6 @@ import {useI18n} from 'vue-i18n';
 import type {Training} from '@/types';
 import useWeekDays from '@/hooks/weekdays';
 import {getIcon} from '@/utils';
-import {ACTIVITIES} from '@/constants';
 
 defineProps<{
   trainings: Training[];
@@ -26,7 +25,7 @@ const {weekdays} = useWeekDays();
       >
         <span>
           <v-icon
-            :icon="getIcon(ACTIVITIES, training.activity)"
+            :icon="getIcon(training.activity)"
             :title="t(`activities.${training.activity}`)"
             :aria-label="t(`activities.${training.activity}`)"
           />

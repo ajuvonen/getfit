@@ -42,6 +42,6 @@ export default function useValidatedRef<T>(
         }
       },
     }),
-    computed(() => getValidationErrors($v.value[key])),
+    computed(() => getValidationErrors($v.value[key].$errors)),
   ];
 }

@@ -2,7 +2,6 @@
 import {storeToRefs} from 'pinia';
 import type {Training} from '@/types';
 import {getIcon, getIntensityColor} from '@/utils';
-import {ACTIVITIES} from '@/constants';
 import {useScheduleStore} from '@/stores/schedule';
 import TrainingCardActions from '@/components/TrainingCardActions.vue';
 
@@ -19,7 +18,7 @@ const {settings} = storeToRefs(useScheduleStore());
       :style="{'background-color': getIntensityColor(training.intensity)}"
     >
       <v-icon
-        :icon="getIcon(ACTIVITIES, training.activity)"
+        :icon="getIcon(training.activity)"
         :title="$t(`activities.${training.activity}`)"
         :aria-label="$t(`activities.${training.activity}`)"
         :color="getIntensityColor(training.intensity)"

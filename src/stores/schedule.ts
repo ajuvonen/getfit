@@ -117,7 +117,7 @@ export const useScheduleStore = defineStore('schedule', () => {
         const multiplier = newValue === 'h' ? 1 / 60 : 60;
         const precision = newValue === 'h' ? 2 : 0;
         settings.value.defaultDuration = roundNearestQuarter(
-          +settings.value.defaultDuration * multiplier,
+          settings.value.defaultDuration * multiplier,
           precision,
         );
         weeks.value = weeks.value.map((week) => ({

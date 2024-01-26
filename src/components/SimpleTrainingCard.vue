@@ -3,7 +3,6 @@ import {storeToRefs} from 'pinia';
 import {useScheduleStore} from '@/stores/schedule';
 import type {Training} from '@/types';
 import {getIcon} from '@/utils';
-import {ACTIVITIES} from '@/constants';
 
 defineProps<{
   training: Training;
@@ -15,7 +14,7 @@ const {settings} = storeToRefs(useScheduleStore());
   <div class="simple-training-card mt-4">
     <div class="simple-training-card__title text-body-1 text-no-wrap">
       <v-icon
-        :icon="getIcon(ACTIVITIES, training.activity)"
+        :icon="getIcon(training.activity)"
         :title="$t(`activities.${training.activity}`)"
         :aria-label="$t(`activities.${training.activity}`)"
         class="simple-training-card__activity-icon"
