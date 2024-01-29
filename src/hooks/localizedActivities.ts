@@ -1,4 +1,4 @@
-import {prop, sortBy} from 'ramda';
+import {prop, sortBy} from 'remeda';
 import {computed} from 'vue';
 import {useI18n} from 'vue-i18n';
 import {ACTIVITIES} from '@/constants';
@@ -10,12 +10,12 @@ export default function useLocalizedActivities() {
   const scheduleStore = useScheduleStore();
   const localizeAndSort = (activities: BaseActivity[]) =>
     sortBy(
-      prop('title'),
-      activities.map((activity) => ({
+      activities.map<LocalizedActivity>((activity) => ({
         ...activity,
         title: t(`activities.${activity.value}`),
       })),
-    ) as LocalizedActivity[];
+      prop('title'),
+    );
 
   const localizedActivities = computed(() => localizeAndSort(ACTIVITIES));
   const localizedAvailableActivities = computed(() =>

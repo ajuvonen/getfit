@@ -1,7 +1,6 @@
 import {defineStore} from 'pinia';
 import {useStorage} from '@vueuse/core';
 import {v4 as uuidv4} from 'uuid';
-import {clone, lensProp, over} from 'ramda';
 import {DateTime} from 'luxon';
 import type {ScheduleSettings, Training, Week} from '@/types';
 import {ACTIVITIES} from '@/constants';
@@ -101,7 +100,7 @@ export const useScheduleStore = defineStore('schedule', () => {
   const copyTraining = (training: Training, weekId: string, dayIndex: number) => {
     const [targetWeek] = getTargetWeekAndTraining.value(weekId);
     const clonedTraining: Training = {
-      ...clone(training),
+      ...training,
       id: uuidv4(),
       weekId,
       dayIndex,
@@ -122,11 +121,10 @@ export const useScheduleStore = defineStore('schedule', () => {
         );
         weeks.value = weeks.value.map((week) => ({
           ...week,
-          trainings: week.trainings.map(
-            over(lensProp('duration'), (duration) =>
-              roundNearestQuarter(duration * multiplier, precision),
-            ),
-          ),
+          trainings: week.trainings.map((training) => ({
+            ...training,
+            duration: roundNearestQuarter(training.duration * multiplier, precision),
+          })),
         }));
       }
     },

@@ -2,7 +2,6 @@ import {ref} from 'vue';
 import {defineStore} from 'pinia';
 import {v4 as uuidv4} from 'uuid';
 import type {LocalizedActivity, Training} from '@/types';
-import {clone} from 'ramda';
 import {useScheduleStore} from '@/stores/schedule';
 
 export const useAppStateStore = defineStore('appState', () => {
@@ -44,7 +43,7 @@ export const useAppStateStore = defineStore('appState', () => {
   };
 
   const openEditTrainingDialog = (training: Training) => {
-    const clonedTraining = clone(training);
+    const clonedTraining = {...training};
     if (
       clonedTraining.activity &&
       !scheduleStore.settings.availableActivities.includes(clonedTraining.activity)
