@@ -7,7 +7,7 @@ import {
   type ComputedRef,
 } from 'vue';
 import {useVuelidate, type ValidationRule} from '@vuelidate/core';
-import {clone} from 'ramda';
+import {clone} from 'remeda';
 import {getValidationErrors} from '@/utils';
 
 export default function useValidatedRef<T>(

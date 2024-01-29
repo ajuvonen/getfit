@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed, ref} from 'vue';
 import {storeToRefs} from 'pinia';
-import {groupBy, pluck} from 'ramda';
+import {groupBy, prop} from 'remeda';
 import DraggableList from 'vuedraggable';
 import {useScheduleStore} from '@/stores/schedule';
 import {type Week, Intensity, type Training} from '@/types';
@@ -33,7 +33,7 @@ const tabContent = computed(() => {
   const days = isSmallScreen.value ? shortWeekdays : weekdays;
   return days.value.map((weekDay, weekdayIndex) => {
     const trainings = props.week.trainings.filter(({dayIndex}) => dayIndex === weekdayIndex);
-    const maxIntensity = Math.max(...pluck('intensity', trainings));
+    const maxIntensity = Math.max(...trainings.map(prop('intensity')));
 
     return {
       weekDay,
@@ -43,10 +43,7 @@ const tabContent = computed(() => {
   });
 });
 
-const groupedTrainings = computed(() => {
-  const trainings = groupBy(({intensity}) => intensity.toString(), props.week.trainings);
-  return trainings as Record<string, Training[]>;
-});
+const groupedTrainings = computed(() => groupBy(props.week.trainings, ({intensity}) => intensity));
 
 const getWeekChipTitle = (intensity: Intensity, count: number) =>
   t('weekCalendar.weekChipTitle', [t(`intensities.${intensity}`), count]);
