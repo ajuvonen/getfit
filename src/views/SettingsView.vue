@@ -60,7 +60,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
         class="settings-input--wide"
         v-model="name"
         :label="$t('settings.programName')"
-        :error-messages="nameErrors"
+        :error-messages="nameErrors()"
         maxlength="30"
         counter
         variant="underlined"
@@ -165,7 +165,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
       </v-expand-transition>
       <v-text-field
         v-model="duration"
-        :error-messages="durationErrors"
+        :error-messages="durationErrors()"
         id="settings-default-duration"
         :suffix="settings.unitOfTime"
         :aria-label="$t('settings.defaultDuration')"

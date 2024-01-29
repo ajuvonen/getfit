@@ -18,7 +18,7 @@ export default function useValidatedRef<T>(
       [rule: string]: ValidationRule | undefined;
     } | undefined;
   }>,
-): [WritableComputedRef<T[keyof T]>, ComputedRef<string[]>] {
+): [WritableComputedRef<T[keyof T]>, () => string[]] {
   const internal = ref(clone(original.value)) as Ref<T>;
   const $v = useVuelidate(rules, internal);
   watch(
@@ -42,6 +42,6 @@ export default function useValidatedRef<T>(
         }
       },
     }),
-    computed(() => getValidationErrors($v.value[key].$errors)),
+    () => getValidationErrors($v.value[key].$errors),
   ];
 }
