@@ -26,6 +26,15 @@ export const useScheduleStore = defineStore('schedule', () => {
   // State refs
   const settings = useStorage('getfit-settings', getEmptySchedule(), localStorage, {
     mergeDefaults: true,
+    serializer: {
+      read: (v: any) => v ? JSON.parse(v, (key, value) => {
+        if (key === 'startDate' && value) {
+          return DateTime.fromISO(value).toJSDate();
+        }
+        return value;
+      }) : null,
+      write: (v: any) => JSON.stringify(v),
+    },
   });
 
   const weeks = useStorage('getfit-schedule', [] as Week[], localStorage, {mergeDefaults: true});
