@@ -125,6 +125,7 @@ describe('useCalendarExport', () => {
     expect(events[0].categories).toEqual(['Running', 'Normal']);
     expect(events[0].status).toBe('CONFIRMED');
     expect(events[0].busyStatus).toBe('BUSY');
+    expect(events[0].transp).toBe('OPAQUE');
     expect(events[0].productId).toBe('ajuvonen/getfit');
     expect(events[0].start).toEqual([2024, 1, 1, 9, 0]);
 
@@ -136,6 +137,7 @@ describe('useCalendarExport', () => {
     expect(events[1].categories).toEqual(['Swimming', 'Medium']);
     expect(events[1].status).toBe('CONFIRMED');
     expect(events[1].busyStatus).toBe('BUSY');
+    expect(events[1].transp).toBe('OPAQUE');
     expect(events[1].productId).toBe('ajuvonen/getfit');
     expect(events[1].start).toEqual([2024, 1, 2, 9, 0]);
 
@@ -147,6 +149,7 @@ describe('useCalendarExport', () => {
     expect(events[2].categories).toEqual(['Sprint', 'Heavy']);
     expect(events[2].status).toBe('CONFIRMED');
     expect(events[2].busyStatus).toBe('BUSY');
+    expect(events[2].transp).toBe('OPAQUE');
     expect(events[2].productId).toBe('ajuvonen/getfit');
     expect(events[2].start).toEqual([2024, 1, 2, 9, 30]);
 
@@ -158,6 +161,7 @@ describe('useCalendarExport', () => {
     expect(events[3].categories).toEqual(['Running', 'Normal']);
     expect(events[3].status).toBe('CONFIRMED');
     expect(events[3].busyStatus).toBe('BUSY');
+    expect(events[3].transp).toBe('OPAQUE');
     expect(events[3].productId).toBe('ajuvonen/getfit');
     expect(events[3].start).toEqual([2024, 1, 14, 9, 0]);
 
@@ -169,6 +173,7 @@ describe('useCalendarExport', () => {
     expect(events[4].categories).toEqual(['Swimming', 'Light']);
     expect(events[4].status).toBe('CONFIRMED');
     expect(events[4].busyStatus).toBe('BUSY');
+    expect(events[4].transp).toBe('OPAQUE');
     expect(events[4].productId).toBe('ajuvonen/getfit');
     expect(events[4].start).toEqual([2024, 1, 14, 10, 0]);
   });
@@ -228,6 +233,7 @@ describe('useCalendarExport', () => {
     expect(events[0].categories).toEqual(['Running', 'Normal']);
     expect(events[0].status).toBe('CONFIRMED');
     expect(events[0].busyStatus).toBe('BUSY');
+    expect(events[0].transp).toBe('OPAQUE');
     expect(events[0].productId).toBe('ajuvonen/getfit');
     expect(events[0].start).toEqual([2024, 1, 1, 23, 30]);
 
@@ -239,6 +245,7 @@ describe('useCalendarExport', () => {
     expect(events[1].categories).toEqual(['Swimming', 'Medium']);
     expect(events[1].status).toBe('CONFIRMED');
     expect(events[1].busyStatus).toBe('BUSY');
+    expect(events[1].transp).toBe('OPAQUE');
     expect(events[1].productId).toBe('ajuvonen/getfit');
     expect(events[1].start).toEqual([2024, 1, 2, 0, 30]);
   });

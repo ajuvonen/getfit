@@ -9,10 +9,8 @@ export default function useCalendarExport() {
   const scheduleStore = useScheduleStore();
   const {settings, weeks} = storeToRefs(scheduleStore);
 
-  const createCalendarEvents = () => {
-    const events: CalendarEvent[] = [];
-
-    weeks.value.forEach(({trainings}, weekIndex) => {
+  const createCalendarEvents = () =>
+    weeks.value.flatMap(({trainings}, weekIndex) => {
       const startDate = DateTime.fromJSDate(settings.value.startDate!)
         .plus({weeks: weekIndex})
         .set({
@@ -21,7 +19,7 @@ export default function useCalendarExport() {
         });
       let accumulatedDuration = 0;
       let currentDayIndex = 0;
-      trainings.forEach(
+      return trainings.map(
         ({activity, dayIndex, title, description, duration, intensity, location}) => {
           if (dayIndex !== currentDayIndex) {
             accumulatedDuration = 0;
@@ -29,7 +27,8 @@ export default function useCalendarExport() {
           }
           const minutes = settings.value.unitOfTime === 'm' ? duration : duration * 60;
           const start = startDate.plus({days: dayIndex}).plus({minutes: accumulatedDuration});
-          events.push({
+          accumulatedDuration = accumulatedDuration + minutes;
+          return {
             title: title || t(`activities.${activity}`),
             description,
             start: [start.year, start.month, start.day, start.hour, start.minute],
@@ -38,15 +37,12 @@ export default function useCalendarExport() {
             categories: [t(`activities.${activity}`), t(`intensities.${intensity}`)],
             status: 'CONFIRMED',
             busyStatus: 'BUSY',
+            transp: 'OPAQUE',
             productId: 'ajuvonen/getfit',
-          });
-          accumulatedDuration = accumulatedDuration + minutes;
+          } as CalendarEvent;
         },
       );
     });
-
-    return events;
-  };
 
   return {createCalendarEvents};
 }
