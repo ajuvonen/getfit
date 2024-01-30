@@ -127,6 +127,8 @@ describe('useCalendarExport', () => {
     expect(events[0].busyStatus).toBe('BUSY');
     expect(events[0].transp).toBe('OPAQUE');
     expect(events[0].productId).toBe('ajuvonen/getfit');
+    expect(events[0].classification).toBe('PRIVATE');
+    expect(events[0].calname).toBe('Test Schedule');
     expect(events[0].start).toEqual([2024, 1, 1, 9, 0]);
 
     // Assertions for the second activity
@@ -139,6 +141,8 @@ describe('useCalendarExport', () => {
     expect(events[1].busyStatus).toBe('BUSY');
     expect(events[1].transp).toBe('OPAQUE');
     expect(events[1].productId).toBe('ajuvonen/getfit');
+    expect(events[1].classification).toBe('PRIVATE');
+    expect(events[1].calname).toBe('Test Schedule');
     expect(events[1].start).toEqual([2024, 1, 2, 9, 0]);
 
     // Assertions for the third activity
@@ -151,6 +155,8 @@ describe('useCalendarExport', () => {
     expect(events[2].busyStatus).toBe('BUSY');
     expect(events[2].transp).toBe('OPAQUE');
     expect(events[2].productId).toBe('ajuvonen/getfit');
+    expect(events[2].classification).toBe('PRIVATE');
+    expect(events[2].calname).toBe('Test Schedule');
     expect(events[2].start).toEqual([2024, 1, 2, 9, 30]);
 
     // Assertions for the fourth activity
@@ -163,6 +169,8 @@ describe('useCalendarExport', () => {
     expect(events[3].busyStatus).toBe('BUSY');
     expect(events[3].transp).toBe('OPAQUE');
     expect(events[3].productId).toBe('ajuvonen/getfit');
+    expect(events[3].classification).toBe('PRIVATE');
+    expect(events[3].calname).toBe('Test Schedule');
     expect(events[3].start).toEqual([2024, 1, 14, 9, 0]);
 
     // Assertions for the fifth activity
@@ -175,6 +183,8 @@ describe('useCalendarExport', () => {
     expect(events[4].busyStatus).toBe('BUSY');
     expect(events[4].transp).toBe('OPAQUE');
     expect(events[4].productId).toBe('ajuvonen/getfit');
+    expect(events[4].classification).toBe('PRIVATE');
+    expect(events[4].calname).toBe('Test Schedule');
     expect(events[4].start).toEqual([2024, 1, 14, 10, 0]);
   });
 
@@ -235,6 +245,8 @@ describe('useCalendarExport', () => {
     expect(events[0].busyStatus).toBe('BUSY');
     expect(events[0].transp).toBe('OPAQUE');
     expect(events[0].productId).toBe('ajuvonen/getfit');
+    expect(events[0].classification).toBe('PRIVATE');
+    expect(events[0].calname).toBe('Test Schedule');
     expect(events[0].start).toEqual([2024, 1, 1, 23, 30]);
 
     // Assertions for the second activity
@@ -247,6 +259,46 @@ describe('useCalendarExport', () => {
     expect(events[1].busyStatus).toBe('BUSY');
     expect(events[1].transp).toBe('OPAQUE');
     expect(events[1].productId).toBe('ajuvonen/getfit');
+    expect(events[1].classification).toBe('PRIVATE');
+    expect(events[1].calname).toBe('Test Schedule');
     expect(events[1].start).toEqual([2024, 1, 2, 0, 30]);
+  });
+
+  it('createCalendarEvents gives calendar a default name', async () => {
+    const weekId = uuidv4();
+    const mockWeeks: Week[] = [
+      {
+        id: weekId,
+        trainings: [
+          {
+            id: uuidv4(),
+            weekId,
+            activity: 'running',
+            dayIndex: 0,
+            title: 'Test Training',
+            description: 'Test Description',
+            duration: 1,
+            intensity: Intensity.NORMAL,
+            location: 'Test Location',
+          },
+        ],
+      },
+    ];
+
+    const mockSettings: ScheduleSettings = {
+      name: '',
+      startDate: new Date('2024-01-01'),
+      actualWeekNumbering: false,
+      availableActivities: ['running'],
+      defaultStartTime: {hours: 23, minutes: 30, seconds: 0},
+      defaultDuration: 1,
+      unitOfTime: 'h',
+      startsOnSunday: false,
+    };
+
+    const events = await createTestComponent(mockSettings, mockWeeks);
+
+    expect(events).toHaveLength(1);
+    expect(events[0].calname).toBe('TrainingSchedule');
   });
 });

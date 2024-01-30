@@ -53,4 +53,6 @@ export type CalendarEvent = {
   busyStatus: 'BUSY';
   transp: 'OPAQUE';
   productId: 'ajuvonen/getfit';
+  classification: 'PRIVATE';
+  calname: string;
 };
