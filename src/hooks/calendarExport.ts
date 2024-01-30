@@ -39,6 +39,8 @@ export default function useCalendarExport() {
             busyStatus: 'BUSY',
             transp: 'OPAQUE',
             productId: 'ajuvonen/getfit',
+            classification: 'PRIVATE',
+            calname: settings.value.name || t('export.filename'),
           } as CalendarEvent;
         },
       );
