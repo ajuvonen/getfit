@@ -40,7 +40,7 @@ export default function useCalendarExport() {
             transp: 'OPAQUE',
             productId: 'ajuvonen/getfit',
             classification: 'PRIVATE',
-            calname: settings.value.name || t('export.filename'),
+            calName: settings.value.name || t('export.filename'),
           } as CalendarEvent;
         },
       );

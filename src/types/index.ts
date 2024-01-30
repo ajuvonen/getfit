@@ -54,5 +54,5 @@ export type CalendarEvent = {
   transp: 'OPAQUE';
   productId: 'ajuvonen/getfit';
   classification: 'PRIVATE';
-  calname: string;
+  calName: string;
 };
