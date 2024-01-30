@@ -11,7 +11,6 @@ import 'vuetify/styles';
 import '@mdi/font/css/materialdesignicons.css';
 import {aliases, mdi} from 'vuetify/iconsets/mdi';
 import {createVuetify} from 'vuetify';
-import {VExpansionPanels} from 'vuetify/components';
 
 const app = createApp(App);
 
@@ -20,7 +19,6 @@ app.use(router);
 app.use(i18n);
 app.use(
   createVuetify({
-    components: {VExpansionPanels},
     icons: {
       defaultSet: 'mdi',
       aliases,
