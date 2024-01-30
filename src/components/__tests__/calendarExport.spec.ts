@@ -14,9 +14,9 @@ describe('useCalendarExport', () => {
   });
 
   const createTestComponent = (settings: ScheduleSettings, weeks: Week[]) => {
-    scheduleStore.$patch({
-      settings,
-      weeks,
+    scheduleStore.$patch((state) => {
+      state.settings = settings;
+      state.weeks = weeks;
     });
     const promise: Promise<CalendarEvent[]> = new Promise((resolve) => {
       mount({
