@@ -111,6 +111,7 @@ describe('useCalendarExport', () => {
       defaultDuration: 1,
       unitOfTime: 'h',
       startsOnSunday: false,
+      darkMode: 'auto',
     };
 
     const events = await createTestComponent(mockSettings, mockWeeks);
@@ -229,6 +230,7 @@ describe('useCalendarExport', () => {
       defaultDuration: 1,
       unitOfTime: 'h',
       startsOnSunday: false,
+      darkMode: 'auto',
     };
 
     const events = await createTestComponent(mockSettings, mockWeeks);
@@ -294,6 +296,7 @@ describe('useCalendarExport', () => {
       defaultDuration: 1,
       unitOfTime: 'h',
       startsOnSunday: false,
+      darkMode: 'auto',
     };
 
     const events = await createTestComponent(mockSettings, mockWeeks);
