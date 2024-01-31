@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {useAppStateStore} from '@/stores/appState';
 import {useScheduleStore} from '@/stores/schedule';
-import useScreenSize from '@/hooks/screenSize';
+import useScreen from '@/hooks/screen';
 import useWeekDays from '@/hooks/weekdays';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 
@@ -19,7 +19,7 @@ const {localizedAvailableActivities} = useLocalizedActivities();
 
 const {getDisplayWeekNumber} = useWeekDays();
 
-const {isSmallScreen} = useScreenSize();
+const {isSmallScreen} = useScreen();
 </script>
 <template>
   <div class="week-calendar__actions d-flex mt-4" :class="{'flex-column': isSmallScreen}">

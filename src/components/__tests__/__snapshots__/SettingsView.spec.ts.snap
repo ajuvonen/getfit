@@ -474,6 +474,47 @@ exports[`SettingsView > mounts 1`] = `
           <!----><i data-v-5e0b544f="" class="mdi-walk mdi v-icon notranslate v-theme--light v-icon--size-large" aria-hidden="true"></i> Walking
         </label>
       </div>
+    </div><label data-v-5e0b544f="" class="v-label" for="settings-dark-mode">
+      <!---->Theme
+    </label>
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-radio-group">
+      <!---->
+      <div class="v-input__control">
+        <!---->
+        <div class="v-selection-control-group v-selection-control-group--inline" role="radiogroup" aria-describedby="settings-dark-mode-messages">
+          <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-dark-mode-auto">
+            <div class="v-selection-control__wrapper">
+              <!---->
+              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-39" aria-disabled="false" type="radio" name="settings-dark-mode" value="auto"></div>
+            </div><label class="v-label v-label--clickable" for="input-39">
+              <!---->Auto
+            </label>
+          </div>
+          <div data-v-5e0b544f="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-dark-mode-light">
+            <div class="v-selection-control__wrapper">
+              <!---->
+              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-40" aria-disabled="false" type="radio" name="settings-dark-mode" value="light"></div>
+            </div><label class="v-label v-label--clickable" for="input-40">
+              <!---->Light
+            </label>
+          </div>
+          <div data-v-5e0b544f="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-dark-mode-dark">
+            <div class="v-selection-control__wrapper">
+              <!---->
+              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-41" aria-disabled="false" type="radio" name="settings-dark-mode" value="dark"></div>
+            </div><label class="v-label v-label--clickable" for="input-41">
+              <!---->Dark
+            </label>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="v-input__details">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-dark-mode-messages">
+          <!---->
+        </transition-group-stub>
+        <!---->
+      </div>
     </div>
   </div>
   <!--v-if-->

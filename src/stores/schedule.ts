@@ -20,6 +20,7 @@ const getEmptySchedule = (): ScheduleSettings => ({
   },
   defaultDuration: 1,
   unitOfTime: 'h',
+  darkMode: 'auto',
 });
 
 export const useScheduleStore = defineStore('schedule', () => {

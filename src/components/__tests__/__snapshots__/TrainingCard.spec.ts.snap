@@ -22,8 +22,8 @@ exports[`TrainingCard > mounts 1`] = `
     <!---->
     <div class="v-card-item__content">
       <!---->
-      <!----><i data-v-24c3dbf4="" class="mdi-boxing-glove mdi v-icon notranslate v-theme--light v-icon--size-x-large training-card__activity-icon" style="color: rgb(255, 140, 0); caret-color: #FF8C00;" aria-hidden="true" title="Boxing" aria-label="Boxing"></i>
-      <div data-v-24c3dbf4="" class="v-card-title d-flex ml-15 flex-column justify-top">
+      <!----><i data-v-24c3dbf4="" class="mdi-boxing-glove mdi v-icon notranslate v-theme--light v-icon--size-x-large training-card__activity-icon" style="color: rgb(255, 140, 0); caret-color: #FF8C00; background: white;" aria-hidden="true" title="Boxing" aria-label="Boxing"></i>
+      <div data-v-24c3dbf4="" class="v-card-title d-flex ml-15 flex-column justify-top" style="color: white;">
         <div data-v-24c3dbf4="" class="training-card__title">Boxing</div>
         <div data-v-24c3dbf4="" class="training-card__duration text-subtitle-2"><i data-v-24c3dbf4="" class="mdi-timer mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" aria-label="Training Duration"></i> 1 h</div>
         <div data-v-24c3dbf4="" class="training-card__location text-subtitle-2"><i data-v-24c3dbf4="" class="mdi-map-marker mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" aria-label="Training Location"></i> Total wreck gym</div>
