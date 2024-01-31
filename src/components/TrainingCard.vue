@@ -3,11 +3,14 @@ import {storeToRefs} from 'pinia';
 import type {Training} from '@/types';
 import {getIcon, getIntensityColor} from '@/utils';
 import {useScheduleStore} from '@/stores/schedule';
+import useScreen from '@/hooks/screen';
 import TrainingCardActions from '@/components/TrainingCardActions.vue';
 
 defineProps<{
   training: Training;
 }>();
+
+const {isDark} = useScreen();
 
 const {settings} = storeToRefs(useScheduleStore());
 </script>
@@ -22,10 +25,14 @@ const {settings} = storeToRefs(useScheduleStore());
         :title="$t(`activities.${training.activity}`)"
         :aria-label="$t(`activities.${training.activity}`)"
         :color="getIntensityColor(training.intensity)"
+        :style="{background: isDark ? '#212121' : 'white'}"
         class="training-card__activity-icon"
         size="x-large"
       />
-      <v-card-title class="d-flex ml-15 flex-column justify-top">
+      <v-card-title
+        class="d-flex ml-15 flex-column justify-top"
+        :style="{color: isDark ? '#212121' : 'white'}"
+      >
         <div class="training-card__title">
           {{ training.title || $t(`activities.${training.activity}`) }}
         </div>
@@ -79,7 +86,6 @@ const {settings} = storeToRefs(useScheduleStore());
 }
 
 .training-card__activity-icon {
-  background: white;
   border-radius: 50%;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

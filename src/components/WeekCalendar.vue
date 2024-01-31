@@ -6,7 +6,7 @@ import DraggableList from 'vuedraggable';
 import {useScheduleStore} from '@/stores/schedule';
 import {type Week, Intensity, type Training} from '@/types';
 import {getIntensityColor} from '@/utils';
-import useScreenSize from '@/hooks/screenSize';
+import useScreen from '@/hooks/screen';
 import useWeekDays from '@/hooks/weekdays';
 import TrainingCard from '@/components/TrainingCard.vue';
 import WeekCalendarActions from '@/components/WeekCalendarActions.vue';
@@ -23,7 +23,7 @@ const {reorderTrainings} = scheduleStore;
 
 const {t} = useI18n();
 
-const {isSmallScreen, isLargeScreen} = useScreenSize();
+const {isSmallScreen, isLargeScreen} = useScreen();
 
 const {weekdays, shortWeekdays, getDateInterval, getDisplayWeekNumber} = useWeekDays();
 
@@ -134,6 +134,10 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
 <style lang="scss" scoped>
 ul {
   list-style-type: none;
+}
+
+.v-chip {
+  color: #212121 !important;
 }
 
 .week-calendar__actions {

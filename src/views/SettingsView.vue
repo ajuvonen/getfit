@@ -200,6 +200,24 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
           </v-label>
         </div>
       </div>
+      <v-label for="settings-dark-mode">{{ $t('settings.theme') }}</v-label>
+      <v-radio-group id="settings-dark-mode" v-model="settings.darkMode" inline>
+        <v-radio
+          :label="$t('settings.darkModeAuto')"
+          value="auto"
+          data-test-id="settings-dark-mode-auto"
+        ></v-radio>
+        <v-radio
+          :label="$t('settings.darkModeLight')"
+          value="light"
+          data-test-id="settings-dark-mode-light"
+        ></v-radio>
+        <v-radio
+          :label="$t('settings.darkModeDark')"
+          value="dark"
+          data-test-id="settings-dark-mode-dark"
+        ></v-radio>
+      </v-radio-group>
     </template>
   </BaseView>
 </template>

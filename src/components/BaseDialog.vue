@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useScreenSize from '@/hooks/screenSize';
+import useScreen from '@/hooks/screen';
 
 withDefaults(defineProps<{
   open: boolean;
@@ -9,7 +9,7 @@ withDefaults(defineProps<{
   useFullScreen: true,
 });
 
-const {isSmallScreen} = useScreenSize();
+const {isSmallScreen} = useScreen();
 </script>
 <template>
   <v-dialog

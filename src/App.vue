@@ -1,14 +1,22 @@
 <script setup lang="ts">
+import {watch} from 'vue';
 import {storeToRefs} from 'pinia';
 import {RouterView} from 'vue-router';
 import {useI18n} from 'vue-i18n';
-import useScreenSize from '@/hooks/screenSize';
+import {useTheme} from 'vuetify';
+import useScreen from '@/hooks/screen';
 import {useScheduleStore} from '@/stores/schedule';
 import ConfirmDialog from '@/components/ConfirmDialog.vue';
 
 const {weeks} = storeToRefs(useScheduleStore());
-const {isSmallScreen} = useScreenSize();
+const {isSmallScreen, isDark} = useScreen();
 const {t} = useI18n();
+
+const theme = useTheme();
+
+watch(isDark, (value) => {
+  theme.global.name.value = value ? 'dark' : 'light';
+}, {immediate: true});
 </script>
 
 <template>

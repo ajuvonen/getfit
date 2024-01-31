@@ -24,6 +24,7 @@ export type ScheduleSettings = {
   defaultStartTime: {hours: number; minutes: number; seconds: number};
   defaultDuration: number;
   unitOfTime: 'm' | 'h';
+  darkMode: 'auto' | 'light' | 'dark';
 };
 
 export enum Intensity {
