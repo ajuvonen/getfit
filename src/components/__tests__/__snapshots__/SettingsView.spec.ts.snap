@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SettingsView > mounts 1`] = `
-"<div data-v-5e0b544f="" class="v-card v-theme--light v-card--density-default v-card--rounded v-card--variant-elevated mb-4" style="background-color: rgba(255, 255, 255, 0.9);">
+"<div data-v-ff4a98e6="" data-v-5e0b544f="" class="v-card v-theme--light v-card--density-default v-card--rounded v-card--variant-elevated mb-4" style="background-color: rgba(255, 255, 255, 0.8);">
   <!---->
   <div class="v-card__loader">
     <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -18,11 +18,11 @@ exports[`SettingsView > mounts 1`] = `
   </div>
   <!---->
   <!---->
-  <div class="v-card-title d-print-none">
-    <h1 class="text-h4">Schedule Settings</h1>
+  <div data-v-ff4a98e6="" class="v-card-title d-print-none">
+    <h1 data-v-ff4a98e6="" class="text-h4">Schedule Settings</h1>
   </div>
-  <div class="v-card-text">
-    <p class="d-flex align-center d-print-none mb-4"><i class="mdi-information-box-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><span class="ml-4">The settings allow you to, for example, limit the available activity types and set the starting date of the schedule. The settings are saved automatically.</span></p>
+  <div data-v-ff4a98e6="" class="v-card-text">
+    <p data-v-ff4a98e6="" class="d-flex align-center d-print-none mb-4"><i data-v-ff4a98e6="" class="mdi-information-box-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><span data-v-ff4a98e6="" class="ml-4">The settings allow you to, for example, limit the available activity types and set the starting date of the schedule. The settings are saved automatically.</span></p>
     <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined settings-input--wide">
       <!---->
       <div class="v-input__control">
