@@ -3,29 +3,12 @@ import {useStorage} from '@vueuse/core';
 import {v4 as uuidv4} from 'uuid';
 import {DateTime} from 'luxon';
 import type {ScheduleSettings, Training, Week} from '@/types';
-import {ACTIVITIES} from '@/constants';
-import {roundNearestQuarter} from '@/utils';
+import {roundNearestQuarter, getEmptySchedule} from '@/utils';
 import {computed, watch} from 'vue';
-
-const getEmptySchedule = (): ScheduleSettings => ({
-  name: '',
-  startsOnSunday: false,
-  startDate: null,
-  actualWeekNumbering: false,
-  availableActivities: ACTIVITIES.map(({value}) => value),
-  defaultStartTime: {
-    hours: 12,
-    minutes: 0,
-    seconds: 0,
-  },
-  defaultDuration: 1,
-  unitOfTime: 'h',
-  darkMode: 'auto',
-});
 
 export const useScheduleStore = defineStore('schedule', () => {
   // State refs
-  const settings = useStorage('getfit-settings', getEmptySchedule(), localStorage, {
+  const settings = useStorage<ScheduleSettings>('getfit-settings', getEmptySchedule(), localStorage, {
     mergeDefaults: true,
     serializer: {
       read: (v: any) => v ? JSON.parse(v, (key, value) => {
@@ -38,7 +21,7 @@ export const useScheduleStore = defineStore('schedule', () => {
     },
   });
 
-  const weeks = useStorage('getfit-schedule', [] as Week[], localStorage, {mergeDefaults: true});
+  const weeks = useStorage<Week[]>('getfit-schedule', [], localStorage, {mergeDefaults: true});
 
   // Computed getters
   const getTargetWeekAndTraining = computed(() => (weekId: string, trainingId?: string) => {

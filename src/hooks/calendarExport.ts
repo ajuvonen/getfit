@@ -19,7 +19,7 @@ export default function useCalendarExport() {
         });
       let accumulatedDuration = 0;
       let currentDayIndex = 0;
-      return trainings.map(
+      return trainings.map<CalendarEvent>(
         ({activity, dayIndex, title, description, duration, intensity, location}) => {
           if (dayIndex !== currentDayIndex) {
             accumulatedDuration = 0;
@@ -41,7 +41,7 @@ export default function useCalendarExport() {
             productId: 'ajuvonen/getfit',
             classification: 'PRIVATE',
             calName: settings.value.name || t('export.filename'),
-          } as CalendarEvent;
+          };
         },
       );
     });

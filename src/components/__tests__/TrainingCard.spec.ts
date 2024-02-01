@@ -7,7 +7,7 @@ import {useAppStateStore} from '@/stores/appState';
 import {Intensity, type Training} from '@/types';
 import TrainingCard from '@/components/TrainingCard.vue';
 
-const basicTraining = {
+const basicTraining: Training = {
   id: uuidv4(),
   weekId: uuidv4(),
   dayIndex: 0,
@@ -17,7 +17,7 @@ const basicTraining = {
   duration: 1,
   intensity: Intensity.MEDIUM,
   location: 'Total wreck gym',
-} as Training;
+};
 
 describe('TrainingCard', () => {
   let scheduleStore: ReturnType<typeof useScheduleStore>;
