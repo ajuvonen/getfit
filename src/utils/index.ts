@@ -1,7 +1,7 @@
 import {unref} from 'vue';
 import {helpers} from '@vuelidate/validators';
 import type {ErrorObject} from '@vuelidate/core';
-import {Intensity} from '@/types';
+import {Intensity, type ScheduleSettings} from '@/types';
 import {ACTIVITIES} from '@/constants';
 
 export const roundNearestQuarter = function (number: number, precision: number) {
@@ -23,6 +23,22 @@ export const getIntensityColor = (intensity: Intensity) => {
       return '#6DBF79';
   }
 };
+
+export const getEmptySchedule = (): ScheduleSettings => ({
+  name: '',
+  startsOnSunday: false,
+  startDate: null,
+  actualWeekNumbering: false,
+  availableActivities: ACTIVITIES.map(({value}) => value),
+  defaultStartTime: {
+    hours: 12,
+    minutes: 0,
+    seconds: 0,
+  },
+  defaultDuration: 1,
+  unitOfTime: 'h',
+  darkMode: 'auto',
+});
 
 export const decimalRegex = helpers.regex(/^\d+(.(00?|25|50?|75))?$/);
 

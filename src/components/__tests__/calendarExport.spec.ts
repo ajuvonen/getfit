@@ -5,6 +5,7 @@ import {v4 as uuidv4} from 'uuid';
 import {useScheduleStore} from '@/stores/schedule';
 import useCalendarExport from '@/hooks/calendarExport';
 import {Intensity, type Week, type ScheduleSettings, type CalendarEvent} from '@/types';
+import {getEmptySchedule} from '@/utils';
 
 describe('useCalendarExport', () => {
   let scheduleStore: ReturnType<typeof useScheduleStore>;
@@ -103,15 +104,9 @@ describe('useCalendarExport', () => {
     ];
 
     const mockSettings: ScheduleSettings = {
+      ...getEmptySchedule(),
       name: 'Test Schedule',
       startDate: new Date('2024-01-01'),
-      actualWeekNumbering: false,
-      availableActivities: ['running', 'swimming', 'sprint'],
-      defaultStartTime: {hours: 9, minutes: 0, seconds: 0},
-      defaultDuration: 1,
-      unitOfTime: 'h',
-      startsOnSunday: false,
-      darkMode: 'auto',
     };
 
     const events = await createTestComponent(mockSettings, mockWeeks);
@@ -130,7 +125,7 @@ describe('useCalendarExport', () => {
     expect(events[0].productId).toBe('ajuvonen/getfit');
     expect(events[0].classification).toBe('PRIVATE');
     expect(events[0].calName).toBe('Test Schedule');
-    expect(events[0].start).toEqual([2024, 1, 1, 9, 0]);
+    expect(events[0].start).toEqual([2024, 1, 1, 12, 0]);
 
     // Assertions for the second activity
     expect(events[1].title).toBe('Test Training 2');
@@ -144,7 +139,7 @@ describe('useCalendarExport', () => {
     expect(events[1].productId).toBe('ajuvonen/getfit');
     expect(events[1].classification).toBe('PRIVATE');
     expect(events[1].calName).toBe('Test Schedule');
-    expect(events[1].start).toEqual([2024, 1, 2, 9, 0]);
+    expect(events[1].start).toEqual([2024, 1, 2, 12, 0]);
 
     // Assertions for the third activity
     expect(events[2].title).toBe('Test Training 3');
@@ -158,7 +153,7 @@ describe('useCalendarExport', () => {
     expect(events[2].productId).toBe('ajuvonen/getfit');
     expect(events[2].classification).toBe('PRIVATE');
     expect(events[2].calName).toBe('Test Schedule');
-    expect(events[2].start).toEqual([2024, 1, 2, 9, 30]);
+    expect(events[2].start).toEqual([2024, 1, 2, 12, 30]);
 
     // Assertions for the fourth activity
     expect(events[3].title).toBe('Test Training 4');
@@ -172,7 +167,7 @@ describe('useCalendarExport', () => {
     expect(events[3].productId).toBe('ajuvonen/getfit');
     expect(events[3].classification).toBe('PRIVATE');
     expect(events[3].calName).toBe('Test Schedule');
-    expect(events[3].start).toEqual([2024, 1, 14, 9, 0]);
+    expect(events[3].start).toEqual([2024, 1, 14, 12, 0]);
 
     // Assertions for the fifth activity
     expect(events[4].title).toBe('Test Training 5');
@@ -186,7 +181,7 @@ describe('useCalendarExport', () => {
     expect(events[4].productId).toBe('ajuvonen/getfit');
     expect(events[4].classification).toBe('PRIVATE');
     expect(events[4].calName).toBe('Test Schedule');
-    expect(events[4].start).toEqual([2024, 1, 14, 10, 0]);
+    expect(events[4].start).toEqual([2024, 1, 14, 13, 0]);
   });
 
   it('createCalendarEvents moves to next date when durations cross over', async () => {
@@ -222,15 +217,10 @@ describe('useCalendarExport', () => {
     ];
 
     const mockSettings: ScheduleSettings = {
+      ...getEmptySchedule(),
       name: 'Test Schedule',
       startDate: new Date('2024-01-01'),
-      actualWeekNumbering: false,
-      availableActivities: ['running', 'swimming', 'sprint'],
       defaultStartTime: {hours: 23, minutes: 30, seconds: 0},
-      defaultDuration: 1,
-      unitOfTime: 'h',
-      startsOnSunday: false,
-      darkMode: 'auto',
     };
 
     const events = await createTestComponent(mockSettings, mockWeeks);
