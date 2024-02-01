@@ -74,12 +74,12 @@
   "export": {
     "download": "Vie kalenteri",
     "filename": "Harjoitusohjelma",
-    "guide": "Alta voit viedä harjoitusohjelmasi .ics-kalenteritiedostoksi, tai tulostaa sen. Kalenteritiedoston luonti edellyttää, että ohjelmalla on aloituspäivämäärä määriteltynä asetuksissa. Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista. Poista sen jälkeen taustakuvien ja -värien tulostus käytöstä.",
+    "guide": "Alta voit viedä ohjelmasi .ics-kalenteritiedostoksi, tai tulostaa sen. Kalenteritiedoston luonti edellyttää, että ohjelmalla on aloituspäivämäärä määriteltynä asetuksissa. Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista. Poista sen jälkeen taustakuvien ja -värien tulostus käytöstä.",
     "instructions": "Ohjeet",
     "notes": "Muistiinpanot",
     "print": "Tulosta",
     "supplement": "Lisämateriaali viikolle {0}",
-    "title": "Vie harjoitusohjelma"
+    "title": "Vie ohjelma"
   },
   "routes": {
     "home": "Etusivu",
@@ -91,7 +91,7 @@
     "addWeek": "Lisää viikko",
     "guide": "Lisää viikkoja ohjelmaasi klikkaamalla alla olevaa painiketta. Lisää sen jälkeen harjoituksia klikkaamalla 'Lisää harjoitus' -painiketta viikkonäkymässä. Voit siirtää, kopioida ja raahata harjoituksia tai viikkoja järjestääksesi niitä uudelleen.",
     "reset": "Tyhjennä",
-    "title": "Muokkaa harjoitusohjelmaa"
+    "title": "Muokkaa ohjelmaa"
   },
   "settings": {
     "actualWeekNumbers": "Kalenterin viikkonumerot",
