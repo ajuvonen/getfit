@@ -4,6 +4,7 @@ import type {Training} from '@/types';
 import {getIcon, getIntensityColor} from '@/utils';
 import {useScheduleStore} from '@/stores/schedule';
 import useScreen from '@/hooks/screen';
+import {COLORS} from '@/constants';
 import TrainingCardActions from '@/components/TrainingCardActions.vue';
 
 defineProps<{
@@ -17,7 +18,7 @@ const {settings} = storeToRefs(useScheduleStore());
 <template>
   <v-card class="training-card mx-2 mt-4 mb-2">
     <v-card-item
-      class="training-card__title-wrapper text-white"
+      class="training-card__title-wrapper"
       :style="{'background-color': getIntensityColor(training.intensity)}"
     >
       <v-icon
@@ -25,13 +26,13 @@ const {settings} = storeToRefs(useScheduleStore());
         :title="$t(`activities.${training.activity}`)"
         :aria-label="$t(`activities.${training.activity}`)"
         :color="getIntensityColor(training.intensity)"
-        :style="{background: isDark ? '#212121' : 'white'}"
+        :style="{background: isDark ? COLORS.darkGrey : COLORS.offWhite}"
         class="training-card__activity-icon"
         size="x-large"
       />
       <v-card-title
         class="d-flex ml-15 flex-column justify-top"
-        :style="{color: isDark ? '#212121' : 'white'}"
+        :style="{color: isDark ? COLORS.darkGrey : 'white'}"
       >
         <div class="training-card__title">
           {{ training.title || $t(`activities.${training.activity}`) }}

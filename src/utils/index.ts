@@ -2,7 +2,7 @@ import {unref} from 'vue';
 import {helpers} from '@vuelidate/validators';
 import type {ErrorObject} from '@vuelidate/core';
 import {Intensity, type ScheduleSettings} from '@/types';
-import {ACTIVITIES} from '@/constants';
+import {ACTIVITIES, COLORS} from '@/constants';
 
 export const roundNearestQuarter = function (number: number, precision: number) {
   return +(Math.round(number * 4) / 4).toFixed(precision);
@@ -14,13 +14,13 @@ export const getIcon = (activityName: string) =>
 export const getIntensityColor = (intensity: Intensity) => {
   switch (intensity) {
     case Intensity.NORMAL:
-      return '#FFC300';
+      return COLORS.intensityNormal;
     case Intensity.MEDIUM:
-      return '#FF8C00';
+      return COLORS.intensityMedium;
     case Intensity.HEAVY:
-      return '#FF6347';
+      return COLORS.intensityHeavy;
     default:
-      return '#6DBF79';
+      return COLORS.intensityLight;
   }
 };
 

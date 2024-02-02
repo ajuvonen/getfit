@@ -12,9 +12,8 @@ const {isDark} = useScreen();
 </script>
 <template>
   <v-card
-    :color="isDark ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.8)'"
+    :color="isDark ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.75)'"
     :rounded="!isLargeScreen ? 0 : 'rounded'"
-    class="mb-4"
   >
     <v-card-title class="d-print-none">
       <h1 class="text-h4">{{ title }}</h1>

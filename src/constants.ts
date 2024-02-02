@@ -93,3 +93,12 @@ export const WEEKDAYS = {
   sundayFirst: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
   mondayFirst: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
 };
+
+export const COLORS = {
+  offWhite: '#FAFAFA',
+  darkGrey: '#212121',
+  intensityLight: '#6DBF79',
+  intensityNormal: '#FFC300',
+  intensityMedium: '#FF8C00',
+  intensityHeavy: '#FF6347',
+};

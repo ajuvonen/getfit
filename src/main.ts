@@ -11,6 +11,7 @@ import 'vuetify/styles';
 import '@mdi/font/css/materialdesignicons.css';
 import {aliases, mdi} from 'vuetify/iconsets/mdi';
 import {createVuetify} from 'vuetify';
+import {COLORS} from '@/constants';
 
 const app = createApp(App);
 
@@ -24,6 +25,17 @@ app.use(
       aliases,
       sets: {
         mdi,
+      },
+    },
+    theme: {
+      defaultTheme: 'customLight',
+      themes: {
+        customLight: {
+          dark: false,
+          colors: {
+            surface: COLORS.offWhite,
+          },
+        },
       },
     },
   }),
