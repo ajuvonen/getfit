@@ -90,7 +90,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
         :locale="$i18n.locale"
         :clearable="false"
         :format="DATE_FORMATS[$i18n.locale]"
-        teleport-center
+        :teleport="true"
       >
         <template #dp-input="{value, onClear, openMenu}">
           <v-text-field
@@ -146,8 +146,8 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
           :auto-apply="true"
           :locale="$i18n.locale"
           :clearable="false"
+          :teleport="true"
           minutes-increment="5"
-          teleport-center
           time-picker
         >
           <template #dp-input="{value, openMenu}">
@@ -169,10 +169,11 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
         id="settings-default-duration"
         :suffix="settings.unitOfTime"
         :aria-label="$t('settings.defaultDuration')"
+        :pattern="settings.unitOfTime === 'h' ? '\d+(\.\d{1,2})?' : '\d*'"
         class="settings-input"
-        type="number"
+        type="text"
         variant="underlined"
-        hide-spin-buttons
+        inputmode="decimal"
       ></v-text-field>
       <v-label>{{ $t('settings.availableActivities') }}</v-label>
       <v-checkbox-btn
@@ -201,7 +202,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
         </div>
       </div>
       <v-label for="settings-dark-mode">{{ $t('settings.theme') }}</v-label>
-      <v-radio-group id="settings-dark-mode" v-model="settings.darkMode" inline>
+      <v-radio-group id="settings-dark-mode" v-model="settings.darkMode" inline hide-details>
         <v-radio
           :label="$t('settings.darkModeAuto')"
           value="auto"
