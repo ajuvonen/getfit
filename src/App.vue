@@ -6,6 +6,7 @@ import {useI18n} from 'vue-i18n';
 import {useTheme} from 'vuetify';
 import useScreen from '@/hooks/screen';
 import {useScheduleStore} from '@/stores/schedule';
+import {COLORS} from '@/constants';
 import ConfirmDialog from '@/components/ConfirmDialog.vue';
 
 const {weeks} = storeToRefs(useScheduleStore());
@@ -15,17 +16,17 @@ const {t} = useI18n();
 const theme = useTheme();
 
 watch(isDark, (value) => {
-  theme.global.name.value = value ? 'dark' : 'light';
+  theme.global.name.value = value ? 'dark' : 'customLight';
 }, {immediate: true});
 </script>
 
 <template>
   <v-app :full-height="true">
     <div class="app__overlay">
-      <v-app-bar class="d-print-none text-white app-bar">
+      <v-app-bar class="d-print-none app-bar" :style="{color: COLORS.offWhite}">
         <template #prepend>
           <RouterLink to="/" :aria-label="$t('routes.home')" data-test-id="app-bar-home-link">
-            <v-icon icon="mdi-home" color="white" />
+            <v-icon icon="mdi-home" :color="COLORS.offWhite" />
           </RouterLink>
         </template>
         <template #append>

@@ -1,25 +1,25 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="home__overlay">
-    <h1 class="text-h3 text-center text-white">{{ $t('home.title') }}</h1>
-    <p class="text-body-1 text-white">
+  <div class="home__overlay text-grey-lighten-5">
+    <h1 class="text-h3 text-center">{{ $t('home.title') }}</h1>
+    <p class="text-body-1">
       {{ $t('home.p1') }}
     </p>
-    <p class="text-body-1 text-white">
+    <p class="text-body-1">
       {{ $t('home.p2') }}
     </p>
-    <p class="text-body-1 text-white">
+    <p class="text-body-1">
       {{ $t('home.p3') }}
     </p>
-    <p class="text-white">
+    <p>
       <v-icon icon="mdi-github" />
-      <a class="text-white ml-2" href="https://www.github.com/ajuvonen/getfit">GitHub</a>
+      <a class="text-grey-lighten-5 ml-2" href="https://www.github.com/ajuvonen/getfit">GitHub</a>
     </p>
-    <i18n-t keypath="home.credit" tag="p" class="text-caption text-white home__photo-credit">
+    <i18n-t keypath="home.credit" tag="p" class="text-caption home__photo-credit">
       <template #image>
         <a
-          class="text-white"
+          class="text-grey-lighten-5"
           href="https://www.pexels.com/photo/blank-paper-on-a-clipboard-8155155/"
           >Alesia Kozik</a
         >

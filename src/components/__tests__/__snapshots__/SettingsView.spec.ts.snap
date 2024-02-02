@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SettingsView > mounts 1`] = `
-"<div data-v-ff4a98e6="" data-v-5e0b544f="" class="v-card v-theme--light v-card--density-default v-card--rounded v-card--variant-elevated mb-4" style="background-color: rgba(255, 255, 255, 0.8);">
+"<div data-v-ff4a98e6="" data-v-5e0b544f="" class="v-card v-theme--light v-card--density-default v-card--rounded v-card--variant-elevated" style="background-color: rgba(255, 255, 255, 0.75);">
   <!---->
   <div class="v-card__loader">
     <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -166,9 +166,6 @@ exports[`SettingsView > mounts 1`] = `
         </div>
       </div>
       <!--teleport start-->
-      <transition-stub name="dp-menu-appear-bottom" appear="false" persisted="false" css="true">
-        <!---->
-      </transition-stub>
       <!--teleport end-->
     </div>
     <transition-stub data-v-5e0b544f="" name="expand-transition" appear="false" persisted="false" css="true">
@@ -212,7 +209,7 @@ exports[`SettingsView > mounts 1`] = `
     <transition-stub data-v-5e0b544f="" name="expand-transition" appear="false" persisted="false" css="true">
       <!--v-if-->
     </transition-stub>
-    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--hide-spin-buttons v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-text-field--suffixed v-input--plain-underlined settings-input">
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-text-field--suffixed v-input--plain-underlined settings-input">
       <!---->
       <div class="v-input__control">
         <div class="v-field v-field--active v-field--dirty v-field--no-label v-field--variant-underlined v-theme--light v-locale--is-ltr">
@@ -236,7 +233,7 @@ exports[`SettingsView > mounts 1`] = `
               <!---->
               <!---->
             </label>
-            <!----><input size="1" type="number" id="settings-default-duration" aria-describedby="settings-default-duration-messages" aria-label="Default Duration" class="v-field__input"><span class="v-text-field__suffix"><span class="v-text-field__suffix__text">h</span></span>
+            <!----><input size="1" type="text" id="settings-default-duration" aria-describedby="settings-default-duration-messages" aria-label="Default Duration" pattern="d+(.d{1,2})?" inputmode="decimal" class="v-field__input"><span class="v-text-field__suffix"><span class="v-text-field__suffix__text">h</span></span>
           </div>
           <!---->
           <!---->
@@ -509,12 +506,7 @@ exports[`SettingsView > mounts 1`] = `
         </div>
       </div>
       <!---->
-      <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-dark-mode-messages">
-          <!---->
-        </transition-group-stub>
-        <!---->
-      </div>
+      <!---->
     </div>
   </div>
   <!--v-if-->

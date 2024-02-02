@@ -3,14 +3,15 @@ import {computed, ref} from 'vue';
 import {storeToRefs} from 'pinia';
 import {groupBy, prop} from 'remeda';
 import DraggableList from 'vuedraggable';
+import {useI18n} from 'vue-i18n';
 import {useScheduleStore} from '@/stores/schedule';
 import {type Week, Intensity, type Training} from '@/types';
 import {getIntensityColor} from '@/utils';
 import useScreen from '@/hooks/screen';
 import useWeekDays from '@/hooks/weekdays';
+import {COLORS} from '@/constants';
 import TrainingCard from '@/components/TrainingCard.vue';
 import WeekCalendarActions from '@/components/WeekCalendarActions.vue';
-import {useI18n} from 'vue-i18n';
 
 const props = defineProps<{
   week: Week;
@@ -69,6 +70,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
         :color="getIntensityColor(+intensity)"
         :title="getWeekChipTitle(+intensity, group.length)"
         :aria-label="getWeekChipTitle(+intensity, group.length)"
+        :style="{color: COLORS.darkGrey}"
         variant="flat"
         label
         class="ml-4"
@@ -89,6 +91,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
             :color="getIntensityColor(maxIntensity)"
             :title="getDayChipTitle(maxIntensity, trainings.length)"
             :aria-label="getDayChipTitle(maxIntensity, trainings.length)"
+            :style="{color: COLORS.darkGrey}"
             variant="flat"
             label
             class="ml-4"
@@ -134,10 +137,6 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
 <style lang="scss" scoped>
 ul {
   list-style-type: none;
-}
-
-.v-chip {
-  color: #212121 !important;
 }
 
 .week-calendar__actions {
