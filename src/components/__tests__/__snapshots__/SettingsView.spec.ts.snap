@@ -233,7 +233,7 @@ exports[`SettingsView > mounts 1`] = `
               <!---->
               <!---->
             </label>
-            <!----><input size="1" type="text" id="settings-default-duration" aria-describedby="settings-default-duration-messages" aria-label="Default Duration" pattern="d+(.d{1,2})?" inputmode="decimal" class="v-field__input"><span class="v-text-field__suffix"><span class="v-text-field__suffix__text">h</span></span>
+            <!----><input size="1" type="text" id="settings-default-duration" aria-describedby="settings-default-duration-messages" aria-label="Default Duration" pattern="\\d+(\\.\\d{1,2})?" inputmode="decimal" class="v-field__input"><span class="v-text-field__suffix"><span class="v-text-field__suffix__text">h</span></span>
           </div>
           <!---->
           <!---->
