@@ -2,8 +2,6 @@
 
 GetFit is a simple frontend-only exercise planner created with Vue3, TypeScript, and Vite. Used libraries include Pinia, Vuetify, Cypress and Vitest. For CI, the project uses Github Actions.
 
-The schedules are created by first deciding which activities are available and adjusting other settings. Then, add weeks and activities for each weekday. The app features simple drag & drop and copy functionalities.
-
 To test this app in production, visit <https://ajuvonen.github.io/getfit>
 
 ## Requirements
@@ -19,8 +17,8 @@ Node 20+
 
 ## Running e2e tests
 
-1. Repeat steps 1-3 of the instruction above
-2. In a separate terminal, run `npm run test:e2e`
+1. Repeat steps 1-2 of the instruction above
+2. Run `npm run test:e2e`
 
 ## Running unit tests
 
