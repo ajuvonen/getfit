@@ -1,6 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["./**/*", "../support/**/*"],
+  "include": ["./**/*.ts"],
   "compilerOptions": {
     "isolatedModules": false,
     "target": "es6",
