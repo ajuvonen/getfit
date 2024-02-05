@@ -89,7 +89,7 @@
   },
   "schedule": {
     "addWeek": "Lisää viikko",
-    "guide": "Lisää viikkoja ohjelmaasi klikkaamalla alla olevaa painiketta. Lisää sen jälkeen harjoituksia klikkaamalla 'Lisää harjoitus' -painiketta viikkonäkymässä. Voit siirtää, kopioida ja raahata harjoituksia tai viikkoja järjestääksesi niitä uudelleen.",
+    "guide": "Lisää viikkoja ohjelmaasi sivun alalaidasta. Lisää sen jälkeen harjoituksia haluamillesi päiville viikkonäkymässä. Voit siirtää, kopioida ja raahata harjoituksia tai viikkoja järjestääksesi niitä uudelleen.",
     "reset": "Tyhjennä",
     "title": "Muokkaa ohjelmaa"
   },
