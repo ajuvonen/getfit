@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {ref} from 'vue';
 import {useAppStateStore} from '@/stores/appState';
 import {useScheduleStore} from '@/stores/schedule';
 import type {Training} from '@/types';
@@ -8,13 +9,15 @@ defineProps<{
   training: Training;
 }>();
 
+const menuOpen = ref(false);
+
 const {deleteTraining} = useScheduleStore();
 
 const {openEditTrainingDialog} = useAppStateStore();
 </script>
 <template>
   <v-card-actions class="flex-column align-stretch">
-    <v-menu location="top center" :close-on-content-click="false">
+    <v-menu v-model="menuOpen" location="top center" :close-on-content-click="false">
       <template v-slot:activator="{props}">
         <v-btn
           :aria-label="$t('trainingCard.actionsLabel', training.activity)"
@@ -31,7 +34,7 @@ const {openEditTrainingDialog} = useAppStateStore();
           :title="$t('trainingCard.editTraining')"
           prepend-icon="mdi-pen"
           class="training-card__edit-button"
-          @click="openEditTrainingDialog(training)"
+          @click="openEditTrainingDialog(training), (menuOpen = false)"
         />
         <ActionMenuWeekGroup action="move" :training="training" />
         <ActionMenuWeekGroup action="copy" :training="training" />
