@@ -108,7 +108,6 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
         >
           <draggable-list
             :model-value="trainings"
-            :componentData="{multiple: true, variant: 'accordion'}"
             :class="{'flex-column': isSmallScreen}"
             tag="ul"
             item-key="id"
