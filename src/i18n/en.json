@@ -89,7 +89,7 @@
   },
   "schedule": {
     "addWeek": "Add Week",
-    "guide": "Add weeks to your schedule by clicking the button below. Then, add trainings by clicking the appropriate button in the week view. You can move, copy, and drag trainings or weeks to reorder them.",
+    "guide": "Add weeks to your schedule from the bottom of the screen. Then, add trainings to desired days in the week view. You can move, copy, and drag trainings or weeks to reorder them.",
     "reset": "Reset",
     "title": "Edit Schedule"
   },
