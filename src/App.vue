@@ -11,13 +11,17 @@ import ConfirmDialog from '@/components/ConfirmDialog.vue';
 
 const {weeks} = storeToRefs(useScheduleStore());
 const {isSmallScreen, isDark} = useScreen();
-const {t} = useI18n();
+const {t, locale} = useI18n();
 
 const theme = useTheme();
 
 watch(isDark, (value) => {
   theme.global.name.value = value ? 'dark' : 'customLight';
 }, {immediate: true});
+
+watch(locale, (value) => {
+  document.documentElement.lang = value;
+});
 </script>
 
 <template>
