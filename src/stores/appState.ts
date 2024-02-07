@@ -38,6 +38,8 @@ export const useAppStateStore = defineStore('appState', () => {
       title: '',
       intensity: 0,
       location: '',
+      rating: null,
+      completed: false,
     };
     trainingDialogOpen.value = true;
   };
