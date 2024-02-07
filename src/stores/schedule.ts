@@ -47,15 +47,14 @@ export const useScheduleStore = defineStore('schedule', () => {
   const copyWeek = (weekId: string) => {
     const [targetWeek] = getTargetWeekAndTraining.value(weekId);
     const newWeekId = uuidv4();
-    const cloneWeek: Week = {
+    weeks.value.push({
       id: newWeekId,
       trainings: targetWeek.trainings.map((training) => ({
         ...training,
         id: uuidv4(),
         weekId: newWeekId,
       })),
-    };
-    weeks.value.push(cloneWeek);
+    });
   };
 
   const addOrEditTraining = (training: Training) => {
@@ -92,13 +91,12 @@ export const useScheduleStore = defineStore('schedule', () => {
 
   const copyTraining = (training: Training, weekId: string, dayIndex: number) => {
     const [targetWeek] = getTargetWeekAndTraining.value(weekId);
-    const clonedTraining: Training = {
+    targetWeek.trainings.push({
       ...training,
       id: uuidv4(),
       weekId,
       dayIndex,
-    };
-    targetWeek.trainings.push(clonedTraining);
+    });
   };
 
   // Watchers
