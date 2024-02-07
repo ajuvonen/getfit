@@ -8,6 +8,8 @@ export type Training = {
   duration: number;
   intensity: Intensity;
   location: string;
+  completed: boolean;
+  rating: 1 | 2 | 3 | 4 | 5 | null;
 };
 
 export type Week = {
