@@ -21,6 +21,7 @@ const {openEditTrainingDialog} = useAppStateStore();
       <template v-slot:activator="{props}">
         <v-btn
           :aria-label="$t('trainingCard.actionsLabel', training.activity)"
+          color="transparent"
           prepend-icon="mdi-menu"
           variant="flat"
           v-bind="props"
@@ -38,6 +39,18 @@ const {openEditTrainingDialog} = useAppStateStore();
         />
         <ActionMenuWeekGroup action="move" :training="training" />
         <ActionMenuWeekGroup action="copy" :training="training" />
+        <v-list-item
+          :title="
+            !training.completed
+              ? $t('trainingCard.completeTraining')
+              : $t('trainingCard.uncompleteTraining')
+          "
+          prepend-icon="mdi-check"
+          class="training-card__complete-button"
+          @click="
+            (training.completed = !training.completed), (training.rating = null), (menuOpen = false)
+          "
+        />
         <v-list-item
           :title="$t('trainingCard.deleteTraining')"
           prepend-icon="mdi-delete"
