@@ -27,7 +27,7 @@ watch(locale, (value) => {
 <template>
   <v-app :full-height="true">
     <div class="app__overlay">
-      <v-app-bar class="d-print-none app-bar">
+      <v-app-bar class="d-print-none app-bar" :style="{color: COLORS.offWhite}">
         <template #prepend>
           <RouterLink to="/" :aria-label="$t('routes.home')" data-test-id="app-bar-home-link">
             <v-icon icon="mdi-home" :color="COLORS.offWhite" />
