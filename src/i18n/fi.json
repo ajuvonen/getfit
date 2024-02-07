@@ -119,13 +119,15 @@
   "trainingCard": {
     "actions": "Toiminnot",
     "actionsLabel": "Toiminnot harjoitukselle {0}",
+    "completeTraining": "Merkitse suoritetuksi",
     "copy": "Kopioi",
     "deleteTraining": "Poista",
     "duration": "Harjoituksen kesto",
     "editTraining": "Muokkaa",
     "intensity": "Harjoituksen intensiteetti",
     "location": "Harjoituksen sijainti",
-    "move": "Siirrä"
+    "move": "Siirrä",
+    "uncompleteTraining": "Poista suoritusmerkintä"
   },
   "weekCalendar": {
     "addTraining": "Lisää harjoitus",

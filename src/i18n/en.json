@@ -119,13 +119,15 @@
   "trainingCard": {
     "actions": "Actions",
     "actionsLabel": "Actions for training {0}",
+    "completeTraining": "Complete",
     "copy": "Copy",
     "deleteTraining": "Delete",
     "duration": "Training Duration",
     "editTraining": "Edit",
     "intensity": "Training Intensity",
     "location": "Training Location",
-    "move": "Move"
+    "move": "Move",
+    "uncompleteTraining": "Uncomplete"
   },
   "weekCalendar": {
     "addTraining": "Add training",
