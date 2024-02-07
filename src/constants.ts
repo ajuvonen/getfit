@@ -95,10 +95,11 @@ export const WEEKDAYS = {
 };
 
 export const COLORS = {
-  offWhite: '#FAFAFA',
   darkGrey: '#212121',
   intensityLight: '#6DBF79',
   intensityNormal: '#FFC300',
   intensityMedium: '#FF8C00',
   intensityHeavy: '#FF6347',
+  lightGrey: '#3C3C3C',
+  offWhite: '#FAFAFA',
 };
