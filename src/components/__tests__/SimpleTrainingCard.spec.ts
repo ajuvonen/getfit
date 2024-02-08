@@ -1,21 +1,15 @@
 import {mount} from '@vue/test-utils';
 import {describe, it, expect, beforeEach} from 'vitest';
-import {v4 as uuidv4} from 'uuid';
 import {useScheduleStore} from '@/stores/schedule';
 import {Intensity, type Training} from '@/types';
+import {getEmptyTraining} from '@/utils';
 import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
 
-const basicTraining: Training = {
-  id: uuidv4(),
-  weekId: uuidv4(),
-  dayIndex: 0,
+const basicTraining: Training = getEmptyTraining({
   activity: 'boxing',
-  title: '',
   description: 'Sparring at the gym',
-  duration: 1,
-  intensity: Intensity.MEDIUM,
   location: 'Total wreck gym',
-};
+});
 
 describe('SimpleTrainingCard', () => {
   let scheduleStore: ReturnType<typeof useScheduleStore>;
@@ -40,11 +34,13 @@ describe('SimpleTrainingCard', () => {
       },
     });
 
-    expect(wrapper.find('.simple-training-card__activity-icon').attributes('aria-label')).toBe('Boxing');
+    expect(wrapper.find('.simple-training-card__activity-icon').attributes('aria-label')).toBe(
+      'Boxing',
+    );
     expect(wrapper.find('.simple-training-card__title').text()).toBe('Boxing');
     expect(wrapper.find('.simple-training-card__duration').text()).toBe('1 h');
     expect(wrapper.find('.simple-training-card__location').text()).toBe('Total wreck gym');
-    expect(wrapper.find('.simple-training-card__intensity').text()).toBe('Medium');
+    expect(wrapper.find('.simple-training-card__intensity').text()).toBe('Normal');
   });
 
   it('shows custom data', async () => {
@@ -53,7 +49,8 @@ describe('SimpleTrainingCard', () => {
       props: {
         training: {
           ...basicTraining,
-          duration: 60,
+          intensity: Intensity.LIGHT,
+          duration: 0,
           location: '',
           title: 'Free fight',
         },
@@ -61,17 +58,8 @@ describe('SimpleTrainingCard', () => {
     });
 
     expect(wrapper.find('.simple-training-card__title').text()).toBe('Free fight');
-    expect(wrapper.find('.simple-training-card__duration').text()).toBe('60 m');
-    expect(wrapper.find('.simple-training-card__location').exists()).toBe(false);
-    expect(wrapper.find('.simple-training-card__intensity').text()).toBe('Medium');
-
-    await wrapper.setProps({
-      training: {
-        ...basicTraining,
-        duration: 0,
-      },
-    });
-
-    expect(wrapper.find('.simple-training-card__duration').exists()).toBe(false);
+    expect(wrapper.find('.simple-training-card__duration').text()).toBe('- m');
+    expect(wrapper.find('.simple-training-card__location').text()).toBe('-');
+    expect(wrapper.find('.simple-training-card__intensity').text()).toBe('Light');
   });
 });

@@ -1,8 +1,8 @@
 import {ref} from 'vue';
 import {defineStore} from 'pinia';
-import {v4 as uuidv4} from 'uuid';
 import type {LocalizedActivity, Training} from '@/types';
 import {useScheduleStore} from '@/stores/schedule';
+import {getEmptyTraining} from '@/utils';
 
 export const useAppStateStore = defineStore('appState', () => {
   const scheduleStore = useScheduleStore();
@@ -27,20 +27,18 @@ export const useAppStateStore = defineStore('appState', () => {
     confirmDialogOpen.value = true;
   };
 
-  const openNewTrainingDialog = (weekId: string, dayIndex: number, activities: LocalizedActivity[] ) => {
-    trainingData.value = {
-      id: uuidv4(),
+  const openNewTrainingDialog = (
+    weekId: string,
+    dayIndex: number,
+    activities: LocalizedActivity[],
+  ) => {
+    trainingData.value = getEmptyTraining({
       weekId,
       dayIndex,
-      duration: scheduleStore.settings.defaultDuration,
       activity: activities[0]?.value || '',
-      description: '',
-      title: '',
-      intensity: 0,
-      location: '',
-      rating: null,
-      completed: false,
-    };
+      duration: scheduleStore.settings.defaultDuration,
+    });
+
     trainingDialogOpen.value = true;
   };
 
