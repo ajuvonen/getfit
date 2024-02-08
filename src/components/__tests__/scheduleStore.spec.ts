@@ -2,6 +2,8 @@ import {createPinia, setActivePinia} from 'pinia';
 import {describe, it, expect, beforeEach} from 'vitest';
 import {v4 as uuidv4} from 'uuid';
 import {useScheduleStore} from '@/stores/schedule';
+import {getEmptyTraining} from '@/utils';
+import {Intensity} from '@/types';
 
 describe('useScheduleStore', () => {
   let scheduleStore: ReturnType<typeof useScheduleStore>;
@@ -29,17 +31,10 @@ describe('useScheduleStore', () => {
     scheduleStore.weeks.push({
       id: weekId,
       trainings: [
-        {
+        getEmptyTraining({
           id: trainingId,
           weekId,
-          dayIndex: 0,
-          duration: 0,
-          activity: '',
-          description: '',
-          title: '',
-          intensity: 0,
-          location: '',
-        },
+        }),
       ],
     });
 
@@ -55,17 +50,9 @@ describe('useScheduleStore', () => {
     scheduleStore.weeks.push({
       id: weekId,
       trainings: [
-        {
-          id: uuidv4(),
+        getEmptyTraining({
           weekId,
-          dayIndex: 0,
-          duration: 0,
-          activity: '',
-          description: '',
-          title: '',
-          intensity: 0,
-          location: '',
-        },
+        }),
       ],
     });
 
@@ -92,7 +79,7 @@ describe('useScheduleStore', () => {
     const weekId = uuidv4();
     const trainingId = uuidv4();
 
-    const originalTraining = {
+    const originalTraining = getEmptyTraining({
       id: trainingId,
       weekId: weekId,
       dayIndex: 1,
@@ -100,9 +87,8 @@ describe('useScheduleStore', () => {
       title: 'Morning Run',
       description: '5km run',
       duration: 30,
-      intensity: 0,
       location: 'Park',
-    };
+    });
 
     scheduleStore.weeks.push({
       id: weekId,
@@ -130,24 +116,20 @@ describe('useScheduleStore', () => {
 
   it('adds a training', () => {
     const weekId = uuidv4();
-    const trainingId = uuidv4();
 
     scheduleStore.weeks.push({
       id: weekId,
       trainings: [],
     });
 
-    const training = {
-      id: trainingId,
+    const training = getEmptyTraining({
       weekId: weekId,
-      dayIndex: 1,
       activity: 'Running',
       title: 'Morning Run',
       description: '5km run',
       duration: 30,
-      intensity: 0,
       location: 'Park',
-    };
+    });
 
     scheduleStore.addOrEditTraining(training);
 
@@ -163,31 +145,30 @@ describe('useScheduleStore', () => {
     scheduleStore.weeks.push({
       id: weekId,
       trainings: [
-        {
+        getEmptyTraining({
           id: trainingId,
           weekId: weekId,
           dayIndex: 1,
-          activity: 'Running',
+          activity: 'running',
           title: 'Morning Run',
           description: '5km run',
           duration: 30,
-          intensity: 0,
           location: 'Park',
-        },
+        }),
       ],
     });
 
-    const updatedTraining = {
+    const updatedTraining = getEmptyTraining({
       id: trainingId,
       weekId: weekId,
       dayIndex: 1,
-      activity: 'Running',
+      activity: 'sprint',
       title: 'Evening Run',
-      description: '10km run',
-      duration: 60,
-      intensity: 0,
-      location: 'Gym',
-    };
+      description: '1km run',
+      duration: 10,
+      intensity: Intensity.HEAVY,
+      location: 'Track',
+    });
 
     scheduleStore.addOrEditTraining(updatedTraining);
 
@@ -197,55 +178,37 @@ describe('useScheduleStore', () => {
 
   it('deletes a training', () => {
     const weekId = uuidv4();
-    const trainingId = uuidv4();
-  
-    const training = {
-      id: trainingId,
+
+    const training = getEmptyTraining({
       weekId: weekId,
-      dayIndex: 1,
-      activity: 'Running',
-      title: 'Morning Run',
-      description: '5km run',
-      duration: 30,
-      intensity: 0,
-      location: 'Park',
-    };
-  
+    });
+
     scheduleStore.weeks.push({
       id: weekId,
       trainings: [training],
     });
-  
+
     scheduleStore.deleteTraining(training);
-  
+
     const [week] = scheduleStore.getTargetWeekAndTraining(weekId);
     expect(week.trainings.length).toBe(0);
   });
 
   it('does not delete a training when IDs do not match', () => {
     const weekId = uuidv4();
-    const trainingId = uuidv4();
-  
-    const training = {
-      id: trainingId,
+
+    const training = getEmptyTraining({
       weekId: weekId,
-      dayIndex: 1,
-      activity: 'Running',
-      title: 'Morning Run',
-      description: '5km run',
-      duration: 30,
-      intensity: 0,
-      location: 'Park',
-    };
-  
+    });
+
     scheduleStore.weeks.push({
       id: weekId,
       trainings: [training],
     });
-  
-    const nonExistentTraining = { ...training, id: uuidv4() };
+
+    const nonExistentTraining = {...training, id: uuidv4()};
     scheduleStore.deleteTraining(nonExistentTraining);
-  
+
     const [week] = scheduleStore.getTargetWeekAndTraining(weekId);
     expect(week.trainings.length).toBe(1);
   });
@@ -253,101 +216,62 @@ describe('useScheduleStore', () => {
   it('moves a training to a different week', () => {
     const weekId1 = uuidv4();
     const weekId2 = uuidv4();
-    const trainingId = uuidv4();
-  
-    const training = {
-      id: trainingId,
+
+    const training = getEmptyTraining({
       weekId: weekId1,
-      dayIndex: 1,
-      activity: 'Running',
-      title: 'Morning Run',
-      description: '5km run',
-      duration: 30,
-      intensity: 0,
-      location: 'Park',
-    };
-  
-    scheduleStore.weeks.push(
-      { id: weekId1, trainings: [training] },
-      { id: weekId2, trainings: [] },
-    );
-  
+    });
+
+    scheduleStore.weeks.push({id: weekId1, trainings: [training]}, {id: weekId2, trainings: []});
+
     scheduleStore.moveTraining(training, weekId2, 2);
-  
+
     const [week1] = scheduleStore.getTargetWeekAndTraining(weekId1);
     const [week2] = scheduleStore.getTargetWeekAndTraining(weekId2);
     expect(week1.trainings.length).toBe(0);
     expect(week2.trainings.length).toBe(1);
     expect(week2.trainings[0].dayIndex).toBe(2);
   });
-  
+
   it('reorders trainings within a week', () => {
     const weekId = uuidv4();
-    const trainingId1 = uuidv4();
-    const trainingId2 = uuidv4();
-  
-    const training1 = {
-      id: trainingId1,
+
+    const training1 = getEmptyTraining({
       weekId: weekId,
-      dayIndex: 1,
-      activity: 'Running',
-      title: 'Morning Run',
-      description: '5km run',
-      duration: 30,
-      intensity: 0,
-      location: 'Park',
-    };
-  
-    const training2 = {
-      id: trainingId2,
+    });
+
+    const training2 = getEmptyTraining({
       weekId: weekId,
-      dayIndex: 2,
-      activity: 'Swimming',
-      title: 'Afternoon Swim',
-      description: '1km swim',
-      duration: 45,
-      intensity: 1,
-      location: 'Pool',
-    };
-  
+    });
+
     scheduleStore.weeks.push({
       id: weekId,
       trainings: [training1, training2],
     });
-  
+
     scheduleStore.reorderTrainings(weekId, [training2, training1]);
-  
+
     const [reordered] = scheduleStore.getTargetWeekAndTraining(weekId);
-    expect(reordered.trainings[0].id).toBe(trainingId2);
-    expect(reordered.trainings[1].id).toBe(trainingId1);
+    expect(reordered.trainings[0].id).toBe(training2.id);
+    expect(reordered.trainings[1].id).toBe(training1.id);
   });
-  
+
   it('copies a training', () => {
     const weekId = uuidv4();
-    const trainingId = uuidv4();
-  
-    const training = {
-      id: trainingId,
+
+    const training = getEmptyTraining({
       weekId: weekId,
-      dayIndex: 1,
-      activity: 'Running',
-      title: 'Morning Run',
-      description: '5km run',
-      duration: 30,
-      intensity: 0,
-      location: 'Park',
-    };
-  
+    });
+
     scheduleStore.weeks.push({
       id: weekId,
       trainings: [training],
     });
-  
+
     scheduleStore.copyTraining(training, weekId, 2);
-  
+
     const [week] = scheduleStore.getTargetWeekAndTraining(weekId);
     expect(week.trainings.length).toBe(2);
-    expect(week.trainings[1].id).not.toBe(trainingId);
+    expect(week.trainings[1].id).not.toBe(training.id);
     expect(week.trainings[1].dayIndex).toBe(2);
   });
 });

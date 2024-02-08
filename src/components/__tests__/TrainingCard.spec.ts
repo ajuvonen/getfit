@@ -6,18 +6,13 @@ import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
 import {Intensity, type Training} from '@/types';
 import TrainingCard from '@/components/TrainingCard.vue';
+import { getEmptyTraining } from '@/utils';
 
-const basicTraining: Training = {
-  id: uuidv4(),
-  weekId: uuidv4(),
-  dayIndex: 0,
+const basicTraining: Training = getEmptyTraining({
   activity: 'boxing',
-  title: '',
   description: 'Sparring at the gym',
-  duration: 1,
-  intensity: Intensity.MEDIUM,
   location: 'Total wreck gym',
-};
+});
 
 describe('TrainingCard', () => {
   let scheduleStore: ReturnType<typeof useScheduleStore>;
@@ -48,7 +43,7 @@ describe('TrainingCard', () => {
     expect(wrapper.find('.training-card__title').text()).toBe('Boxing');
     expect(wrapper.find('.training-card__duration').text()).toBe('1 h');
     expect(wrapper.find('.training-card__location').text()).toBe('Total wreck gym');
-    expect(wrapper.find('.training-card__intensity').text()).toBe('Medium');
+    expect(wrapper.find('.training-card__intensity').text()).toBe('Normal');
   });
 
   it('shows custom data', async () => {
@@ -57,26 +52,19 @@ describe('TrainingCard', () => {
       props: {
         training: {
           ...basicTraining,
-          duration: 60,
+          intensity: Intensity.HEAVY,
+          duration: 0,
           location: '',
           title: 'Free fight',
         },
       },
     });
 
+    expect(wrapper.find('.training-card__intensity').text()).toBe('Heavy');
     expect(wrapper.find('.training-card__title').text()).toBe('Free fight');
-    expect(wrapper.find('.training-card__duration').text()).toBe('60 m');
-    expect(wrapper.find('.training-card__location').exists()).toBe(false);
-
-    await wrapper.setProps({
-      training: {
-        ...basicTraining,
-        duration: 0,
-      },
-    });
-
-    expect(wrapper.find('.training-card__duration').exists()).toBe(false);
-  });
+    expect(wrapper.find('.training-card__duration').text()).toBe('- m');
+    expect(wrapper.find('.training-card__location').text()).toBe('-');
+});
 
   it('actions work', async () => {
     const wrapper = mount(TrainingCard, {

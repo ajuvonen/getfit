@@ -34,9 +34,9 @@ const {settings} = storeToRefs(useScheduleStore());
         </div>
         <div class="d-flex align-center justify-space-between">
           <div class="d-flex flex-column">
-            <div v-if="training.duration" class="training-card__duration text-subtitle-2">
+            <div class="training-card__duration text-subtitle-2">
               <v-icon icon="mdi-timer" :aria-label="$t('trainingCard.duration')" />
-              {{ training.duration }} {{ settings.unitOfTime }}
+              {{ training.duration || '-' }} {{ settings.unitOfTime }}
             </div>
             <div class="training-card__intensity text-subtitle-2">
               <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />

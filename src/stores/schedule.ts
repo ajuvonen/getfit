@@ -3,12 +3,12 @@ import {useStorage} from '@vueuse/core';
 import {v4 as uuidv4} from 'uuid';
 import {DateTime} from 'luxon';
 import type {ScheduleSettings, Training, Week} from '@/types';
-import {roundNearestQuarter, getEmptySchedule} from '@/utils';
+import {roundNearestQuarter, getEmptySettings} from '@/utils';
 import {computed, watch} from 'vue';
 
 export const useScheduleStore = defineStore('schedule', () => {
   // State refs
-  const settings = useStorage<ScheduleSettings>('getfit-settings', getEmptySchedule(), localStorage, {
+  const settings = useStorage<ScheduleSettings>('getfit-settings', getEmptySettings(), localStorage, {
     mergeDefaults: true,
     serializer: {
       read: (v: any) => v ? JSON.parse(v, (key, value) => {
@@ -138,7 +138,7 @@ export const useScheduleStore = defineStore('schedule', () => {
 
   // Reset
   const $reset = () => {
-    settings.value = getEmptySchedule();
+    settings.value = getEmptySettings();
     weeks.value = [];
   };
 

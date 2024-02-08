@@ -5,7 +5,7 @@ import {v4 as uuidv4} from 'uuid';
 import {useScheduleStore} from '@/stores/schedule';
 import useCalendarExport from '@/hooks/calendarExport';
 import {Intensity, type Week, type ScheduleSettings, type CalendarEvent} from '@/types';
-import {getEmptySchedule} from '@/utils';
+import {getEmptySettings, getEmptyTraining} from '@/utils';
 
 describe('useCalendarExport', () => {
   let scheduleStore: ReturnType<typeof useScheduleStore>;
@@ -39,19 +39,14 @@ describe('useCalendarExport', () => {
       {
         id: weekId1,
         trainings: [
-          {
-            id: uuidv4(),
+          getEmptyTraining({
             weekId: weekId1,
             activity: 'running',
-            dayIndex: 0,
             title: 'Test Training',
             description: 'Test Description',
-            duration: 1,
-            intensity: Intensity.NORMAL,
             location: 'Test Location',
-          },
-          {
-            id: uuidv4(),
+          }),
+          getEmptyTraining({
             weekId: weekId1,
             activity: 'swimming',
             dayIndex: 1,
@@ -60,54 +55,46 @@ describe('useCalendarExport', () => {
             duration: 0.5,
             intensity: Intensity.MEDIUM,
             location: 'Test Location 2',
-          },
-          {
-            id: uuidv4(),
+          }),
+          getEmptyTraining({
             weekId: weekId1,
             activity: 'sprint',
             dayIndex: 1,
             title: 'Test Training 3',
             description: 'Test Description 3',
-            duration: 1,
             intensity: Intensity.HEAVY,
             location: 'Test Location 3',
-          },
+          }),
         ],
       },
       {
         id: weekId2,
         trainings: [
-          {
-            id: uuidv4(),
+          getEmptyTraining({
             weekId: weekId2,
             activity: 'running',
             dayIndex: 6,
             title: 'Test Training 4',
             description: 'Test Description 4',
-            duration: 1,
-            intensity: Intensity.NORMAL,
             location: 'Test Location 4',
-          },
-          {
-            id: uuidv4(),
+          }),
+          getEmptyTraining({
             weekId: weekId2,
             activity: 'swimming',
             dayIndex: 6,
             title: 'Test Training 5',
             description: 'Test Description 5',
-            duration: 1,
             intensity: Intensity.LIGHT,
             location: 'Test Location 5',
-          },
+          }),
         ],
       },
     ];
 
-    const mockSettings: ScheduleSettings = {
-      ...getEmptySchedule(),
+    const mockSettings: ScheduleSettings = getEmptySettings({
       name: 'Test Schedule',
       startDate: new Date('2024-01-01'),
-    };
+    });
 
     const events = await createTestComponent(mockSettings, mockWeeks);
 
@@ -190,38 +177,31 @@ describe('useCalendarExport', () => {
       {
         id: weekId1,
         trainings: [
-          {
-            id: uuidv4(),
+          getEmptyTraining({
             weekId: weekId1,
             activity: 'running',
-            dayIndex: 0,
             title: 'Test Training',
             description: 'Test Description',
-            duration: 1,
-            intensity: Intensity.NORMAL,
             location: 'Test Location',
-          },
-          {
-            id: uuidv4(),
+          }),
+          getEmptyTraining({
             weekId: weekId1,
             activity: 'swimming',
-            dayIndex: 0,
+            intensity: Intensity.MEDIUM,
             title: 'Test Training 2',
             description: 'Test Description 2',
             duration: 0.5,
-            intensity: Intensity.MEDIUM,
             location: 'Test Location 2',
-          },
+          }),
         ],
       },
     ];
 
-    const mockSettings: ScheduleSettings = {
-      ...getEmptySchedule(),
+    const mockSettings: ScheduleSettings = getEmptySettings({
       name: 'Test Schedule',
       startDate: new Date('2024-01-01'),
       defaultStartTime: {hours: 23, minutes: 30, seconds: 0},
-    };
+    });
 
     const events = await createTestComponent(mockSettings, mockWeeks);
 
@@ -262,17 +242,10 @@ describe('useCalendarExport', () => {
       {
         id: weekId,
         trainings: [
-          {
-            id: uuidv4(),
+          getEmptyTraining({
             weekId,
             activity: 'running',
-            dayIndex: 0,
-            title: 'Test Training',
-            description: 'Test Description',
-            duration: 1,
-            intensity: Intensity.NORMAL,
-            location: 'Test Location',
-          },
+          }),
         ],
       },
     ];
