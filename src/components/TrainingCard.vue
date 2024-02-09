@@ -66,7 +66,8 @@ const {settings} = storeToRefs(useScheduleStore());
 </template>
 <style lang="scss" scoped>
 .training-card {
-  width: 250px;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 .v-card-item {
