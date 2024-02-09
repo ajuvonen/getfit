@@ -45,7 +45,7 @@ const {openEditTrainingDialog} = useAppStateStore();
               ? $t('trainingCard.completeTraining')
               : $t('trainingCard.uncompleteTraining')
           "
-          prepend-icon="mdi-check"
+          :prepend-icon="training.completed ? 'mdi-progress-alert' : 'mdi-progress-check'"
           class="training-card__complete-button"
           @click="
             toggleCompletion(training), (menuOpen = false)
