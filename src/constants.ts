@@ -98,7 +98,7 @@ export const COLORS = {
   darkGrey: '#212121',
   intensityLight: '#6DBF79',
   intensityNormal: '#FFC300',
-  intensityMedium: '#FF8C00',
+  intensityDemanding: '#FF8C00',
   intensityHeavy: '#FF6347',
   lightGrey: '#3C3C3C',
   offWhite: '#FAFAFA',

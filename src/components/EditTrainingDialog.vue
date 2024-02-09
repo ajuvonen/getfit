@@ -23,7 +23,7 @@ const {t} = useI18n();
 const tickLabels = computed(() => ({
   [Intensity.LIGHT]: t('intensities.0'),
   [Intensity.NORMAL]: t('intensities.1'),
-  [Intensity.MEDIUM]: t('intensities.2'),
+  [Intensity.DEMANDING]: t('intensities.2'),
   [Intensity.HEAVY]: t('intensities.3'),
 }));
 

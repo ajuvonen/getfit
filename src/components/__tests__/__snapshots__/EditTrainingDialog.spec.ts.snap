@@ -277,7 +277,7 @@ exports[`EditTrainingDialog > mounts 1`] = `
                   <div class="v-slider-track__tick-label">Normal</div>
                 </div>
                 <div class="v-slider-track__tick" style="inset-inline-start: 66.66666666666666%;">
-                  <div class="v-slider-track__tick-label">Medium</div>
+                  <div class="v-slider-track__tick-label">Demanding</div>
                 </div>
                 <div class="v-slider-track__tick v-slider-track__tick--last">
                   <div class="v-slider-track__tick-label">Heavy</div>
