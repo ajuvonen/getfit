@@ -61,6 +61,8 @@ export const useScheduleStore = defineStore('schedule', () => {
         ...training,
         id: uuidv4(),
         weekId: newWeekId,
+        completed: false,
+        rating: null,
       })),
     });
   };
@@ -104,6 +106,8 @@ export const useScheduleStore = defineStore('schedule', () => {
       id: uuidv4(),
       weekId,
       dayIndex,
+      completed: false,
+      rating: null,
     });
   };
 

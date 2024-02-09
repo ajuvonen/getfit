@@ -88,6 +88,8 @@ describe('useScheduleStore', () => {
       description: '5km run',
       duration: 30,
       location: 'Park',
+      completed: true,
+      rating: 3,
     });
 
     scheduleStore.weeks.push({
@@ -112,6 +114,8 @@ describe('useScheduleStore', () => {
     expect(copiedTraining?.duration).toBe(originalTraining.duration);
     expect(copiedTraining?.intensity).toBe(originalTraining.intensity);
     expect(copiedTraining?.location).toBe(originalTraining.location);
+    expect(copiedTraining?.completed).toBe(false);
+    expect(copiedTraining?.rating).toBeNull();
   });
 
   it('adds a training', () => {
@@ -219,6 +223,7 @@ describe('useScheduleStore', () => {
 
     const training = getEmptyTraining({
       weekId: weekId1,
+      completed: true,
     });
 
     scheduleStore.weeks.push({id: weekId1, trainings: [training]}, {id: weekId2, trainings: []});
@@ -260,6 +265,8 @@ describe('useScheduleStore', () => {
 
     const training = getEmptyTraining({
       weekId: weekId,
+      completed: true,
+      rating: 3,
     });
 
     scheduleStore.weeks.push({
@@ -273,6 +280,8 @@ describe('useScheduleStore', () => {
     expect(week.trainings.length).toBe(2);
     expect(week.trainings[1].id).not.toBe(training.id);
     expect(week.trainings[1].dayIndex).toBe(2);
+    expect(week.trainings[1].completed).toBe(false);
+    expect(week.trainings[1].rating).toBeNull();
   });
 
   it('toggles the completed property', () => {
