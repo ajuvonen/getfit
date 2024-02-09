@@ -16,8 +16,8 @@ export const getIntensityColor = (intensity: Intensity) => {
   switch (intensity) {
     case Intensity.NORMAL:
       return COLORS.intensityNormal;
-    case Intensity.MEDIUM:
-      return COLORS.intensityMedium;
+    case Intensity.DEMANDING:
+      return COLORS.intensityDemanding;
     case Intensity.HEAVY:
       return COLORS.intensityHeavy;
     default:

@@ -30,7 +30,7 @@ describe('Utils', () => {
   it('getIntensityColor gets correct intensity colors', () => {
     expect(getIntensityColor(Intensity.LIGHT)).toBe('#6DBF79');
     expect(getIntensityColor(Intensity.NORMAL)).toBe('#FFC300');
-    expect(getIntensityColor(Intensity.MEDIUM)).toBe('#FF8C00');
+    expect(getIntensityColor(Intensity.DEMANDING)).toBe('#FF8C00');
     expect(getIntensityColor(Intensity.HEAVY)).toBe('#FF6347');
   });
 

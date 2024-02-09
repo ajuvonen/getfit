@@ -53,7 +53,7 @@ describe('useCalendarExport', () => {
             title: 'Test Training 2',
             description: 'Test Description 2',
             duration: 0.5,
-            intensity: Intensity.MEDIUM,
+            intensity: Intensity.DEMANDING,
             location: 'Test Location 2',
           }),
           getEmptyTraining({
@@ -119,7 +119,7 @@ describe('useCalendarExport', () => {
     expect(events[1].description).toBe('Test Description 2');
     expect(events[1].duration.minutes).toBe(30);
     expect(events[1].location).toBe('Test Location 2');
-    expect(events[1].categories).toEqual(['Swimming', 'Medium']);
+    expect(events[1].categories).toEqual(['Swimming', 'Demanding']);
     expect(events[1].status).toBe('CONFIRMED');
     expect(events[1].busyStatus).toBe('BUSY');
     expect(events[1].transp).toBe('OPAQUE');
@@ -187,7 +187,7 @@ describe('useCalendarExport', () => {
           getEmptyTraining({
             weekId: weekId1,
             activity: 'swimming',
-            intensity: Intensity.MEDIUM,
+            intensity: Intensity.DEMANDING,
             title: 'Test Training 2',
             description: 'Test Description 2',
             duration: 0.5,
@@ -226,7 +226,7 @@ describe('useCalendarExport', () => {
     expect(events[1].description).toBe('Test Description 2');
     expect(events[1].duration.minutes).toBe(30);
     expect(events[1].location).toBe('Test Location 2');
-    expect(events[1].categories).toEqual(['Swimming', 'Medium']);
+    expect(events[1].categories).toEqual(['Swimming', 'Demanding']);
     expect(events[1].status).toBe('CONFIRMED');
     expect(events[1].busyStatus).toBe('BUSY');
     expect(events[1].transp).toBe('OPAQUE');

@@ -68,7 +68,7 @@
   "intensities": {
     "0": "Kevyt",
     "1": "Normaali",
-    "2": "Keskitaso",
+    "2": "Vaativa",
     "3": "Raskas"
   },
   "export": {
