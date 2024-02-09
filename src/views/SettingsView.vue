@@ -224,10 +224,6 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
 </template>
 
 <style lang="scss" scoped>
-:deep(.v-field__clearable) {
-  align-items: center !important;
-}
-
 .dp__main,
 .settings-input {
   max-width: 175px;
