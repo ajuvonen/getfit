@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TrainingCard > mounts 1`] = `
+"<div class="d-flex justify-space-evenly training-card__rating"><button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light bg-transparent v-btn--density-default elevation-0 v-btn--size-small v-btn--variant-elevated"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    <!----><span class="v-btn__content" data-no-activator=""><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
+    <!---->
+    <!---->
+  </button><button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light bg-transparent v-btn--density-default elevation-0 v-btn--size-small v-btn--variant-elevated"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    <!----><span class="v-btn__content" data-no-activator=""><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
+    <!---->
+    <!---->
+  </button><button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light bg-transparent v-btn--density-default elevation-0 v-btn--size-small v-btn--variant-elevated"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    <!----><span class="v-btn__content" data-no-activator=""><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
+    <!---->
+    <!---->
+  </button><button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light bg-transparent v-btn--density-default elevation-0 v-btn--size-small v-btn--variant-elevated"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    <!----><span class="v-btn__content" data-no-activator=""><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
+    <!---->
+    <!---->
+  </button><button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light bg-transparent v-btn--density-default elevation-0 v-btn--size-small v-btn--variant-elevated"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    <!----><span class="v-btn__content" data-no-activator=""><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
+    <!---->
+    <!---->
+  </button></div>"
+`;
