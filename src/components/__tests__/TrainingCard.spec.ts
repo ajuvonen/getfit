@@ -75,7 +75,9 @@ describe('TrainingCard', () => {
     const actions = wrapper.findComponent(VList);
     await actions.find('.training-card__delete-button').trigger('click');
     await actions.find('.training-card__edit-button').trigger('click');
+    await actions.find('.training-card__complete-button').trigger('click');
     expect(scheduleStore.deleteTraining).toHaveBeenCalledOnce();
     expect(appStateStore.openEditTrainingDialog).toHaveBeenCalledOnce();
+    expect(scheduleStore.toggleCompletion).toHaveBeenCalledOnce();
   });
 });

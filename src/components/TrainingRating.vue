@@ -20,7 +20,7 @@ const baseAttributes = computed(() => (rating: Rating) => ({
 }));
 </script>
 <template>
-  <div class="d-flex justify-space-evenly">
+  <div class="d-flex justify-space-evenly training-card__rating">
     <v-btn
       v-bind="baseAttributes(1)"
       @click="updateRating(training, 1)"

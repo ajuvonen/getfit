@@ -63,4 +63,31 @@ describe('Schedule tests', () => {
     cy.toRoute('schedule');
     cy.getByTestId('week-0').should('not.exist');
   });
+
+  it('completes and rates trainings', () => {
+    cy.addTraining();
+    cy.get('.training-card__action-button').click();
+    cy.get('.training-card__complete-button').click();
+    cy.get('.training-card__rating button:nth-child(1) i').should('have.class', 'mdi-star-outline');
+    cy.get('.training-card__rating button:nth-child(2) i').should('have.class', 'mdi-star-outline');
+    cy.get('.training-card__rating button:nth-child(3) i').should('have.class', 'mdi-star-outline');
+    cy.get('.training-card__rating button:nth-child(4) i').should('have.class', 'mdi-star-outline');
+    cy.get('.training-card__rating button:nth-child(5) i').should('have.class', 'mdi-star-outline');
+    cy.get('.training-card__rating button').eq(0).click();
+    cy.get('.training-card__rating button:nth-child(1) i').should('have.class', 'mdi-star');
+    cy.get('.training-card__rating button').eq(1).click();
+    cy.get('.training-card__rating button:nth-child(2) i').should('have.class', 'mdi-star');
+    cy.get('.training-card__rating button').eq(2).click();
+    cy.get('.training-card__rating button:nth-child(3) i').should('have.class', 'mdi-star');
+    cy.get('.training-card__rating button').eq(3).click();
+    cy.get('.training-card__rating button:nth-child(4) i').should('have.class', 'mdi-star');
+    cy.get('.training-card__rating button').eq(4).click();
+    cy.get('.training-card__rating button:nth-child(5) i').should('have.class', 'mdi-star');
+    cy.get('.training-card__rating button').eq(4).click();
+    cy.get('.training-card__rating button:nth-child(1) i').should('have.class', 'mdi-star-outline');
+    cy.get('.training-card__rating button:nth-child(2) i').should('have.class', 'mdi-star-outline');
+    cy.get('.training-card__rating button:nth-child(3) i').should('have.class', 'mdi-star-outline');
+    cy.get('.training-card__rating button:nth-child(4) i').should('have.class', 'mdi-star-outline');
+    cy.get('.training-card__rating button:nth-child(5) i').should('have.class', 'mdi-star-outline');
+  });
 });
