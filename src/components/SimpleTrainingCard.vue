@@ -11,8 +11,8 @@ defineProps<{
 const {settings} = storeToRefs(useScheduleStore());
 </script>
 <template>
-  <div class="simple-training-card mt-4">
-    <div class="simple-training-card__title text-body-1 text-no-wrap">
+  <div class="simple-training-card my-4 text-body-1">
+    <div class="simple-training-card__title">
       <v-icon
         :icon="getIcon(training.activity)"
         :title="$t(`activities.${training.activity}`)"
@@ -21,15 +21,15 @@ const {settings} = storeToRefs(useScheduleStore());
       />
       {{ training.title || $t(`activities.${training.activity}`) }}
     </div>
-    <div class="simple-training-card__duration text-body-1">
+    <div class="simple-training-card__duration">
       <v-icon icon="mdi-timer" :aria-label="$t('trainingCard.duration')" />
       {{ training.duration || '-' }} {{ settings.unitOfTime }}
     </div>
-    <div class="simple-training-card__location text-body-1">
+    <div class="simple-training-card__location">
       <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />
       {{ training.location || '-' }}
     </div>
-    <div class="simple-training-card__intensity text-body-1">
+    <div class="simple-training-card__intensity">
       <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />
       {{ $t(`intensities.${training.intensity}`) }}
     </div>
@@ -37,7 +37,11 @@ const {settings} = storeToRefs(useScheduleStore());
 </template>
 <style lang="scss" scoped>
 .simple-training-card {
-  position: relative;
+  max-width: 200px;
+  > div {
+    display: flex;
+    gap: 0.5rem;
+  }
 }
 
 .v-icon {
