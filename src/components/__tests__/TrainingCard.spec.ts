@@ -1,12 +1,11 @@
 import {mount} from '@vue/test-utils';
 import {describe, it, expect, beforeEach} from 'vitest';
-import {v4 as uuidv4} from 'uuid';
 import {VList} from 'vuetify/components';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
 import {Intensity, type Training} from '@/types';
 import TrainingCard from '@/components/TrainingCard.vue';
-import { getEmptyTraining } from '@/utils';
+import {getEmptyTraining} from '@/utils';
 
 const basicTraining: Training = getEmptyTraining({
   activity: 'boxing',
@@ -64,7 +63,7 @@ describe('TrainingCard', () => {
     expect(wrapper.find('.training-card__title').text()).toBe('Free fight');
     expect(wrapper.find('.training-card__duration').text()).toBe('- m');
     expect(wrapper.find('.training-card__location').text()).toBe('-');
-});
+  });
 
   it('actions work', async () => {
     const wrapper = mount(TrainingCard, {

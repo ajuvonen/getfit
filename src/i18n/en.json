@@ -119,6 +119,7 @@
   "trainingCard": {
     "actions": "Actions",
     "actionsLabel": "Actions for training {0}",
+    "completed": "Completed: {0}",
     "completeTraining": "Complete",
     "copy": "Copy",
     "deleteTraining": "Delete",
