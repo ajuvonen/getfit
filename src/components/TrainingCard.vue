@@ -37,7 +37,7 @@ const {settings} = storeToRefs(useScheduleStore());
         />
       </div>
       <v-card-title class="ml-11">
-        <div class="training-card__title">
+        <div class="training-card__title text-truncate">
           {{ training.title || $t(`activities.${training.activity}`) }}
         </div>
         <div class="training-card__duration text-subtitle-2">
@@ -80,11 +80,6 @@ const {settings} = storeToRefs(useScheduleStore());
   right: 0;
   top: 0;
   height: 7rem;
-}
-
-.training-card__title {
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .training-card__text {
