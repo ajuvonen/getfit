@@ -1,3 +1,5 @@
+export type Rating = 1 | 2 | 3 | 4 | 5 | null;
+
 export type Training = {
   id: string;
   weekId: string;
@@ -9,7 +11,7 @@ export type Training = {
   intensity: Intensity;
   location: string;
   completed: boolean;
-  rating: 1 | 2 | 3 | 4 | 5 | null;
+  rating: Rating;
 };
 
 export type Week = {

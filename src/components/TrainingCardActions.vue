@@ -11,7 +11,7 @@ defineProps<{
 
 const menuOpen = ref(false);
 
-const {deleteTraining} = useScheduleStore();
+const {deleteTraining, toggleCompletion} = useScheduleStore();
 
 const {openEditTrainingDialog} = useAppStateStore();
 </script>
@@ -48,7 +48,7 @@ const {openEditTrainingDialog} = useAppStateStore();
           prepend-icon="mdi-check"
           class="training-card__complete-button"
           @click="
-            (training.completed = !training.completed), (training.rating = null), (menuOpen = false)
+            toggleCompletion(training), (menuOpen = false)
           "
         />
         <v-list-item
