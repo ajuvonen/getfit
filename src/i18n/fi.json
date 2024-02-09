@@ -119,6 +119,7 @@
   "trainingCard": {
     "actions": "Toiminnot",
     "actionsLabel": "Toiminnot harjoitukselle {0}",
+    "completed": "Suoritettu: {0}",
     "completeTraining": "Merkitse suoritetuksi",
     "copy": "Kopioi",
     "deleteTraining": "Poista",
