@@ -18,6 +18,10 @@ defineProps<{
   </v-table>
 </template>
 <style lang="scss" scoped>
+:deep(td) {
+  vertical-align: top;
+}
+
 @media screen {
   .print-view__table + .print-view__table {
     margin-top: 2rem;
