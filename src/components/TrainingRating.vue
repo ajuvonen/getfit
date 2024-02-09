@@ -1,54 +1,48 @@
 <script setup lang="ts">
-import type {Training} from '@/types';
 import {computed} from 'vue';
+import {useScheduleStore} from '@/stores/schedule';
+import type {Rating, Training} from '@/types';
 
 const props = defineProps<{
   training: Training;
 }>();
 
-const updateRating = (rating: 1 | 2 | 3 | 4 | 5) => {
-  if (props.training.rating === rating) {
-    props.training.rating = null;
-  } else {
-    props.training.rating = rating;
-  }
-};
+const {updateRating} = useScheduleStore();
 
-const baseAttributes = computed(() => ({
+const baseAttributes = computed(() => (rating: Rating) => ({
   elevation: 0,
   size: 'small',
   color: 'transparent',
+  icon:
+    rating && props.training.rating && props.training.rating >= rating
+      ? 'mdi-star'
+      : 'mdi-star-outline',
 }));
 </script>
 <template>
-  <div class="d-flex justify-center">
+  <div class="d-flex justify-space-evenly">
     <v-btn
-      v-bind="baseAttributes"
-      :icon="training.rating && training.rating >= 1 ? 'mdi-star' : 'mdi-star-outline'"
-      @click="updateRating(1)"
+      v-bind="baseAttributes(1)"
+      @click="updateRating(training, 1)"
     ></v-btn>
     <v-btn
-      v-bind="baseAttributes"
-      :icon="training.rating && training.rating >= 2 ? 'mdi-star' : 'mdi-star-outline'"
-      @click="updateRating(2)"
+      v-bind="baseAttributes(2)"
+      @click="updateRating(training, 2)"
     ></v-btn>
     <v-btn
-      v-bind="baseAttributes"
+      v-bind="baseAttributes(3)"
       color="transparent"
-      :icon="training.rating && training.rating >= 3 ? 'mdi-star' : 'mdi-star-outline'"
-      @click="updateRating(3)"
+      @click="updateRating(training, 3)"
     ></v-btn>
     <v-btn
-      v-bind="baseAttributes"
+      v-bind="baseAttributes(4)"
       color="transparent"
-      :icon="training.rating && training.rating >= 4 ? 'mdi-star' : 'mdi-star-outline'"
-      @click="updateRating(4)"
+      @click="updateRating(training, 4)"
     ></v-btn>
     <v-btn
-      v-bind="baseAttributes"
+      v-bind="baseAttributes(5)"
       color="transparent"
-      :icon="training.rating && training.rating === 5 ? 'mdi-star' : 'mdi-star-outline'"
-      @click="updateRating(5)"
+      @click="updateRating(training, 5)"
     ></v-btn>
   </div>
 </template>

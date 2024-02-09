@@ -2,24 +2,32 @@ import {defineStore} from 'pinia';
 import {useStorage} from '@vueuse/core';
 import {v4 as uuidv4} from 'uuid';
 import {DateTime} from 'luxon';
-import type {ScheduleSettings, Training, Week} from '@/types';
+import type {Rating, ScheduleSettings, Training, Week} from '@/types';
 import {roundNearestQuarter, getEmptySettings} from '@/utils';
 import {computed, watch} from 'vue';
 
 export const useScheduleStore = defineStore('schedule', () => {
   // State refs
-  const settings = useStorage<ScheduleSettings>('getfit-settings', getEmptySettings(), localStorage, {
-    mergeDefaults: true,
-    serializer: {
-      read: (v: any) => v ? JSON.parse(v, (key, value) => {
-        if (key === 'startDate' && value) {
-          return DateTime.fromISO(value).toJSDate();
-        }
-        return value;
-      }) : null,
-      write: (v: any) => JSON.stringify(v),
+  const settings = useStorage<ScheduleSettings>(
+    'getfit-settings',
+    getEmptySettings(),
+    localStorage,
+    {
+      mergeDefaults: true,
+      serializer: {
+        read: (v: any) =>
+          v
+            ? JSON.parse(v, (key, value) => {
+                if (key === 'startDate' && value) {
+                  return DateTime.fromISO(value).toJSDate();
+                }
+                return value;
+              })
+            : null,
+        write: (v: any) => JSON.stringify(v),
+      },
     },
-  });
+  );
 
   const weeks = useStorage<Week[]>('getfit-schedule', [], localStorage, {mergeDefaults: true});
 
@@ -99,6 +107,25 @@ export const useScheduleStore = defineStore('schedule', () => {
     });
   };
 
+  const toggleCompletion = (training: Training) => {
+    const [, targetTraining] = getTargetWeekAndTraining.value(training.weekId, training.id);
+    if (targetTraining) {
+      targetTraining.completed = !targetTraining.completed;
+      targetTraining.rating = null;
+    }
+  };
+
+  const updateRating = (training: Training, rating: Rating) => {
+    const [, targetTraining] = getTargetWeekAndTraining.value(training.weekId, training.id);
+    if (targetTraining) {
+      if (rating === targetTraining.rating) {
+        targetTraining.rating = null;
+      } else {
+        targetTraining.rating = rating;
+      }
+    }
+  };
+
   // Watchers
   watch(
     () => settings.value.unitOfTime,
@@ -143,17 +170,19 @@ export const useScheduleStore = defineStore('schedule', () => {
   };
 
   return {
+    getTargetWeekAndTraining,
     settings,
     weeks,
-    getTargetWeekAndTraining,
-    addWeek,
-    deleteWeek,
-    copyWeek,
     addOrEditTraining,
+    addWeek,
+    copyTraining,
+    copyWeek,
     deleteTraining,
+    deleteWeek,
     moveTraining,
     reorderTrainings,
-    copyTraining,
+    toggleCompletion,
+    updateRating,
     $reset,
   };
 });

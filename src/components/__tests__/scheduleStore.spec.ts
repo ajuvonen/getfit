@@ -274,4 +274,44 @@ describe('useScheduleStore', () => {
     expect(week.trainings[1].id).not.toBe(training.id);
     expect(week.trainings[1].dayIndex).toBe(2);
   });
+
+  it('toggles the completed property', () => {
+    const weekId = uuidv4();
+
+    const training = getEmptyTraining({
+      weekId: weekId,
+    });
+
+    scheduleStore.weeks.push({
+      id: weekId,
+      trainings: [training],
+    });
+
+    expect(training.completed).toBe(false);
+    scheduleStore.toggleCompletion(training);
+    expect(training.completed).toBe(true);
+    scheduleStore.toggleCompletion(training);
+    expect(training.completed).toBe(false);
+  });
+
+  it('updates the rating property', () => {
+    const weekId = uuidv4();
+
+    const training = getEmptyTraining({
+      weekId: weekId,
+    });
+
+    scheduleStore.weeks.push({
+      id: weekId,
+      trainings: [training],
+    });
+
+    expect(training.rating).toBeNull();
+    scheduleStore.updateRating(training, 1);
+    expect(training.rating).toBe(1);
+    scheduleStore.updateRating(training, 1);
+    expect(training.rating).toBeNull();
+    scheduleStore.updateRating(training, 5);
+    expect(training.rating).toBe(5);
+  });
 });
