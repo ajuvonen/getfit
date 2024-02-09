@@ -17,7 +17,7 @@ defineProps<{
     </tbody>
   </v-table>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 @media screen {
   .print-view__table + .print-view__table {
     margin-top: 2rem;
