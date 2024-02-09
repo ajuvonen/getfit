@@ -31,17 +31,14 @@ const baseAttributes = computed(() => (rating: Rating) => ({
     ></v-btn>
     <v-btn
       v-bind="baseAttributes(3)"
-      color="transparent"
       @click="updateRating(training, 3)"
     ></v-btn>
     <v-btn
       v-bind="baseAttributes(4)"
-      color="transparent"
       @click="updateRating(training, 4)"
     ></v-btn>
     <v-btn
       v-bind="baseAttributes(5)"
-      color="transparent"
       @click="updateRating(training, 5)"
     ></v-btn>
   </div>
