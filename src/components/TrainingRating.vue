@@ -1,45 +1,30 @@
 <script setup lang="ts">
-import {computed} from 'vue';
 import {useScheduleStore} from '@/stores/schedule';
 import type {Rating, Training} from '@/types';
 
-const props = defineProps<{
+defineProps<{
   training: Training;
 }>();
 
 const {updateRating} = useScheduleStore();
-
-const baseAttributes = computed(() => (rating: Rating) => ({
-  elevation: 0,
-  size: 'small',
-  color: 'transparent',
-  icon:
-    rating && props.training.rating && props.training.rating >= rating
-      ? 'mdi-star'
-      : 'mdi-star-outline',
-}));
 </script>
 <template>
-  <div class="d-flex justify-space-evenly training-card__rating">
-    <v-btn
-      v-bind="baseAttributes(1)"
-      @click="updateRating(training, 1)"
-    ></v-btn>
-    <v-btn
-      v-bind="baseAttributes(2)"
-      @click="updateRating(training, 2)"
-    ></v-btn>
-    <v-btn
-      v-bind="baseAttributes(3)"
-      @click="updateRating(training, 3)"
-    ></v-btn>
-    <v-btn
-      v-bind="baseAttributes(4)"
-      @click="updateRating(training, 4)"
-    ></v-btn>
-    <v-btn
-      v-bind="baseAttributes(5)"
-      @click="updateRating(training, 5)"
-    ></v-btn>
-  </div>
+  <v-radio-group :model-value="training.rating" class="training-card__rating" inline hide-details>
+    <v-radio
+      v-for="rating in [1, 2, 3, 4, 5]"
+      :key="rating"
+      :value="rating"
+      :aria-label="$t('trainingCard.rating', [rating])"
+      elevation="0"
+      trueIcon="mdi-star"
+      :falseIcon="training.rating && training.rating >= rating ? 'mdi-star' : 'mdi-star-outline'"
+      @click="updateRating(training, rating as Rating)"
+    ></v-radio>
+  </v-radio-group>
 </template>
+<style lang="scss" scoped>
+:deep(.v-selection-control-group) {
+  display: flex;
+  justify-content: center;
+}
+</style>

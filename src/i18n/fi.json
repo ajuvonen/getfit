@@ -125,9 +125,10 @@
     "deleteTraining": "Poista",
     "duration": "Harjoituksen kesto",
     "editTraining": "Muokkaa",
-    "intensity": "Harjoituksen intensiteetti",
+    "intensity": "Harjoituksen vaativuus",
     "location": "Harjoituksen sijainti",
     "move": "Siirrä",
+    "rating": "Arvosana {0}/5",
     "uncompleteTraining": "Poista suoritusmerkintä"
   },
   "weekCalendar": {
