@@ -1,15 +1,15 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="home__overlay text-grey-lighten-5">
+  <div class="home__overlay text-body-1 text-grey-lighten-5">
     <h1 class="text-h3 text-center">{{ $t('home.title') }}</h1>
-    <p class="text-body-1">
+    <p>
       {{ $t('home.p1') }}
     </p>
-    <p class="text-body-1">
+    <p>
       {{ $t('home.p2') }}
     </p>
-    <p class="text-body-1">
+    <p>
       {{ $t('home.p3') }}
     </p>
     <p>
