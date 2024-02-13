@@ -128,6 +128,7 @@
     "intensity": "Training Intensity",
     "location": "Training Location",
     "move": "Move",
+    "rating": "Rating {0}/5",
     "uncompleteTraining": "Uncomplete"
   },
   "weekCalendar": {

@@ -1,25 +1,49 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`TrainingCard > mounts 1`] = `
-"<div class="d-flex justify-space-evenly training-card__rating"><button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light bg-transparent v-btn--density-default elevation-0 v-btn--size-small v-btn--variant-elevated"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
+"<div data-v-7032cc65="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-radio-group training-card__rating">
+  <!---->
+  <div class="v-input__control">
     <!---->
-    <!---->
-  </button><button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light bg-transparent v-btn--density-default elevation-0 v-btn--size-small v-btn--variant-elevated"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
-    <!---->
-    <!---->
-  </button><button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light bg-transparent v-btn--density-default elevation-0 v-btn--size-small v-btn--variant-elevated"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
-    <!---->
-    <!---->
-  </button><button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light bg-transparent v-btn--density-default elevation-0 v-btn--size-small v-btn--variant-elevated"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
-    <!---->
-    <!---->
-  </button><button type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light bg-transparent v-btn--density-default elevation-0 v-btn--size-small v-btn--variant-elevated"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
-    <!---->
-    <!---->
-  </button></div>"
+    <div class="v-selection-control-group v-selection-control-group--inline" role="radiogroup" aria-describedby="radio-group-0-messages">
+      <div data-v-7032cc65="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
+        <div class="v-selection-control__wrapper">
+          <!---->
+          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-3" aria-disabled="false" type="radio" name="radio-group-0" aria-label="Rating 1/5" elevation="0" value="1"></div>
+        </div>
+        <!---->
+      </div>
+      <div data-v-7032cc65="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
+        <div class="v-selection-control__wrapper">
+          <!---->
+          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-4" aria-disabled="false" type="radio" name="radio-group-0" aria-label="Rating 2/5" elevation="0" value="2"></div>
+        </div>
+        <!---->
+      </div>
+      <div data-v-7032cc65="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
+        <div class="v-selection-control__wrapper">
+          <!---->
+          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-5" aria-disabled="false" type="radio" name="radio-group-0" aria-label="Rating 3/5" elevation="0" value="3"></div>
+        </div>
+        <!---->
+      </div>
+      <div data-v-7032cc65="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
+        <div class="v-selection-control__wrapper">
+          <!---->
+          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-6" aria-disabled="false" type="radio" name="radio-group-0" aria-label="Rating 4/5" elevation="0" value="4"></div>
+        </div>
+        <!---->
+      </div>
+      <div data-v-7032cc65="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
+        <div class="v-selection-control__wrapper">
+          <!---->
+          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-7" aria-disabled="false" type="radio" name="radio-group-0" aria-label="Rating 5/5" elevation="0" value="5"></div>
+        </div>
+        <!---->
+      </div>
+    </div>
+  </div>
+  <!---->
+  <!---->
+</div>"
 `;

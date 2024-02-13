@@ -28,15 +28,15 @@ describe('TrainingCard', () => {
       },
     });
 
-    await wrapper.find('button:nth-child(1)').trigger('click');
+    await wrapper.find('.training-card__rating .v-selection-control:nth-child(1) input').trigger('click');
     expect(scheduleStore.updateRating).toHaveBeenLastCalledWith(training, 1);
-    await wrapper.find('button:nth-child(2)').trigger('click');
+    await wrapper.find('.training-card__rating .v-selection-control:nth-child(2) input').trigger('click');
     expect(scheduleStore.updateRating).toHaveBeenLastCalledWith(training, 2);
-    await wrapper.find('button:nth-child(3)').trigger('click');
+    await wrapper.find('.training-card__rating .v-selection-control:nth-child(3) input').trigger('click');
     expect(scheduleStore.updateRating).toHaveBeenLastCalledWith(training, 3);
-    await wrapper.find('button:nth-child(4)').trigger('click');
+    await wrapper.find('.training-card__rating .v-selection-control:nth-child(4) input').trigger('click');
     expect(scheduleStore.updateRating).toHaveBeenLastCalledWith(training, 4);
-    await wrapper.find('button:nth-child(5)').trigger('click');
+    await wrapper.find('.training-card__rating .v-selection-control:nth-child(5) input').trigger('click');
     expect(scheduleStore.updateRating).toHaveBeenLastCalledWith(training, 5);
   });
 });
