@@ -9,7 +9,13 @@ defineProps<{
 const {updateRating} = useScheduleStore();
 </script>
 <template>
-  <v-radio-group :model-value="training.rating" class="training-card__rating" inline hide-details>
+  <v-radio-group
+    :model-value="training.rating"
+    :aria-label="$t('trainingCard.ratingLabel')"
+    class="training-card__rating"
+    inline
+    hide-details
+  >
     <v-radio
       v-for="rating in [1, 2, 3, 4, 5]"
       :key="rating"
