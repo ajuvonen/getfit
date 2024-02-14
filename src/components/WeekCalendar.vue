@@ -99,7 +99,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
           >
         </v-tab>
       </v-tabs>
-      <v-window v-model="activeDay">
+      <v-window v-model="activeDay" :disabled="true">
         <v-window-item
           v-for="({trainings}, dayIndex) in tabContent"
           :key="dayIndex"
