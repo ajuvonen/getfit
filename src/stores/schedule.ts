@@ -1,10 +1,10 @@
+import {computed, watch} from 'vue';
 import {defineStore} from 'pinia';
 import {useStorage} from '@vueuse/core';
 import {v4 as uuidv4} from 'uuid';
 import {DateTime} from 'luxon';
 import type {Rating, ScheduleSettings, Training, Week} from '@/types';
 import {roundNearestQuarter, getEmptySettings} from '@/utils';
-import {computed, watch} from 'vue';
 
 export const useScheduleStore = defineStore('schedule', () => {
   // State refs
