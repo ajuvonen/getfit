@@ -112,7 +112,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
             tag="ul"
             item-key="id"
             handle=".v-card-item"
-            class="d-flex flex-wrap"
+            class="d-flex flex-wrap mt-4 mb-1"
             @update:model-value="
               (reorderedTrainings: Training[]) => reorderTrainings(week.id, reorderedTrainings)
             "
@@ -136,6 +136,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
 <style lang="scss" scoped>
 ul {
   list-style-type: none;
+  gap: 1rem;
 }
 
 .week-calendar__actions {

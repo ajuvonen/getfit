@@ -36,10 +36,17 @@ describe('Utils', () => {
   });
 
   it('getIntensityColor gets correct intensity colors', () => {
-    expect(getIntensityColor(Intensity.LIGHT)).toBe('#6DBF79');
-    expect(getIntensityColor(Intensity.NORMAL)).toBe('#FFC300');
-    expect(getIntensityColor(Intensity.DEMANDING)).toBe('#FF8C00');
-    expect(getIntensityColor(Intensity.HEAVY)).toBe('#FF6347');
+    expect(getIntensityColor(Intensity.LIGHT)).toBe('#9ED99D');
+    expect(getIntensityColor(Intensity.NORMAL)).toBe('#FFD98C');
+    expect(getIntensityColor(Intensity.DEMANDING)).toBe('#FFB366');
+    expect(getIntensityColor(Intensity.HEAVY)).toBe('#FF7F7A');
+  });
+
+  it('getIntensityColor alpha works', () => {
+    expect(getIntensityColor(Intensity.LIGHT, 0.5)).toBe('#9ED99D80');
+    expect(getIntensityColor(Intensity.NORMAL, 0.75)).toBe('#FFD98Cbf');
+    expect(getIntensityColor(Intensity.DEMANDING, 0.25)).toBe('#FFB36640');
+    expect(getIntensityColor(Intensity.HEAVY, 0.999)).toBe('#FF7F7Aff');
   });
 
   it('getValidationErrors gets a list of errors', () => {
@@ -62,6 +69,7 @@ describe('Utils', () => {
       defaultDuration: 20,
       unitOfTime: 'm',
       darkMode: 'light',
+      decoratedCards: false,
     };
     const settings: ScheduleSettings = getEmptySettings(initialSettings);
     expect(settings).toEqual(initialSettings);
@@ -83,6 +91,7 @@ describe('Utils', () => {
       defaultDuration: 1,
       unitOfTime: 'h',
       darkMode: 'auto',
+      decoratedCards: true,
     });
   });
   

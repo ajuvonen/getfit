@@ -12,16 +12,17 @@ export const roundNearestQuarter = function (number: number, precision: number) 
 export const getIcon = (activityName: string) =>
   ACTIVITIES.find(({value}) => value === activityName)!.icon;
 
-export const getIntensityColor = (intensity: Intensity) => {
+export const getIntensityColor = (intensity: Intensity, alpha: number = 1) => {
+  const hexAlpha = alpha < 1 ? Math.round(alpha * 255).toString(16) : '';
   switch (intensity) {
     case Intensity.NORMAL:
-      return COLORS.intensityNormal;
+      return COLORS.intensityNormal + hexAlpha;
     case Intensity.DEMANDING:
-      return COLORS.intensityDemanding;
+      return COLORS.intensityDemanding + hexAlpha;
     case Intensity.HEAVY:
-      return COLORS.intensityHeavy;
+      return COLORS.intensityHeavy + hexAlpha;
     default:
-      return COLORS.intensityLight;
+      return COLORS.intensityLight + hexAlpha;
   }
 };
 
@@ -39,6 +40,7 @@ export const getEmptySettings = (initialSettings: Partial<ScheduleSettings> = {}
   defaultDuration: 1,
   unitOfTime: 'h',
   darkMode: 'auto',
+  decoratedCards: true,
   ...initialSettings,
 });
 

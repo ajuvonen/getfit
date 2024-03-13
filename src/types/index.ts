@@ -29,6 +29,7 @@ export type ScheduleSettings = {
   defaultDuration: number;
   unitOfTime: 'm' | 'h';
   darkMode: 'auto' | 'light' | 'dark';
+  decoratedCards: boolean;
 };
 
 export enum Intensity {
