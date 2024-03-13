@@ -20,7 +20,6 @@ Cypress.Commands.add('addTraining', (addWeek = true) => {
   if (addWeek) {
     cy.toRoute('schedule');
     cy.getByTestId('schedule-add-week-button').click();
-    cy.getByTestId('week-0').click();
   }
   cy.getByTestId('week-0-add-training-button').click();
   cy.getByTestId('edit-training-activity').click();
