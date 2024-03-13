@@ -201,26 +201,26 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
           </v-label>
         </div>
       </div>
-      <v-label for="settings-dark-mode">{{ $t('settings.theme') }}</v-label>
-      <v-radio-group id="settings-dark-mode" v-model="settings.darkMode" inline hide-details>
+      <v-label for="settings-visual-mode">{{ $t('settings.theme') }}</v-label>
+      <v-radio-group id="settings-visual-mode" v-model="settings.darkMode" inline hide-details>
         <v-radio
           :label="$t('settings.darkModeAuto')"
           value="auto"
-          data-test-id="settings-dark-mode-auto"
+          data-test-id="settings-visual-mode-auto"
         ></v-radio>
         <v-radio
           :label="$t('settings.darkModeLight')"
           value="light"
-          data-test-id="settings-dark-mode-light"
+          data-test-id="settings-visual-mode-light"
         ></v-radio>
         <v-radio
           :label="$t('settings.darkModeDark')"
           value="dark"
-          data-test-id="settings-dark-mode-dark"
+          data-test-id="settings-visual-mode-dark"
         ></v-radio>
       </v-radio-group>
       <v-label for="settings-card-background">{{ $t('settings.cardBackground') }}</v-label>
-      <v-radio-group id="settings-decorated-cards" v-model="settings.decoratedCards" inline hide-details>
+      <v-radio-group id="settings-card-background" v-model="settings.decoratedCards" inline hide-details>
         <v-radio
           :label="$t('settings.decoratedCards')"
           :value="true"
