@@ -14,57 +14,69 @@ defineProps<{
 const {settings} = storeToRefs(useScheduleStore());
 </script>
 <template>
-  <v-card
-    class="training-card mx-2 mt-4 mb-2"
-    :color="getIntensityColor(training.intensity)"
-    :style="{color: COLORS.darkGrey}"
+  <div
+    class="training-card__container"
+    :style="settings.decoratedCards ? `background: url('/getfit/${training.activity}.jpg')` : ''"
   >
-    <v-card-item class="training-card__title-wrapper">
-      <div
-        class="training-card__icons d-flex align-center"
-        :class="{'training-card__icons--completed': training.completed}"
-      >
-        <v-icon
-          :icon="getIcon(training.activity)"
-          :title="
-            training.completed
-              ? $t(`trainingCard.completed`, [$t(`activities.${training.activity}`)])
-              : $t(`activities.${training.activity}`)
-          "
-          :aria-label="$t(`activities.${training.activity}`)"
-          class="training-card__activity-icon"
-          size="x-large"
-        />
-      </div>
-      <v-card-title class="ml-11">
-        <div class="training-card__title text-truncate">
-          {{ training.title || $t(`activities.${training.activity}`) }}
-        </div>
-        <div class="training-card__duration text-subtitle-2">
-          <v-icon icon="mdi-timer" :aria-label="$t('trainingCard.duration')" />
-          {{ training.duration || '-' }} {{ settings.unitOfTime }}
-        </div>
-        <div class="training-card__intensity text-subtitle-2">
-          <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />
-          {{ $t(`intensities.${training.intensity}`) }}
-        </div>
-        <div class="training-card__location text-subtitle-2">
-          <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />
-          {{ training.location || '-' }}
-        </div>
-      </v-card-title>
-    </v-card-item>
-    <v-card-text
-      class="training-card__text px-4"
-      :class="training.description || training.completed ? 'pt-2' : ''"
+    <v-card
+      class="training-card"
+      :color="getIntensityColor(training.intensity, settings.decoratedCards ? 0.80 : 1)"
+      :style="{
+        color: COLORS.darkGrey,
+      }"
     >
-      <span v-if="!training.completed">{{ training.description }}</span>
-      <training-rating v-if="training.completed" :training="training" />
-    </v-card-text>
-    <training-card-actions :training="training" />
-  </v-card>
+      <v-card-item class="training-card__title-wrapper">
+        <div
+          class="training-card__icons d-flex align-center"
+          :class="{'training-card__icons--completed': training.completed}"
+        >
+          <v-icon
+            :icon="getIcon(training.activity)"
+            :title="
+              training.completed
+                ? $t(`trainingCard.completed`, [$t(`activities.${training.activity}`)])
+                : $t(`activities.${training.activity}`)
+            "
+            :aria-label="$t(`activities.${training.activity}`)"
+            class="training-card__activity-icon"
+            size="x-large"
+          />
+        </div>
+        <v-card-title class="ml-11">
+          <div class="training-card__title text-truncate">
+            {{ training.title || $t(`activities.${training.activity}`) }}
+          </div>
+          <div class="training-card__duration text-subtitle-2">
+            <v-icon icon="mdi-timer" :aria-label="$t('trainingCard.duration')" />
+            {{ training.duration || '-' }} {{ settings.unitOfTime }}
+          </div>
+          <div class="training-card__intensity text-subtitle-2">
+            <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />
+            {{ $t(`intensities.${training.intensity}`) }}
+          </div>
+          <div class="training-card__location text-subtitle-2">
+            <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />
+            {{ training.location || '-' }}
+          </div>
+        </v-card-title>
+      </v-card-item>
+      <v-card-text
+        class="training-card__text px-4"
+        :class="training.description || training.completed ? 'pt-2' : ''"
+      >
+        <span v-if="!training.completed">{{ training.description }}</span>
+        <training-rating v-if="training.completed" :training="training" />
+      </v-card-text>
+      <training-card-actions :training="training" />
+    </v-card>
+  </div>
 </template>
 <style lang="scss" scoped>
+.training-card__container {
+  background-size: cover !important;
+  border-radius: 4px;
+}
+
 .training-card {
   min-width: 300px;
   max-width: 500px;

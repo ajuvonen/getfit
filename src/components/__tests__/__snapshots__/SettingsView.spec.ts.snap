@@ -507,6 +507,34 @@ exports[`SettingsView > mounts 1`] = `
       </div>
       <!---->
       <!---->
+    </div><label data-v-5e0b544f="" class="v-label" for="settings-card-background">
+      <!---->Training Card Background
+    </label>
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-radio-group">
+      <!---->
+      <div class="v-input__control">
+        <!---->
+        <div class="v-selection-control-group v-selection-control-group--inline" role="radiogroup" aria-describedby="settings-decorated-cards-messages">
+          <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-decorated-cards">
+            <div class="v-selection-control__wrapper">
+              <!---->
+              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-45" aria-disabled="false" type="radio" name="settings-decorated-cards" value="true"></div>
+            </div><label class="v-label v-label--clickable" for="input-45">
+              <!---->Decorated
+            </label>
+          </div>
+          <div data-v-5e0b544f="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-plain-cards">
+            <div class="v-selection-control__wrapper">
+              <!---->
+              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-46" aria-disabled="false" type="radio" name="settings-decorated-cards" value="false"></div>
+            </div><label class="v-label v-label--clickable" for="input-46">
+              <!---->Plain
+            </label>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <!---->
     </div>
   </div>
   <!--v-if-->

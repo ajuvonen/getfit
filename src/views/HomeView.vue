@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import {ref} from 'vue';
+import {PHOTO_CREDITS} from '@/constants';
+import InfoDialog from '@/components/InfoDialog.vue';
+
+const creditDialogOpen = ref(false);
+</script>
 
 <template>
   <div class="home__overlay text-body-1 text-grey-lighten-5">
@@ -16,15 +22,22 @@
       <v-icon icon="mdi-github" />
       <a class="text-grey-lighten-5 ml-2" href="https://www.github.com/ajuvonen/getfit">GitHub</a>
     </p>
-    <i18n-t keypath="home.credit" tag="p" class="text-caption home__photo-credit">
-      <template #image>
-        <a
-          class="text-grey-lighten-5"
-          href="https://www.pexels.com/photo/blank-paper-on-a-clipboard-8155155/"
-          >Alesia Kozik</a
-        >
+    <v-btn variant="text" size="x-small" class="home__photo-credit" @click="creditDialogOpen = true">
+      {{ $t('home.credits') }}
+    </v-btn>
+    <InfoDialog
+      :open="creditDialogOpen"
+      :title="$t('home.credits')"
+      @close="creditDialogOpen = false"
+    >
+      <template #content>
+        <ul>
+          <li v-for="{name, link} in PHOTO_CREDITS" :key="name">
+            <a :href="link" noreferrer noopener>{{ name }}</a>
+          </li>
+        </ul>
       </template>
-    </i18n-t>
+    </InfoDialog>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -47,5 +60,13 @@
 
 p {
   margin-top: 1rem;
+}
+
+ul {
+  list-style-type: none;
+
+  a {
+    color: inherit;
+  }
 }
 </style>

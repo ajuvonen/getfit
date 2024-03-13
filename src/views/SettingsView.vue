@@ -219,6 +219,19 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
           data-test-id="settings-dark-mode-dark"
         ></v-radio>
       </v-radio-group>
+      <v-label for="settings-card-background">{{ $t('settings.cardBackground') }}</v-label>
+      <v-radio-group id="settings-decorated-cards" v-model="settings.decoratedCards" inline hide-details>
+        <v-radio
+          :label="$t('settings.decoratedCards')"
+          :value="true"
+          data-test-id="settings-decorated-cards"
+        ></v-radio>
+        <v-radio
+          :label="$t('settings.plainCards')"
+          :value="false"
+          data-test-id="settings-plain-cards"
+        ></v-radio>
+      </v-radio-group>
     </template>
   </BaseView>
 </template>
