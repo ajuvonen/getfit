@@ -38,7 +38,7 @@ const {weekdays} = useWeekDays();
   </div>
 </template>
 <style lang="scss" scoped>
-li {
+ul {
   list-style-type: none;
 }
 
