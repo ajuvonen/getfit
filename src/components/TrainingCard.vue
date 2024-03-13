@@ -16,6 +16,7 @@ const {settings} = storeToRefs(useScheduleStore());
 <template>
   <div
     class="training-card__container"
+    :class="{'training-card__container--plain': !settings.decoratedCards}"
     :style="settings.decoratedCards ? `background: url('/getfit/${training.activity}.jpg')` : ''"
   >
     <v-card

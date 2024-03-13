@@ -78,4 +78,19 @@ describe('Settings tests', () => {
       cy.getByTestId('settings-start-date-input').find('input').should('have.value', date);
     });
   });
+
+  it('visual settings work', () => {
+    cy.toRoute('settings');
+    cy.getByTestId('settings-visual-mode-light').click();
+    cy.get('.v-application').should('have.class', 'v-theme--customLight');
+    cy.getByTestId('settings-visual-mode-dark').click();
+    cy.get('.v-application').should('have.class', 'v-theme--dark');
+    cy.getByTestId('settings-plain-cards').click();
+    cy.addTraining();
+    cy.get('.training-card__container').should('have.class', 'training-card__container--plain');
+    cy.toRoute('settings');
+    cy.getByTestId('settings-decorated-cards').click();
+    cy.toRoute('schedule');
+    cy.get('.training-card__container').should('not.have.class', 'training-card__container--plain');
+  });
 });
