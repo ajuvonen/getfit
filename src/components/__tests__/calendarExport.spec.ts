@@ -250,17 +250,10 @@ describe('useCalendarExport', () => {
       },
     ];
 
-    const mockSettings: ScheduleSettings = {
+    const mockSettings: ScheduleSettings = getEmptySettings({
       name: '',
       startDate: new Date('2024-01-01'),
-      actualWeekNumbering: false,
-      availableActivities: ['running'],
-      defaultStartTime: {hours: 23, minutes: 30, seconds: 0},
-      defaultDuration: 1,
-      unitOfTime: 'h',
-      startsOnSunday: false,
-      darkMode: 'auto',
-    };
+    });
 
     const events = await createTestComponent(mockSettings, mockWeeks);
 
