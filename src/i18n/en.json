@@ -36,6 +36,7 @@
   },
   "general": {
     "cancel": "Cancel",
+    "close": "Close",
     "confirm": "Confirm",
     "confirmReset": "You are about to reset the schedule, removing all training data. This cannot be undone. Are you sure you want to continue?",
     "confirmTitle": "Please confirm",
@@ -63,7 +64,7 @@
     "p1": "GetFit is a free, easy-to-use exercise program planner that allows you to plan a schedule spanning multiple weeks.",
     "p2": "To get started, navigate to settings and fill some basic info about your program. Then, go to your schedule and start planning activities.",
     "p3": "All data persists in your browser's local storage only, and is not sent anywhere.",
-    "credit": "Photo credit: {image}"
+    "credits": "Photo credits"
   },
   "intensities": {
     "0": "Light",
@@ -97,15 +98,18 @@
     "actualWeekNumbers": "Calendar Week Numbers",
     "assignedWeekNumbers": "Assigned Numbers (1, 2, 3...)",
     "availableActivities": "Available Activities",
+    "cardBackground": "Training Card Background",
     "darkModeAuto": "Auto",
     "darkModeLight": "Light",
     "darkModeDark": "Dark",
+    "decoratedCards": "Decorated",
     "defaultDuration": "Default Duration",
     "defaultStart": "Default Activity Start And Duration",
     "defaultStartTime": "Default Start TIme",
     "guide": "The settings allow you to, for example, limit the available activity types and set the starting date of the schedule. The settings are saved automatically.",
     "hours": "Hours",
     "minutes": "Minutes",
+    "plainCards": "Plain",
     "programName": "Program Name",
     "startDate": "Program Start Date",
     "startDateHint": "Required for ICS export",
