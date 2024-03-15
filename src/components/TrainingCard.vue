@@ -21,7 +21,7 @@ const {settings} = storeToRefs(useScheduleStore());
   >
     <v-card
       class="training-card"
-      :color="getIntensityColor(training.intensity, settings.decoratedCards ? 0.80 : 1)"
+      :color="getIntensityColor(training.intensity, settings.decoratedCards ? 0.8 : 1)"
       :style="{
         color: COLORS.darkGrey,
       }"
@@ -81,6 +81,7 @@ const {settings} = storeToRefs(useScheduleStore());
 .training-card {
   min-width: 300px;
   max-width: 500px;
+  backdrop-filter: grayscale(1);
 }
 
 .v-card-item {
