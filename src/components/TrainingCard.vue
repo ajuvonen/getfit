@@ -7,8 +7,8 @@ import {useScheduleStore} from '@/stores/schedule';
 import {COLORS} from '@/constants';
 import useScreen from '@/hooks/screen';
 import TrainingCardActions from '@/components/TrainingCardActions.vue';
-import TrainingRating from '@/components/TrainingRating.vue';
-import TrainingInstructions from '@/components/TrainingInstructions.vue';
+import TrainingCardRating from '@/components/TrainingCardRating.vue';
+import TrainingCardInstructions from '@/components/TrainingCardInstructions.vue';
 import {useAppStateStore} from '@/stores/appState';
 
 const props = defineProps<{
@@ -73,10 +73,10 @@ const {isSmallScreen} = useScreen();
           <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />
           <span class="text-truncate"> {{ training.location || '-' }}</span>
         </div>
-        <TrainingRating :training="training" :disabled="isDescriptionOpen" />
+        <TrainingCardRating :training="training" :disabled="isDescriptionOpen" />
       </v-card-text>
       <TrainingCardActions :training="training" :disabled="isDescriptionOpen" />
-      <TrainingInstructions :training="training" :show="isDescriptionOpen" />
+      <TrainingCardInstructions :training="training" :show="isDescriptionOpen" />
     </v-card>
   </div>
 </template>
