@@ -16,15 +16,25 @@ export const useAppStateStore = defineStore('appState', () => {
 
   const confirmAction = ref(() => {});
 
-  const trainingData = ref({} as Training);
+  const trainingData = ref(getEmptyTraining());
 
   const openWeek = ref<number | null>(0);
+
+  const openDescriptions = ref<string[]>([]);
 
   // Actions
   const openConfirmDialog = (text: string, action: () => void) => {
     confirmText.value = text;
     confirmAction.value = action;
     confirmDialogOpen.value = true;
+  };
+
+  const toggleShowDescription = (trainingId: string) => {
+    if (openDescriptions.value.includes(trainingId)) {
+      openDescriptions.value = openDescriptions.value.filter((id) => id !== trainingId);
+    } else {
+      openDescriptions.value.push(trainingId);
+    }
   };
 
   const openNewTrainingDialog = (
@@ -70,9 +80,11 @@ export const useAppStateStore = defineStore('appState', () => {
     openWeek,
     trainingDialogOpen,
     trainingData,
+    openDescriptions,
     openConfirmDialog,
     openNewTrainingDialog,
     openEditTrainingDialog,
+    toggleShowDescription,
     $reset,
   };
 });
