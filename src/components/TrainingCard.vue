@@ -1,17 +1,28 @@
 <script setup lang="ts">
+import {computed} from 'vue';
 import {storeToRefs} from 'pinia';
 import type {Training} from '@/types';
 import {getIcon, getIntensityColor} from '@/utils';
 import {useScheduleStore} from '@/stores/schedule';
 import {COLORS} from '@/constants';
+import useScreen from '@/hooks/screen';
 import TrainingCardActions from '@/components/TrainingCardActions.vue';
 import TrainingRating from '@/components/TrainingRating.vue';
+import TrainingInstructions from '@/components/TrainingInstructions.vue';
+import {useAppStateStore} from '@/stores/appState';
 
-defineProps<{
+const props = defineProps<{
   training: Training;
 }>();
 
 const {settings} = storeToRefs(useScheduleStore());
+
+const appStateStore = useAppStateStore();
+const {openDescriptions} = storeToRefs(appStateStore);
+
+const isDescriptionOpen = computed(() => openDescriptions.value.includes(props.training.id));
+
+const {isSmallScreen} = useScreen();
 </script>
 <template>
   <div
@@ -21,14 +32,21 @@ const {settings} = storeToRefs(useScheduleStore());
   >
     <v-card
       class="training-card"
+      :width="isSmallScreen ? '280px' : '350px'"
       :color="getIntensityColor(training.intensity, settings.decoratedCards ? 0.8 : 1)"
       :style="{
         color: COLORS.darkGrey,
       }"
     >
-      <v-card-item class="training-card__title-wrapper">
+      <v-card-title class="ml-10 training-card__title">
+        <v-icon icon="mdi-drag-vertical-variant" size="normal" />
+        <span class="text-truncate">{{
+          training.title || $t(`activities.${training.activity}`)
+        }}</span>
+      </v-card-title>
+      <v-card-text class="ml-10">
         <div
-          class="training-card__icons d-flex align-center"
+          class="training-card__icons d-flex align-center px-2"
           :class="{'training-card__icons--completed': training.completed}"
         >
           <v-icon
@@ -43,32 +61,22 @@ const {settings} = storeToRefs(useScheduleStore());
             size="x-large"
           />
         </div>
-        <v-card-title class="ml-11">
-          <div class="training-card__title text-truncate">
-            {{ training.title || $t(`activities.${training.activity}`) }}
-          </div>
-          <div class="training-card__duration text-subtitle-2">
-            <v-icon icon="mdi-timer" :aria-label="$t('trainingCard.duration')" />
-            {{ training.duration || '-' }} {{ settings.unitOfTime }}
-          </div>
-          <div class="training-card__intensity text-subtitle-2">
-            <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />
-            {{ $t(`intensities.${training.intensity}`) }}
-          </div>
-          <div class="training-card__location text-subtitle-2">
-            <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />
-            {{ training.location || '-' }}
-          </div>
-        </v-card-title>
-      </v-card-item>
-      <v-card-text
-        class="training-card__text px-4"
-        :class="training.description || training.completed ? 'pt-2' : ''"
-      >
-        <span v-if="!training.completed">{{ training.description }}</span>
-        <training-rating v-if="training.completed" :training="training" />
+        <div class="training-card__duration text-subtitle-2">
+          <v-icon icon="mdi-timer" :aria-label="$t('trainingCard.duration')" />
+          <span>{{ training.duration || '-' }} {{ settings.unitOfTime }}</span>
+        </div>
+        <div class="training-card__intensity text-subtitle-2">
+          <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />
+          <span>{{ $t(`intensities.${training.intensity}`) }}</span>
+        </div>
+        <div class="training-card__location text-subtitle-2">
+          <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />
+          <span class="text-truncate"> {{ training.location || '-' }}</span>
+        </div>
+        <TrainingRating :training="training" :disabled="isDescriptionOpen" />
       </v-card-text>
-      <training-card-actions :training="training" />
+      <TrainingCardActions :training="training" :disabled="isDescriptionOpen" />
+      <TrainingInstructions :training="training" :show="isDescriptionOpen" />
     </v-card>
   </div>
 </template>
@@ -79,27 +87,11 @@ const {settings} = storeToRefs(useScheduleStore());
 }
 
 .training-card {
-  min-width: 300px;
-  max-width: 500px;
   backdrop-filter: grayscale(1);
 }
 
-.v-card-item {
+.training-card__title {
   cursor: move;
-}
-
-.training-card__title-wrapper {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 7rem;
-}
-
-.training-card__text {
-  margin-top: 7rem;
-  padding: 0;
-  white-space: pre-wrap;
 }
 
 .training-card__icons {
@@ -107,7 +99,6 @@ const {settings} = storeToRefs(useScheduleStore());
   left: 0;
   top: 0;
   height: 100%;
-  padding: 0 0.7rem;
 }
 
 .training-card__icons--completed {
@@ -121,10 +112,12 @@ const {settings} = storeToRefs(useScheduleStore());
   border-bottom-right-radius: 4px;
 }
 
+.training-card__title,
 .training-card__duration,
 .training-card__location,
 .training-card__intensity {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 </style>

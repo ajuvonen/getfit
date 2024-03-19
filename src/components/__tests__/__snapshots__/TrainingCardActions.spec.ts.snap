@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TrainingCardActions > mounts 1`] = `
+"<div class="v-card-actions justify-end">
+  <!--v-if--><button type="button" class="v-btn v-btn--slim v-theme--light bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__action-button" aria-label="Actions for training " targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-menu mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Actions</span>
+    <!---->
+    <!---->
+  </button>
+  <!---->
+</div>"
+`;

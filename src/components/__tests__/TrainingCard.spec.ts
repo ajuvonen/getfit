@@ -1,8 +1,6 @@
 import {mount} from '@vue/test-utils';
 import {describe, it, expect, beforeEach} from 'vitest';
-import {VList} from 'vuetify/components';
 import {useScheduleStore} from '@/stores/schedule';
-import {useAppStateStore} from '@/stores/appState';
 import {Intensity, type Training} from '@/types';
 import TrainingCard from '@/components/TrainingCard.vue';
 import {getEmptyTraining} from '@/utils';
@@ -15,11 +13,9 @@ const basicTraining: Training = getEmptyTraining({
 
 describe('TrainingCard', () => {
   let scheduleStore: ReturnType<typeof useScheduleStore>;
-  let appStateStore: ReturnType<typeof useAppStateStore>;
 
   beforeEach(() => {
     scheduleStore = useScheduleStore();
-    appStateStore = useAppStateStore();
   });
 
   it('mounts', () => {
@@ -63,21 +59,5 @@ describe('TrainingCard', () => {
     expect(wrapper.find('.training-card__title').text()).toBe('Free fight');
     expect(wrapper.find('.training-card__duration').text()).toBe('- m');
     expect(wrapper.find('.training-card__location').text()).toBe('-');
-  });
-
-  it('actions work', async () => {
-    const wrapper = mount(TrainingCard, {
-      props: {
-        training: basicTraining,
-      },
-    });
-    await wrapper.find('.training-card__action-button').trigger('click');
-    const actions = wrapper.findComponent(VList);
-    await actions.find('.training-card__delete-button').trigger('click');
-    await actions.find('.training-card__edit-button').trigger('click');
-    await actions.find('.training-card__complete-button').trigger('click');
-    expect(scheduleStore.deleteTraining).toHaveBeenCalledOnce();
-    expect(appStateStore.openEditTrainingDialog).toHaveBeenCalledOnce();
-    expect(scheduleStore.toggleCompletion).toHaveBeenCalledOnce();
   });
 });

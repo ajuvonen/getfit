@@ -21,7 +21,7 @@ const {weekdays} = useWeekDays();
       <li
         v-for="training in trainings"
         :key="training.id"
-        class="mt-1 week-supplement__instruction text-body-1"
+        class="mt-1 week-supplement__instructions text-body-1"
       >
         <span>
           <v-icon
