@@ -9,7 +9,7 @@ describe('WeekSupplement', () => {
       props: {
         trainings: [
           getEmptyTraining({activity: 'running'}),
-          getEmptyTraining({activity: 'swimming', description: 'swim slow'}),
+          getEmptyTraining({activity: 'swimming', instructions: 'swim slow'}),
         ],
         dayIndex: 0,
       },

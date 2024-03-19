@@ -31,7 +31,7 @@ const {weekdays} = useWeekDays();
           />
           {{ training.title || t(`activities.${training.activity}`) }}:&nbsp;</span
         >
-        <span v-if="training.description">{{ training.description }}</span>
+        <span v-if="training.instructions">{{ training.instructions }}</span>
         <i v-else>{{ t('weekSupplement.noInstruction') }}</i>
       </li>
     </ul>

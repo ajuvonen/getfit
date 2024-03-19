@@ -46,7 +46,7 @@ describe('appStateStore', () => {
       dayIndex: 0,
       activity: 'running',
       title: 'test',
-      description: 'test',
+      instructions: 'test',
       duration: 1,
       intensity: 1,
       location: 'test',
@@ -58,11 +58,11 @@ describe('appStateStore', () => {
     expect(store.trainingData).toEqual(training);
   });
 
-  it('toggles show description', () => {
+  it('toggles show instructions', () => {
     const trainingId = uuid();
-    store.toggleShowDescription(trainingId);
-    expect(store.openDescriptions).toEqual([trainingId]);
-    store.toggleShowDescription(trainingId);
-    expect(store.openDescriptions).toEqual([]);
+    store.toggleShowInstructions(trainingId);
+    expect(store.visibleInstructions).toEqual([trainingId]);
+    store.toggleShowInstructions(trainingId);
+    expect(store.visibleInstructions).toEqual([]);
   });
 });

@@ -39,7 +39,7 @@ const handleSave = async () => {
 const rules = computed(() => ({
   title: {maxLength: maxLength(30)},
   location: {maxLength: maxLength(40)},
-  description: {maxLength: maxLength(2000)},
+  instructions: {maxLength: maxLength(2000)},
   duration: {
     required,
     between: between(0, settings.value.unitOfTime === 'm' ? 360 : 6),
@@ -112,14 +112,14 @@ const resetAndClose = () => {
           data-test-id="edit-training-duration"
         />
         <v-textarea
-          v-model="v$.description.$model"
-          :label="t('editTraining.description')"
-          :error-messages="getValidationErrors(v$.description.$errors)"
+          v-model="v$.instructions.$model"
+          :label="t('editTraining.instructions')"
+          :error-messages="getValidationErrors(v$.instructions.$errors)"
           clearable
           maxlength="2000"
           no-resize
           counter
-          data-test-id="edit-training-description"
+          data-test-id="edit-training-instructions"
         />
         <v-label for="edit-training-intensity">{{ $t('editTraining.intensity') }}</v-label>
         <v-slider

@@ -43,7 +43,7 @@ describe('useCalendarExport', () => {
             weekId: weekId1,
             activity: 'running',
             title: 'Test Training',
-            description: 'Test Description',
+            instructions: 'Test Instructions',
             location: 'Test Location',
           }),
           getEmptyTraining({
@@ -51,7 +51,7 @@ describe('useCalendarExport', () => {
             activity: 'swimming',
             dayIndex: 1,
             title: 'Test Training 2',
-            description: 'Test Description 2',
+            instructions: 'Test Instructions 2',
             duration: 0.5,
             intensity: Intensity.DEMANDING,
             location: 'Test Location 2',
@@ -61,7 +61,7 @@ describe('useCalendarExport', () => {
             activity: 'sprint',
             dayIndex: 1,
             title: 'Test Training 3',
-            description: 'Test Description 3',
+            instructions: 'Test Instructions 3',
             intensity: Intensity.HEAVY,
             location: 'Test Location 3',
           }),
@@ -75,7 +75,7 @@ describe('useCalendarExport', () => {
             activity: 'running',
             dayIndex: 6,
             title: 'Test Training 4',
-            description: 'Test Description 4',
+            instructions: 'Test Instructions 4',
             location: 'Test Location 4',
           }),
           getEmptyTraining({
@@ -83,7 +83,7 @@ describe('useCalendarExport', () => {
             activity: 'swimming',
             dayIndex: 6,
             title: 'Test Training 5',
-            description: 'Test Description 5',
+            instructions: 'Test Instructions 5',
             intensity: Intensity.LIGHT,
             location: 'Test Location 5',
           }),
@@ -102,7 +102,7 @@ describe('useCalendarExport', () => {
 
     // Assertions for the first activity
     expect(events[0].title).toBe('Test Training');
-    expect(events[0].description).toBe('Test Description');
+    expect(events[0].description).toBe('Test Instructions');
     expect(events[0].duration.minutes).toBe(60);
     expect(events[0].location).toBe('Test Location');
     expect(events[0].categories).toEqual(['Running', 'Normal']);
@@ -116,7 +116,7 @@ describe('useCalendarExport', () => {
 
     // Assertions for the second activity
     expect(events[1].title).toBe('Test Training 2');
-    expect(events[1].description).toBe('Test Description 2');
+    expect(events[1].description).toBe('Test Instructions 2');
     expect(events[1].duration.minutes).toBe(30);
     expect(events[1].location).toBe('Test Location 2');
     expect(events[1].categories).toEqual(['Swimming', 'Demanding']);
@@ -130,7 +130,7 @@ describe('useCalendarExport', () => {
 
     // Assertions for the third activity
     expect(events[2].title).toBe('Test Training 3');
-    expect(events[2].description).toBe('Test Description 3');
+    expect(events[2].description).toBe('Test Instructions 3');
     expect(events[2].duration.minutes).toBe(60);
     expect(events[2].location).toBe('Test Location 3');
     expect(events[2].categories).toEqual(['Sprint', 'Heavy']);
@@ -144,7 +144,7 @@ describe('useCalendarExport', () => {
 
     // Assertions for the fourth activity
     expect(events[3].title).toBe('Test Training 4');
-    expect(events[3].description).toBe('Test Description 4');
+    expect(events[3].description).toBe('Test Instructions 4');
     expect(events[3].duration.minutes).toBe(60);
     expect(events[3].location).toBe('Test Location 4');
     expect(events[3].categories).toEqual(['Running', 'Normal']);
@@ -158,7 +158,7 @@ describe('useCalendarExport', () => {
 
     // Assertions for the fifth activity
     expect(events[4].title).toBe('Test Training 5');
-    expect(events[4].description).toBe('Test Description 5');
+    expect(events[4].description).toBe('Test Instructions 5');
     expect(events[4].duration.minutes).toBe(60);
     expect(events[4].location).toBe('Test Location 5');
     expect(events[4].categories).toEqual(['Swimming', 'Light']);
@@ -181,7 +181,7 @@ describe('useCalendarExport', () => {
             weekId: weekId1,
             activity: 'running',
             title: 'Test Training',
-            description: 'Test Description',
+            instructions: 'Test Instructions',
             location: 'Test Location',
           }),
           getEmptyTraining({
@@ -189,7 +189,7 @@ describe('useCalendarExport', () => {
             activity: 'swimming',
             intensity: Intensity.DEMANDING,
             title: 'Test Training 2',
-            description: 'Test Description 2',
+            instructions: 'Test Instructions 2',
             duration: 0.5,
             location: 'Test Location 2',
           }),
@@ -209,7 +209,7 @@ describe('useCalendarExport', () => {
 
     // Assertions for the first activity
     expect(events[0].title).toBe('Test Training');
-    expect(events[0].description).toBe('Test Description');
+    expect(events[0].description).toBe('Test Instructions');
     expect(events[0].duration.minutes).toBe(60);
     expect(events[0].location).toBe('Test Location');
     expect(events[0].categories).toEqual(['Running', 'Normal']);
@@ -223,7 +223,7 @@ describe('useCalendarExport', () => {
 
     // Assertions for the second activity
     expect(events[1].title).toBe('Test Training 2');
-    expect(events[1].description).toBe('Test Description 2');
+    expect(events[1].description).toBe('Test Instructions 2');
     expect(events[1].duration.minutes).toBe(30);
     expect(events[1].location).toBe('Test Location 2');
     expect(events[1].categories).toEqual(['Swimming', 'Demanding']);

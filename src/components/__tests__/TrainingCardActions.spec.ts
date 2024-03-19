@@ -29,7 +29,7 @@ describe('TrainingCardActions', () => {
   it('actions work', async () => {
     const wrapper = mount(TrainingCardActions, {
       props: {
-        training: getEmptyTraining({description: 'Test Description'}),
+        training: getEmptyTraining({instructions: 'Test Instructions'}),
         disabled: false,
       },
     });
@@ -47,19 +47,19 @@ describe('TrainingCardActions', () => {
     const trainingId = uuid();
     const wrapper = mount(TrainingCardActions, {
       props: {
-        training: getEmptyTraining({id: trainingId, description: 'Test Description'}),
+        training: getEmptyTraining({id: trainingId, instructions: 'Test Instructions'}),
         disabled: false,
       },
     });
     expect(wrapper.find('.training-card__instructions').exists()).toBe(false);
     await wrapper.find('.training-card__more-button').trigger('click');
-    expect(appStateStore.toggleShowDescription).toHaveBeenCalledWith(trainingId);
+    expect(appStateStore.toggleShowInstructions).toHaveBeenCalledWith(trainingId);
   });
 
   it('disabled prop works', async () => {
     const wrapper = mount(TrainingCardActions, {
       props: {
-        training: getEmptyTraining({description: 'Test Description'}),
+        training: getEmptyTraining({instructions: 'Test Instructions'}),
         disabled: true,
       },
     });

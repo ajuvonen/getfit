@@ -7,7 +7,7 @@ import {getEmptyTraining} from '@/utils';
 
 const basicTraining: Training = getEmptyTraining({
   activity: 'boxing',
-  description: 'Sparring at the gym',
+  instructions: 'Sparring at the gym',
   location: 'Total wreck gym',
 });
 

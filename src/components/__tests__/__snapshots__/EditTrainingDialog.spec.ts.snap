@@ -209,7 +209,7 @@ exports[`EditTrainingDialog > mounts 1`] = `
           <!---->
         </div>
       </div>
-      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-textarea v-text-field v-textarea--no-resize" data-test-id="edit-training-description">
+      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-textarea v-text-field v-textarea--no-resize" data-test-id="edit-training-instructions">
         <!---->
         <div class="v-input__control">
           <div class="v-field v-field--appended v-field--variant-filled v-theme--light v-locale--is-ltr">

@@ -31,7 +31,7 @@ Cypress.Commands.add('addTraining', (addWeek = true) => {
     .getByTestId('edit-training-duration')
     .find('input')
     .type('.5')
-    .getByTestId('edit-training-description')
+    .getByTestId('edit-training-instructions')
     .type('Take it easy')
     .getByTestId('edit-training-intensity')
     .type('{leftarrow}{rightarrow}')

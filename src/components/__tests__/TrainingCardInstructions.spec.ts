@@ -13,10 +13,10 @@ describe('TrainingCardInstructions', () => {
   });
 
   it('mounts', () => {
-    const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
+    const instructions = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
     const wrapper = mount(TrainingCardInstructions, {
       props: {
-        training: getEmptyTraining({description}),
+        training: getEmptyTraining({instructions}),
         show: true,
       },
     });
@@ -44,6 +44,6 @@ describe('TrainingCardInstructions', () => {
     });
     expect(wrapper.find('.training-card__instructions').exists()).toBe(true);
     await wrapper.find('.training-card__instructions__close-button').trigger('click');
-    expect(appStateStore.toggleShowDescription).toHaveBeenCalledWith(trainingId);
+    expect(appStateStore.toggleShowInstructions).toHaveBeenCalledWith(trainingId);
   })
 });
