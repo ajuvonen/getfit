@@ -26,7 +26,7 @@ describe('EditTrainingDialog', () => {
   it('displays correct data', () => {
     appStateStore.trainingData = getEmptyTraining({
       activity: 'boxing',
-      description: 'Light training at the gym',
+      instructions: 'Light training at the gym',
       title: 'Sparring',
       location: 'Unisport Gym',
     });
@@ -38,7 +38,7 @@ describe('EditTrainingDialog', () => {
       card.findByTestId('edit-training-duration').find<HTMLInputElement>('input').element.value,
     ).toBe('1');
     expect(
-      card.findByTestId('edit-training-description').find<HTMLTextAreaElement>('textarea').element
+      card.findByTestId('edit-training-instructions').find<HTMLTextAreaElement>('textarea').element
         .value,
     ).toBe('Light training at the gym');
     expect(

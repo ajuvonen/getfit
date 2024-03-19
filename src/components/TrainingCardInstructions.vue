@@ -12,7 +12,7 @@ const props = defineProps<{
 }>();
 
 const appStateStore = useAppStateStore();
-const {toggleShowDescription} = appStateStore;
+const {toggleShowInstructions} = appStateStore;
 
 const closeButton = ref<VBtn | null>(null);
 
@@ -36,7 +36,7 @@ watch(() => props.show, async (value) => {
     >
       <v-card-text>
         <div class="training-card__instructions">
-          {{ training.description }}
+          {{ training.instructions }}
         </div>
       </v-card-text>
       <v-card-actions class="justify-end">
@@ -46,7 +46,7 @@ watch(() => props.show, async (value) => {
           variant="flat"
           color="transparent"
           prepend-icon="mdi-close"
-          @click="toggleShowDescription(training.id)"
+          @click="toggleShowInstructions(training.id)"
           >{{ $t('general.close') }}</v-btn
         >
       </v-card-actions>

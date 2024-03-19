@@ -18,9 +18,9 @@ const props = defineProps<{
 const {settings} = storeToRefs(useScheduleStore());
 
 const appStateStore = useAppStateStore();
-const {openDescriptions} = storeToRefs(appStateStore);
+const {visibleInstructions} = storeToRefs(appStateStore);
 
-const isDescriptionOpen = computed(() => openDescriptions.value.includes(props.training.id));
+const isDescriptionOpen = computed(() => visibleInstructions.value.includes(props.training.id));
 
 const {isSmallScreen} = useScreen();
 </script>

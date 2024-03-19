@@ -85,7 +85,7 @@ describe('useScheduleStore', () => {
       dayIndex: 1,
       activity: 'Running',
       title: 'Morning Run',
-      description: '5km run',
+      instructions: '5km run',
       duration: 30,
       location: 'Park',
       completed: true,
@@ -110,7 +110,7 @@ describe('useScheduleStore', () => {
     expect(copiedTraining?.dayIndex).toBe(originalTraining.dayIndex);
     expect(copiedTraining?.activity).toBe(originalTraining.activity);
     expect(copiedTraining?.title).toBe(originalTraining.title);
-    expect(copiedTraining?.description).toBe(originalTraining.description);
+    expect(copiedTraining?.instructions).toBe(originalTraining.instructions);
     expect(copiedTraining?.duration).toBe(originalTraining.duration);
     expect(copiedTraining?.intensity).toBe(originalTraining.intensity);
     expect(copiedTraining?.location).toBe(originalTraining.location);
@@ -130,7 +130,7 @@ describe('useScheduleStore', () => {
       weekId: weekId,
       activity: 'Running',
       title: 'Morning Run',
-      description: '5km run',
+      instructions: '5km run',
       duration: 30,
       location: 'Park',
     });
@@ -155,7 +155,7 @@ describe('useScheduleStore', () => {
           dayIndex: 1,
           activity: 'running',
           title: 'Morning Run',
-          description: '5km run',
+          instructions: '5km run',
           duration: 30,
           location: 'Park',
         }),
@@ -168,7 +168,7 @@ describe('useScheduleStore', () => {
       dayIndex: 1,
       activity: 'sprint',
       title: 'Evening Run',
-      description: '1km run',
+      instructions: '1km run',
       duration: 10,
       intensity: Intensity.HEAVY,
       location: 'Track',

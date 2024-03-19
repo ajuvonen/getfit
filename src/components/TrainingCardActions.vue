@@ -16,7 +16,7 @@ const menuOpen = ref(false);
 const {deleteTraining, toggleCompletion} = useScheduleStore();
 
 const appStateStore = useAppStateStore();
-const {openEditTrainingDialog, toggleShowDescription} = appStateStore;
+const {openEditTrainingDialog, toggleShowInstructions} = appStateStore;
 
 const openButton = ref<VBtn | null>(null);
 
@@ -33,14 +33,14 @@ watch(
 <template>
   <v-card-actions class="justify-end">
     <v-btn
-      v-if="training.description"
+      v-if="training.instructions"
       ref="openButton"
       :disabled="disabled"
       class="training-card__more-button"
       variant="flat"
       color="transparent"
       prepend-icon="mdi-information"
-      @click="toggleShowDescription(training.id)"
+      @click="toggleShowInstructions(training.id)"
       >{{ $t('general.more') }}</v-btn
     >
     <v-menu v-model="menuOpen" location="top center" :close-on-content-click="false">

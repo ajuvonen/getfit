@@ -6,7 +6,7 @@ export type Training = {
   dayIndex: number;
   activity: string;
   title: string;
-  description: string;
+  instructions: string;
   duration: number;
   intensity: Intensity;
   location: string;

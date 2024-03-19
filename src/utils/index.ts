@@ -50,7 +50,7 @@ export const getEmptyTraining = (initialTraining: Partial<Training> = {}): Train
   activity: '',
   dayIndex: 0,
   title: '',
-  description: '',
+  instructions: '',
   duration: 1,
   intensity: Intensity.NORMAL,
   location: '',

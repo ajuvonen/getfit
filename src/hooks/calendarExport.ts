@@ -20,7 +20,7 @@ export default function useCalendarExport() {
       let accumulatedDuration = 0;
       let currentDayIndex = 0;
       return trainings.map<CalendarEvent>(
-        ({activity, dayIndex, title, description, duration, intensity, location}) => {
+        ({activity, dayIndex, title, instructions, duration, intensity, location}) => {
           if (dayIndex !== currentDayIndex) {
             accumulatedDuration = 0;
             currentDayIndex = dayIndex;
@@ -30,7 +30,7 @@ export default function useCalendarExport() {
           accumulatedDuration = accumulatedDuration + minutes;
           return {
             title: title || t(`activities.${activity}`),
-            description,
+            description: instructions,
             start: [start.year, start.month, start.day, start.hour, start.minute],
             duration: {minutes},
             location,
