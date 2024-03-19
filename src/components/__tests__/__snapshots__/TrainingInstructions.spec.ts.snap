@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TrainingInstructions > mounts 1`] = `
+"<transition-stub data-v-c5ccfd42="" name="expand-transition" appear="false" persisted="false" css="true">
+  <div data-v-c5ccfd42="" class="v-card v-theme--light v-card--density-default v-card--variant-elevated d-flex flex-column" style="background-color: rgb(255, 217, 140); color: rgb(33, 33, 33); caret-color: #000; height: 100%;">
+    <!---->
+    <div class="v-card__loader">
+      <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+        <!---->
+        <div class="v-progress-linear__background" style="width: 100%;"></div>
+        <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+          <div class="v-progress-linear__indeterminate">
+            <div class="v-progress-linear__indeterminate long"></div>
+            <div class="v-progress-linear__indeterminate short"></div>
+          </div>
+        </transition-stub>
+        <!---->
+      </div>
+    </div>
+    <!---->
+    <!---->
+    <div data-v-c5ccfd42="" class="v-card-text">
+      <div data-v-c5ccfd42="" class="training-card__instructions">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+    </div>
+    <div data-v-c5ccfd42="" class="v-card-actions justify-end"><button data-v-c5ccfd42="" type="button" class="v-btn v-btn--slim v-theme--light bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__instructions__close-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-close mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Close</span>
+        <!---->
+        <!---->
+      </button></div>
+    <!---->
+    <!----><span class="v-card__underlay"></span>
+  </div>
+</transition-stub>"
+`;
