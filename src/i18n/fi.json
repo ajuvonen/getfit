@@ -40,15 +40,7 @@
     "confirm": "Jatka",
     "confirmReset": "Olet palauttamassa sovellusta alkutilaan, mikä poistaa kaikki harjoitustiedot. Toimintoa ei voi perua. Haluatko varmasti jatkaa?",
     "confirmTitle": "Vahvista toiminto",
-    "weekdays": {
-      "monday": "Maanantai",
-      "tuesday": "Tiistai",
-      "wednesday": "Keskiviikko",
-      "thursday": "Torstai",
-      "friday": "Perjantai",
-      "saturday": "Lauantai",
-      "sunday": "Sunnuntai"
-    },
+    "more": "Lisää",
     "shortWeekdays": {
       "monday": "Ma",
       "tuesday": "Ti",
@@ -57,6 +49,15 @@
       "friday": "Pe",
       "saturday": "La",
       "sunday": "Su"
+    },
+    "weekdays": {
+      "monday": "Maanantai",
+      "tuesday": "Tiistai",
+      "wednesday": "Keskiviikko",
+      "thursday": "Torstai",
+      "friday": "Perjantai",
+      "saturday": "Lauantai",
+      "sunday": "Sunnuntai"
     }
   },
   "home": {
