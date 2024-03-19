@@ -2,7 +2,7 @@
 
 exports[`TrainingCard > mounts 1`] = `
 "<div data-v-24c3dbf4="" class="training-card__container" style="background: url(/getfit/boxing.jpg);">
-  <div data-v-24c3dbf4="" class="v-card v-theme--light v-card--density-default v-card--variant-elevated training-card" style="background-color: rgba(255, 217, 140, 0.8); color: rgb(33, 33, 33);">
+  <div data-v-24c3dbf4="" class="v-card v-theme--light v-card--density-default v-card--variant-elevated training-card" style="background-color: rgba(255, 217, 140, 0.8); width: 350px; color: rgb(33, 33, 33);">
     <!---->
     <div class="v-card__loader">
       <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -19,30 +19,70 @@ exports[`TrainingCard > mounts 1`] = `
     </div>
     <!---->
     <!---->
-    <div data-v-24c3dbf4="" class="v-card-item training-card__title-wrapper">
-      <!---->
-      <div class="v-card-item__content">
+    <div data-v-24c3dbf4="" class="v-card-title ml-10 training-card__title"><i data-v-24c3dbf4="" class="mdi-drag-vertical-variant mdi v-icon notranslate v-theme--light" aria-hidden="true"></i><span data-v-24c3dbf4="" class="text-truncate">Boxing</span></div>
+    <div data-v-24c3dbf4="" class="v-card-text ml-10">
+      <div data-v-24c3dbf4="" class="training-card__icons d-flex align-center px-2"><i data-v-24c3dbf4="" class="mdi-boxing-glove mdi v-icon notranslate v-theme--light v-icon--size-x-large training-card__activity-icon" aria-hidden="true" title="Boxing" aria-label="Boxing"></i></div>
+      <div data-v-24c3dbf4="" class="training-card__duration text-subtitle-2"><i data-v-24c3dbf4="" class="mdi-timer mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" aria-label="Training Duration"></i><span data-v-24c3dbf4="">1 h</span></div>
+      <div data-v-24c3dbf4="" class="training-card__intensity text-subtitle-2"><i data-v-24c3dbf4="" class="mdi-speedometer mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"></i><span data-v-24c3dbf4="">Normal</span></div>
+      <div data-v-24c3dbf4="" class="training-card__location text-subtitle-2"><i data-v-24c3dbf4="" class="mdi-map-marker mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" aria-label="Training Location"></i><span data-v-24c3dbf4="" class="text-truncate">Total wreck gym</span></div>
+      <div data-v-7032cc65="" data-v-24c3dbf4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-radio-group training-card__rating--hidden training-card__rating">
         <!---->
-        <!---->
-        <div data-v-24c3dbf4="" class="training-card__icons d-flex align-center"><i data-v-24c3dbf4="" class="mdi-boxing-glove mdi v-icon notranslate v-theme--light v-icon--size-x-large training-card__activity-icon" aria-hidden="true" title="Boxing" aria-label="Boxing"></i></div>
-        <div data-v-24c3dbf4="" class="v-card-title ml-11">
-          <div data-v-24c3dbf4="" class="training-card__title text-truncate">Boxing</div>
-          <div data-v-24c3dbf4="" class="training-card__duration text-subtitle-2"><i data-v-24c3dbf4="" class="mdi-timer mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" aria-label="Training Duration"></i> 1 h</div>
-          <div data-v-24c3dbf4="" class="training-card__intensity text-subtitle-2"><i data-v-24c3dbf4="" class="mdi-speedometer mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"></i> Normal</div>
-          <div data-v-24c3dbf4="" class="training-card__location text-subtitle-2"><i data-v-24c3dbf4="" class="mdi-map-marker mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" aria-label="Training Location"></i> Total wreck gym</div>
+        <div class="v-input__control">
+          <!---->
+          <div class="v-selection-control-group v-selection-control-group--inline" role="radiogroup" aria-describedby="radio-group-0-messages" aria-label="Training Rating">
+            <div data-v-7032cc65="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+              <div class="v-selection-control__wrapper">
+                <!---->
+                <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-3" aria-disabled="true" type="radio" name="radio-group-0" aria-label="1/5" elevation="0" value="1"></div>
+              </div>
+              <!---->
+            </div>
+            <div data-v-7032cc65="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+              <div class="v-selection-control__wrapper">
+                <!---->
+                <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-4" aria-disabled="true" type="radio" name="radio-group-0" aria-label="2/5" elevation="0" value="2"></div>
+              </div>
+              <!---->
+            </div>
+            <div data-v-7032cc65="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+              <div class="v-selection-control__wrapper">
+                <!---->
+                <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-5" aria-disabled="true" type="radio" name="radio-group-0" aria-label="3/5" elevation="0" value="3"></div>
+              </div>
+              <!---->
+            </div>
+            <div data-v-7032cc65="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+              <div class="v-selection-control__wrapper">
+                <!---->
+                <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-6" aria-disabled="true" type="radio" name="radio-group-0" aria-label="4/5" elevation="0" value="4"></div>
+              </div>
+              <!---->
+            </div>
+            <div data-v-7032cc65="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+              <div class="v-selection-control__wrapper">
+                <!---->
+                <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-7" aria-disabled="true" type="radio" name="radio-group-0" aria-label="5/5" elevation="0" value="5"></div>
+              </div>
+              <!---->
+            </div>
+          </div>
         </div>
+        <!---->
+        <!---->
       </div>
-      <!---->
     </div>
-    <div data-v-24c3dbf4="" class="v-card-text training-card__text px-4 pt-2"><span data-v-24c3dbf4="">Sparring at the gym</span>
-      <!--v-if-->
-    </div>
-    <div data-v-24c3dbf4="" class="v-card-actions flex-column align-stretch"><button type="button" class="v-btn v-btn--slim v-theme--light bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__action-button" aria-label="Actions for training " targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-menu mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Actions</span>
+    <div data-v-24c3dbf4="" class="v-card-actions justify-end"><button type="button" class="v-btn v-btn--slim v-theme--light bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__more-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-information mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">More</span>
+        <!---->
+        <!---->
+      </button><button type="button" class="v-btn v-btn--slim v-theme--light bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__action-button" aria-label="Actions for training " targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-9"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-menu mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Actions</span>
         <!---->
         <!---->
       </button>
       <!---->
     </div>
+    <transition-stub data-v-c5ccfd42="" data-v-24c3dbf4="" name="expand-transition" appear="false" persisted="false" css="true">
+      <!--v-if-->
+    </transition-stub>
     <!---->
     <!----><span class="v-card__underlay"></span>
   </div>

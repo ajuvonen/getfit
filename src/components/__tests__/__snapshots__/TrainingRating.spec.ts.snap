@@ -1,43 +1,43 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`TrainingCard > mounts 1`] = `
-"<div data-v-7032cc65="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-radio-group training-card__rating">
+"<div data-v-7032cc65="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-radio-group training-card__rating--hidden training-card__rating">
   <!---->
   <div class="v-input__control">
     <!---->
     <div class="v-selection-control-group v-selection-control-group--inline" role="radiogroup" aria-describedby="radio-group-0-messages" aria-label="Training Rating">
-      <div data-v-7032cc65="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
+      <div data-v-7032cc65="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
         <div class="v-selection-control__wrapper">
           <!---->
-          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-3" aria-disabled="false" type="radio" name="radio-group-0" aria-label="1/5" elevation="0" value="1"></div>
+          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-3" aria-disabled="true" type="radio" name="radio-group-0" aria-label="1/5" elevation="0" value="1"></div>
         </div>
         <!---->
       </div>
-      <div data-v-7032cc65="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
+      <div data-v-7032cc65="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
         <div class="v-selection-control__wrapper">
           <!---->
-          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-4" aria-disabled="false" type="radio" name="radio-group-0" aria-label="2/5" elevation="0" value="2"></div>
+          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-4" aria-disabled="true" type="radio" name="radio-group-0" aria-label="2/5" elevation="0" value="2"></div>
         </div>
         <!---->
       </div>
-      <div data-v-7032cc65="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
+      <div data-v-7032cc65="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
         <div class="v-selection-control__wrapper">
           <!---->
-          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-5" aria-disabled="false" type="radio" name="radio-group-0" aria-label="3/5" elevation="0" value="3"></div>
+          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-5" aria-disabled="true" type="radio" name="radio-group-0" aria-label="3/5" elevation="0" value="3"></div>
         </div>
         <!---->
       </div>
-      <div data-v-7032cc65="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
+      <div data-v-7032cc65="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
         <div class="v-selection-control__wrapper">
           <!---->
-          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-6" aria-disabled="false" type="radio" name="radio-group-0" aria-label="4/5" elevation="0" value="4"></div>
+          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-6" aria-disabled="true" type="radio" name="radio-group-0" aria-label="4/5" elevation="0" value="4"></div>
         </div>
         <!---->
       </div>
-      <div data-v-7032cc65="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
+      <div data-v-7032cc65="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
         <div class="v-selection-control__wrapper">
           <!---->
-          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-7" aria-disabled="false" type="radio" name="radio-group-0" aria-label="5/5" elevation="0" value="5"></div>
+          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-7" aria-disabled="true" type="radio" name="radio-group-0" aria-label="5/5" elevation="0" value="5"></div>
         </div>
         <!---->
       </div>

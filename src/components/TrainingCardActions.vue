@@ -1,26 +1,53 @@
 <script setup lang="ts">
-import {ref} from 'vue';
+import {nextTick, ref, watch} from 'vue';
+import {VBtn} from 'vuetify/components';
 import {useAppStateStore} from '@/stores/appState';
 import {useScheduleStore} from '@/stores/schedule';
 import type {Training} from '@/types';
 import ActionMenuWeekGroup from '@/components/ActionMenuWeekGroup.vue';
 
-defineProps<{
+const props = defineProps<{
   training: Training;
+  disabled: boolean;
 }>();
 
 const menuOpen = ref(false);
 
 const {deleteTraining, toggleCompletion} = useScheduleStore();
 
-const {openEditTrainingDialog} = useAppStateStore();
+const appStateStore = useAppStateStore();
+const {openEditTrainingDialog, toggleShowDescription} = appStateStore;
+
+const openButton = ref<VBtn | null>(null);
+
+watch(
+  () => props.disabled,
+  async (value) => {
+    if (!value) {
+      await nextTick();
+      openButton.value?.$el.focus();
+    }
+  },
+);
 </script>
 <template>
-  <v-card-actions class="flex-column align-stretch">
+  <v-card-actions class="justify-end">
+    <v-btn
+      v-if="training.description"
+      ref="openButton"
+      :disabled="disabled"
+      class="training-card__more-button"
+      variant="flat"
+      color="transparent"
+      prepend-icon="mdi-information"
+      @click="toggleShowDescription(training.id)"
+      >{{ $t('general.more') }}</v-btn
+    >
     <v-menu v-model="menuOpen" location="top center" :close-on-content-click="false">
       <template v-slot:activator="{props}">
         <v-btn
           :aria-label="$t('trainingCard.actionsLabel', training.activity)"
+          :disabled="disabled"
           color="transparent"
           prepend-icon="mdi-menu"
           variant="flat"
@@ -47,9 +74,7 @@ const {openEditTrainingDialog} = useAppStateStore();
           "
           :prepend-icon="training.completed ? 'mdi-progress-alert' : 'mdi-progress-check'"
           class="training-card__complete-button"
-          @click="
-            toggleCompletion(training), (menuOpen = false)
-          "
+          @click="toggleCompletion(training), (menuOpen = false)"
         />
         <v-list-item
           :title="$t('trainingCard.deleteTraining')"

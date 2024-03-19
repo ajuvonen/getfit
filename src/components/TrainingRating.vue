@@ -4,6 +4,7 @@ import type {Rating, Training} from '@/types';
 
 defineProps<{
   training: Training;
+  disabled: boolean;
 }>();
 
 const {updateRating} = useScheduleStore();
@@ -12,12 +13,14 @@ const {updateRating} = useScheduleStore();
   <v-radio-group
     :model-value="training.rating"
     :aria-label="$t('trainingCard.ratingLabel')"
+    :class="{'training-card__rating--hidden': !training.completed}"
     class="training-card__rating"
     inline
     hide-details
   >
     <v-radio
       v-for="rating in [1, 2, 3, 4, 5]"
+      :disabled="disabled || !training.completed"
       :key="rating"
       :value="rating"
       :aria-label="$t('trainingCard.rating', [rating])"
@@ -32,5 +35,9 @@ const {updateRating} = useScheduleStore();
 :deep(.v-selection-control-group) {
   display: flex;
   justify-content: center;
+}
+
+.training-card__rating--hidden {
+  visibility: hidden;
 }
 </style>
