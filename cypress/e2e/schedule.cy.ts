@@ -90,4 +90,12 @@ describe('Schedule tests', () => {
     cy.get('.training-card__rating .v-selection-control:nth-child(4) i').should('have.class', 'mdi-star-outline');
     cy.get('.training-card__rating .v-selection-control:nth-child(5) i').should('have.class', 'mdi-star-outline');
   });
+
+  it('displays instructions', () => {
+    cy.addTraining();
+    cy.get('.training-card__more-button').click();
+    cy.get('.training-card__instructions').should('have.text', 'Take it easy');
+    cy.get('.training-card__instructions__close-button').click();
+    cy.get('.training-card__instructions').should('not.exist');
+  });
 });
