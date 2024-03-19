@@ -1,7 +1,7 @@
 import {mount} from '@vue/test-utils';
 import {describe, it, expect, beforeEach} from 'vitest';
 import {useScheduleStore} from '@/stores/schedule';
-import TrainingRating from '@/components/TrainingRating.vue';
+import TrainingCardRating from '@/components/TrainingCardRating.vue';
 import {getEmptyTraining} from '@/utils';
 
 describe('TrainingCard', () => {
@@ -12,7 +12,7 @@ describe('TrainingCard', () => {
   });
 
   it('mounts', () => {
-    const wrapper = mount(TrainingRating, {
+    const wrapper = mount(TrainingCardRating, {
       props: {
         training: getEmptyTraining(),
         disabled: false,
@@ -23,7 +23,7 @@ describe('TrainingCard', () => {
   });
 
   it('shows ratings when training is complete', () => {
-    const wrapper = mount(TrainingRating, {
+    const wrapper = mount(TrainingCardRating, {
       props: {
         training: getEmptyTraining({completed: true}),
         disabled: false,
@@ -34,7 +34,7 @@ describe('TrainingCard', () => {
 
   it('calls store on rating change', async () => {
     const training = getEmptyTraining({completed: true});
-    const wrapper = mount(TrainingRating, {
+    const wrapper = mount(TrainingCardRating, {
       props: {
         training: training,
         disabled: false,
@@ -64,7 +64,7 @@ describe('TrainingCard', () => {
   });
 
   it('is disabled', () => {
-    const wrapper = mount(TrainingRating, {
+    const wrapper = mount(TrainingCardRating, {
       props: {
         training: getEmptyTraining(),
         disabled: true,

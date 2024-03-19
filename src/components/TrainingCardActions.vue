@@ -4,7 +4,7 @@ import {VBtn} from 'vuetify/components';
 import {useAppStateStore} from '@/stores/appState';
 import {useScheduleStore} from '@/stores/schedule';
 import type {Training} from '@/types';
-import ActionMenuWeekGroup from '@/components/ActionMenuWeekGroup.vue';
+import TrainingCardActionsMenuGroup from '@/components/TrainingCardActionsMenuGroup.vue';
 
 const props = defineProps<{
   training: Training;
@@ -64,8 +64,8 @@ watch(
           class="training-card__edit-button"
           @click="openEditTrainingDialog(training), (menuOpen = false)"
         />
-        <ActionMenuWeekGroup action="move" :training="training" />
-        <ActionMenuWeekGroup action="copy" :training="training" />
+        <TrainingCardActionsMenuGroup action="move" :training="training" />
+        <TrainingCardActionsMenuGroup action="copy" :training="training" />
         <v-list-item
           :title="
             !training.completed

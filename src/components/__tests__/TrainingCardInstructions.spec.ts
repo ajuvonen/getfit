@@ -3,9 +3,9 @@ import {describe, it, expect, beforeEach} from 'vitest';
 import {v4 as uuid} from 'uuid';  
 import {getEmptyTraining} from '@/utils';
 import { useAppStateStore } from '@/stores/appState';
-import TrainingInstructions from '@/components/TrainingInstructions.vue';
+import TrainingCardInstructions from '@/components/TrainingCardInstructions.vue';
 
-describe('TrainingInstructions', () => {
+describe('TrainingCardInstructions', () => {
   let appStateStore: ReturnType<typeof useAppStateStore>;
 
   beforeEach(() => {
@@ -14,7 +14,7 @@ describe('TrainingInstructions', () => {
 
   it('mounts', () => {
     const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
-    const wrapper = mount(TrainingInstructions, {
+    const wrapper = mount(TrainingCardInstructions, {
       props: {
         training: getEmptyTraining({description}),
         show: true,
@@ -25,7 +25,7 @@ describe('TrainingInstructions', () => {
   });
 
   it('remains hidden when show is false', () => {
-    const wrapper = mount(TrainingInstructions, {
+    const wrapper = mount(TrainingCardInstructions, {
       props: {
         training: getEmptyTraining(),
         show: false,
@@ -36,7 +36,7 @@ describe('TrainingInstructions', () => {
 
   it('closes when clicked', async () => {
     const trainingId = uuid();
-    const wrapper = mount(TrainingInstructions, {
+    const wrapper = mount(TrainingCardInstructions, {
       props: {
         training: getEmptyTraining({id: trainingId}),
         show: true,
