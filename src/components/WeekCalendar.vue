@@ -54,28 +54,30 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
 </script>
 <template>
   <v-expansion-panel elevation="0" :rounded="!isLargeScreen ? 0 : 'rounded'">
-    <v-expansion-panel-title>
+    <v-expansion-panel-title class="flex-wrap">
       <div class="week-calendar__drag-handle">
         <v-icon icon="mdi-drag-vertical-variant" />
         <h2 class="text-h5">
           {{ $t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)]) }}
         </h2>
       </div>
-      <div v-if="!isSmallScreen && settings.startDate" class="ml-4">
+      <div v-if="settings.startDate">
         {{ getDateInterval(weekIndex) }}
       </div>
-      <v-chip
-        v-for="[intensity, group] in Object.entries(groupedTrainings)"
-        :key="intensity"
-        :color="getIntensityColor(+intensity)"
-        :title="getWeekChipTitle(+intensity, group.length)"
-        :aria-label="getWeekChipTitle(+intensity, group.length)"
-        :style="{color: COLORS.darkGrey}"
-        variant="flat"
-        label
-        class="ml-4"
-        >{{ group.length }}</v-chip
-      >
+      <div>
+        <v-chip
+          v-for="[intensity, group] in Object.entries(groupedTrainings)"
+          :key="intensity"
+          :color="getIntensityColor(+intensity)"
+          :title="getWeekChipTitle(+intensity, group.length)"
+          :aria-label="getWeekChipTitle(+intensity, group.length)"
+          :style="{color: COLORS.darkGrey}"
+          variant="flat"
+          label
+          class="ml-2"
+          >{{ group.length }}</v-chip
+        >
+      </div>
     </v-expansion-panel-title>
     <v-expansion-panel-text>
       <v-tabs v-model="activeDay" grow show-arrows center-active>
@@ -108,11 +110,10 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
         >
           <draggable-list
             :model-value="trainings"
-            :class="{'flex-column': isSmallScreen}"
             tag="ul"
             item-key="id"
-            handle=".v-card-item"
-            class="d-flex flex-wrap mt-4 mb-1"
+            handle=".training-card__title"
+            class="d-flex flex-wrap mt-4 mb-1 justify-center"
             @update:model-value="
               (reorderedTrainings: Training[]) => reorderTrainings(week.id, reorderedTrainings)
             "
@@ -137,6 +138,10 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
 ul {
   list-style-type: none;
   gap: 1rem;
+}
+
+.v-expansion-panel-title {
+  gap: 0.5rem;
 }
 
 .week-calendar__actions {
