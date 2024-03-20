@@ -1,13 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`WeekSupplement > mounts 1`] = `
-"<div data-v-22de64f8="">
-  <div data-v-22de64f8="" class="mt-4 text-subtitle-2 text-uppercase">Monday</div>
-  <ul data-v-22de64f8="">
-    <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="mdi-run mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" title="Running" aria-label="Running"></i> Running:&nbsp;</span><i data-v-22de64f8="">No instructions</i></li>
-    <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="mdi-swim mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" title="Swimming" aria-label="Swimming"></i> Swimming:&nbsp;</span><span data-v-22de64f8="">swim slow</span></li>
-  </ul>
-</div>"
+"<div data-v-22de64f8="" class="mt-4 text-subtitle-2 text-uppercase">Monday</div>
+<ul data-v-22de64f8="">
+  <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="mdi-run mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" title="Running" aria-label="Running"></i> Running:&nbsp;</span><i data-v-22de64f8="">No instructions</i></li>
+  <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="mdi-swim mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" title="Swimming" aria-label="Swimming"></i> Swimming:&nbsp;</span><span data-v-22de64f8="">swim slow</span></li>
+</ul>"
 `;
 
 exports[`WeekSupplement > remains empty 1`] = `"<!--v-if-->"`;

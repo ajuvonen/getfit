@@ -13,7 +13,7 @@ const {t} = useI18n();
 const {weekdays} = useWeekDays();
 </script>
 <template>
-  <div v-if="trainings.length">
+  <template v-if="trainings.length">
     <div class="mt-4 text-subtitle-2 text-uppercase">
       {{ weekdays[dayIndex] }}
     </div>
@@ -35,7 +35,7 @@ const {weekdays} = useWeekDays();
         <i v-else>{{ t('weekSupplement.noInstruction') }}</i>
       </li>
     </ul>
-  </div>
+  </template>
 </template>
 <style lang="scss" scoped>
 ul {
