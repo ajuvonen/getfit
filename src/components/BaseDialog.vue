@@ -2,7 +2,7 @@
 import useScreen from '@/hooks/screen';
 
 withDefaults(defineProps<{
-  open: boolean;
+  show: boolean;
   title: string;
   useFullScreen?: boolean;
 }>(), {
@@ -13,7 +13,7 @@ const {isSmallScreen} = useScreen();
 </script>
 <template>
   <v-dialog
-    :model-value="open"
+    :model-value="show"
     :width="!isSmallScreen ? 'auto' : undefined"
     :fullscreen="useFullScreen && isSmallScreen"
     :transition="isSmallScreen ? 'dialog-bottom-transition' : false"

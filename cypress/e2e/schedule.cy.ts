@@ -95,7 +95,7 @@ describe('Schedule tests', () => {
     cy.addTraining();
     cy.get('.training-card__more-button').click();
     cy.get('.training-card__instructions').should('have.text', 'Take it easy');
-    cy.get('.training-card__instructions__close-button').click();
+    cy.get('.training-card__close-instructions-button').click();
     cy.get('.training-card__instructions').should('not.exist');
   });
 });

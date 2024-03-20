@@ -7,7 +7,7 @@ const {confirmDialogOpen, confirmText, confirmAction} = storeToRefs(useAppStateS
 </script>
 <template>
   <BaseDialog
-    :open="confirmDialogOpen"
+    :show="confirmDialogOpen"
     :use-full-screen="false"
     :title="$t('general.confirmTitle')"
   >

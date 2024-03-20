@@ -35,7 +35,7 @@ const {isSmallScreen} = useScreen();
       :width="isSmallScreen ? '280px' : '350px'"
       :color="getIntensityColor(training.intensity, settings.decoratedCards ? 0.8 : 1)"
       :style="{
-        color: COLORS.darkGrey,
+        color: training.completed ? COLORS.lightGrey :COLORS.darkGrey,
       }"
     >
       <v-card-title class="ml-10 training-card__title">

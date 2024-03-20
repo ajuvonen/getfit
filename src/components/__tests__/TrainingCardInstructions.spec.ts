@@ -43,7 +43,7 @@ describe('TrainingCardInstructions', () => {
       },
     });
     expect(wrapper.find('.training-card__instructions').exists()).toBe(true);
-    await wrapper.find('.training-card__instructions__close-button').trigger('click');
+    await wrapper.find('.training-card__close-instructions-button').trigger('click');
     expect(appStateStore.toggleShowInstructions).toHaveBeenCalledWith(trainingId);
   })
 });

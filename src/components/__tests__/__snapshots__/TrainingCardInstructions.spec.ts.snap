@@ -22,7 +22,7 @@ exports[`TrainingCardInstructions > mounts 1`] = `
     <div data-v-dc9f9ee2="" class="v-card-text">
       <div data-v-dc9f9ee2="" class="training-card__instructions">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
     </div>
-    <div data-v-dc9f9ee2="" class="v-card-actions justify-end"><button data-v-dc9f9ee2="" type="button" class="v-btn v-btn--slim v-theme--light bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__instructions__close-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-close mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Close</span>
+    <div data-v-dc9f9ee2="" class="v-card-actions justify-end"><button data-v-dc9f9ee2="" type="button" class="v-btn v-btn--slim v-theme--light bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__close-instructions-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-close mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Close</span>
         <!---->
         <!---->
       </button></div>

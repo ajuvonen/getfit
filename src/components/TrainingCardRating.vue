@@ -14,13 +14,13 @@ const {updateRating} = useScheduleStore();
     :model-value="training.rating"
     :aria-label="$t('trainingCard.ratingLabel')"
     :class="{'training-card__rating--hidden': !training.completed}"
+    :disabled="disabled || !training.completed"
     class="training-card__rating"
     inline
     hide-details
   >
     <v-radio
       v-for="rating in [1, 2, 3, 4, 5]"
-      :disabled="disabled || !training.completed"
       :key="rating"
       :value="rating"
       :aria-label="$t('trainingCard.rating', [rating])"

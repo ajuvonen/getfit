@@ -42,7 +42,7 @@ watch(() => props.show, async (value) => {
       <v-card-actions class="justify-end">
         <v-btn
           ref="closeButton"
-          class="training-card__instructions__close-button"
+          class="training-card__close-instructions-button"
           variant="flat"
           color="transparent"
           prepend-icon="mdi-close"

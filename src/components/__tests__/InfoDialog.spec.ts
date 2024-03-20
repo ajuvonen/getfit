@@ -7,7 +7,7 @@ describe('InfoDialog', () => {
   it('mounts', () => {
     const wrapper = mount(InfoDialog, {
       props: {
-        open: true,
+        show: true,
         title: 'Info',
       },
       slots: {
@@ -20,8 +20,11 @@ describe('InfoDialog', () => {
   it('close works', async () => {
     const wrapper = mount(InfoDialog, {
       props: {
-        open: true,
+        show: true,
         title: 'Info',
+      },
+      slots: {
+        content: 'My content',
       },
     });
     await wrapper.findComponent(VCard).findByTestId('info-dialog-close-button').trigger('click');
