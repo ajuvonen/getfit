@@ -4,7 +4,7 @@ import {useScheduleStore} from '@/stores/schedule';
 import TrainingCardRating from '@/components/TrainingCardRating.vue';
 import {getEmptyTraining} from '@/utils';
 
-describe('TrainingCard', () => {
+describe('TrainingCardRating', () => {
   let scheduleStore: ReturnType<typeof useScheduleStore>;
 
   beforeEach(() => {

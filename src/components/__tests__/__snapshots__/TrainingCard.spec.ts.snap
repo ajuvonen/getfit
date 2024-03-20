@@ -25,7 +25,7 @@ exports[`TrainingCard > mounts 1`] = `
       <div data-v-24c3dbf4="" class="training-card__duration text-subtitle-2"><i data-v-24c3dbf4="" class="mdi-timer mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" aria-label="Training Duration"></i><span data-v-24c3dbf4="">1 h</span></div>
       <div data-v-24c3dbf4="" class="training-card__intensity text-subtitle-2"><i data-v-24c3dbf4="" class="mdi-speedometer mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"></i><span data-v-24c3dbf4="">Normal</span></div>
       <div data-v-24c3dbf4="" class="training-card__location text-subtitle-2"><i data-v-24c3dbf4="" class="mdi-map-marker mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true" aria-label="Training Location"></i><span data-v-24c3dbf4="" class="text-truncate">Total wreck gym</span></div>
-      <div data-v-cb700901="" data-v-24c3dbf4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-radio-group training-card__rating--hidden training-card__rating">
+      <div data-v-cb700901="" data-v-24c3dbf4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--disabled v-radio-group training-card__rating--hidden training-card__rating">
         <!---->
         <div class="v-input__control">
           <!---->

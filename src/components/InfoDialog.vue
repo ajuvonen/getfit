@@ -2,14 +2,14 @@
 import BaseDialog from '@/components/BaseDialog.vue';
 
 defineProps<{
-  open: boolean;
+  show: boolean;
   title: string;
 }>();
 
 defineEmits(['close']);
 </script>
 <template>
-  <BaseDialog :open="open" :use-full-screen="false" :title="title">
+  <BaseDialog :show="show" :use-full-screen="false" :title="title">
     <template #content>
       <slot name="content" />
     </template>

@@ -26,7 +26,7 @@ const creditDialogOpen = ref(false);
       {{ $t('home.credits') }}
     </v-btn>
     <InfoDialog
-      :open="creditDialogOpen"
+      :show="creditDialogOpen"
       :title="$t('home.credits')"
       @close="creditDialogOpen = false"
     >

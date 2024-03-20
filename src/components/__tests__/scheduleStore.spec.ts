@@ -5,7 +5,7 @@ import {useScheduleStore} from '@/stores/schedule';
 import {getEmptyTraining} from '@/utils';
 import {Intensity} from '@/types';
 
-describe('useScheduleStore', () => {
+describe('scheduleStore', () => {
   let scheduleStore: ReturnType<typeof useScheduleStore>;
 
   beforeEach(() => {

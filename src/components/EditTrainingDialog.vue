@@ -59,7 +59,7 @@ const resetAndClose = () => {
 };
 </script>
 <template>
-  <BaseDialog :open="trainingDialogOpen" :title="$t('editTraining.title')">
+  <BaseDialog :show="trainingDialogOpen" :title="$t('editTraining.title')">
     <template #content>
       <v-form>
         <v-label for="edit-training-activity">{{ $t('editTraining.activity') }}</v-label>
