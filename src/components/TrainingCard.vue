@@ -84,6 +84,7 @@ const {isSmallScreen} = useScreen();
 .training-card__container {
   background-size: cover !important;
   border-radius: 4px;
+  width: fit-content;
 }
 
 .training-card {
