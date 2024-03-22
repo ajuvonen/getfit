@@ -25,7 +25,7 @@ const {shortWeekdays, getShortDate, getDisplayWeekNumber, getDateInterval} = use
 
 const trainingsByDay = computed(
   () => (week: Week) =>
-    shortWeekdays.value.map((weekDay, weekdayIndex) =>
+    shortWeekdays.value.map((_weekDay, weekdayIndex) =>
       week.trainings.filter(({dayIndex}) => dayIndex === weekdayIndex),
     ),
 );
@@ -89,7 +89,7 @@ const print = () => {
         >
       </div>
       <div v-for="(week, weekIndex) in weeks" :key="week.id" class="export__table-container">
-        <print-view-table :data-test-id="`week-${weekIndex}-table`">
+        <PrintViewTable :data-test-id="`week-${weekIndex}-table`">
           <template #title>
             <div class="d-flex align-center">
               <h2 class="text-h5 ml-4">
@@ -113,7 +113,7 @@ const print = () => {
           <template #body>
             <tr v-if="week.trainings.length">
               <td v-for="(trainings, dayIndex) in trainingsByDay(week)" :key="dayIndex">
-                <simple-training-card
+                <SimpleTrainingCard
                   v-for="training in trainings"
                   :key="training.id"
                   :training="training"
@@ -126,8 +126,8 @@ const print = () => {
               </td>
             </tr>
           </template>
-        </print-view-table>
-        <print-view-table
+        </PrintViewTable>
+        <PrintViewTable
           v-if="week.trainings.length"
           :tableTitle="$t('export.supplement', [getDisplayWeekNumber(weekIndex)])"
           :data-test-id="`week-${weekIndex}-supplement`"
@@ -141,7 +141,7 @@ const print = () => {
           <template #body>
             <tr>
               <td>
-                <week-supplement
+                <WeekSupplement
                   v-for="(trainings, dayIndex) in trainingsByDay(week)"
                   :key="dayIndex"
                   :trainings="trainings"
@@ -151,7 +151,7 @@ const print = () => {
               <td class="hidden-screen-only"></td>
             </tr>
           </template>
-        </print-view-table>
+        </PrintViewTable>
       </div>
     </template>
   </BaseView>
