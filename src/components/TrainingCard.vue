@@ -11,9 +11,12 @@ import TrainingCardRating from '@/components/TrainingCardRating.vue';
 import TrainingCardInstructions from '@/components/TrainingCardInstructions.vue';
 import {useAppStateStore} from '@/stores/appState';
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   training: Training;
-}>();
+  simple?: boolean;
+}>(), {
+  simple: false,
+});
 
 const {settings} = storeToRefs(useScheduleStore());
 
@@ -39,7 +42,7 @@ const {isSmallScreen} = useScreen();
       }"
     >
       <v-card-title class="ml-10 training-card__title">
-        <v-icon icon="mdi-drag-vertical-variant" size="normal" />
+        <v-icon v-if="!simple" icon="mdi-drag-vertical-variant" size="normal" />
         <span class="text-truncate">{{
           training.title || $t(`activities.${training.activity}`)
         }}</span>
@@ -75,7 +78,7 @@ const {isSmallScreen} = useScreen();
         </div>
         <TrainingCardRating :training="training" :disabled="isDescriptionOpen" />
       </v-card-text>
-      <TrainingCardActions :training="training" :disabled="isDescriptionOpen" />
+      <TrainingCardActions :training="training" :disabled="isDescriptionOpen" :simple="simple" />
       <TrainingCardInstructions :training="training" :show="isDescriptionOpen" />
     </v-card>
   </div>
@@ -85,6 +88,7 @@ const {isSmallScreen} = useScreen();
   background-size: cover !important;
   border-radius: 4px;
   width: fit-content;
+  height: fit-content;
 }
 
 .training-card {

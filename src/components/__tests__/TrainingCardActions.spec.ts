@@ -21,6 +21,7 @@ describe('TrainingCardActions', () => {
       props: {
         training: getEmptyTraining(),
         disabled: false,
+        simple: false,
       },
     });
     expect(wrapper.html()).toMatchSnapshot();
@@ -29,8 +30,9 @@ describe('TrainingCardActions', () => {
   it('actions work', async () => {
     const wrapper = mount(TrainingCardActions, {
       props: {
-        training: getEmptyTraining({instructions: 'Test Instructions'}),
+        training: getEmptyTraining(),
         disabled: false,
+        simple: false,
       },
     });
     await wrapper.find('.training-card__action-button').trigger('click');
@@ -49,6 +51,7 @@ describe('TrainingCardActions', () => {
       props: {
         training: getEmptyTraining({id: trainingId, instructions: 'Test Instructions'}),
         disabled: false,
+        simple: false,
       },
     });
     expect(wrapper.find('.training-card__instructions').exists()).toBe(false);
@@ -56,14 +59,40 @@ describe('TrainingCardActions', () => {
     expect(appStateStore.toggleShowInstructions).toHaveBeenCalledWith(trainingId);
   });
 
-  it('disabled prop works', async () => {
+  it('disabled prop works', () => {
     const wrapper = mount(TrainingCardActions, {
       props: {
         training: getEmptyTraining({instructions: 'Test Instructions'}),
         disabled: true,
+        simple: false,
       },
     });
     expect(wrapper.findAll('button:not([disabled])').length).toBe(0);
     expect(wrapper.findAll('button[disabled]').length).toBe(2);
-  })
+  });
+
+  it('disabled and simple props work', () => {
+    const wrapper = mount(TrainingCardActions, {
+      props: {
+        training: getEmptyTraining({instructions: 'Test Instructions'}),
+        disabled: true,
+        simple: true,
+      },
+    });
+    expect(wrapper.findAll('button:not([disabled])').length).toBe(0);
+    expect(wrapper.findAll('button[disabled]').length).toBe(2);
+  });
+
+  it('simple card can be completed', async () => {
+    const wrapper = mount(TrainingCardActions, {
+      props: {
+        training: getEmptyTraining(),
+        disabled: false,
+        simple: true,
+      },
+    });
+
+    await wrapper.find('.training-card__complete-button').trigger('click');
+    expect(scheduleStore.toggleCompletion).toHaveBeenCalledOnce();
+  });
 });

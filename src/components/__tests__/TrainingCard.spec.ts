@@ -27,6 +27,16 @@ describe('TrainingCard', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  it('mounts in simple mode', () => {
+    const wrapper = mount(TrainingCard, {
+      props: {
+        training: basicTraining,
+        simple: true,
+      },
+    });
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   it('shows basic data', () => {
     const wrapper = mount(TrainingCard, {
       props: {
