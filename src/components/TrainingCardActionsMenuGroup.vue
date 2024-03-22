@@ -43,7 +43,7 @@ const menuIcon = props.action === 'move' ? 'mdi-arrow-all' : 'mdi-content-copy';
         @click="menuAction(training, week.id, dayIndex)"
       >
         <template v-if="settings.startDate" #append>
-          <span class="ml-4">{{ getShortDate(dayIndex, weekIndex) }}</span>
+          <span class="ml-4">{{ getShortDate(weekIndex, dayIndex) }}</span>
         </template>
       </v-list-item>
     </v-list-group>
