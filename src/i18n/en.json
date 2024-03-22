@@ -22,10 +22,10 @@
   },
   "editTraining": {
     "activity": "Activity",
-    "intensity": "Overall Intensity",
     "closeDialog": "Close Dialog",
     "duration": "Duration",
     "instructions": "Instructions",
+    "intensity": "Overall Intensity",
     "location": "Location",
     "save": "Save",
     "title": "Edit Training",
@@ -61,11 +61,13 @@
     }
   },
   "home": {
-    "title": "Welcome to GetFit",
+    "credits": "Photo credits",
+    "dailyAgenda": "Your Daily Agenda:",
+    "noTrainings": "No trainings. Enjoy your day!",
     "p1": "GetFit is a free, easy-to-use exercise program planner that allows you to plan a schedule spanning multiple weeks.",
     "p2": "To get started, navigate to settings and fill some basic info about your program. Then, go to your schedule and start planning activities.",
     "p3": "All data persists in your browser's local storage only, and is not sent anywhere.",
-    "credits": "Photo credits"
+    "title": "Welcome to GetFit "
   },
   "intensities": {
     "0": "Light",
@@ -101,8 +103,8 @@
     "availableActivities": "Available Activities",
     "cardBackground": "Training Card Background",
     "darkModeAuto": "Auto",
-    "darkModeLight": "Light",
     "darkModeDark": "Dark",
+    "darkModeLight": "Light",
     "decoratedCards": "Decorated",
     "defaultDuration": "Default Duration",
     "defaultStart": "Default Activity Start And Duration",
