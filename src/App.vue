@@ -75,6 +75,19 @@ watch(locale, (value) => {
   </v-app>
 </template>
 <style lang="scss" scoped>
+:global(html) {
+  scrollbar-width: none;
+  scrollbar-color: #FAFAFA transparent;
+}
+
+:global(.has-scroll) {
+  scrollbar-width: thin;
+}
+
+:deep(.v-main__scroller) {
+  scrollbar-width: thin;
+}
+
 .app__overlay {
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
