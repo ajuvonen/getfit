@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HomeView > mounts 1`] = `
+"<div data-v-b4e148ca="" class="home__overlay text-body-1 text-grey-lighten-5">
+  <h1 data-v-b4e148ca="" class="text-h3 text-center">Let's GetFit </h1>
+  <p data-v-b4e148ca="" class="mt-10">GetFit is a free, easy-to-use exercise program planner that allows you to plan a schedule spanning multiple weeks.</p>
+  <p data-v-b4e148ca="" class="mt-4">To get started, navigate to settings and fill some basic info. Then, go to your schedule and start planning activities.</p>
+  <p data-v-b4e148ca="" class="mt-4">If you give your schedule a starting date, a daily agenda will appear on this screen. All data persists in your browser's local storage only, and is not sent anywhere.</p>
+  <p data-v-b4e148ca="" class="mt-10"><i data-v-b4e148ca="" class="mdi-github mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><a data-v-b4e148ca="" class="text-grey-lighten-5 ml-2" href="https://www.github.com/ajuvonen/getfit">GitHub</a></p><button data-v-b4e148ca="" type="button" class="v-btn v-theme--light v-btn--density-default v-btn--size-x-small v-btn--variant-text home__photo-credit"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    <!----><span class="v-btn__content" data-no-activator="">Photo credits</span>
+    <!---->
+    <!---->
+  </button>
+  <!---->
+  <!---->
+</div>"
+`;
+
+exports[`HomeView > mounts with agenda 1`] = `
+"<div data-v-b4e148ca="" class="home__overlay text-body-1 text-grey-lighten-5">
+  <h1 data-v-b4e148ca="" class="text-h3 text-center">Today:</h1>
+  <div data-v-c4ee72cd="" data-v-b4e148ca="" class="daily-agenda has-scroll mt-10 d-flex">
+    <p data-v-c4ee72cd="" class="mx-auto">No trainings. Enjoy your day off!</p>
+  </div>
+  <p data-v-b4e148ca="" class="mt-10"><i data-v-b4e148ca="" class="mdi-github mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><a data-v-b4e148ca="" class="text-grey-lighten-5 ml-2" href="https://www.github.com/ajuvonen/getfit">GitHub</a></p><button data-v-b4e148ca="" type="button" class="v-btn v-theme--light v-btn--density-default v-btn--size-x-small v-btn--variant-text home__photo-credit"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    <!----><span class="v-btn__content" data-no-activator="">Photo credits</span>
+    <!---->
+    <!---->
+  </button>
+  <!---->
+  <!---->
+</div>"
+`;

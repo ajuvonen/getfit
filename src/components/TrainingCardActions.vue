@@ -9,6 +9,7 @@ import TrainingCardActionsMenuGroup from '@/components/TrainingCardActionsMenuGr
 const props = defineProps<{
   training: Training;
   disabled: boolean;
+  simple: boolean;
 }>();
 
 const menuOpen = ref(false);
@@ -43,7 +44,19 @@ watch(
       @click="toggleShowInstructions(training.id)"
       >{{ $t('general.more') }}</v-btn
     >
-    <v-menu v-model="menuOpen" location="top center" :close-on-content-click="false">
+    <v-btn
+      v-if="simple"
+      :prepend-icon="training.completed ? 'mdi-progress-alert' : 'mdi-progress-check'"
+      :disabled="disabled"
+      class="training-card__complete-button"
+      @click="toggleCompletion(training)"
+      >{{
+        $t(
+          !training.completed ? 'trainingCard.completeTraining' : 'trainingCard.uncompleteTraining',
+        )
+      }}</v-btn
+    >
+    <v-menu v-else v-model="menuOpen" location="top center" :close-on-content-click="false">
       <template v-slot:activator="{props}">
         <v-btn
           :aria-label="$t('trainingCard.actionsLabel', training.activity)"
