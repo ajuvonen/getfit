@@ -62,12 +62,12 @@
   },
   "home": {
     "credits": "Photo credits",
-    "dailyAgenda": "Your Daily Agenda:",
-    "noTrainings": "No trainings. Enjoy your day!",
+    "dailyAgenda": "Today:",
+    "noTrainings": "No trainings. Enjoy your day off!",
     "p1": "GetFit is a free, easy-to-use exercise program planner that allows you to plan a schedule spanning multiple weeks.",
-    "p2": "To get started, navigate to settings and fill some basic info about your program. Then, go to your schedule and start planning activities.",
-    "p3": "All data persists in your browser's local storage only, and is not sent anywhere.",
-    "title": "Welcome to GetFit "
+    "p2": "To get started, navigate to settings and fill some basic info. Then, go to your schedule and start planning activities.",
+    "p3": "If you give your schedule a starting date, a daily agenda will appear on this screen. All data persists in your browser's local storage only, and is not sent anywhere.",
+    "title": "Let's GetFit "
   },
   "intensities": {
     "0": "Light",
@@ -127,7 +127,7 @@
     "actions": "Actions",
     "actionsLabel": "Actions for training {0}",
     "completed": "Completed: {0}",
-    "completeTraining": "Complete",
+    "completeTraining": "Finish",
     "copy": "Copy",
     "deleteTraining": "Delete",
     "duration": "Training Duration",
@@ -137,7 +137,7 @@
     "move": "Move",
     "rating": "{0}/5",
     "ratingLabel": "Training Rating",
-    "uncompleteTraining": "Uncomplete"
+    "uncompleteTraining": "Unfinish"
   },
   "weekCalendar": {
     "addTraining": "Add training",
