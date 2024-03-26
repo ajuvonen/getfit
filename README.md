@@ -8,17 +8,11 @@ To test this app in production, visit <https://ajuvonen.github.io/getfit>
 
 Node 20+
 
-## Running the project
+## Running e2e tests
 
 1. Run `npm install`
 2. Run `npm run build`
-3. Run `npm preview`
-4. Navigate to address shown on the terminal
-
-## Running e2e tests
-
-1. Repeat steps 1-2 of the instruction above
-2. Run `npm run test:e2e`
+3. Run `npm run test:e2e`
 
 ## Running unit tests
 
