@@ -16,5 +16,15 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 
+beforeEach(async () => {
+  if (!window.navigator || !navigator.serviceWorker) {
+    return null;
+  }
+  const registrations = await navigator.serviceWorker.getRegistrations();
+  return Promise.all(registrations.map((registration) => {
+    return registration.unregister();
+  }));
+});
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
