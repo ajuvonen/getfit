@@ -16,7 +16,9 @@ const agendaAvailable = computed(() => weeks.value.length && settings.value.star
 
 <template>
   <div class="home__overlay text-body-1 text-grey-lighten-5">
-    <h1 class="text-h3 text-center">{{ $t(agendaAvailable ? 'home.dailyAgenda' : 'home.title') }}</h1>
+    <h1 class="text-h3 text-center">
+      {{ $t(agendaAvailable ? 'home.dailyAgenda' : 'home.title') }}
+    </h1>
     <DailyAgenda v-if="agendaAvailable" />
     <template v-else>
       <p class="mt-10">
@@ -25,13 +27,17 @@ const agendaAvailable = computed(() => weeks.value.length && settings.value.star
       <p class="mt-4">
         {{ $t('home.p2') }}
       </p>
-      <p class="mt-4">
-        {{ $t('home.p3') }}
-      </p>
     </template>
     <p class="mt-10">
       <v-icon icon="mdi-github" />
-      <a class="text-grey-lighten-5 ml-2" href="https://www.github.com/ajuvonen/getfit">GitHub</a>
+      <a
+        class="text-grey-lighten-5 ml-2"
+        target="_blank"
+        noopener
+        noreferrer
+        href="https://www.github.com/ajuvonen/getfit"
+        >GitHub</a
+      >
     </p>
     <v-btn
       variant="text"
@@ -49,7 +55,7 @@ const agendaAvailable = computed(() => weeks.value.length && settings.value.star
       <template #content>
         <ul>
           <li v-for="{name, link} in PHOTO_CREDITS" :key="name">
-            <a :href="link" noreferrer noopener>{{ name }}</a>
+            <a :href="link" target="_blank" noreferrer noopener>{{ name }}</a>
           </li>
         </ul>
       </template>
