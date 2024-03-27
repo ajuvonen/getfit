@@ -64,9 +64,8 @@
     "credits": "Valokuvat",
     "dailyAgenda": "Tänään:",
     "noTrainings": "Ei harjoituksia. Nauti lepopäivästäsi!",
-    "p1": "GetFit on ilmainen, helppokäyttöinen sovellus, jonka avulla voit suunnitella usean viikon harjoitusohjelman.",
-    "p2": "Aloittaaksesi, siirry asetuksiin ja täytä ohjelman perustiedot. Siirry sen jälkeen ohjelmaasi ja aloita harjoitusten suunnittelu.",
-    "p3": "Mikäli annat ohjelmallesi aloituspäivän, päivittäiset harjoituksesi näkyvät tässä näkymässä. Tietoja säilytetään vain selaimesi paikallisessa tallennustilassa, eikä niitä lähetetä mihinkään.",
+    "p1": "GetFit on ilmainen sovellus usean viikon harjoitteluohjelman luontiin. Aloita menemällä asetuksiin ja täyttämällä ohjelman perustiedot. Siirry sen jälkeen ohjelmasivulle ja aloita harjoitusten luonti. Jos annat ohjelmallesi aloituspäivän, päivittäinen treeniohjelmasi ilmestyy tähän näkymään.",
+    "p2": "Sovelluksella luodut harjoitusohjelmat voidaan viedä .ics-tiedostoksi, joka on yhteensopiva useimpien sähköposti- ja kalenteriohjelmien kanssa. Voit asentaa GetFitin myös omalle laitteellesi, jolloin käyttö onnistuu myös ilman verkkoyhteyttä. Kaikki data säilytetään laitteellasi, eikä sitä lähetetä mihinkään.",
     "title": "Let's GetFit"
   },
   "intensities": {
@@ -78,7 +77,7 @@
   "export": {
     "download": "Vie kalenteri",
     "filename": "Harjoitusohjelma",
-    "guide": "Alta voit viedä ohjelmasi .ics-kalenteritiedostoksi, tai tulostaa sen. Kalenteritiedoston luonti edellyttää, että ohjelmalla on aloituspäivämäärä määriteltynä asetuksissa. Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista. Poista sen jälkeen taustakuvien ja -värien tulostus käytöstä.",
+    "guide": "Alta voit viedä ohjelmasi .ics-kalenteritiedostoksi tai tulostaa sen. Kalenteritiedoston luonti edellyttää, että ohjelmalla on aloituspäivämäärä määriteltynä asetuksissa. Parhaan lopputuloksen saavuttamiseksi, tulosta vaakasuunnassa ja aseta sivun marginaalit niin alhaiseksi, kuin mahdollista. Poista sen jälkeen taustakuvien ja -värien tulostus käytöstä.",
     "instructions": "Ohjeet",
     "notes": "Muistiinpanot",
     "print": "Tulosta",
@@ -115,7 +114,6 @@
     "plainCards": "Yksinkertainen",
     "programName": "Ohjelman nimi",
     "startDate": "Aloituspäivä",
-    "startDateHint": "Vaaditaan ICS-exportiin",
     "startOfWeek": "Viikon aloitus",
     "theme": "Teema",
     "title": "Ohjelman asetukset",

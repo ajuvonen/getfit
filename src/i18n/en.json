@@ -64,9 +64,8 @@
     "credits": "Photo credits",
     "dailyAgenda": "Today:",
     "noTrainings": "No trainings. Enjoy your day off!",
-    "p1": "GetFit is a free, easy-to-use exercise program planner that allows you to plan a schedule spanning multiple weeks.",
-    "p2": "To get started, navigate to settings and fill some basic info. Then, go to your schedule and start planning activities.",
-    "p3": "If you give your schedule a starting date, a daily agenda will appear on this screen. All data persists in your browser's local storage only, and is not sent anywhere.",
+    "p1": "GetFit is a free exercise program planner that allows you to plan a schedule spanning multiple weeks. To get started, navigate to settings and fill some basic info. Then, go to your schedule and start planning activities. If you give your schedule a starting date, a daily agenda will appear on this screen.",
+    "p2": "Schedules created with GetFit can be exported to .ics format, which is compatible with most email clients and calendars. You can install GetFit as a web app on your device, in which case you can work also offline. All data persists on your device, and is not sent anywhere.",
     "title": "Let's GetFit "
   },
   "intensities": {
@@ -115,7 +114,6 @@
     "plainCards": "Plain",
     "programName": "Program Name",
     "startDate": "Program Start Date",
-    "startDateHint": "Required for ICS export",
     "startOfWeek": "Start of Week",
     "theme": "Theme",
     "title": "Schedule Settings",
