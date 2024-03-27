@@ -96,7 +96,6 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
           <v-text-field
             id="settings-start-date"
             :model-value="value"
-            :placeholder="$t('settings.startDateHint')"
             clearable
             variant="underlined"
             readonly
