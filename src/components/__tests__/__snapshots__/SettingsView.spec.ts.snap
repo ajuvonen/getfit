@@ -132,7 +132,7 @@ exports[`SettingsView > mounts 1`] = `
                     <!---->
                     <!---->
                   </label>
-                  <!----><input readonly="" placeholder="Required for ICS export" size="1" type="text" id="settings-start-date" aria-describedby="settings-start-date-messages" class="v-field__input">
+                  <!----><input readonly="" size="1" type="text" id="settings-start-date" aria-describedby="settings-start-date-messages" class="v-field__input">
                   <!---->
                 </div>
                 <transition-stub name="expand-x-transition" appear="false" persisted="false" css="true">
