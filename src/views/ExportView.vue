@@ -38,7 +38,6 @@ const downloadICS = async () => {
   } else if (value) {
     const file = new File([value], t('export.filename'), {type: 'text/calendar'});
     const url = URL.createObjectURL(file);
-    console.log(url);
     const anchor = document.createElement('a');
     anchor.href = url;
     anchor.download = t('export.filename');
