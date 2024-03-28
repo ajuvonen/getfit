@@ -6,7 +6,7 @@ import {useScheduleStore} from '@/stores/schedule';
 import TrainingCard from '@/components/TrainingCard.vue';
 
 const scheduleStore = useScheduleStore();
-const {weeks, settings} = storeToRefs(scheduleStore);
+const {weeks, settings, getTotalTrainings, getCompletedTrainings} = storeToRefs(scheduleStore);
 
 const dailyTrainings = computed(() => {
   const startDate = DateTime.fromJSDate(settings.value.startDate!);
@@ -22,6 +22,22 @@ const dailyTrainings = computed(() => {
 });
 </script>
 <template>
+  <v-progress-circular
+    :model-value="(getCompletedTrainings / getTotalTrainings) * 100"
+    class="mx-auto"
+    size="150"
+    width="15"
+  >
+    <v-fab-transition>
+      <span v-if="getTotalTrainings > getCompletedTrainings" class="text-h4">
+        {{ getCompletedTrainings }} / {{ getTotalTrainings }}
+      </span>
+      <v-icon v-else icon="mdi-trophy-outline" size="70" />
+    </v-fab-transition>
+  </v-progress-circular>
+  <h1 class="mt-10 text-h3 text-center">
+    {{ $t('home.dailyAgenda') }}
+  </h1>
   <div class="daily-agenda has-scroll mt-10 d-flex">
     <TrainingCard
       v-for="training in dailyTrainings"
@@ -29,7 +45,7 @@ const dailyTrainings = computed(() => {
       :training="training"
       simple
     />
-    <p v-if="!dailyTrainings.length" class="mx-auto">{{ $t('home.noTrainings') }}</p>
+    <p v-if="!dailyTrainings.length" class="mx-auto text-h6">{{ $t('home.noTrainings') }}</p>
   </div>
 </template>
 <style lang="scss" scoped>

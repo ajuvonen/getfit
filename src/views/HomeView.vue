@@ -16,11 +16,11 @@ const agendaAvailable = computed(() => weeks.value.length && settings.value.star
 
 <template>
   <div class="home__overlay text-body-1 text-grey-lighten-5">
-    <h1 class="text-h3 text-center">
-      {{ $t(agendaAvailable ? 'home.dailyAgenda' : 'home.title') }}
-    </h1>
     <DailyAgenda v-if="agendaAvailable" />
     <template v-else>
+      <h1 class="text-h3 text-center">
+        {{ $t('home.title') }}
+      </h1>
       <p class="mt-10">
         {{ $t('home.p1') }}
       </p>
