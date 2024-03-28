@@ -40,6 +40,17 @@ export const useScheduleStore = defineStore('schedule', () => {
     return [targetWeek, targetTraining] as [Week, Training | undefined];
   });
 
+  const getTotalTrainings = computed(() =>
+    weeks.value.reduce((acc, {trainings}) => acc + trainings.length, 0),
+  );
+
+  const getCompletedTrainings = computed(() =>
+    weeks.value.reduce(
+      (acc, {trainings}) => acc + trainings.filter(({completed}) => completed).length,
+      0,
+    ),
+  );
+
   // Actions
   const addWeek = () => {
     weeks.value.push({
@@ -175,6 +186,8 @@ export const useScheduleStore = defineStore('schedule', () => {
 
   return {
     getTargetWeekAndTraining,
+    getTotalTrainings,
+    getCompletedTrainings,
     settings,
     weeks,
     addOrEditTraining,
