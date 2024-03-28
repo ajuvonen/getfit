@@ -17,9 +17,17 @@ exports[`HomeView > mounts 1`] = `
 
 exports[`HomeView > mounts with agenda 1`] = `
 "<div data-v-b4e148ca="" class="home__overlay text-body-1 text-grey-lighten-5">
-  <h1 data-v-b4e148ca="" class="text-h3 text-center">Today:</h1>
-  <div data-v-c4ee72cd="" data-v-b4e148ca="" class="daily-agenda has-scroll mt-10 d-flex">
-    <p data-v-c4ee72cd="" class="mx-auto">No trainings. Enjoy your day off!</p>
+  <div data-v-c4ee72cd="" class="v-progress-circular v-theme--light mx-auto" style="width: 150px; height: 150px;" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="NaN"><svg style="transform: rotate(calc(-90deg + 0deg));" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.44444444444444 44.44444444444444">
+      <circle class="v-progress-circular__underlay" fill="transparent" cx="50%" cy="50%" r="20" stroke-width="4.444444444444445" stroke-dasharray="125.66370614359172" stroke-dashoffset="0"></circle>
+      <circle class="v-progress-circular__overlay" fill="transparent" cx="50%" cy="50%" r="20" stroke-width="4.444444444444445" stroke-dasharray="125.66370614359172" stroke-dashoffset="NaN"></circle>
+    </svg>
+    <div class="v-progress-circular__content">
+      <transition-stub data-v-c4ee72cd="" name="fab-transition" mode="out-in" appear="false" persisted="false" css="true"><i data-v-c4ee72cd="" class="mdi-trophy-outline mdi v-icon notranslate v-theme--light" style="font-size: 70px; height: 70px; width: 70px;" aria-hidden="true"></i></transition-stub>
+    </div>
+  </div>
+  <h1 data-v-c4ee72cd="" class="mt-10 text-h3 text-center">Today:</h1>
+  <div data-v-c4ee72cd="" class="daily-agenda has-scroll mt-10 d-flex">
+    <p data-v-c4ee72cd="" class="mx-auto text-h6">No trainings. Enjoy your day off!</p>
   </div>
   <p data-v-b4e148ca="" class="mt-10"><i data-v-b4e148ca="" class="mdi-github mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><a data-v-b4e148ca="" class="text-grey-lighten-5 ml-2" target="_blank" noopener="" noreferrer="" href="https://www.github.com/ajuvonen/getfit">GitHub</a></p><button data-v-b4e148ca="" type="button" class="v-btn v-theme--light v-btn--density-default v-btn--size-x-small v-btn--variant-text home__photo-credit"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
     <!----><span class="v-btn__content" data-no-activator="">Photo credits</span>
