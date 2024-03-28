@@ -1,6 +1,6 @@
 import {createPinia, setActivePinia} from 'pinia';
 import {describe, it, expect, beforeEach} from 'vitest';
-import {v4 as uuidv4} from 'uuid';
+import {v4 as uuid} from 'uuid';
 import {useScheduleStore} from '@/stores/schedule';
 import {getEmptyTraining} from '@/utils';
 import {Intensity} from '@/types';
@@ -25,8 +25,8 @@ describe('scheduleStore', () => {
   });
 
   it('gets target week and training', () => {
-    const weekId = uuidv4();
-    const trainingId = uuidv4();
+    const weekId = uuid();
+    const trainingId = uuid();
 
     scheduleStore.weeks.push({
       id: weekId,
@@ -45,7 +45,7 @@ describe('scheduleStore', () => {
   });
 
   it('leaves out training', () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
 
     scheduleStore.weeks.push({
       id: weekId,
@@ -63,7 +63,7 @@ describe('scheduleStore', () => {
   });
 
   it('deletes a week', () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
 
     scheduleStore.weeks.push({
       id: weekId,
@@ -76,8 +76,8 @@ describe('scheduleStore', () => {
   });
 
   it('copies a week', () => {
-    const weekId = uuidv4();
-    const trainingId = uuidv4();
+    const weekId = uuid();
+    const trainingId = uuid();
 
     const originalTraining = getEmptyTraining({
       id: trainingId,
@@ -119,7 +119,7 @@ describe('scheduleStore', () => {
   });
 
   it('adds a training', () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
 
     scheduleStore.weeks.push({
       id: weekId,
@@ -143,8 +143,8 @@ describe('scheduleStore', () => {
   });
 
   it('edits a training', () => {
-    const weekId = uuidv4();
-    const trainingId = uuidv4();
+    const weekId = uuid();
+    const trainingId = uuid();
 
     scheduleStore.weeks.push({
       id: weekId,
@@ -181,7 +181,7 @@ describe('scheduleStore', () => {
   });
 
   it('deletes a training', () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
 
     const training = getEmptyTraining({
       weekId: weekId,
@@ -199,7 +199,7 @@ describe('scheduleStore', () => {
   });
 
   it('does not delete a training when IDs do not match', () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
 
     const training = getEmptyTraining({
       weekId: weekId,
@@ -210,7 +210,7 @@ describe('scheduleStore', () => {
       trainings: [training],
     });
 
-    const nonExistentTraining = {...training, id: uuidv4()};
+    const nonExistentTraining = {...training, id: uuid()};
     scheduleStore.deleteTraining(nonExistentTraining);
 
     const [week] = scheduleStore.getTargetWeekAndTraining(weekId);
@@ -218,8 +218,8 @@ describe('scheduleStore', () => {
   });
 
   it('moves a training to a different week', () => {
-    const weekId1 = uuidv4();
-    const weekId2 = uuidv4();
+    const weekId1 = uuid();
+    const weekId2 = uuid();
 
     const training = getEmptyTraining({
       weekId: weekId1,
@@ -238,7 +238,7 @@ describe('scheduleStore', () => {
   });
 
   it('reorders trainings within a week', () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
 
     const training1 = getEmptyTraining({
       weekId: weekId,
@@ -261,7 +261,7 @@ describe('scheduleStore', () => {
   });
 
   it('copies a training', () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
 
     const training = getEmptyTraining({
       weekId: weekId,
@@ -285,7 +285,7 @@ describe('scheduleStore', () => {
   });
 
   it('toggles the completed property', () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
 
     const training = getEmptyTraining({
       weekId: weekId,
@@ -304,7 +304,7 @@ describe('scheduleStore', () => {
   });
 
   it('updates the rating property', () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
 
     const training = getEmptyTraining({
       weekId: weekId,
@@ -322,5 +322,45 @@ describe('scheduleStore', () => {
     expect(training.rating).toBeNull();
     scheduleStore.updateRating(training, 5);
     expect(training.rating).toBe(5);
+  });
+
+  it('calculates the amount of trainings', () => {
+    scheduleStore.weeks.push(
+      {
+        id: uuid(),
+        trainings: [getEmptyTraining()],
+      },
+      {
+        id: uuid(),
+        trainings: [getEmptyTraining(), getEmptyTraining()],
+      },
+    );
+
+    expect(scheduleStore.getTotalTrainings).toBe(3);
+  });
+
+  it('calculates the amount of completed trainings', () => {
+    scheduleStore.weeks.push(
+      {
+        id: uuid(),
+        trainings: [getEmptyTraining()],
+      },
+      {
+        id: uuid(),
+        trainings: [getEmptyTraining(), getEmptyTraining({completed: true})],
+      },
+    );
+
+    expect(scheduleStore.getCompletedTrainings).toBe(1);
+  });
+
+  it('returns 0 when there are no trainings', () => {
+    scheduleStore.weeks.push({
+      id: uuid(),
+      trainings: [],
+    });
+
+    expect(scheduleStore.getCompletedTrainings).toBe(0);
+    expect(scheduleStore.getTotalTrainings).toBe(0);
   });
 });
