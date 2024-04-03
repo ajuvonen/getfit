@@ -355,10 +355,7 @@ describe('scheduleStore', () => {
   });
 
   it('returns 0 when there are no trainings', () => {
-    scheduleStore.weeks.push({
-      id: uuid(),
-      trainings: [],
-    });
+    scheduleStore.addWeek();
 
     expect(scheduleStore.getCompletedTrainings).toBe(0);
     expect(scheduleStore.getTotalTrainings).toBe(0);
