@@ -66,6 +66,7 @@
     "noTrainings": "Ei harjoituksia. Nauti lepopäivästäsi!",
     "p1": "GetFit on ilmainen sovellus usean viikon harjoitteluohjelman luontiin. Aloita menemällä asetuksiin ja täyttämällä ohjelman perustiedot. Siirry sen jälkeen ohjelmasivulle ja aloita harjoitusten luonti. Jos annat ohjelmallesi aloituspäivän, päivittäinen treeniohjelmasi ilmestyy tähän näkymään.",
     "p2": "Sovelluksella luodut harjoitusohjelmat voidaan viedä .ics-tiedostoksi, joka on yhteensopiva useimpien sähköposti- ja kalenteriohjelmien kanssa. Voit asentaa GetFitin myös omalle laitteellesi, jolloin käyttö onnistuu myös ilman verkkoyhteyttä. Kaikki data säilytetään laitteellasi, eikä sitä lähetetä mihinkään.",
+    "progress": "Edistyminen",
     "title": "Let's GetFit"
   },
   "intensities": {
