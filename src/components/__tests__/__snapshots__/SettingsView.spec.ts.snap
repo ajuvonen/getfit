@@ -60,9 +60,9 @@ exports[`SettingsView > mounts 1`] = `
       </div>
       <!---->
       <div class="v-input__details">
-        <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="settings-program-name-messages">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-program-name-messages">
           <!---->
-        </transition-stub>
+        </transition-group-stub>
         <!----><span></span>
         <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
           <div class="v-counter" style="display: none;">0 / 30</div>
@@ -79,7 +79,7 @@ exports[`SettingsView > mounts 1`] = `
           <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-start-of-week-monday">
             <div class="v-selection-control__wrapper">
               <!---->
-              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-5" aria-disabled="false" type="radio" name="settings-start-of-week" value="false"></div>
+              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-5" aria-disabled="false" aria-label="Monday" type="radio" name="settings-start-of-week" value="false"></div>
             </div><label class="v-label v-label--clickable" for="input-5">
               <!---->Monday
             </label>
@@ -87,7 +87,7 @@ exports[`SettingsView > mounts 1`] = `
           <div data-v-5e0b544f="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-start-of-week-sunday">
             <div class="v-selection-control__wrapper">
               <!---->
-              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-6" aria-disabled="false" type="radio" name="settings-start-of-week" value="true"></div>
+              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-6" aria-disabled="false" aria-label="Sunday" type="radio" name="settings-start-of-week" value="true"></div>
             </div><label class="v-label v-label--clickable" for="input-6">
               <!---->Sunday
             </label>
@@ -96,9 +96,9 @@ exports[`SettingsView > mounts 1`] = `
       </div>
       <!---->
       <div class="v-input__details">
-        <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="settings-start-of-week-messages">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-start-of-week-messages">
           <!---->
-        </transition-stub>
+        </transition-group-stub>
         <!---->
       </div>
     </div><label data-v-5e0b544f="" class="v-label" for="settings-start-date">
@@ -150,9 +150,9 @@ exports[`SettingsView > mounts 1`] = `
             </div>
             <!---->
             <div class="v-input__details">
-              <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="settings-start-date-messages">
+              <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-start-date-messages">
                 <!---->
-              </transition-stub>
+              </transition-group-stub>
               <!---->
             </div>
           </div>
@@ -181,7 +181,7 @@ exports[`SettingsView > mounts 1`] = `
           <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-unit-of-time-h">
             <div class="v-selection-control__wrapper">
               <!---->
-              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-12" aria-disabled="false" type="radio" name="settings-unit-of-time" value="h"></div>
+              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-12" aria-disabled="false" aria-label="Hours" type="radio" name="settings-unit-of-time" value="h"></div>
             </div><label class="v-label v-label--clickable" for="input-12">
               <!---->Hours
             </label>
@@ -189,7 +189,7 @@ exports[`SettingsView > mounts 1`] = `
           <div data-v-5e0b544f="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-unit-of-time-m">
             <div class="v-selection-control__wrapper">
               <!---->
-              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-13" aria-disabled="false" type="radio" name="settings-unit-of-time" value="m"></div>
+              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-13" aria-disabled="false" aria-label="Minutes" type="radio" name="settings-unit-of-time" value="m"></div>
             </div><label class="v-label v-label--clickable" for="input-13">
               <!---->Minutes
             </label>
@@ -198,9 +198,9 @@ exports[`SettingsView > mounts 1`] = `
       </div>
       <!---->
       <div class="v-input__details">
-        <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="settings-unit-of-time-messages">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-unit-of-time-messages">
           <!---->
-        </transition-stub>
+        </transition-group-stub>
         <!---->
       </div>
     </div><label data-v-5e0b544f="" class="v-label">
@@ -245,9 +245,9 @@ exports[`SettingsView > mounts 1`] = `
       </div>
       <!---->
       <div class="v-input__details">
-        <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="settings-default-duration-messages">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-default-duration-messages">
           <!---->
-        </transition-stub>
+        </transition-group-stub>
         <!---->
       </div>
     </div><label data-v-5e0b544f="" class="v-label">
@@ -256,7 +256,7 @@ exports[`SettingsView > mounts 1`] = `
     <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn" data-test-id="settings-toggle-all-activities">
       <div class="v-selection-control__wrapper text-secondary">
         <!---->
-        <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-16" aria-disabled="false" type="checkbox" value="true"></div>
+        <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-16" aria-disabled="false" aria-label="Toggle All" type="checkbox" value="true"></div>
       </div><label class="v-label v-label--clickable" for="input-16">
         <!---->Toggle All
       </label>
@@ -482,7 +482,7 @@ exports[`SettingsView > mounts 1`] = `
           <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-visual-mode-auto">
             <div class="v-selection-control__wrapper">
               <!---->
-              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-39" aria-disabled="false" type="radio" name="settings-visual-mode" value="auto"></div>
+              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-39" aria-disabled="false" aria-label="Auto" type="radio" name="settings-visual-mode" value="auto"></div>
             </div><label class="v-label v-label--clickable" for="input-39">
               <!---->Auto
             </label>
@@ -490,7 +490,7 @@ exports[`SettingsView > mounts 1`] = `
           <div data-v-5e0b544f="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-visual-mode-light">
             <div class="v-selection-control__wrapper">
               <!---->
-              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-40" aria-disabled="false" type="radio" name="settings-visual-mode" value="light"></div>
+              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-40" aria-disabled="false" aria-label="Light" type="radio" name="settings-visual-mode" value="light"></div>
             </div><label class="v-label v-label--clickable" for="input-40">
               <!---->Light
             </label>
@@ -498,7 +498,7 @@ exports[`SettingsView > mounts 1`] = `
           <div data-v-5e0b544f="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-visual-mode-dark">
             <div class="v-selection-control__wrapper">
               <!---->
-              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-41" aria-disabled="false" type="radio" name="settings-visual-mode" value="dark"></div>
+              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-41" aria-disabled="false" aria-label="Dark" type="radio" name="settings-visual-mode" value="dark"></div>
             </div><label class="v-label v-label--clickable" for="input-41">
               <!---->Dark
             </label>
@@ -518,7 +518,7 @@ exports[`SettingsView > mounts 1`] = `
           <div data-v-5e0b544f="" class="v-selection-control v-selection-control--dirty v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-decorated-cards">
             <div class="v-selection-control__wrapper">
               <!---->
-              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-45" aria-disabled="false" type="radio" name="settings-card-background" value="true"></div>
+              <div class="v-selection-control__input"><i class="mdi-radiobox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-45" aria-disabled="false" aria-label="Decorated" type="radio" name="settings-card-background" value="true"></div>
             </div><label class="v-label v-label--clickable" for="input-45">
               <!---->Decorated
             </label>
@@ -526,7 +526,7 @@ exports[`SettingsView > mounts 1`] = `
           <div data-v-5e0b544f="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio" data-test-id="settings-plain-cards">
             <div class="v-selection-control__wrapper">
               <!---->
-              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-46" aria-disabled="false" type="radio" name="settings-card-background" value="false"></div>
+              <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-46" aria-disabled="false" aria-label="Plain" type="radio" name="settings-card-background" value="false"></div>
             </div><label class="v-label v-label--clickable" for="input-46">
               <!---->Plain
             </label>
