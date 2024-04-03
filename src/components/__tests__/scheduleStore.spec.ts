@@ -1,6 +1,8 @@
+import {nextTick} from 'vue';
 import {createPinia, setActivePinia} from 'pinia';
 import {describe, it, expect, beforeEach} from 'vitest';
 import {v4 as uuid} from 'uuid';
+import {DateTime} from 'luxon';
 import {useScheduleStore} from '@/stores/schedule';
 import {getEmptyTraining} from '@/utils';
 import {Intensity} from '@/types';
@@ -325,14 +327,16 @@ describe('scheduleStore', () => {
   });
 
   it('calculates the amount of trainings', () => {
+    const weekId1 = uuid();
+    const weekId2 = uuid();
     scheduleStore.weeks.push(
       {
-        id: uuid(),
-        trainings: [getEmptyTraining()],
+        id: weekId1,
+        trainings: [getEmptyTraining({weekId: weekId1})],
       },
       {
-        id: uuid(),
-        trainings: [getEmptyTraining(), getEmptyTraining()],
+        id: weekId2,
+        trainings: [getEmptyTraining({weekId: weekId2}), getEmptyTraining({weekId: weekId2})],
       },
     );
 
@@ -340,14 +344,19 @@ describe('scheduleStore', () => {
   });
 
   it('calculates the amount of completed trainings', () => {
+    const weekId1 = uuid();
+    const weekId2 = uuid();
     scheduleStore.weeks.push(
       {
-        id: uuid(),
-        trainings: [getEmptyTraining()],
+        id: weekId1,
+        trainings: [getEmptyTraining({weekId: weekId1})],
       },
       {
-        id: uuid(),
-        trainings: [getEmptyTraining(), getEmptyTraining({completed: true})],
+        id: weekId2,
+        trainings: [
+          getEmptyTraining({weekId: weekId2}),
+          getEmptyTraining({weekId: weekId2, completed: true}),
+        ],
       },
     );
 
@@ -359,5 +368,45 @@ describe('scheduleStore', () => {
 
     expect(scheduleStore.getCompletedTrainings).toBe(0);
     expect(scheduleStore.getTotalTrainings).toBe(0);
+  });
+
+  it('changes data when start of week changes', async () => {
+    const weekId = uuid();
+    scheduleStore.settings.startDate = DateTime.now().startOf('week').toJSDate();
+    scheduleStore.weeks.push({
+      id: weekId,
+      trainings: [
+        getEmptyTraining({
+          weekId,
+          dayIndex: 0,
+        }),
+        getEmptyTraining({
+          weekId,
+          dayIndex: 6,
+        }),
+        getEmptyTraining({
+          weekId,
+          dayIndex: 3,
+        }),
+      ],
+    });
+
+    expect(DateTime.fromJSDate(scheduleStore.settings.startDate).weekday).toBe(1);
+
+    scheduleStore.settings.startsOnSunday = true;
+    await nextTick();
+
+    expect(scheduleStore.weeks[0].trainings[0].dayIndex).toBe(1);
+    expect(scheduleStore.weeks[0].trainings[1].dayIndex).toBe(0);
+    expect(scheduleStore.weeks[0].trainings[2].dayIndex).toBe(4);
+    expect(DateTime.fromJSDate(scheduleStore.settings.startDate).weekday).toBe(7);
+
+    scheduleStore.settings.startsOnSunday = false;
+    await nextTick();
+
+    expect(scheduleStore.weeks[0].trainings[0].dayIndex).toBe(0);
+    expect(scheduleStore.weeks[0].trainings[1].dayIndex).toBe(6);
+    expect(scheduleStore.weeks[0].trainings[2].dayIndex).toBe(3);
+    expect(DateTime.fromJSDate(scheduleStore.settings.startDate).weekday).toBe(1);
   });
 });
