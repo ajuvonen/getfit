@@ -175,6 +175,20 @@ export const useScheduleStore = defineStore('schedule', () => {
           settings.value.startDate = date.plus({days: 1}).toJSDate();
         }
       }
+      weeks.value.forEach((week) => {
+        week.trainings = week.trainings.map((training) => {
+          let newDayIndex = parsedValue ? training.dayIndex + 1 : training.dayIndex - 1;
+          if (newDayIndex < 0) {
+            newDayIndex = 6;
+          } else if (newDayIndex > 6) {
+            newDayIndex = 0;
+          }
+          return {
+            ...training,
+            dayIndex: newDayIndex,
+          };
+        });
+      });
     },
   );
 
