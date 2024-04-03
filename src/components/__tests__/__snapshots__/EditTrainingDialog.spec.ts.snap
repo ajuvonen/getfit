@@ -69,9 +69,9 @@ exports[`EditTrainingDialog > mounts 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="edit-training-activity-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="edit-training-activity-messages">
             <!---->
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -112,9 +112,9 @@ exports[`EditTrainingDialog > mounts 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-22-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-22-messages">
             <!---->
-          </transition-stub>
+          </transition-group-stub>
           <!----><span></span>
           <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
             <div class="v-counter" style="display: none;">0 / 30</div>
@@ -158,9 +158,9 @@ exports[`EditTrainingDialog > mounts 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-24-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-24-messages">
             <!---->
-          </transition-stub>
+          </transition-group-stub>
           <!----><span></span>
           <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
             <div class="v-counter" style="display: none;">0 / 40</div>
@@ -203,9 +203,9 @@ exports[`EditTrainingDialog > mounts 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-26-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-26-messages">
             <!---->
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -252,9 +252,9 @@ exports[`EditTrainingDialog > mounts 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-28-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-28-messages">
             <!---->
-          </transition-stub>
+          </transition-group-stub>
           <!----><span></span>
           <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
             <div class="v-counter" style="display: none;">0 / 2000</div>
@@ -300,9 +300,9 @@ exports[`EditTrainingDialog > mounts 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="edit-training-intensity-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="edit-training-intensity-messages">
             <!---->
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
