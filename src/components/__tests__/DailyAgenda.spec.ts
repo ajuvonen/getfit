@@ -46,4 +46,47 @@ describe('DailyAgenda', () => {
     expect(wrapper.findAll('.training-card__title')[0].text()).toBe('Boxing');
     expect(wrapper.findAll('.training-card__title')[1].text()).toBe('Swimming');
   });
+
+  it('displays progress', () => {
+    const weekId = uuid();
+    scheduleStore.weeks.push({
+      id: weekId,
+      trainings: [
+        getEmptyTraining({
+          weekId,
+        }),
+        getEmptyTraining({
+          weekId,
+        }),
+        getEmptyTraining({
+          weekId,
+          completed: true,
+        }),
+      ],
+    });
+    const wrapper = mount(DailyAgenda);
+
+    expect(wrapper.find('.daily-agenda__progress').text()).toBe('1 / 3');
+  });
+
+  it('displays completion trophy', () => {
+    const weekId = uuid();
+    scheduleStore.weeks.push({
+      id: weekId,
+      trainings: [
+        getEmptyTraining({
+          weekId,
+          completed: true,
+        }),
+        getEmptyTraining({
+          weekId,
+          completed: true,
+        }),
+      ],
+    });
+    const wrapper = mount(DailyAgenda);
+
+    expect(wrapper.find('.daily-agenda__progress').exists()).toBe(false);
+    expect(wrapper.find('.daily-agenda__completed-icon').exists()).toBe(true);
+  });
 });
