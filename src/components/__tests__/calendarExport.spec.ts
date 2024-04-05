@@ -32,7 +32,7 @@ describe('useCalendarExport', () => {
     });
     return promise;
   };
-  it('createCalendarEvents creates correct calendar events', async () => {
+  it('creates correct calendar events', async () => {
     const weekId1 = uuidv4();
     const weekId2 = uuidv4();
     const mockWeeks: Week[] = [
@@ -171,7 +171,7 @@ describe('useCalendarExport', () => {
     expect(events[4].start).toEqual([2024, 1, 14, 13, 0]);
   });
 
-  it('createCalendarEvents moves to next date when durations cross over', async () => {
+  it('moves to next date when durations cross over', async () => {
     const weekId1 = uuidv4();
     const mockWeeks: Week[] = [
       {
@@ -236,7 +236,7 @@ describe('useCalendarExport', () => {
     expect(events[1].start).toEqual([2024, 1, 2, 0, 30]);
   });
 
-  it('createCalendarEvents gives calendar a default name', async () => {
+  it('gives calendar a default name', async () => {
     const weekId = uuidv4();
     const mockWeeks: Week[] = [
       {
@@ -259,5 +259,32 @@ describe('useCalendarExport', () => {
 
     expect(events).toHaveLength(1);
     expect(events[0].calName).toBe('TrainingSchedule');
+  });
+
+  it('gives calendar event a default duration', async () => {
+    const weekId = uuidv4();
+    const mockWeeks: Week[] = [
+      {
+        id: weekId,
+        trainings: [
+          getEmptyTraining({
+            weekId,
+            activity: 'running',
+            duration: 12,
+            unitOfDuration: 'km',
+          }),
+        ],
+      },
+    ];
+
+    const mockSettings: ScheduleSettings = getEmptySettings({
+      name: '',
+      startDate: new Date('2024-01-01'),
+    });
+
+    const events = await createTestComponent(mockSettings, mockWeeks);
+
+    expect(events).toHaveLength(1);
+    expect(events[0].duration.minutes).toBe(60);
   });
 });

@@ -3,6 +3,7 @@ import {useI18n} from 'vue-i18n';
 import type {CalendarEvent} from '@/types';
 import {useScheduleStore} from '@/stores/schedule';
 import {storeToRefs} from 'pinia';
+import {isDurationTime} from '@/utils';
 
 export default function useCalendarExport() {
   const {t} = useI18n();
@@ -20,12 +21,26 @@ export default function useCalendarExport() {
       let accumulatedDuration = 0;
       let currentDayIndex = 0;
       return trainings.map<CalendarEvent>(
-        ({activity, dayIndex, title, instructions, duration, intensity, location}) => {
+        ({
+          activity,
+          dayIndex,
+          title,
+          instructions,
+          duration,
+          intensity,
+          location,
+          unitOfDuration,
+        }) => {
           if (dayIndex !== currentDayIndex) {
             accumulatedDuration = 0;
             currentDayIndex = dayIndex;
           }
-          const minutes = settings.value.unitOfTime === 'm' ? duration : duration * 60;
+
+          let minutes = 60; // Default duration
+          if (isDurationTime(unitOfDuration) && duration) {
+            minutes = unitOfDuration === 'm' ? duration : duration * 60;
+          }
+
           const start = startDate.plus({days: dayIndex}).plus({minutes: accumulatedDuration});
           accumulatedDuration = accumulatedDuration + minutes;
           return {

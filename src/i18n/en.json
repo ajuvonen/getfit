@@ -50,6 +50,12 @@
       "saturday": "Sat",
       "sunday": "Sun"
     },
+    "unitsOfDuration": {
+      "h": "Hours",
+      "m": "Minutes",
+      "km": "Kilometers",
+      "mi": "Miles"
+    },
     "weekdays": {
       "monday": "Monday",
       "tuesday": "Tuesday",
@@ -109,6 +115,7 @@
     "defaultDuration": "Default Duration",
     "defaultStart": "Default Activity Start And Duration",
     "defaultStartTime": "Default Start TIme",
+    "defaultUnitOfDuration": "Default Unit of Duration",
     "guide": "The settings allow you to, for example, limit the available activity types and set the starting date of the schedule. The settings are saved automatically.",
     "hours": "Hours",
     "minutes": "Minutes",
@@ -119,7 +126,6 @@
     "theme": "Theme",
     "title": "Schedule Settings",
     "toggleAllActivities": "Toggle All",
-    "unitOfTime": "Unit of Time",
     "weekNumbering": "Week numbering"
   },
   "trainingCard": {

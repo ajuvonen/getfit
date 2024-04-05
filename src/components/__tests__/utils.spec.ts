@@ -1,35 +1,17 @@
 import {describe, it, expect} from 'vitest';
 import type {ErrorObject} from '@vuelidate/core';
 import {
-  roundNearestQuarter,
   getIcon,
   getIntensityColor,
   getValidationErrors,
   getEmptyTraining,
   getEmptySettings,
+  isDurationTime,
 } from '@/utils';
 import {Intensity, type ScheduleSettings, type Training} from '@/types';
 import {ACTIVITIES} from '@/constants';
 
 describe('Utils', () => {
-  it('roundNearestQuarter rounds decimals to nearest quarter with no decimals', () => {
-    expect(roundNearestQuarter(1.1, 0)).toBe(1);
-    expect(roundNearestQuarter(1.2, 0)).toBe(1);
-    expect(roundNearestQuarter(1.3333, 0)).toBe(1);
-    expect(roundNearestQuarter(1.6666, 0)).toBe(2);
-    expect(roundNearestQuarter(1.77, 0)).toBe(2);
-    expect(roundNearestQuarter(1.87, 0)).toBe(2);
-  });
-
-  it('roundNearestQuarter rounds decimals to nearest quarter with two decimal precision', () => {
-    expect(roundNearestQuarter(1.1, 2)).toBe(1.0);
-    expect(roundNearestQuarter(1.2, 2)).toBe(1.25);
-    expect(roundNearestQuarter(1.3333, 2)).toBe(1.25);
-    expect(roundNearestQuarter(1.6666, 2)).toBe(1.75);
-    expect(roundNearestQuarter(1.77, 2)).toBe(1.75);
-    expect(roundNearestQuarter(1.88, 2)).toBe(2.00);
-  });
-
   it('getIcon gets icons from activities list', () => {
     expect(getIcon('walking')).toBe('mdi-walk');
     expect(getIcon('boxing')).toBe('mdi-boxing-glove');
@@ -67,7 +49,7 @@ describe('Utils', () => {
         seconds: 0,
       },
       defaultDuration: 20,
-      unitOfTime: 'm',
+      defaultUnitOfDuration: 'm',
       darkMode: 'light',
       decoratedCards: false,
     };
@@ -89,7 +71,7 @@ describe('Utils', () => {
         seconds: 0,
       },
       defaultDuration: 1,
-      unitOfTime: 'h',
+      defaultUnitOfDuration: 'h',
       darkMode: 'auto',
       decoratedCards: true,
     });
@@ -109,6 +91,7 @@ describe('Utils', () => {
       location: 'Test Location',
       completed: true,
       rating: 5,
+      unitOfDuration: 'km',
     };
     const training: Training = getEmptyTraining(initialTraining);
     expect(training).toEqual(initialTraining);
@@ -124,10 +107,18 @@ describe('Utils', () => {
       title: '',
       instructions: '',
       duration: 1,
+      unitOfDuration: 'h',
       intensity: Intensity.NORMAL,
       location: '',
       completed: false,
       rating: null,
     });
   });
+
+  it('isDurationTime should return true if duration is a time', () => {
+    expect(isDurationTime('h')).toBe(true);
+    expect(isDurationTime('m')).toBe(true);
+    expect(isDurationTime('km')).toBe(false);
+    expect(isDurationTime('mi')).toBe(false);
+  })
 });

@@ -1,5 +1,7 @@
 export type Rating = 1 | 2 | 3 | 4 | 5 | null;
 
+export type UnitOfDuration = 'h' | 'm' | 'km' | 'mi';
+
 export type Training = {
   id: string;
   weekId: string;
@@ -8,6 +10,7 @@ export type Training = {
   title: string;
   instructions: string;
   duration: number;
+  unitOfDuration: UnitOfDuration;
   intensity: Intensity;
   location: string;
   completed: boolean;
@@ -27,7 +30,7 @@ export type ScheduleSettings = {
   availableActivities: string[];
   defaultStartTime: {hours: number; minutes: number; seconds: number};
   defaultDuration: number;
-  unitOfTime: 'm' | 'h';
+  defaultUnitOfDuration: UnitOfDuration;
   darkMode: 'auto' | 'light' | 'dark';
   decoratedCards: boolean;
 };

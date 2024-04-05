@@ -1,6 +1,5 @@
 import {mount} from '@vue/test-utils';
-import {describe, it, expect, beforeEach} from 'vitest';
-import {useScheduleStore} from '@/stores/schedule';
+import {describe, it, expect} from 'vitest';
 import {Intensity, type Training} from '@/types';
 import TrainingCard from '@/components/TrainingCard.vue';
 import {getEmptyTraining} from '@/utils';
@@ -12,12 +11,6 @@ const basicTraining: Training = getEmptyTraining({
 });
 
 describe('TrainingCard', () => {
-  let scheduleStore: ReturnType<typeof useScheduleStore>;
-
-  beforeEach(() => {
-    scheduleStore = useScheduleStore();
-  });
-
   it('mounts', () => {
     const wrapper = mount(TrainingCard, {
       props: {
@@ -52,7 +45,6 @@ describe('TrainingCard', () => {
   });
 
   it('shows custom data', async () => {
-    scheduleStore.settings.unitOfTime = 'm';
     const wrapper = mount(TrainingCard, {
       props: {
         training: {
@@ -60,6 +52,7 @@ describe('TrainingCard', () => {
           intensity: Intensity.HEAVY,
           duration: 0,
           location: '',
+          unitOfDuration: 'm',
           title: 'Free fight',
         },
       },

@@ -4,7 +4,7 @@ import {useStorage} from '@vueuse/core';
 import {v4 as uuidv4} from 'uuid';
 import {DateTime} from 'luxon';
 import type {Rating, ScheduleSettings, Training, Week} from '@/types';
-import {roundNearestQuarter, getEmptySettings} from '@/utils';
+import {getEmptySettings} from '@/utils';
 
 export const useScheduleStore = defineStore('schedule', () => {
   // State refs
@@ -142,27 +142,6 @@ export const useScheduleStore = defineStore('schedule', () => {
   };
 
   // Watchers
-  watch(
-    () => settings.value.unitOfTime,
-    (newValue, oldValue) => {
-      if (newValue && newValue !== oldValue) {
-        const multiplier = newValue === 'h' ? 1 / 60 : 60;
-        const precision = newValue === 'h' ? 2 : 0;
-        settings.value.defaultDuration = roundNearestQuarter(
-          settings.value.defaultDuration * multiplier,
-          precision,
-        );
-        weeks.value = weeks.value.map((week) => ({
-          ...week,
-          trainings: week.trainings.map((training) => ({
-            ...training,
-            duration: roundNearestQuarter(training.duration * multiplier, precision),
-          })),
-        }));
-      }
-    },
-  );
-
   watch(
     () => settings.value.startsOnSunday,
     (newValue) => {

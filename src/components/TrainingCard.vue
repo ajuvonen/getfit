@@ -2,7 +2,7 @@
 import {computed} from 'vue';
 import {storeToRefs} from 'pinia';
 import type {Training} from '@/types';
-import {getIcon, getIntensityColor} from '@/utils';
+import {getIcon, getIntensityColor, isDurationTime} from '@/utils';
 import {useScheduleStore} from '@/stores/schedule';
 import {COLORS} from '@/constants';
 import useScreen from '@/hooks/screen';
@@ -11,12 +11,15 @@ import TrainingCardRating from '@/components/TrainingCardRating.vue';
 import TrainingCardInstructions from '@/components/TrainingCardInstructions.vue';
 import {useAppStateStore} from '@/stores/appState';
 
-const props = withDefaults(defineProps<{
-  training: Training;
-  simple?: boolean;
-}>(), {
-  simple: false,
-});
+const props = withDefaults(
+  defineProps<{
+    training: Training;
+    simple?: boolean;
+  }>(),
+  {
+    simple: false,
+  },
+);
 
 const {settings} = storeToRefs(useScheduleStore());
 
@@ -38,7 +41,7 @@ const {isSmallScreen} = useScreen();
       :width="isSmallScreen ? '280px' : '350px'"
       :color="getIntensityColor(training.intensity, settings.decoratedCards ? 0.8 : 1)"
       :style="{
-        color: training.completed ? COLORS.lightGrey :COLORS.darkGrey,
+        color: training.completed ? COLORS.lightGrey : COLORS.darkGrey,
       }"
     >
       <v-card-title class="ml-10 training-card__title">
@@ -65,8 +68,12 @@ const {isSmallScreen} = useScreen();
           />
         </div>
         <div class="training-card__duration text-subtitle-2">
-          <v-icon icon="mdi-timer" :aria-label="$t('trainingCard.duration')" />
-          <span>{{ training.duration || '-' }} {{ settings.unitOfTime }}</span>
+          <v-icon
+            :icon="isDurationTime(training.unitOfDuration) ? 'mdi-timer' : 'mdi-go-kart-track'"
+            :aria-label="$t('trainingCard.duration')"
+          />
+          {{ training.duration || '-' }}
+          {{ training.unitOfDuration }}
         </div>
         <div class="training-card__intensity text-subtitle-2">
           <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />

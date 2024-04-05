@@ -167,46 +167,101 @@ exports[`EditTrainingDialog > mounts 1`] = `
           </transition-stub>
         </div>
       </div>
-      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-text-field--suffixed edit-training-duration" data-test-id="edit-training-duration">
-        <!---->
-        <div class="v-input__control">
-          <div class="v-field v-field--active v-field--center-affix v-field--dirty v-field--variant-filled v-theme--light v-locale--is-ltr">
-            <div class="v-field__overlay"></div>
-            <div class="v-field__loader">
-              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+      <div data-v-6b8ac3b4="" class="d-flex edit-training__duration-container">
+        <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-text-field edit-training-duration" data-test-id="edit-training-duration">
+          <!---->
+          <div class="v-input__control">
+            <div class="v-field v-field--active v-field--center-affix v-field--dirty v-field--variant-filled v-theme--light v-locale--is-ltr">
+              <div class="v-field__overlay"></div>
+              <div class="v-field__loader">
+                <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-26">
+                  <!---->Duration
+                </label><label class="v-label v-field-label" for="input-26">
+                  <!---->Duration
+                </label>
+                <!----><input size="1" type="number" id="input-26" aria-describedby="input-26-messages" class="v-field__input">
                 <!---->
-                <div class="v-progress-linear__background" style="width: 100%;"></div>
-                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
-                  <div class="v-progress-linear__indeterminate">
-                    <div class="v-progress-linear__indeterminate long"></div>
-                    <div class="v-progress-linear__indeterminate short"></div>
-                  </div>
-                </transition-stub>
+              </div>
+              <!---->
+              <!---->
+              <div class="v-field__outline">
+                <!---->
                 <!---->
               </div>
             </div>
-            <!---->
-            <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-26">
-                <!---->Duration
-              </label><label class="v-label v-field-label" for="input-26">
-                <!---->Duration
-              </label>
-              <!----><input size="1" type="number" id="input-26" aria-describedby="input-26-messages" class="v-field__input"><span class="v-text-field__suffix"><span class="v-text-field__suffix__text">h</span></span>
-            </div>
-            <!---->
-            <!---->
-            <div class="v-field__outline">
+          </div>
+          <!---->
+          <div class="v-input__details">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-26-messages">
               <!---->
-              <!---->
-            </div>
+            </transition-group-stub>
+            <!---->
           </div>
         </div>
-        <!---->
-        <div class="v-input__details">
-          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-26-messages">
-            <!---->
-          </transition-group-stub>
+        <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-select v-select--single v-select--selected" data-test-id="edit-training-unit-of-duration">
           <!---->
+          <div class="v-input__control">
+            <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--dirty v-field--no-label v-field--variant-filled v-theme--light v-locale--is-ltr" role="combobox">
+              <div class="v-field__overlay"></div>
+              <div class="v-field__loader">
+                <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                  <!---->
+                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long"></div>
+                      <div class="v-progress-linear__indeterminate short"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <div class="v-field__field" data-no-activator="">
+                <!----><label class="v-label v-field-label" for="edit-training-unit-of-duration">
+                  <!---->
+                  <!---->
+                </label>
+                <!---->
+                <div class="v-field__input" data-no-activator="">
+                  <!---->
+                  <!--teleport start-->
+                  <!--teleport end-->
+                  <div class="v-select__selection"><span class="v-select__selection-text">Hours<!----></span></div><input size="1" type="text" id="edit-training-unit-of-duration" aria-describedby="edit-training-unit-of-duration-messages" inputmode="none" aria-label="Open" title="Open">
+                </div>
+                <!---->
+              </div>
+              <!---->
+              <div class="v-field__append-inner">
+                <!----><i class="mdi-menu-down mdi v-icon notranslate v-theme--light v-icon--size-default v-select__menu-icon" aria-hidden="true"></i>
+                <!---->
+              </div>
+              <div class="v-field__outline">
+                <!---->
+                <!---->
+              </div>
+            </div>
+          </div>
+          <!---->
+          <div class="v-input__details">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="edit-training-unit-of-duration-messages">
+              <!---->
+            </transition-group-stub>
+            <!---->
+          </div>
         </div>
       </div>
       <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-textarea v-text-field v-textarea--no-resize" data-test-id="edit-training-instructions">
@@ -228,12 +283,12 @@ exports[`EditTrainingDialog > mounts 1`] = `
               </div>
             </div>
             <!---->
-            <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-28">
+            <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-35">
                 <!---->Instructions
-              </label><label class="v-label v-field-label" for="input-28">
+              </label><label class="v-label v-field-label" for="input-35">
                 <!---->Instructions
               </label>
-              <!----><textarea class="v-field__input" rows="5" id="input-28" aria-describedby="input-28-messages" maxlength="2000"></textarea>
+              <!----><textarea class="v-field__input" rows="5" id="input-35" aria-describedby="input-35-messages" maxlength="2000"></textarea>
               <!---->
               <!---->
             </div>
@@ -252,7 +307,7 @@ exports[`EditTrainingDialog > mounts 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-28-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-35-messages">
             <!---->
           </transition-group-stub>
           <!----><span></span>
