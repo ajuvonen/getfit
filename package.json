@@ -1,6 +1,6 @@
 {
   "name": "getfit",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -23,11 +23,11 @@
     "ics": "^3.7.2",
     "luxon": "^3.4.4",
     "pinia": "^2.1.7",
-    "remeda": "^1.57.0",
+    "remeda": "^1.57.1",
     "resize-observer-polyfill": "^1.5.1",
     "uuid": "^9.0.1",
     "vue": "3.4.21",
-    "vue-i18n": "^9.10.2",
+    "vue-i18n": "^9.11.0",
     "vue-router": "^4.3.0",
     "vuedraggable": "^4.1.0",
     "vuetify": "3.5.14"
@@ -38,7 +38,7 @@
     "@tsconfig/node20": "^20.1.4",
     "@types/jsdom": "^21.1.6",
     "@types/luxon": "^3.4.2",
-    "@types/node": "^20.12.3",
+    "@types/node": "^20.12.4",
     "@types/uuid": "^9.0.8",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-prettier": "^9.0.0",
@@ -52,14 +52,14 @@
     "jsdom": "^24.0.0",
     "npm-run-all2": "^6.1.2",
     "prettier": "^3.2.5",
-    "sass": "^1.72.0",
+    "sass": "^1.74.1",
     "start-server-and-test": "^2.0.3",
-    "typescript": "^5.4.3",
-    "vite": "^5.2.7",
+    "typescript": "^5.4.4",
+    "vite": "^5.2.8",
     "vite-plugin-pwa": "^0.19.7",
     "vite-plugin-vuetify": "^2.0.3",
     "vitest": "^1.4.0",
-    "vue-tsc": "^2.0.7"
+    "vue-tsc": "^2.0.10"
   },
   "engines": {
     "node": ">=20.0.0"
