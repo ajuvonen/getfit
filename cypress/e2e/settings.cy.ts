@@ -25,25 +25,20 @@ describe('Settings tests', () => {
       .getByTestId('week-0-add-training-button')
       .click();
     cy.getByTestId('edit-training-activity').click();
-    cy.get('.v-list-item').should('have.length', 2);
-    cy.get('.v-list-item')
+    cy.get('.v-list-item:visible').should('have.length', 2);
+    cy.get('.v-list-item:visible')
       .first()
       .should('contain.text', 'Badminton')
-      .get('.v-list-item')
+      .get('.v-list-item:visible')
       .last()
-      .should('contain.text', 'Walking')
-      .getByTestId('edit-training-duration')
-      .find('.v-text-field__suffix')
-      .should('contain.text', 'h');
+      .should('contain.text', 'Walking');
     cy.getByTestId('edit-training-close-button').click();
     cy.toRoute('settings');
-    cy.getByTestId('settings-unit-of-time-m').click();
+    cy.getByTestId('settings-default-unit-of-duration-mi').click();
     cy.toRoute('schedule');
     cy.getByTestId('week-0').click();
     cy.getByTestId('week-0-add-training-button').click();
-    cy.getByTestId('edit-training-duration')
-      .find('.v-text-field__suffix')
-      .should('contain.text', 'm');
+    cy.getByTestId('edit-training-unit-of-duration').should('contain.text', 'Miles');
   });
 
   it('settings work in export view', () => {
@@ -52,10 +47,8 @@ describe('Settings tests', () => {
     cy.getByTestId('week-0-table').find('thead th:first-child').should('have.text', 'Mon');
     cy.toRoute('settings');
     cy.getByTestId('settings-start-of-week-sunday').click();
-    cy.getByTestId('settings-unit-of-time-m').click();
     cy.toRoute('export');
     cy.getByTestId('week-0-table').find('thead th:first-child').should('have.text', 'Sun');
-    cy.get('.simple-training-card__duration').should('contain.text', '90 m');
   });
 
   it('date settings work', () => {

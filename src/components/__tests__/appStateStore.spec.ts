@@ -3,7 +3,8 @@ import {describe, it, expect, beforeEach} from 'vitest';
 import {vi} from 'vitest';
 import {v4 as uuid} from 'uuid';
 import {useAppStateStore} from '@/stores/appState';
-import type {LocalizedActivity, Training} from '@/types';
+import type {LocalizedActivity} from '@/types';
+import {getEmptyTraining} from '@/utils';
 
 describe('appStateStore', () => {
   let store: ReturnType<typeof useAppStateStore>;
@@ -28,7 +29,7 @@ describe('appStateStore', () => {
   it('opens new training dialog', () => {
     const weekId = uuid();
     const dayIndex = 0;
-    const activity: LocalizedActivity = {value: 'running', title: 'Running', icon: 'mdi-run'}
+    const activity: LocalizedActivity = {value: 'running', title: 'Running', icon: 'mdi-run'};
     store.openNewTrainingDialog(weekId, dayIndex, [activity]);
 
     expect(store.trainingDialogOpen).toBe(true);
@@ -40,19 +41,7 @@ describe('appStateStore', () => {
   });
 
   it('opens edit training dialog', () => {
-    const training: Training = {
-      id: uuid(),
-      weekId: uuid(),
-      dayIndex: 0,
-      activity: 'running',
-      title: 'test',
-      instructions: 'test',
-      duration: 1,
-      intensity: 1,
-      location: 'test',
-      completed: false,
-      rating: 1,
-    };
+    const training = getEmptyTraining();
     store.openEditTrainingDialog(training);
     expect(store.trainingDialogOpen).toBe(true);
     expect(store.trainingData).toEqual(training);

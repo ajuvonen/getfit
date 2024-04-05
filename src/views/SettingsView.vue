@@ -3,7 +3,7 @@ import {computed} from 'vue';
 import {storeToRefs} from 'pinia';
 import {useI18n} from 'vue-i18n';
 import {DateTime} from 'luxon';
-import {required, between, maxLength, integer, helpers} from '@vuelidate/validators';
+import {required, between, maxLength, helpers} from '@vuelidate/validators';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import {useScheduleStore} from '@/stores/schedule';
 import useLocalizedActivities from '@/hooks/localizedActivities';
@@ -41,11 +41,8 @@ const rules = computed(() => ({
   name: {maxLength: maxLength(30)},
   defaultDuration: {
     required,
-    between: between(0, settings.value.unitOfTime === 'm' ? 360 : 6),
-    precision:
-      settings.value.unitOfTime === 'm'
-        ? integer
-        : helpers.withMessage(t('errors.invalidPrecision'), decimalRegex),
+    between: between(0, 500),
+    precision: helpers.withMessage(t('errors.invalidPrecision'), decimalRegex),
   },
 }));
 
@@ -124,19 +121,6 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
           </v-radio-group>
         </div>
       </v-expand-transition>
-      <v-label for="settings-unit-of-time">{{ $t('settings.unitOfTime') }}</v-label>
-      <v-radio-group id="settings-unit-of-time" v-model="settings.unitOfTime" inline>
-        <v-radio
-          :label="$t('settings.hours')"
-          value="h"
-          data-test-id="settings-unit-of-time-h"
-        ></v-radio>
-        <v-radio
-          :label="$t('settings.minutes')"
-          value="m"
-          data-test-id="settings-unit-of-time-m"
-        ></v-radio>
-      </v-radio-group>
       <v-label>{{ $t('settings.defaultStart') }}</v-label>
       <v-expand-transition>
         <VueDatePicker
@@ -166,14 +150,28 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
         v-model="duration"
         :error-messages="durationErrors()"
         id="settings-default-duration"
-        :suffix="settings.unitOfTime"
         :aria-label="$t('settings.defaultDuration')"
-        :pattern="settings.unitOfTime === 'h' ? '\\d+(\\.\\d{1,2})?' : '\\d{1,3}'"
         class="settings-input"
         type="text"
         variant="underlined"
         inputmode="decimal"
       ></v-text-field>
+      <v-label for="settings-default-unit-of-duration">{{
+        $t('settings.defaultUnitOfDuration')
+      }}</v-label>
+      <v-radio-group
+        id="settings-default-unit-of-duration"
+        v-model="settings.defaultUnitOfDuration"
+        inline
+      >
+        <v-radio
+          v-for="unit in ['h', 'm', 'km', 'mi']"
+          :label="$t(`general.unitsOfDuration.${unit}`)"
+          :key="unit"
+          :value="unit"
+          :data-test-id="`settings-default-unit-of-duration-${unit}`"
+        ></v-radio>
+      </v-radio-group>
       <v-label>{{ $t('settings.availableActivities') }}</v-label>
       <v-checkbox-btn
         v-model="selectAll"
@@ -219,7 +217,12 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
         ></v-radio>
       </v-radio-group>
       <v-label for="settings-card-background">{{ $t('settings.cardBackground') }}</v-label>
-      <v-radio-group id="settings-card-background" v-model="settings.decoratedCards" inline hide-details>
+      <v-radio-group
+        id="settings-card-background"
+        v-model="settings.decoratedCards"
+        inline
+        hide-details
+      >
         <v-radio
           :label="$t('settings.decoratedCards')"
           :value="true"

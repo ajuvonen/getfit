@@ -3,7 +3,7 @@ import {computed} from 'vue';
 import {storeToRefs} from 'pinia';
 import {useI18n} from 'vue-i18n';
 import {useVuelidate} from '@vuelidate/core';
-import {required, between, maxLength, integer, helpers} from '@vuelidate/validators';
+import {required, between, maxLength, helpers} from '@vuelidate/validators';
 import type {VForm} from 'vuetify/components';
 import {Intensity} from '@/types';
 import {useScheduleStore} from '@/stores/schedule';
@@ -13,7 +13,6 @@ import useLocalizedActivities from '@/hooks/localizedActivities';
 import BaseDialog from '@/components/BaseDialog.vue';
 
 const scheduleStore = useScheduleStore();
-const {settings} = storeToRefs(scheduleStore);
 const {addOrEditTraining} = scheduleStore;
 
 const {trainingDialogOpen, trainingData} = storeToRefs(useAppStateStore());
@@ -26,6 +25,13 @@ const tickLabels = computed(() => ({
   [Intensity.DEMANDING]: t('intensities.2'),
   [Intensity.HEAVY]: t('intensities.3'),
 }));
+
+const unitsOfDuration = computed(() => [
+  {value: 'h', title: t('general.unitsOfDuration.h')},
+  {value: 'm', title: t('general.unitsOfDuration.m')},
+  {value: 'km', title: t('general.unitsOfDuration.km')},
+  {value: 'mi', title: t('general.unitsOfDuration.mi')},
+]);
 
 const {localizedAvailableActivities} = useLocalizedActivities();
 
@@ -42,12 +48,10 @@ const rules = computed(() => ({
   instructions: {maxLength: maxLength(2000)},
   duration: {
     required,
-    between: between(0, settings.value.unitOfTime === 'm' ? 360 : 6),
-    precision:
-      settings.value.unitOfTime === 'm'
-        ? integer
-        : helpers.withMessage(t('errors.invalidPrecision'), decimalRegex),
+    between: between(0, 500),
+    precision: helpers.withMessage(t('errors.invalidPrecision'), decimalRegex),
   },
+  unitOfDuration: {required},
   activity: {required},
 }));
 
@@ -102,15 +106,24 @@ const resetAndClose = () => {
           counter
           data-test-id="edit-training-location"
         />
-        <v-text-field
-          v-model.number="v$.duration.$model"
-          :error-messages="getValidationErrors(v$.duration.$errors)"
-          :suffix="settings.unitOfTime"
-          :label="t('editTraining.duration')"
-          class="edit-training-duration"
-          type="number"
-          data-test-id="edit-training-duration"
-        />
+        <div class="d-flex edit-training__duration-container">
+          <v-text-field
+            v-model.number="v$.duration.$model"
+            :error-messages="getValidationErrors(v$.duration.$errors)"
+            :label="t('editTraining.duration')"
+            class="edit-training-duration"
+            type="number"
+            data-test-id="edit-training-duration"
+          />
+          <v-select
+            id="edit-training-unit-of-duration"
+            v-model="v$.unitOfDuration.$model"
+            :error-messages="getValidationErrors(v$.unitOfDuration.$errors)"
+            :items="unitsOfDuration"
+            eager
+            data-test-id="edit-training-unit-of-duration"
+          ></v-select>
+        </div>
         <v-textarea
           v-model="v$.instructions.$model"
           :label="t('editTraining.instructions')"
@@ -161,5 +174,9 @@ const resetAndClose = () => {
   input[type='number'] {
     appearance: textField;
   }
+}
+
+.edit-training__duration-container {
+  gap: 1rem;
 }
 </style>

@@ -50,6 +50,12 @@
       "saturday": "La",
       "sunday": "Su"
     },
+    "unitsOfDuration": {
+      "h": "Tuntia",
+      "m": "Minuuttia",
+      "km": "Kilometriä",
+      "mi": "Mailia"
+    },
     "weekdays": {
       "monday": "Maanantai",
       "tuesday": "Tiistai",
@@ -109,6 +115,7 @@
     "defaultDuration": "Oletusarvoinen kesto",
     "defaultStart": "Oletusarvoinen aloitus ja kesto",
     "defaultStartTime": "Oletusarvoinen aloitusaika",
+    "defaultUnitOfDuration": "Keston oletusyksikkö",
     "guide": "Asetuksissa voit esimerkiksi rajoittaa saatavilla olevia harjoitustyyppejä sekä asettaa ohjelman aloituspäivämäärän. Asetukset tallennetaan automaattisesti.",
     "hours": "Tunnit",
     "minutes": "Minuutit",
@@ -119,7 +126,6 @@
     "theme": "Teema",
     "title": "Ohjelman asetukset",
     "toggleAllActivities": "Valitse kaikki",
-    "unitOfTime": "Ajan yksikkö",
     "weekNumbering": "Viikkojen numerointi"
   },
   "trainingCard": {

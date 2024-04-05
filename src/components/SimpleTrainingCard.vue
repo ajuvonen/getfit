@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import {storeToRefs} from 'pinia';
-import {useScheduleStore} from '@/stores/schedule';
 import type {Training} from '@/types';
-import {getIcon} from '@/utils';
+import {getIcon, isDurationTime} from '@/utils';
 
 defineProps<{
   training: Training;
 }>();
 
-const {settings} = storeToRefs(useScheduleStore());
 </script>
 <template>
   <div class="simple-training-card my-4 text-body-1">
@@ -22,8 +19,8 @@ const {settings} = storeToRefs(useScheduleStore());
       {{ training.title || $t(`activities.${training.activity}`) }}
     </div>
     <div class="simple-training-card__duration">
-      <v-icon icon="mdi-timer" :aria-label="$t('trainingCard.duration')" />
-      {{ training.duration || '-' }} {{ settings.unitOfTime }}
+      <v-icon :icon="isDurationTime(training.unitOfDuration) ? 'mdi-timer' : 'mdi-go-kart-track'" :aria-label="$t('trainingCard.duration')" />
+      {{ training.duration || '-' }} {{ training.unitOfDuration }}
     </div>
     <div class="simple-training-card__location">
       <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />

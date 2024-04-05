@@ -5,10 +5,6 @@ import {v4 as uuidv4} from 'uuid';
 import {Intensity, type ScheduleSettings, type Training} from '@/types';
 import {ACTIVITIES, COLORS} from '@/constants';
 
-export const roundNearestQuarter = function (number: number, precision: number) {
-  return +(Math.round(number * 4) / 4).toFixed(precision);
-};
-
 export const getIcon = (activityName: string) =>
   ACTIVITIES.find(({value}) => value === activityName)!.icon;
 
@@ -38,7 +34,7 @@ export const getEmptySettings = (initialSettings: Partial<ScheduleSettings> = {}
     seconds: 0,
   },
   defaultDuration: 1,
-  unitOfTime: 'h',
+  defaultUnitOfDuration: 'h',
   darkMode: 'auto',
   decoratedCards: true,
   ...initialSettings,
@@ -52,6 +48,7 @@ export const getEmptyTraining = (initialTraining: Partial<Training> = {}): Train
   title: '',
   instructions: '',
   duration: 1,
+  unitOfDuration: 'h',
   intensity: Intensity.NORMAL,
   location: '',
   completed: false,
@@ -63,3 +60,5 @@ export const decimalRegex = helpers.regex(/^\d+(.(00?|25|50?|75))?$/);
 
 export const getValidationErrors = (errors: ErrorObject[]) =>
   errors.map((error) => unref(error.$message));
+
+export const isDurationTime = (value: string) => ['h', 'm'].includes(value);

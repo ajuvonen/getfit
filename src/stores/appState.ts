@@ -47,6 +47,7 @@ export const useAppStateStore = defineStore('appState', () => {
       dayIndex,
       activity: activities[0]?.value || '',
       duration: scheduleStore.settings.defaultDuration,
+      unitOfDuration: scheduleStore.settings.defaultUnitOfDuration,
     });
 
     trainingDialogOpen.value = true;
