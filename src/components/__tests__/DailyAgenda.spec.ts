@@ -31,10 +31,12 @@ describe('DailyAgenda', () => {
           weekId,
         }),
         getEmptyTraining({
+          activity: 'running',
           dayIndex: (todayIndex + 1) % 7,
           weekId,
         }),
         getEmptyTraining({
+          activity: 'sprint',
           dayIndex: (todayIndex + 2) % 7,
           weekId,
         }),
@@ -53,12 +55,15 @@ describe('DailyAgenda', () => {
       id: weekId,
       trainings: [
         getEmptyTraining({
+          activity: 'shooting',
           weekId,
         }),
         getEmptyTraining({
+          activity: 'running',
           weekId,
         }),
         getEmptyTraining({
+          activity: 'swimming',
           weekId,
           completed: true,
         }),
@@ -75,10 +80,12 @@ describe('DailyAgenda', () => {
       id: weekId,
       trainings: [
         getEmptyTraining({
+          activity: 'shooting',
           weekId,
           completed: true,
         }),
         getEmptyTraining({
+          activity: 'running',
           weekId,
           completed: true,
         }),
