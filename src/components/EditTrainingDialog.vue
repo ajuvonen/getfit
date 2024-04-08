@@ -48,7 +48,7 @@ const rules = computed(() => ({
   instructions: {maxLength: maxLength(2000)},
   duration: {
     required,
-    between: between(0, 500),
+    between: trainingData.value.unitOfDuration === 'h' ? between(0, 10) : between(0, 500),
     precision: helpers.withMessage(t('errors.invalidPrecision'), decimalRegex),
   },
   unitOfDuration: {required},
@@ -178,5 +178,8 @@ const resetAndClose = () => {
 
 .edit-training__duration-container {
   gap: 1rem;
+  > * {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
 }
 </style>
