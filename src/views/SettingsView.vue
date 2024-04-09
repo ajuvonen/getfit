@@ -147,7 +147,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
         </VueDatePicker>
       </v-expand-transition>
       <v-text-field
-        v-model="duration"
+        v-model.number="duration"
         :error-messages="durationErrors()"
         id="settings-default-duration"
         :aria-label="$t('settings.defaultDuration')"
