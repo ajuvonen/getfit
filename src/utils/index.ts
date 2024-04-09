@@ -1,7 +1,7 @@
 import {unref} from 'vue';
 import {helpers} from '@vuelidate/validators';
 import type {ErrorObject} from '@vuelidate/core';
-import {v4 as uuidv4} from 'uuid';
+import {v4 as uuid} from 'uuid';
 import {Intensity, type ScheduleSettings, type Training} from '@/types';
 import {ACTIVITIES, COLORS} from '@/constants';
 
@@ -41,8 +41,8 @@ export const getEmptySettings = (initialSettings: Partial<ScheduleSettings> = {}
 });
 
 export const getEmptyTraining = (initialTraining: Partial<Training> = {}): Training => ({
-  id: uuidv4(),
-  weekId: uuidv4(),
+  id: uuid(),
+  weekId: uuid(),
   activity: '',
   dayIndex: 0,
   title: '',
