@@ -1,7 +1,7 @@
 import {onMounted} from 'vue';
 import {describe, it, expect, beforeEach} from 'vitest';
 import {mount} from '@vue/test-utils';
-import {v4 as uuidv4} from 'uuid';
+import {v4 as uuid} from 'uuid';
 import {useScheduleStore} from '@/stores/schedule';
 import useCalendarExport from '@/hooks/calendarExport';
 import {Intensity, type Week, type ScheduleSettings, type CalendarEvent} from '@/types';
@@ -33,8 +33,8 @@ describe('useCalendarExport', () => {
     return promise;
   };
   it('creates correct calendar events', async () => {
-    const weekId1 = uuidv4();
-    const weekId2 = uuidv4();
+    const weekId1 = uuid();
+    const weekId2 = uuid();
     const mockWeeks: Week[] = [
       {
         id: weekId1,
@@ -172,7 +172,7 @@ describe('useCalendarExport', () => {
   });
 
   it('moves to next date when durations cross over', async () => {
-    const weekId1 = uuidv4();
+    const weekId1 = uuid();
     const mockWeeks: Week[] = [
       {
         id: weekId1,
@@ -237,7 +237,7 @@ describe('useCalendarExport', () => {
   });
 
   it('gives calendar a default name', async () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
     const mockWeeks: Week[] = [
       {
         id: weekId,
@@ -262,7 +262,7 @@ describe('useCalendarExport', () => {
   });
 
   it('gives calendar event a default duration', async () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
     const mockWeeks: Week[] = [
       {
         id: weekId,

@@ -1,7 +1,7 @@
 import {computed, watch} from 'vue';
 import {defineStore} from 'pinia';
 import {useStorage} from '@vueuse/core';
-import {v4 as uuidv4} from 'uuid';
+import {v4 as uuid} from 'uuid';
 import {DateTime} from 'luxon';
 import type {Rating, ScheduleSettings, Training, Week} from '@/types';
 import {getEmptySettings} from '@/utils';
@@ -54,7 +54,7 @@ export const useScheduleStore = defineStore('schedule', () => {
   // Actions
   const addWeek = () => {
     weeks.value.push({
-      id: uuidv4(),
+      id: uuid(),
       trainings: [],
     });
   };
@@ -65,12 +65,12 @@ export const useScheduleStore = defineStore('schedule', () => {
 
   const copyWeek = (weekId: string) => {
     const [targetWeek] = getTargetWeekAndTraining.value(weekId);
-    const newWeekId = uuidv4();
+    const newWeekId = uuid();
     weeks.value.push({
       id: newWeekId,
       trainings: targetWeek.trainings.map((training) => ({
         ...training,
-        id: uuidv4(),
+        id: uuid(),
         weekId: newWeekId,
         completed: false,
         rating: null,
@@ -114,7 +114,7 @@ export const useScheduleStore = defineStore('schedule', () => {
     const [targetWeek] = getTargetWeekAndTraining.value(weekId);
     targetWeek.trainings.push({
       ...training,
-      id: uuidv4(),
+      id: uuid(),
       weekId,
       dayIndex,
       completed: false,

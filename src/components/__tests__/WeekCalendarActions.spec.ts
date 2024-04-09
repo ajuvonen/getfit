@@ -1,5 +1,5 @@
 import {mount} from '@vue/test-utils';
-import {v4 as uuidv4} from 'uuid';
+import {v4 as uuid} from 'uuid';
 import {describe, it, expect, beforeEach} from 'vitest';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
@@ -19,14 +19,14 @@ describe('WeekCalendarActions', () => {
       props: {
         weekIndex: 0,
         dayIndex: 0,
-        weekId: uuidv4(),
+        weekId: uuid(),
       },
     });
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   it('actions work', async () => {
-    const weekId = uuidv4();
+    const weekId = uuid();
     const wrapper = mount(WeekCalendarActions, {
       props: {
         weekIndex: 0,
