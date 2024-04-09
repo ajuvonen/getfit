@@ -1,47 +1,40 @@
-import {
-  computed,
-  watch,
-  ref,
-  type Ref,
-  type WritableComputedRef,
-  type ComputedRef,
-} from 'vue';
+import {computed, watch, type Ref, type WritableComputedRef, type ComputedRef, ref} from 'vue';
 import {useVuelidate, type ValidationRule} from '@vuelidate/core';
-import {clone} from 'remeda';
 import {getValidationErrors} from '@/utils';
 
-export default function useValidatedRef<T>(
+export default function useValidatedRef<T, K extends keyof T>(
   original: Ref<T>,
-  key: keyof T,
+  key: K,
   rules: ComputedRef<{
-    [P in keyof T]?: {
+    [P in K]: {
       [rule: string]: ValidationRule | undefined;
     } | undefined;
   }>,
-): [WritableComputedRef<T[keyof T]>, () => string[]] {
-  const internal = ref(clone(original.value)) as Ref<T>;
-  const $v = useVuelidate(rules, internal);
+): [WritableComputedRef<T[K]>, ComputedRef<string[]>] {
+  const internal = ref(original.value[key]) as Ref<T[K]>;
+  const narrowedRules = computed(() => ({[key]: rules.value[key]}));
+  const $v = useVuelidate(narrowedRules, {[key]: internal});
   watch(
     () => original.value[key],
     (newValue) => {
-      if (internal.value[key] !== newValue) {
-        internal.value[key] = newValue;
+      if (internal.value !== newValue) {
+        internal.value = newValue;
       }
     },
   );
   return [
     computed({
       get() {
-        return internal.value[key];
+        return internal.value;
       },
-      set(value: T[typeof key]) {
-        internal.value[key] = value;
-        $v.value[key].$touch();
-        if (!$v.value[key].$error) {
+      set(value: T[K]) {
+        internal.value = value;
+        $v.value.$touch();
+        if (!$v.value.$error) {
           original.value[key] = value;
         }
       },
     }),
-    () => getValidationErrors($v.value[key].$errors),
+    computed(() => getValidationErrors($v.value.$errors)),
   ];
 }
