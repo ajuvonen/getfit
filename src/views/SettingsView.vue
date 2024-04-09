@@ -41,7 +41,7 @@ const rules = computed(() => ({
   name: {maxLength: maxLength(30)},
   defaultDuration: {
     required,
-    between: between(0, 500),
+    between: settings.value.defaultUnitOfDuration === 'h' ? between(0, 10) : between(0, 500),
     precision: helpers.withMessage(t('errors.invalidPrecision'), decimalRegex),
   },
 }));
@@ -57,7 +57,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
         class="settings-input--wide"
         v-model="name"
         :label="$t('settings.programName')"
-        :error-messages="nameErrors()"
+        :error-messages="nameErrors"
         maxlength="30"
         counter
         variant="underlined"
@@ -148,7 +148,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
       </v-expand-transition>
       <v-text-field
         v-model.number="duration"
-        :error-messages="durationErrors()"
+        :error-messages="durationErrors"
         id="settings-default-duration"
         :aria-label="$t('settings.defaultDuration')"
         class="settings-input"
