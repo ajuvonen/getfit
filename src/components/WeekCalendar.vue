@@ -80,7 +80,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
       </div>
     </v-expansion-panel-title>
     <v-expansion-panel-text>
-      <v-tabs v-model="activeDay" grow show-arrows center-active>
+      <v-tabs v-model="activeDay" grow center-active>
         <v-tab
           v-for="({weekDay, trainings, maxIntensity}, dayIndex) in tabContent"
           :key="weekDay"
