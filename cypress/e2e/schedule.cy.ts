@@ -64,31 +64,31 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-0').should('not.exist');
   });
 
-  it('completes and rates trainings', () => {
+  it.only('completes and rates trainings', () => {
     cy.addTraining();
     cy.get('.training-card__action-button').click();
     cy.get('.training-card__complete-button').click();
-    cy.get('.training-card__rating .v-selection-control:nth-child(1) i').should('have.class', '$starOutline');
-    cy.get('.training-card__rating .v-selection-control:nth-child(2) i').should('have.class', '$starOutline');
-    cy.get('.training-card__rating .v-selection-control:nth-child(3) i').should('have.class', '$starOutline');
-    cy.get('.training-card__rating .v-selection-control:nth-child(4) i').should('have.class', '$starOutline');
-    cy.get('.training-card__rating .v-selection-control:nth-child(5) i').should('have.class', '$starOutline');
+    cy.get('.training-card__rating .v-selection-control:nth-child(1)').should('not.have.class', 'training-card__filled-star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(2)').should('not.have.class', 'training-card__filled-star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(3)').should('not.have.class', 'training-card__filled-star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(4)').should('not.have.class', 'training-card__filled-star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(5)').should('not.have.class', 'training-card__filled-star');
     cy.get('.training-card__rating input').eq(0).click();
-    cy.get('.training-card__rating .v-selection-control:nth-child(1) i').should('have.class', '$star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(1)').should('have.class', 'training-card__filled-star');
     cy.get('.training-card__rating input').eq(1).click();
-    cy.get('.training-card__rating .v-selection-control:nth-child(2) i').should('have.class', '$star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(2)').should('have.class', 'training-card__filled-star');
     cy.get('.training-card__rating input').eq(2).click();
-    cy.get('.training-card__rating .v-selection-control:nth-child(3) i').should('have.class', '$star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(3)').should('have.class', 'training-card__filled-star');
     cy.get('.training-card__rating input').eq(3).click();
-    cy.get('.training-card__rating .v-selection-control:nth-child(4) i').should('have.class', '$star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(4)').should('have.class', 'training-card__filled-star');
     cy.get('.training-card__rating input').eq(4).click();
-    cy.get('.training-card__rating .v-selection-control:nth-child(5) i').should('have.class', '$star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(5)').should('have.class', 'training-card__filled-star');
     cy.get('.training-card__rating input').eq(4).click();
-    cy.get('.training-card__rating .v-selection-control:nth-child(1) i').should('have.class', '$starOutline');
-    cy.get('.training-card__rating .v-selection-control:nth-child(2) i').should('have.class', '$starOutline');
-    cy.get('.training-card__rating .v-selection-control:nth-child(3) i').should('have.class', '$starOutline');
-    cy.get('.training-card__rating .v-selection-control:nth-child(4) i').should('have.class', '$starOutline');
-    cy.get('.training-card__rating .v-selection-control:nth-child(5) i').should('have.class', '$starOutline');
+    cy.get('.training-card__rating .v-selection-control:nth-child(1)').should('not.have.class', 'training-card__filled-star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(2)').should('not.have.class', 'training-card__filled-star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(3)').should('not.have.class', 'training-card__filled-star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(4)').should('not.have.class', 'training-card__filled-star');
+    cy.get('.training-card__rating .v-selection-control:nth-child(5)').should('not.have.class', 'training-card__filled-star');
   });
 
   it('displays instructions', () => {

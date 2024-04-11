@@ -24,6 +24,7 @@ const {updateRating} = useScheduleStore();
       :key="rating"
       :value="rating"
       :aria-label="$t('trainingCard.rating', [rating])"
+      :class="{'training-card__filled-star': training.rating && training.rating >= rating}"
       elevation="0"
       trueIcon="$star"
       :falseIcon="training.rating && training.rating >= rating ? '$star' : '$starOutline'"
