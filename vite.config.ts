@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     vuetify(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       manifest: {
         name: 'GetFit Training Schedule Planner',
         short_name: 'GetFit',
@@ -29,7 +29,7 @@ export default defineConfig({
         categories: ['fitness', 'sports', 'health'],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,jpg,woff,woff2,eot,ttf}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,jpg}'],
       },
       devOptions: {
         enabled: process.env.NODE_ENV === 'development',
