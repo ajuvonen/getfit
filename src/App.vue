@@ -4,8 +4,10 @@ import {storeToRefs} from 'pinia';
 import {RouterView} from 'vue-router';
 import {useI18n} from 'vue-i18n';
 import {useTheme} from 'vuetify';
+import {useRegisterSW} from 'virtual:pwa-register/vue';
 import useScreen from '@/hooks/screen';
 import {useScheduleStore} from '@/stores/schedule';
+import {useAppStateStore} from '@/stores/appState';
 import {COLORS} from '@/constants';
 import ConfirmDialog from '@/components/ConfirmDialog.vue';
 
@@ -15,9 +17,25 @@ const {t, locale} = useI18n();
 
 const theme = useTheme();
 
-watch(isDark, (value) => {
-  theme.global.name.value = value ? 'dark' : 'customLight';
-}, {immediate: true});
+const {openConfirmDialog} = useAppStateStore();
+
+const {updateServiceWorker} = useRegisterSW({
+  immediate: true,
+  onNeedRefresh() {
+    openConfirmDialog(
+      'An update to the app is available. Click on continue to download the latest version.',
+      () => updateServiceWorker(),
+    );
+  },
+});
+
+watch(
+  isDark,
+  (value) => {
+    theme.global.name.value = value ? 'dark' : 'customLight';
+  },
+  {immediate: true},
+);
 
 watch(locale, (value) => {
   document.documentElement.lang = value;
