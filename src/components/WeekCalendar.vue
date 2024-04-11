@@ -56,7 +56,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
   <v-expansion-panel elevation="0" :rounded="!isLargeScreen ? 0 : 'rounded'">
     <v-expansion-panel-title class="flex-wrap">
       <div class="week-calendar__drag-handle">
-        <v-icon icon="mdi-drag-vertical-variant" />
+        <v-icon icon="$dragVerticalVariant" />
         <h2 class="text-h5">
           {{ $t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)]) }}
         </h2>

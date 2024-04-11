@@ -1,12 +1,12 @@
 import {DOMWrapper, VueWrapper, config} from '@vue/test-utils';
 import {afterEach, beforeEach, vi} from 'vitest';
-import {createVuetify} from 'vuetify';
 import {createTestingPinia} from '@pinia/testing';
 import resizeObserver from 'resize-observer-polyfill';
 import i18n from '@/i18n';
 import router from '@/router';
+import vuetifyPlugin from '@/vuetify';
 
-config.global.plugins = [createTestingPinia(), createVuetify(), i18n, router];
+config.global.plugins = [createTestingPinia(), vuetifyPlugin, i18n, router];
 vi.stubGlobal('ResizeObserver', resizeObserver);
 
 const dataTestIdPlugin = (wrapper: VueWrapper) => ({

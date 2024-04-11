@@ -13,8 +13,8 @@ import {ACTIVITIES} from '@/constants';
 
 describe('Utils', () => {
   it('getIcon gets icons from activities list', () => {
-    expect(getIcon('walking')).toBe('mdi-walk');
-    expect(getIcon('boxing')).toBe('mdi-boxing-glove');
+    expect(getIcon('walking')).toBe('$walking');
+    expect(getIcon('boxing')).toBe('$boxing');
   });
 
   it('getIntensityColor gets correct intensity colors', () => {

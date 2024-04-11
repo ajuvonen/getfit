@@ -33,7 +33,7 @@ const dailyTrainings = computed(() => {
         <span class="text-h4 daily-agenda__progress">{{ getCompletedTrainings }} / {{ getTotalTrainings }}</span>
         <span class="text-caption text-uppercase">{{ $t('home.progress') }}</span>
       </div>
-      <v-icon v-else class="daily-agenda__completed-icon" icon="mdi-trophy-outline" size="70" />
+      <v-icon v-else class="daily-agenda__completed-icon" icon="$trophyOutline" size="70" />
     </v-fab-transition>
   </v-progress-circular>
   <h1 class="mt-10 text-h3 text-center">

@@ -41,11 +41,11 @@ const addAndOpenWeek = () => {
       </v-expansion-panels>
     </template>
     <template #actions>
-      <v-btn prepend-icon="mdi-plus" data-test-id="schedule-add-week-button" @click="addAndOpenWeek">{{
+      <v-btn prepend-icon="$plus" data-test-id="schedule-add-week-button" @click="addAndOpenWeek">{{
         $t('schedule.addWeek')
       }}</v-btn>
       <v-btn
-        prepend-icon="mdi-trash-can-outline"
+        prepend-icon="$trashCanOutline"
         color="error"
         variant="outlined"
         data-test-id="schedule-reset-button"

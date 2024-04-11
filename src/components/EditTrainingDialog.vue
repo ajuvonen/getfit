@@ -150,7 +150,7 @@ const resetAndClose = () => {
     </template>
     <template #actions>
       <v-btn
-        prepend-icon="mdi-content-save"
+        prepend-icon="$contentSave"
         variant="outlined"
         color="primary"
         data-test-id="edit-training-save-button"
@@ -158,7 +158,7 @@ const resetAndClose = () => {
         >{{ $t('editTraining.save') }}</v-btn
       >
       <v-btn
-        prepend-icon="mdi-close"
+        prepend-icon="$close"
         data-test-id="edit-training-close-button"
         variant="text"
         @click="resetAndClose"

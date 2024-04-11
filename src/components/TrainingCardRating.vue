@@ -25,8 +25,8 @@ const {updateRating} = useScheduleStore();
       :value="rating"
       :aria-label="$t('trainingCard.rating', [rating])"
       elevation="0"
-      trueIcon="mdi-star"
-      :falseIcon="training.rating && training.rating >= rating ? 'mdi-star' : 'mdi-star-outline'"
+      trueIcon="$star"
+      :falseIcon="training.rating && training.rating >= rating ? '$star' : '$starOutline'"
       @click="updateRating(training, rating as Rating)"
     ></v-radio>
   </v-radio-group>

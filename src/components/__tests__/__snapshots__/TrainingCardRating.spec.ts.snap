@@ -9,35 +9,45 @@ exports[`TrainingCardRating > mounts 1`] = `
       <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
         <div class="v-selection-control__wrapper">
           <!---->
-          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-3" aria-disabled="true" aria-label="1/5" type="radio" name="radio-group-0" elevation="0" value="1"></div>
+          <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+              </svg></i><input disabled="" id="input-3" aria-disabled="true" aria-label="1/5" type="radio" name="radio-group-0" elevation="0" value="1"></div>
         </div>
         <!---->
       </div>
       <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
         <div class="v-selection-control__wrapper">
           <!---->
-          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-4" aria-disabled="true" aria-label="2/5" type="radio" name="radio-group-0" elevation="0" value="2"></div>
+          <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+              </svg></i><input disabled="" id="input-4" aria-disabled="true" aria-label="2/5" type="radio" name="radio-group-0" elevation="0" value="2"></div>
         </div>
         <!---->
       </div>
       <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
         <div class="v-selection-control__wrapper">
           <!---->
-          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-5" aria-disabled="true" aria-label="3/5" type="radio" name="radio-group-0" elevation="0" value="3"></div>
+          <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+              </svg></i><input disabled="" id="input-5" aria-disabled="true" aria-label="3/5" type="radio" name="radio-group-0" elevation="0" value="3"></div>
         </div>
         <!---->
       </div>
       <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
         <div class="v-selection-control__wrapper">
           <!---->
-          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-6" aria-disabled="true" aria-label="4/5" type="radio" name="radio-group-0" elevation="0" value="4"></div>
+          <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+              </svg></i><input disabled="" id="input-6" aria-disabled="true" aria-label="4/5" type="radio" name="radio-group-0" elevation="0" value="4"></div>
         </div>
         <!---->
       </div>
       <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
         <div class="v-selection-control__wrapper">
           <!---->
-          <div class="v-selection-control__input"><i class="mdi-star-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input disabled="" id="input-7" aria-disabled="true" aria-label="5/5" type="radio" name="radio-group-0" elevation="0" value="5"></div>
+          <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+              </svg></i><input disabled="" id="input-7" aria-disabled="true" aria-label="5/5" type="radio" name="radio-group-0" elevation="0" value="5"></div>
         </div>
         <!---->
       </div>

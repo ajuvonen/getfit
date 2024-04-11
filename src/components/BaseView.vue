@@ -20,7 +20,7 @@ const {isDark} = useScreen();
     </v-card-title>
     <v-card-text>
       <p class="d-flex align-center d-print-none mb-4">
-        <v-icon icon="mdi-information-box-outline" />
+        <v-icon icon="$informationBoxOutline" />
         <span class="ml-4">{{ guide }}</span>
       </p>
       <slot name="content" />

@@ -9,7 +9,7 @@ import {useScheduleStore} from '@/stores/schedule';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import useValidatedRef from '@/hooks/validatedRef';
 import {DATE_FORMATS} from '@/constants';
-import {decimalRegex} from '@/utils';
+import {decimalRegex, getIcon} from '@/utils';
 import BaseView from '@/components/BaseView.vue';
 
 const {settings} = storeToRefs(useScheduleStore());
@@ -193,7 +193,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
             class="flex-grow-0"
           />
           <v-label :for="`settings-activity-${activity.value}`" class="flex-grow-1">
-            <v-icon :icon="activity.icon" size="large" />
+            <v-icon :icon="getIcon(activity.value)" size="large" />
             {{ activity.title }}
           </v-label>
         </div>
