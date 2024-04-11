@@ -30,11 +30,11 @@ watch(locale, (value) => {
       <v-app-bar class="d-print-none app-bar" :style="{color: COLORS.offWhite}">
         <template #prepend>
           <RouterLink to="/" :aria-label="$t('routes.home')" data-test-id="app-bar-home-link">
-            <v-icon icon="mdi-home" :color="COLORS.offWhite" />
+            <v-icon icon="$home" :color="COLORS.offWhite" />
           </RouterLink>
         </template>
         <template #append>
-          <v-icon icon="mdi-earth" />
+          <v-icon icon="$earth" />
           <v-btn
             v-for="locale in $i18n.availableLocales"
             :key="locale"
@@ -53,11 +53,11 @@ watch(locale, (value) => {
       </v-container>
       <v-bottom-navigation grow class="d-print-none">
         <v-btn to="settings" data-test-id="navbar-settings-link" class="text-body-1">
-          <v-icon icon="mdi-cog" />
+          <v-icon icon="$cog" />
           {{ t('routes.settings') }}
         </v-btn>
         <v-btn to="schedule" data-test-id="navbar-schedule-link" class="text-body-1">
-          <v-icon icon="mdi-calendar" />
+          <v-icon icon="$calendar" />
           {{ t('routes.schedule') }}
         </v-btn>
         <v-btn
@@ -66,7 +66,7 @@ watch(locale, (value) => {
           data-test-id="navbar-export-link"
           class="text-body-1"
         >
-          <v-icon icon="mdi-export" />
+          <v-icon icon="$export" />
           {{ t('routes.export') }}
         </v-btn>
       </v-bottom-navigation>
@@ -77,7 +77,7 @@ watch(locale, (value) => {
 <style lang="scss" scoped>
 :global(html) {
   scrollbar-width: none;
-  scrollbar-color: #FAFAFA transparent;
+  scrollbar-color: #fafafa transparent;
 }
 
 :global(.has-scroll) {

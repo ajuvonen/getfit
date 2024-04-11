@@ -19,15 +19,15 @@ defineProps<{
       {{ training.title || $t(`activities.${training.activity}`) }}
     </div>
     <div class="simple-training-card__duration">
-      <v-icon :icon="isDurationTime(training.unitOfDuration) ? 'mdi-timer' : 'mdi-go-kart-track'" :aria-label="$t('trainingCard.duration')" />
+      <v-icon :icon="isDurationTime(training.unitOfDuration) ? '$timer' : '$goKartTrack'" :aria-label="$t('trainingCard.duration')" />
       {{ training.duration || '-' }} {{ training.unitOfDuration }}
     </div>
     <div class="simple-training-card__location">
-      <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />
+      <v-icon icon="$mapMarker" :aria-label="$t('trainingCard.location')" />
       {{ training.location || '-' }}
     </div>
     <div class="simple-training-card__intensity">
-      <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />
+      <v-icon icon="$speedometer" :aria-label="$t('trainingCard.intensity')" />
       {{ $t(`intensities.${training.intensity}`) }}
     </div>
   </div>

@@ -2,10 +2,10 @@
 
 exports[`TrainingCardInstructions > mounts 1`] = `
 "<transition-stub data-v-dc9f9ee2="" name="expand-transition" appear="false" persisted="false" css="true">
-  <div data-v-dc9f9ee2="" class="v-card v-theme--light v-card--density-default v-card--variant-elevated d-flex flex-column" style="background-color: rgb(255, 217, 140); color: rgb(33, 33, 33); caret-color: #000; height: 100%;">
+  <div data-v-dc9f9ee2="" class="v-card v-theme--customLight v-card--density-default v-card--variant-elevated d-flex flex-column" style="background-color: rgb(255, 217, 140); color: rgb(33, 33, 33); caret-color: #000; height: 100%;">
     <!---->
     <div class="v-card__loader">
-      <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+      <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
         <!---->
         <div class="v-progress-linear__background" style="width: 100%;"></div>
         <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -22,7 +22,7 @@ exports[`TrainingCardInstructions > mounts 1`] = `
     <div data-v-dc9f9ee2="" class="v-card-text">
       <div data-v-dc9f9ee2="" class="training-card__instructions">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
     </div>
-    <div data-v-dc9f9ee2="" class="v-card-actions justify-end"><button data-v-dc9f9ee2="" type="button" class="v-btn v-btn--slim v-theme--light bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__close-instructions-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-close mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Close</span>
+    <div data-v-dc9f9ee2="" class="v-card-actions justify-end"><button data-v-dc9f9ee2="" type="button" class="v-btn v-btn--slim v-theme--customLight bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__close-instructions-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Close</span>
         <!---->
         <!---->
       </button></div>

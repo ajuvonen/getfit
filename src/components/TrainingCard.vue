@@ -45,7 +45,7 @@ const {isSmallScreen} = useScreen();
       }"
     >
       <v-card-title class="ml-10 training-card__title">
-        <v-icon v-if="!simple" icon="mdi-drag-vertical-variant" size="normal" />
+        <v-icon v-if="!simple" icon="$dragVerticalVariant" size="normal" />
         <span class="text-truncate">{{
           training.title || $t(`activities.${training.activity}`)
         }}</span>
@@ -69,18 +69,18 @@ const {isSmallScreen} = useScreen();
         </div>
         <div class="training-card__duration text-subtitle-2">
           <v-icon
-            :icon="isDurationTime(training.unitOfDuration) ? 'mdi-timer' : 'mdi-go-kart-track'"
+            :icon="isDurationTime(training.unitOfDuration) ? '$timer' : '$goKartTrack'"
             :aria-label="$t('trainingCard.duration')"
           />
           {{ training.duration || '-' }}
           {{ training.unitOfDuration }}
         </div>
         <div class="training-card__intensity text-subtitle-2">
-          <v-icon icon="mdi-speedometer" :aria-label="$t('trainingCard.intensity')" />
+          <v-icon icon="$speedometer" :aria-label="$t('trainingCard.intensity')" />
           <span>{{ $t(`intensities.${training.intensity}`) }}</span>
         </div>
         <div class="training-card__location text-subtitle-2">
-          <v-icon icon="mdi-map-marker" :aria-label="$t('trainingCard.location')" />
+          <v-icon icon="$mapMarker" :aria-label="$t('trainingCard.location')" />
           <span class="text-truncate"> {{ training.location || '-' }}</span>
         </div>
         <TrainingCardRating :training="training" :disabled="isDescriptionOpen" />

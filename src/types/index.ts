@@ -44,7 +44,6 @@ export enum Intensity {
 
 export type BaseActivity = {
   value: string;
-  icon: string;
 };
 
 export type LocalizedActivity = BaseActivity & {

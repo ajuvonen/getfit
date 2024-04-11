@@ -62,7 +62,7 @@ const print = () => {
       >
         <v-btn
           v-if="settings.startDate"
-          prepend-icon="mdi-calendar"
+          prepend-icon="$calendar"
           class="mt-2"
           variant="text"
           data-test-id="export-download-button"
@@ -70,7 +70,7 @@ const print = () => {
           >{{ $t('export.download') }}</v-btn
         >
         <v-btn
-          prepend-icon="mdi-printer"
+          prepend-icon="$printer"
           class="mt-2"
           variant="text"
           data-test-id="export-print-button"
@@ -78,7 +78,7 @@ const print = () => {
           >{{ $t('export.print') }}</v-btn
         >
         <v-btn
-          prepend-icon="mdi-trash-can-outline"
+          prepend-icon="$trashCanOutline"
           class="mt-2"
           color="error"
           variant="outlined"

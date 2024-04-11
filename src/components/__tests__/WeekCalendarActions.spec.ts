@@ -42,7 +42,6 @@ describe('WeekCalendarActions', () => {
       0,
       expect.objectContaining([
         {
-          icon: 'mdi-badminton',
           title: 'Badminton',
           value: 'badminton',
         },

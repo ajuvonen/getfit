@@ -29,7 +29,7 @@ const agendaAvailable = computed(() => weeks.value.length && settings.value.star
       </p>
     </template>
     <p class="mt-10">
-      <v-icon icon="mdi-github" />
+      <v-icon icon="$github" />
       <a
         class="text-grey-lighten-5 ml-2"
         target="_blank"

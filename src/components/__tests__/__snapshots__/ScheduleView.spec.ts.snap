@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ScheduleView > mounts 1`] = `
-"<div data-v-ff4a98e6="" data-v-eb553fec="" class="v-card v-theme--light v-card--density-default v-card--rounded v-card--variant-elevated" style="background-color: rgba(255, 255, 255, 0.75);">
+"<div data-v-ff4a98e6="" data-v-eb553fec="" class="v-card v-theme--customLight v-card--density-default v-card--rounded v-card--variant-elevated" style="background-color: rgba(255, 255, 255, 0.75);">
   <!---->
   <div class="v-card__loader">
-    <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+    <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
       <!---->
       <div class="v-progress-linear__background" style="width: 100%;"></div>
       <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -22,15 +22,17 @@ exports[`ScheduleView > mounts 1`] = `
     <h1 data-v-ff4a98e6="" class="text-h4">Edit Schedule</h1>
   </div>
   <div data-v-ff4a98e6="" class="v-card-text">
-    <p data-v-ff4a98e6="" class="d-flex align-center d-print-none mb-4"><i data-v-ff4a98e6="" class="mdi-information-box-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><span data-v-ff4a98e6="" class="ml-4">Add weeks to your schedule from the bottom of the screen. Then, add trainings to desired days in the week view. You can move, copy, and drag trainings or weeks to reorder them.</span></p>
-    <div data-v-eb553fec="" class="v-expansion-panels v-theme--light v-expansion-panels--variant-accordion">
+    <p data-v-ff4a98e6="" class="d-flex align-center d-print-none mb-4"><i data-v-ff4a98e6="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+          <path d="M13 9H11V7H13V9M13 17H11V11H13V17M5 3H19C20.1 3 21 3.89 21 5V19C21 19.53 20.79 20.04 20.41 20.41C20.04 20.79 19.53 21 19 21H5C4.47 21 3.96 20.79 3.59 20.41C3.21 20.04 3 19.53 3 19V5C3 3.89 3.89 3 5 3M19 19V5H5V19H19Z"></path>
+        </svg></i><span data-v-ff4a98e6="" class="ml-4">Add weeks to your schedule from the bottom of the screen. Then, add trainings to desired days in the week view. You can move, copy, and drag trainings or weeks to reorder them.</span></p>
+    <div data-v-eb553fec="" class="v-expansion-panels v-theme--customLight v-expansion-panels--variant-accordion">
       <!--v-if-->
     </div>
   </div>
-  <div data-v-ff4a98e6="" class="v-card-actions"><button data-v-eb553fec="" type="button" class="v-btn v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" data-test-id="schedule-add-week-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-plus mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Add Week</span>
+  <div data-v-ff4a98e6="" class="v-card-actions"><button data-v-eb553fec="" type="button" class="v-btn v-btn--slim v-theme--customLight v-btn--density-default v-btn--size-default v-btn--variant-text" data-test-id="schedule-add-week-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Add Week</span>
       <!---->
       <!---->
-    </button><button data-v-eb553fec="" type="button" class="v-btn v-btn--slim v-theme--light text-error v-btn--density-default v-btn--size-default v-btn--variant-outlined" data-test-id="schedule-reset-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-trash-can-outline mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Reset</span>
+    </button><button data-v-eb553fec="" type="button" class="v-btn v-btn--slim v-theme--customLight text-error v-btn--density-default v-btn--size-default v-btn--variant-outlined" data-test-id="schedule-reset-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Reset</span>
       <!---->
       <!---->
     </button></div>

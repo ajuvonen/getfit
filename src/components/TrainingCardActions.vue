@@ -40,13 +40,13 @@ watch(
       class="training-card__more-button"
       variant="flat"
       color="transparent"
-      prepend-icon="mdi-information"
+      prepend-icon="$information"
       @click="toggleShowInstructions(training.id)"
       >{{ $t('general.more') }}</v-btn
     >
     <v-btn
       v-if="simple"
-      :prepend-icon="training.completed ? 'mdi-progress-alert' : 'mdi-progress-check'"
+      :prepend-icon="training.completed ? '$progressAlert' : '$progressCheck'"
       :disabled="disabled"
       class="training-card__complete-button"
       @click="toggleCompletion(training)"
@@ -62,7 +62,7 @@ watch(
           :aria-label="$t('trainingCard.actionsLabel', training.activity)"
           :disabled="disabled"
           color="transparent"
-          prepend-icon="mdi-menu"
+          prepend-icon="$menu"
           variant="flat"
           v-bind="props"
           class="training-card__action-button"
@@ -73,7 +73,7 @@ watch(
       <v-list open-strategy="single">
         <v-list-item
           :title="$t('trainingCard.editTraining')"
-          prepend-icon="mdi-pen"
+          prepend-icon="$pen"
           class="training-card__edit-button"
           @click="openEditTrainingDialog(training), (menuOpen = false)"
         />
@@ -85,13 +85,13 @@ watch(
               ? $t('trainingCard.completeTraining')
               : $t('trainingCard.uncompleteTraining')
           "
-          :prepend-icon="training.completed ? 'mdi-progress-alert' : 'mdi-progress-check'"
+          :prepend-icon="training.completed ? '$progressAlert' : '$progressCheck'"
           class="training-card__complete-button"
           @click="toggleCompletion(training), (menuOpen = false)"
         />
         <v-list-item
           :title="$t('trainingCard.deleteTraining')"
-          prepend-icon="mdi-delete"
+          prepend-icon="$delete"
           class="text-error training-card__delete-button"
           @click="deleteTraining(training)"
         />

@@ -16,7 +16,7 @@ const {moveTraining, copyTraining} = scheduleStore;
 const {getDisplayWeekNumber, getShortDate, weekdays} = useWeekDays();
 
 const menuAction = props.action === 'move' ? moveTraining : copyTraining;
-const menuIcon = props.action === 'move' ? 'mdi-arrow-all' : 'mdi-content-copy';
+const menuIcon = props.action === 'move' ? '$arrowAll' : '$contentCopy';
 </script>
 <template>
   <v-list-group>

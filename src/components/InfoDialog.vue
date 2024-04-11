@@ -16,7 +16,7 @@ defineEmits(['close']);
     <template #actions>
       <v-btn
         color="primary"
-        prepend-icon="mdi-close"
+        prepend-icon="$close"
         data-test-id="info-dialog-close-button"
         @click="$emit('close')"
         >{{ $t('general.close') }}</v-btn

@@ -29,7 +29,7 @@ describe('appStateStore', () => {
   it('opens new training dialog', () => {
     const weekId = uuid();
     const dayIndex = 0;
-    const activity: LocalizedActivity = {value: 'running', title: 'Running', icon: 'mdi-run'};
+    const activity: LocalizedActivity = {value: 'running', title: 'Running'};
     store.openNewTrainingDialog(weekId, dayIndex, [activity]);
 
     expect(store.trainingDialogOpen).toBe(true);

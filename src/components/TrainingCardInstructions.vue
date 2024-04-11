@@ -45,7 +45,7 @@ watch(() => props.show, async (value) => {
           class="training-card__close-instructions-button"
           variant="flat"
           color="transparent"
-          prepend-icon="mdi-close"
+          prepend-icon="$close"
           @click="toggleShowInstructions(training.id)"
           >{{ $t('general.close') }}</v-btn
         >

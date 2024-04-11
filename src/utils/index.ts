@@ -5,8 +5,7 @@ import {v4 as uuid} from 'uuid';
 import {Intensity, type ScheduleSettings, type Training} from '@/types';
 import {ACTIVITIES, COLORS} from '@/constants';
 
-export const getIcon = (activityName: string) =>
-  ACTIVITIES.find(({value}) => value === activityName)!.icon;
+export const getIcon = (activityName: string) => `$${activityName}`;
 
 export const getIntensityColor = (intensity: Intensity, alpha: number = 1) => {
   const hexAlpha = alpha < 1 ? Math.round(alpha * 255).toString(16) : '';
@@ -22,7 +21,9 @@ export const getIntensityColor = (intensity: Intensity, alpha: number = 1) => {
   }
 };
 
-export const getEmptySettings = (initialSettings: Partial<ScheduleSettings> = {}): ScheduleSettings => ({
+export const getEmptySettings = (
+  initialSettings: Partial<ScheduleSettings> = {},
+): ScheduleSettings => ({
   name: '',
   startsOnSunday: false,
   startDate: null,

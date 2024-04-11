@@ -16,13 +16,13 @@ const {confirmDialogOpen, confirmText, confirmAction} = storeToRefs(useAppStateS
       <v-btn
         color="primary"
         variant="outlined"
-        prepend-icon="mdi-check"
+        prepend-icon="$check"
         data-test-id="confirm-dialog-confirm-button"
         @click="confirmAction(), (confirmDialogOpen = false)"
         >{{ $t('general.confirm') }}</v-btn
       >
       <v-btn
-        prepend-icon="mdi-close"
+        prepend-icon="$close"
         data-test-id="confirm-dialog-cancel-button"
         @click="confirmDialogOpen = false"
         >{{ $t('general.cancel') }}</v-btn

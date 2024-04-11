@@ -1,10 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`EditTrainingDialog > mounts 1`] = `
-"<div class="v-card v-theme--light v-card--density-default v-card--variant-elevated">
+"<div class="v-card v-theme--customLight v-card--density-default v-card--variant-elevated">
   <!---->
   <div class="v-card__loader">
-    <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+    <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
       <!---->
       <div class="v-progress-linear__background" style="width: 100%;"></div>
       <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -26,10 +26,10 @@ exports[`EditTrainingDialog > mounts 1`] = `
       <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field v-select v-select--single v-select--selected v-select--selection-slot" data-test-id="edit-training-activity">
         <!---->
         <div class="v-input__control">
-          <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--dirty v-field--no-label v-field--variant-filled v-theme--light v-locale--is-ltr" role="combobox">
+          <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--dirty v-field--no-label v-field--variant-filled v-theme--customLight v-locale--is-ltr" role="combobox">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
-              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                 <!---->
                 <div class="v-progress-linear__background" style="width: 100%;"></div>
                 <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -58,7 +58,9 @@ exports[`EditTrainingDialog > mounts 1`] = `
             </div>
             <!---->
             <div class="v-field__append-inner">
-              <!----><i class="mdi-menu-down mdi v-icon notranslate v-theme--light v-icon--size-default v-select__menu-icon" aria-hidden="true"></i>
+              <!----><i class="v-icon notranslate v-theme--customLight v-icon--size-default v-select__menu-icon" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                  <path d="M7,10L12,15L17,10H7Z"></path>
+                </svg></i>
               <!---->
             </div>
             <div class="v-field__outline">
@@ -78,10 +80,10 @@ exports[`EditTrainingDialog > mounts 1`] = `
       <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field" data-test-id="edit-training-title">
         <!---->
         <div class="v-input__control">
-          <div class="v-field v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr">
+          <div class="v-field v-field--center-affix v-field--variant-filled v-theme--customLight v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
-              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                 <!---->
                 <div class="v-progress-linear__background" style="width: 100%;"></div>
                 <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -124,10 +126,10 @@ exports[`EditTrainingDialog > mounts 1`] = `
       <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field" data-test-id="edit-training-location">
         <!---->
         <div class="v-input__control">
-          <div class="v-field v-field--center-affix v-field--variant-filled v-theme--light v-locale--is-ltr">
+          <div class="v-field v-field--center-affix v-field--variant-filled v-theme--customLight v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
-              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                 <!---->
                 <div class="v-progress-linear__background" style="width: 100%;"></div>
                 <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -171,10 +173,10 @@ exports[`EditTrainingDialog > mounts 1`] = `
         <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-text-field edit-training-duration" data-test-id="edit-training-duration">
           <!---->
           <div class="v-input__control">
-            <div class="v-field v-field--active v-field--center-affix v-field--dirty v-field--variant-filled v-theme--light v-locale--is-ltr">
+            <div class="v-field v-field--active v-field--center-affix v-field--dirty v-field--variant-filled v-theme--customLight v-locale--is-ltr">
               <div class="v-field__overlay"></div>
               <div class="v-field__loader">
-                <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                   <!---->
                   <div class="v-progress-linear__background" style="width: 100%;"></div>
                   <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -214,10 +216,10 @@ exports[`EditTrainingDialog > mounts 1`] = `
         <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-select v-select--single v-select--selected" data-test-id="edit-training-unit-of-duration">
           <!---->
           <div class="v-input__control">
-            <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--dirty v-field--no-label v-field--variant-filled v-theme--light v-locale--is-ltr" role="combobox">
+            <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--dirty v-field--no-label v-field--variant-filled v-theme--customLight v-locale--is-ltr" role="combobox">
               <div class="v-field__overlay"></div>
               <div class="v-field__loader">
-                <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                   <!---->
                   <div class="v-progress-linear__background" style="width: 100%;"></div>
                   <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -246,7 +248,9 @@ exports[`EditTrainingDialog > mounts 1`] = `
               </div>
               <!---->
               <div class="v-field__append-inner">
-                <!----><i class="mdi-menu-down mdi v-icon notranslate v-theme--light v-icon--size-default v-select__menu-icon" aria-hidden="true"></i>
+                <!----><i class="v-icon notranslate v-theme--customLight v-icon--size-default v-select__menu-icon" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                    <path d="M7,10L12,15L17,10H7Z"></path>
+                  </svg></i>
                 <!---->
               </div>
               <div class="v-field__outline">
@@ -267,10 +271,10 @@ exports[`EditTrainingDialog > mounts 1`] = `
       <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-textarea v-text-field v-textarea--no-resize" data-test-id="edit-training-instructions">
         <!---->
         <div class="v-input__control">
-          <div class="v-field v-field--appended v-field--variant-filled v-theme--light v-locale--is-ltr">
+          <div class="v-field v-field--appended v-field--variant-filled v-theme--customLight v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
-              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                 <!---->
                 <div class="v-progress-linear__background" style="width: 100%;"></div>
                 <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -293,7 +297,9 @@ exports[`EditTrainingDialog > mounts 1`] = `
               <!---->
             </div>
             <transition-stub name="expand-x-transition" appear="false" persisted="false" css="true">
-              <div class="v-field__clearable" style="display: none;"><i class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" role="button" aria-hidden="false" tabindex="0" aria-label="Clear Instructions"></i></div>
+              <div class="v-field__clearable" style="display: none;"><i class="v-icon notranslate v-theme--customLight v-icon--size-default v-icon--clickable" role="button" aria-hidden="false" tabindex="0" aria-label="Clear Instructions"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                    <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"></path>
+                  </svg></i></div>
             </transition-stub>
             <div class="v-field__append-inner">
               <!---->
@@ -363,10 +369,10 @@ exports[`EditTrainingDialog > mounts 1`] = `
       </div>
     </form>
   </div>
-  <div class="v-card-actions"><button data-v-6b8ac3b4="" type="button" class="v-btn v-btn--slim v-theme--light text-primary v-btn--density-default v-btn--size-default v-btn--variant-outlined" data-test-id="edit-training-save-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-content-save mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Save</span>
+  <div class="v-card-actions"><button data-v-6b8ac3b4="" type="button" class="v-btn v-btn--slim v-theme--customLight text-primary v-btn--density-default v-btn--size-default v-btn--variant-outlined" data-test-id="edit-training-save-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Save</span>
       <!---->
       <!---->
-    </button><button data-v-6b8ac3b4="" type="button" class="v-btn v-btn--slim v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" data-test-id="edit-training-close-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="mdi-close mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator="">Close Dialog</span>
+    </button><button data-v-6b8ac3b4="" type="button" class="v-btn v-btn--slim v-theme--customLight v-btn--density-default v-btn--size-default v-btn--variant-text" data-test-id="edit-training-close-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Close Dialog</span>
       <!---->
       <!---->
     </button></div>
