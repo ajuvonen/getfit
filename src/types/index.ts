@@ -42,11 +42,8 @@ export enum Intensity {
   'HEAVY',
 }
 
-export type BaseActivity = {
+export type LocalizedActivity = {
   value: string;
-};
-
-export type LocalizedActivity = BaseActivity & {
   title: string;
 };
 
