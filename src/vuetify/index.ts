@@ -1,6 +1,6 @@
 import {createVuetify} from 'vuetify';
 import {aliases, mdi} from 'vuetify/iconsets/mdi-svg';
-import icons from '@/icons';
+import icons from './icons';
 import {COLORS} from '@/constants';
 
 import 'vuetify/styles';
