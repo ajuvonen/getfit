@@ -56,6 +56,7 @@
       "km": "Kilometriä",
       "mi": "Mailia"
     },
+    "updatePrompt": "Sovellus on päivitetty. Haluatko ottaa uudet ominaisuudet käyttöön?",
     "weekdays": {
       "monday": "Maanantai",
       "tuesday": "Tiistai",

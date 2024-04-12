@@ -23,7 +23,7 @@ const {updateServiceWorker} = useRegisterSW({
   immediate: true,
   onNeedRefresh() {
     openConfirmDialog(
-      'An update to the app is available. Click on continue to download the latest version.',
+      t('general.updatePrompt'),
       () => updateServiceWorker(),
     );
   },
