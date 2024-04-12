@@ -28,39 +28,43 @@ const agendaAvailable = computed(() => weeks.value.length && settings.value.star
         {{ $t('home.p2') }}
       </p>
     </template>
-    <p class="mt-10">
-      <v-icon icon="$github" />
-      <a
-        class="text-grey-lighten-5 ml-2"
-        target="_blank"
-        noopener
-        noreferrer
-        href="https://www.github.com/ajuvonen/getfit"
-        >GitHub</a
-      >
-    </p>
     <v-btn
       variant="text"
       size="x-small"
       class="home__photo-credit"
       @click="creditDialogOpen = true"
     >
-      {{ $t('home.credits') }}
+      {{ $t('home.about') }}
     </v-btn>
-    <InfoDialog
-      :show="creditDialogOpen"
-      :title="$t('home.credits')"
-      @close="creditDialogOpen = false"
-    >
-      <template #content>
-        <ul>
-          <li v-for="{name, link} in PHOTO_CREDITS" :key="name">
-            <a :href="link" target="_blank" noreferrer noopener>{{ name }}</a>
-          </li>
-        </ul>
-      </template>
-    </InfoDialog>
   </div>
+  <InfoDialog
+    :show="creditDialogOpen"
+    :title="$t('home.about')"
+    style="max-width: 600px;"
+    class="home__info-dialog"
+    @close="creditDialogOpen = false"
+  >
+    <template #content>
+      <p class="text-center text-h6">
+        <v-icon icon="$github" />
+        <a
+          class="ml-2"
+          target="_blank"
+          noopener
+          noreferrer
+          href="https://www.github.com/ajuvonen/getfit"
+          >GitHub</a
+        >
+      </p>
+      <p class="mt-4">{{ $t('home.licenseText') }}</p>
+      <p class="mt-4">{{ $t('home.photoCredits') }}</p>
+      <ul class="mt-4">
+        <li v-for="{name, link} in PHOTO_CREDITS" :key="name">
+          <a :href="link" target="_blank" noreferrer noopener>{{ name }}</a>
+        </li>
+      </ul>
+    </template>
+  </InfoDialog>
 </template>
 <style lang="scss" scoped>
 .home__overlay {
@@ -80,8 +84,19 @@ const agendaAvailable = computed(() => weeks.value.length && settings.value.star
   transform: translateX(-50%);
 }
 
-ul {
-  list-style-type: none;
+.home__info-dialog {
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    display: inline;
+    + li {
+      &::before {
+        content: ', ';
+      }
+    }
+  }
 
   a {
     color: inherit;
