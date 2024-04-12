@@ -22,10 +22,7 @@ const {openConfirmDialog} = useAppStateStore();
 const {updateServiceWorker} = useRegisterSW({
   immediate: true,
   onNeedRefresh() {
-    openConfirmDialog(
-      t('general.updatePrompt'),
-      () => updateServiceWorker(),
-    );
+    openConfirmDialog(t('general.updatePrompt'), () => updateServiceWorker());
   },
 });
 
@@ -47,9 +44,13 @@ watch(locale, (value) => {
     <div class="app__overlay">
       <v-app-bar class="d-print-none app-bar" :style="{color: COLORS.offWhite}">
         <template #prepend>
-          <RouterLink to="/" :aria-label="$t('routes.home')" data-test-id="app-bar-home-link">
-            <v-icon icon="$home" :color="COLORS.offWhite" />
-          </RouterLink>
+          <v-btn
+            to="/"
+            icon="$home"
+            :aria-label="$t('routes.home')"
+            data-test-id="app-bar-home-link"
+          >
+          </v-btn>
         </template>
         <template #append>
           <v-icon icon="$earth" />
@@ -72,11 +73,11 @@ watch(locale, (value) => {
       <v-bottom-navigation grow class="d-print-none">
         <v-btn to="settings" data-test-id="navbar-settings-link" class="text-body-1">
           <v-icon icon="$cog" />
-          {{ t('routes.settings') }}
+          {{ $t('routes.settings') }}
         </v-btn>
         <v-btn to="schedule" data-test-id="navbar-schedule-link" class="text-body-1">
           <v-icon icon="$calendar" />
-          {{ t('routes.schedule') }}
+          {{ $t('routes.schedule') }}
         </v-btn>
         <v-btn
           :disabled="!weeks.length"
@@ -85,7 +86,7 @@ watch(locale, (value) => {
           class="text-body-1"
         >
           <v-icon icon="$export" />
-          {{ t('routes.export') }}
+          {{ $t('routes.export') }}
         </v-btn>
       </v-bottom-navigation>
     </div>
