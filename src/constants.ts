@@ -1,63 +1,23 @@
-import type {BaseActivity} from '@/types';
-
-export const ACTIVITIES: BaseActivity[] = [
-  {
-    value: 'running',
-  },
-  {
-    value: 'skiing',
-  },
-  {
-    value: 'tennis',
-  },
-  {
-    value: 'badminton',
-  },
-  {
-    value: 'soccer',
-  },
-  {
-    value: 'maintenance',
-  },
-  {
-    value: 'downhill',
-  },
-  {
-    value: 'gym',
-  },
-  {
-    value: 'basketball',
-  },
-  {
-    value: 'boxing',
-  },
-  {
-    value: 'swimming',
-  },
-  {
-    value: 'sprint',
-  },
-  {
-    value: 'hockey',
-  },
-  {
-    value: 'martialarts',
-  },
-  {
-    value: 'walking',
-  },
-  {
-    value: 'cycling',
-  },
-  {
-    value: 'shooting',
-  },
-  {
-    value: 'gymnastics',
-  },
-  {
-    value: 'skating',
-  },
+export const ACTIVITIES = [
+  'badminton',
+  'basketball',
+  'boxing',
+  'cycling',
+  'downhill',
+  'gym',
+  'gymnastics',
+  'hockey',
+  'maintenance',
+  'martialarts',
+  'running',
+  'shooting',
+  'skating',
+  'skiing',
+  'soccer',
+  'sprint',
+  'swimming',
+  'tennis',
+  'walking',
 ];
 
 export const DATE_FORMATS: {[key: string]: string} = {

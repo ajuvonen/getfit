@@ -1,4 +1,5 @@
 import {describe, it, expect} from 'vitest';
+import {clone} from 'remeda';
 import type {ErrorObject} from '@vuelidate/core';
 import {
   getIcon,
@@ -64,7 +65,7 @@ describe('Utils', () => {
       startsOnSunday: false,
       startDate: null,
       actualWeekNumbering: false,
-      availableActivities: ACTIVITIES.map(({value}) => value),
+      availableActivities: clone(ACTIVITIES),
       defaultStartTime: {
         hours: 12,
         minutes: 0,
@@ -76,7 +77,6 @@ describe('Utils', () => {
       decoratedCards: true,
     });
   });
-  
 
   it('getEmptyTraining should use passed parameters properly', () => {
     const initialTraining: Partial<Training> = {
@@ -120,5 +120,5 @@ describe('Utils', () => {
     expect(isDurationTime('m')).toBe(true);
     expect(isDurationTime('km')).toBe(false);
     expect(isDurationTime('mi')).toBe(false);
-  })
+  });
 });
