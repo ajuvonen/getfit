@@ -32,7 +32,7 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,ico,png,jpg}'],
       },
       devOptions: {
-        enabled: process.env.NODE_ENV === 'development',
+        enabled: false,
       },
     }),
   ],
