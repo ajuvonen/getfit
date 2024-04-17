@@ -4,7 +4,7 @@ exports[`SettingsView > mounts 1`] = `
 "<div data-v-ff4a98e6="" data-v-5e0b544f="" class="v-card v-theme--customLight v-card--density-default v-card--rounded v-card--variant-elevated" style="background-color: rgba(255, 255, 255, 0.75);">
   <!---->
   <div class="v-card__loader">
-    <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+    <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
       <!---->
       <div class="v-progress-linear__background" style="width: 100%;"></div>
       <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -31,7 +31,7 @@ exports[`SettingsView > mounts 1`] = `
         <div class="v-field v-field--variant-underlined v-theme--customLight v-locale--is-ltr">
           <div class="v-field__overlay"></div>
           <div class="v-field__loader">
-            <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+            <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
               <!---->
               <div class="v-progress-linear__background" style="width: 100%;"></div>
               <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -120,7 +120,7 @@ exports[`SettingsView > mounts 1`] = `
               <div class="v-field v-field--appended v-field--no-label v-field--variant-underlined v-theme--customLight v-locale--is-ltr">
                 <div class="v-field__overlay"></div>
                 <div class="v-field__loader">
-                  <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                  <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                     <!---->
                     <div class="v-progress-linear__background" style="width: 100%;"></div>
                     <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
@@ -190,7 +190,7 @@ exports[`SettingsView > mounts 1`] = `
         <div class="v-field v-field--active v-field--dirty v-field--no-label v-field--variant-underlined v-theme--customLight v-locale--is-ltr">
           <div class="v-field__overlay"></div>
           <div class="v-field__loader">
-            <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+            <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
               <!---->
               <div class="v-progress-linear__background" style="width: 100%;"></div>
               <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
