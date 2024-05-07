@@ -5,9 +5,10 @@ exports[`TrainingCard > mounts 1`] = `
   <div data-v-24c3dbf4="" class="v-card v-theme--customLight v-card--density-default v-card--variant-elevated training-card" style="background-color: rgba(255, 217, 140, 0.8); width: 350px; color: rgb(33, 33, 33);">
     <!---->
     <div class="v-card__loader">
-      <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+      <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
         <!---->
-        <div class="v-progress-linear__background" style="width: 100%;"></div>
+        <div class="v-progress-linear__background"></div>
+        <div class="v-progress-linear__buffer" style="width: 0%;"></div>
         <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
           <div class="v-progress-linear__indeterminate">
             <div class="v-progress-linear__indeterminate long"></div>
@@ -35,7 +36,7 @@ exports[`TrainingCard > mounts 1`] = `
       <div data-v-24c3dbf4="" class="training-card__location text-subtitle-2"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
             <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
           </svg></i><span data-v-24c3dbf4="" class="text-truncate">Total wreck gym</span></div>
-      <div data-v-cb700901="" data-v-24c3dbf4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--disabled v-radio-group training-card__rating--hidden training-card__rating">
+      <div data-v-cb700901="" data-v-24c3dbf4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--disabled v-radio-group training-card__rating--hidden training-card__rating">
         <!---->
         <div class="v-input__control">
           <!---->
@@ -94,7 +95,7 @@ exports[`TrainingCard > mounts 1`] = `
     <div data-v-24c3dbf4="" class="v-card-actions justify-end"><button type="button" class="v-btn v-btn--slim v-theme--customLight bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__more-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">More</span>
         <!---->
         <!---->
-      </button><button type="button" class="v-btn v-btn--slim v-theme--customLight bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__action-button" aria-label="Actions for training " targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-9"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Actions</span>
+      </button><button type="button" class="v-btn v-btn--slim v-theme--customLight bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__action-button" aria-label="Actions for training " aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-9"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Actions</span>
         <!---->
         <!---->
       </button>
@@ -114,9 +115,10 @@ exports[`TrainingCard > mounts in simple mode 1`] = `
   <div data-v-24c3dbf4="" class="v-card v-theme--customLight v-card--density-default v-card--variant-elevated training-card" style="background-color: rgba(255, 217, 140, 0.8); width: 350px; color: rgb(33, 33, 33);">
     <!---->
     <div class="v-card__loader">
-      <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+      <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
         <!---->
-        <div class="v-progress-linear__background" style="width: 100%;"></div>
+        <div class="v-progress-linear__background"></div>
+        <div class="v-progress-linear__buffer" style="width: 0%;"></div>
         <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
           <div class="v-progress-linear__indeterminate">
             <div class="v-progress-linear__indeterminate long"></div>
@@ -144,7 +146,7 @@ exports[`TrainingCard > mounts in simple mode 1`] = `
       <div data-v-24c3dbf4="" class="training-card__location text-subtitle-2"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
             <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
           </svg></i><span data-v-24c3dbf4="" class="text-truncate">Total wreck gym</span></div>
-      <div data-v-cb700901="" data-v-24c3dbf4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--disabled v-radio-group training-card__rating--hidden training-card__rating">
+      <div data-v-cb700901="" data-v-24c3dbf4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--disabled v-radio-group training-card__rating--hidden training-card__rating">
         <!---->
         <div class="v-input__control">
           <!---->

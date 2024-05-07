@@ -4,9 +4,10 @@ exports[`EditTrainingDialog > mounts 1`] = `
 "<div class="v-card v-theme--customLight v-card--density-default v-card--variant-elevated">
   <!---->
   <div class="v-card__loader">
-    <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+    <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
       <!---->
-      <div class="v-progress-linear__background" style="width: 100%;"></div>
+      <div class="v-progress-linear__background"></div>
+      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
       <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
         <div class="v-progress-linear__indeterminate">
           <div class="v-progress-linear__indeterminate long"></div>
@@ -23,15 +24,16 @@ exports[`EditTrainingDialog > mounts 1`] = `
     <form data-v-6b8ac3b4="" class="v-form" novalidate=""><label data-v-6b8ac3b4="" class="v-label" for="edit-training-activity">
         <!---->Activity
       </label>
-      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field v-select v-select--single v-select--selected v-select--selection-slot" data-test-id="edit-training-activity">
+      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-text-field v-select v-select--single v-select--selected v-select--selection-slot" data-test-id="edit-training-activity">
         <!---->
         <div class="v-input__control">
           <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--dirty v-field--no-label v-field--variant-filled v-theme--customLight v-locale--is-ltr" role="combobox">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
-              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                 <!---->
-                <div class="v-progress-linear__background" style="width: 100%;"></div>
+                <div class="v-progress-linear__background"></div>
+                <div class="v-progress-linear__buffer" style="width: 0%;"></div>
                 <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
                   <div class="v-progress-linear__indeterminate">
                     <div class="v-progress-linear__indeterminate long"></div>
@@ -77,15 +79,16 @@ exports[`EditTrainingDialog > mounts 1`] = `
           <!---->
         </div>
       </div>
-      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field" data-test-id="edit-training-title">
+      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-text-field" data-test-id="edit-training-title">
         <!---->
         <div class="v-input__control">
           <div class="v-field v-field--center-affix v-field--variant-filled v-theme--customLight v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
-              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                 <!---->
-                <div class="v-progress-linear__background" style="width: 100%;"></div>
+                <div class="v-progress-linear__background"></div>
+                <div class="v-progress-linear__buffer" style="width: 0%;"></div>
                 <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
                   <div class="v-progress-linear__indeterminate">
                     <div class="v-progress-linear__indeterminate long"></div>
@@ -123,15 +126,16 @@ exports[`EditTrainingDialog > mounts 1`] = `
           </transition-stub>
         </div>
       </div>
-      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field" data-test-id="edit-training-location">
+      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-text-field" data-test-id="edit-training-location">
         <!---->
         <div class="v-input__control">
           <div class="v-field v-field--center-affix v-field--variant-filled v-theme--customLight v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
-              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                 <!---->
-                <div class="v-progress-linear__background" style="width: 100%;"></div>
+                <div class="v-progress-linear__background"></div>
+                <div class="v-progress-linear__buffer" style="width: 0%;"></div>
                 <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
                   <div class="v-progress-linear__indeterminate">
                     <div class="v-progress-linear__indeterminate long"></div>
@@ -170,15 +174,16 @@ exports[`EditTrainingDialog > mounts 1`] = `
         </div>
       </div>
       <div data-v-6b8ac3b4="" class="d-flex edit-training__duration-container">
-        <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-text-field edit-training-duration" data-test-id="edit-training-duration">
+        <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--dirty v-text-field edit-training-duration" data-test-id="edit-training-duration">
           <!---->
           <div class="v-input__control">
             <div class="v-field v-field--active v-field--center-affix v-field--dirty v-field--variant-filled v-theme--customLight v-locale--is-ltr">
               <div class="v-field__overlay"></div>
               <div class="v-field__loader">
-                <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                   <!---->
-                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <div class="v-progress-linear__background"></div>
+                  <div class="v-progress-linear__buffer" style="width: 0%;"></div>
                   <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
                     <div class="v-progress-linear__indeterminate">
                       <div class="v-progress-linear__indeterminate long"></div>
@@ -213,15 +218,16 @@ exports[`EditTrainingDialog > mounts 1`] = `
             <!---->
           </div>
         </div>
-        <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-select v-select--single v-select--selected" data-test-id="edit-training-unit-of-duration">
+        <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--dirty v-text-field v-select v-select--single v-select--selected" data-test-id="edit-training-unit-of-duration">
           <!---->
           <div class="v-input__control">
             <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--dirty v-field--no-label v-field--variant-filled v-theme--customLight v-locale--is-ltr" role="combobox">
               <div class="v-field__overlay"></div>
               <div class="v-field__loader">
-                <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                   <!---->
-                  <div class="v-progress-linear__background" style="width: 100%;"></div>
+                  <div class="v-progress-linear__background"></div>
+                  <div class="v-progress-linear__buffer" style="width: 0%;"></div>
                   <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
                     <div class="v-progress-linear__indeterminate">
                       <div class="v-progress-linear__indeterminate long"></div>
@@ -268,15 +274,16 @@ exports[`EditTrainingDialog > mounts 1`] = `
           </div>
         </div>
       </div>
-      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-textarea v-text-field v-textarea--no-resize" data-test-id="edit-training-instructions">
+      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--density-default v-theme--customLight v-locale--is-ltr v-textarea v-text-field v-textarea--no-resize" data-test-id="edit-training-instructions">
         <!---->
         <div class="v-input__control">
           <div class="v-field v-field--appended v-field--variant-filled v-theme--customLight v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
-              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+              <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                 <!---->
-                <div class="v-progress-linear__background" style="width: 100%;"></div>
+                <div class="v-progress-linear__background"></div>
+                <div class="v-progress-linear__buffer" style="width: 0%;"></div>
                 <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
                   <div class="v-progress-linear__indeterminate">
                     <div class="v-progress-linear__indeterminate long"></div>
@@ -324,7 +331,7 @@ exports[`EditTrainingDialog > mounts 1`] = `
       </div><label data-v-6b8ac3b4="" class="v-label" for="edit-training-intensity">
         <!---->Overall Intensity
       </label>
-      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-slider--has-labels v-locale--is-ltr" data-test-id="edit-training-intensity">
+      <div data-v-6b8ac3b4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--dirty v-slider v-slider--has-labels v-locale--is-ltr" data-test-id="edit-training-intensity">
         <!---->
         <div class="v-input__control">
           <div class="v-slider__container"><input id="edit-training-intensity" name="edit-training-intensity" tabindex="-1">

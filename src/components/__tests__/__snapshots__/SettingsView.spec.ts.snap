@@ -4,9 +4,10 @@ exports[`SettingsView > mounts 1`] = `
 "<div data-v-ff4a98e6="" data-v-5e0b544f="" class="v-card v-theme--customLight v-card--density-default v-card--rounded v-card--variant-elevated" style="background-color: rgba(255, 255, 255, 0.75);">
   <!---->
   <div class="v-card__loader">
-    <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+    <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
       <!---->
-      <div class="v-progress-linear__background" style="width: 100%;"></div>
+      <div class="v-progress-linear__background"></div>
+      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
       <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
         <div class="v-progress-linear__indeterminate">
           <div class="v-progress-linear__indeterminate long"></div>
@@ -25,15 +26,16 @@ exports[`SettingsView > mounts 1`] = `
     <p data-v-ff4a98e6="" class="d-flex align-center d-print-none mb-4"><i data-v-ff4a98e6="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
           <path d="M13 9H11V7H13V9M13 17H11V11H13V17M5 3H19C20.1 3 21 3.89 21 5V19C21 19.53 20.79 20.04 20.41 20.41C20.04 20.79 19.53 21 19 21H5C4.47 21 3.96 20.79 3.59 20.41C3.21 20.04 3 19.53 3 19V5C3 3.89 3.89 3 5 3M19 19V5H5V19H19Z"></path>
         </svg></i><span data-v-ff4a98e6="" class="ml-4">The settings allow you to, for example, limit the available activity types and set the starting date of the schedule. The settings are saved automatically.</span></p>
-    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined settings-input--wide">
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--density-default v-theme--customLight v-locale--is-ltr v-text-field v-input--plain-underlined settings-input--wide">
       <!---->
       <div class="v-input__control">
         <div class="v-field v-field--variant-underlined v-theme--customLight v-locale--is-ltr">
           <div class="v-field__overlay"></div>
           <div class="v-field__loader">
-            <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+            <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
               <!---->
-              <div class="v-progress-linear__background" style="width: 100%;"></div>
+              <div class="v-progress-linear__background"></div>
+              <div class="v-progress-linear__buffer" style="width: 0%;"></div>
               <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
                 <div class="v-progress-linear__indeterminate">
                   <div class="v-progress-linear__indeterminate long"></div>
@@ -73,7 +75,7 @@ exports[`SettingsView > mounts 1`] = `
     </div><label data-v-5e0b544f="" class="v-label" for="settings-start-of-week">
       <!---->Start of Week
     </label>
-    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-radio-group">
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--dirty v-radio-group">
       <!---->
       <div class="v-input__control">
         <!---->
@@ -114,15 +116,16 @@ exports[`SettingsView > mounts 1`] = `
       <div>
         <!---->
         <div class="dp__input_wrap">
-          <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-input--readonly v-text-field v-input--plain-underlined" data-test-id="settings-start-date-input">
+          <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--density-default v-theme--customLight v-locale--is-ltr v-input--readonly v-text-field v-input--plain-underlined" data-test-id="settings-start-date-input">
             <!---->
             <div class="v-input__control">
               <div class="v-field v-field--appended v-field--no-label v-field--variant-underlined v-theme--customLight v-locale--is-ltr">
                 <div class="v-field__overlay"></div>
                 <div class="v-field__loader">
-                  <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                  <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
                     <!---->
-                    <div class="v-progress-linear__background" style="width: 100%;"></div>
+                    <div class="v-progress-linear__background"></div>
+                    <div class="v-progress-linear__buffer" style="width: 0%;"></div>
                     <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
                       <div class="v-progress-linear__indeterminate">
                         <div class="v-progress-linear__indeterminate long"></div>
@@ -184,15 +187,16 @@ exports[`SettingsView > mounts 1`] = `
     <transition-stub data-v-5e0b544f="" name="expand-transition" appear="false" persisted="false" css="true">
       <!--v-if-->
     </transition-stub>
-    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-input--plain-underlined settings-input">
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--density-default v-theme--customLight v-locale--is-ltr v-input--dirty v-text-field v-input--plain-underlined settings-input">
       <!---->
       <div class="v-input__control">
         <div class="v-field v-field--active v-field--dirty v-field--no-label v-field--variant-underlined v-theme--customLight v-locale--is-ltr">
           <div class="v-field__overlay"></div>
           <div class="v-field__loader">
-            <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+            <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
               <!---->
-              <div class="v-progress-linear__background" style="width: 100%;"></div>
+              <div class="v-progress-linear__background"></div>
+              <div class="v-progress-linear__buffer" style="width: 0%;"></div>
               <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
                 <div class="v-progress-linear__indeterminate">
                   <div class="v-progress-linear__indeterminate long"></div>
@@ -229,7 +233,7 @@ exports[`SettingsView > mounts 1`] = `
     </div><label data-v-5e0b544f="" class="v-label" for="settings-default-unit-of-duration">
       <!---->Default Unit of Duration
     </label>
-    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-radio-group">
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--dirty v-radio-group">
       <!---->
       <div class="v-input__control">
         <!---->
@@ -585,7 +589,7 @@ exports[`SettingsView > mounts 1`] = `
     </div><label data-v-5e0b544f="" class="v-label" for="settings-visual-mode">
       <!---->Theme
     </label>
-    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-radio-group">
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--dirty v-radio-group">
       <!---->
       <div class="v-input__control">
         <!---->
@@ -627,7 +631,7 @@ exports[`SettingsView > mounts 1`] = `
     </div><label data-v-5e0b544f="" class="v-label" for="settings-card-background">
       <!---->Training Card Background
     </label>
-    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-radio-group">
+    <div data-v-5e0b544f="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--dirty v-radio-group">
       <!---->
       <div class="v-input__control">
         <!---->
