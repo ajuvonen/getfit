@@ -6,7 +6,7 @@ import {useScheduleStore} from '@/stores/schedule';
 import TrainingCard from '@/components/TrainingCard.vue';
 
 const scheduleStore = useScheduleStore();
-const {weeks, settings, getTotalTrainings, getCompletedTrainings} = storeToRefs(scheduleStore);
+const {weeks, settings, getTrainingsCount, getCompletedTrainingsCount} = storeToRefs(scheduleStore);
 
 const dailyTrainings = computed(() => {
   const startDate = DateTime.fromJSDate(settings.value.startDate!);
@@ -23,14 +23,14 @@ const dailyTrainings = computed(() => {
 </script>
 <template>
   <v-progress-circular
-    :model-value="(getCompletedTrainings / getTotalTrainings) * 100"
+    :model-value="(getCompletedTrainingsCount / getTrainingsCount) * 100"
     class="mx-auto"
     size="150"
     width="15"
   >
     <v-fab-transition>
-      <div v-if="getTotalTrainings > getCompletedTrainings" class="d-flex flex-column">
-        <span class="text-h4 daily-agenda__progress">{{ getCompletedTrainings }} / {{ getTotalTrainings }}</span>
+      <div v-if="getTrainingsCount > getCompletedTrainingsCount" class="d-flex flex-column">
+        <span class="text-h4 daily-agenda__progress">{{ getCompletedTrainingsCount }} / {{ getTrainingsCount }}</span>
         <span class="text-caption text-uppercase">{{ $t('home.progress') }}</span>
       </div>
       <v-icon v-else class="daily-agenda__completed-icon" icon="$trophyOutline" size="70" />
