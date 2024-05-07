@@ -1,6 +1,7 @@
 import {
   mdiArrowAll,
   mdiCalendar,
+  mdiChartBar,
   mdiCheck,
   mdiClose,
   mdiCog,
@@ -54,6 +55,7 @@ import {
 export default {
   arrowAll: mdiArrowAll,
   calendar: mdiCalendar,
+  chartBar: mdiChartBar,
   check: mdiCheck,
   close: mdiClose,
   cog: mdiCog,

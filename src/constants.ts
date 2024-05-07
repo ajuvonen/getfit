@@ -43,6 +43,7 @@ export const COLORS = {
   intensityHeavy: '#FF7F7A',
   lightGrey: '#3C3C3C',
   offWhite: '#FAFAFA',
+  chartColors: ['#00876C', '#64AB71', '#AFCD78', '#FFEB8A', '#FAB460', '#ED7B4F', '#D43D51'],
 };
 
 export const PHOTO_CREDITS = [
