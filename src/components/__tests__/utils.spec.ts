@@ -8,9 +8,10 @@ import {
   getEmptyTraining,
   getEmptySettings,
   isDurationTime,
+  getChartTitleOptions,
 } from '@/utils';
 import {Intensity, type ScheduleSettings, type Training} from '@/types';
-import {ACTIVITIES} from '@/constants';
+import {ACTIVITIES, COLORS} from '@/constants';
 
 describe('Utils', () => {
   it('getIcon gets icons from activities list', () => {
@@ -120,5 +121,11 @@ describe('Utils', () => {
     expect(isDurationTime('m')).toBe(true);
     expect(isDurationTime('km')).toBe(false);
     expect(isDurationTime('mi')).toBe(false);
+  });
+
+  it('generates chart title options', () => {
+    const options = getChartTitleOptions('Chart title', true);
+    expect(options.plugins?.title?.text).toBe('Chart title');
+    expect(options.plugins?.title?.color).toBe(COLORS.offWhite);
   });
 });
