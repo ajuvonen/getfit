@@ -3,6 +3,7 @@ import {helpers} from '@vuelidate/validators';
 import type {ErrorObject} from '@vuelidate/core';
 import {v4 as uuid} from 'uuid';
 import {clone} from 'remeda';
+import type {ChartTypeRegistry, PluginChartOptions} from 'chart.js';
 import {Intensity, type ScheduleSettings, type Training} from '@/types';
 import {ACTIVITIES, COLORS} from '@/constants';
 
@@ -64,3 +65,22 @@ export const getValidationErrors = (errors: ErrorObject[]) =>
   errors.map((error) => unref(error.$message));
 
 export const isDurationTime = (value: string) => ['h', 'm'].includes(value);
+
+export const getChartTitleOptions = <T extends keyof ChartTypeRegistry>(
+  title: string,
+  darkMode: boolean,
+) => ({
+  plugins: {
+    title: {
+      display: true,
+      color: darkMode ? COLORS.offWhite : COLORS.darkGrey,
+      text: title,
+      font: {
+        family: 'Roboto, sans-serif',
+        size: 18,
+        weight: 'normal',
+        style: 'normal',
+      },
+    },
+  },
+} as Partial<PluginChartOptions<T>>);
