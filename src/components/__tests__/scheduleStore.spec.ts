@@ -340,7 +340,7 @@ describe('scheduleStore', () => {
       },
     );
 
-    expect(scheduleStore.getTotalTrainings).toBe(3);
+    expect(scheduleStore.getTrainingsCount).toBe(3);
   });
 
   it('calculates the amount of completed trainings', () => {
@@ -360,14 +360,14 @@ describe('scheduleStore', () => {
       },
     );
 
-    expect(scheduleStore.getCompletedTrainings).toBe(1);
+    expect(scheduleStore.getCompletedTrainingsCount).toBe(1);
   });
 
   it('returns 0 when there are no trainings', () => {
     scheduleStore.addWeek();
 
-    expect(scheduleStore.getCompletedTrainings).toBe(0);
-    expect(scheduleStore.getTotalTrainings).toBe(0);
+    expect(scheduleStore.getCompletedTrainingsCount).toBe(0);
+    expect(scheduleStore.getTrainingsCount).toBe(0);
   });
 
   it('changes data when start of week changes', async () => {
@@ -408,5 +408,33 @@ describe('scheduleStore', () => {
     expect(scheduleStore.weeks[0].trainings[1].dayIndex).toBe(6);
     expect(scheduleStore.weeks[0].trainings[2].dayIndex).toBe(3);
     expect(DateTime.fromJSDate(scheduleStore.settings.startDate).weekday).toBe(1);
+  });
+
+  it('returns all trainings', () => {
+    const weekId = uuid();
+    const weekId2 = uuid();
+    scheduleStore.weeks.push({
+      id: weekId,
+      trainings: [
+        getEmptyTraining({
+          weekId,
+          dayIndex: 0,
+        }),
+        getEmptyTraining({
+          weekId,
+          dayIndex: 3,
+        }),
+      ],
+    }, {
+      id: weekId2,
+      trainings: [
+        getEmptyTraining({
+          weekId: weekId2,
+          dayIndex: 0,
+        }),
+      ],
+    });
+
+    expect(scheduleStore.getAllTrainings).toHaveLength(3);
   });
 });

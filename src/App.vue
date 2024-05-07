@@ -11,7 +11,7 @@ import {useAppStateStore} from '@/stores/appState';
 import {COLORS} from '@/constants';
 import ConfirmDialog from '@/components/ConfirmDialog.vue';
 
-const {weeks} = storeToRefs(useScheduleStore());
+const {weeks, getTrainingsCount} = storeToRefs(useScheduleStore());
 const {isSmallScreen, isDark} = useScreen();
 const {t, locale} = useI18n();
 
@@ -49,6 +49,14 @@ watch(locale, (value) => {
             icon="$home"
             :aria-label="$t('routes.home')"
             data-test-id="app-bar-home-link"
+          >
+          </v-btn>
+          <v-btn
+            v-if="getTrainingsCount"
+            to="/stats"
+            icon="$chartBar"
+            :aria-label="$t('routes.stats')"
+            data-test-id="app-bar-stats-link"
           >
           </v-btn>
         </template>
