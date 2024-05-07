@@ -98,7 +98,8 @@
     "home": "Home",
     "export": "Export",
     "schedule": "Schedule",
-    "settings": "Settings"
+    "settings": "Settings",
+    "stats": "Statistics"
   },
   "schedule": {
     "addWeek": "Add Week",
@@ -130,6 +131,14 @@
     "title": "Schedule Settings",
     "toggleAllActivities": "Toggle All",
     "weekNumbering": "Week numbering"
+  },
+  "stats": {
+    "guide": "The statistics are updated automatically as you add and complete trainings.",
+    "noRating": "No rating",
+    "other": "Other",
+    "trainingsByActivity": "Training activities",
+    "trainingsByIntensity": "Intensity of trainings",
+    "trainingsByRating": "Ratings"
   },
   "trainingCard": {
     "actions": "Actions",
