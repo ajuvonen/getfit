@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`TrainingCardRating > mounts 1`] = `
-"<div data-v-cb700901="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--disabled v-radio-group training-card__rating--hidden training-card__rating">
+"<div data-v-cb700901="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--disabled v-radio-group training-card__rating--hidden training-card__rating">
   <!---->
   <div class="v-input__control">
     <!---->

@@ -5,9 +5,10 @@ exports[`TrainingCardInstructions > mounts 1`] = `
   <div data-v-dc9f9ee2="" class="v-card v-theme--customLight v-card--density-default v-card--variant-elevated d-flex flex-column" style="background-color: rgb(255, 217, 140); color: rgb(33, 33, 33); caret-color: #000; height: 100%;">
     <!---->
     <div class="v-card__loader">
-      <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+      <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
         <!---->
-        <div class="v-progress-linear__background" style="width: 100%;"></div>
+        <div class="v-progress-linear__background"></div>
+        <div class="v-progress-linear__buffer" style="width: 0%;"></div>
         <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
           <div class="v-progress-linear__indeterminate">
             <div class="v-progress-linear__indeterminate long"></div>
