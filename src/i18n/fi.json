@@ -98,7 +98,8 @@
     "home": "Etusivu",
     "export": "Vienti",
     "schedule": "Ohjelma",
-    "settings": "Asetukset"
+    "settings": "Asetukset",
+    "stats": "Tilastot"
   },
   "schedule": {
     "addWeek": "Lisää viikko",
@@ -130,6 +131,14 @@
     "title": "Ohjelman asetukset",
     "toggleAllActivities": "Valitse kaikki",
     "weekNumbering": "Viikkojen numerointi"
+  },
+  "stats": {
+    "guide": "Tilastot päivittyvät sitä mukaa kun lisäät ja suoritat harjoituksia.",
+    "noRating": "Ei arviota",
+    "other": "Muu",
+    "trainingsByActivity": "Harjoituslajit",
+    "trainingsByIntensity": "Harjoitusten intensiteetti",
+    "trainingsByRating": "Arvioinnit"
   },
   "trainingCard": {
     "actions": "Toiminnot",
