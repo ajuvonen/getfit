@@ -16,7 +16,11 @@ export default mergeConfig(
         deps: {
           inline: ['vuetify'],
         },
-      }
+      },
+      coverage: {
+        provider: 'istanbul',
+        include: ['src/**/*'],
+      },
     },
-  })
+  }),
 );
