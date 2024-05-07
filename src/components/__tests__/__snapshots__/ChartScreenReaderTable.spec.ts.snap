@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChartScreenReaderTable > mounts 1`] = `
+"<table class="d-sr-only" id="my-chart">
+  <caption>Amount of trainings</caption>
+  <thead>
+    <tr>
+      <th>Running</th>
+      <th>Sprint</th>
+      <th>Swimming</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>"
+`;
