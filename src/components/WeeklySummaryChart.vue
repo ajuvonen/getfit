@@ -14,13 +14,13 @@ import {
 import {Bar} from 'vue-chartjs';
 import {prop, sumBy} from 'remeda';
 import {useScheduleStore} from '@/stores/schedule';
-import {getChartTitleOptions} from '@/utils';
+import {getChartOptions} from '@/utils';
 import useScreen from '@/hooks/screen';
 import useWeekDays from '@/hooks/weekdays';
 import {COLORS} from '@/constants';
 import ChartScreenReaderTable from '@/components/ChartScreenReaderTable.vue';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const {t} = useI18n();
 
@@ -53,10 +53,18 @@ const chartData = computed(() => {
 
   weeks.value.forEach(({trainings}, index) => {
     labels.push(t('weekCalendar.weekTitle', [getDisplayWeekNumber.value(index)]));
-    const hours = sumBy(trainings, ({unitOfDuration, duration}) => unitOfDuration === 'h' ? duration : 0);
-    const minutes = sumBy(trainings, ({unitOfDuration, duration}) => unitOfDuration === 'm' ? duration : 0);
-    const kilometers = sumBy(trainings, ({unitOfDuration, duration}) => unitOfDuration === 'km' ? duration : 0);
-    const miles = sumBy(trainings, ({unitOfDuration, duration}) => unitOfDuration === 'mi' ? duration : 0);
+    const hours = sumBy(trainings, ({unitOfDuration, duration}) =>
+      unitOfDuration === 'h' ? duration : 0,
+    );
+    const minutes = sumBy(trainings, ({unitOfDuration, duration}) =>
+      unitOfDuration === 'm' ? duration : 0,
+    );
+    const kilometers = sumBy(trainings, ({unitOfDuration, duration}) =>
+      unitOfDuration === 'km' ? duration : 0,
+    );
+    const miles = sumBy(trainings, ({unitOfDuration, duration}) =>
+      unitOfDuration === 'mi' ? duration : 0,
+    );
     datasets[0].data.push(Math.round((hours + minutes / 60) * 4) / 4);
     datasets[1].data.push(kilometers);
     datasets[2].data.push(miles);
@@ -68,11 +76,9 @@ const chartData = computed(() => {
   };
 });
 
-const chartOptions = computed(() => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  ...getChartTitleOptions<'bar'>(t('stats.weeklySummary'), isDark.value),
-}));
+const chartOptions = computed(() =>
+  getChartOptions<'bar'>(t('stats.weeklySummary'), isDark.value, true),
+);
 </script>
 <template>
   <Bar :options="chartOptions" :data="chartData" aria-describedby="weekly-summary-chart-table" />
