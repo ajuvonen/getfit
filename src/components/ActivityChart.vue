@@ -56,7 +56,7 @@ const chartOptions = computed(() => ({
   <ChartScreenReaderTable
     id="activity-chart-table"
     :title="t('stats.trainingsByActivity')"
-    :labels="chartData.labels"
-    :data="chartData.datasets[0].data"
+    :columnHeaders="chartData.labels"
+    :data="[chartData.datasets[0].data]"
   />
 </template>
