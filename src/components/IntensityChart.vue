@@ -8,7 +8,7 @@ import {groupBy, prop} from 'remeda';
 import {useScheduleStore} from '@/stores/schedule';
 import {COLORS} from '@/constants';
 import {Intensity} from '@/types';
-import {getChartTitleOptions} from '@/utils';
+import {getChartOptions} from '@/utils';
 import useScreen from '@/hooks/screen';
 import ChartScreenReaderTable from '@/components/ChartScreenReaderTable.vue';
 
@@ -39,10 +39,7 @@ const chartData = computed(() => {
   };
 });
 
-const chartOptions = computed(() => ({
-  responsive: true,
-  ...getChartTitleOptions<'pie'>(t('stats.trainingsByIntensity'), isDark.value),
-}));
+const chartOptions = computed(() => getChartOptions<'pie'>(t('stats.trainingsByIntensity'),isDark.value));
 </script>
 <template>
   <Pie :options="chartOptions" :data="chartData" aria-describedby="intensity-chart-table" />

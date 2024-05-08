@@ -3,7 +3,7 @@ import {helpers} from '@vuelidate/validators';
 import type {ErrorObject} from '@vuelidate/core';
 import {v4 as uuid} from 'uuid';
 import {clone} from 'remeda';
-import type {ChartTypeRegistry, PluginChartOptions} from 'chart.js';
+import type {ChartTypeRegistry} from 'chart.js';
 import {Intensity, type ScheduleSettings, type Training} from '@/types';
 import {ACTIVITIES, COLORS} from '@/constants';
 
@@ -66,10 +66,30 @@ export const getValidationErrors = (errors: ErrorObject[]) =>
 
 export const isDurationTime = (value: string) => ['h', 'm'].includes(value);
 
-export const getChartTitleOptions = <T extends keyof ChartTypeRegistry>(
-  title: string,
-  darkMode: boolean,
-) => ({
+export const getChartOptions = <T extends keyof ChartTypeRegistry>(title: string, darkMode: boolean, grids: boolean = false) => ({
+  responsive: true,
+  maintainAspectRatio: !grids,
+  color: darkMode ? COLORS.offWhite : COLORS.darkGrey,
+  scales: grids ? {
+    y: {
+      ticks: {
+        precision: 0,
+        color: darkMode ? 'rgba(255,255,255,0.4)' : undefined
+      },
+      grid: darkMode ? {
+        color: 'rgba(255,255,255,0.4)',
+      } : undefined,
+    },
+    x: {
+      ticks: {
+        precision: 0,
+        color: darkMode ? 'rgba(255,255,255,0.4)' : undefined
+      },
+      grid: darkMode ? {
+        color: 'rgba(255,255,255,0.4)',
+      } : undefined,
+    },
+  } : undefined,
   plugins: {
     title: {
       display: true,
@@ -83,4 +103,4 @@ export const getChartTitleOptions = <T extends keyof ChartTypeRegistry>(
       },
     },
   },
-} as Partial<PluginChartOptions<T>>);
+} as any);

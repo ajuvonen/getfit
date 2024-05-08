@@ -6,7 +6,7 @@ import {Chart as ChartJS, ArcElement, Tooltip, Legend, Title} from 'chart.js';
 import {Pie} from 'vue-chartjs';
 import {entries, groupBy, map, pipe, prop, sortBy, splitAt, sumBy} from 'remeda';
 import {useScheduleStore} from '@/stores/schedule';
-import {getChartTitleOptions} from '@/utils';
+import {getChartOptions} from '@/utils';
 import useScreen from '@/hooks/screen';
 import {COLORS} from '@/constants';
 import ChartScreenReaderTable from '@/components/ChartScreenReaderTable.vue';
@@ -46,10 +46,7 @@ const chartData = computed(() => {
   };
 });
 
-const chartOptions = computed(() => ({
-  responsive: true,
-  ...getChartTitleOptions<'pie'>(t('stats.trainingsByActivity'), isDark.value),
-}));
+const chartOptions = computed(() => getChartOptions<'pie'>(t('stats.trainingsByActivity'),isDark.value));
 </script>
 <template>
   <Pie :options="chartOptions" :data="chartData" aria-describedby="activity-chart-table" />

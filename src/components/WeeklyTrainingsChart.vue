@@ -15,7 +15,7 @@ import {
 import {Line} from 'vue-chartjs';
 import {prop} from 'remeda';
 import {useScheduleStore} from '@/stores/schedule';
-import {getChartTitleOptions} from '@/utils';
+import {getChartOptions} from '@/utils';
 import useScreen from '@/hooks/screen';
 import useWeekDays from '@/hooks/weekdays';
 import {COLORS} from '@/constants';
@@ -48,22 +48,22 @@ const chartData = computed(() => {
       {
         label: t('stats.totalTrainings'),
         data: trainings.map(prop(1)),
+        borderColor: COLORS.chartColors[0],
         backgroundColor: COLORS.chartColors[0],
       },
       {
         label: t('stats.completedTrainings'),
         data: trainings.map(prop(2)),
+        borderColor: COLORS.chartColors[5],
         backgroundColor: COLORS.chartColors[5],
       },
     ],
   };
 });
 
-const chartOptions = computed(() => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  ...getChartTitleOptions<'line'>(t('stats.weeklyTrainings'), isDark.value),
-}));
+const chartOptions = computed(() =>
+  getChartOptions<'line'>(t('stats.weeklyTrainings'), isDark.value, true),
+);
 </script>
 <template>
   <Line :options="chartOptions" :data="chartData" aria-describedby="weekly-trainings-chart-table" />
