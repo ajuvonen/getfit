@@ -35,7 +35,14 @@ const chartData = computed(() => {
     datasets: [
       {
         data: trainings.map(prop(1)),
-        backgroundColor: [...COLORS.chartColors],
+        backgroundColor: [
+          '#EFF3FF',
+          '#C6DBEF',
+          '#9ECAE1',
+          '#6BAED6',
+          '#3182BD',
+          '#08519C',
+        ],
       },
     ],
   };
@@ -51,7 +58,7 @@ const chartOptions = computed(() => ({
   <ChartScreenReaderTable
     id="rating-chart-table"
     :title="$t('stats.trainingsByRating')"
-    :labels="chartData.labels"
-    :data="chartData.datasets[0].data"
+    :columnHeaders="chartData.labels"
+    :data="[chartData.datasets[0].data]"
   />
 </template>

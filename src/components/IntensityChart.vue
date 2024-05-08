@@ -49,7 +49,7 @@ const chartOptions = computed(() => ({
   <ChartScreenReaderTable
     id="intensity-chart-table"
     :title="t('stats.trainingsByIntensity')"
-    :labels="chartData.labels"
-    :data="chartData.datasets[0].data"
+    :columnHeaders="chartData.labels"
+    :data="[chartData.datasets[0].data]"
   />
 </template>
