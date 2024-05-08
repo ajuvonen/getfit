@@ -133,12 +133,16 @@
     "weekNumbering": "Viikkojen numerointi"
   },
   "stats": {
+    "completedTrainings": "Suoritetut harjoitukset",
     "guide": "Tilastot päivittyvät sitä mukaa kun lisäät ja suoritat harjoituksia.",
     "noRating": "Ei arviota",
     "other": "Muu",
+    "totalTrainings": "Harjoitukset yhteensä",
     "trainingsByActivity": "Harjoituslajit",
     "trainingsByIntensity": "Harjoitusten intensiteetti",
-    "trainingsByRating": "Arvioinnit"
+    "trainingsByRating": "Arvioinnit",
+    "weeklySummary": "Viikkoyhteenveto",
+    "weeklyTrainings": "Harjoitukset viikoittain"
   },
   "trainingCard": {
     "actions": "Toiminnot",

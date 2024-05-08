@@ -133,12 +133,16 @@
     "weekNumbering": "Week numbering"
   },
   "stats": {
+    "completedTrainings": "Completed trainings",
     "guide": "The statistics are updated automatically as you add and complete trainings.",
     "noRating": "No rating",
     "other": "Other",
+    "totalTrainings": "Total trainings",
     "trainingsByActivity": "Training activities",
     "trainingsByIntensity": "Intensity of trainings",
-    "trainingsByRating": "Ratings"
+    "trainingsByRating": "Ratings",
+    "weeklySummary": "Weekly summary",
+    "weeklyTrainings": "Weekly trainings"
   },
   "trainingCard": {
     "actions": "Actions",
