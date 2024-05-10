@@ -15,6 +15,7 @@ import {
 import {Line} from 'vue-chartjs';
 import {prop} from 'remeda';
 import {useScheduleStore} from '@/stores/schedule';
+import {useAppStateStore} from '@/stores/appState';
 import {getChartOptions} from '@/utils';
 import useScreen from '@/hooks/screen';
 import useWeekDays from '@/hooks/weekdays';
@@ -27,6 +28,8 @@ const {t} = useI18n();
 
 const scheduleStore = useScheduleStore();
 const {weeks} = storeToRefs(scheduleStore);
+
+const {disableCharts} = storeToRefs(useAppStateStore());
 
 const {isDark} = useScreen();
 
@@ -64,9 +67,16 @@ const chartData = computed(() => {
 const chartOptions = computed(() =>
   getChartOptions<'line'>(t('stats.weeklyTrainings'), isDark.value, true),
 );
+
+defineExpose({chartData});
 </script>
 <template>
-  <Line :options="chartOptions" :data="chartData" aria-describedby="weekly-trainings-chart-table" />
+  <Line
+    v-if="!disableCharts"
+    :options="chartOptions"
+    :data="chartData"
+    aria-describedby="weekly-trainings-chart-table"
+  />
   <ChartScreenReaderTable
     id="weekly-trainings-chart-table"
     :title="$t('stats.weeklyTrainings')"

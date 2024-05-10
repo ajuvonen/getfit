@@ -8,11 +8,24 @@ describe('ChartScreenReaderTable', () => {
       props: {
         title: 'Amount of trainings',
         id: 'my-chart',
-        labels: ['Running', 'Sprint', 'Swimming'],
-        data: [1, 2, 3],
+        columnHeaders: ['Running', 'Sprint', 'Swimming'],
+        data: [[1, 2, 3]],
       },
     });
     expect(wrapper.html()).toMatchSnapshot();
     expect(wrapper.find('table').classes()).toContain('d-sr-only');
+  });
+
+  it('mounts with row headers', () => {
+    const wrapper = mount(ChartScreenReaderTable, {
+      props: {
+        title: 'Amount of trainings',
+        id: 'my-chart',
+        columnHeaders: ['Running', 'Sprint', 'Swimming'],
+        rowHeaders: ['Week 1', 'Week 2', 'Week 3'],
+        data: [[1, 2, 3], [1, 1, 2], [3, 3, 0]],
+      },
+    });
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });

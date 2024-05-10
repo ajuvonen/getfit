@@ -8,7 +8,7 @@ import {
   getEmptyTraining,
   getEmptySettings,
   isDurationTime,
-  getChartTitleOptions,
+  getChartOptions,
 } from '@/utils';
 import {Intensity, type ScheduleSettings, type Training} from '@/types';
 import {ACTIVITIES, COLORS} from '@/constants';
@@ -123,9 +123,33 @@ describe('Utils', () => {
     expect(isDurationTime('mi')).toBe(false);
   });
 
-  it('generates chart title options', () => {
-    const options = getChartTitleOptions('Chart title', true);
-    expect(options.plugins?.title?.text).toBe('Chart title');
-    expect(options.plugins?.title?.color).toBe(COLORS.offWhite);
+  it('generates chart title options for light mode', () => {
+    const options = getChartOptions('Chart title', false, true);
+    expect(options.plugins.title.text).toBe('Chart title');
+    expect(options.plugins.title.color).toBe(COLORS.darkGrey);
+    expect(options.maintainAspectRatio).toBe(false);
+    expect(options.scales.y.ticks.color).toBe(undefined);
+    expect(options.scales.y.grid?.color).toBe(undefined);
+    expect(options.scales.x.ticks.color).toBe(undefined);
+    expect(options.scales.x.grid?.color).toBe(undefined);
+  });
+
+  it('generates chart title options for dark mode', () => {
+    const options = getChartOptions('Chart title', true, true);
+    expect(options.plugins.title.text).toBe('Chart title');
+    expect(options.plugins.title.color).toBe(COLORS.offWhite);
+    expect(options.maintainAspectRatio).toBe(false);
+    expect(options.scales.y.ticks.color).toBe('rgba(255,255,255,0.4)');
+    expect(options.scales.y.grid?.color).toBe('rgba(255,255,255,0.4)');
+    expect(options.scales.x.ticks.color).toBe('rgba(255,255,255,0.4)');
+    expect(options.scales.x.grid?.color).toBe('rgba(255,255,255,0.4)');
+  });
+
+  it('leaves out grid options', () => {
+    const options = getChartOptions('Chart title', true, false);
+    expect(options.plugins.title.text).toBe('Chart title');
+    expect(options.plugins.title.color).toBe(COLORS.offWhite);
+    expect(options.maintainAspectRatio).toBe(true);
+    expect(options.scales).toBe(undefined);
   });
 });

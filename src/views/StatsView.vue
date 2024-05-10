@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import BaseView from '@/components/BaseView.vue';
-import ActivityChart from '@/components/ActivityChart.vue';
-import IntensityChart from '@/components/IntensityChart.vue';
-import RatingChart from '@/components/RatingChart.vue';
-import WeeklyTrainingsChart from '@/components/WeeklyTrainingsChart.vue';
-import WeeklySummaryChart from '@/components/WeeklySummaryChart.vue';
+import ActivityChart from '@/components/charts/ActivityChart.vue';
+import IntensityChart from '@/components/charts/IntensityChart.vue';
+import RatingChart from '@/components/charts/RatingChart.vue';
+import WeeklyTrainingsChart from '@/components/charts/WeeklyTrainingsChart.vue';
+import WeeklySummaryChart from '@/components/charts/WeeklySummaryChart.vue';
 </script>
 <template>
   <BaseView :title="$t('routes.stats')" :guide="$t('stats.guide')">
