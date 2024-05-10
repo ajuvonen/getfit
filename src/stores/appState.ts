@@ -22,8 +22,6 @@ export const useAppStateStore = defineStore('appState', () => {
 
   const visibleInstructions = ref<string[]>([]);
 
-  const disableCharts = ref(false);
-
   // Actions
   const openConfirmDialog = (text: string, action: () => void) => {
     confirmText.value = text;
@@ -82,7 +80,6 @@ export const useAppStateStore = defineStore('appState', () => {
     confirmAction,
     openWeek,
     trainingDialogOpen,
-    disableCharts,
     trainingData,
     visibleInstructions,
     openConfirmDialog,

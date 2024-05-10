@@ -134,7 +134,7 @@
   },
   "stats": {
     "completedTrainings": "Suoritetut harjoitukset",
-    "guide": "Tilastot päivittyvät sitä mukaa kun lisäät ja suoritat harjoituksia.",
+    "guide": "Tilastot päivittyvät sitä mukaa kun lisäät ja suoritat harjoituksia. Klikkaa dataotsikkoa poistaaksesi kyseiset tulokset kaaviosta.",
     "noRating": "Ei arviota",
     "other": "Muu",
     "totalTrainings": "Harjoitukset yhteensä",

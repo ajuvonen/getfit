@@ -6,7 +6,6 @@ import {Chart as ChartJS, ArcElement, Tooltip, Legend, Title} from 'chart.js';
 import {Pie} from 'vue-chartjs';
 import {groupBy, prop} from 'remeda';
 import {useScheduleStore} from '@/stores/schedule';
-import {useAppStateStore} from '@/stores/appState';
 import {COLORS} from '@/constants';
 import {Intensity} from '@/types';
 import {getChartOptions} from '@/utils';
@@ -19,8 +18,6 @@ const {t} = useI18n();
 
 const scheduleStore = useScheduleStore();
 const {getAllTrainings} = storeToRefs(scheduleStore);
-
-const {disableCharts} = storeToRefs(useAppStateStore());
 
 const {isDark} = useScreen();
 
@@ -49,12 +46,7 @@ const chartOptions = computed(() =>
 defineExpose({chartData});
 </script>
 <template>
-  <Pie
-    v-if="!disableCharts"
-    :options="chartOptions"
-    :data="chartData"
-    aria-describedby="intensity-chart-table"
-  />
+  <Pie :options="chartOptions" :data="chartData" aria-describedby="intensity-chart-table" />
   <ChartScreenReaderTable
     id="intensity-chart-table"
     :title="t('stats.trainingsByIntensity')"

@@ -14,7 +14,6 @@ import {
 import {Bar} from 'vue-chartjs';
 import {prop, sumBy} from 'remeda';
 import {useScheduleStore} from '@/stores/schedule';
-import {useAppStateStore} from '@/stores/appState';
 import {getChartOptions} from '@/utils';
 import useScreen from '@/hooks/screen';
 import useWeekDays from '@/hooks/weekdays';
@@ -27,8 +26,6 @@ const {t} = useI18n();
 
 const scheduleStore = useScheduleStore();
 const {weeks} = storeToRefs(scheduleStore);
-
-const {disableCharts} = storeToRefs(useAppStateStore());
 
 const {isDark} = useScreen();
 
@@ -86,12 +83,7 @@ const chartOptions = computed(() =>
 defineExpose({chartData});
 </script>
 <template>
-  <Bar
-    v-if="!disableCharts"
-    :options="chartOptions"
-    :data="chartData"
-    aria-describedby="weekly-summary-chart-table"
-  />
+  <Bar :options="chartOptions" :data="chartData" aria-describedby="weekly-summary-chart-table" />
   <ChartScreenReaderTable
     id="weekly-summary-chart-table"
     :title="$t('stats.weeklySummary')"
