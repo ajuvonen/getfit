@@ -17,10 +17,12 @@ defineProps<{
       </tr>
     </thead>
     <tbody>
-      <tr v-if="rowHeaders" v-for="header, headerIndex in rowHeaders" :key="headerIndex">
+      <template v-if="rowHeaders">
+      <tr v-for="header, headerIndex in rowHeaders" :key="headerIndex">
         <th>{{ header }}</th>
         <td v-for="value, dataIndex in data[headerIndex]" :key="dataIndex">{{ value }}</td>
       </tr>
+      </template>
       <tr v-else>
         <td v-for="value, index in data[0]" :key="index">{{ value }}</td>
       </tr>

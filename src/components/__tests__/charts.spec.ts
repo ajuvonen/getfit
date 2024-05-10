@@ -1,4 +1,4 @@
-import {describe, it, expect, beforeEach, beforeAll} from 'vitest';
+import {describe, it, expect, beforeEach} from 'vitest';
 import {mount} from '@vue/test-utils';
 import {v4 as uuid} from 'uuid';
 import {useScheduleStore} from '@/stores/schedule';
