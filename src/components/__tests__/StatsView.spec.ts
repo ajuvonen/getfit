@@ -1,15 +1,27 @@
-import {describe, it, expect, beforeEach} from 'vitest';
+import {describe, it, expect, vi, afterEach} from 'vitest';
 import {mount} from '@vue/test-utils';
-import {useAppStateStore} from '@/stores/appState';
 import StatsView from '@/views/StatsView.vue';
 
 describe('StatsView', () => {
-  beforeEach(() => {
-    const appStateStore = useAppStateStore();
-    appStateStore.disableCharts = true;
+  afterEach(() => {
+    vi.restoreAllMocks();
   });
-
   it('mounts', () => {
+    vi.mock('vue-chartjs', () => ({
+      Pie: {
+        name: 'Pie',
+        template: '<div></div>',
+      },
+      Bar: {
+        name: 'Bar',
+        template: '<div></div>',
+      },
+      Line: {
+        name: 'Line',
+        template: '<div></div>',
+      },
+    }));
+
     const wrapper = mount(StatsView);
     expect(wrapper.html()).toMatchSnapshot();
   });

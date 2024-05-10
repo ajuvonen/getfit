@@ -134,7 +134,7 @@
   },
   "stats": {
     "completedTrainings": "Completed trainings",
-    "guide": "The statistics are updated automatically as you add and complete trainings.",
+    "guide": "The statistics are updated automatically as you add and complete trainings. Click on a data label to exclude it from the chart.",
     "noRating": "No rating",
     "other": "Other",
     "totalTrainings": "Total trainings",

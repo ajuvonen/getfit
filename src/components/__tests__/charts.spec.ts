@@ -2,7 +2,6 @@ import {describe, it, expect, beforeEach} from 'vitest';
 import {mount} from '@vue/test-utils';
 import {v4 as uuid} from 'uuid';
 import {useScheduleStore} from '@/stores/schedule';
-import {useAppStateStore} from '@/stores/appState';
 import {getEmptyTraining} from '@/utils';
 import {Intensity} from '@/types';
 import {COLORS} from '@/constants';
@@ -14,8 +13,6 @@ import WeeklySummaryChart from '@/components/charts/WeeklySummaryChart.vue';
 
 describe('Charts', () => {
   beforeEach(() => {
-    const appStateStore = useAppStateStore();
-    appStateStore.disableCharts = true;
     const weekId = uuid();
     const weekId2 = uuid();
     const scheduleStore = useScheduleStore();
@@ -110,7 +107,7 @@ describe('Charts', () => {
   });
 
   it('calculates data for ActivityChart', () => {
-    const wrapper = mount(ActivityChart);
+    const wrapper = mount(ActivityChart, {shallow: true});
     const {
       labels,
       datasets: [{data}],
@@ -128,7 +125,7 @@ describe('Charts', () => {
   });
 
   it('calculates data for RatingChart', () => {
-    const wrapper = mount(RatingChart);
+    const wrapper = mount(RatingChart, {shallow: true});
     const {
       labels,
       datasets: [{data}],
@@ -138,7 +135,7 @@ describe('Charts', () => {
   });
 
   it('calculates data for IntensityChart', () => {
-    const wrapper = mount(IntensityChart);
+    const wrapper = mount(IntensityChart, {shallow: true});
     const {
       labels,
       datasets: [{data, backgroundColor}],
@@ -153,7 +150,7 @@ describe('Charts', () => {
   });
 
   it('calculates data for WeeklyTrainingsChart', () => {
-    const wrapper = mount(WeeklyTrainingsChart);
+    const wrapper = mount(WeeklyTrainingsChart, {shallow: true});
     const {
       labels,
       datasets: [{data: totalTrainings}, {data: completedTrainings}],
@@ -164,7 +161,7 @@ describe('Charts', () => {
   });
 
   it('calculates data for WeeklySummaryChart', () => {
-    const wrapper = mount(WeeklySummaryChart);
+    const wrapper = mount(WeeklySummaryChart, {shallow: true});
     const {
       labels,
       datasets: [{data: hours}, {data: kilometers}, {data: miles}],

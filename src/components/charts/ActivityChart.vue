@@ -6,7 +6,6 @@ import {Chart as ChartJS, ArcElement, Tooltip, Legend, Title} from 'chart.js';
 import {Pie} from 'vue-chartjs';
 import {entries, groupBy, map, pipe, prop, sortBy, splitAt, sumBy} from 'remeda';
 import {useScheduleStore} from '@/stores/schedule';
-import {useAppStateStore} from '@/stores/appState';
 import {getChartOptions} from '@/utils';
 import useScreen from '@/hooks/screen';
 import {COLORS} from '@/constants';
@@ -18,8 +17,6 @@ const {t} = useI18n();
 
 const scheduleStore = useScheduleStore();
 const {getAllTrainings} = storeToRefs(scheduleStore);
-
-const {disableCharts} = storeToRefs(useAppStateStore());
 
 const {isDark} = useScreen();
 
@@ -56,12 +53,7 @@ const chartOptions = computed(() =>
 defineExpose({chartData});
 </script>
 <template>
-  <Pie
-    v-if="!disableCharts"
-    :options="chartOptions"
-    :data="chartData"
-    aria-describedby="activity-chart-table"
-  />
+  <Pie :options="chartOptions" :data="chartData" aria-describedby="activity-chart-table" />
   <ChartScreenReaderTable
     id="activity-chart-table"
     :title="t('stats.trainingsByActivity')"
