@@ -29,12 +29,12 @@ defineProps<{
 }
 
 @media print {
-  :deep(td:nth-child(even)) {
+  :deep(td:nth-child(even)), :deep(th:nth-child(even)) {
     background-color: #FAFAFA;
     print-color-adjust: exact !important;
   }
   .print-view__table {
-    min-height: 97vh;
+    display: block;
     page-break-after: always;
     break-after: page;
   }
