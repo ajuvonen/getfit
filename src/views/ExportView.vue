@@ -5,7 +5,6 @@ import {useI18n} from 'vue-i18n';
 import {createEvents} from 'ics';
 import useWeekDays from '@/hooks/weekdays';
 import useCalendarExport from '@/hooks/calendarExport';
-import useReset from '@/hooks/reset';
 import {useScheduleStore} from '@/stores/schedule';
 import type {Week} from '@/types';
 import SimpleTrainingCard from '@/components/SimpleTrainingCard.vue';
@@ -14,8 +13,6 @@ import PrintViewTable from '@/components/PrintViewTable.vue';
 import BaseView from '@/components/BaseView.vue';
 
 const {settings, weeks} = storeToRefs(useScheduleStore());
-
-const reset = useReset();
 
 const {t} = useI18n();
 
@@ -57,13 +54,10 @@ const print = () => {
 <template>
   <BaseView :title="$t('export.title')" :guide="$t('export.guide')">
     <template #content>
-      <div
-        class="export__button-container d-print-none d-flex flex-wrap justify-center mb-4"
-      >
+      <div class="export__button-container d-print-none d-flex flex-wrap justify-center mt-2 mb-4">
         <v-btn
           v-if="settings.startDate"
           prepend-icon="$calendar"
-          class="mt-2"
           variant="text"
           data-test-id="export-download-button"
           @click="downloadICS"
@@ -71,20 +65,10 @@ const print = () => {
         >
         <v-btn
           prepend-icon="$printer"
-          class="mt-2"
           variant="text"
           data-test-id="export-print-button"
           @click="print"
           >{{ $t('export.print') }}</v-btn
-        >
-        <v-btn
-          prepend-icon="$trashCanOutline"
-          class="mt-2"
-          color="error"
-          variant="outlined"
-          data-test-id="export-reset-button"
-          @click="reset"
-          >{{ $t('schedule.reset') }}</v-btn
         >
       </div>
       <div v-for="(week, weekIndex) in weeks" :key="week.id" class="export__table-container">
