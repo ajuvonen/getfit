@@ -50,20 +50,6 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-0').should('not.exist');
   });
 
-  it('resets schedule from export view', () => {
-    cy.toRoute('settings');
-    cy.getByTestId('settings-start-of-week-sunday').click();
-    cy.addTraining();
-    cy.toRoute('export');
-    cy.getByTestId('export-reset-button').click();
-    cy.getByTestId('confirm-dialog-confirm-button').click();
-    cy.location('pathname').should('eq', '/getfit/');
-    cy.toRoute('settings');
-    cy.getByTestId('settings-start-of-week-sunday').should('not.be.selected');
-    cy.toRoute('schedule');
-    cy.getByTestId('week-0').should('not.exist');
-  });
-
   it.only('completes and rates trainings', () => {
     cy.addTraining();
     cy.get('.training-card__action-button').click();

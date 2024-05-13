@@ -9,15 +9,12 @@ describe('StatsView', () => {
   it('mounts', () => {
     vi.mock('vue-chartjs', () => ({
       Pie: {
-        name: 'Pie',
         template: '<div></div>',
       },
       Bar: {
-        name: 'Bar',
         template: '<div></div>',
       },
       Line: {
-        name: 'Line',
         template: '<div></div>',
       },
     }));
