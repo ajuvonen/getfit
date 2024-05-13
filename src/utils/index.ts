@@ -66,7 +66,11 @@ export const getValidationErrors = (errors: ErrorObject[]) =>
 
 export const isDurationTime = (value: string) => ['h', 'm'].includes(value);
 
-export const getChartOptions = <T extends keyof ChartTypeRegistry>(title: string, darkMode: boolean, grids: boolean = false) => ({
+export const getChartOptions = <T extends keyof ChartTypeRegistry>(
+  title: string,
+  darkMode: boolean,
+  grids: boolean = false,
+) => ({
   responsive: true,
   maintainAspectRatio: !grids,
   color: darkMode ? COLORS.offWhite : COLORS.darkGrey,
@@ -74,7 +78,7 @@ export const getChartOptions = <T extends keyof ChartTypeRegistry>(title: string
     y: {
       ticks: {
         precision: 0,
-        color: darkMode ? 'rgba(255,255,255,0.4)' : undefined
+        color: darkMode ? 'rgba(255,255,255,0.4)' : undefined,
       },
       grid: darkMode ? {
         color: 'rgba(255,255,255,0.4)',
@@ -83,7 +87,7 @@ export const getChartOptions = <T extends keyof ChartTypeRegistry>(title: string
     x: {
       ticks: {
         precision: 0,
-        color: darkMode ? 'rgba(255,255,255,0.4)' : undefined
+        color: darkMode ? 'rgba(255,255,255,0.4)' : undefined,
       },
       grid: darkMode ? {
         color: 'rgba(255,255,255,0.4)',
@@ -103,4 +107,97 @@ export const getChartOptions = <T extends keyof ChartTypeRegistry>(title: string
       },
     },
   },
-} as any);
+}) as any;
+
+export const getTestWeeks = () => {
+  const weekId = uuid();
+  const weekId2 = uuid();
+  return [
+    {
+      id: weekId,
+      trainings: [
+        getEmptyTraining({
+          weekId,
+          dayIndex: 0,
+          activity: 'running',
+          duration: 30,
+          unitOfDuration: 'km',
+          intensity: Intensity.DEMANDING,
+        }),
+        getEmptyTraining({
+          weekId,
+          dayIndex: 3,
+          activity: 'swimming',
+          duration: 30,
+          unitOfDuration: 'm',
+          completed: true,
+        }),
+        getEmptyTraining({
+          weekId,
+          dayIndex: 3,
+          activity: 'gym',
+          duration: 1.5,
+          unitOfDuration: 'h',
+          completed: true,
+          rating: 2,
+          intensity: Intensity.DEMANDING,
+        }),
+        getEmptyTraining({
+          weekId,
+          dayIndex: 5,
+          activity: 'sprint',
+          duration: 1,
+          unitOfDuration: 'mi',
+          intensity: Intensity.DEMANDING,
+        }),
+      ],
+    },
+    {
+      id: weekId2,
+      trainings: [
+        getEmptyTraining({
+          weekId: weekId2,
+          dayIndex: 0,
+          activity: 'swimming',
+          duration: 75,
+          unitOfDuration: 'm',
+        }),
+        getEmptyTraining({
+          weekId: weekId2,
+          dayIndex: 0,
+          activity: 'running',
+          duration: 15,
+          unitOfDuration: 'km',
+          completed: true,
+          rating: 5,
+        }),
+        getEmptyTraining({
+          weekId: weekId2,
+          dayIndex: 3,
+          activity: 'maintenance',
+          duration: 1,
+          unitOfDuration: 'h',
+          completed: true,
+          rating: 4,
+          intensity: Intensity.LIGHT,
+        }),
+        getEmptyTraining({
+          weekId: weekId2,
+          dayIndex: 5,
+          activity: 'badminton',
+          duration: 2,
+          unitOfDuration: 'h',
+          completed: true,
+          rating: 1,
+        }),
+        getEmptyTraining({
+          weekId: weekId2,
+          dayIndex: 6,
+          activity: 'tennis',
+          duration: 1,
+          unitOfDuration: 'h',
+        }),
+      ],
+    },
+  ];
+};
