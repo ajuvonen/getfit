@@ -34,10 +34,25 @@ exports[`StatsView > mounts 1`] = `
           <thead>
             <tr>
               <!--v-if-->
+              <th>Running</th>
+              <th>Swimming</th>
+              <th>Badminton</th>
+              <th>Body Maintenance</th>
+              <th>Gym</th>
+              <th>Sprint</th>
+              <th>Other</th>
             </tr>
           </thead>
           <tbody>
-            <tr></tr>
+            <tr>
+              <td>2</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -48,10 +63,17 @@ exports[`StatsView > mounts 1`] = `
           <thead>
             <tr>
               <!--v-if-->
+              <th>Light</th>
+              <th>Normal</th>
+              <th>Demanding</th>
             </tr>
           </thead>
           <tbody>
-            <tr></tr>
+            <tr>
+              <td>1</td>
+              <td>5</td>
+              <td>3</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -62,10 +84,21 @@ exports[`StatsView > mounts 1`] = `
           <thead>
             <tr>
               <!--v-if-->
+              <th>No rating</th>
+              <th>1 ★</th>
+              <th>2 ★</th>
+              <th>4 ★</th>
+              <th>5 ★</th>
             </tr>
           </thead>
           <tbody>
-            <tr></tr>
+            <tr>
+              <td>5</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -78,14 +111,20 @@ exports[`StatsView > mounts 1`] = `
           <thead>
             <tr>
               <td></td>
+              <th>Week 1</th>
+              <th>Week 2</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th>Total trainings</th>
+              <td>4</td>
+              <td>5</td>
             </tr>
             <tr>
               <th>Completed trainings</th>
+              <td>2</td>
+              <td>3</td>
             </tr>
           </tbody>
         </table>
@@ -99,9 +138,27 @@ exports[`StatsView > mounts 1`] = `
           <thead>
             <tr>
               <td></td>
+              <th>Week 1</th>
+              <th>Week 2</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            <tr>
+              <th>Hours</th>
+              <td>2</td>
+              <td>5.25</td>
+            </tr>
+            <tr>
+              <th>Kilometers</th>
+              <td>30</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>Miles</th>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
