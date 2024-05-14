@@ -34,4 +34,10 @@ const {isDark} = useScreen();
 .v-card {
   backdrop-filter: blur(5px);
 }
+
+@media print {
+  .v-card-text {
+    padding: 0;
+  }
+}
 </style>
