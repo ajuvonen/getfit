@@ -117,8 +117,7 @@ watch(locale, (value) => {
 
 .app__overlay {
   background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  inset: 0;
+  height: 100%;
 }
 
 .app-bar {
@@ -146,6 +145,11 @@ watch(locale, (value) => {
   .v-container {
     margin: 0;
     padding: 0;
+    position: unset;
+  }
+
+  :deep(.v-application__wrap) {
+    position: unset;
   }
 
   :deep(.v-main__scroller) {

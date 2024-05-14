@@ -29,4 +29,22 @@ describe('PrintViewTable', () => {
     });
     expect(wrapper.find('h2').text()).toBe('My title');
   });
+
+  it('uses striped prop', async () => {
+    const wrapper = mount(PrintViewTable, {
+      props: {
+        striped: false,
+      },
+      slots: {
+        header: '<tr><th>My header</th></tr>',
+        body: '<tr><td>Body content</td></tr>',
+      },
+    });
+
+    expect(wrapper.find('.print-view__table').classes()).to.not.contain(
+      'print-view__table--striped',
+    );
+    await wrapper.setProps({striped: true});
+    expect(wrapper.find('.print-view__table').classes()).to.contain('print-view__table--striped');
+  });
 });
