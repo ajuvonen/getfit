@@ -114,6 +114,7 @@ const print = () => {
           v-if="week.trainings.length"
           :tableTitle="$t('export.supplement', [getDisplayWeekNumber(weekIndex)])"
           :data-test-id="`week-${weekIndex}-supplement`"
+          :striped="false"
         >
           <template #header>
             <tr>

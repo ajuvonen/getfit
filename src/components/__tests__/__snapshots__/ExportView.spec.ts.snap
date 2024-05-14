@@ -33,7 +33,7 @@ exports[`ExportView > mounts 1`] = `
       </button>
     </div>
     <div data-v-4906aec1="" class="export__table-container">
-      <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent" data-test-id="week-0-table">
+      <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent print-view__table--striped" data-test-id="week-0-table">
         <div data-v-4906aec1="" class="d-flex align-center">
           <h2 data-v-4906aec1="" class="text-h5 ml-4">Week 1</h2>
           <!--v-if-->
@@ -187,7 +187,7 @@ exports[`ExportView > mounts 1`] = `
       </div>
     </div>
     <div data-v-4906aec1="" class="export__table-container">
-      <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent" data-test-id="week-1-table">
+      <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent print-view__table--striped" data-test-id="week-1-table">
         <div data-v-4906aec1="" class="d-flex align-center">
           <h2 data-v-4906aec1="" class="text-h5 ml-4">Week 2</h2>
           <!--v-if-->
