@@ -5,7 +5,6 @@ import {getIcon, isDurationTime} from '@/utils';
 defineProps<{
   training: Training;
 }>();
-
 </script>
 <template>
   <div class="simple-training-card my-4 text-body-1">
@@ -19,7 +18,10 @@ defineProps<{
       {{ training.title || $t(`activities.${training.activity}`) }}
     </div>
     <div class="simple-training-card__duration">
-      <v-icon :icon="isDurationTime(training.unitOfDuration) ? '$timer' : '$goKartTrack'" :aria-label="$t('trainingCard.duration')" />
+      <v-icon
+        :icon="isDurationTime(training.unitOfDuration) ? '$timer' : '$goKartTrack'"
+        :aria-label="$t('trainingCard.duration')"
+      />
       {{ training.duration || '-' }} {{ training.unitOfDuration }}
     </div>
     <div class="simple-training-card__location">

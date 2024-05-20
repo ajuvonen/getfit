@@ -35,7 +35,7 @@ exports[`ExportView > mounts 1`] = `
     <div data-v-4906aec1="" class="export__table-container">
       <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent print-view__table--striped" data-test-id="week-0-table">
         <div data-v-4906aec1="" class="d-flex align-center">
-          <h2 data-v-4906aec1="" class="text-h5 ml-4">Week 1</h2>
+          <h2 data-v-4906aec1="" class="text-h5">Week 1</h2>
           <!--v-if-->
         </div>
         <!--v-if-->
@@ -148,7 +148,7 @@ exports[`ExportView > mounts 1`] = `
         <!---->
       </div>
       <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent" data-test-id="week-0-supplement">
-        <h2 data-v-c5ef6c89="" class="text-h5 ml-4">Supplement for Week 1</h2>
+        <h2 data-v-c5ef6c89="" class="text-h5">Supplement for Week 1</h2>
         <div class="v-table__wrapper">
           <table>
             <thead data-v-c5ef6c89="">
@@ -189,7 +189,7 @@ exports[`ExportView > mounts 1`] = `
     <div data-v-4906aec1="" class="export__table-container">
       <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent print-view__table--striped" data-test-id="week-1-table">
         <div data-v-4906aec1="" class="d-flex align-center">
-          <h2 data-v-4906aec1="" class="text-h5 ml-4">Week 2</h2>
+          <h2 data-v-4906aec1="" class="text-h5">Week 2</h2>
           <!--v-if-->
         </div>
         <!--v-if-->
@@ -317,7 +317,7 @@ exports[`ExportView > mounts 1`] = `
         <!---->
       </div>
       <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent" data-test-id="week-1-supplement">
-        <h2 data-v-c5ef6c89="" class="text-h5 ml-4">Supplement for Week 2</h2>
+        <h2 data-v-c5ef6c89="" class="text-h5">Supplement for Week 2</h2>
         <div class="v-table__wrapper">
           <table>
             <thead data-v-c5ef6c89="">
