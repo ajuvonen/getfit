@@ -124,31 +124,31 @@ describe('Utils', () => {
   });
 
   it('generates chart title options for light mode', () => {
-    const options = getChartOptions('Chart title', false, true);
-    expect(options.plugins.title.text).toBe('Chart title');
-    expect(options.plugins.title.color).toBe(COLORS.darkGrey);
+    const options = getChartOptions<'line'>('Chart title', false, true);
+    expect(options.plugins?.title?.text).toBe('Chart title');
+    expect(options.plugins?.title?.color).toBe(COLORS.darkGrey);
     expect(options.maintainAspectRatio).toBe(false);
-    expect(options.scales.y.ticks.color).toBe(undefined);
-    expect(options.scales.y.grid?.color).toBe(undefined);
-    expect(options.scales.x.ticks.color).toBe(undefined);
-    expect(options.scales.x.grid?.color).toBe(undefined);
+    expect(options.scales?.y?.ticks?.color).toBe(undefined);
+    expect(options.scales?.y?.grid?.color).toBe(undefined);
+    expect(options.scales?.x?.ticks?.color).toBe(undefined);
+    expect(options.scales?.x?.grid?.color).toBe(undefined);
   });
 
   it('generates chart title options for dark mode', () => {
-    const options = getChartOptions('Chart title', true, true);
-    expect(options.plugins.title.text).toBe('Chart title');
-    expect(options.plugins.title.color).toBe(COLORS.offWhite);
+    const options = getChartOptions<'line'>('Chart title', true, true);
+    expect(options.plugins?.title?.text).toBe('Chart title');
+    expect(options.plugins?.title?.color).toBe(COLORS.offWhite);
     expect(options.maintainAspectRatio).toBe(false);
-    expect(options.scales.y.ticks.color).toBe('rgba(255,255,255,0.4)');
-    expect(options.scales.y.grid?.color).toBe('rgba(255,255,255,0.4)');
-    expect(options.scales.x.ticks.color).toBe('rgba(255,255,255,0.4)');
-    expect(options.scales.x.grid?.color).toBe('rgba(255,255,255,0.4)');
+    expect(options.scales?.y?.ticks?.color).toBe('rgba(255,255,255,0.4)');
+    expect(options.scales?.y?.grid?.color).toBe('rgba(255,255,255,0.4)');
+    expect(options.scales?.x?.ticks?.color).toBe('rgba(255,255,255,0.4)');
+    expect(options.scales?.x?.grid?.color).toBe('rgba(255,255,255,0.4)');
   });
 
   it('leaves out grid options', () => {
-    const options = getChartOptions('Chart title', true, false);
-    expect(options.plugins.title.text).toBe('Chart title');
-    expect(options.plugins.title.color).toBe(COLORS.offWhite);
+    const options = getChartOptions<'pie'>('Chart title', true, false);
+    expect(options.plugins?.title?.text).toBe('Chart title');
+    expect(options.plugins?.title?.color).toBe(COLORS.offWhite);
     expect(options.maintainAspectRatio).toBe(true);
     expect(options.scales).toBe(undefined);
   });

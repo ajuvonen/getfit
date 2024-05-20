@@ -3,7 +3,7 @@ import {helpers} from '@vuelidate/validators';
 import type {ErrorObject} from '@vuelidate/core';
 import {v4 as uuid} from 'uuid';
 import {clone} from 'remeda';
-import type {ChartTypeRegistry} from 'chart.js';
+import type {ChartOptions, ChartTypeRegistry} from 'chart.js';
 import {Intensity, type ScheduleSettings, type Training} from '@/types';
 import {ACTIVITIES, COLORS} from '@/constants';
 
@@ -107,7 +107,7 @@ export const getChartOptions = <T extends keyof ChartTypeRegistry>(
       },
     },
   },
-}) as any;
+}) as ChartOptions<T>;
 
 export const getTestWeeks = () => {
   const weekId = uuid();
