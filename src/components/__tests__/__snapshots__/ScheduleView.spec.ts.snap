@@ -54,7 +54,7 @@ exports[`ScheduleView > mounts 1`] = `
           <transition-stub data-v-295747d4="" name="expand-transition" appear="false" persisted="false" css="true">
             <div class="v-expansion-panel-text">
               <div class="v-expansion-panel-text__wrapper">
-                <div class="v-slide-group v-tabs v-tabs--horizontal v-tabs--align-tabs-start v-tabs--grow v-tabs--density-default" tabindex="0" role="tablist" data-v-295747d4="">
+                <div class="v-slide-group v-slide-group--mobile v-tabs v-tabs--horizontal v-tabs--align-tabs-start v-tabs--grow v-tabs--density-default" tabindex="0" role="tablist" data-v-295747d4="">
                   <!---->
                   <div class="v-slide-group__container">
                     <div class="v-slide-group__content"><button data-v-295747d4="" type="button" class="v-btn v-theme--customLight v-btn--density-default v-btn--size-default v-btn--variant-text v-tab" tabindex="-1" role="tab" aria-selected="false" data-test-id="week-0-calendar-tab-0" value="0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
