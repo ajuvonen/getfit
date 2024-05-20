@@ -75,7 +75,7 @@ const print = () => {
         <PrintViewTable :data-test-id="`week-${weekIndex}-table`">
           <template #title>
             <div class="d-flex align-center">
-              <h2 class="text-h5 ml-4">
+              <h2 class="text-h5">
                 {{ $t('weekCalendar.weekTitle', [getDisplayWeekNumber(weekIndex)]) }}
               </h2>
               <div v-if="settings.startDate" class="ml-4">

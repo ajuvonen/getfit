@@ -17,7 +17,7 @@ withDefaults(
   >
     <template #top>
       <slot name="title"></slot>
-      <h2 v-if="!$slots.title" class="text-h5 ml-4">{{ tableTitle }}</h2>
+      <h2 v-if="!$slots.title" class="text-h5">{{ tableTitle }}</h2>
     </template>
     <thead>
       <slot name="header"></slot>
@@ -30,6 +30,20 @@ withDefaults(
 <style lang="scss" scoped>
 :deep(td) {
   vertical-align: top;
+}
+
+:deep(td:first-child),
+:deep(td:last-child),
+:deep(th:first-child),
+:deep(th:last-child) {
+  &:first-child {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+    margin-right: 0;
+  }
 }
 
 @media screen {
