@@ -46,13 +46,13 @@ export default function useWeekDays() {
         : weekIndex + 1,
   );
 
-  const getShortDate = computed(() => (weekIndex: number, dayIndex: number) => {
-    const {locale} = useI18n();
-    return getWeekStart
-      .value(weekIndex)
-      .plus({days: dayIndex})
-      .toFormat(SHORT_DATE_FORMATS[locale.value]);
-  });
+  const getShortDate = computed(
+    () => (weekIndex: number, dayIndex: number) =>
+      getWeekStart
+        .value(weekIndex)
+        .plus({days: dayIndex})
+        .toFormat(SHORT_DATE_FORMATS[locale.value]),
+  );
 
   return {weekdays, shortWeekdays, getDateInterval, getDisplayWeekNumber, getShortDate};
 }
