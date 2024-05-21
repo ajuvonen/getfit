@@ -12,11 +12,10 @@ export default function useReset() {
   const appStateStore = useAppStateStore();
   const {openConfirmDialog} = appStateStore;
 
-  return () => {
+  return () =>
     openConfirmDialog(t('general.confirmReset'), () => {
       scheduleStore.$reset();
       appStateStore.$reset();
       router.push('/');
     });
-  };
 }

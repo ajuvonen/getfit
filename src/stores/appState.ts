@@ -16,7 +16,7 @@ export const useAppStateStore = defineStore('appState', () => {
 
   const confirmAction = ref(() => {});
 
-  const trainingData = ref(getEmptyTraining());
+  const trainingData = ref({} as Training);
 
   const openWeek = ref<number | null>(0);
 
