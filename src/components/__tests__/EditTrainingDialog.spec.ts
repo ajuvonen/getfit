@@ -19,6 +19,7 @@ describe('EditTrainingDialog', () => {
   });
 
   it('mounts', () => {
+    appStateStore.trainingData = getEmptyTraining();
     const wrapper = mount(EditTrainingDialog);
     expect(wrapper.findComponent(VCard).html()).toMatchSnapshot();
   });
