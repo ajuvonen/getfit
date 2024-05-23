@@ -9,7 +9,7 @@ import useReset from '@/hooks/reset';
 import useScreen from '@/hooks/screen';
 import useCalendarExport from '@/hooks/calendarExport';
 import useWeekDays from '@/hooks/weekdays';
-import {nextTick} from 'vue';
+import useLocalizedActivities from '@/hooks/localizedActivities';
 
 const withSetup = <T>(hook: () => T) =>
   new Promise<T>((resolve) => {
@@ -400,5 +400,110 @@ describe('hooks', () => {
     scheduleStore.settings.startDate = new Date('05-20-2024');
     expect(getShortDate.value(0, 1)).toBe('05/21');
     expect(getShortDate.value(1, 3)).toBe('05/30');
+  });
+
+  it('localizes and sorts activities', async () => {
+    const {localizedActivities} = await withSetup(useLocalizedActivities);
+    expect(localizedActivities.value).toEqual([
+      {
+        title: 'Badminton',
+        value: 'badminton',
+      },
+      {
+        title: 'Basketball',
+        value: 'basketball',
+      },
+      {
+        title: 'Body Maintenance',
+        value: 'maintenance',
+      },
+      {
+        title: 'Boxing',
+        value: 'boxing',
+      },
+      {
+        title: 'Cycling',
+        value: 'cycling',
+      },
+      {
+        title: 'Downhill',
+        value: 'downhill',
+      },
+      {
+        title: 'Gym',
+        value: 'gym',
+      },
+      {
+        title: 'Gymnastics',
+        value: 'gymnastics',
+      },
+      {
+        title: 'Hockey',
+        value: 'hockey',
+      },
+      {
+        title: 'Martial Arts',
+        value: 'martialarts',
+      },
+      {
+        title: 'Running',
+        value: 'running',
+      },
+      {
+        title: 'Shooting',
+        value: 'shooting',
+      },
+      {
+        title: 'Skating',
+        value: 'skating',
+      },
+      {
+        title: 'Skiing',
+        value: 'skiing',
+      },
+      {
+        title: 'Soccer',
+        value: 'soccer',
+      },
+      {
+        title: 'Sprint',
+        value: 'sprint',
+      },
+      {
+        title: 'Swimming',
+        value: 'swimming',
+      },
+      {
+        title: 'Tennis',
+        value: 'tennis',
+      },
+      {
+        title: 'Walking',
+        value: 'walking',
+      },
+    ]);
+  });
+
+  it('available activites are localized and sorted', async () => {
+    const {localizedAvailableActivities} = await withSetup(useLocalizedActivities);
+    scheduleStore.settings.availableActivities = ['running', 'walking', 'maintenance', 'cycling'];
+    expect(localizedAvailableActivities.value).toEqual([
+      {
+        value: 'maintenance',
+        title: 'Body Maintenance',
+      },
+      {
+        value: 'cycling',
+        title: 'Cycling',
+      },
+      {
+        value: 'running',
+        title: 'Running',
+      },
+      {
+        value: 'walking',
+        title: 'Walking',
+      },
+    ]);
   });
 });
