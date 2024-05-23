@@ -10,8 +10,10 @@ import WeeklyTrainingsChart from '@/components/charts/WeeklyTrainingsChart.vue';
 import WeeklySummaryChart from '@/components/charts/WeeklySummaryChart.vue';
 
 describe('Charts', () => {
+  let scheduleStore: ReturnType<typeof useScheduleStore>;
+
   beforeEach(() => {
-    const scheduleStore = useScheduleStore();
+    scheduleStore = useScheduleStore();
     scheduleStore.weeks.push(...getTestWeeks());
   });
 

@@ -5,12 +5,14 @@ import {useScheduleStore} from '@/stores/schedule';
 import {getTestWeeks} from '@/utils';
 
 describe('StatsView', () => {
+  let scheduleStore: ReturnType<typeof useScheduleStore>;
+
   afterEach(() => {
     vi.restoreAllMocks();
   });
 
   beforeEach(() => {
-    const scheduleStore = useScheduleStore();
+    scheduleStore = useScheduleStore();
     scheduleStore.weeks.push(...getTestWeeks());
   });
 
