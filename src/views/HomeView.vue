@@ -40,12 +40,13 @@ const agendaAvailable = computed(() => weeks.value.length && settings.value.star
   <InfoDialog
     :show="creditDialogOpen"
     :title="$t('home.about')"
-    style="max-width: 600px;"
+    style="max-width: 600px"
     class="home__info-dialog"
     @close="creditDialogOpen = false"
   >
     <template #content>
-      <p class="text-center text-h6">
+      <p>{{ $t('home.licenseText') }}</p>
+      <p class="mt-4 text-h6">
         <v-icon icon="$github" />
         <a
           class="ml-2"
@@ -56,9 +57,8 @@ const agendaAvailable = computed(() => weeks.value.length && settings.value.star
           >GitHub</a
         >
       </p>
-      <p class="mt-4">{{ $t('home.licenseText') }}</p>
-      <p class="mt-4">{{ $t('home.photoCredits') }}</p>
-      <ul class="mt-4">
+      <p class="mt-4">{{ $t('home.photoCredits') }}:</p>
+      <ul>
         <li v-for="{name, link} in PHOTO_CREDITS" :key="name">
           <a :href="link" target="_blank" noreferrer noopener>{{ name }}</a>
         </li>
