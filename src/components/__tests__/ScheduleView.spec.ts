@@ -5,8 +5,10 @@ import {useScheduleStore} from '@/stores/schedule';
 import {getTestWeeks} from '@/utils';
 
 describe('ScheduleView', () => {
+  let scheduleStore: ReturnType<typeof useScheduleStore>;
+
   beforeEach(() => {
-    const scheduleStore = useScheduleStore();
+    scheduleStore = useScheduleStore();
     scheduleStore.weeks.push(...getTestWeeks());
   });
 
