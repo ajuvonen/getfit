@@ -2,7 +2,6 @@ import {unref} from 'vue';
 import {helpers} from '@vuelidate/validators';
 import type {ErrorObject} from '@vuelidate/core';
 import {v4 as uuid} from 'uuid';
-import {clone} from 'remeda';
 import type {ChartOptions, ChartTypeRegistry} from 'chart.js';
 import {Intensity, type ScheduleSettings, type Training} from '@/types';
 import {ACTIVITIES, COLORS} from '@/constants';
@@ -30,7 +29,7 @@ export const getEmptySettings = (
   startsOnSunday: false,
   startDate: null,
   actualWeekNumbering: false,
-  availableActivities: clone(ACTIVITIES),
+  availableActivities: [...ACTIVITIES],
   defaultStartTime: {
     hours: 12,
     minutes: 0,
