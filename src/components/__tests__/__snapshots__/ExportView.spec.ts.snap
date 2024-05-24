@@ -364,3 +364,369 @@ exports[`ExportView > mounts 1`] = `
   <!----><span class="v-card__underlay"></span>
 </div>"
 `;
+
+exports[`ExportView > mounts with start date 1`] = `
+"<div data-v-ff4a98e6="" data-v-4906aec1="" class="v-card v-theme--customLight v-card--density-default v-card--rounded v-card--variant-elevated" style="background-color: rgba(255, 255, 255, 0.75);">
+  <!---->
+  <div class="v-card__loader">
+    <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+      <!---->
+      <div class="v-progress-linear__background"></div>
+      <div class="v-progress-linear__buffer" style="width: 0%;"></div>
+      <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+        <div class="v-progress-linear__indeterminate">
+          <div class="v-progress-linear__indeterminate long"></div>
+          <div class="v-progress-linear__indeterminate short"></div>
+        </div>
+      </transition-stub>
+      <!---->
+    </div>
+  </div>
+  <!---->
+  <!---->
+  <div data-v-ff4a98e6="" class="v-card-title d-print-none">
+    <h1 data-v-ff4a98e6="" class="text-h4">Export Schedule</h1>
+  </div>
+  <div data-v-ff4a98e6="" class="v-card-text">
+    <p data-v-ff4a98e6="" class="d-flex align-center d-print-none mb-4"><i data-v-ff4a98e6="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+          <path d="M13 9H11V7H13V9M13 17H11V11H13V17M5 3H19C20.1 3 21 3.89 21 5V19C21 19.53 20.79 20.04 20.41 20.41C20.04 20.79 19.53 21 19 21H5C4.47 21 3.96 20.79 3.59 20.41C3.21 20.04 3 19.53 3 19V5C3 3.89 3.89 3 5 3M19 19V5H5V19H19Z"></path>
+        </svg></i><span data-v-ff4a98e6="" class="ml-4">Below you can export your schedule in the .ics calendar format or print it. Export requires that the schedule has a start date defined in the settings. For best results in printed form, use landscape paper orientation and set page margins to as low as your printer allows. Then uncheck printing of background images and -colors.</span></p>
+    <div data-v-4906aec1="" class="export__button-container d-print-none d-flex flex-wrap justify-center mt-2 mb-4"><button data-v-4906aec1="" type="button" class="v-btn v-theme--customLight v-btn--density-default v-btn--size-default v-btn--variant-text" data-test-id="export-download-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Export Calendar</span>
+        <!---->
+        <!---->
+      </button><button data-v-4906aec1="" type="button" class="v-btn v-theme--customLight v-btn--density-default v-btn--size-default v-btn--variant-text" data-test-id="export-print-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M18,3H6V7H18M19,12A1,1 0 0,1 18,11A1,1 0 0,1 19,10A1,1 0 0,1 20,11A1,1 0 0,1 19,12M16,19H8V14H16M19,8H5A3,3 0 0,0 2,11V17H6V21H18V17H22V11A3,3 0 0,0 19,8Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Print</span>
+        <!---->
+        <!---->
+      </button></div>
+    <div data-v-4906aec1="" class="export__table-container">
+      <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent print-view__table--striped" data-test-id="week-0-table">
+        <div data-v-4906aec1="" class="d-flex align-center">
+          <h2 data-v-4906aec1="" class="text-h5">Week 1</h2>
+          <div data-v-4906aec1="" class="ml-4">05/20/2024 - 05/26/2024</div>
+        </div>
+        <!--v-if-->
+        <div class="v-table__wrapper">
+          <table>
+            <thead data-v-c5ef6c89="">
+              <tr data-v-4906aec1="">
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Mon</div>
+                  <div data-v-4906aec1="">05/20</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Tue</div>
+                  <div data-v-4906aec1="">05/21</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Wed</div>
+                  <div data-v-4906aec1="">05/22</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Thu</div>
+                  <div data-v-4906aec1="">05/23</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Fri</div>
+                  <div data-v-4906aec1="">05/24</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Sat</div>
+                  <div data-v-4906aec1="">05/25</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Sun</div>
+                  <div data-v-4906aec1="">05/26</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody data-v-c5ef6c89="">
+              <tr data-v-4906aec1="">
+                <td data-v-4906aec1="">
+                  <div data-v-d91f3409="" data-v-4906aec1="" class="simple-training-card my-4 text-body-1">
+                    <div data-v-d91f3409="" class="simple-training-card__title"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default simple-training-card__activity-icon" aria-hidden="true" title="Running" aria-label="Running"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M13.5,5.5C14.59,5.5 15.5,4.58 15.5,3.5C15.5,2.38 14.59,1.5 13.5,1.5C12.39,1.5 11.5,2.38 11.5,3.5C11.5,4.58 12.39,5.5 13.5,5.5M9.89,19.38L10.89,15L13,17V23H15V15.5L12.89,13.5L13.5,10.5C14.79,12 16.79,13 19,13V11C17.09,11 15.5,10 14.69,8.58L13.69,7C13.29,6.38 12.69,6 12,6C11.69,6 11.5,6.08 11.19,6.08L6,8.28V13H8V9.58L9.79,8.88L8.19,17L3.29,16L2.89,18L9.89,19.38Z"></path>
+                        </svg></i> Running</div>
+                    <div data-v-d91f3409="" class="simple-training-card__duration"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Duration"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M22,5.5A3.5,3.5 0 0,0 18.5,2A3.5,3.5 0 0,0 15,5.5V6A3,3 0 0,1 12,9C10,9 9,6 6,6A4,4 0 0,0 2,10V11H4V10A2,2 0 0,1 6,8C6.86,8 7.42,8.45 8.32,9.24C9.28,10.27 10.6,10.9 12,11A5,5 0 0,0 17,6V5.5A1.5,1.5 0 0,1 18.5,4A1.5,1.5 0 0,1 20,5.5C19.86,6.35 19.58,7.18 19.17,7.94C18.5,9.2 18.11,10.58 18,12C18.09,13.37 18.5,14.71 19.21,15.89C19.6,16.54 19.87,17.25 20,18A2,2 0 0,1 18,20A2,2 0 0,1 16,18A3.75,3.75 0 0,0 12.25,14.25A3.75,3.75 0 0,0 8.5,18V18.5A1.5,1.5 0 0,1 7,20A3,3 0 0,1 4,17V15H6V13H0V15H2V17A5,5 0 0,0 7,22A3.5,3.5 0 0,0 10.5,18.5V18A1.75,1.75 0 0,1 12.25,16.25A1.75,1.75 0 0,1 14,18A4,4 0 0,0 18,22A4,4 0 0,0 22,18C22,16 20,14 20,12C20,10 22,7.5 22,5.5Z"></path>
+                        </svg></i> 30 km</div>
+                    <div data-v-d91f3409="" class="simple-training-card__location"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
+                        </svg></i> -</div>
+                    <div data-v-d91f3409="" class="simple-training-card__intensity"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path>
+                        </svg></i> Demanding</div>
+                  </div>
+                </td>
+                <td data-v-4906aec1=""></td>
+                <td data-v-4906aec1=""></td>
+                <td data-v-4906aec1="">
+                  <div data-v-d91f3409="" data-v-4906aec1="" class="simple-training-card my-4 text-body-1">
+                    <div data-v-d91f3409="" class="simple-training-card__title"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default simple-training-card__activity-icon" aria-hidden="true" title="Swimming" aria-label="Swimming"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M2,18C4.22,17 6.44,16 8.67,16C10.89,16 13.11,18 15.33,18C17.56,18 19.78,16 22,16V19C19.78,19 17.56,21 15.33,21C13.11,21 10.89,19 8.67,19C6.44,19 4.22,20 2,21V18M8.67,13C7.89,13 7.12,13.12 6.35,13.32L11.27,9.88L10.23,8.64C10.09,8.47 10,8.24 10,8C10,7.66 10.17,7.35 10.44,7.17L16.16,3.17L17.31,4.8L12.47,8.19L17.7,14.42C16.91,14.75 16.12,15 15.33,15C13.11,15 10.89,13 8.67,13M18,7A2,2 0 0,1 20,9A2,2 0 0,1 18,11A2,2 0 0,1 16,9A2,2 0 0,1 18,7Z"></path>
+                        </svg></i> Swimming</div>
+                    <div data-v-d91f3409="" class="simple-training-card__duration"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Duration"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M19.03 7.39L20.45 5.97C20 5.46 19.55 5 19.04 4.56L17.62 6C16.07 4.74 14.12 4 12 4C7.03 4 3 8.03 3 13S7.03 22 12 22C17 22 21 17.97 21 13C21 10.88 20.26 8.93 19.03 7.39M13 14H11V7H13V14M15 1H9V3H15V1Z"></path>
+                        </svg></i> 30 m</div>
+                    <div data-v-d91f3409="" class="simple-training-card__location"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
+                        </svg></i> -</div>
+                    <div data-v-d91f3409="" class="simple-training-card__intensity"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path>
+                        </svg></i> Normal</div>
+                  </div>
+                  <div data-v-d91f3409="" data-v-4906aec1="" class="simple-training-card my-4 text-body-1">
+                    <div data-v-d91f3409="" class="simple-training-card__title"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default simple-training-card__activity-icon" aria-hidden="true" title="Gym" aria-label="Gym"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M20.57,14.86L22,13.43L20.57,12L17,15.57L8.43,7L12,3.43L10.57,2L9.14,3.43L7.71,2L5.57,4.14L4.14,2.71L2.71,4.14L4.14,5.57L2,7.71L3.43,9.14L2,10.57L3.43,12L7,8.43L15.57,17L12,20.57L13.43,22L14.86,20.57L16.29,22L18.43,19.86L19.86,21.29L21.29,19.86L19.86,18.43L22,16.29L20.57,14.86Z"></path>
+                        </svg></i> Gym</div>
+                    <div data-v-d91f3409="" class="simple-training-card__duration"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Duration"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M19.03 7.39L20.45 5.97C20 5.46 19.55 5 19.04 4.56L17.62 6C16.07 4.74 14.12 4 12 4C7.03 4 3 8.03 3 13S7.03 22 12 22C17 22 21 17.97 21 13C21 10.88 20.26 8.93 19.03 7.39M13 14H11V7H13V14M15 1H9V3H15V1Z"></path>
+                        </svg></i> 1.5 h</div>
+                    <div data-v-d91f3409="" class="simple-training-card__location"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
+                        </svg></i> -</div>
+                    <div data-v-d91f3409="" class="simple-training-card__intensity"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path>
+                        </svg></i> Demanding</div>
+                  </div>
+                </td>
+                <td data-v-4906aec1=""></td>
+                <td data-v-4906aec1="">
+                  <div data-v-d91f3409="" data-v-4906aec1="" class="simple-training-card my-4 text-body-1">
+                    <div data-v-d91f3409="" class="simple-training-card__title"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default simple-training-card__activity-icon" aria-hidden="true" title="Sprint" aria-label="Sprint"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M16.5,5.5A2,2 0 0,0 18.5,3.5A2,2 0 0,0 16.5,1.5A2,2 0 0,0 14.5,3.5A2,2 0 0,0 16.5,5.5M12.9,19.4L13.9,15L16,17V23H18V15.5L15.9,13.5L16.5,10.5C17.89,12.09 19.89,13 22,13V11C20.24,11.03 18.6,10.11 17.7,8.6L16.7,7C16.34,6.4 15.7,6 15,6C14.7,6 14.5,6.1 14.2,6.1L9,8.3V13H11V9.6L12.8,8.9L11.2,17L6.3,16L5.9,18L12.9,19.4M4,9A1,1 0 0,1 3,8A1,1 0 0,1 4,7H7V9H4M5,5A1,1 0 0,1 4,4A1,1 0 0,1 5,3H10V5H5M3,13A1,1 0 0,1 2,12A1,1 0 0,1 3,11H7V13H3Z"></path>
+                        </svg></i> Sprint</div>
+                    <div data-v-d91f3409="" class="simple-training-card__duration"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Duration"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M22,5.5A3.5,3.5 0 0,0 18.5,2A3.5,3.5 0 0,0 15,5.5V6A3,3 0 0,1 12,9C10,9 9,6 6,6A4,4 0 0,0 2,10V11H4V10A2,2 0 0,1 6,8C6.86,8 7.42,8.45 8.32,9.24C9.28,10.27 10.6,10.9 12,11A5,5 0 0,0 17,6V5.5A1.5,1.5 0 0,1 18.5,4A1.5,1.5 0 0,1 20,5.5C19.86,6.35 19.58,7.18 19.17,7.94C18.5,9.2 18.11,10.58 18,12C18.09,13.37 18.5,14.71 19.21,15.89C19.6,16.54 19.87,17.25 20,18A2,2 0 0,1 18,20A2,2 0 0,1 16,18A3.75,3.75 0 0,0 12.25,14.25A3.75,3.75 0 0,0 8.5,18V18.5A1.5,1.5 0 0,1 7,20A3,3 0 0,1 4,17V15H6V13H0V15H2V17A5,5 0 0,0 7,22A3.5,3.5 0 0,0 10.5,18.5V18A1.75,1.75 0 0,1 12.25,16.25A1.75,1.75 0 0,1 14,18A4,4 0 0,0 18,22A4,4 0 0,0 22,18C22,16 20,14 20,12C20,10 22,7.5 22,5.5Z"></path>
+                        </svg></i> 1 mi</div>
+                    <div data-v-d91f3409="" class="simple-training-card__location"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
+                        </svg></i> -</div>
+                    <div data-v-d91f3409="" class="simple-training-card__intensity"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path>
+                        </svg></i> Demanding</div>
+                  </div>
+                </td>
+                <td data-v-4906aec1=""></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!---->
+      </div>
+      <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent" data-test-id="week-0-supplement">
+        <h2 data-v-c5ef6c89="" class="text-h5">Supplement for Week 1</h2>
+        <div class="v-table__wrapper">
+          <table>
+            <thead data-v-c5ef6c89="">
+              <tr data-v-4906aec1="">
+                <th data-v-4906aec1="" width="60%">Instructions</th>
+                <th data-v-4906aec1="" class="hidden-screen-only">Notes</th>
+              </tr>
+            </thead>
+            <tbody data-v-c5ef6c89="">
+              <tr data-v-4906aec1="">
+                <td data-v-4906aec1="">
+                  <div data-v-22de64f8="" class="mt-4 text-subtitle-2 text-uppercase">Monday</div>
+                  <ul data-v-22de64f8="">
+                    <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" title="Running" aria-label="Running"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M13.5,5.5C14.59,5.5 15.5,4.58 15.5,3.5C15.5,2.38 14.59,1.5 13.5,1.5C12.39,1.5 11.5,2.38 11.5,3.5C11.5,4.58 12.39,5.5 13.5,5.5M9.89,19.38L10.89,15L13,17V23H15V15.5L12.89,13.5L13.5,10.5C14.79,12 16.79,13 19,13V11C17.09,11 15.5,10 14.69,8.58L13.69,7C13.29,6.38 12.69,6 12,6C11.69,6 11.5,6.08 11.19,6.08L6,8.28V13H8V9.58L9.79,8.88L8.19,17L3.29,16L2.89,18L9.89,19.38Z"></path></svg></i> Running:&nbsp;</span><i data-v-22de64f8="">No instructions</i></li>
+                  </ul>
+                  <!--v-if-->
+                  <!--v-if-->
+                  <div data-v-22de64f8="" class="mt-4 text-subtitle-2 text-uppercase">Thursday</div>
+                  <ul data-v-22de64f8="">
+                    <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" title="Swimming" aria-label="Swimming"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M2,18C4.22,17 6.44,16 8.67,16C10.89,16 13.11,18 15.33,18C17.56,18 19.78,16 22,16V19C19.78,19 17.56,21 15.33,21C13.11,21 10.89,19 8.67,19C6.44,19 4.22,20 2,21V18M8.67,13C7.89,13 7.12,13.12 6.35,13.32L11.27,9.88L10.23,8.64C10.09,8.47 10,8.24 10,8C10,7.66 10.17,7.35 10.44,7.17L16.16,3.17L17.31,4.8L12.47,8.19L17.7,14.42C16.91,14.75 16.12,15 15.33,15C13.11,15 10.89,13 8.67,13M18,7A2,2 0 0,1 20,9A2,2 0 0,1 18,11A2,2 0 0,1 16,9A2,2 0 0,1 18,7Z"></path></svg></i> Swimming:&nbsp;</span><i data-v-22de64f8="">No instructions</i></li>
+                    <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" title="Gym" aria-label="Gym"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M20.57,14.86L22,13.43L20.57,12L17,15.57L8.43,7L12,3.43L10.57,2L9.14,3.43L7.71,2L5.57,4.14L4.14,2.71L2.71,4.14L4.14,5.57L2,7.71L3.43,9.14L2,10.57L3.43,12L7,8.43L15.57,17L12,20.57L13.43,22L14.86,20.57L16.29,22L18.43,19.86L19.86,21.29L21.29,19.86L19.86,18.43L22,16.29L20.57,14.86Z"></path></svg></i> Gym:&nbsp;</span><i data-v-22de64f8="">No instructions</i></li>
+                  </ul>
+                  <!--v-if-->
+                  <div data-v-22de64f8="" class="mt-4 text-subtitle-2 text-uppercase">Saturday</div>
+                  <ul data-v-22de64f8="">
+                    <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" title="Sprint" aria-label="Sprint"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M16.5,5.5A2,2 0 0,0 18.5,3.5A2,2 0 0,0 16.5,1.5A2,2 0 0,0 14.5,3.5A2,2 0 0,0 16.5,5.5M12.9,19.4L13.9,15L16,17V23H18V15.5L15.9,13.5L16.5,10.5C17.89,12.09 19.89,13 22,13V11C20.24,11.03 18.6,10.11 17.7,8.6L16.7,7C16.34,6.4 15.7,6 15,6C14.7,6 14.5,6.1 14.2,6.1L9,8.3V13H11V9.6L12.8,8.9L11.2,17L6.3,16L5.9,18L12.9,19.4M4,9A1,1 0 0,1 3,8A1,1 0 0,1 4,7H7V9H4M5,5A1,1 0 0,1 4,4A1,1 0 0,1 5,3H10V5H5M3,13A1,1 0 0,1 2,12A1,1 0 0,1 3,11H7V13H3Z"></path></svg></i> Sprint:&nbsp;</span><i data-v-22de64f8="">No instructions</i></li>
+                  </ul>
+                  <!--v-if-->
+                </td>
+                <td data-v-4906aec1="" class="hidden-screen-only"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <div data-v-4906aec1="" class="export__table-container">
+      <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent print-view__table--striped" data-test-id="week-1-table">
+        <div data-v-4906aec1="" class="d-flex align-center">
+          <h2 data-v-4906aec1="" class="text-h5">Week 2</h2>
+          <div data-v-4906aec1="" class="ml-4">05/27/2024 - 06/02/2024</div>
+        </div>
+        <!--v-if-->
+        <div class="v-table__wrapper">
+          <table>
+            <thead data-v-c5ef6c89="">
+              <tr data-v-4906aec1="">
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Mon</div>
+                  <div data-v-4906aec1="">05/27</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Tue</div>
+                  <div data-v-4906aec1="">05/28</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Wed</div>
+                  <div data-v-4906aec1="">05/29</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Thu</div>
+                  <div data-v-4906aec1="">05/30</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Fri</div>
+                  <div data-v-4906aec1="">05/31</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Sat</div>
+                  <div data-v-4906aec1="">06/01</div>
+                </th>
+                <th data-v-4906aec1="">
+                  <div data-v-4906aec1="">Sun</div>
+                  <div data-v-4906aec1="">06/02</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody data-v-c5ef6c89="">
+              <tr data-v-4906aec1="">
+                <td data-v-4906aec1="">
+                  <div data-v-d91f3409="" data-v-4906aec1="" class="simple-training-card my-4 text-body-1">
+                    <div data-v-d91f3409="" class="simple-training-card__title"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default simple-training-card__activity-icon" aria-hidden="true" title="Swimming" aria-label="Swimming"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M2,18C4.22,17 6.44,16 8.67,16C10.89,16 13.11,18 15.33,18C17.56,18 19.78,16 22,16V19C19.78,19 17.56,21 15.33,21C13.11,21 10.89,19 8.67,19C6.44,19 4.22,20 2,21V18M8.67,13C7.89,13 7.12,13.12 6.35,13.32L11.27,9.88L10.23,8.64C10.09,8.47 10,8.24 10,8C10,7.66 10.17,7.35 10.44,7.17L16.16,3.17L17.31,4.8L12.47,8.19L17.7,14.42C16.91,14.75 16.12,15 15.33,15C13.11,15 10.89,13 8.67,13M18,7A2,2 0 0,1 20,9A2,2 0 0,1 18,11A2,2 0 0,1 16,9A2,2 0 0,1 18,7Z"></path>
+                        </svg></i> Swimming</div>
+                    <div data-v-d91f3409="" class="simple-training-card__duration"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Duration"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M19.03 7.39L20.45 5.97C20 5.46 19.55 5 19.04 4.56L17.62 6C16.07 4.74 14.12 4 12 4C7.03 4 3 8.03 3 13S7.03 22 12 22C17 22 21 17.97 21 13C21 10.88 20.26 8.93 19.03 7.39M13 14H11V7H13V14M15 1H9V3H15V1Z"></path>
+                        </svg></i> 75 m</div>
+                    <div data-v-d91f3409="" class="simple-training-card__location"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
+                        </svg></i> -</div>
+                    <div data-v-d91f3409="" class="simple-training-card__intensity"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path>
+                        </svg></i> Normal</div>
+                  </div>
+                  <div data-v-d91f3409="" data-v-4906aec1="" class="simple-training-card my-4 text-body-1">
+                    <div data-v-d91f3409="" class="simple-training-card__title"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default simple-training-card__activity-icon" aria-hidden="true" title="Running" aria-label="Running"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M13.5,5.5C14.59,5.5 15.5,4.58 15.5,3.5C15.5,2.38 14.59,1.5 13.5,1.5C12.39,1.5 11.5,2.38 11.5,3.5C11.5,4.58 12.39,5.5 13.5,5.5M9.89,19.38L10.89,15L13,17V23H15V15.5L12.89,13.5L13.5,10.5C14.79,12 16.79,13 19,13V11C17.09,11 15.5,10 14.69,8.58L13.69,7C13.29,6.38 12.69,6 12,6C11.69,6 11.5,6.08 11.19,6.08L6,8.28V13H8V9.58L9.79,8.88L8.19,17L3.29,16L2.89,18L9.89,19.38Z"></path>
+                        </svg></i> Running</div>
+                    <div data-v-d91f3409="" class="simple-training-card__duration"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Duration"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M22,5.5A3.5,3.5 0 0,0 18.5,2A3.5,3.5 0 0,0 15,5.5V6A3,3 0 0,1 12,9C10,9 9,6 6,6A4,4 0 0,0 2,10V11H4V10A2,2 0 0,1 6,8C6.86,8 7.42,8.45 8.32,9.24C9.28,10.27 10.6,10.9 12,11A5,5 0 0,0 17,6V5.5A1.5,1.5 0 0,1 18.5,4A1.5,1.5 0 0,1 20,5.5C19.86,6.35 19.58,7.18 19.17,7.94C18.5,9.2 18.11,10.58 18,12C18.09,13.37 18.5,14.71 19.21,15.89C19.6,16.54 19.87,17.25 20,18A2,2 0 0,1 18,20A2,2 0 0,1 16,18A3.75,3.75 0 0,0 12.25,14.25A3.75,3.75 0 0,0 8.5,18V18.5A1.5,1.5 0 0,1 7,20A3,3 0 0,1 4,17V15H6V13H0V15H2V17A5,5 0 0,0 7,22A3.5,3.5 0 0,0 10.5,18.5V18A1.75,1.75 0 0,1 12.25,16.25A1.75,1.75 0 0,1 14,18A4,4 0 0,0 18,22A4,4 0 0,0 22,18C22,16 20,14 20,12C20,10 22,7.5 22,5.5Z"></path>
+                        </svg></i> 15 km</div>
+                    <div data-v-d91f3409="" class="simple-training-card__location"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
+                        </svg></i> -</div>
+                    <div data-v-d91f3409="" class="simple-training-card__intensity"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path>
+                        </svg></i> Normal</div>
+                  </div>
+                </td>
+                <td data-v-4906aec1=""></td>
+                <td data-v-4906aec1=""></td>
+                <td data-v-4906aec1="">
+                  <div data-v-d91f3409="" data-v-4906aec1="" class="simple-training-card my-4 text-body-1">
+                    <div data-v-d91f3409="" class="simple-training-card__title"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default simple-training-card__activity-icon" aria-hidden="true" title="Body Maintenance" aria-label="Body Maintenance"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M13 2C11.9 2 11 2.9 11 4C11 5.11 11.9 6 13 6C14.11 6 15 5.11 15 4C15 2.9 14.11 2 13 2M4 7V9H10V15L4.93 20.07L6.34 21.5L13.06 14.77L17 17.13V21H19V16.57C19 16.21 18.82 15.89 18.5 15.71L15 13.6V9H21V7H4Z"></path>
+                        </svg></i> Body Maintenance</div>
+                    <div data-v-d91f3409="" class="simple-training-card__duration"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Duration"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M19.03 7.39L20.45 5.97C20 5.46 19.55 5 19.04 4.56L17.62 6C16.07 4.74 14.12 4 12 4C7.03 4 3 8.03 3 13S7.03 22 12 22C17 22 21 17.97 21 13C21 10.88 20.26 8.93 19.03 7.39M13 14H11V7H13V14M15 1H9V3H15V1Z"></path>
+                        </svg></i> 1 h</div>
+                    <div data-v-d91f3409="" class="simple-training-card__location"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
+                        </svg></i> -</div>
+                    <div data-v-d91f3409="" class="simple-training-card__intensity"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path>
+                        </svg></i> Light</div>
+                  </div>
+                </td>
+                <td data-v-4906aec1=""></td>
+                <td data-v-4906aec1="">
+                  <div data-v-d91f3409="" data-v-4906aec1="" class="simple-training-card my-4 text-body-1">
+                    <div data-v-d91f3409="" class="simple-training-card__title"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default simple-training-card__activity-icon" aria-hidden="true" title="Badminton" aria-label="Badminton"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12.3,2C11.33,2.03 10.58,2.84 10.61,3.8C10.62,4.04 10.67,4.27 10.77,4.5L11.06,5.14V5.14C11.1,5.27 11.03,5.41 10.89,5.45C10.8,5.5 10.7,5.45 10.63,5.37L10.21,4.82C9.88,4.4 9.38,4.14 8.85,4.13C7.88,4.11 7.08,4.88 7.06,5.84C7.05,6.26 7.19,6.66 7.45,7L7.87,7.5H7.88C7.96,7.63 7.93,7.79 7.82,7.87C7.73,7.94 7.61,7.94 7.53,7.87L7,7.45C6.66,7.19 6.25,7.05 5.84,7.06C4.88,7.08 4.11,7.88 4.13,8.85C4.14,9.38 4.4,9.88 4.82,10.21L5.39,10.65C5.5,10.75 5.5,10.91 5.38,11C5.31,11.07 5.21,11.09 5.12,11.05H5.11L4.5,10.77C4.27,10.68 4.04,10.62 3.8,10.61C2.84,10.58 2.03,11.34 2,12.31C2,13.03 2.4,13.69 3.06,13.97L14.45,19.04L19.04,14.45L13.97,3.06C13.69,2.39 13,1.97 12.3,2M13.13,6.1C13.55,6.09 13.93,6.33 14.09,6.71L17.14,13.55L13.19,9.61L12.26,7.5C11.96,6.87 12.42,6.12 13.13,6.1M9.85,8.85C10.12,8.85 10.37,8.95 10.56,9.15L15.37,13.96C15.77,14.34 15.78,14.97 15.4,15.37C15,15.77 14.38,15.78 13.96,15.37L9.15,10.56C8.75,10.18 8.74,9.54 9.13,9.15C9.32,8.95 9.58,8.85 9.85,8.85M7.13,12.17C7.26,12.17 7.4,12.21 7.5,12.26L9.63,13.2L13.57,17.14L6.71,14.09C5.69,13.65 6.03,12.14 7.13,12.17M20.28,16.04L16.04,20.28L16.89,21.13C17.65,21.88 18.75,22.17 19.78,21.9C20.81,21.62 21.62,20.81 21.9,19.78C22.17,18.75 21.88,17.65 21.13,16.89L20.28,16.04Z"></path>
+                        </svg></i> Badminton</div>
+                    <div data-v-d91f3409="" class="simple-training-card__duration"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Duration"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M19.03 7.39L20.45 5.97C20 5.46 19.55 5 19.04 4.56L17.62 6C16.07 4.74 14.12 4 12 4C7.03 4 3 8.03 3 13S7.03 22 12 22C17 22 21 17.97 21 13C21 10.88 20.26 8.93 19.03 7.39M13 14H11V7H13V14M15 1H9V3H15V1Z"></path>
+                        </svg></i> 2 h</div>
+                    <div data-v-d91f3409="" class="simple-training-card__location"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
+                        </svg></i> -</div>
+                    <div data-v-d91f3409="" class="simple-training-card__intensity"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path>
+                        </svg></i> Normal</div>
+                  </div>
+                </td>
+                <td data-v-4906aec1="">
+                  <div data-v-d91f3409="" data-v-4906aec1="" class="simple-training-card my-4 text-body-1">
+                    <div data-v-d91f3409="" class="simple-training-card__title"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default simple-training-card__activity-icon" aria-hidden="true" title="Tennis" aria-label="Tennis"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M18,15A4,4 0 0,1 22,19A4,4 0 0,1 18,23A4,4 0 0,1 14,19A4,4 0 0,1 18,15M18,17A2,2 0 0,0 16,19A2,2 0 0,0 18,21A2,2 0 0,0 20,19A2,2 0 0,0 18,17M6.05,14.54C6.05,14.54 7.46,13.12 7.47,10.3C7.11,8.11 7.97,5.54 9.94,3.58C12.87,0.65 17.14,0.17 19.5,2.5C21.83,4.86 21.35,9.13 18.42,12.06C16.46,14.03 13.89,14.89 11.7,14.53C8.88,14.54 7.46,15.95 7.46,15.95L3.22,20.19L1.81,18.78L6.05,14.54M18.07,3.93C16.5,2.37 13.5,2.84 11.35,5C9.21,7.14 8.73,10.15 10.29,11.71C11.86,13.27 14.86,12.79 17,10.65C19.16,8.5 19.63,5.5 18.07,3.93Z"></path>
+                        </svg></i> Tennis</div>
+                    <div data-v-d91f3409="" class="simple-training-card__duration"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Duration"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M19.03 7.39L20.45 5.97C20 5.46 19.55 5 19.04 4.56L17.62 6C16.07 4.74 14.12 4 12 4C7.03 4 3 8.03 3 13S7.03 22 12 22C17 22 21 17.97 21 13C21 10.88 20.26 8.93 19.03 7.39M13 14H11V7H13V14M15 1H9V3H15V1Z"></path>
+                        </svg></i> 1 h</div>
+                    <div data-v-d91f3409="" class="simple-training-card__location"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
+                        </svg></i> -</div>
+                    <div data-v-d91f3409="" class="simple-training-card__intensity"><i data-v-d91f3409="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                          <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path>
+                        </svg></i> Normal</div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!---->
+      </div>
+      <div data-v-c5ef6c89="" data-v-4906aec1="" class="v-table v-table--has-top v-theme--customLight v-table--density-default print-view__table bg-transparent" data-test-id="week-1-supplement">
+        <h2 data-v-c5ef6c89="" class="text-h5">Supplement for Week 2</h2>
+        <div class="v-table__wrapper">
+          <table>
+            <thead data-v-c5ef6c89="">
+              <tr data-v-4906aec1="">
+                <th data-v-4906aec1="" width="60%">Instructions</th>
+                <th data-v-4906aec1="" class="hidden-screen-only">Notes</th>
+              </tr>
+            </thead>
+            <tbody data-v-c5ef6c89="">
+              <tr data-v-4906aec1="">
+                <td data-v-4906aec1="">
+                  <div data-v-22de64f8="" class="mt-4 text-subtitle-2 text-uppercase">Monday</div>
+                  <ul data-v-22de64f8="">
+                    <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" title="Swimming" aria-label="Swimming"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M2,18C4.22,17 6.44,16 8.67,16C10.89,16 13.11,18 15.33,18C17.56,18 19.78,16 22,16V19C19.78,19 17.56,21 15.33,21C13.11,21 10.89,19 8.67,19C6.44,19 4.22,20 2,21V18M8.67,13C7.89,13 7.12,13.12 6.35,13.32L11.27,9.88L10.23,8.64C10.09,8.47 10,8.24 10,8C10,7.66 10.17,7.35 10.44,7.17L16.16,3.17L17.31,4.8L12.47,8.19L17.7,14.42C16.91,14.75 16.12,15 15.33,15C13.11,15 10.89,13 8.67,13M18,7A2,2 0 0,1 20,9A2,2 0 0,1 18,11A2,2 0 0,1 16,9A2,2 0 0,1 18,7Z"></path></svg></i> Swimming:&nbsp;</span><i data-v-22de64f8="">No instructions</i></li>
+                    <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" title="Running" aria-label="Running"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M13.5,5.5C14.59,5.5 15.5,4.58 15.5,3.5C15.5,2.38 14.59,1.5 13.5,1.5C12.39,1.5 11.5,2.38 11.5,3.5C11.5,4.58 12.39,5.5 13.5,5.5M9.89,19.38L10.89,15L13,17V23H15V15.5L12.89,13.5L13.5,10.5C14.79,12 16.79,13 19,13V11C17.09,11 15.5,10 14.69,8.58L13.69,7C13.29,6.38 12.69,6 12,6C11.69,6 11.5,6.08 11.19,6.08L6,8.28V13H8V9.58L9.79,8.88L8.19,17L3.29,16L2.89,18L9.89,19.38Z"></path></svg></i> Running:&nbsp;</span><i data-v-22de64f8="">No instructions</i></li>
+                  </ul>
+                  <!--v-if-->
+                  <!--v-if-->
+                  <div data-v-22de64f8="" class="mt-4 text-subtitle-2 text-uppercase">Thursday</div>
+                  <ul data-v-22de64f8="">
+                    <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" title="Body Maintenance" aria-label="Body Maintenance"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M13 2C11.9 2 11 2.9 11 4C11 5.11 11.9 6 13 6C14.11 6 15 5.11 15 4C15 2.9 14.11 2 13 2M4 7V9H10V15L4.93 20.07L6.34 21.5L13.06 14.77L17 17.13V21H19V16.57C19 16.21 18.82 15.89 18.5 15.71L15 13.6V9H21V7H4Z"></path></svg></i> Body Maintenance:&nbsp;</span><i data-v-22de64f8="">No instructions</i></li>
+                  </ul>
+                  <!--v-if-->
+                  <div data-v-22de64f8="" class="mt-4 text-subtitle-2 text-uppercase">Saturday</div>
+                  <ul data-v-22de64f8="">
+                    <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" title="Badminton" aria-label="Badminton"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12.3,2C11.33,2.03 10.58,2.84 10.61,3.8C10.62,4.04 10.67,4.27 10.77,4.5L11.06,5.14V5.14C11.1,5.27 11.03,5.41 10.89,5.45C10.8,5.5 10.7,5.45 10.63,5.37L10.21,4.82C9.88,4.4 9.38,4.14 8.85,4.13C7.88,4.11 7.08,4.88 7.06,5.84C7.05,6.26 7.19,6.66 7.45,7L7.87,7.5H7.88C7.96,7.63 7.93,7.79 7.82,7.87C7.73,7.94 7.61,7.94 7.53,7.87L7,7.45C6.66,7.19 6.25,7.05 5.84,7.06C4.88,7.08 4.11,7.88 4.13,8.85C4.14,9.38 4.4,9.88 4.82,10.21L5.39,10.65C5.5,10.75 5.5,10.91 5.38,11C5.31,11.07 5.21,11.09 5.12,11.05H5.11L4.5,10.77C4.27,10.68 4.04,10.62 3.8,10.61C2.84,10.58 2.03,11.34 2,12.31C2,13.03 2.4,13.69 3.06,13.97L14.45,19.04L19.04,14.45L13.97,3.06C13.69,2.39 13,1.97 12.3,2M13.13,6.1C13.55,6.09 13.93,6.33 14.09,6.71L17.14,13.55L13.19,9.61L12.26,7.5C11.96,6.87 12.42,6.12 13.13,6.1M9.85,8.85C10.12,8.85 10.37,8.95 10.56,9.15L15.37,13.96C15.77,14.34 15.78,14.97 15.4,15.37C15,15.77 14.38,15.78 13.96,15.37L9.15,10.56C8.75,10.18 8.74,9.54 9.13,9.15C9.32,8.95 9.58,8.85 9.85,8.85M7.13,12.17C7.26,12.17 7.4,12.21 7.5,12.26L9.63,13.2L13.57,17.14L6.71,14.09C5.69,13.65 6.03,12.14 7.13,12.17M20.28,16.04L16.04,20.28L16.89,21.13C17.65,21.88 18.75,22.17 19.78,21.9C20.81,21.62 21.62,20.81 21.9,19.78C22.17,18.75 21.88,17.65 21.13,16.89L20.28,16.04Z"></path></svg></i> Badminton:&nbsp;</span><i data-v-22de64f8="">No instructions</i></li>
+                  </ul>
+                  <div data-v-22de64f8="" class="mt-4 text-subtitle-2 text-uppercase">Sunday</div>
+                  <ul data-v-22de64f8="">
+                    <li data-v-22de64f8="" class="mt-1 week-supplement__instructions text-body-1"><span data-v-22de64f8=""><i data-v-22de64f8="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" title="Tennis" aria-label="Tennis"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M18,15A4,4 0 0,1 22,19A4,4 0 0,1 18,23A4,4 0 0,1 14,19A4,4 0 0,1 18,15M18,17A2,2 0 0,0 16,19A2,2 0 0,0 18,21A2,2 0 0,0 20,19A2,2 0 0,0 18,17M6.05,14.54C6.05,14.54 7.46,13.12 7.47,10.3C7.11,8.11 7.97,5.54 9.94,3.58C12.87,0.65 17.14,0.17 19.5,2.5C21.83,4.86 21.35,9.13 18.42,12.06C16.46,14.03 13.89,14.89 11.7,14.53C8.88,14.54 7.46,15.95 7.46,15.95L3.22,20.19L1.81,18.78L6.05,14.54M18.07,3.93C16.5,2.37 13.5,2.84 11.35,5C9.21,7.14 8.73,10.15 10.29,11.71C11.86,13.27 14.86,12.79 17,10.65C19.16,8.5 19.63,5.5 18.07,3.93Z"></path></svg></i> Tennis:&nbsp;</span><i data-v-22de64f8="">No instructions</i></li>
+                  </ul>
+                </td>
+                <td data-v-4906aec1="" class="hidden-screen-only"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!---->
+      </div>
+    </div>
+  </div>
+  <!--v-if-->
+  <!---->
+  <!----><span class="v-card__underlay"></span>
+</div>"
+`;
