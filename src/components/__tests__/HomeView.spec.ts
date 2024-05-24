@@ -3,6 +3,7 @@ import {mount} from '@vue/test-utils';
 import {DateTime} from 'luxon';
 import {v4 as uuid} from 'uuid';
 import {useScheduleStore} from '@/stores/schedule';
+import {getEmptyTraining} from '@/utils';
 import HomeView from '@/views/HomeView.vue';
 
 describe('HomeView', () => {
@@ -18,9 +19,16 @@ describe('HomeView', () => {
   });
 
   it('mounts with agenda', () => {
+    const weekId = uuid();
     scheduleStore.weeks.push({
-      id: uuid(),
-      trainings: [],
+      id: weekId,
+      trainings: [
+        getEmptyTraining({
+          weekId,
+          activity: 'running',
+          dayIndex: DateTime.now().weekday - 1,
+        }),
+      ],
     });
     scheduleStore.settings.startDate = DateTime.now().startOf('week').toJSDate();
     const wrapper = mount(HomeView);
