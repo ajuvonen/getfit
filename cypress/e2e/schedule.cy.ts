@@ -18,6 +18,7 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-0').click();
     cy.getByTestId('week-0-delete-button').click();
     cy.getByTestId('week-0-delete-button').click();
+    cy.getByTestId('confirm-dialog-confirm-button').click();
     cy.getByTestId('schedule').should('not.exist');
   });
 
