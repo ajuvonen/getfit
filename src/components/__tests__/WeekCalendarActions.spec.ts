@@ -27,6 +27,10 @@ describe('WeekCalendarActions', () => {
 
   it('actions work', async () => {
     const weekId = uuid();
+    scheduleStore.weeks.push({
+      id: weekId,
+      trainings: [],
+    });
     const wrapper = mount(WeekCalendarActions, {
       props: {
         weekIndex: 0,

@@ -165,6 +165,7 @@
     "copyWeek": "Kopioi viikko {0}",
     "dayChipTitle": "Harjoituksia: {0}. Enimmäisvaativuus: {1}.",
     "deleteWeek": "Poista viikko {0}",
+    "deleteWeekConfirm": "Tämä toiminto poistaa myös viikolle kirjatut harjoitukset. Haluatko jatkaa?",
     "noTrainings": "Ei harjoituksia",
     "weekChipTitle": "{0} harjoitus: {1}",
     "weekTitle": "Viikko {0}"
