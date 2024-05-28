@@ -28,7 +28,7 @@ const {isSmallScreen, isLargeScreen} = useScreen();
 
 const {weekdays, shortWeekdays, getDateInterval, getDisplayWeekNumber} = useWeekDays();
 
-const activeDay = ref<number | null>(null);
+const activeDay = ref(0);
 
 const tabContent = computed(() => {
   const days = isSmallScreen.value ? shortWeekdays : weekdays;
