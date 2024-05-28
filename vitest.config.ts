@@ -21,6 +21,7 @@ export default mergeConfig(
         provider: 'istanbul',
         include: ['src/**/*'],
         exclude: ['src/App.vue', 'src/main.ts'],
+        reporter: ['text'],
       },
     },
   }),
