@@ -83,7 +83,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
       <v-tabs v-model="activeDay" grow center-active>
         <v-tab
           v-for="({weekDay, trainings, maxIntensity}, dayIndex) in tabContent"
-          :key="weekDay"
+          :key="dayIndex"
           :value="dayIndex"
           :data-test-id="`week-${weekIndex}-calendar-tab-${dayIndex}`"
         >
