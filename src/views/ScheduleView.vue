@@ -19,17 +19,10 @@ const reset = useReset();
 
 watch(
   () => weeks.value.length,
-  (newValue, oldValue) => {
-    if (newValue < oldValue) {
-      openWeek.value = newValue - 1 || 0;
-    }
+  (value) => {
+    openWeek.value = value - 1 || 0;
   },
 );
-
-const addAndOpenWeek = () => {
-  addWeek();
-  openWeek.value = weeks.value.length - 1;
-};
 </script>
 
 <template>
@@ -51,7 +44,7 @@ const addAndOpenWeek = () => {
       </v-expansion-panels>
     </template>
     <template #actions>
-      <v-btn prepend-icon="$plus" data-test-id="schedule-add-week-button" @click="addAndOpenWeek">{{
+      <v-btn prepend-icon="$plus" data-test-id="schedule-add-week-button" @click="addWeek">{{
         $t('schedule.addWeek')
       }}</v-btn>
       <v-btn
