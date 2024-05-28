@@ -20,7 +20,7 @@ const reset = useReset();
 watch(
   () => weeks.value.length,
   (newValue, oldValue) => {
-    if (newValue > oldValue) {
+    if (newValue < oldValue) {
       openWeek.value = newValue - 1 || 0;
     }
   },
