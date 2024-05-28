@@ -113,111 +113,109 @@ exports[`ScheduleView > mounts 1`] = `
                     <transition-stub data-v-295747d4="" appear="false" persisted="false" css="true" disabled="true" data-test-id="week-0-day-0">
                       <div class="v-window-item v-window-item--active">
                         <ul data-v-295747d4="" class="d-flex flex-wrap mt-4 mb-1 justify-center">
-                          <li data-v-295747d4="" data-draggable="true">
-                            <div data-v-24c3dbf4="" data-v-295747d4="" class="training-card__container" style="background: url(/getfit/running.jpg);">
-                              <div data-v-24c3dbf4="" class="v-card v-theme--customLight v-card--density-default v-card--variant-elevated training-card" style="background-color: rgba(255, 179, 102, 0.8); width: 350px; color: rgb(33, 33, 33);">
-                                <!---->
-                                <div class="v-card__loader">
-                                  <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
-                                    <!---->
-                                    <div class="v-progress-linear__background"></div>
-                                    <div class="v-progress-linear__buffer" style="width: 0%;"></div>
-                                    <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
-                                      <div class="v-progress-linear__indeterminate">
-                                        <div class="v-progress-linear__indeterminate long"></div>
-                                        <div class="v-progress-linear__indeterminate short"></div>
-                                      </div>
-                                    </transition-stub>
-                                    <!---->
-                                  </div>
-                                </div>
-                                <!---->
-                                <!---->
-                                <div data-v-24c3dbf4="" class="v-card-title ml-10 training-card__title"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                                      <path d="M11 21H9V3H11V21M15 3H13V21H15V3Z"></path>
-                                    </svg></i><span data-v-24c3dbf4="" class="text-truncate">Running</span></div>
-                                <div data-v-24c3dbf4="" class="v-card-text ml-10">
-                                  <div data-v-24c3dbf4="" class="training-card__icons d-flex align-center px-2"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight v-icon--size-x-large training-card__activity-icon" aria-hidden="true" title="Running" aria-label="Running"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                                        <path d="M13.5,5.5C14.59,5.5 15.5,4.58 15.5,3.5C15.5,2.38 14.59,1.5 13.5,1.5C12.39,1.5 11.5,2.38 11.5,3.5C11.5,4.58 12.39,5.5 13.5,5.5M9.89,19.38L10.89,15L13,17V23H15V15.5L12.89,13.5L13.5,10.5C14.79,12 16.79,13 19,13V11C17.09,11 15.5,10 14.69,8.58L13.69,7C13.29,6.38 12.69,6 12,6C11.69,6 11.5,6.08 11.19,6.08L6,8.28V13H8V9.58L9.79,8.88L8.19,17L3.29,16L2.89,18L9.89,19.38Z"></path>
-                                      </svg></i></div>
-                                  <div data-v-24c3dbf4="" class="training-card__duration text-subtitle-2"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Duration"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                                        <path d="M22,5.5A3.5,3.5 0 0,0 18.5,2A3.5,3.5 0 0,0 15,5.5V6A3,3 0 0,1 12,9C10,9 9,6 6,6A4,4 0 0,0 2,10V11H4V10A2,2 0 0,1 6,8C6.86,8 7.42,8.45 8.32,9.24C9.28,10.27 10.6,10.9 12,11A5,5 0 0,0 17,6V5.5A1.5,1.5 0 0,1 18.5,4A1.5,1.5 0 0,1 20,5.5C19.86,6.35 19.58,7.18 19.17,7.94C18.5,9.2 18.11,10.58 18,12C18.09,13.37 18.5,14.71 19.21,15.89C19.6,16.54 19.87,17.25 20,18A2,2 0 0,1 18,20A2,2 0 0,1 16,18A3.75,3.75 0 0,0 12.25,14.25A3.75,3.75 0 0,0 8.5,18V18.5A1.5,1.5 0 0,1 7,20A3,3 0 0,1 4,17V15H6V13H0V15H2V17A5,5 0 0,0 7,22A3.5,3.5 0 0,0 10.5,18.5V18A1.75,1.75 0 0,1 12.25,16.25A1.75,1.75 0 0,1 14,18A4,4 0 0,0 18,22A4,4 0 0,0 22,18C22,16 20,14 20,12C20,10 22,7.5 22,5.5Z"></path>
-                                      </svg></i> 30 km</div>
-                                  <div data-v-24c3dbf4="" class="training-card__intensity text-subtitle-2"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                                        <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path>
-                                      </svg></i><span data-v-24c3dbf4="">Demanding</span></div>
-                                  <div data-v-24c3dbf4="" class="training-card__location text-subtitle-2"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                                        <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
-                                      </svg></i><span data-v-24c3dbf4="" class="text-truncate">-</span></div>
-                                  <div data-v-cb700901="" data-v-24c3dbf4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--disabled v-radio-group training-card__rating--hidden training-card__rating">
-                                    <!---->
-                                    <div class="v-input__control">
-                                      <!---->
-                                      <div class="v-selection-control-group v-selection-control-group--inline" role="radiogroup" aria-describedby="radio-group-14-messages" aria-label="Training Rating">
-                                        <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
-                                          <div class="v-selection-control__wrapper">
-                                            <!---->
-                                            <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                                                  <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
-                                                </svg></i><input disabled="" id="input-17" aria-disabled="true" aria-label="1/5" type="radio" name="radio-group-14" elevation="0" value="1"></div>
-                                          </div>
-                                          <!---->
-                                        </div>
-                                        <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
-                                          <div class="v-selection-control__wrapper">
-                                            <!---->
-                                            <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                                                  <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
-                                                </svg></i><input disabled="" id="input-18" aria-disabled="true" aria-label="2/5" type="radio" name="radio-group-14" elevation="0" value="2"></div>
-                                          </div>
-                                          <!---->
-                                        </div>
-                                        <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
-                                          <div class="v-selection-control__wrapper">
-                                            <!---->
-                                            <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                                                  <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
-                                                </svg></i><input disabled="" id="input-19" aria-disabled="true" aria-label="3/5" type="radio" name="radio-group-14" elevation="0" value="3"></div>
-                                          </div>
-                                          <!---->
-                                        </div>
-                                        <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
-                                          <div class="v-selection-control__wrapper">
-                                            <!---->
-                                            <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                                                  <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
-                                                </svg></i><input disabled="" id="input-20" aria-disabled="true" aria-label="4/5" type="radio" name="radio-group-14" elevation="0" value="4"></div>
-                                          </div>
-                                          <!---->
-                                        </div>
-                                        <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
-                                          <div class="v-selection-control__wrapper">
-                                            <!---->
-                                            <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                                                  <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
-                                                </svg></i><input disabled="" id="input-21" aria-disabled="true" aria-label="5/5" type="radio" name="radio-group-14" elevation="0" value="5"></div>
-                                          </div>
-                                          <!---->
-                                        </div>
-                                      </div>
+                          <li data-v-24c3dbf4="" data-v-295747d4="" class="training-card__container" style="background: url(/getfit/running.jpg);" data-draggable="true">
+                            <div data-v-24c3dbf4="" class="v-card v-theme--customLight v-card--density-default v-card--variant-elevated training-card" style="background-color: rgba(255, 179, 102, 0.8); min-width: 350px; color: rgb(33, 33, 33);">
+                              <!---->
+                              <div class="v-card__loader">
+                                <div class="v-progress-linear v-theme--customLight v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                                  <!---->
+                                  <div class="v-progress-linear__background"></div>
+                                  <div class="v-progress-linear__buffer" style="width: 0%;"></div>
+                                  <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                                    <div class="v-progress-linear__indeterminate">
+                                      <div class="v-progress-linear__indeterminate long"></div>
+                                      <div class="v-progress-linear__indeterminate short"></div>
                                     </div>
-                                    <!---->
-                                    <!---->
-                                  </div>
-                                </div>
-                                <div data-v-24c3dbf4="" class="v-card-actions justify-end">
-                                  <!--v-if--><button type="button" class="v-btn v-btn--slim v-theme--customLight bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__action-button" aria-label="Actions for training " aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-22"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Actions</span>
-                                    <!---->
-                                    <!---->
-                                  </button>
+                                  </transition-stub>
                                   <!---->
                                 </div>
-                                <transition-stub data-v-dc9f9ee2="" data-v-24c3dbf4="" name="expand-transition" appear="false" persisted="false" css="true">
-                                  <!--v-if-->
-                                </transition-stub>
-                                <!---->
-                                <!----><span class="v-card__underlay"></span>
                               </div>
+                              <!---->
+                              <!---->
+                              <div data-v-24c3dbf4="" class="v-card-title ml-10 training-card__title"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                    <path d="M11 21H9V3H11V21M15 3H13V21H15V3Z"></path>
+                                  </svg></i><span data-v-24c3dbf4="" class="text-truncate">Running</span></div>
+                              <div data-v-24c3dbf4="" class="v-card-text ml-10">
+                                <div data-v-24c3dbf4="" class="training-card__icons d-flex align-center px-2"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight v-icon--size-x-large training-card__activity-icon" aria-hidden="true" title="Running" aria-label="Running"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                      <path d="M13.5,5.5C14.59,5.5 15.5,4.58 15.5,3.5C15.5,2.38 14.59,1.5 13.5,1.5C12.39,1.5 11.5,2.38 11.5,3.5C11.5,4.58 12.39,5.5 13.5,5.5M9.89,19.38L10.89,15L13,17V23H15V15.5L12.89,13.5L13.5,10.5C14.79,12 16.79,13 19,13V11C17.09,11 15.5,10 14.69,8.58L13.69,7C13.29,6.38 12.69,6 12,6C11.69,6 11.5,6.08 11.19,6.08L6,8.28V13H8V9.58L9.79,8.88L8.19,17L3.29,16L2.89,18L9.89,19.38Z"></path>
+                                    </svg></i></div>
+                                <div data-v-24c3dbf4="" class="training-card__duration text-subtitle-2"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Duration"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                      <path d="M22,5.5A3.5,3.5 0 0,0 18.5,2A3.5,3.5 0 0,0 15,5.5V6A3,3 0 0,1 12,9C10,9 9,6 6,6A4,4 0 0,0 2,10V11H4V10A2,2 0 0,1 6,8C6.86,8 7.42,8.45 8.32,9.24C9.28,10.27 10.6,10.9 12,11A5,5 0 0,0 17,6V5.5A1.5,1.5 0 0,1 18.5,4A1.5,1.5 0 0,1 20,5.5C19.86,6.35 19.58,7.18 19.17,7.94C18.5,9.2 18.11,10.58 18,12C18.09,13.37 18.5,14.71 19.21,15.89C19.6,16.54 19.87,17.25 20,18A2,2 0 0,1 18,20A2,2 0 0,1 16,18A3.75,3.75 0 0,0 12.25,14.25A3.75,3.75 0 0,0 8.5,18V18.5A1.5,1.5 0 0,1 7,20A3,3 0 0,1 4,17V15H6V13H0V15H2V17A5,5 0 0,0 7,22A3.5,3.5 0 0,0 10.5,18.5V18A1.75,1.75 0 0,1 12.25,16.25A1.75,1.75 0 0,1 14,18A4,4 0 0,0 18,22A4,4 0 0,0 22,18C22,16 20,14 20,12C20,10 22,7.5 22,5.5Z"></path>
+                                    </svg></i> 30 km</div>
+                                <div data-v-24c3dbf4="" class="training-card__intensity text-subtitle-2"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Intensity"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                      <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path>
+                                    </svg></i><span data-v-24c3dbf4="">Demanding</span></div>
+                                <div data-v-24c3dbf4="" class="training-card__location text-subtitle-2"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                      <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
+                                    </svg></i><span data-v-24c3dbf4="" class="text-truncate">-</span></div>
+                                <div data-v-cb700901="" data-v-24c3dbf4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--disabled v-radio-group training-card__rating--hidden training-card__rating">
+                                  <!---->
+                                  <div class="v-input__control">
+                                    <!---->
+                                    <div class="v-selection-control-group v-selection-control-group--inline" role="radiogroup" aria-describedby="radio-group-14-messages" aria-label="Training Rating">
+                                      <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+                                        <div class="v-selection-control__wrapper">
+                                          <!---->
+                                          <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+                                              </svg></i><input disabled="" id="input-17" aria-disabled="true" aria-label="1/5" type="radio" name="radio-group-14" elevation="0" value="1"></div>
+                                        </div>
+                                        <!---->
+                                      </div>
+                                      <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+                                        <div class="v-selection-control__wrapper">
+                                          <!---->
+                                          <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+                                              </svg></i><input disabled="" id="input-18" aria-disabled="true" aria-label="2/5" type="radio" name="radio-group-14" elevation="0" value="2"></div>
+                                        </div>
+                                        <!---->
+                                      </div>
+                                      <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+                                        <div class="v-selection-control__wrapper">
+                                          <!---->
+                                          <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+                                              </svg></i><input disabled="" id="input-19" aria-disabled="true" aria-label="3/5" type="radio" name="radio-group-14" elevation="0" value="3"></div>
+                                        </div>
+                                        <!---->
+                                      </div>
+                                      <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+                                        <div class="v-selection-control__wrapper">
+                                          <!---->
+                                          <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+                                              </svg></i><input disabled="" id="input-20" aria-disabled="true" aria-label="4/5" type="radio" name="radio-group-14" elevation="0" value="4"></div>
+                                        </div>
+                                        <!---->
+                                      </div>
+                                      <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+                                        <div class="v-selection-control__wrapper">
+                                          <!---->
+                                          <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                                <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+                                              </svg></i><input disabled="" id="input-21" aria-disabled="true" aria-label="5/5" type="radio" name="radio-group-14" elevation="0" value="5"></div>
+                                        </div>
+                                        <!---->
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!---->
+                                  <!---->
+                                </div>
+                              </div>
+                              <div data-v-24c3dbf4="" class="v-card-actions justify-end">
+                                <!--v-if--><button type="button" class="v-btn v-btn--slim v-theme--customLight bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card__action-button" aria-label="Actions for training " aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-22"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Actions</span>
+                                  <!---->
+                                  <!---->
+                                </button>
+                                <!---->
+                              </div>
+                              <transition-stub data-v-dc9f9ee2="" data-v-24c3dbf4="" name="expand-transition" appear="false" persisted="false" css="true">
+                                <!--v-if-->
+                              </transition-stub>
+                              <!---->
+                              <!----><span class="v-card__underlay"></span>
                             </div>
                           </li>
                         </ul>

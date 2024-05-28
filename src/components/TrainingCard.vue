@@ -15,9 +15,11 @@ const props = withDefaults(
   defineProps<{
     training: Training;
     simple?: boolean;
+    tag?: keyof HTMLElementTagNameMap;
   }>(),
   {
     simple: false,
+    tag: 'div',
   },
 );
 
@@ -31,14 +33,14 @@ const isDescriptionOpen = computed(() => visibleInstructions.value.includes(prop
 const {isSmallScreen} = useScreen();
 </script>
 <template>
-  <div
+  <component :is="tag"
     class="training-card__container"
-    :class="{'training-card__container--plain': !settings.decoratedCards}"
+    :class="{'training-card__container--plain': !settings.decoratedCards, 'training-card__container--small': isSmallScreen}"
     :style="settings.decoratedCards ? `background: url('/getfit/${training.activity}.jpg')` : ''"
   >
     <v-card
       class="training-card"
-      :width="isSmallScreen ? '280px' : '350px'"
+      :min-width="isSmallScreen ? 280 : 350"
       :color="getIntensityColor(training.intensity, settings.decoratedCards ? 0.8 : 1)"
       :style="{
         color: training.completed ? COLORS.lightGrey : COLORS.darkGrey,
@@ -88,18 +90,21 @@ const {isSmallScreen} = useScreen();
       <TrainingCardActions :training="training" :disabled="isDescriptionOpen" :simple="simple" />
       <TrainingCardInstructions :training="training" :show="isDescriptionOpen" />
     </v-card>
-  </div>
+  </component>
 </template>
 <style lang="scss" scoped>
 .training-card__container {
   background-size: cover !important;
   border-radius: 4px;
-  width: fit-content;
-  height: fit-content;
+  max-width: 350px;
+  &.training-card__container--small {
+    flex: 1;
+  }
 }
 
 .training-card {
   backdrop-filter: grayscale(1);
+  //max-width: 350px;
 }
 
 .training-card__title {

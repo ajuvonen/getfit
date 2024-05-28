@@ -101,7 +101,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
           >
         </v-tab>
       </v-tabs>
-      <v-window v-model="activeDay" :disabled="true">
+      <v-window :model-value="activeDay" :disabled="true">
         <v-window-item
           v-for="({trainings}, dayIndex) in tabContent"
           :key="dayIndex"
@@ -119,9 +119,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
             "
           >
             <template #item="{element}">
-              <li>
-                <training-card :training="element" />
-              </li>
+              <training-card :training="element" tag="li" />
             </template>
           </draggable-list>
         </v-window-item>
@@ -129,7 +127,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
       <week-calendar-actions
         :weekId="week.id"
         :weekIndex="weekIndex"
-        :dayIndex="activeDay || 0"
+        :dayIndex="activeDay"
       ></week-calendar-actions>
     </v-expansion-panel-text>
   </v-expansion-panel>
