@@ -104,7 +104,6 @@ const {isSmallScreen} = useScreen();
 
 .training-card {
   backdrop-filter: grayscale(1);
-  //max-width: 350px;
 }
 
 .training-card__title {
