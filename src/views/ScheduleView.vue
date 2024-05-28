@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {watch} from 'vue';
 import {storeToRefs} from 'pinia';
 import DraggableList from 'vuedraggable';
 import {useScheduleStore} from '@/stores/schedule';
@@ -16,6 +17,15 @@ const {openWeek} = storeToRefs(useAppStateStore());
 
 const reset = useReset();
 
+watch(
+  () => weeks.value.length,
+  (newValue, oldValue) => {
+    if (newValue > oldValue) {
+      openWeek.value = newValue - 1 || 0;
+    }
+  },
+);
+
 const addAndOpenWeek = () => {
   addWeek();
   openWeek.value = weeks.value.length - 1;
@@ -23,7 +33,7 @@ const addAndOpenWeek = () => {
 </script>
 
 <template>
-  <BaseView :title="$t('schedule.title')"  :guide="$t('schedule.guide')">
+  <BaseView :title="$t('schedule.title')" :guide="$t('schedule.guide')">
     <template #content>
       <v-expansion-panels v-model="openWeek" variant="accordion" color="transparent">
         <draggable-list
