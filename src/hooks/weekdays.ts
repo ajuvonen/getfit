@@ -4,6 +4,7 @@ import {useScheduleStore} from '@/stores/schedule';
 import {useI18n} from 'vue-i18n';
 import {DateTime} from 'luxon';
 import {DATE_FORMATS, SHORT_DATE_FORMATS, WEEKDAYS} from '@/constants';
+import type {Locale} from '@/types';
 
 export default function useWeekDays() {
   const scheduleStore = useScheduleStore();
@@ -30,12 +31,14 @@ export default function useWeekDays() {
   });
 
   const getDateInterval = computed(() => (weekIndex: number) => {
-    const formattedStart = getWeekStart.value(weekIndex).toFormat(DATE_FORMATS[locale.value]);
+    const formattedStart = getWeekStart
+      .value(weekIndex)
+      .toFormat(DATE_FORMATS[locale.value as Locale]);
     const formattedEnd = getWeekStart
       .value(weekIndex)
       .plus({days: 6})
       .endOf('day')
-      .toFormat(DATE_FORMATS[locale.value]);
+      .toFormat(DATE_FORMATS[locale.value as Locale]);
     return `${formattedStart} - ${formattedEnd}`;
   });
 
@@ -51,7 +54,7 @@ export default function useWeekDays() {
       getWeekStart
         .value(weekIndex)
         .plus({days: dayIndex})
-        .toFormat(SHORT_DATE_FORMATS[locale.value]),
+        .toFormat(SHORT_DATE_FORMATS[locale.value as Locale]),
   );
 
   return {weekdays, shortWeekdays, getDateInterval, getDisplayWeekNumber, getShortDate};
