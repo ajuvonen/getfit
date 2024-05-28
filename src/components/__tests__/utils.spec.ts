@@ -1,5 +1,4 @@
 import {describe, it, expect} from 'vitest';
-import {clone} from 'remeda';
 import type {ErrorObject} from '@vuelidate/core';
 import {
   getIcon,
@@ -66,7 +65,7 @@ describe('Utils', () => {
       startsOnSunday: false,
       startDate: null,
       actualWeekNumbering: false,
-      availableActivities: clone(ACTIVITIES),
+      availableActivities: ACTIVITIES,
       defaultStartTime: {
         hours: 12,
         minutes: 0,

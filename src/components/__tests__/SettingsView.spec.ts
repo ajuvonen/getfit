@@ -25,12 +25,12 @@ describe('SettingsView', () => {
 
   it('toggles all activities', async () => {
     const wrapper = mount(SettingsView);
-    expect(scheduleStore.settings.availableActivities).toEqual([...ACTIVITIES]);
+    expect(scheduleStore.settings.availableActivities).toEqual(ACTIVITIES);
     await wrapper.findByTestId('settings-toggle-all-activities').find('input').setValue(false);
     expect(scheduleStore.settings.availableActivities).toEqual([]);
     await wrapper.findByTestId('settings-toggle-all-activities').find('input').setValue(true);
     expect(scheduleStore.settings.availableActivities).toEqual(
-      expect.arrayContaining([...ACTIVITIES]),
+      expect.arrayContaining(ACTIVITIES),
     );
   });
 });
