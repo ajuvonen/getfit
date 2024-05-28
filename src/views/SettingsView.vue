@@ -9,6 +9,7 @@ import {useScheduleStore} from '@/stores/schedule';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import useValidatedRef from '@/hooks/validatedRef';
 import {DATE_FORMATS} from '@/constants';
+import type {Locale} from '@/types';
 import {decimalRegex, getIcon} from '@/utils';
 import BaseView from '@/components/BaseView.vue';
 
@@ -86,7 +87,7 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
         :min-date="DateTime.now().minus({years: 1}).toJSDate()"
         :locale="$i18n.locale"
         :clearable="false"
-        :format="DATE_FORMATS[$i18n.locale]"
+        :format="DATE_FORMATS[$i18n.locale as Locale]"
         :teleport="true"
       >
         <template #dp-input="{value, onClear, openMenu}">

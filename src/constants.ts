@@ -1,4 +1,4 @@
-import type {LocalizationKey} from '@/types';
+import type {Locale} from '@/types';
 
 export const ACTIVITIES = [
   'badminton',
@@ -22,12 +22,12 @@ export const ACTIVITIES = [
   'walking',
 ];
 
-export const DATE_FORMATS: {[key in LocalizationKey]: string} = {
+export const DATE_FORMATS: {[key in Locale]: string} = {
   en: 'MM/dd/y',
   fi: 'd.M.y',
 };
 
-export const SHORT_DATE_FORMATS: {[key in LocalizationKey]: string} = {
+export const SHORT_DATE_FORMATS: {[key in Locale]: string} = {
   en: 'MM/dd',
   fi: 'd.M',
 };
