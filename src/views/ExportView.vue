@@ -54,7 +54,7 @@ const print = () => {
 <template>
   <BaseView :title="$t('export.title')" :guide="$t('export.guide')">
     <template #content>
-      <div class="export__button-container d-print-none d-flex flex-wrap justify-center mt-2 mb-4">
+      <div class="export__button-container d-print-none d-flex flex-wrap justify-center mb-4">
         <v-btn
           v-if="settings.startDate"
           prepend-icon="$calendar"

@@ -6,9 +6,7 @@ defineProps<{
   guide: string;
 }>();
 
-const {isLargeScreen} = useScreen();
-
-const {isDark} = useScreen();
+const {isLargeScreen, isDark} = useScreen();
 </script>
 <template>
   <v-card
@@ -18,11 +16,11 @@ const {isDark} = useScreen();
     <v-card-title class="d-print-none">
       <h1 class="text-h4">{{ title }}</h1>
     </v-card-title>
+    <v-card-subtitle class="d-flex align-center d-print-none">
+      <v-icon icon="$informationBoxOutline" />
+      {{ guide }}
+    </v-card-subtitle>
     <v-card-text>
-      <p class="d-flex align-center d-print-none mb-4">
-        <v-icon icon="$informationBoxOutline" />
-        <span class="ml-4">{{ guide }}</span>
-      </p>
       <slot name="content" />
     </v-card-text>
     <v-card-actions v-if="$slots.actions">
@@ -33,6 +31,11 @@ const {isDark} = useScreen();
 <style lang="scss" scoped>
 .v-card {
   backdrop-filter: blur(5px);
+}
+
+.v-card-subtitle {
+  text-wrap: auto;
+  gap: 1rem;
 }
 
 @media print {
