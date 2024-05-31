@@ -239,7 +239,7 @@ describe('scheduleStore', () => {
     expect(week2.trainings[0].dayIndex).toBe(2);
   });
 
-  it('reorders trainings within a week', () => {
+  it('reorders trainings within a week',  () => {
     const weekId = uuid();
 
     const training1 = getEmptyTraining({
@@ -255,7 +255,7 @@ describe('scheduleStore', () => {
       trainings: [training1, training2],
     });
 
-    scheduleStore.reorderTrainings(weekId, [training2, training1]);
+    scheduleStore.reorderTrainings(weekId, 1, 0);
 
     const [reordered] = scheduleStore.getTargetWeekAndTraining(weekId);
     expect(reordered.trainings[0].id).toBe(training2.id);

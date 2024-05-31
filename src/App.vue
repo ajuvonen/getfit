@@ -107,6 +107,10 @@ watch(locale, (value) => {
   scrollbar-color: #fafafa transparent;
 }
 
+:global(ul) {
+  list-style-type: none;
+}
+
 :global(.has-scroll) {
   scrollbar-width: thin;
 }

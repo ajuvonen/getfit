@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import {watch} from 'vue';
 import {storeToRefs} from 'pinia';
-import DraggableList from 'vuedraggable';
+import {UseSortable} from '@vueuse/integrations/useSortable/component';
+import {last} from 'remeda';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
 import useReset from '@/hooks/reset';
@@ -19,8 +20,8 @@ const reset = useReset();
 
 watch(
   () => weeks.value.length,
-  (value) => {
-    openWeek.value = value - 1 || 0;
+  () => {
+    openWeek.value = last(weeks.value)?.id;
   },
 );
 </script>
@@ -29,18 +30,21 @@ watch(
   <BaseView :title="$t('schedule.title')" :guide="$t('schedule.guide')">
     <template #content>
       <v-expansion-panels v-model="openWeek" variant="accordion" color="transparent">
-        <draggable-list
+        <UseSortable
           v-if="weeks.length"
           v-model="weeks"
-          item-key="id"
-          handle=".week-calendar__drag-handle"
+          :options="{handle: '.week-calendar__drag-handle'}"
+          tag="ul"
           class="schedule__draggable-list"
-          data-test-id="schedule"
         >
-          <template #item="{element, index}">
-            <week-calendar :week="element" :weekIndex="index" :data-test-id="`week-${index}`" />
-          </template>
-        </draggable-list>
+          <week-calendar
+            v-for="(week, index) in weeks"
+            :key="week.id"
+            :week="week"
+            :weekIndex="index"
+            :data-test-id="`week-${index}`"
+          />
+        </UseSortable>
       </v-expansion-panels>
     </template>
     <template #actions>
