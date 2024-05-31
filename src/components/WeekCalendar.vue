@@ -2,10 +2,10 @@
 import {computed, ref} from 'vue';
 import {storeToRefs} from 'pinia';
 import {groupBy, prop} from 'remeda';
-import DraggableList from 'vuedraggable';
+import {UseSortable} from '@vueuse/integrations/useSortable/component';
 import {useI18n} from 'vue-i18n';
 import {useScheduleStore} from '@/stores/schedule';
-import {type Week, Intensity, type Training} from '@/types';
+import {type Week, Intensity} from '@/types';
 import {getIntensityColor} from '@/utils';
 import useScreen from '@/hooks/screen';
 import useWeekDays from '@/hooks/weekdays';
@@ -30,6 +30,12 @@ const {weekdays, shortWeekdays, getDateInterval, getDisplayWeekNumber} = useWeek
 
 const activeDay = ref(0);
 
+const sortableOptions = {
+  handle: '.training-card__title',
+  onUpdate: (e: {oldIndex: number; newIndex: number}) =>
+    reorderTrainings(props.week.id, e.oldIndex, e.newIndex),
+};
+
 const tabContent = computed(() => {
   const days = isSmallScreen.value ? shortWeekdays : weekdays;
   return days.value.map((weekDay, weekdayIndex) => {
@@ -53,7 +59,12 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
   t('weekCalendar.dayChipTitle', [count, t(`intensities.${intensity}`)]);
 </script>
 <template>
-  <v-expansion-panel elevation="0" :rounded="!isLargeScreen ? 0 : 'rounded'">
+  <v-expansion-panel
+    tag="li"
+    elevation="0"
+    :rounded="!isLargeScreen ? 0 : 'rounded'"
+    :value="week.id"
+  >
     <v-expansion-panel-title class="flex-wrap">
       <div class="week-calendar__drag-handle">
         <v-icon icon="$dragVerticalVariant" />
@@ -108,20 +119,19 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
           :value="dayIndex"
           :data-test-id="`week-${weekIndex}-day-${dayIndex}`"
         >
-          <draggable-list
-            :model-value="trainings"
+          <UseSortable
             tag="ul"
-            item-key="id"
-            handle=".training-card__title"
+            :model-value="trainings"
             class="d-flex flex-wrap mt-4 mb-1 justify-center"
-            @update:model-value="
-              (reorderedTrainings: Training[]) => reorderTrainings(week.id, reorderedTrainings)
-            "
+            :options="sortableOptions"
           >
-            <template #item="{element}">
-              <training-card :training="element" tag="li" />
-            </template>
-          </draggable-list>
+            <training-card
+              v-for="training in trainings"
+              :key="training.id"
+              :training="training"
+              tag="li"
+            />
+          </UseSortable>
         </v-window-item>
       </v-window>
       <week-calendar-actions
@@ -134,7 +144,6 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
 </template>
 <style lang="scss" scoped>
 ul {
-  list-style-type: none;
   gap: 1rem;
 }
 

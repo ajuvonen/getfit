@@ -18,7 +18,7 @@ export const useAppStateStore = defineStore('appState', () => {
 
   const trainingData = ref({} as Training);
 
-  const openWeek = ref(0);
+  const openWeek = ref<string | undefined>(undefined);
 
   const visibleInstructions = ref<string[]>([]);
 
@@ -71,7 +71,7 @@ export const useAppStateStore = defineStore('appState', () => {
     confirmDialogOpen.value = false;
     confirmText.value = '';
     confirmAction.value = () => {};
-    openWeek.value = 0;
+    openWeek.value = undefined;
   };
 
   return {

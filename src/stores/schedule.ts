@@ -3,6 +3,7 @@ import {defineStore} from 'pinia';
 import {useStorage} from '@vueuse/core';
 import {v4 as uuid} from 'uuid';
 import {DateTime} from 'luxon';
+import {arrayMoveImmutable} from 'array-move';
 import type {Rating, ScheduleSettings, Training, Week} from '@/types';
 import {getEmptySettings} from '@/utils';
 
@@ -102,9 +103,9 @@ export const useScheduleStore = defineStore('schedule', () => {
     targetWeek.trainings.push(targetTraining);
   };
 
-  const reorderTrainings = (weekId: string, trainings: Training[]) => {
+  const reorderTrainings = (weekId: string, oldIndex: number, newIndex: number) => {
     const [targetWeek] = getTargetWeekAndTraining.value(weekId);
-    targetWeek.trainings = trainings;
+    targetWeek.trainings = arrayMoveImmutable(targetWeek.trainings, oldIndex, newIndex);
   };
 
   const copyTraining = (training: Training, weekId: string, dayIndex: number) => {

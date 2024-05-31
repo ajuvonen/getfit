@@ -85,10 +85,6 @@ const agendaAvailable = computed(() => weeks.value.length && settings.value.star
 }
 
 .home__info-dialog {
-  ul {
-    list-style-type: none;
-  }
-
   li {
     display: inline;
     + li {

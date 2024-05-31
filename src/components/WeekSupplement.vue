@@ -38,10 +38,6 @@ const {weekdays} = useWeekDays();
   </template>
 </template>
 <style lang="scss" scoped>
-ul {
-  list-style-type: none;
-}
-
 .v-icon {
   vertical-align: bottom;
 }
