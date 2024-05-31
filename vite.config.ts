@@ -36,6 +36,18 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vueuse: ['@vueuse/core', '@vueuse/integrations', 'sortablejs'],
+          ExportView: ['@/views/ExportView.vue', 'ics'],
+          StatsView: ['@/views/StatsView.vue', 'vue-chartjs', 'chart.js'],
+          SettingsView: ['@/views/SettingsView.vue', '@vuepic/vue-datepicker'],
+        },
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
