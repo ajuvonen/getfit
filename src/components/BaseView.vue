@@ -34,7 +34,7 @@ const {isLargeScreen, isDark} = useScreen();
 }
 
 .v-card-subtitle {
-  text-wrap: auto;
+  text-wrap: wrap;
   gap: 1rem;
 }
 
