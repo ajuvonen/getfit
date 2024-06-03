@@ -2,13 +2,14 @@
 import {computed} from 'vue';
 import {storeToRefs} from 'pinia';
 import {useI18n} from 'vue-i18n';
-import {useVuelidate} from '@vuelidate/core';
-import {required, between, maxLength, helpers} from '@vuelidate/validators';
+import {useAsyncValidator} from '@vueuse/integrations/useAsyncValidator';
 import type {VForm} from 'vuetify/components';
+import type {Rules} from 'async-validator';
 import {Intensity} from '@/types';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
-import {getIntensityColor, getIcon, getValidationErrors, decimalRegex} from '@/utils';
+import {getIntensityColor, getIcon, getValidationErrors} from '@/utils';
+import {DECIMAL_REGEX} from '@/constants';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import BaseDialog from '@/components/BaseDialog.vue';
 
@@ -36,29 +37,40 @@ const unitsOfDuration = computed(() => [
 const {localizedAvailableActivities} = useLocalizedActivities();
 
 const handleSave = async () => {
-  if (await v$.value.$validate()) {
+  if (pass.value) {
     addOrEditTraining(trainingData.value);
     resetAndClose();
   }
 };
 
-const rules = computed(() => ({
-  title: {maxLength: maxLength(30)},
-  location: {maxLength: maxLength(40)},
-  instructions: {maxLength: maxLength(2000)},
-  duration: {
-    required,
-    between: trainingData.value.unitOfDuration === 'h' ? between(0, 10) : between(0, 500),
-    precision: helpers.withMessage(t('errors.invalidPrecision'), decimalRegex),
-  },
-  unitOfDuration: {required},
-  activity: {required},
-}));
+const rules = computed(() => {
+  const maxDuration = trainingData.value.unitOfDuration === 'h' ? 10 : 500;
+  return {
+    title: {max: 30},
+    location: {max: 40},
+    instructions: {max: 2000},
+    duration: [
+      {required: true, message: t('errors.required')},
+      {
+        type: 'number',
+        min: 0,
+        max: maxDuration,
+        message: t('errors.outsideBounds', [0, maxDuration]),
+      },
+      {pattern: DECIMAL_REGEX, message: t('errors.invalidPrecision')},
+    ],
+    unitOfDuration: {required: true, message: t('errors.required')},
+    activity: {required: true, message: t('errors.required')},
+  } as Rules;
+});
 
-const v$ = useVuelidate(rules, trainingData);
+const {pass, errorFields} = useAsyncValidator(trainingData, rules, {
+  validateOption: {
+    suppressWarning: true,
+  },
+});
 
 const resetAndClose = () => {
-  v$.value.$reset();
   trainingDialogOpen.value = false;
 };
 </script>
@@ -69,8 +81,8 @@ const resetAndClose = () => {
         <v-label for="edit-training-activity">{{ $t('editTraining.activity') }}</v-label>
         <v-select
           id="edit-training-activity"
-          v-model="v$.activity.$model"
-          :error-messages="getValidationErrors(v$.activity.$errors)"
+          v-model="trainingData.activity"
+          :error-messages="getValidationErrors(errorFields, 'activity')"
           :items="localizedAvailableActivities"
           eager
           data-test-id="edit-training-activity"
@@ -91,25 +103,25 @@ const resetAndClose = () => {
           </template>
         </v-select>
         <v-text-field
-          v-model="v$.title.$model"
+          v-model="trainingData.title"
           :label="t('editTraining.trainingTitle')"
-          :error-messages="getValidationErrors(v$.title.$errors)"
+          :error-messages="getValidationErrors(errorFields, 'title')"
           maxlength="30"
           counter
           data-test-id="edit-training-title"
         />
         <v-text-field
-          v-model="v$.location.$model"
+          v-model="trainingData.location"
           :label="t('editTraining.location')"
-          :error-messages="getValidationErrors(v$.location.$errors)"
+          :error-messages="getValidationErrors(errorFields, 'location')"
           maxlength="40"
           counter
           data-test-id="edit-training-location"
         />
         <div class="d-flex edit-training__duration-container">
           <v-text-field
-            v-model.number="v$.duration.$model"
-            :error-messages="getValidationErrors(v$.duration.$errors)"
+            v-model.number="trainingData.duration"
+            :error-messages="getValidationErrors(errorFields, 'duration')"
             :label="t('editTraining.duration')"
             class="edit-training-duration"
             type="number"
@@ -117,17 +129,17 @@ const resetAndClose = () => {
           />
           <v-select
             id="edit-training-unit-of-duration"
-            v-model="v$.unitOfDuration.$model"
-            :error-messages="getValidationErrors(v$.unitOfDuration.$errors)"
+            v-model="trainingData.unitOfDuration"
+            :error-messages="getValidationErrors(errorFields, 'unitOfDuration')"
             :items="unitsOfDuration"
             eager
             data-test-id="edit-training-unit-of-duration"
           ></v-select>
         </div>
         <v-textarea
-          v-model="v$.instructions.$model"
+          v-model="trainingData.instructions"
           :label="t('editTraining.instructions')"
-          :error-messages="getValidationErrors(v$.instructions.$errors)"
+          :error-messages="getValidationErrors(errorFields, 'instructions')"
           clearable
           maxlength="2000"
           no-resize
@@ -169,6 +181,10 @@ const resetAndClose = () => {
 </template>
 
 <style lang="scss" scoped>
+:deep(.v-input__details) {
+  padding-left: 0;
+}
+
 :deep(.edit-training-duration .v-input__control) {
   max-width: 200px;
   input[type='number'] {

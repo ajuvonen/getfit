@@ -65,3 +65,5 @@ export const PHOTO_CREDITS = [
   {name: 'RDNE Stock Project', link: 'https://www.pexels.com/@rdne/'},
   {name: 'Victor Freitas', link: 'https://www.pexels.com/@victorfreitas/'},
 ];
+
+export const DECIMAL_REGEX = /^\d+(.(00?|25|50?|75))?$/;

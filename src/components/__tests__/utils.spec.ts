@@ -1,5 +1,5 @@
+import {ref} from 'vue';
 import {describe, it, expect} from 'vitest';
-import type {ErrorObject} from '@vuelidate/core';
 import {
   getIcon,
   getIntensityColor,
@@ -33,8 +33,18 @@ describe('Utils', () => {
   });
 
   it('getValidationErrors gets a list of errors', () => {
-    const errors = [{$message: 'Error 1'}, {$message: 'Error 2'}] as ErrorObject[];
-    expect(getValidationErrors(errors)).toEqual(['Error 1', 'Error 2']);
+    const errors = {field: [{message: 'Error 1'}, {message: 'Error 2'}]};
+    expect(getValidationErrors(errors, 'field')).toEqual(['Error 1', 'Error 2']);
+  });
+
+  it('getValidationErrors works with refs', () => {
+    const errors = ref({field: [{message: 'Error 1'}, {message: 'Error 2'}]});
+    expect(getValidationErrors(errors, 'field')).toEqual(['Error 1', 'Error 2']);
+  });
+
+  it('getValidationErrors returns empty list if there are no errors', () => {
+    const errors = {field: [{message: 'Error 1'}, {message: 'Error 2'}]};
+    expect(getValidationErrors(errors, 'field2')).toEqual([]);
   });
 
   it('getEmptySettings should use passed parameters properly', () => {

@@ -1,40 +1,43 @@
-import {computed, watch, type Ref, type WritableComputedRef, type ComputedRef, ref} from 'vue';
-import {useVuelidate, type ValidationRule} from '@vuelidate/core';
+import {computed, watch, ref, nextTick, unref} from 'vue';
+import {useAsyncValidator} from '@vueuse/integrations/useAsyncValidator';
+import type {Ref, WritableComputedRef, ComputedRef, MaybeRefOrGetter} from 'vue';
+import type {Rules, Rule} from 'async-validator';
 import {getValidationErrors} from '@/utils';
 
 export default function useValidatedRef<T, K extends keyof T>(
   original: Ref<T>,
   key: K,
-  rules: ComputedRef<{
-    [P in K]: {
-      [rule: string]: ValidationRule | undefined;
-    } | undefined;
-  }>,
+  rules: MaybeRefOrGetter<Rule>,
 ): [WritableComputedRef<T[K]>, ComputedRef<string[]>] {
-  const internal = ref(original.value[key]) as Ref<T[K]>;
-  const narrowedRules = computed(() => ({[key]: rules.value[key]}));
-  const $v = useVuelidate(narrowedRules, {[key]: internal});
+  const internal = ref({[key]: original.value[key]}) as Ref<Record<K, T[K]>>;
+  const computedRules = computed(() => ({[key]: unref(rules)}) as Rules);
+  const {pass, errorFields} = useAsyncValidator(internal, computedRules, {
+    validateOption: {
+      suppressWarning: true,
+    },
+  });
+
   watch(
     () => original.value[key],
     (newValue) => {
       if (internal.value !== newValue) {
-        internal.value = newValue;
+        internal.value[key] = newValue;
       }
     },
   );
   return [
     computed({
       get() {
-        return internal.value;
+        return internal.value[key];
       },
-      set(value: T[K]) {
-        internal.value = value;
-        $v.value.$touch();
-        if (!$v.value.$error) {
+      async set(value: T[K]) {
+        internal.value[key] = value;
+        await nextTick();
+        if (pass.value) {
           original.value[key] = value;
         }
       },
     }),
-    computed(() => getValidationErrors($v.value.$errors)),
+    computed(() => getValidationErrors(errorFields, key as string)),
   ];
 }

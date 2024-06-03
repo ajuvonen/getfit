@@ -3,14 +3,13 @@ import {computed} from 'vue';
 import {storeToRefs} from 'pinia';
 import {useI18n} from 'vue-i18n';
 import {DateTime} from 'luxon';
-import {required, between, maxLength, helpers} from '@vuelidate/validators';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import {useScheduleStore} from '@/stores/schedule';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import useValidatedRef from '@/hooks/validatedRef';
-import {DATE_FORMATS} from '@/constants';
+import {DATE_FORMATS, DECIMAL_REGEX} from '@/constants';
 import type {Locale} from '@/types';
-import {decimalRegex, getIcon} from '@/utils';
+import {getIcon} from '@/utils';
 import BaseView from '@/components/BaseView.vue';
 
 const {settings} = storeToRefs(useScheduleStore());
@@ -38,17 +37,26 @@ const getDisabledDays = computed(() =>
   settings.value.startsOnSunday ? [1, 2, 3, 4, 5, 6] : [0, 2, 3, 4, 5, 6],
 );
 
-const rules = computed(() => ({
-  name: {maxLength: maxLength(30)},
-  defaultDuration: {
-    required,
-    between: settings.value.defaultUnitOfDuration === 'h' ? between(0, 10) : between(0, 500),
-    precision: helpers.withMessage(t('errors.invalidPrecision'), decimalRegex),
-  },
-}));
-
-const [name, nameErrors] = useValidatedRef(settings, 'name', rules);
-const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', rules);
+const [name, nameErrors] = useValidatedRef(settings, 'name', {
+  type: 'string',
+  max: 30,
+  message: t('errors.maxLength', [10]),
+});
+const [duration, durationErrors] = useValidatedRef(
+  settings,
+  'defaultDuration',
+  computed(() => {
+    const maxDuration = settings.value.defaultUnitOfDuration === 'h' ? 10 : 500;
+    return [
+      {required: true, message: t('errors.required')},
+      {type: 'number', min: 0, max: maxDuration, message: t('errors.outsideBounds', [0, maxDuration])},
+      {
+        pattern: DECIMAL_REGEX,
+        message: t('errors.invalidPrecision'),
+      },
+    ];
+  }),
+);
 </script>
 <template>
   <BaseView :title="$t('settings.title')" :guide="$t('settings.guide')">
@@ -243,6 +251,10 @@ const [duration, durationErrors] = useValidatedRef(settings, 'defaultDuration', 
 .dp__main,
 .settings-input {
   max-width: 175px;
+}
+
+:deep(.v-input__details) {
+  padding-left: 0;
 }
 
 :deep(.dp__input_wrap) {
