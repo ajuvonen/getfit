@@ -17,12 +17,11 @@
   },
   "dependencies": {
     "@mdi/js": "^7.4.47",
-    "@vuelidate/core": "^2.0.3",
-    "@vuelidate/validators": "^2.0.4",
     "@vuepic/vue-datepicker": "^8.7.0",
     "@vueuse/core": "^10.10.0",
     "@vueuse/integrations": "^10.10.0",
     "array-move": "^4.0.0",
+    "async-validator": "^4.2.5",
     "chart.js": "^4.4.3",
     "ics": "^3.7.2",
     "luxon": "^3.4.4",

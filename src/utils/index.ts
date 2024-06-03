@@ -1,8 +1,8 @@
-import {unref} from 'vue';
-import {helpers} from '@vuelidate/validators';
-import type {ErrorObject} from '@vuelidate/core';
+import {unref, type MaybeRef} from 'vue';
 import {v4 as uuid} from 'uuid';
+import type {ValidateError} from 'async-validator';
 import type {ChartOptions, ChartTypeRegistry} from 'chart.js';
+import {pathOr} from 'remeda';
 import {Intensity, type ScheduleSettings, type Training} from '@/types';
 import {ACTIVITIES, COLORS} from '@/constants';
 
@@ -58,10 +58,13 @@ export const getEmptyTraining = (initialTraining: Partial<Training> = {}): Train
   ...initialTraining,
 });
 
-export const decimalRegex = helpers.regex(/^\d+(.(00?|25|50?|75))?$/);
-
-export const getValidationErrors = (errors: ErrorObject[]) =>
-  errors.map((error) => unref(error.$message));
+export const getValidationErrors = (
+  errors: MaybeRef<Record<string, ValidateError[]> | undefined>,
+  field: string,
+) =>
+  pathOr(unref(errors), [field], [])
+    .map(({message}) => message || '')
+    .filter((message) => message);
 
 export const isDurationTime = (value: string) => ['h', 'm'].includes(value);
 

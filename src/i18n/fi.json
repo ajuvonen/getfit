@@ -32,7 +32,10 @@
     "trainingTitle": "Otsikko"
   },
   "errors": {
-    "invalidPrecision": "Käytä 15 minuutin tarkkuutta"
+    "invalidPrecision": "Käytä 15 minuutin tarkkuutta",
+    "maxLength": "Pituusrajoitus {0} merkkiä",
+    "outsideBounds": "Arvon on oltava väliltä {0} ja {1}",
+    "required": "Pakollinen kenttä"
   },
   "general": {
     "cancel": "Peruuta",
