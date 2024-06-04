@@ -253,10 +253,6 @@ const [duration, durationErrors] = useValidatedRef(
   max-width: 175px;
 }
 
-:deep(.v-input__details) {
-  padding-left: 0;
-}
-
 :deep(.dp__input_wrap) {
   box-sizing: border-box;
 }

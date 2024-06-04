@@ -179,12 +179,7 @@ const resetAndClose = () => {
     </template>
   </BaseDialog>
 </template>
-
 <style lang="scss" scoped>
-:deep(.v-input__details) {
-  padding-left: 0;
-}
-
 :deep(.edit-training-duration .v-input__control) {
   max-width: 200px;
   input[type='number'] {
