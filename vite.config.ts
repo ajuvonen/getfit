@@ -40,6 +40,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
+          vuetify: ['vuetify', '@mdi/js'],
           vueuse: ['@vueuse/core', '@vueuse/integrations', 'sortablejs'],
           ExportView: ['@/views/ExportView.vue', 'ics'],
           StatsView: ['@/views/StatsView.vue', 'vue-chartjs', 'chart.js'],
