@@ -102,19 +102,6 @@ watch(locale, (value) => {
   </v-app>
 </template>
 <style lang="scss" scoped>
-:global(html) {
-  scrollbar-width: none;
-  scrollbar-color: #fafafa transparent;
-}
-
-:global(ul) {
-  list-style-type: none;
-}
-
-:global(.has-scroll) {
-  scrollbar-width: thin;
-}
-
 :deep(.v-main__scroller) {
   scrollbar-width: thin;
 }
