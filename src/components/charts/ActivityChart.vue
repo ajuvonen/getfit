@@ -9,6 +9,7 @@ import {useScheduleStore} from '@/stores/schedule';
 import {getChartOptions} from '@/utils';
 import useScreen from '@/hooks/screen';
 import {COLORS} from '@/constants';
+import type {Training} from '@/types';
 import ChartScreenReaderTable from '@/components/ChartScreenReaderTable.vue';
 
 ChartJS.register(ArcElement, Legend, Tooltip, Title);
@@ -25,7 +26,7 @@ const chartData = computed(() => {
   const trainings = pipe(
     getAllTrainings.value,
     groupBy(prop('activity')),
-    entries,
+    entries<Record<string, Training[]>>,
     map(([key, {length}]) => [t(`activities.${key}`), length] as [string, number]),
     sortBy([prop(1), 'desc'], prop(0)),
     splitAt(6),

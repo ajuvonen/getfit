@@ -8,6 +8,7 @@ import {entries, groupBy, map, pipe, prop} from 'remeda';
 import {useScheduleStore} from '@/stores/schedule';
 import {getChartOptions} from '@/utils';
 import useScreen from '@/hooks/screen';
+import type {Training} from '@/types';
 import ChartScreenReaderTable from '@/components/ChartScreenReaderTable.vue';
 
 ChartJS.register(ArcElement, Legend, Tooltip, Title);
@@ -23,7 +24,7 @@ const chartData = computed(() => {
   const trainings = pipe(
     getAllTrainings.value,
     groupBy(({rating}) => (!rating ? 0 : rating)),
-    entries,
+    entries<Record<string, Training[]>>,
     map(
       ([key, {length}]) =>
         [key === '0' ? t('stats.noRating') : `${key} ★`, length] as [string, number],
