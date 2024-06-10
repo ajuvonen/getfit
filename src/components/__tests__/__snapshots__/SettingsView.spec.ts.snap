@@ -47,16 +47,16 @@ exports[`SettingsView > mounts 1`] = `
           </div>
           <!---->
           <div class="v-field__field" data-no-activator="">
-            <!----><label class="v-label v-field-label" for="settings-program-name">
+            <!----><label class="v-label v-field-label" for="input-0">
               <!---->Program Name
             </label>
-            <!----><input size="1" type="text" id="settings-program-name" aria-describedby="settings-program-name-messages" maxlength="30" class="v-field__input">
+            <!----><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" maxlength="30" class="v-field__input">
             <!---->
           </div>
           <!---->
           <!---->
           <div class="v-field__outline">
-            <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="settings-program-name">
+            <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-0">
               <!---->Program Name
             </label>
           </div>
@@ -64,7 +64,7 @@ exports[`SettingsView > mounts 1`] = `
       </div>
       <!---->
       <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-program-name-messages">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
           <!---->
         </transition-group-stub>
         <!----><span></span>
@@ -208,11 +208,11 @@ exports[`SettingsView > mounts 1`] = `
           </div>
           <!---->
           <div class="v-field__field" data-no-activator="">
-            <!----><label class="v-label v-field-label" for="settings-default-duration">
+            <!----><label class="v-label v-field-label" for="input-9">
               <!---->
               <!---->
             </label>
-            <!----><input size="1" type="text" id="settings-default-duration" aria-describedby="settings-default-duration-messages" aria-label="Default Duration" inputmode="decimal" class="v-field__input">
+            <!----><input size="1" type="text" id="input-9" aria-describedby="input-9-messages" aria-label="Default Duration" inputmode="decimal" class="v-field__input">
             <!---->
           </div>
           <!---->
@@ -225,7 +225,7 @@ exports[`SettingsView > mounts 1`] = `
       </div>
       <!---->
       <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-default-duration-messages">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-9-messages">
           <!---->
         </transition-group-stub>
         <!---->
@@ -715,16 +715,16 @@ exports[`SettingsView > mounts with start date 1`] = `
           </div>
           <!---->
           <div class="v-field__field" data-no-activator="">
-            <!----><label class="v-label v-field-label" for="settings-program-name">
+            <!----><label class="v-label v-field-label" for="input-0">
               <!---->Program Name
             </label>
-            <!----><input size="1" type="text" id="settings-program-name" aria-describedby="settings-program-name-messages" maxlength="30" class="v-field__input">
+            <!----><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" maxlength="30" class="v-field__input">
             <!---->
           </div>
           <!---->
           <!---->
           <div class="v-field__outline">
-            <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="settings-program-name">
+            <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-0">
               <!---->Program Name
             </label>
           </div>
@@ -732,7 +732,7 @@ exports[`SettingsView > mounts with start date 1`] = `
       </div>
       <!---->
       <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-program-name-messages">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
           <!---->
         </transition-group-stub>
         <!----><span></span>
@@ -968,11 +968,11 @@ exports[`SettingsView > mounts with start date 1`] = `
           </div>
           <!---->
           <div class="v-field__field" data-no-activator="">
-            <!----><label class="v-label v-field-label" for="settings-default-duration">
+            <!----><label class="v-label v-field-label" for="input-16">
               <!---->
               <!---->
             </label>
-            <!----><input size="1" type="text" id="settings-default-duration" aria-describedby="settings-default-duration-messages" aria-label="Default Duration" inputmode="decimal" class="v-field__input">
+            <!----><input size="1" type="text" id="input-16" aria-describedby="input-16-messages" aria-label="Default Duration" inputmode="decimal" class="v-field__input">
             <!---->
           </div>
           <!---->
@@ -985,7 +985,7 @@ exports[`SettingsView > mounts with start date 1`] = `
       </div>
       <!---->
       <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-default-duration-messages">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-16-messages">
           <!---->
         </transition-group-stub>
         <!---->

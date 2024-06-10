@@ -39,7 +39,7 @@ const {localizedAvailableActivities} = useLocalizedActivities();
 const handleSave = async () => {
   if (pass.value) {
     addOrEditTraining(trainingData.value);
-    resetAndClose();
+    trainingDialogOpen.value = false;
   }
 };
 
@@ -69,10 +69,6 @@ const {pass, errorFields} = useAsyncValidator(trainingData, rules, {
     suppressWarning: true,
   },
 });
-
-const resetAndClose = () => {
-  trainingDialogOpen.value = false;
-};
 </script>
 <template>
   <BaseDialog :show="trainingDialogOpen" :title="$t('editTraining.title')">
@@ -173,7 +169,7 @@ const resetAndClose = () => {
         prepend-icon="$close"
         data-test-id="edit-training-close-button"
         variant="text"
-        @click="resetAndClose"
+        @click="trainingDialogOpen = false;"
         >{{ $t('editTraining.closeDialog') }}</v-btn
       >
     </template>

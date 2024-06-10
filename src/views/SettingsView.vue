@@ -62,7 +62,6 @@ const [duration, durationErrors] = useValidatedRef(
   <BaseView :title="$t('settings.title')" :guide="$t('settings.guide')">
     <template #content>
       <v-text-field
-        id="settings-program-name"
         class="settings-input--wide"
         v-model="name"
         :label="$t('settings.programName')"
@@ -158,7 +157,6 @@ const [duration, durationErrors] = useValidatedRef(
       <v-text-field
         v-model.number="duration"
         :error-messages="durationErrors"
-        id="settings-default-duration"
         :aria-label="$t('settings.defaultDuration')"
         class="settings-input"
         type="text"
