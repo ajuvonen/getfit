@@ -134,11 +134,11 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
           </UseSortable>
         </v-window-item>
       </v-window>
-      <week-calendar-actions
+      <WeekCalendarActions
         :weekId="week.id"
         :weekIndex="weekIndex"
         :dayIndex="activeDay"
-      ></week-calendar-actions>
+      ></WeekCalendarActions>
     </v-expansion-panel-text>
   </v-expansion-panel>
 </template>
