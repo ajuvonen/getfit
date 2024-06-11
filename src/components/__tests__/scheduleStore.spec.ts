@@ -26,6 +26,21 @@ describe('scheduleStore', () => {
     expect(scheduleStore.weeks.length).toBe(2);
   });
 
+  it('adds a week with specific ID', () => {
+    const weekId = uuid();
+    scheduleStore.addWeek(weekId);
+    expect(scheduleStore.weeks.length).toBe(1);
+    expect(scheduleStore.weeks[0].id).toBe(weekId);
+  });
+
+  it('will not add duplicate IDs', () => {
+    const weekId = uuid();
+    scheduleStore.addWeek(weekId);
+    scheduleStore.addWeek(weekId);
+    expect(scheduleStore.weeks.length).toBe(1);
+    expect(scheduleStore.weeks[0].id).toBe(weekId);
+  });
+
   it('gets target week and training', () => {
     const weekId = uuid();
     const trainingId = uuid();

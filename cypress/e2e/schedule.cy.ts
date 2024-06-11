@@ -17,6 +17,7 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-1-day-1').find('.training-card').should('exist');
     cy.getByTestId('week-0').click();
     cy.getByTestId('week-0-delete-button').click();
+    cy.getByTestId('week-0').click();
     cy.getByTestId('week-0-delete-button').click();
     cy.getByTestId('confirm-dialog-confirm-button').click();
     cy.getByTestId('schedule').should('not.exist');
@@ -25,17 +26,25 @@ describe('Schedule tests', () => {
   it('copies and moves trainings', () => {
     cy.addTraining();
     cy.get('.training-card__action-button').click();
-    cy.get('.training-card__copy-button').click();
-    cy.get('.training-card__copy-button + .v-list-group__items').click();
-    cy.get('.training-card__copy-button + .v-list-group__items .v-list-item').eq(2).click();
-    cy.get('.training-card__move-button').click();
-    cy.get('.training-card__move-button + .v-list-group__items').click();
-    cy.get('.training-card__move-button + .v-list-group__items .v-list-item').eq(3).click();
+    cy.get('.training-card-actions__copy').contains('Copy').click();
+    cy.get('.training-card-actions__copy').contains('Week 1').click();
+    cy.get('.training-card-actions__copy').contains('Tuesday').click();
+    cy.get('.training-card-actions__move').contains('Move').click();
+    cy.get('.training-card-actions__move').contains('Week 1').click();
+    cy.get('.training-card-actions__move').contains('Wednesday').click();
     cy.get('.training-card').should('not.exist');
     cy.getByTestId('week-0-calendar-tab-1').click();
     cy.get('.training-card').should('exist');
     cy.getByTestId('week-0-calendar-tab-2').click();
     cy.get('.training-card').should('exist');
+    cy.get('.training-card__action-button:visible').click();
+    cy.get('.training-card-actions__copy').contains('Copy').click();
+    cy.get('.training-card-actions__copy').contains('New Week').click();
+    cy.get('.training-card-actions__copy .v-list-item:visible').contains('Monday').click();
+    cy.getByTestId('week-1').should('exist');
+    cy.getByTestId('schedule').contains('Week 2').click({force: true});
+    cy.getByTestId('week-1-calendar-tab-0').click();
+    cy.getByTestId('week-1-day-0').find('.training-card').should('exist');
   });
 
   it('resets schedule', () => {
@@ -51,7 +60,7 @@ describe('Schedule tests', () => {
     cy.getByTestId('week-0').should('not.exist');
   });
 
-  it.only('completes and rates trainings', () => {
+  it('completes and rates trainings', () => {
     cy.addTraining();
     cy.get('.training-card__action-button').click();
     cy.get('.training-card__complete-button').click();

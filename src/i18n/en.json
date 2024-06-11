@@ -169,6 +169,7 @@
     "dayChipTitle": "Total trainings: {0}. Maximum intensity: {1}.",
     "deleteWeek": "Delete Week {0}",
     "deleteWeekConfirm": "This action will also delete trainings for this week. Are you sure?",
+    "newWeek": "New Week",
     "noTrainings": "No trainings",
     "weekChipTitle": "{0} trainings: {1}",
     "weekTitle": "Week {0}"

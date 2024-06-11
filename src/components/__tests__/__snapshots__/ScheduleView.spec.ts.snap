@@ -27,7 +27,7 @@ exports[`ScheduleView > mounts 1`] = `
       </svg></i> Add weeks to your schedule from the bottom of the screen. Then, add trainings to desired days in the week view. You can move, copy, and drag trainings or weeks to reorder them.</div>
   <div data-v-ff4a98e6="" class="v-card-text">
     <div data-v-eb553fec="" class="v-expansion-panels v-theme--customLight v-expansion-panels--variant-accordion">
-      <ul data-v-eb553fec="" class="schedule__draggable-list">
+      <ul data-v-eb553fec="" data-test-id="schedule" class="schedule__draggable-list">
         <li data-v-295747d4="" data-v-eb553fec="" class="v-expansion-panel v-expansion-panel--rounded" data-test-id="week-0">
           <div class="v-expansion-panel__shadow elevation-0"></div>
           <!---->
