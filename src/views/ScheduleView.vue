@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import {watch} from 'vue';
 import {storeToRefs} from 'pinia';
 import {UseSortable} from '@vueuse/integrations/useSortable/component';
-import {last} from 'remeda';
 import {useScheduleStore} from '@/stores/schedule';
 import {useAppStateStore} from '@/stores/appState';
 import useReset from '@/hooks/reset';
@@ -17,13 +15,6 @@ const {addWeek} = scheduleStore;
 const {openWeek} = storeToRefs(useAppStateStore());
 
 const reset = useReset();
-
-watch(
-  () => weeks.value.length,
-  () => {
-    openWeek.value = last(weeks.value)?.id;
-  },
-);
 </script>
 
 <template>
@@ -35,6 +26,7 @@ watch(
           v-model="weeks"
           :options="{handle: '.week-calendar__drag-handle'}"
           tag="ul"
+          data-test-id="schedule"
           class="schedule__draggable-list"
         >
           <week-calendar
@@ -48,7 +40,7 @@ watch(
       </v-expansion-panels>
     </template>
     <template #actions>
-      <v-btn prepend-icon="$plus" data-test-id="schedule-add-week-button" @click="addWeek">{{
+      <v-btn prepend-icon="$plus" data-test-id="schedule-add-week-button" @click="addWeek()">{{
         $t('schedule.addWeek')
       }}</v-btn>
       <v-btn

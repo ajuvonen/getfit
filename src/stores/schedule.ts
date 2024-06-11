@@ -50,9 +50,12 @@ export const useScheduleStore = defineStore('schedule', () => {
   );
 
   // Actions
-  const addWeek = () => {
+  const addWeek = (newWeekId = uuid()) => {
+    if (weeks.value.some(({id}) => id === newWeekId)) {
+      return;
+    }
     weeks.value.push({
-      id: uuid(),
+      id: newWeekId,
       trainings: [],
     });
   };
