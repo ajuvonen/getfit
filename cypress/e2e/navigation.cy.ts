@@ -7,10 +7,13 @@ describe('Navigation tests', () => {
     cy.location('pathname').should('contain', '/schedule');
     cy.getByTestId('navbar-export-link').should('have.class', 'v-btn--disabled');
     cy.getByTestId('schedule-add-week-button').click();
+    cy.addTraining(false);
     cy.getByTestId('navbar-export-link').should('not.have.class', 'v-btn--disabled').click();
     cy.location('pathname').should('contain', '/export');
     cy.getByTestId('app-bar-home-link').click();
     cy.location('pathname').should('eql', '/getfit/');
+    cy.getByTestId('app-bar-stats-link').click();
+    cy.location('pathname').should('contain', '/stats');
   });
 
   it('changes language', () => {

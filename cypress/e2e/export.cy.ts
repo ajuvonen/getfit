@@ -15,6 +15,7 @@ describe('Export test', () => {
     cy.addTraining();
     cy.toRoute('export');
     cy.get('.simple-training-card').should('have.length', 1);
+    cy.getByTestId('week-0-supplement').should('exist');
   });
 
   it('downloads calendar file', () => {
