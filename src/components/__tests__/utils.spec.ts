@@ -1,5 +1,6 @@
 import {ref} from 'vue';
 import {describe, it, expect} from 'vitest';
+import {v4 as uuid} from 'uuid';
 import {
   getIcon,
   getIntensityColor,
@@ -90,7 +91,7 @@ describe('Utils', () => {
 
   it('getEmptyTraining should use passed parameters properly', () => {
     const initialTraining: Partial<Training> = {
-      id: 'test-id',
+      id: uuid(),
       weekId: 'test-weekId',
       activity: 'Running',
       dayIndex: 1,
