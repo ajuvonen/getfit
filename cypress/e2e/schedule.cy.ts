@@ -3,6 +3,8 @@ describe('Schedule tests', () => {
   it('adds new trainings', () => {
     cy.toRoute('schedule');
     cy.getByTestId('schedule-add-week-button').click();
+    cy.getByTestId('week-0').click();
+    cy.getByTestId('week-0-calendar-tab-1').click();
     cy.addTraining(false);
     cy.getByTestId('week-0-day-1').find('.training-card').should('exist');
     cy.getByTestId('week-0-copy-button').click();
