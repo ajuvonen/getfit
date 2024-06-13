@@ -34,6 +34,8 @@ const sortableOptions = {
   handle: '.training-card__title',
   onUpdate: (e: {oldIndex: number; newIndex: number}) =>
     reorderTrainings(props.week.id, e.oldIndex, e.newIndex),
+  delay: 250,
+  delayOnTouchOnly: true,
 };
 
 const tabContent = computed(() => {
@@ -120,10 +122,10 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
           :data-test-id="`week-${weekIndex}-day-${dayIndex}`"
         >
           <UseSortable
-            tag="ul"
             :model-value="trainings"
-            class="d-flex flex-wrap mt-4 mb-1 justify-center"
             :options="sortableOptions"
+            tag="ul"
+            class="d-flex flex-wrap mt-4 mb-1 justify-center"
           >
             <training-card
               v-for="training in trainings"
