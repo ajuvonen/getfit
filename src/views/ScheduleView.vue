@@ -15,6 +15,12 @@ const {addWeek} = scheduleStore;
 const {openWeek} = storeToRefs(useAppStateStore());
 
 const reset = useReset();
+
+const sortableOptions = {
+  handle: '.week-calendar__drag-handle',
+  delay: 250,
+  delayOnTouchOnly: true,
+};
 </script>
 
 <template>
@@ -24,7 +30,7 @@ const reset = useReset();
         <UseSortable
           v-if="weeks.length"
           v-model="weeks"
-          :options="{handle: '.week-calendar__drag-handle'}"
+          :options="sortableOptions"
           tag="ul"
           data-test-id="schedule"
           class="schedule__draggable-list"
