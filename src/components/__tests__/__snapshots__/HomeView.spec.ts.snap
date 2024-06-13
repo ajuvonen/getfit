@@ -20,7 +20,7 @@ exports[`HomeView > mounts with agenda 1`] = `
     </svg>
     <div class="v-progress-circular__content">
       <transition-stub data-v-c4ee72cd="" name="fab-transition" mode="out-in" appear="false" persisted="false" css="true">
-        <div data-v-c4ee72cd="" class="d-flex flex-column"><span data-v-c4ee72cd="" class="text-h4 daily-agenda__progress">0 / 1</span><span data-v-c4ee72cd="" class="text-caption text-uppercase">Progress</span></div>
+        <div data-v-c4ee72cd="" class="d-flex flex-column"><span data-v-c4ee72cd="" class="text-h4" data-test-id="daily-agenda-progress">0 / 1</span><span data-v-c4ee72cd="" class="text-caption text-uppercase">Progress</span></div>
       </transition-stub>
     </div>
   </div>
@@ -61,12 +61,12 @@ exports[`HomeView > mounts with agenda 1`] = `
           <div data-v-24c3dbf4="" class="training-card__location text-subtitle-2"><i data-v-24c3dbf4="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true" aria-label="Training Location"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                 <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path>
               </svg></i><span data-v-24c3dbf4="" class="text-truncate">-</span></div>
-          <div data-v-cb700901="" data-v-24c3dbf4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--disabled v-radio-group training-card__rating--hidden training-card__rating">
+          <div data-v-cb700901="" data-v-24c3dbf4="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--customLight v-locale--is-ltr v-input--disabled v-radio-group training-card-rating--hidden training-card-rating">
             <!---->
             <div class="v-input__control">
               <!---->
               <div class="v-selection-control-group v-selection-control-group--inline" role="radiogroup" aria-describedby="radio-group-0-messages" aria-label="Training Rating">
-                <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+                <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default training-card-rating__star training-card-rating__star--1 v-radio training-card-rating__star training-card-rating__star--1">
                   <div class="v-selection-control__wrapper">
                     <!---->
                     <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
@@ -75,7 +75,7 @@ exports[`HomeView > mounts with agenda 1`] = `
                   </div>
                   <!---->
                 </div>
-                <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+                <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default training-card-rating__star training-card-rating__star--2 v-radio training-card-rating__star training-card-rating__star--2">
                   <div class="v-selection-control__wrapper">
                     <!---->
                     <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
@@ -84,7 +84,7 @@ exports[`HomeView > mounts with agenda 1`] = `
                   </div>
                   <!---->
                 </div>
-                <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+                <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default training-card-rating__star training-card-rating__star--3 v-radio training-card-rating__star training-card-rating__star--3">
                   <div class="v-selection-control__wrapper">
                     <!---->
                     <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
@@ -93,7 +93,7 @@ exports[`HomeView > mounts with agenda 1`] = `
                   </div>
                   <!---->
                 </div>
-                <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+                <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default training-card-rating__star training-card-rating__star--4 v-radio training-card-rating__star training-card-rating__star--4">
                   <div class="v-selection-control__wrapper">
                     <!---->
                     <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
@@ -102,7 +102,7 @@ exports[`HomeView > mounts with agenda 1`] = `
                   </div>
                   <!---->
                 </div>
-                <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default v-radio">
+                <div data-v-cb700901="" class="v-selection-control v-selection-control--disabled v-selection-control--inline v-selection-control--density-default training-card-rating__star training-card-rating__star--5 v-radio training-card-rating__star training-card-rating__star--5">
                   <div class="v-selection-control__wrapper">
                     <!---->
                     <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
@@ -118,7 +118,7 @@ exports[`HomeView > mounts with agenda 1`] = `
           </div>
         </div>
         <div data-v-24c3dbf4="" class="v-card-actions justify-end">
-          <!--v-if--><button type="button" class="v-btn v-btn--slim v-theme--customLight v-btn--density-default v-btn--size-default v-btn--variant-text training-card__complete-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M13,2.03V2.05L13,4.05C17.39,4.59 20.5,8.58 19.96,12.97C19.5,16.61 16.64,19.5 13,19.93V21.93C18.5,21.38 22.5,16.5 21.95,11C21.5,6.25 17.73,2.5 13,2.03M11,2.06C9.05,2.25 7.19,3 5.67,4.26L7.1,5.74C8.22,4.84 9.57,4.26 11,4.06V2.06M4.26,5.67C3,7.19 2.25,9.04 2.05,11H4.05C4.24,9.58 4.8,8.23 5.69,7.1L4.26,5.67M15.5,8.5L10.62,13.38L8.5,11.26L7.44,12.32L10.62,15.5L16.56,9.56L15.5,8.5M2.06,13C2.26,14.96 3.03,16.81 4.27,18.33L5.69,16.9C4.81,15.77 4.24,14.42 4.06,13H2.06M7.1,18.37L5.67,19.74C7.18,21 9.04,21.79 11,22V20C9.58,19.82 8.23,19.25 7.1,18.37Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Finish</span>
+          <!--v-if--><button type="button" class="v-btn v-btn--slim v-theme--customLight v-btn--density-default v-btn--size-default v-btn--variant-text training-card-actions__complete-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M13,2.03V2.05L13,4.05C17.39,4.59 20.5,8.58 19.96,12.97C19.5,16.61 16.64,19.5 13,19.93V21.93C18.5,21.38 22.5,16.5 21.95,11C21.5,6.25 17.73,2.5 13,2.03M11,2.06C9.05,2.25 7.19,3 5.67,4.26L7.1,5.74C8.22,4.84 9.57,4.26 11,4.06V2.06M4.26,5.67C3,7.19 2.25,9.04 2.05,11H4.05C4.24,9.58 4.8,8.23 5.69,7.1L4.26,5.67M15.5,8.5L10.62,13.38L8.5,11.26L7.44,12.32L10.62,15.5L16.56,9.56L15.5,8.5M2.06,13C2.26,14.96 3.03,16.81 4.27,18.33L5.69,16.9C4.81,15.77 4.24,14.42 4.06,13H2.06M7.1,18.37L5.67,19.74C7.18,21 9.04,21.79 11,22V20C9.58,19.82 8.23,19.25 7.1,18.37Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Finish</span>
             <!---->
             <!---->
           </button>

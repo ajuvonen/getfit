@@ -46,7 +46,12 @@ const chartOptions = computed(() =>
 defineExpose({chartData});
 </script>
 <template>
-  <Pie :options="chartOptions" :data="chartData" aria-describedby="intensity-chart-table" />
+  <Pie
+    :options="chartOptions"
+    :data="chartData"
+    data-test-id="intensity-chart"
+    aria-describedby="intensity-chart-table"
+  />
   <ChartScreenReaderTable
     id="intensity-chart-table"
     :title="t('stats.trainingsByIntensity')"

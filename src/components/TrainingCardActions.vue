@@ -37,7 +37,7 @@ watch(
       v-if="training.instructions"
       ref="openButton"
       :disabled="disabled"
-      class="training-card__more-button"
+      class="training-card-actions__more-button"
       variant="flat"
       color="transparent"
       prepend-icon="$information"
@@ -48,7 +48,7 @@ watch(
       v-if="simple"
       :prepend-icon="training.completed ? '$progressAlert' : '$progressCheck'"
       :disabled="disabled"
-      class="training-card__complete-button"
+      class="training-card-actions__complete-button"
       @click="toggleCompletion(training)"
       >{{
         $t(
@@ -65,7 +65,7 @@ watch(
           prepend-icon="$menu"
           variant="flat"
           v-bind="props"
-          class="training-card__action-button"
+          class="training-card-actions__action-button"
         >
           {{ $t('trainingCard.actions') }}
         </v-btn>
@@ -74,7 +74,7 @@ watch(
         <v-list-item
           :title="$t('trainingCard.editTraining')"
           prepend-icon="$pen"
-          class="training-card__edit-button"
+          data-test-id="training-card-actions-edit-button"
           @click="openEditTrainingDialog(training), (menuOpen = false)"
         />
         <TrainingCardActionsMenuGroup action="move" :training="training" />
@@ -86,13 +86,14 @@ watch(
               : $t('trainingCard.uncompleteTraining')
           "
           :prepend-icon="training.completed ? '$progressAlert' : '$progressCheck'"
-          class="training-card__complete-button"
+          data-test-id="training-card-actions-complete-button"
           @click="toggleCompletion(training), (menuOpen = false)"
         />
         <v-list-item
           :title="$t('trainingCard.deleteTraining')"
           prepend-icon="$delete"
-          class="text-error training-card__delete-button"
+          class="text-error"
+          data-test-id="training-card-actions-delete-button"
           @click="deleteTraining(training)"
         />
       </v-list>

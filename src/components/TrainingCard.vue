@@ -31,11 +31,17 @@ const {visibleInstructions} = storeToRefs(appStateStore);
 const isDescriptionOpen = computed(() => visibleInstructions.value.includes(props.training.id));
 
 const {isSmallScreen} = useScreen();
+
+const containerClasses = computed(() => ({
+  'training-card__container': true,
+  'training-card__container--small': isSmallScreen.value,
+  'training-card__container--plain': !settings.value.decoratedCards,
+}));
 </script>
 <template>
-  <component :is="tag"
-    class="training-card__container"
-    :class="{'training-card__container--plain': !settings.decoratedCards, 'training-card__container--small': isSmallScreen}"
+  <component
+    :is="tag"
+    :class="containerClasses"
     :style="settings.decoratedCards ? `background: url('/getfit/${training.activity}.jpg')` : ''"
   >
     <v-card

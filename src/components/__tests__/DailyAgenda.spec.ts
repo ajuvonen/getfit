@@ -71,7 +71,7 @@ describe('DailyAgenda', () => {
     });
     const wrapper = mount(DailyAgenda);
 
-    expect(wrapper.find('.daily-agenda__progress').text()).toBe('1 / 3');
+    expect(wrapper.findByTestId('daily-agenda-progress').text()).toBe('1 / 3');
   });
 
   it('displays completion trophy', () => {
@@ -93,7 +93,7 @@ describe('DailyAgenda', () => {
     });
     const wrapper = mount(DailyAgenda);
 
-    expect(wrapper.find('.daily-agenda__progress').exists()).toBe(false);
-    expect(wrapper.find('.daily-agenda__completed-icon').exists()).toBe(true);
+    expect(wrapper.findByTestId('daily-agenda-progress').exists()).toBe(false);
+    expect(wrapper.findByTestId('daily-agenda-icon').exists()).toBe(true);
   });
 });

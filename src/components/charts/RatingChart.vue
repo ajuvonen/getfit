@@ -48,7 +48,12 @@ const chartOptions = computed(() =>
 defineExpose({chartData});
 </script>
 <template>
-  <Pie :options="chartOptions" :data="chartData" aria-describedby="rating-chart-table" />
+  <Pie
+    :options="chartOptions"
+    :data="chartData"
+    data-test-id="rating-chart"
+    aria-describedby="rating-chart-table"
+  />
   <ChartScreenReaderTable
     id="rating-chart-table"
     :title="$t('stats.trainingsByRating')"

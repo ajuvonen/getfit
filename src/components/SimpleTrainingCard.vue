@@ -13,7 +13,6 @@ defineProps<{
         :icon="getIcon(training.activity)"
         :title="$t(`activities.${training.activity}`)"
         :aria-label="$t(`activities.${training.activity}`)"
-        class="simple-training-card__activity-icon"
       />
       {{ training.title || $t(`activities.${training.activity}`) }}
     </div>
