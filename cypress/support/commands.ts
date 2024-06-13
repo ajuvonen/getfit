@@ -26,11 +26,11 @@ Cypress.Commands.add('addTraining', (addWeek = true) => {
   }
   cy.getByTestId('week-0-add-training-button').click();
   cy.getByTestId('edit-training-activity').click();
-  cy.get('.v-list-item').first().click();
+  cy.getByTestId('edit-training-activity-badminton').click();
   cy.getByTestId('edit-training-title')
     .type('My training')
     .getByTestId('edit-training-location')
-    .type('Gym')
+    .type('Sport hall')
     .getByTestId('edit-training-duration')
     .find('input')
     .type('.5')

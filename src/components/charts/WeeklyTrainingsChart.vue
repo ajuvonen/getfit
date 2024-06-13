@@ -68,7 +68,12 @@ const chartOptions = computed(() =>
 defineExpose({chartData});
 </script>
 <template>
-  <Line :options="chartOptions" :data="chartData" aria-describedby="weekly-trainings-chart-table" />
+  <Line
+    :options="chartOptions"
+    :data="chartData"
+    data-test-id="weekly-trainings-chart"
+    aria-describedby="weekly-trainings-chart-table"
+  />
   <ChartScreenReaderTable
     id="weekly-trainings-chart-table"
     :title="$t('stats.weeklyTrainings')"

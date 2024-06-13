@@ -54,7 +54,12 @@ const chartOptions = computed(() =>
 defineExpose({chartData});
 </script>
 <template>
-  <Pie :options="chartOptions" :data="chartData" aria-describedby="activity-chart-table" />
+  <Pie
+    :options="chartOptions"
+    :data="chartData"
+    data-test-id="activity-chart"
+    aria-describedby="activity-chart-table"
+  />
   <ChartScreenReaderTable
     id="activity-chart-table"
     :title="t('stats.trainingsByActivity')"

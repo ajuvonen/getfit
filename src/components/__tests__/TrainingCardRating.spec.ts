@@ -18,7 +18,7 @@ describe('TrainingCardRating', () => {
         disabled: false,
       },
     });
-    expect(wrapper.find('.training-card__rating--hidden').exists()).toBe(true);
+    expect(wrapper.find('.training-card-rating--hidden').exists()).toBe(true);
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -29,7 +29,7 @@ describe('TrainingCardRating', () => {
         disabled: false,
       },
     });
-    expect(wrapper.find('.training-card__rating--hidden').exists()).toBe(false);
+    expect(wrapper.find('.training-card-rating--hidden').exists()).toBe(false);
   });
 
   it('calls store on rating change', async () => {
@@ -42,23 +42,23 @@ describe('TrainingCardRating', () => {
     });
 
     await wrapper
-      .find('.training-card__rating .v-selection-control:nth-child(1) input')
+      .find('.training-card-rating .v-selection-control:nth-child(1) input')
       .trigger('click');
     expect(scheduleStore.updateRating).toHaveBeenLastCalledWith(training, 1);
     await wrapper
-      .find('.training-card__rating .v-selection-control:nth-child(2) input')
+      .find('.training-card-rating .v-selection-control:nth-child(2) input')
       .trigger('click');
     expect(scheduleStore.updateRating).toHaveBeenLastCalledWith(training, 2);
     await wrapper
-      .find('.training-card__rating .v-selection-control:nth-child(3) input')
+      .find('.training-card-rating .v-selection-control:nth-child(3) input')
       .trigger('click');
     expect(scheduleStore.updateRating).toHaveBeenLastCalledWith(training, 3);
     await wrapper
-      .find('.training-card__rating .v-selection-control:nth-child(4) input')
+      .find('.training-card-rating .v-selection-control:nth-child(4) input')
       .trigger('click');
     expect(scheduleStore.updateRating).toHaveBeenLastCalledWith(training, 4);
     await wrapper
-      .find('.training-card__rating .v-selection-control:nth-child(5) input')
+      .find('.training-card-rating .v-selection-control:nth-child(5) input')
       .trigger('click');
     expect(scheduleStore.updateRating).toHaveBeenLastCalledWith(training, 5);
   });

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {computed} from 'vue';
 import {useScheduleStore} from '@/stores/schedule';
 import type {Rating, Training} from '@/types';
 
@@ -8,14 +9,20 @@ defineProps<{
 }>();
 
 const {updateRating} = useScheduleStore();
+
+const ratingClasses = computed(() => (training: Training, rating: number) => ({
+  'training-card-rating__star': true,
+  [`training-card-rating__star--${rating}`]: true,
+  'training-card-rating__star--filled': training.rating && training.rating >= rating,
+}));
 </script>
 <template>
   <v-radio-group
     :model-value="training.rating"
     :aria-label="$t('trainingCard.ratingLabel')"
-    :class="{'training-card__rating--hidden': !training.completed}"
+    :class="{'training-card-rating--hidden': !training.completed}"
     :disabled="disabled || !training.completed"
-    class="training-card__rating"
+    class="training-card-rating"
     inline
     hide-details
   >
@@ -24,10 +31,10 @@ const {updateRating} = useScheduleStore();
       :key="rating"
       :value="rating"
       :aria-label="$t('trainingCard.rating', [rating])"
-      :class="{'training-card__filled-star': training.rating && training.rating >= rating}"
+      :class="ratingClasses(training, rating)"
+      :falseIcon="training.rating && training.rating >= rating ? '$star' : '$starOutline'"
       elevation="0"
       trueIcon="$star"
-      :falseIcon="training.rating && training.rating >= rating ? '$star' : '$starOutline'"
       @click="updateRating(training, rating as Rating)"
     ></v-radio>
   </v-radio-group>
@@ -38,7 +45,7 @@ const {updateRating} = useScheduleStore();
   justify-content: center;
 }
 
-.training-card__rating--hidden {
+.training-card-rating--hidden {
   visibility: hidden;
 }
 </style>

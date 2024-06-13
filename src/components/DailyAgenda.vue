@@ -30,10 +30,10 @@ const dailyTrainings = computed(() => {
   >
     <v-fab-transition>
       <div v-if="getTrainingsCount > getCompletedTrainingsCount" class="d-flex flex-column">
-        <span class="text-h4 daily-agenda__progress">{{ getCompletedTrainingsCount }} / {{ getTrainingsCount }}</span>
+        <span class="text-h4" data-test-id="daily-agenda-progress">{{ getCompletedTrainingsCount }} / {{ getTrainingsCount }}</span>
         <span class="text-caption text-uppercase">{{ $t('home.progress') }}</span>
       </div>
-      <v-icon v-else class="daily-agenda__completed-icon" icon="$trophyOutline" size="70" />
+      <v-icon v-else data-test-id="daily-agenda-icon" icon="$trophyOutline" size="70" />
     </v-fab-transition>
   </v-progress-circular>
   <h1 class="mt-10 text-h3 text-center">

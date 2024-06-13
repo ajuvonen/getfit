@@ -36,13 +36,13 @@ const doMenuAction = (training: Training, weekId = uuid(), dayIndex: number) => 
 };
 </script>
 <template>
-  <v-list-group :class="`training-card-actions__${action}`">
+  <v-list-group :data-test-id="`training-card-actions-${action}-menu`">
     <template v-slot:activator="{props}">
       <v-list-item
         v-bind="props"
         :title="$t(`trainingCard.${action}`)"
         :prepend-icon="menuIcon"
-        :class="`training-card__${action}-button`"
+        :data-test-id="`training-card-actions-${action}-button`"
       />
     </template>
     <v-list-group v-for="(week, weekIndex) in listWeeks" :key="week.id">
@@ -70,4 +70,3 @@ const doMenuAction = (training: Training, weekId = uuid(), dayIndex: number) => 
     </v-list-group>
   </v-list-group>
 </template>
-<style lang="scss" scoped></style>

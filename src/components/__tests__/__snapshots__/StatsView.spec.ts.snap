@@ -28,7 +28,7 @@ exports[`StatsView > mounts 1`] = `
   <div data-v-ff4a98e6="" class="v-card-text">
     <div data-v-a19ac338="" class="v-row justify-center" wrap="">
       <div data-v-a19ac338="" class="v-col stats__chart">
-        <div options="[object Object]" data="[object Object]" aria-describedby="activity-chart-table"></div>
+        <div options="[object Object]" data="[object Object]" data-test-id="activity-chart" aria-describedby="activity-chart-table"></div>
         <table class="d-sr-only" id="activity-chart-table">
           <caption>Training activities</caption>
           <thead>
@@ -57,7 +57,7 @@ exports[`StatsView > mounts 1`] = `
         </table>
       </div>
       <div data-v-a19ac338="" class="v-col stats__chart">
-        <div options="[object Object]" data="[object Object]" aria-describedby="intensity-chart-table"></div>
+        <div options="[object Object]" data="[object Object]" data-test-id="intensity-chart" aria-describedby="intensity-chart-table"></div>
         <table class="d-sr-only" id="intensity-chart-table">
           <caption>Intensity of trainings</caption>
           <thead>
@@ -78,7 +78,7 @@ exports[`StatsView > mounts 1`] = `
         </table>
       </div>
       <div data-v-a19ac338="" class="v-col stats__chart">
-        <div options="[object Object]" data="[object Object]" aria-describedby="rating-chart-table"></div>
+        <div options="[object Object]" data="[object Object]" data-test-id="rating-chart" aria-describedby="rating-chart-table"></div>
         <table class="d-sr-only" id="rating-chart-table">
           <caption>Ratings</caption>
           <thead>
@@ -105,7 +105,7 @@ exports[`StatsView > mounts 1`] = `
     </div>
     <div data-v-a19ac338="" class="v-row">
       <div data-v-a19ac338="" class="v-col stats__wide-chart">
-        <div options="[object Object]" data="[object Object]" aria-describedby="weekly-trainings-chart-table"></div>
+        <div options="[object Object]" data="[object Object]" data-test-id="weekly-trainings-chart" aria-describedby="weekly-trainings-chart-table"></div>
         <table class="d-sr-only" id="weekly-trainings-chart-table">
           <caption>Weekly trainings</caption>
           <thead>
@@ -132,7 +132,7 @@ exports[`StatsView > mounts 1`] = `
     </div>
     <div data-v-a19ac338="" class="v-row">
       <div data-v-a19ac338="" class="v-col stats__wide-chart">
-        <div options="[object Object]" data="[object Object]" aria-describedby="weekly-summary-chart-table"></div>
+        <div options="[object Object]" data="[object Object]" data-test-id="weekly-summary-chart" aria-describedby="weekly-summary-chart-table"></div>
         <table class="d-sr-only" id="weekly-summary-chart-table">
           <caption>Weekly summary</caption>
           <thead>

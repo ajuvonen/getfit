@@ -35,11 +35,11 @@ describe('TrainingCardActions', () => {
         simple: false,
       },
     });
-    await wrapper.find('.training-card__action-button').trigger('click');
+    await wrapper.find('.training-card-actions__action-button').trigger('click');
     const actions = wrapper.findComponent(VList);
-    await actions.find('.training-card__delete-button').trigger('click');
-    await actions.find('.training-card__edit-button').trigger('click');
-    await actions.find('.training-card__complete-button').trigger('click');
+    await actions.findByTestId('training-card-actions-delete-button').trigger('click');
+    await actions.findByTestId('training-card-actions-edit-button').trigger('click');
+    await actions.findByTestId('training-card-actions-complete-button').trigger('click');
     expect(scheduleStore.deleteTraining).toHaveBeenCalledOnce();
     expect(appStateStore.openEditTrainingDialog).toHaveBeenCalledOnce();
     expect(scheduleStore.toggleCompletion).toHaveBeenCalledOnce();
@@ -55,7 +55,7 @@ describe('TrainingCardActions', () => {
       },
     });
     expect(wrapper.find('.training-card__instructions').exists()).toBe(false);
-    await wrapper.find('.training-card__more-button').trigger('click');
+    await wrapper.find('.training-card-actions__more-button').trigger('click');
     expect(appStateStore.toggleShowInstructions).toHaveBeenCalledWith(trainingId);
   });
 
@@ -92,7 +92,7 @@ describe('TrainingCardActions', () => {
       },
     });
 
-    await wrapper.find('.training-card__complete-button').trigger('click');
+    await wrapper.find('.training-card-actions__complete-button').trigger('click');
     expect(scheduleStore.toggleCompletion).toHaveBeenCalledOnce();
   });
 });

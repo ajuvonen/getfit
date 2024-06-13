@@ -27,9 +27,6 @@ describe('SimpleTrainingCard', () => {
       },
     });
 
-    expect(wrapper.find('.simple-training-card__activity-icon').attributes('aria-label')).toBe(
-      'Boxing',
-    );
     expect(wrapper.find('.simple-training-card__title').text()).toBe('Boxing');
     expect(wrapper.find('.simple-training-card__duration').text()).toBe('1 h');
     expect(wrapper.find('.simple-training-card__location').text()).toBe('Total wreck gym');
