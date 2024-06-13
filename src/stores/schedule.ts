@@ -33,13 +33,16 @@ export const useScheduleStore = defineStore('schedule', () => {
   const weeks = useStorage<Week[]>('getfit-schedule', [], localStorage, {mergeDefaults: true});
 
   // Computed getters
-  const getTargetWeekAndTraining = computed(() => (weekId: string, trainingId?: string) => {
-    const targetWeek = weeks.value.find(({id}) => id === weekId) as Week;
-    const targetTraining = trainingId
-      ? targetWeek.trainings.find(({id}) => id === trainingId)
-      : undefined;
-    return [targetWeek, targetTraining] as [Week, Training | undefined];
-  });
+  const getTargetWeekAndTraining = computed(
+    () =>
+      (weekId: string, trainingId?: string): [Week | undefined, Training | undefined] => {
+        const targetWeek = weeks.value.find(({id}) => id === weekId) as Week;
+        const targetTraining = targetWeek && trainingId
+          ? targetWeek.trainings.find(({id}) => id === trainingId)
+          : undefined;
+        return [targetWeek, targetTraining];
+      },
+  );
 
   const getAllTrainings = computed(() => weeks.value.flatMap(({trainings}) => trainings));
 
@@ -51,7 +54,7 @@ export const useScheduleStore = defineStore('schedule', () => {
 
   // Actions
   const addWeek = (newWeekId = uuid()) => {
-    if (weeks.value.some(({id}) => id === newWeekId)) {
+    if (getTargetWeekAndTraining.value(newWeekId)[0]) {
       return;
     }
     weeks.value.push({
@@ -66,61 +69,73 @@ export const useScheduleStore = defineStore('schedule', () => {
 
   const copyWeek = (weekId: string) => {
     const [targetWeek] = getTargetWeekAndTraining.value(weekId);
-    const newWeekId = uuid();
-    weeks.value.push({
-      id: newWeekId,
-      trainings: targetWeek.trainings.map((training) => ({
-        ...training,
-        id: uuid(),
-        weekId: newWeekId,
-        completed: false,
-        rating: null,
-      })),
-    });
+    if (targetWeek) {
+      const newWeekId = uuid();
+      weeks.value.push({
+        id: newWeekId,
+        trainings: targetWeek.trainings.map((training) => ({
+          ...training,
+          id: uuid(),
+          weekId: newWeekId,
+          completed: false,
+          rating: null,
+        })),
+      });
+    }
   };
 
   const addOrEditTraining = (training: Training) => {
     const [targetWeek] = getTargetWeekAndTraining.value(training.weekId);
-    const targetIndex = targetWeek.trainings.findIndex(({id}) => id === training.id);
-    if (targetIndex >= 0) {
-      targetWeek.trainings[targetIndex] = training;
-    } else {
-      targetWeek.trainings.push(training);
+    if (targetWeek) {
+      const targetIndex = targetWeek.trainings.findIndex(({id}) => id === training.id);
+      if (targetIndex >= 0) {
+        targetWeek.trainings[targetIndex] = training;
+      } else {
+        targetWeek.trainings.push(training);
+      }
     }
   };
 
   const deleteTraining = (training: Training) => {
     const [targetWeek] = getTargetWeekAndTraining.value(training.weekId);
-    targetWeek.trainings = targetWeek.trainings.filter(({id}) => id !== training.id);
+    if (targetWeek) {
+      targetWeek.trainings = targetWeek.trainings.filter(({id}) => id !== training.id);
+    }
   };
 
   const moveTraining = (training: Training, newWeekId: string, dayIndex: number) => {
     const [originalWeek, targetTraining] = getTargetWeekAndTraining.value(
       training.weekId,
       training.id,
-    ) as [Week, Training];
+    );
     const [targetWeek] = getTargetWeekAndTraining.value(newWeekId);
-    originalWeek.trainings = originalWeek.trainings.filter(({id}) => id !== targetTraining.id);
-    targetTraining.weekId = newWeekId;
-    targetTraining.dayIndex = dayIndex;
-    targetWeek.trainings.push(targetTraining);
+    if (originalWeek && targetWeek && targetTraining) {
+      originalWeek.trainings = originalWeek.trainings.filter(({id}) => id !== targetTraining.id);
+      targetTraining.weekId = newWeekId;
+      targetTraining.dayIndex = dayIndex;
+      targetWeek.trainings.push(targetTraining);
+    }
   };
 
   const reorderTrainings = (weekId: string, oldIndex: number, newIndex: number) => {
     const [targetWeek] = getTargetWeekAndTraining.value(weekId);
-    targetWeek.trainings = arrayMoveImmutable(targetWeek.trainings, oldIndex, newIndex);
+    if (targetWeek) {
+      targetWeek.trainings = arrayMoveImmutable(targetWeek.trainings, oldIndex, newIndex);
+    }
   };
 
   const copyTraining = (training: Training, weekId: string, dayIndex: number) => {
     const [targetWeek] = getTargetWeekAndTraining.value(weekId);
-    targetWeek.trainings.push({
-      ...training,
-      id: uuid(),
-      weekId,
-      dayIndex,
-      completed: false,
-      rating: null,
-    });
+    if (targetWeek) {
+      targetWeek.trainings.push({
+        ...training,
+        id: uuid(),
+        weekId,
+        dayIndex,
+        completed: false,
+        rating: null,
+      });
+    }
   };
 
   const toggleCompletion = (training: Training) => {

@@ -13,7 +13,7 @@ const props = defineProps<{
 
 const scheduleStore = useScheduleStore();
 const {settings, weeks} = storeToRefs(scheduleStore);
-const {moveTraining, copyTraining, addWeek} = scheduleStore;
+const {moveTraining, copyTraining, addWeek, getTargetWeekAndTraining} = scheduleStore;
 
 const {getDisplayWeekNumber, getShortDate, weekdays} = useWeekDays();
 
@@ -29,7 +29,7 @@ const listWeeks = computed<Week[]>(() => [
 ]);
 
 const doMenuAction = (training: Training, weekId = uuid(), dayIndex: number) => {
-  if (!weeks.value.some(({id}) => id === weekId)) {
+  if (!getTargetWeekAndTraining(weekId)[0]) {
     addWeek(weekId);
   }
   menuAction(training, weekId, dayIndex);

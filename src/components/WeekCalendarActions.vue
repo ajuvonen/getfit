@@ -26,7 +26,7 @@ const {isSmallScreen} = useScreen();
 
 const confirmDelete = (weekId: string) => {
   const [targetWeek] = getTargetWeekAndTraining(weekId);
-  if (targetWeek.trainings.length) {
+  if (targetWeek?.trainings.length) {
     openConfirmDialog(t('weekCalendar.deleteWeekConfirm'), () => deleteWeek(weekId));
   } else {
     deleteWeek(weekId);
