@@ -57,7 +57,7 @@ describe('scheduleStore', () => {
 
     const [week, training] = scheduleStore.getTargetWeekAndTraining(weekId, trainingId);
 
-    expect(week.id).toBe(weekId);
+    expect(week?.id).toBe(weekId);
     expect(training?.id).toBe(trainingId);
   });
 
@@ -75,8 +75,14 @@ describe('scheduleStore', () => {
 
     const [week, training] = scheduleStore.getTargetWeekAndTraining(weekId);
 
-    expect(week.id).toBe(weekId);
+    expect(week?.id).toBe(weekId);
     expect(training).toBeUndefined();
+  });
+
+  it('leaves out week', () => {
+    const [week, training] = scheduleStore.getTargetWeekAndTraining(uuid(), uuid());
+    expect (week).toBeUndefined();
+    expect (training).toBeUndefined();
   });
 
   it('deletes a week', () => {
@@ -119,7 +125,7 @@ describe('scheduleStore', () => {
     scheduleStore.copyWeek(weekId);
 
     expect(scheduleStore.weeks.length).toBe(initialWeekCount + 1);
-    const copiedWeek = scheduleStore.weeks.find((week) => week.id !== weekId);
+    const copiedWeek = scheduleStore.weeks.find((week) => week?.id !== weekId);
     expect(copiedWeek?.trainings.length).toBe(1);
     const copiedTraining = copiedWeek?.trainings[0];
     expect(copiedTraining?.id).not.toBe(trainingId);
@@ -155,8 +161,8 @@ describe('scheduleStore', () => {
     scheduleStore.addOrEditTraining(training);
 
     const [week] = scheduleStore.getTargetWeekAndTraining(weekId);
-    expect(week.trainings.length).toBe(1);
-    expect(week.trainings[0]).toEqual(training);
+    expect(week?.trainings.length).toBe(1);
+    expect(week?.trainings[0]).toEqual(training);
   });
 
   it('edits a training', () => {
@@ -212,7 +218,7 @@ describe('scheduleStore', () => {
     scheduleStore.deleteTraining(training);
 
     const [week] = scheduleStore.getTargetWeekAndTraining(weekId);
-    expect(week.trainings.length).toBe(0);
+    expect(week?.trainings.length).toBe(0);
   });
 
   it('does not delete a training when IDs do not match', () => {
@@ -231,7 +237,7 @@ describe('scheduleStore', () => {
     scheduleStore.deleteTraining(nonExistentTraining);
 
     const [week] = scheduleStore.getTargetWeekAndTraining(weekId);
-    expect(week.trainings.length).toBe(1);
+    expect(week?.trainings.length).toBe(1);
   });
 
   it('moves a training to a different week', () => {
@@ -249,9 +255,9 @@ describe('scheduleStore', () => {
 
     const [week1] = scheduleStore.getTargetWeekAndTraining(weekId1);
     const [week2] = scheduleStore.getTargetWeekAndTraining(weekId2);
-    expect(week1.trainings.length).toBe(0);
-    expect(week2.trainings.length).toBe(1);
-    expect(week2.trainings[0].dayIndex).toBe(2);
+    expect(week1?.trainings.length).toBe(0);
+    expect(week2?.trainings.length).toBe(1);
+    expect(week2?.trainings[0].dayIndex).toBe(2);
   });
 
   it('reorders trainings within a week',  () => {
@@ -273,8 +279,8 @@ describe('scheduleStore', () => {
     scheduleStore.reorderTrainings(weekId, 1, 0);
 
     const [reordered] = scheduleStore.getTargetWeekAndTraining(weekId);
-    expect(reordered.trainings[0].id).toBe(training2.id);
-    expect(reordered.trainings[1].id).toBe(training1.id);
+    expect(reordered?.trainings[0].id).toBe(training2.id);
+    expect(reordered?.trainings[1].id).toBe(training1.id);
   });
 
   it('copies a training', () => {
@@ -294,11 +300,11 @@ describe('scheduleStore', () => {
     scheduleStore.copyTraining(training, weekId, 2);
 
     const [week] = scheduleStore.getTargetWeekAndTraining(weekId);
-    expect(week.trainings.length).toBe(2);
-    expect(week.trainings[1].id).not.toBe(training.id);
-    expect(week.trainings[1].dayIndex).toBe(2);
-    expect(week.trainings[1].completed).toBe(false);
-    expect(week.trainings[1].rating).toBeNull();
+    expect(week?.trainings.length).toBe(2);
+    expect(week?.trainings[1].id).not.toBe(training.id);
+    expect(week?.trainings[1].dayIndex).toBe(2);
+    expect(week?.trainings[1].completed).toBe(false);
+    expect(week?.trainings[1].rating).toBeNull();
   });
 
   it('toggles the completed property', () => {
