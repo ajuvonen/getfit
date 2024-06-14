@@ -50,7 +50,7 @@ exports[`SettingsView > mounts 1`] = `
             <!----><label class="v-label v-field-label" for="input-0">
               <!---->Program Name
             </label>
-            <!----><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" maxlength="30" class="v-field__input">
+            <!----><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" maxlength="30" class="v-field__input" value="">
             <!---->
           </div>
           <!---->
@@ -85,7 +85,7 @@ exports[`SettingsView > mounts 1`] = `
               <!---->
               <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                     <path d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,7C9.24,7 7,9.24 7,12C7,14.76 9.24,17 12,17C14.76,17 17,14.76 17,12C17,9.24 14.76,7 12,7Z"></path>
-                  </svg></i><input id="input-5" aria-disabled="false" aria-label="Monday" type="radio" name="settings-start-of-week" value="false"></div>
+                  </svg></i><input checked="" id="input-5" aria-disabled="false" aria-label="Monday" type="radio" name="settings-start-of-week" value="false"></div>
             </div><label class="v-label v-label--clickable" for="input-5">
               <!---->Monday
             </label>
@@ -141,7 +141,7 @@ exports[`SettingsView > mounts 1`] = `
                     <!---->
                     <!---->
                   </label>
-                  <!----><input readonly="" size="1" type="text" id="settings-start-date" aria-describedby="settings-start-date-messages" class="v-field__input">
+                  <!----><input readonly="" size="1" type="text" id="settings-start-date" aria-describedby="settings-start-date-messages" class="v-field__input" value="">
                   <!---->
                 </div>
                 <transition-stub name="expand-x-transition" appear="false" persisted="false" css="true">
@@ -212,7 +212,7 @@ exports[`SettingsView > mounts 1`] = `
               <!---->
               <!---->
             </label>
-            <!----><input size="1" type="text" id="input-9" aria-describedby="input-9-messages" aria-label="Default Duration" inputmode="decimal" class="v-field__input">
+            <!----><input size="1" type="text" id="input-9" aria-describedby="input-9-messages" aria-label="Default Duration" inputmode="decimal" class="v-field__input" value="1">
             <!---->
           </div>
           <!---->
@@ -243,7 +243,7 @@ exports[`SettingsView > mounts 1`] = `
               <!---->
               <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                     <path d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,7C9.24,7 7,9.24 7,12C7,14.76 9.24,17 12,17C14.76,17 17,14.76 17,12C17,9.24 14.76,7 12,7Z"></path>
-                  </svg></i><input id="input-14" aria-disabled="false" aria-label="Hours" type="radio" name="settings-default-unit-of-duration" value="h"></div>
+                  </svg></i><input checked="" id="input-14" aria-disabled="false" aria-label="Hours" type="radio" name="settings-default-unit-of-duration" value="h"></div>
             </div><label class="v-label v-label--clickable" for="input-14">
               <!---->Hours
             </label>
@@ -295,7 +295,7 @@ exports[`SettingsView > mounts 1`] = `
         <!---->
         <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
               <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-            </svg></i><input id="input-18" aria-disabled="false" aria-label="Toggle All" type="checkbox" value="true"></div>
+            </svg></i><input checked="" id="input-18" aria-disabled="false" aria-label="Toggle All" type="checkbox" value="true"></div>
       </div><label class="v-label v-label--clickable" for="input-18">
         <!---->Toggle All
       </label>
@@ -307,7 +307,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-badminton" aria-disabled="false" type="checkbox" value="badminton"></div>
+                </svg></i><input checked="" id="settings-activity-badminton" aria-disabled="false" type="checkbox" value="badminton"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-badminton">
@@ -322,7 +322,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-basketball" aria-disabled="false" type="checkbox" value="basketball"></div>
+                </svg></i><input checked="" id="settings-activity-basketball" aria-disabled="false" type="checkbox" value="basketball"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-basketball">
@@ -337,7 +337,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-maintenance" aria-disabled="false" type="checkbox" value="maintenance"></div>
+                </svg></i><input checked="" id="settings-activity-maintenance" aria-disabled="false" type="checkbox" value="maintenance"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-maintenance">
@@ -352,7 +352,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-boxing" aria-disabled="false" type="checkbox" value="boxing"></div>
+                </svg></i><input checked="" id="settings-activity-boxing" aria-disabled="false" type="checkbox" value="boxing"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-boxing">
@@ -367,7 +367,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-cycling" aria-disabled="false" type="checkbox" value="cycling"></div>
+                </svg></i><input checked="" id="settings-activity-cycling" aria-disabled="false" type="checkbox" value="cycling"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-cycling">
@@ -382,7 +382,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-downhill" aria-disabled="false" type="checkbox" value="downhill"></div>
+                </svg></i><input checked="" id="settings-activity-downhill" aria-disabled="false" type="checkbox" value="downhill"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-downhill">
@@ -397,7 +397,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-gym" aria-disabled="false" type="checkbox" value="gym"></div>
+                </svg></i><input checked="" id="settings-activity-gym" aria-disabled="false" type="checkbox" value="gym"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-gym">
@@ -412,7 +412,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-gymnastics" aria-disabled="false" type="checkbox" value="gymnastics"></div>
+                </svg></i><input checked="" id="settings-activity-gymnastics" aria-disabled="false" type="checkbox" value="gymnastics"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-gymnastics">
@@ -427,7 +427,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-hockey" aria-disabled="false" type="checkbox" value="hockey"></div>
+                </svg></i><input checked="" id="settings-activity-hockey" aria-disabled="false" type="checkbox" value="hockey"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-hockey">
@@ -442,7 +442,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-martialarts" aria-disabled="false" type="checkbox" value="martialarts"></div>
+                </svg></i><input checked="" id="settings-activity-martialarts" aria-disabled="false" type="checkbox" value="martialarts"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-martialarts">
@@ -457,7 +457,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-running" aria-disabled="false" type="checkbox" value="running"></div>
+                </svg></i><input checked="" id="settings-activity-running" aria-disabled="false" type="checkbox" value="running"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-running">
@@ -472,7 +472,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-shooting" aria-disabled="false" type="checkbox" value="shooting"></div>
+                </svg></i><input checked="" id="settings-activity-shooting" aria-disabled="false" type="checkbox" value="shooting"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-shooting">
@@ -487,7 +487,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-skating" aria-disabled="false" type="checkbox" value="skating"></div>
+                </svg></i><input checked="" id="settings-activity-skating" aria-disabled="false" type="checkbox" value="skating"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-skating">
@@ -502,7 +502,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-skiing" aria-disabled="false" type="checkbox" value="skiing"></div>
+                </svg></i><input checked="" id="settings-activity-skiing" aria-disabled="false" type="checkbox" value="skiing"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-skiing">
@@ -517,7 +517,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-soccer" aria-disabled="false" type="checkbox" value="soccer"></div>
+                </svg></i><input checked="" id="settings-activity-soccer" aria-disabled="false" type="checkbox" value="soccer"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-soccer">
@@ -532,7 +532,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-sprint" aria-disabled="false" type="checkbox" value="sprint"></div>
+                </svg></i><input checked="" id="settings-activity-sprint" aria-disabled="false" type="checkbox" value="sprint"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-sprint">
@@ -547,7 +547,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-swimming" aria-disabled="false" type="checkbox" value="swimming"></div>
+                </svg></i><input checked="" id="settings-activity-swimming" aria-disabled="false" type="checkbox" value="swimming"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-swimming">
@@ -562,7 +562,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-tennis" aria-disabled="false" type="checkbox" value="tennis"></div>
+                </svg></i><input checked="" id="settings-activity-tennis" aria-disabled="false" type="checkbox" value="tennis"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-tennis">
@@ -577,7 +577,7 @@ exports[`SettingsView > mounts 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-walking" aria-disabled="false" type="checkbox" value="walking"></div>
+                </svg></i><input checked="" id="settings-activity-walking" aria-disabled="false" type="checkbox" value="walking"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-walking">
@@ -599,7 +599,7 @@ exports[`SettingsView > mounts 1`] = `
               <!---->
               <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                     <path d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,7C9.24,7 7,9.24 7,12C7,14.76 9.24,17 12,17C14.76,17 17,14.76 17,12C17,9.24 14.76,7 12,7Z"></path>
-                  </svg></i><input id="input-41" aria-disabled="false" aria-label="Auto" type="radio" name="settings-visual-mode" value="auto"></div>
+                  </svg></i><input checked="" id="input-41" aria-disabled="false" aria-label="Auto" type="radio" name="settings-visual-mode" value="auto"></div>
             </div><label class="v-label v-label--clickable" for="input-41">
               <!---->Auto
             </label>
@@ -641,7 +641,7 @@ exports[`SettingsView > mounts 1`] = `
               <!---->
               <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                     <path d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,7C9.24,7 7,9.24 7,12C7,14.76 9.24,17 12,17C14.76,17 17,14.76 17,12C17,9.24 14.76,7 12,7Z"></path>
-                  </svg></i><input id="input-47" aria-disabled="false" aria-label="Decorated" type="radio" name="settings-card-background" value="true"></div>
+                  </svg></i><input checked="" id="input-47" aria-disabled="false" aria-label="Decorated" type="radio" name="settings-card-background" value="true"></div>
             </div><label class="v-label v-label--clickable" for="input-47">
               <!---->Decorated
             </label>
@@ -718,7 +718,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!----><label class="v-label v-field-label" for="input-0">
               <!---->Program Name
             </label>
-            <!----><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" maxlength="30" class="v-field__input">
+            <!----><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" maxlength="30" class="v-field__input" value="">
             <!---->
           </div>
           <!---->
@@ -753,7 +753,7 @@ exports[`SettingsView > mounts with start date 1`] = `
               <!---->
               <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                     <path d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,7C9.24,7 7,9.24 7,12C7,14.76 9.24,17 12,17C14.76,17 17,14.76 17,12C17,9.24 14.76,7 12,7Z"></path>
-                  </svg></i><input id="input-5" aria-disabled="false" aria-label="Monday" type="radio" name="settings-start-of-week" value="false"></div>
+                  </svg></i><input checked="" id="input-5" aria-disabled="false" aria-label="Monday" type="radio" name="settings-start-of-week" value="false"></div>
             </div><label class="v-label v-label--clickable" for="input-5">
               <!---->Monday
             </label>
@@ -809,7 +809,7 @@ exports[`SettingsView > mounts with start date 1`] = `
                     <!---->
                     <!---->
                   </label>
-                  <!----><input readonly="" size="1" type="text" id="settings-start-date" aria-describedby="settings-start-date-messages" class="v-field__input">
+                  <!----><input readonly="" size="1" type="text" id="settings-start-date" aria-describedby="settings-start-date-messages" class="v-field__input" value="">
                   <!---->
                 </div>
                 <transition-stub name="expand-x-transition" appear="false" persisted="false" css="true">
@@ -861,7 +861,7 @@ exports[`SettingsView > mounts with start date 1`] = `
                   <!---->
                   <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                         <path d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,7C9.24,7 7,9.24 7,12C7,14.76 9.24,17 12,17C14.76,17 17,14.76 17,12C17,9.24 14.76,7 12,7Z"></path>
-                      </svg></i><input id="input-12" aria-disabled="false" aria-label="Assigned Numbers (1, 2, 3...)" type="radio" name="settings-week-number" value="false"></div>
+                      </svg></i><input checked="" id="input-12" aria-disabled="false" aria-label="Assigned Numbers (1, 2, 3...)" type="radio" name="settings-week-number" value="false"></div>
                 </div><label class="v-label v-label--clickable" for="input-12">
                   <!---->Assigned Numbers (1, 2, 3...)
                 </label>
@@ -920,7 +920,7 @@ exports[`SettingsView > mounts with start date 1`] = `
                       <!---->
                       <!---->
                     </label>
-                    <!----><input readonly="" size="1" type="text" id="input-14" aria-describedby="input-14-messages" aria-label="Default Start TIme" class="v-field__input">
+                    <!----><input readonly="" size="1" type="text" id="input-14" aria-describedby="input-14-messages" aria-label="Default Start TIme" class="v-field__input" value="">
                     <!---->
                   </div>
                   <!---->
@@ -972,7 +972,7 @@ exports[`SettingsView > mounts with start date 1`] = `
               <!---->
               <!---->
             </label>
-            <!----><input size="1" type="text" id="input-16" aria-describedby="input-16-messages" aria-label="Default Duration" inputmode="decimal" class="v-field__input">
+            <!----><input size="1" type="text" id="input-16" aria-describedby="input-16-messages" aria-label="Default Duration" inputmode="decimal" class="v-field__input" value="1">
             <!---->
           </div>
           <!---->
@@ -1003,7 +1003,7 @@ exports[`SettingsView > mounts with start date 1`] = `
               <!---->
               <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                     <path d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,7C9.24,7 7,9.24 7,12C7,14.76 9.24,17 12,17C14.76,17 17,14.76 17,12C17,9.24 14.76,7 12,7Z"></path>
-                  </svg></i><input id="input-21" aria-disabled="false" aria-label="Hours" type="radio" name="settings-default-unit-of-duration" value="h"></div>
+                  </svg></i><input checked="" id="input-21" aria-disabled="false" aria-label="Hours" type="radio" name="settings-default-unit-of-duration" value="h"></div>
             </div><label class="v-label v-label--clickable" for="input-21">
               <!---->Hours
             </label>
@@ -1055,7 +1055,7 @@ exports[`SettingsView > mounts with start date 1`] = `
         <!---->
         <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
               <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-            </svg></i><input id="input-25" aria-disabled="false" aria-label="Toggle All" type="checkbox" value="true"></div>
+            </svg></i><input checked="" id="input-25" aria-disabled="false" aria-label="Toggle All" type="checkbox" value="true"></div>
       </div><label class="v-label v-label--clickable" for="input-25">
         <!---->Toggle All
       </label>
@@ -1067,7 +1067,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-badminton" aria-disabled="false" type="checkbox" value="badminton"></div>
+                </svg></i><input checked="" id="settings-activity-badminton" aria-disabled="false" type="checkbox" value="badminton"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-badminton">
@@ -1082,7 +1082,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-basketball" aria-disabled="false" type="checkbox" value="basketball"></div>
+                </svg></i><input checked="" id="settings-activity-basketball" aria-disabled="false" type="checkbox" value="basketball"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-basketball">
@@ -1097,7 +1097,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-maintenance" aria-disabled="false" type="checkbox" value="maintenance"></div>
+                </svg></i><input checked="" id="settings-activity-maintenance" aria-disabled="false" type="checkbox" value="maintenance"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-maintenance">
@@ -1112,7 +1112,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-boxing" aria-disabled="false" type="checkbox" value="boxing"></div>
+                </svg></i><input checked="" id="settings-activity-boxing" aria-disabled="false" type="checkbox" value="boxing"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-boxing">
@@ -1127,7 +1127,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-cycling" aria-disabled="false" type="checkbox" value="cycling"></div>
+                </svg></i><input checked="" id="settings-activity-cycling" aria-disabled="false" type="checkbox" value="cycling"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-cycling">
@@ -1142,7 +1142,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-downhill" aria-disabled="false" type="checkbox" value="downhill"></div>
+                </svg></i><input checked="" id="settings-activity-downhill" aria-disabled="false" type="checkbox" value="downhill"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-downhill">
@@ -1157,7 +1157,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-gym" aria-disabled="false" type="checkbox" value="gym"></div>
+                </svg></i><input checked="" id="settings-activity-gym" aria-disabled="false" type="checkbox" value="gym"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-gym">
@@ -1172,7 +1172,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-gymnastics" aria-disabled="false" type="checkbox" value="gymnastics"></div>
+                </svg></i><input checked="" id="settings-activity-gymnastics" aria-disabled="false" type="checkbox" value="gymnastics"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-gymnastics">
@@ -1187,7 +1187,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-hockey" aria-disabled="false" type="checkbox" value="hockey"></div>
+                </svg></i><input checked="" id="settings-activity-hockey" aria-disabled="false" type="checkbox" value="hockey"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-hockey">
@@ -1202,7 +1202,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-martialarts" aria-disabled="false" type="checkbox" value="martialarts"></div>
+                </svg></i><input checked="" id="settings-activity-martialarts" aria-disabled="false" type="checkbox" value="martialarts"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-martialarts">
@@ -1217,7 +1217,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-running" aria-disabled="false" type="checkbox" value="running"></div>
+                </svg></i><input checked="" id="settings-activity-running" aria-disabled="false" type="checkbox" value="running"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-running">
@@ -1232,7 +1232,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-shooting" aria-disabled="false" type="checkbox" value="shooting"></div>
+                </svg></i><input checked="" id="settings-activity-shooting" aria-disabled="false" type="checkbox" value="shooting"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-shooting">
@@ -1247,7 +1247,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-skating" aria-disabled="false" type="checkbox" value="skating"></div>
+                </svg></i><input checked="" id="settings-activity-skating" aria-disabled="false" type="checkbox" value="skating"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-skating">
@@ -1262,7 +1262,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-skiing" aria-disabled="false" type="checkbox" value="skiing"></div>
+                </svg></i><input checked="" id="settings-activity-skiing" aria-disabled="false" type="checkbox" value="skiing"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-skiing">
@@ -1277,7 +1277,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-soccer" aria-disabled="false" type="checkbox" value="soccer"></div>
+                </svg></i><input checked="" id="settings-activity-soccer" aria-disabled="false" type="checkbox" value="soccer"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-soccer">
@@ -1292,7 +1292,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-sprint" aria-disabled="false" type="checkbox" value="sprint"></div>
+                </svg></i><input checked="" id="settings-activity-sprint" aria-disabled="false" type="checkbox" value="sprint"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-sprint">
@@ -1307,7 +1307,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-swimming" aria-disabled="false" type="checkbox" value="swimming"></div>
+                </svg></i><input checked="" id="settings-activity-swimming" aria-disabled="false" type="checkbox" value="swimming"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-swimming">
@@ -1322,7 +1322,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-tennis" aria-disabled="false" type="checkbox" value="tennis"></div>
+                </svg></i><input checked="" id="settings-activity-tennis" aria-disabled="false" type="checkbox" value="tennis"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-tennis">
@@ -1337,7 +1337,7 @@ exports[`SettingsView > mounts with start date 1`] = `
             <!---->
             <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-                </svg></i><input id="settings-activity-walking" aria-disabled="false" type="checkbox" value="walking"></div>
+                </svg></i><input checked="" id="settings-activity-walking" aria-disabled="false" type="checkbox" value="walking"></div>
           </div>
           <!---->
         </div><label data-v-5e0b544f="" class="v-label flex-grow-1" for="settings-activity-walking">
@@ -1359,7 +1359,7 @@ exports[`SettingsView > mounts with start date 1`] = `
               <!---->
               <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                     <path d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,7C9.24,7 7,9.24 7,12C7,14.76 9.24,17 12,17C14.76,17 17,14.76 17,12C17,9.24 14.76,7 12,7Z"></path>
-                  </svg></i><input id="input-48" aria-disabled="false" aria-label="Auto" type="radio" name="settings-visual-mode" value="auto"></div>
+                  </svg></i><input checked="" id="input-48" aria-disabled="false" aria-label="Auto" type="radio" name="settings-visual-mode" value="auto"></div>
             </div><label class="v-label v-label--clickable" for="input-48">
               <!---->Auto
             </label>
@@ -1401,7 +1401,7 @@ exports[`SettingsView > mounts with start date 1`] = `
               <!---->
               <div class="v-selection-control__input"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                     <path d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,7C9.24,7 7,9.24 7,12C7,14.76 9.24,17 12,17C14.76,17 17,14.76 17,12C17,9.24 14.76,7 12,7Z"></path>
-                  </svg></i><input id="input-54" aria-disabled="false" aria-label="Decorated" type="radio" name="settings-card-background" value="true"></div>
+                  </svg></i><input checked="" id="input-54" aria-disabled="false" aria-label="Decorated" type="radio" name="settings-card-background" value="true"></div>
             </div><label class="v-label v-label--clickable" for="input-54">
               <!---->Decorated
             </label>

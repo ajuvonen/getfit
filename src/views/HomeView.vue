@@ -7,11 +7,11 @@ import InfoDialog from '@/components/InfoDialog.vue';
 import DailyAgenda from '@/components/DailyAgenda.vue';
 
 const scheduleStore = useScheduleStore();
-const {weeks, settings} = storeToRefs(scheduleStore);
+const {getTrainingsCount, settings} = storeToRefs(scheduleStore);
 
 const creditDialogOpen = ref(false);
 
-const agendaAvailable = computed(() => weeks.value.length && settings.value.startDate);
+const agendaAvailable = computed(() => getTrainingsCount.value && settings.value.startDate);
 </script>
 
 <template>
