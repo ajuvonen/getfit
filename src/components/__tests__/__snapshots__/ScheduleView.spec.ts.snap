@@ -31,7 +31,7 @@ exports[`ScheduleView > mounts 1`] = `
         <li data-v-295747d4="" data-v-eb553fec="" class="v-expansion-panel v-expansion-panel--rounded" data-test-id="week-0">
           <div class="v-expansion-panel__shadow elevation-0"></div>
           <!---->
-          <!----><button data-v-295747d4="" class="v-expansion-panel-title flex-wrap" type="button" aria-expanded="false"><span class="v-expansion-panel-title__overlay"></span>
+          <!----><button data-v-295747d4="" class="v-expansion-panel-title bg-transparent flex-wrap" type="button" aria-expanded="false"><span class="v-expansion-panel-title__overlay"></span>
             <div data-v-295747d4="" class="week-calendar__drag-handle"><i data-v-295747d4="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M11 21H9V3H11V21M15 3H13V21H15V3Z"></path>
                 </svg></i>
@@ -60,7 +60,7 @@ exports[`ScheduleView > mounts 1`] = `
         <li data-v-295747d4="" data-v-eb553fec="" class="v-expansion-panel v-expansion-panel--rounded" data-test-id="week-1">
           <div class="v-expansion-panel__shadow elevation-0"></div>
           <!---->
-          <!----><button data-v-295747d4="" class="v-expansion-panel-title flex-wrap" type="button" aria-expanded="false"><span class="v-expansion-panel-title__overlay"></span>
+          <!----><button data-v-295747d4="" class="v-expansion-panel-title bg-transparent flex-wrap" type="button" aria-expanded="false"><span class="v-expansion-panel-title__overlay"></span>
             <div data-v-295747d4="" class="week-calendar__drag-handle"><i data-v-295747d4="" class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <path d="M11 21H9V3H11V21M15 3H13V21H15V3Z"></path>
                 </svg></i>
