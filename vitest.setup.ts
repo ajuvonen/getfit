@@ -1,4 +1,4 @@
-import {DOMWrapper, VueWrapper, config} from '@vue/test-utils';
+import {config, mount} from '@vue/test-utils';
 import {beforeEach, vi} from 'vitest';
 import {createTestingPinia} from '@pinia/testing';
 import resizeObserver from 'resize-observer-polyfill';
@@ -12,17 +12,14 @@ import '@/styles/app.scss';
 config.global.plugins = [vuetifyPlugin, i18n, router];
 vi.stubGlobal('ResizeObserver', resizeObserver);
 
-const dataTestIdPlugin = (wrapper: VueWrapper) => ({
-  findByTestId: (testId: string) => {
-    const element = wrapper.element.querySelector(`[data-test-id='${testId}']`);
-    return new DOMWrapper(element);
-  },
+const dataTestIdPlugin = (wrapper: ReturnType<typeof mount>) => ({
+  findByTestId: (testId: string) => wrapper.find(`[data-test-id='${testId}']`),
 });
+
+config.plugins.VueWrapper.install(dataTestIdPlugin);
 
 beforeEach(() => {
   // Clear local storage so state is fresh for each test
   localStorage.clear();
   config.global.plugins[3] = createTestingPinia();
 });
-
-config.plugins.VueWrapper.install(dataTestIdPlugin);
