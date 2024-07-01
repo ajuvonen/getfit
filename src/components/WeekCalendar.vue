@@ -127,7 +127,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
             tag="ul"
             class="d-flex flex-wrap mt-4 mb-1 justify-center"
           >
-            <training-card
+            <TrainingCard
               v-for="training in trainings"
               :key="training.id"
               :training="training"

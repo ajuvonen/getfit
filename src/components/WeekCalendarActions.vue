@@ -34,7 +34,7 @@ const confirmDelete = (weekId: string) => {
 };
 </script>
 <template>
-  <div class="week-calendar__actions d-flex mt-4" :class="{'flex-column': isSmallScreen}">
+  <div class="d-flex mt-4" :class="{'flex-column': isSmallScreen}">
     <v-btn
       :data-test-id="`week-${weekIndex}-add-training-button`"
       prepend-icon="$plus"
