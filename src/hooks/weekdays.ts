@@ -24,7 +24,7 @@ export default function useWeekDays() {
   const getWeekStart = computed(() => (weekIndex: number) => {
     const startDate = settings.value.startDate
       ? DateTime.fromJSDate(settings.value.startDate)
-      : DateTime.local().startOf('week');
+      : DateTime.now().startOf('week');
     return startDate.plus({
       weeks: weekIndex,
     });

@@ -25,8 +25,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 const {t} = useI18n();
 
-const scheduleStore = useScheduleStore();
-const {weeks} = storeToRefs(scheduleStore);
+const {weeks} = storeToRefs(useScheduleStore());
 
 const {isDark} = useScreen();
 
@@ -78,7 +77,7 @@ defineExpose({chartData});
     id="weekly-trainings-chart-table"
     :title="$t('stats.weeklyTrainings')"
     :columnHeaders="chartData.labels"
-    :rowHeaders="[$t('stats.totalTrainings'), $t('stats.completedTrainings')]"
-    :data="[chartData.datasets[0].data, chartData.datasets[1].data]"
+    :rowHeaders="chartData.datasets.map(prop('label'))"
+    :data="chartData.datasets.map(prop('data'))"
   />
 </template>

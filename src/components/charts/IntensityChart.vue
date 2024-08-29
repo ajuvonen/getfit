@@ -16,8 +16,7 @@ ChartJS.register(ArcElement, Legend, Tooltip, Title);
 
 const {t} = useI18n();
 
-const scheduleStore = useScheduleStore();
-const {getAllTrainings} = storeToRefs(scheduleStore);
+const {getAllTrainings} = storeToRefs(useScheduleStore());
 
 const {isDark} = useScreen();
 

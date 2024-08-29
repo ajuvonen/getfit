@@ -18,7 +18,7 @@ describe('SettingsView', () => {
   });
 
   it('mounts with start date', () => {
-    scheduleStore.settings.startDate = DateTime.local().startOf('week').toJSDate();
+    scheduleStore.settings.startDate = DateTime.now().startOf('week').toJSDate();
     const wrapper = mount(SettingsView);
     expect(wrapper.html()).toMatchSnapshot();
   });
