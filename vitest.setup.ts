@@ -2,9 +2,9 @@ import {config, mount} from '@vue/test-utils';
 import {beforeEach, vi} from 'vitest';
 import {createTestingPinia} from '@pinia/testing';
 import resizeObserver from 'resize-observer-polyfill';
-import i18n from '@/i18n';
-import router from '@/router';
-import vuetifyPlugin from '@/vuetify';
+import i18n from './src/i18n';
+import router from './src/router';
+import vuetifyPlugin from './src/vuetify';
 
 import '@vuepic/vue-datepicker/dist/main.css';
 import '@/styles/app.scss';

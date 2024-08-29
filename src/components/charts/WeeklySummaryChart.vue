@@ -24,8 +24,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const {t} = useI18n();
 
-const scheduleStore = useScheduleStore();
-const {weeks} = storeToRefs(scheduleStore);
+const {weeks} = storeToRefs(useScheduleStore());
 
 const {isDark} = useScreen();
 
