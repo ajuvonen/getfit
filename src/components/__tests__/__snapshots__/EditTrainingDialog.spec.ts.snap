@@ -45,10 +45,8 @@ exports[`EditTrainingDialog > mounts 1`] = `
             </div>
             <!---->
             <div class="v-field__field" data-no-activator="">
-              <!----><label class="v-label v-field-label" for="edit-training-activity">
-                <!---->
-                <!---->
-              </label>
+              <!---->
+              <!---->
               <!---->
               <div class="v-field__input" data-no-activator="">
                 <!---->
@@ -239,10 +237,8 @@ exports[`EditTrainingDialog > mounts 1`] = `
               </div>
               <!---->
               <div class="v-field__field" data-no-activator="">
-                <!----><label class="v-label v-field-label" for="edit-training-unit-of-duration">
-                  <!---->
-                  <!---->
-                </label>
+                <!---->
+                <!---->
                 <!---->
                 <div class="v-field__input" data-no-activator="">
                   <!---->

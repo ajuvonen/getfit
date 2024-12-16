@@ -112,7 +112,7 @@ exports[`SettingsView > mounts 1`] = `
     </div><label data-v-5e0b544f="" class="v-label" for="settings-start-date">
       <!---->Program Start Date
     </label>
-    <div data-v-5e0b544f="" class="dp__main dp__theme_light" data-datepicker-instance="">
+    <div data-v-5e0b544f="" class="dp__main dp__theme_light" data-datepicker-instance="" data-dp-mobile="true">
       <div>
         <!---->
         <div class="dp__input_wrap">
@@ -137,10 +137,8 @@ exports[`SettingsView > mounts 1`] = `
                 </div>
                 <!---->
                 <div class="v-field__field" data-no-activator="">
-                  <!----><label class="v-label v-field-label" for="settings-start-date">
-                    <!---->
-                    <!---->
-                  </label>
+                  <!---->
+                  <!---->
                   <!----><input readonly="" size="1" type="text" id="settings-start-date" aria-describedby="settings-start-date-messages" class="v-field__input" value="">
                   <!---->
                 </div>
@@ -208,10 +206,8 @@ exports[`SettingsView > mounts 1`] = `
           </div>
           <!---->
           <div class="v-field__field" data-no-activator="">
-            <!----><label class="v-label v-field-label" for="input-9">
-              <!---->
-              <!---->
-            </label>
+            <!---->
+            <!---->
             <!----><input size="1" type="text" id="input-9" aria-describedby="input-9-messages" aria-label="Default Duration" inputmode="decimal" class="v-field__input" value="1">
             <!---->
           </div>
@@ -780,7 +776,7 @@ exports[`SettingsView > mounts with start date 1`] = `
     </div><label data-v-5e0b544f="" class="v-label" for="settings-start-date">
       <!---->Program Start Date
     </label>
-    <div data-v-5e0b544f="" class="dp__main dp__theme_light" data-datepicker-instance="">
+    <div data-v-5e0b544f="" class="dp__main dp__theme_light" data-datepicker-instance="" data-dp-mobile="true">
       <div>
         <!---->
         <div class="dp__input_wrap">
@@ -805,10 +801,8 @@ exports[`SettingsView > mounts with start date 1`] = `
                 </div>
                 <!---->
                 <div class="v-field__field" data-no-activator="">
-                  <!----><label class="v-label v-field-label" for="settings-start-date">
-                    <!---->
-                    <!---->
-                  </label>
+                  <!---->
+                  <!---->
                   <!----><input readonly="" size="1" type="text" id="settings-start-date" aria-describedby="settings-start-date-messages" class="v-field__input" value="">
                   <!---->
                 </div>
@@ -891,7 +885,7 @@ exports[`SettingsView > mounts with start date 1`] = `
       <!---->Default Activity Start And Duration
     </label>
     <transition-stub data-v-5e0b544f="" name="expand-transition" appear="false" persisted="false" css="true">
-      <div data-v-5e0b544f="" class="dp__main dp__theme_light" data-datepicker-instance="">
+      <div data-v-5e0b544f="" class="dp__main dp__theme_light" data-datepicker-instance="" data-dp-mobile="true">
         <div>
           <!---->
           <div class="dp__input_wrap">
@@ -916,10 +910,8 @@ exports[`SettingsView > mounts with start date 1`] = `
                   </div>
                   <!---->
                   <div class="v-field__field" data-no-activator="">
-                    <!----><label class="v-label v-field-label" for="input-14">
-                      <!---->
-                      <!---->
-                    </label>
+                    <!---->
+                    <!---->
                     <!----><input readonly="" size="1" type="text" id="input-14" aria-describedby="input-14-messages" aria-label="Default Start TIme" class="v-field__input" value="">
                     <!---->
                   </div>
@@ -968,10 +960,8 @@ exports[`SettingsView > mounts with start date 1`] = `
           </div>
           <!---->
           <div class="v-field__field" data-no-activator="">
-            <!----><label class="v-label v-field-label" for="input-16">
-              <!---->
-              <!---->
-            </label>
+            <!---->
+            <!---->
             <!----><input size="1" type="text" id="input-16" aria-describedby="input-16-messages" aria-label="Default Duration" inputmode="decimal" class="v-field__input" value="1">
             <!---->
           </div>

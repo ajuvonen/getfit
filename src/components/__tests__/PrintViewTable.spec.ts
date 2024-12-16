@@ -41,10 +41,10 @@ describe('PrintViewTable', () => {
       },
     });
 
-    expect(wrapper.find('.print-view__table').classes()).to.not.contain(
+    expect(wrapper.find('.print-view__table').classes()).not.contains(
       'print-view__table--striped',
     );
     await wrapper.setProps({striped: true});
-    expect(wrapper.find('.print-view__table').classes()).to.contain('print-view__table--striped');
+    expect(wrapper.find('.print-view__table').classes()).contains('print-view__table--striped');
   });
 });

@@ -16,7 +16,7 @@ export const useScheduleStore = defineStore('schedule', () => {
     {
       mergeDefaults: true,
       serializer: {
-        read: (v: any) =>
+        read: (v) =>
           v
             ? JSON.parse(v, (key, value) => {
                 if (key === 'startDate' && value) {
@@ -25,7 +25,7 @@ export const useScheduleStore = defineStore('schedule', () => {
                 return value;
               })
             : null,
-        write: (v: any) => JSON.stringify(v),
+        write: (v) => JSON.stringify(v),
       },
     },
   );
