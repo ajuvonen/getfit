@@ -63,8 +63,8 @@ exports[`SettingsView > mounts 1`] = `
         </div>
       </div>
       <!---->
-      <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+      <div id="input-0-messages" class="v-input__details" role="alert" aria-live="polite">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
           <!---->
         </transition-group-stub>
         <!----><span></span>
@@ -103,8 +103,8 @@ exports[`SettingsView > mounts 1`] = `
         </div>
       </div>
       <!---->
-      <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-start-of-week-messages">
+      <div id="settings-start-of-week-messages" class="v-input__details" role="alert" aria-live="polite">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
           <!---->
         </transition-group-stub>
         <!---->
@@ -158,8 +158,8 @@ exports[`SettingsView > mounts 1`] = `
               </div>
             </div>
             <!---->
-            <div class="v-input__details">
-              <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-start-date-messages">
+            <div id="settings-start-date-messages" class="v-input__details" role="alert" aria-live="polite">
+              <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
                 <!---->
               </transition-group-stub>
               <!---->
@@ -220,8 +220,8 @@ exports[`SettingsView > mounts 1`] = `
         </div>
       </div>
       <!---->
-      <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-9-messages">
+      <div id="input-9-messages" class="v-input__details" role="alert" aria-live="polite">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
           <!---->
         </transition-group-stub>
         <!---->
@@ -277,8 +277,8 @@ exports[`SettingsView > mounts 1`] = `
         </div>
       </div>
       <!---->
-      <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-default-unit-of-duration-messages">
+      <div id="settings-default-unit-of-duration-messages" class="v-input__details" role="alert" aria-live="polite">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
           <!---->
         </transition-group-stub>
         <!---->
@@ -727,8 +727,8 @@ exports[`SettingsView > mounts with start date 1`] = `
         </div>
       </div>
       <!---->
-      <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+      <div id="input-0-messages" class="v-input__details" role="alert" aria-live="polite">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
           <!---->
         </transition-group-stub>
         <!----><span></span>
@@ -767,8 +767,8 @@ exports[`SettingsView > mounts with start date 1`] = `
         </div>
       </div>
       <!---->
-      <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-start-of-week-messages">
+      <div id="settings-start-of-week-messages" class="v-input__details" role="alert" aria-live="polite">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
           <!---->
         </transition-group-stub>
         <!---->
@@ -822,8 +822,8 @@ exports[`SettingsView > mounts with start date 1`] = `
               </div>
             </div>
             <!---->
-            <div class="v-input__details">
-              <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-start-date-messages">
+            <div id="settings-start-date-messages" class="v-input__details" role="alert" aria-live="polite">
+              <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
                 <!---->
               </transition-group-stub>
               <!---->
@@ -873,8 +873,8 @@ exports[`SettingsView > mounts with start date 1`] = `
             </div>
           </div>
           <!---->
-          <div class="v-input__details">
-            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-week-number-messages">
+          <div id="settings-week-number-messages" class="v-input__details" role="alert" aria-live="polite">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
               <!---->
             </transition-group-stub>
             <!---->
@@ -974,8 +974,8 @@ exports[`SettingsView > mounts with start date 1`] = `
         </div>
       </div>
       <!---->
-      <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-16-messages">
+      <div id="input-16-messages" class="v-input__details" role="alert" aria-live="polite">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
           <!---->
         </transition-group-stub>
         <!---->
@@ -1031,8 +1031,8 @@ exports[`SettingsView > mounts with start date 1`] = `
         </div>
       </div>
       <!---->
-      <div class="v-input__details">
-        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="settings-default-unit-of-duration-messages">
+      <div id="settings-default-unit-of-duration-messages" class="v-input__details" role="alert" aria-live="polite">
+        <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
           <!---->
         </transition-group-stub>
         <!---->

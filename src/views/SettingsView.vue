@@ -49,7 +49,12 @@ const [duration, durationErrors] = useValidatedRef(
     const maxDuration = settings.value.defaultUnitOfDuration === 'h' ? 10 : 500;
     return [
       {required: true, message: t('errors.required')},
-      {type: 'number', min: 0, max: maxDuration, message: t('errors.outsideBounds', [0, maxDuration])},
+      {
+        type: 'number',
+        min: 0,
+        max: maxDuration,
+        message: t('errors.outsideBounds', [0, maxDuration]),
+      },
       {
         pattern: DECIMAL_REGEX,
         message: t('errors.invalidPrecision'),
@@ -245,7 +250,7 @@ const [duration, durationErrors] = useValidatedRef(
   </BaseView>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .dp__main,
 .settings-input {
   max-width: 175px;

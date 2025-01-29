@@ -27,7 +27,7 @@ withDefaults(
     </tbody>
   </v-table>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 :deep(td) {
   vertical-align: top;
 }

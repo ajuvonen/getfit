@@ -140,7 +140,7 @@ const print = () => {
     </template>
   </BaseView>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 .export__button-container {
   gap: 0.5rem;
 }

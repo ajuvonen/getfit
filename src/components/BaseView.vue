@@ -28,7 +28,7 @@ const {isLargeScreen, isDark} = useScreen();
     </v-card-actions>
   </v-card>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 .v-card {
   backdrop-filter: blur(5px);
 }

@@ -35,7 +35,7 @@ watch(
   <v-card-actions class="justify-end">
     <v-btn
       v-if="training.instructions"
-      ref="openButton"
+      :ref="'openButton'"
       :disabled="disabled"
       class="training-card-actions__more-button"
       variant="flat"
@@ -75,7 +75,7 @@ watch(
           :title="$t('trainingCard.editTraining')"
           prepend-icon="$pen"
           data-test-id="training-card-actions-edit-button"
-          @click="openEditTrainingDialog(training), (menuOpen = false)"
+          @click="(openEditTrainingDialog(training), (menuOpen = false))"
         />
         <TrainingCardActionsMenuGroup action="move" :training="training" />
         <TrainingCardActionsMenuGroup action="copy" :training="training" />
@@ -87,7 +87,7 @@ watch(
           "
           :prepend-icon="training.completed ? '$progressAlert' : '$progressCheck'"
           data-test-id="training-card-actions-complete-button"
-          @click="toggleCompletion(training), (menuOpen = false)"
+          @click="(toggleCompletion(training), (menuOpen = false))"
         />
         <v-list-item
           :title="$t('trainingCard.deleteTraining')"

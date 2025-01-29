@@ -39,7 +39,7 @@ const ratingClasses = computed(() => (training: Training, rating: number) => ({
     ></v-radio>
   </v-radio-group>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 :deep(.v-selection-control-group) {
   display: flex;
   justify-content: center;
