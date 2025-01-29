@@ -33,7 +33,7 @@ defineProps<{
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 .simple-training-card {
   max-width: 200px;
   > div {

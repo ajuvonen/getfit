@@ -61,7 +61,7 @@ const sortableOptions = {
   </BaseView>
   <edit-training-dialog />
 </template>
-<style lang="scss" scoped>
+<style scoped>
 .schedule__draggable-list {
   width: 100%;
 }

@@ -169,13 +169,13 @@ const {pass, errorFields} = useAsyncValidator(trainingData, rules, {
         prepend-icon="$close"
         data-test-id="edit-training-close-button"
         variant="text"
-        @click="trainingDialogOpen = false;"
+        @click="trainingDialogOpen = false"
         >{{ $t('editTraining.closeDialog') }}</v-btn
       >
     </template>
   </BaseDialog>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 :deep(.edit-training-duration .v-input__control) {
   max-width: 200px;
   input[type='number'] {

@@ -98,7 +98,7 @@ const containerClasses = computed(() => ({
     </v-card>
   </component>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 .training-card__container {
   background-size: cover !important;
   border-radius: 4px;

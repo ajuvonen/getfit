@@ -16,12 +16,15 @@ const {toggleShowInstructions} = appStateStore;
 
 const closeButton = ref<VBtn | null>(null);
 
-watch(() => props.show, async (value) => {
-  if (value) {
-    await nextTick();
-    closeButton.value?.$el.focus();
-  }
-});
+watch(
+  () => props.show,
+  async (value) => {
+    if (value) {
+      await nextTick();
+      closeButton.value?.$el.focus();
+    }
+  },
+);
 </script>
 <template>
   <v-expand-transition>
@@ -41,7 +44,7 @@ watch(() => props.show, async (value) => {
       </v-card-text>
       <v-card-actions class="justify-end">
         <v-btn
-          ref="closeButton"
+          :ref="'closeButton'"
           class="training-card__close-instructions-button"
           variant="flat"
           color="transparent"
@@ -53,7 +56,7 @@ watch(() => props.show, async (value) => {
     </v-card>
   </v-expand-transition>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 .v-card {
   bottom: 0;
   position: absolute;

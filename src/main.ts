@@ -7,7 +7,7 @@ import i18n from '@/i18n';
 import vuetifyPlugin from '@/vuetify';
 
 import '@vuepic/vue-datepicker/dist/main.css';
-import '@/styles/app.scss';
+import '@/styles/app.css';
 
 const app = createApp(App);
 

@@ -66,7 +66,7 @@ const agendaAvailable = computed(() => getTrainingsCount.value && settings.value
     </template>
   </InfoDialog>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 .home__overlay {
   position: absolute;
   inset: 0;

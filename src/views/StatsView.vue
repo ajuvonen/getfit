@@ -33,7 +33,7 @@ import WeeklySummaryChart from '@/components/charts/WeeklySummaryChart.vue';
     </template>
   </BaseView>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 .stats__chart {
   max-width: 400px;
   max-height: 400px;

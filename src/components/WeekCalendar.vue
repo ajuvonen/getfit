@@ -144,7 +144,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
     </v-expansion-panel-text>
   </v-expansion-panel>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 ul {
   gap: 1rem;
 }

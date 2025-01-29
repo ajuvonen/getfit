@@ -2,7 +2,7 @@
 
 exports[`TrainingCardActions > mounts 1`] = `
 "<div class="v-card-actions justify-end">
-  <!--v-if--><button type="button" class="v-btn v-btn--slim v-theme--customLight bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card-actions__action-button" aria-label="Actions for training " aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Actions</span>
+  <!--v-if--><button type="button" class="v-btn v-btn--slim v-theme--customLight bg-transparent v-btn--density-default v-btn--size-default v-btn--variant-flat training-card-actions__action-button" aria-label="Actions for training " aria-haspopup="menu" aria-expanded="false" aria-controls="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><span class="v-btn__prepend"><i class="v-icon notranslate v-theme--customLight v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg></i></span><span class="v-btn__content" data-no-activator="">Actions</span>
     <!---->
     <!---->
   </button>

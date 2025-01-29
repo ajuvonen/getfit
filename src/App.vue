@@ -101,7 +101,7 @@ watch(locale, (value) => {
     <ConfirmDialog />
   </v-app>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 :deep(.v-main__scroller) {
   scrollbar-width: thin;
 }

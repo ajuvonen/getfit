@@ -37,7 +37,7 @@ const {weekdays} = useWeekDays();
     </ul>
   </template>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 .v-icon {
   vertical-align: bottom;
 }

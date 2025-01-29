@@ -7,7 +7,7 @@ import router from './src/router';
 import vuetifyPlugin from './src/vuetify';
 
 import '@vuepic/vue-datepicker/dist/main.css';
-import '@/styles/app.scss';
+import '@/styles/app.css';
 
 config.global.plugins = [vuetifyPlugin, i18n, router];
 vi.stubGlobal('ResizeObserver', resizeObserver);

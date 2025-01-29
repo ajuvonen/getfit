@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import useScreen from '@/hooks/screen';
 
-withDefaults(defineProps<{
-  show: boolean;
-  title: string;
-  useFullScreen?: boolean;
-}>(), {
-  useFullScreen: true,
-});
+withDefaults(
+  defineProps<{
+    show: boolean;
+    title: string;
+    useFullScreen?: boolean;
+  }>(),
+  {
+    useFullScreen: true,
+  },
+);
 
 const {isSmallScreen} = useScreen();
 </script>
@@ -29,4 +32,4 @@ const {isSmallScreen} = useScreen();
     </v-card>
   </v-dialog>
 </template>
-<style lang="scss" scoped></style>
+<style scoped></style>
