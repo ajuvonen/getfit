@@ -9,6 +9,9 @@ import vuetifyPlugin from './src/vuetify';
 import '@vuepic/vue-datepicker/dist/main.css';
 import '@/styles/app.css';
 
+const visualViewportMock = new EventTarget();
+vi.stubGlobal('visualViewport', visualViewportMock);
+
 config.global.plugins = [vuetifyPlugin, i18n, router];
 vi.stubGlobal('ResizeObserver', resizeObserver);
 
