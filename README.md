@@ -6,7 +6,7 @@ To test this app in production, visit <https://ajuvonen.github.io/getfit>. You c
 
 ## Requirements
 
-Node 20+
+Node 22+
 
 PWA functionalities require a PWA-compatible browser.
 

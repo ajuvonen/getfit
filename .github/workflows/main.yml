@@ -11,7 +11,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20.15
+          node-version: 22.21.1
       - run: npm ci
       - run: npm run lint
 
@@ -23,10 +23,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20.15
+          node-version: 22.21.1
       - run: npm ci
       - run: npm run test:unit
-      
+
   cypress-run:
     runs-on: ubuntu-latest
     steps:
@@ -35,7 +35,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20.15
+          node-version: 22.21.1
       - run: npm ci
       - name: Cypress install
         uses: cypress-io/github-action@v6
