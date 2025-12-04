@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed} from 'vue';
+import {computed, type Ref} from 'vue';
 import {storeToRefs} from 'pinia';
 import {useI18n} from 'vue-i18n';
 import {DateTime} from 'luxon';
@@ -8,7 +8,7 @@ import {useScheduleStore} from '@/stores/schedule';
 import useLocalizedActivities from '@/hooks/localizedActivities';
 import useValidatedRef from '@/hooks/validatedRef';
 import {DATE_FORMATS, DECIMAL_REGEX} from '@/constants';
-import type {Locale} from '@/types';
+import type {Locale, ScheduleSettings} from '@/types';
 import {getIcon} from '@/utils';
 import BaseView from '@/components/BaseView.vue';
 
@@ -37,13 +37,13 @@ const getDisabledDays = computed(() =>
   settings.value.startsOnSunday ? [1, 2, 3, 4, 5, 6] : [0, 2, 3, 4, 5, 6],
 );
 
-const [name, nameErrors] = useValidatedRef(settings, 'name', {
+const [name, nameErrors] = useValidatedRef(settings as Ref<ScheduleSettings>, 'name', {
   type: 'string',
   max: 30,
   message: t('errors.maxLength', [10]),
 });
 const [duration, durationErrors] = useValidatedRef(
-  settings,
+  settings as Ref<ScheduleSettings>,
   'defaultDuration',
   computed(() => {
     const maxDuration = settings.value.defaultUnitOfDuration === 'h' ? 10 : 500;

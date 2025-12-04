@@ -30,7 +30,7 @@ describe('scheduleStore', () => {
     const weekId = uuid();
     scheduleStore.addWeek(weekId);
     expect(scheduleStore.weeks.length).toBe(1);
-    expect(scheduleStore.weeks[0].id).toBe(weekId);
+    expect(scheduleStore.weeks[0]!.id).toBe(weekId);
   });
 
   it('will not add duplicate IDs', () => {
@@ -38,7 +38,7 @@ describe('scheduleStore', () => {
     scheduleStore.addWeek(weekId);
     scheduleStore.addWeek(weekId);
     expect(scheduleStore.weeks.length).toBe(1);
-    expect(scheduleStore.weeks[0].id).toBe(weekId);
+    expect(scheduleStore.weeks[0]!.id).toBe(weekId);
   });
 
   it('gets target week and training', () => {
@@ -81,8 +81,8 @@ describe('scheduleStore', () => {
 
   it('leaves out week', () => {
     const [week, training] = scheduleStore.getTargetWeekAndTraining(uuid(), uuid());
-    expect (week).toBeUndefined();
-    expect (training).toBeUndefined();
+    expect(week).toBeUndefined();
+    expect(training).toBeUndefined();
   });
 
   it('deletes a week', () => {
@@ -257,10 +257,10 @@ describe('scheduleStore', () => {
     const [week2] = scheduleStore.getTargetWeekAndTraining(weekId2);
     expect(week1?.trainings.length).toBe(0);
     expect(week2?.trainings.length).toBe(1);
-    expect(week2?.trainings[0].dayIndex).toBe(2);
+    expect(week2?.trainings[0]!.dayIndex).toBe(2);
   });
 
-  it('reorders trainings within a week',  () => {
+  it('reorders trainings within a week', () => {
     const weekId = uuid();
 
     const training1 = getEmptyTraining({
@@ -279,8 +279,8 @@ describe('scheduleStore', () => {
     scheduleStore.reorderTrainings(weekId, 1, 0);
 
     const [reordered] = scheduleStore.getTargetWeekAndTraining(weekId);
-    expect(reordered?.trainings[0].id).toBe(training2.id);
-    expect(reordered?.trainings[1].id).toBe(training1.id);
+    expect(reordered?.trainings[0]!.id).toBe(training2.id);
+    expect(reordered?.trainings[1]!.id).toBe(training1.id);
   });
 
   it('copies a training', () => {
@@ -301,10 +301,10 @@ describe('scheduleStore', () => {
 
     const [week] = scheduleStore.getTargetWeekAndTraining(weekId);
     expect(week?.trainings.length).toBe(2);
-    expect(week?.trainings[1].id).not.toBe(training.id);
-    expect(week?.trainings[1].dayIndex).toBe(2);
-    expect(week?.trainings[1].completed).toBe(false);
-    expect(week?.trainings[1].rating).toBeNull();
+    expect(week?.trainings[1]!.id).not.toBe(training.id);
+    expect(week?.trainings[1]!.dayIndex).toBe(2);
+    expect(week?.trainings[1]!.completed).toBe(false);
+    expect(week?.trainings[1]!.rating).toBeNull();
   });
 
   it('toggles the completed property', () => {
@@ -417,44 +417,47 @@ describe('scheduleStore', () => {
     scheduleStore.settings.startsOnSunday = true;
     await nextTick();
 
-    expect(scheduleStore.weeks[0].trainings[0].dayIndex).toBe(1);
-    expect(scheduleStore.weeks[0].trainings[1].dayIndex).toBe(0);
-    expect(scheduleStore.weeks[0].trainings[2].dayIndex).toBe(4);
+    expect(scheduleStore.weeks[0]!.trainings[0]!.dayIndex).toBe(1);
+    expect(scheduleStore.weeks[0]!.trainings[1]!.dayIndex).toBe(0);
+    expect(scheduleStore.weeks[0]!.trainings[2]!.dayIndex).toBe(4);
     expect(DateTime.fromJSDate(scheduleStore.settings.startDate).weekday).toBe(7);
 
     scheduleStore.settings.startsOnSunday = false;
     await nextTick();
 
-    expect(scheduleStore.weeks[0].trainings[0].dayIndex).toBe(0);
-    expect(scheduleStore.weeks[0].trainings[1].dayIndex).toBe(6);
-    expect(scheduleStore.weeks[0].trainings[2].dayIndex).toBe(3);
+    expect(scheduleStore.weeks[0]!.trainings[0]!.dayIndex).toBe(0);
+    expect(scheduleStore.weeks[0]!.trainings[1]!.dayIndex).toBe(6);
+    expect(scheduleStore.weeks[0]!.trainings[2]!.dayIndex).toBe(3);
     expect(DateTime.fromJSDate(scheduleStore.settings.startDate).weekday).toBe(1);
   });
 
   it('returns all trainings', () => {
     const weekId = uuid();
     const weekId2 = uuid();
-    scheduleStore.weeks.push({
-      id: weekId,
-      trainings: [
-        getEmptyTraining({
-          weekId,
-          dayIndex: 0,
-        }),
-        getEmptyTraining({
-          weekId,
-          dayIndex: 3,
-        }),
-      ],
-    }, {
-      id: weekId2,
-      trainings: [
-        getEmptyTraining({
-          weekId: weekId2,
-          dayIndex: 0,
-        }),
-      ],
-    });
+    scheduleStore.weeks.push(
+      {
+        id: weekId,
+        trainings: [
+          getEmptyTraining({
+            weekId,
+            dayIndex: 0,
+          }),
+          getEmptyTraining({
+            weekId,
+            dayIndex: 3,
+          }),
+        ],
+      },
+      {
+        id: weekId2,
+        trainings: [
+          getEmptyTraining({
+            weekId: weekId2,
+            dayIndex: 0,
+          }),
+        ],
+      },
+    );
 
     expect(scheduleStore.getAllTrainings).toHaveLength(3);
   });

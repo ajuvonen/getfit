@@ -55,6 +55,6 @@ defineExpose({chartData});
     id="intensity-chart-table"
     :title="t('stats.trainingsByIntensity')"
     :columnHeaders="chartData.labels"
-    :data="[chartData.datasets[0].data]"
+    :data="[chartData.datasets[0]?.data || []]"
   />
 </template>

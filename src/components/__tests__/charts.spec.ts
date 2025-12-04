@@ -19,10 +19,8 @@ describe('Charts', () => {
 
   it('calculates data for ActivityChart', () => {
     const wrapper = mount(ActivityChart, {shallow: true});
-    const {
-      labels,
-      datasets: [{data}],
-    } = wrapper.vm.chartData;
+    const {labels, datasets} = wrapper.vm.chartData;
+    const data = datasets[0]!.data;
     expect(labels).toEqual([
       'Running',
       'Swimming',
@@ -37,20 +35,17 @@ describe('Charts', () => {
 
   it('calculates data for RatingChart', () => {
     const wrapper = mount(RatingChart, {shallow: true});
-    const {
-      labels,
-      datasets: [{data}],
-    } = wrapper.vm.chartData;
+    const {labels, datasets} = wrapper.vm.chartData;
+    const data = datasets[0]!.data;
     expect(labels).toEqual(['No rating', '1 ★', '2 ★', '4 ★', '5 ★']);
     expect(data).toEqual([5, 1, 1, 1, 1]);
   });
 
   it('calculates data for IntensityChart', () => {
     const wrapper = mount(IntensityChart, {shallow: true});
-    const {
-      labels,
-      datasets: [{data, backgroundColor}],
-    } = wrapper.vm.chartData;
+    const {labels, datasets} = wrapper.vm.chartData;
+    const data = datasets[0]!.data;
+    const backgroundColor = datasets[0]!.backgroundColor;
     expect(labels).toEqual(['Light', 'Normal', 'Demanding']);
     expect(backgroundColor).toEqual([
       COLORS.intensityLight,
@@ -62,10 +57,9 @@ describe('Charts', () => {
 
   it('calculates data for WeeklyTrainingsChart', () => {
     const wrapper = mount(WeeklyTrainingsChart, {shallow: true});
-    const {
-      labels,
-      datasets: [{data: totalTrainings}, {data: completedTrainings}],
-    } = wrapper.vm.chartData;
+    const {labels, datasets} = wrapper.vm.chartData;
+    const totalTrainings = datasets[0]!.data;
+    const completedTrainings = datasets[1]!.data;
     expect(labels).toEqual(['Week 1', 'Week 2']);
     expect(totalTrainings).toEqual([4, 5]);
     expect(completedTrainings).toEqual([2, 3]);
@@ -73,10 +67,10 @@ describe('Charts', () => {
 
   it('calculates data for WeeklySummaryChart', () => {
     const wrapper = mount(WeeklySummaryChart, {shallow: true});
-    const {
-      labels,
-      datasets: [{data: hours}, {data: kilometers}, {data: miles}],
-    } = wrapper.vm.chartData;
+    const {labels, datasets} = wrapper.vm.chartData;
+    const hours = datasets[0]!.data;
+    const kilometers = datasets[1]!.data;
+    const miles = datasets[2]!.data;
     expect(labels).toEqual(['Week 1', 'Week 2']);
     expect(hours).toEqual([2, 5.25]);
     expect(kilometers).toEqual([30, 15]);

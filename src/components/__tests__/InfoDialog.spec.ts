@@ -28,6 +28,6 @@ describe('InfoDialog', () => {
       },
     });
     await wrapper.findComponent(VCard).findByTestId('info-dialog-close-button').trigger('click');
-    expect(wrapper.emitted().close.length).toEqual(1);
+    expect(wrapper.emitted().close?.length).toEqual(1);
   });
 });

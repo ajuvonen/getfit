@@ -31,7 +31,7 @@ const sortableOptions = {
           v-if="weeks.length"
           v-model="weeks"
           :options="sortableOptions"
-          tag="ul"
+          as="ul"
           data-test-id="schedule"
           class="schedule__draggable-list"
         >

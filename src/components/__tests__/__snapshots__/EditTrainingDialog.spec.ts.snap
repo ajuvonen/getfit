@@ -97,12 +97,12 @@ exports[`EditTrainingDialog > mounts 1`] = `
               </div>
             </div>
             <!---->
-            <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-22">
+            <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-v-3">
                 <!---->Title
-              </label><label class="v-label v-field-label" for="input-22">
+              </label><label class="v-label v-field-label" for="input-v-3">
                 <!---->Title
               </label>
-              <!----><input size="1" type="text" id="input-22" aria-describedby="input-22-messages" maxlength="30" class="v-field__input" value="">
+              <!----><input size="1" type="text" id="input-v-3" aria-describedby="input-v-3-messages" maxlength="30" class="v-field__input" value="">
               <!---->
             </div>
             <!---->
@@ -114,7 +114,7 @@ exports[`EditTrainingDialog > mounts 1`] = `
           </div>
         </div>
         <!---->
-        <div id="input-22-messages" class="v-input__details" role="alert" aria-live="polite">
+        <div id="input-v-3-messages" class="v-input__details" role="alert" aria-live="polite">
           <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
             <!---->
           </transition-group-stub>
@@ -144,12 +144,12 @@ exports[`EditTrainingDialog > mounts 1`] = `
               </div>
             </div>
             <!---->
-            <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-24">
+            <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-v-5">
                 <!---->Location
-              </label><label class="v-label v-field-label" for="input-24">
+              </label><label class="v-label v-field-label" for="input-v-5">
                 <!---->Location
               </label>
-              <!----><input size="1" type="text" id="input-24" aria-describedby="input-24-messages" maxlength="40" class="v-field__input" value="">
+              <!----><input size="1" type="text" id="input-v-5" aria-describedby="input-v-5-messages" maxlength="40" class="v-field__input" value="">
               <!---->
             </div>
             <!---->
@@ -161,7 +161,7 @@ exports[`EditTrainingDialog > mounts 1`] = `
           </div>
         </div>
         <!---->
-        <div id="input-24-messages" class="v-input__details" role="alert" aria-live="polite">
+        <div id="input-v-5-messages" class="v-input__details" role="alert" aria-live="polite">
           <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
             <!---->
           </transition-group-stub>
@@ -192,12 +192,12 @@ exports[`EditTrainingDialog > mounts 1`] = `
                 </div>
               </div>
               <!---->
-              <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-26">
+              <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-v-7">
                   <!---->Duration
-                </label><label class="v-label v-field-label" for="input-26">
+                </label><label class="v-label v-field-label" for="input-v-7">
                   <!---->Duration
                 </label>
-                <!----><input size="1" type="number" id="input-26" aria-describedby="input-26-messages" class="v-field__input" value="1">
+                <!----><input size="1" type="number" id="input-v-7" aria-describedby="input-v-7-messages" class="v-field__input" value="1">
                 <!---->
               </div>
               <!---->
@@ -209,7 +209,7 @@ exports[`EditTrainingDialog > mounts 1`] = `
             </div>
           </div>
           <!---->
-          <div id="input-26-messages" class="v-input__details" role="alert" aria-live="polite">
+          <div id="input-v-7-messages" class="v-input__details" role="alert" aria-live="polite">
             <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
               <!---->
             </transition-group-stub>
@@ -290,17 +290,17 @@ exports[`EditTrainingDialog > mounts 1`] = `
               </div>
             </div>
             <!---->
-            <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-35">
+            <div class="v-field__field" data-no-activator=""><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-v-12">
                 <!---->Instructions
-              </label><label class="v-label v-field-label" for="input-35">
+              </label><label class="v-label v-field-label" for="input-v-12">
                 <!---->Instructions
               </label>
-              <!----><textarea class="v-field__input" rows="5" id="input-35" aria-describedby="input-35-messages" maxlength="2000" value=""></textarea>
+              <!----><textarea class="v-field__input" rows="5" id="input-v-12" aria-describedby="input-v-12-messages" maxlength="2000" value=""></textarea>
               <!---->
               <!---->
             </div>
             <transition-stub name="expand-x-transition" appear="false" persisted="false" css="true">
-              <div class="v-field__clearable" style="display: none;"><i class="v-icon notranslate v-theme--customLight v-icon--size-default v-icon--clickable" role="button" aria-hidden="false" tabindex="0" aria-label="Clear Instructions"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <div class="v-field__clearable" style="display: none;"><i class="v-icon notranslate v-theme--customLight v-icon--size-default v-icon--clickable" role="button" aria-hidden="false" tabindex="-1" aria-label="Clear Instructions"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
                     <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"></path>
                   </svg></i></div>
             </transition-stub>
@@ -315,7 +315,7 @@ exports[`EditTrainingDialog > mounts 1`] = `
           </div>
         </div>
         <!---->
-        <div id="input-35-messages" class="v-input__details" role="alert" aria-live="polite">
+        <div id="input-v-12-messages" class="v-input__details" role="alert" aria-live="polite">
           <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages">
             <!---->
           </transition-group-stub>

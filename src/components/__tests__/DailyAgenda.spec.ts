@@ -45,8 +45,8 @@ describe('DailyAgenda', () => {
     const wrapper = mount(DailyAgenda);
 
     expect(wrapper.findAll('.training-card__title').length).toBe(2);
-    expect(wrapper.findAll('.training-card__title')[0].text()).toBe('Boxing');
-    expect(wrapper.findAll('.training-card__title')[1].text()).toBe('Swimming');
+    expect(wrapper.findAll('.training-card__title')[0]!.text()).toBe('Boxing');
+    expect(wrapper.findAll('.training-card__title')[1]!.text()).toBe('Swimming');
   });
 
   it('displays progress', () => {

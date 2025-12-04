@@ -56,6 +56,6 @@ defineExpose({chartData});
     id="rating-chart-table"
     :title="$t('stats.trainingsByRating')"
     :columnHeaders="chartData.labels"
-    :data="[chartData.datasets[0].data]"
+    :data="[chartData.datasets[0]?.data || []]"
   />
 </template>
