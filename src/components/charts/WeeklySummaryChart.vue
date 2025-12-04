@@ -64,9 +64,9 @@ const chartData = computed(() => {
     const miles = sumBy(trainings, ({unitOfDuration, duration}) =>
       unitOfDuration === 'mi' ? duration : 0,
     );
-    datasets[0].data.push(Math.round((hours + minutes / 60) * 4) / 4);
-    datasets[1].data.push(kilometers);
-    datasets[2].data.push(miles);
+    datasets[0]?.data.push(Math.round((hours + minutes / 60) * 4) / 4);
+    datasets[1]?.data.push(kilometers);
+    datasets[2]?.data.push(miles);
   });
 
   return {

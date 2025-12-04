@@ -124,7 +124,7 @@ const getDayChipTitle = (intensity: Intensity, count: number) =>
           <UseSortable
             :model-value="trainings"
             :options="sortableOptions"
-            tag="ul"
+            as="ul"
             class="d-flex flex-wrap mt-4 mb-1 justify-center"
           >
             <TrainingCard

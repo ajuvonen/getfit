@@ -106,7 +106,7 @@ describe('hooks', () => {
     scheduleStore.settings = mockSettings;
     const events = createCalendarEvents();
     expect(events).toHaveLength(1);
-    expect(events[0].duration.minutes).toBe(60);
+    expect(events[0]!.duration.minutes).toBe(60);
   });
 
   it('gives calendar a default name', async () => {
@@ -134,7 +134,7 @@ describe('hooks', () => {
     const events = createCalendarEvents();
 
     expect(events).toHaveLength(1);
-    expect(events[0].calName).toBe('TrainingSchedule');
+    expect(events[0]!.calName).toBe('TrainingSchedule');
   });
 
   it('moves to next date when durations cross over', async () => {
@@ -177,32 +177,32 @@ describe('hooks', () => {
     expect(events).toHaveLength(2);
 
     // Assertions for the first activity
-    expect(events[0].title).toBe('Test Training');
-    expect(events[0].description).toBe('Test Instructions');
-    expect(events[0].duration.minutes).toBe(60);
-    expect(events[0].location).toBe('Test Location');
-    expect(events[0].categories).toEqual(['Running', 'Normal']);
-    expect(events[0].status).toBe('CONFIRMED');
-    expect(events[0].busyStatus).toBe('BUSY');
-    expect(events[0].transp).toBe('OPAQUE');
-    expect(events[0].productId).toBe('ajuvonen/getfit');
-    expect(events[0].classification).toBe('PRIVATE');
-    expect(events[0].calName).toBe('Test Schedule');
-    expect(events[0].start).toEqual([2024, 1, 1, 23, 30]);
+    expect(events[0]!.title).toBe('Test Training');
+    expect(events[0]!.description).toBe('Test Instructions');
+    expect(events[0]!.duration.minutes).toBe(60);
+    expect(events[0]!.location).toBe('Test Location');
+    expect(events[0]!.categories).toEqual(['Running', 'Normal']);
+    expect(events[0]!.status).toBe('CONFIRMED');
+    expect(events[0]!.busyStatus).toBe('BUSY');
+    expect(events[0]!.transp).toBe('OPAQUE');
+    expect(events[0]!.productId).toBe('ajuvonen/getfit');
+    expect(events[0]!.classification).toBe('PRIVATE');
+    expect(events[0]!.calName).toBe('Test Schedule');
+    expect(events[0]!.start).toEqual([2024, 1, 1, 23, 30]);
 
     // Assertions for the second activity
-    expect(events[1].title).toBe('Test Training 2');
-    expect(events[1].description).toBe('Test Instructions 2');
-    expect(events[1].duration.minutes).toBe(30);
-    expect(events[1].location).toBe('Test Location 2');
-    expect(events[1].categories).toEqual(['Swimming', 'Demanding']);
-    expect(events[1].status).toBe('CONFIRMED');
-    expect(events[1].busyStatus).toBe('BUSY');
-    expect(events[1].transp).toBe('OPAQUE');
-    expect(events[1].productId).toBe('ajuvonen/getfit');
-    expect(events[1].classification).toBe('PRIVATE');
-    expect(events[1].calName).toBe('Test Schedule');
-    expect(events[1].start).toEqual([2024, 1, 2, 0, 30]);
+    expect(events[1]!.title).toBe('Test Training 2');
+    expect(events[1]!.description).toBe('Test Instructions 2');
+    expect(events[1]!.duration.minutes).toBe(30);
+    expect(events[1]!.location).toBe('Test Location 2');
+    expect(events[1]!.categories).toEqual(['Swimming', 'Demanding']);
+    expect(events[1]!.status).toBe('CONFIRMED');
+    expect(events[1]!.busyStatus).toBe('BUSY');
+    expect(events[1]!.transp).toBe('OPAQUE');
+    expect(events[1]!.productId).toBe('ajuvonen/getfit');
+    expect(events[1]!.classification).toBe('PRIVATE');
+    expect(events[1]!.calName).toBe('Test Schedule');
+    expect(events[1]!.start).toEqual([2024, 1, 2, 0, 30]);
   });
 
   it('creates correct calendar events', async () => {
@@ -277,74 +277,74 @@ describe('hooks', () => {
     expect(events).toHaveLength(5);
 
     // Assertions for the first activity
-    expect(events[0].title).toBe('Test Training');
-    expect(events[0].description).toBe('Test Instructions');
-    expect(events[0].duration.minutes).toBe(60);
-    expect(events[0].location).toBe('Test Location');
-    expect(events[0].categories).toEqual(['Running', 'Normal']);
-    expect(events[0].status).toBe('CONFIRMED');
-    expect(events[0].busyStatus).toBe('BUSY');
-    expect(events[0].transp).toBe('OPAQUE');
-    expect(events[0].productId).toBe('ajuvonen/getfit');
-    expect(events[0].classification).toBe('PRIVATE');
-    expect(events[0].calName).toBe('Test Schedule');
-    expect(events[0].start).toEqual([2024, 1, 1, 12, 0]);
+    expect(events[0]!.title).toBe('Test Training');
+    expect(events[0]!.description).toBe('Test Instructions');
+    expect(events[0]!.duration.minutes).toBe(60);
+    expect(events[0]!.location).toBe('Test Location');
+    expect(events[0]!.categories).toEqual(['Running', 'Normal']);
+    expect(events[0]!.status).toBe('CONFIRMED');
+    expect(events[0]!.busyStatus).toBe('BUSY');
+    expect(events[0]!.transp).toBe('OPAQUE');
+    expect(events[0]!.productId).toBe('ajuvonen/getfit');
+    expect(events[0]!.classification).toBe('PRIVATE');
+    expect(events[0]!.calName).toBe('Test Schedule');
+    expect(events[0]!.start).toEqual([2024, 1, 1, 12, 0]);
 
     // Assertions for the second activity
-    expect(events[1].title).toBe('Test Training 2');
-    expect(events[1].description).toBe('Test Instructions 2');
-    expect(events[1].duration.minutes).toBe(30);
-    expect(events[1].location).toBe('Test Location 2');
-    expect(events[1].categories).toEqual(['Swimming', 'Demanding']);
-    expect(events[1].status).toBe('CONFIRMED');
-    expect(events[1].busyStatus).toBe('BUSY');
-    expect(events[1].transp).toBe('OPAQUE');
-    expect(events[1].productId).toBe('ajuvonen/getfit');
-    expect(events[1].classification).toBe('PRIVATE');
-    expect(events[1].calName).toBe('Test Schedule');
-    expect(events[1].start).toEqual([2024, 1, 2, 12, 0]);
+    expect(events[1]!.title).toBe('Test Training 2');
+    expect(events[1]!.description).toBe('Test Instructions 2');
+    expect(events[1]!.duration.minutes).toBe(30);
+    expect(events[1]!.location).toBe('Test Location 2');
+    expect(events[1]!.categories).toEqual(['Swimming', 'Demanding']);
+    expect(events[1]!.status).toBe('CONFIRMED');
+    expect(events[1]!.busyStatus).toBe('BUSY');
+    expect(events[1]!.transp).toBe('OPAQUE');
+    expect(events[1]!.productId).toBe('ajuvonen/getfit');
+    expect(events[1]!.classification).toBe('PRIVATE');
+    expect(events[1]!.calName).toBe('Test Schedule');
+    expect(events[1]!.start).toEqual([2024, 1, 2, 12, 0]);
 
     // Assertions for the third activity
-    expect(events[2].title).toBe('Test Training 3');
-    expect(events[2].description).toBe('Test Instructions 3');
-    expect(events[2].duration.minutes).toBe(60);
-    expect(events[2].location).toBe('Test Location 3');
-    expect(events[2].categories).toEqual(['Sprint', 'Heavy']);
-    expect(events[2].status).toBe('CONFIRMED');
-    expect(events[2].busyStatus).toBe('BUSY');
-    expect(events[2].transp).toBe('OPAQUE');
-    expect(events[2].productId).toBe('ajuvonen/getfit');
-    expect(events[2].classification).toBe('PRIVATE');
-    expect(events[2].calName).toBe('Test Schedule');
-    expect(events[2].start).toEqual([2024, 1, 2, 12, 30]);
+    expect(events[2]!.title).toBe('Test Training 3');
+    expect(events[2]!.description).toBe('Test Instructions 3');
+    expect(events[2]!.duration.minutes).toBe(60);
+    expect(events[2]!.location).toBe('Test Location 3');
+    expect(events[2]!.categories).toEqual(['Sprint', 'Heavy']);
+    expect(events[2]!.status).toBe('CONFIRMED');
+    expect(events[2]!.busyStatus).toBe('BUSY');
+    expect(events[2]!.transp).toBe('OPAQUE');
+    expect(events[2]!.productId).toBe('ajuvonen/getfit');
+    expect(events[2]!.classification).toBe('PRIVATE');
+    expect(events[2]!.calName).toBe('Test Schedule');
+    expect(events[2]!.start).toEqual([2024, 1, 2, 12, 30]);
 
     // Assertions for the fourth activity
-    expect(events[3].title).toBe('Test Training 4');
-    expect(events[3].description).toBe('Test Instructions 4');
-    expect(events[3].duration.minutes).toBe(60);
-    expect(events[3].location).toBe('Test Location 4');
-    expect(events[3].categories).toEqual(['Running', 'Normal']);
-    expect(events[3].status).toBe('CONFIRMED');
-    expect(events[3].busyStatus).toBe('BUSY');
-    expect(events[3].transp).toBe('OPAQUE');
-    expect(events[3].productId).toBe('ajuvonen/getfit');
-    expect(events[3].classification).toBe('PRIVATE');
-    expect(events[3].calName).toBe('Test Schedule');
-    expect(events[3].start).toEqual([2024, 1, 14, 12, 0]);
+    expect(events[3]!.title).toBe('Test Training 4');
+    expect(events[3]!.description).toBe('Test Instructions 4');
+    expect(events[3]!.duration.minutes).toBe(60);
+    expect(events[3]!.location).toBe('Test Location 4');
+    expect(events[3]!.categories).toEqual(['Running', 'Normal']);
+    expect(events[3]!.status).toBe('CONFIRMED');
+    expect(events[3]!.busyStatus).toBe('BUSY');
+    expect(events[3]!.transp).toBe('OPAQUE');
+    expect(events[3]!.productId).toBe('ajuvonen/getfit');
+    expect(events[3]!.classification).toBe('PRIVATE');
+    expect(events[3]!.calName).toBe('Test Schedule');
+    expect(events[3]!.start).toEqual([2024, 1, 14, 12, 0]);
 
     // Assertions for the fifth activity
-    expect(events[4].title).toBe('Test Training 5');
-    expect(events[4].description).toBe('Test Instructions 5');
-    expect(events[4].duration.minutes).toBe(60);
-    expect(events[4].location).toBe('Test Location 5');
-    expect(events[4].categories).toEqual(['Swimming', 'Light']);
-    expect(events[4].status).toBe('CONFIRMED');
-    expect(events[4].busyStatus).toBe('BUSY');
-    expect(events[4].transp).toBe('OPAQUE');
-    expect(events[4].productId).toBe('ajuvonen/getfit');
-    expect(events[4].classification).toBe('PRIVATE');
-    expect(events[4].calName).toBe('Test Schedule');
-    expect(events[4].start).toEqual([2024, 1, 14, 13, 0]);
+    expect(events[4]!.title).toBe('Test Training 5');
+    expect(events[4]!.description).toBe('Test Instructions 5');
+    expect(events[4]!.duration.minutes).toBe(60);
+    expect(events[4]!.location).toBe('Test Location 5');
+    expect(events[4]!.categories).toEqual(['Swimming', 'Light']);
+    expect(events[4]!.status).toBe('CONFIRMED');
+    expect(events[4]!.busyStatus).toBe('BUSY');
+    expect(events[4]!.transp).toBe('OPAQUE');
+    expect(events[4]!.productId).toBe('ajuvonen/getfit');
+    expect(events[4]!.classification).toBe('PRIVATE');
+    expect(events[4]!.calName).toBe('Test Schedule');
+    expect(events[4]!.start).toEqual([2024, 1, 14, 13, 0]);
   });
 
   it('lists weekdays in correct order', async () => {
